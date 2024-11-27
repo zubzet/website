@@ -1,1 +1,316 @@
-Welcome to ZubZet!
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="jquery.min.js"></script>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome/all.min.css">
+        <link rel="stylesheet" href="font-awesome/brands.min.css">
+        <link rel="stylesheet" href="font-awesome/v4-shims.min.css">
+        <link rel="stylesheet" href="font-awesome/fontawesome.min.css">
+        <script src="bootstrap.min.js"></script>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-primary px-5 shadow-sm">
+            <div class="container">
+                <a class="navbar-brand font-weight-bold text-white d-flex align-items-center" href="#">
+                    <span>ZubZet</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-content">
+                    <ul class="navbar-nav mr-auto"></ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://github.com/zubzet/">
+                                <i class="fa fa-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="https://zubzet.com/docs/DEV/">
+                                <i class="fa fa-fw fa-book"></i>
+                                Documentation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main style="margin-top: 120px;">
+            <section>
+                <div class="container">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-8">
+                            <div class="text-center">
+                                <span class="display-4 font-weight-bold">
+                                    <span class="text-primary">
+                                        ZubZet
+                                    </span> 
+                                    – The Modern PHP Framework
+                                </span>
+
+                            </div>
+                            <div class="mt-4 text-center">
+                                <span class="text-muted">
+                                    ZubZet is a PHP web framework designed for speed, flexibility, and security. With powerful built-in tools and a streamlined architecture, 
+                                    ZubZet lets you build sophisticated web applications effortlessly.
+                                </span>
+                            </div>
+                            <div class="mt-5 text-center">
+                                <a class="btn btn-primary font-weight-bold px-4 py-3 mr-3 cursor-pointer mb-2" href="https://github.com/zubzet/">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa fa-github mr-2 fa-lg"></i>
+                                        View on Github
+                                    </div>
+                                </a>
+
+                                <a class="btn btn-secondary font-weight-bold px-4 py-3 cursor-pointer mb-2" href="https://zubzet.com/docs/DEV/">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa fa-book mr-2 fa-lg"></i>
+                                        View Documentation
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-8 p-4 rounded-lg text-white codebox">
+                           <div class="d-flex justify-content-between align-items-center">
+                                <span>
+                                    <span class="text-primary">$</span> npm install zubzet.js
+                                </span>
+                                <span class="text-muted copy-click cursor-pointer" data-copy-text="npm install zubzet.js">
+                                    <i class="fa fa-copy"></i>
+                                    Copy
+                                </span>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 120px">
+                <div class="contaner d-flex justify-content-center">
+                    <div class="row justify-content-around col-8">
+                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex mr-4">
+                                        <div class="p-3 rounded master-icon">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-2 font-weight-bold">Token-Based Security</h4>
+                                        <p class="lead">
+                                           Ensures secure and smooth login sessions using token-based authentication.
+                                        </p>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex mr-4">
+                                        <div class="p-3 rounded master-icon">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-2 font-weight-bold">Role-Based Permissions</h4>
+                                        <p class="lead">
+                                           Assigns precise permissions to users, protecting sensitive actions and data.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex mr-4">
+                                        <div class="p-3 rounded master-icon">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-2 font-weight-bold">Session Management</h4>
+                                        <p class="lead">
+                                           Manages user sessions effectively, ensuring safety across multiple devices.
+                                        </p>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex mr-4">
+                                        <div class="p-3 rounded master-icon">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-2 font-weight-bold">Multi-Factor Authentication (MFA) Ready</h4>
+                                        <p class="lead">
+                                           Compatible with multi-factor authentication setups for added security.
+                                        </p>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 120px;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <h1>
+                            Features
+                        </h1>
+                        <div class="mt-4">
+                            <div class="d-flex flex-wrap">
+                                <li class="feature-item list-group-item border-0 col-lg-4 col-sm-6 d-flex">
+                                    <a class="d-flex p-4 rounded border border-light align-items-center ">
+                                        <div class="mr-3">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-zip"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" /><path d="M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2z" /><path d="M11 5l-1 0" /><path d="M13 7l-1 0" /><path d="M11 9l-1 0" /><path d="M13 11l-1 0" /><path d="M11 13l-1 0" /><path d="M13 15l-1 0" /></svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="font-weight-bold">
+                                                Auto Form Validation
+                                            </span>
+                                            <span class="feature-description">
+                                                Automate form validation with error reporting and database integration.
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
+                                    <a class="d-flex p-4 rounded border border-light align-items-center">
+                                        <div class="mr-3">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="font-weight-bold">
+                                                Permission System
+                                            </span>
+                                            <span class="feature-description">
+                                                Manage roles and permissions with flexible access control, including wildcards.
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
+                                    <a class="d-flex p-4 rounded border border-light align-items-center">
+                                        <div class="mr-3">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-upload"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 9l5 -5l5 5" /><path d="M12 4l0 12" /></svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="font-weight-bold">
+                                                File Uploads
+                                            </span>
+                                            <span class="feature-description">
+                                                Handle file uploads seamlessly with pre-set rules for type and size validation.
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
+                                    <a class="d-flex p-4 rounded border border-light align-items-center">
+                                        <div class="mr-3">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="font-weight-bold">
+                                                Email Integration
+                                            </span>
+                                            <span class="feature-description">
+                                                Send emails directly from your application with customizable templates.
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
+                                    <a class="d-flex p-4 rounded border border-light align-items-center">
+                                        <div class="mr-3">
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-pdf"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4" /><path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6" /><path d="M17 18h2" /><path d="M20 15h-3v6" /><path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z" /></svg>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="font-weight-bold">
+                                                PDF Generation
+                                            </span>
+                                            <span class="feature-description">
+                                                Generate PDFs from HTML templates, supporting complex layouts and styles.
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pt-4 bg-light" style="margin-top: 100px">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+                            <h2>
+                                Who we are
+                            </h2>
+                            <div class="p-4 d-flex align-items-center">
+                                <span class="h5 text-muted">
+                                    Zierhut IT GmbH, the creators of ZubZet, use this framework in their own projects, 
+                                    which drives its continuous improvement and alignment with real-world PHP web development needs.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-3 mt-5">
+            <ul class="nav justify-content-center border-bottom mb-3">
+              <li class="nav-item"><a href="https://github.com/zubzet/" class="nav-link text-muted px-2 text-body-secondary">Github</a></li>
+              <li class="nav-item"><a href="https://zubzet.com/docs/DEV/" class="nav-link px-2 text-muted text-body-secondary">Documentation</a></li>
+            </ul>
+            <p class="text-center text-body-secondary text-muted">© ZubZet contributors </p>
+          </footer>
+    </body>
+
+    <script>
+        $(document).ready(function() {
+    $('.copy-click').on('click', function() {
+        const textToCopy = $(this).data('copy-text');
+        const $button = $(this);
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            $button.html('<i class="fa fa-check"></i> Copied!');
+
+            setTimeout(() => {
+                $button.html('<i class="fa fa-copy"></i> Copy');
+            }, 5000);
+        });
+    });
+});
+
+    </script>
+</html>
