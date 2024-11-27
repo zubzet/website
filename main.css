@@ -1,0 +1,95 @@
+:root {
+    --bg-primary: #00783e;
+    --bg-primary-hover: #016937;
+    --bg-icon: #00783e44;
+}
+
+.text-primary {
+    color: var(--bg-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--bg-primary) !important;
+    border-color: var(--bg-primary) !important;
+    outline-color: var(--bg-primary) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-primary-hover) !important;
+    border-color: var(--bg-primary-hover);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem var(--bg-primary-hover) !important;
+}
+
+.bg-primary {
+    background-color: var(--bg-primary) !important;
+}
+
+.master-icon {
+    background-color: var(--bg-icon);
+    transition: 500ms;
+}
+
+.btn:hover {
+    scale: 1.02;
+    transition: 200ms;
+}
+
+.codebox {
+    background-color: black;
+    font-size: 0.9em;
+}
+
+.codebox .copy-click {
+    opacity: 0;
+    transition: opacity 200ms ease-in 1000ms;
+}
+
+.codebox:hover .copy-click {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.feature-description {
+    font-size: 0.9em;
+}
+
+.feature-content {
+    border: 1px solid black !;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.display-4{
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+@media (max-width:768px) {
+    .display-4{
+        font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.2
+    }
+}
+
+@media (max-width:568px) {
+    .display-4{
+        font-size: 2.7rem;
+        font-weight: 300;
+        line-height: 1.2
+    }
+}
+
+@media (max-width:468px) {
+    .display-4{
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.2
+    }
+}
