@@ -1,0 +1,49 @@
+name: Deploy Website to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Move website to gh-pages branch
+        run: |
+          mkdir merged
+
+          # Merge gh-pages
+          mv gh-pages/{.git,CNAME,docs} merged/
+
+          # Merge main
+          rm -rf main/{.git,.github,LICENSE,README.md} || 0
+          shopt -s dotglob
+          mv main/* merged/
+
+          # Rename to the original name
+          mv merged/* .
+          rm -rf main gh-pages merged
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Update website on gh-pages branch" || echo "No changes to commit"
+          git push origin gh-pages
