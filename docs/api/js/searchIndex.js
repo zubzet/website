@@ -736,6 +736,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_patch"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Aoptions\u0028\u0029",
+            "name": "options",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#method_options"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Adefine\u0028\u0029",
+            "name": "define",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#method_define"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Agroup\u0028\u0029",
             "name": "group",
             "summary": "",
