@@ -751,16 +751,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_group"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformFallback\u0028\u0029",
-            "name": "performFallback",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performFallback"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AregisterDeferredFallbacks\u0028\u0029",
-            "name": "registerDeferredFallbacks",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_registerDeferredFallbacks"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
             "name": "performGroup",
             "summary": "Creates\u0020a\u0020route\u0020group.",
@@ -785,11 +775,6 @@ Search.appendIndex(
             "name": "routerStack",
             "summary": "A\u0020stack\u0020to\u0020hold\u0020the\u0020current\u0020router\u0020context\u0020\u0028App\u0020or\u0020RouteCollectorProxy\u0029.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#property_routerStack"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024deferredFallbacks",
-            "name": "deferredFallbacks",
-            "summary": "Array\u0020to\u0020store\u0020fallback\u0020routes.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#property_deferredFallbacks"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024prefixStack",
             "name": "prefixStack",
