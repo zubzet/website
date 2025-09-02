@@ -596,36 +596,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-PendingGroup.html#property_callback"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute",
-            "name": "PendingRoute",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html#method___construct"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute\u003A\u003A__destruct\u0028\u0029",
-            "name": "__destruct",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html#method___destruct"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute\u003A\u003A\u0024method",
-            "name": "method",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html#property_method"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute\u003A\u003A\u0024endpoint",
-            "name": "endpoint",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html#property_endpoint"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoute\u003A\u003A\u0024action",
-            "name": "action",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoute.html#property_action"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoutingState",
             "name": "PendingRoutingState",
             "summary": "",
@@ -636,95 +606,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_middleware"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route",
-            "name": "Route",
+            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoutingState\u003A\u003A\u0024afterMiddleware",
+            "name": "afterMiddleware",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "Initializes\u0020the\u0020static\u0020Router.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_init"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AgetCurrentRouter\u0028\u0029",
-            "name": "getCurrentRouter",
-            "summary": "Gets\u0020the\u0020current\u0020router\u0020from\u0020the\u0020top\u0020of\u0020the\u0020stack.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_getCurrentRouter"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Aany\u0028\u0029",
-            "name": "any",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_any"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_get"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Apost\u0028\u0029",
-            "name": "post",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_post"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Aput\u0028\u0029",
-            "name": "put",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_put"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Adelete\u0028\u0029",
-            "name": "delete",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_delete"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Apatch\u0028\u0029",
-            "name": "patch",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_patch"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Aoptions\u0028\u0029",
-            "name": "options",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_options"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Adefine\u0028\u0029",
-            "name": "define",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_define"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003Agroup\u0028\u0029",
-            "name": "group",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_group"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
-            "name": "performGroup",
-            "summary": "Creates\u0020a\u0020route\u0020group.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performGroup"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformRoute\u0028\u0029",
-            "name": "performRoute",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performRoute"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformMiddlewareChecks\u0028\u0029",
-            "name": "performMiddlewareChecks",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performMiddlewareChecks"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024booter",
-            "name": "booter",
-            "summary": "The\u0020framework\u0020bootstrapper\u0020instance.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#property_booter"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024routerStack",
-            "name": "routerStack",
-            "summary": "A\u0020stack\u0020to\u0020hold\u0020the\u0020current\u0020router\u0020context\u0020\u0028App\u0020or\u0020RouteCollectorProxy\u0029.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#property_routerStack"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024prefixStack",
-            "name": "prefixStack",
-            "summary": "Stack\u0020to\u0020manage\u0020group\u0020prefixes.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#property_prefixStack"
+            "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_afterMiddleware"
         },                {
             "fqsen": "\\UPLOAD_SUCCESS",
             "name": "UPLOAD_SUCCESS",
