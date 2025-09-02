@@ -1006,6 +1006,11 @@ Search.appendIndex(
             "summary": "Checks\u0020if\u0020a\u0020value\u0020exists\u0020in\u0020a\u0020table.",
             "url": "classes/z-db.html#method_checkIfExists"
         },                {
+            "fqsen": "\\z_db\u003A\u003A\u0024cakePHPDatabase",
+            "name": "cakePHPDatabase",
+            "summary": "",
+            "url": "classes/z-db.html#property_cakePHPDatabase"
+        },                {
             "fqsen": "\\z_db\u003A\u003A\u0024conn",
             "name": "conn",
             "summary": "",
@@ -1185,6 +1190,31 @@ Search.appendIndex(
             "name": "logActionByCategory",
             "summary": "Logs\u0020an\u0020action.",
             "url": "classes/z-model.html#method_logActionByCategory"
+        },                {
+            "fqsen": "\\z_model\u003A\u003AdbSelect\u0028\u0029",
+            "name": "dbSelect",
+            "summary": "Create\u0020a\u0020new\u0020SelectQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "url": "classes/z-model.html#method_dbSelect"
+        },                {
+            "fqsen": "\\z_model\u003A\u003AdbUpdate\u0028\u0029",
+            "name": "dbUpdate",
+            "summary": "Create\u0020a\u0020new\u0020UpdateQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "url": "classes/z-model.html#method_dbUpdate"
+        },                {
+            "fqsen": "\\z_model\u003A\u003AdbDelete\u0028\u0029",
+            "name": "dbDelete",
+            "summary": "Create\u0020a\u0020new\u0020DeleteQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "url": "classes/z-model.html#method_dbDelete"
+        },                {
+            "fqsen": "\\z_model\u003A\u003AdbInsert\u0028\u0029",
+            "name": "dbInsert",
+            "summary": "Create\u0020a\u0020new\u0020InsertQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "url": "classes/z-model.html#method_dbInsert"
+        },                {
+            "fqsen": "\\z_model\u003A\u003AgetQueryBuilder\u0028\u0029",
+            "name": "getQueryBuilder",
+            "summary": "",
+            "url": "classes/z-model.html#method_getQueryBuilder"
         },                {
             "fqsen": "\\z_model\u003A\u003A\u0024z_db",
             "name": "z_db",
