@@ -1351,6 +1351,16 @@ Search.appendIndex(
             "summary": "Validates\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022\u0020input",
             "url": "classes/Request.html#method_validateCED"
         },                {
+            "fqsen": "\\Request\u003A\u003AgetBody\u0028\u0029",
+            "name": "getBody",
+            "summary": "Get\u0020the\u0020body\u0020of\u0020the\u0020request",
+            "url": "classes/Request.html#method_getBody"
+        },                {
+            "fqsen": "\\Request\u003A\u003AgetJson\u0028\u0029",
+            "name": "getJson",
+            "summary": "Decode\u0020request\u0020body\u0020as\u0020JSON.",
+            "url": "classes/Request.html#method_getJson"
+        },                {
             "fqsen": "\\Request\u003A\u003A\u0024urlParameters",
             "name": "urlParameters",
             "summary": "",
