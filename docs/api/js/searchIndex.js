@@ -2426,11 +2426,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_permission1"
         },                {
-            "fqsen": "\\CoreController\u003A\u003Aaction_localization\u0028\u0029",
-            "name": "action_localization",
-            "summary": "",
-            "url": "classes/CoreController.html#method_action_localization"
-        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_configuration\u0028\u0029",
             "name": "action_configuration",
             "summary": "",
@@ -2475,6 +2470,111 @@ Search.appendIndex(
             "name": "action_cookieunset",
             "summary": "",
             "url": "classes/CoreController.html#method_action_cookieunset"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003ATestRoute\u0028\u0029",
+            "name": "TestRoute",
+            "summary": "Testing\u0020the\u0020Routing\u0020System\u0020with\u0020Middleware",
+            "url": "classes/CoreController.html#method_TestRoute"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003ARoute_Middleware_Accept\u0028\u0029",
+            "name": "Route_Middleware_Accept",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Route_Middleware_Accept"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003AGroup_Middleware_Accept\u0028\u0029",
+            "name": "Group_Middleware_Accept",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Group_Middleware_Accept"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003ARoute_Middleware_Block\u0028\u0029",
+            "name": "Route_Middleware_Block",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Route_Middleware_Block"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003AGroup_Middleware_Block\u0028\u0029",
+            "name": "Group_Middleware_Block",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Group_Middleware_Block"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003ARoute_Afterware\u0028\u0029",
+            "name": "Route_Afterware",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Route_Afterware"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003AGroup_Afterware\u0028\u0029",
+            "name": "Group_Afterware",
+            "summary": "",
+            "url": "classes/CoreController.html#method_Group_Afterware"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelect\u0028\u0029",
+            "name": "action_querybuilderSelect",
+            "summary": "Testing\u0020the\u0020Query\u0020Builder",
+            "url": "classes/CoreController.html#method_action_querybuilderSelect"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectWhere\u0028\u0029",
+            "name": "action_querybuilderSelectWhere",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectWhere"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectWhereExtended\u0028\u0029",
+            "name": "action_querybuilderSelectWhereExtended",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectWhereExtended"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectJoin\u0028\u0029",
+            "name": "action_querybuilderSelectJoin",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectJoin"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectLike\u0028\u0029",
+            "name": "action_querybuilderSelectLike",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectLike"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectLT\u0028\u0029",
+            "name": "action_querybuilderSelectLT",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectLT"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectIn\u0028\u0029",
+            "name": "action_querybuilderSelectIn",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectIn"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectORAND\u0028\u0029",
+            "name": "action_querybuilderSelectORAND",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectORAND"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectLimit\u0028\u0029",
+            "name": "action_querybuilderSelectLimit",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectLimit"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectOrder\u0028\u0029",
+            "name": "action_querybuilderSelectOrder",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectOrder"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectGroup\u0028\u0029",
+            "name": "action_querybuilderSelectGroup",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_querybuilderSelectGroup"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_queryBuilderInsert\u0028\u0029",
+            "name": "action_queryBuilderInsert",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_queryBuilderInsert"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_queryBuilderUpdate\u0028\u0029",
+            "name": "action_queryBuilderUpdate",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_queryBuilderUpdate"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_queryBuilderDelete\u0028\u0029",
+            "name": "action_queryBuilderDelete",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_queryBuilderDelete"
         },                {
             "fqsen": "\\DashboardController",
             "name": "DashboardController",
@@ -2640,6 +2740,86 @@ Search.appendIndex(
             "name": "uploadFile",
             "summary": "",
             "url": "classes/FormModel.html#method_uploadFile"
+        },                {
+            "fqsen": "\\QueryBuilderModel",
+            "name": "QueryBuilderModel",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020models.\u0020Models\u0020should\u0020inherit\u0020from\u0020this.",
+            "url": "classes/QueryBuilderModel.html"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectAllUsers\u0028\u0029",
+            "name": "selectAllUsers",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectAllUsers"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserById\u0028\u0029",
+            "name": "selectUserById",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserById"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserExtended\u0028\u0029",
+            "name": "selectUserExtended",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserExtended"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserJoin\u0028\u0029",
+            "name": "selectUserJoin",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserJoin"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserLike\u0028\u0029",
+            "name": "selectUserLike",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserLike"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserLT\u0028\u0029",
+            "name": "selectUserLT",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserLT"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserIn\u0028\u0029",
+            "name": "selectUserIn",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserIn"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserORAND\u0028\u0029",
+            "name": "selectUserORAND",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserORAND"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserLimit\u0028\u0029",
+            "name": "selectUserLimit",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserLimit"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserOrder\u0028\u0029",
+            "name": "selectUserOrder",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserOrder"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectUserGroup\u0028\u0029",
+            "name": "selectUserGroup",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectUserGroup"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectLanguageById\u0028\u0029",
+            "name": "selectLanguageById",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectLanguageById"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AinsertLanguage\u0028\u0029",
+            "name": "insertLanguage",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_insertLanguage"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AupdateLanguage\u0028\u0029",
+            "name": "updateLanguage",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_updateLanguage"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AdeleteLanguage\u0028\u0029",
+            "name": "deleteLanguage",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_deleteLanguage"
         },                {
             "fqsen": "\\RequestModel",
             "name": "RequestModel",
