@@ -1081,16 +1081,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_group"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformFallback\u0028\u0029",
-            "name": "performFallback",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performFallback"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AregisterDeferredFallbacks\u0028\u0029",
-            "name": "registerDeferredFallbacks",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#method_registerDeferredFallbacks"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
             "name": "performGroup",
             "summary": "Creates\u0020a\u0020route\u0020group.",
@@ -1120,11 +1110,6 @@ Search.appendIndex(
             "name": "prefixStack",
             "summary": "Stack\u0020to\u0020manage\u0020group\u0020prefixes.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#property_prefixStack"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024deferredFallbacks",
-            "name": "deferredFallbacks",
-            "summary": "Holds\u0020deferred\u0020fallback\u0020routes\u0020to\u0020be\u0020registered\u0020later.",
-            "url": "classes/ZubZet-Framework-Routing-Route.html#property_deferredFallbacks"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024isCancelled",
             "name": "isCancelled",
