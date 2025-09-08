@@ -2651,6 +2651,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RenderingController.html#method_action_mailuser"
         },                {
+            "fqsen": "\\db\u0028\u0029",
+            "name": "db",
+            "summary": "",
+            "url": "namespaces/default.html#function_db"
+        },                {
             "fqsen": "\\import\u0028\u0029",
             "name": "import",
             "summary": "",
