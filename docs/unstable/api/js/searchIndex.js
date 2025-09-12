@@ -1,386 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\adminer_object\u0028\u0029",
-            "name": "adminer_object",
-            "summary": "",
-            "url": "namespaces/default.html#function_adminer_object"
-        },                {
-            "fqsen": "\\AdminerVersionNoVerify",
-            "name": "AdminerVersionNoVerify",
-            "summary": "Disable\u0020version\u0020checker",
-            "url": "classes/AdminerVersionNoVerify.html"
-        },                {
-            "fqsen": "\\AdminerVersionNoVerify\u003A\u003Ahead\u0028\u0029",
-            "name": "head",
-            "summary": "",
-            "url": "classes/AdminerVersionNoVerify.html#method_head"
-        },                {
-            "fqsen": "\\AdminerPlugin",
-            "name": "AdminerPlugin",
-            "summary": "Adminer\u0020customization\u0020allowing\u0020usage\u0020of\u0020plugins",
-            "url": "classes/AdminerPlugin.html"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A_findRootClass\u0028\u0029",
-            "name": "_findRootClass",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method__findRootClass"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Register\u0020plugins",
-            "url": "classes/AdminerPlugin.html#method___construct"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A_callParent\u0028\u0029",
-            "name": "_callParent",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method__callParent"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A_applyPlugin\u0028\u0029",
-            "name": "_applyPlugin",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method__applyPlugin"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A_appendPlugin\u0028\u0029",
-            "name": "_appendPlugin",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method__appendPlugin"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpFormat\u0028\u0029",
-            "name": "dumpFormat",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpFormat"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpOutput\u0028\u0029",
-            "name": "dumpOutput",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpOutput"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AeditRowPrint\u0028\u0029",
-            "name": "editRowPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_editRowPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AeditFunctions\u0028\u0029",
-            "name": "editFunctions",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_editFunctions"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Aname\u0028\u0029",
-            "name": "name",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_name"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Acredentials\u0028\u0029",
-            "name": "credentials",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_credentials"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AconnectSsl\u0028\u0029",
-            "name": "connectSsl",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_connectSsl"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003ApermanentLogin\u0028\u0029",
-            "name": "permanentLogin",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_permanentLogin"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AbruteForceKey\u0028\u0029",
-            "name": "bruteForceKey",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_bruteForceKey"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AserverName\u0028\u0029",
-            "name": "serverName",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_serverName"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Adatabase\u0028\u0029",
-            "name": "database",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_database"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Aschemas\u0028\u0029",
-            "name": "schemas",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_schemas"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Adatabases\u0028\u0029",
-            "name": "databases",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_databases"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AqueryTimeout\u0028\u0029",
-            "name": "queryTimeout",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_queryTimeout"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Aheaders\u0028\u0029",
-            "name": "headers",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_headers"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Acsp\u0028\u0029",
-            "name": "csp",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_csp"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Ahead\u0028\u0029",
-            "name": "head",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_head"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Acss\u0028\u0029",
-            "name": "css",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_css"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AloginForm\u0028\u0029",
-            "name": "loginForm",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_loginForm"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AloginFormField\u0028\u0029",
-            "name": "loginFormField",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_loginFormField"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Alogin\u0028\u0029",
-            "name": "login",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_login"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AtableName\u0028\u0029",
-            "name": "tableName",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_tableName"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AfieldName\u0028\u0029",
-            "name": "fieldName",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_fieldName"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLinks\u0028\u0029",
-            "name": "selectLinks",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLinks"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AforeignKeys\u0028\u0029",
-            "name": "foreignKeys",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_foreignKeys"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AbackwardKeys\u0028\u0029",
-            "name": "backwardKeys",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_backwardKeys"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AbackwardKeysPrint\u0028\u0029",
-            "name": "backwardKeysPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_backwardKeysPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectQuery\u0028\u0029",
-            "name": "selectQuery",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectQuery"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AsqlCommandQuery\u0028\u0029",
-            "name": "sqlCommandQuery",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_sqlCommandQuery"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003ArowDescription\u0028\u0029",
-            "name": "rowDescription",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_rowDescription"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003ArowDescriptions\u0028\u0029",
-            "name": "rowDescriptions",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_rowDescriptions"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLink\u0028\u0029",
-            "name": "selectLink",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLink"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectVal\u0028\u0029",
-            "name": "selectVal",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectVal"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AeditVal\u0028\u0029",
-            "name": "editVal",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_editVal"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AtableStructurePrint\u0028\u0029",
-            "name": "tableStructurePrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_tableStructurePrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AtableIndexesPrint\u0028\u0029",
-            "name": "tableIndexesPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_tableIndexesPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectColumnsPrint\u0028\u0029",
-            "name": "selectColumnsPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectColumnsPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectSearchPrint\u0028\u0029",
-            "name": "selectSearchPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectSearchPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectOrderPrint\u0028\u0029",
-            "name": "selectOrderPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectOrderPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLimitPrint\u0028\u0029",
-            "name": "selectLimitPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLimitPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLengthPrint\u0028\u0029",
-            "name": "selectLengthPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLengthPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectActionPrint\u0028\u0029",
-            "name": "selectActionPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectActionPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectCommandPrint\u0028\u0029",
-            "name": "selectCommandPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectCommandPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectImportPrint\u0028\u0029",
-            "name": "selectImportPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectImportPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectEmailPrint\u0028\u0029",
-            "name": "selectEmailPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectEmailPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectColumnsProcess\u0028\u0029",
-            "name": "selectColumnsProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectColumnsProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectSearchProcess\u0028\u0029",
-            "name": "selectSearchProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectSearchProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectOrderProcess\u0028\u0029",
-            "name": "selectOrderProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectOrderProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLimitProcess\u0028\u0029",
-            "name": "selectLimitProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLimitProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectLengthProcess\u0028\u0029",
-            "name": "selectLengthProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectLengthProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectEmailProcess\u0028\u0029",
-            "name": "selectEmailProcess",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectEmailProcess"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AselectQueryBuild\u0028\u0029",
-            "name": "selectQueryBuild",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_selectQueryBuild"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AmessageQuery\u0028\u0029",
-            "name": "messageQuery",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_messageQuery"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AeditInput\u0028\u0029",
-            "name": "editInput",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_editInput"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AeditHint\u0028\u0029",
-            "name": "editHint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_editHint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AprocessInput\u0028\u0029",
-            "name": "processInput",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_processInput"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpDatabase\u0028\u0029",
-            "name": "dumpDatabase",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpDatabase"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpTable\u0028\u0029",
-            "name": "dumpTable",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpTable"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpData\u0028\u0029",
-            "name": "dumpData",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpData"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpFilename\u0028\u0029",
-            "name": "dumpFilename",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpFilename"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdumpHeaders\u0028\u0029",
-            "name": "dumpHeaders",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_dumpHeaders"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AimportServerPath\u0028\u0029",
-            "name": "importServerPath",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_importServerPath"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Ahomepage\u0028\u0029",
-            "name": "homepage",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_homepage"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003Anavigation\u0028\u0029",
-            "name": "navigation",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_navigation"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AdatabasesPrint\u0028\u0029",
-            "name": "databasesPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_databasesPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003AtablesPrint\u0028\u0029",
-            "name": "tablesPrint",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#method_tablesPrint"
-        },                {
-            "fqsen": "\\AdminerPlugin\u003A\u003A\u0024plugins",
-            "name": "plugins",
-            "summary": "",
-            "url": "classes/AdminerPlugin.html#property_plugins"
-        },                {
             "fqsen": "\\ErrorController",
             "name": "ErrorController",
             "summary": "The\u0020error\u0020controller\u0020handles\u0020all\u0020bad\u0020requests.\u0020Other\u0020controllers\u0020can\u0020redirect\u0020to\u0020this\u0020one.",
@@ -461,31 +81,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/LoginController.html#method_send_verify_mail"
         },                {
-            "fqsen": "\\LoginController\u003A\u003A\u0024action_index_sitemap",
-            "name": "action_index_sitemap",
-            "summary": "",
-            "url": "classes/LoginController.html#property_action_index_sitemap"
-        },                {
-            "fqsen": "\\LoginController\u003A\u003A\u0024action_register_sitemap",
-            "name": "action_register_sitemap",
-            "summary": "",
-            "url": "classes/LoginController.html#property_action_register_sitemap"
-        },                {
-            "fqsen": "\\LoginController\u003A\u003A\u0024action_forgot_password_sitemap",
-            "name": "action_forgot_password_sitemap",
-            "summary": "",
-            "url": "classes/LoginController.html#property_action_forgot_password_sitemap"
-        },                {
-            "fqsen": "\\SitemapController",
-            "name": "SitemapController",
-            "summary": "The\u0020sitemap\u0020controller\u0020generates\u0020sitemaps\u0020and\u0020serves\u0020them\u0020to\u0020the\u0020client",
-            "url": "classes/SitemapController.html"
-        },                {
-            "fqsen": "\\SitemapController\u003A\u003Aaction_index\u0028\u0029",
-            "name": "action_index",
-            "summary": "Index\u0020action\u0020of\u0020the\u0020sitemap\u0020controller",
-            "url": "classes/SitemapController.html#method_action_index"
-        },                {
             "fqsen": "\\ZController",
             "name": "ZController",
             "summary": "The\u0020ZController\u0020contains\u0020actions\u0020for\u0020the\u0020admin\u0020dashboard\u0020\/\u0020panel",
@@ -525,6 +120,26 @@ Search.appendIndex(
             "name": "action_database",
             "summary": "",
             "url": "classes/ZController.html#method_action_database"
+        },                {
+            "fqsen": "\\z_adminDashboardModel",
+            "name": "z_adminDashboardModel",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020models.\u0020Models\u0020should\u0020inherit\u0020from\u0020this.",
+            "url": "classes/z-adminDashboardModel.html"
+        },                {
+            "fqsen": "\\z_adminDashboardModel\u003A\u003AgetTableStatus\u0028\u0029",
+            "name": "getTableStatus",
+            "summary": "",
+            "url": "classes/z-adminDashboardModel.html#method_getTableStatus"
+        },                {
+            "fqsen": "\\z_adminDashboardModel\u003A\u003AgetRowStatus\u0028\u0029",
+            "name": "getRowStatus",
+            "summary": "",
+            "url": "classes/z-adminDashboardModel.html#method_getRowStatus"
+        },                {
+            "fqsen": "\\z_adminDashboardModel\u003A\u003AexportToCsv\u0028\u0029",
+            "name": "exportToCsv",
+            "summary": "",
+            "url": "classes/z-adminDashboardModel.html#method_exportToCsv"
         },                {
             "fqsen": "\\z_fileModel",
             "name": "z_fileModel",
@@ -601,6 +216,11 @@ Search.appendIndex(
             "summary": "Updates\u0020the\u0020password\u0020of\u0020an\u0020user",
             "url": "classes/z-loginModel.html#method_updatePassword"
         },                {
+            "fqsen": "\\z_loginModel\u003A\u003AcheckPassword\u0028\u0029",
+            "name": "checkPassword",
+            "summary": "",
+            "url": "classes/z-loginModel.html#method_checkPassword"
+        },                {
             "fqsen": "\\z_loginModel\u003A\u003AnewLoginTry\u0028\u0029",
             "name": "newLoginTry",
             "summary": "Rescords\u0020a\u0020new\u0020login\u0020try\u0020of\u0020a\u0020user",
@@ -675,11 +295,6 @@ Search.appendIndex(
             "name": "add",
             "summary": "Creates\u0020an\u0020user\u0020account",
             "url": "classes/z-userModel.html#method_add"
-        },                {
-            "fqsen": "\\z_userModel\u003A\u003AupdatePassword\u0028\u0029",
-            "name": "updatePassword",
-            "summary": "Sets\u0020the\u0020password\u0020for\u0020a\u0020user",
-            "url": "classes/z-userModel.html#method_updatePassword"
         },                {
             "fqsen": "\\z_userModel\u003A\u003AgetCount\u0028\u0029",
             "name": "getCount",
@@ -920,16 +535,6 @@ Search.appendIndex(
             "name": "user",
             "summary": "",
             "url": "classes/z-framework.html#property_user"
-        },                {
-            "fqsen": "\\z_framework\u003A\u003A\u0024ControllerStack",
-            "name": "ControllerStack",
-            "summary": "",
-            "url": "classes/z-framework.html#property_ControllerStack"
-        },                {
-            "fqsen": "\\z_framework\u003A\u003A\u0024ActionStack",
-            "name": "ActionStack",
-            "summary": "",
-            "url": "classes/z-framework.html#property_ActionStack"
         },                {
             "fqsen": "\\z_framework\u003A\u003A\u0024res",
             "name": "res",
@@ -1441,66 +1046,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/z-db.html#property_connectTimeout"
         },                {
-            "fqsen": "\\passwordHandler",
-            "name": "passwordHandler",
-            "summary": "Password\u0020handling\u0020class",
-            "url": "classes/passwordHandler.html"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AsetCharUniverse\u0028\u0029",
-            "name": "setCharUniverse",
-            "summary": "Sets\u0020a\u0020custom\u0020string\u0020for\u0020pepper\u0020chars.\u0020This\u0020method\u0020allows\u0020to\u0020create\u0020custom\u0020pepper\u0020sets.",
-            "url": "classes/passwordHandler.html#method_setCharUniverse"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AgenerateSalt\u0028\u0029",
-            "name": "generateSalt",
-            "summary": "Generates\u0020a\u0020salt",
-            "url": "classes/passwordHandler.html#method_generateSalt"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AgeneratePepper\u0028\u0029",
-            "name": "generatePepper",
-            "summary": "Generates\u0020pepper\u0020using\u0020the\u0020set\u0020charUniverse",
-            "url": "classes/passwordHandler.html#method_generatePepper"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AhashStr\u0028\u0029",
-            "name": "hashStr",
-            "summary": "Hashes\u0020a\u0020string\u0020with\u0020sha512",
-            "url": "classes/passwordHandler.html#method_hashStr"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AcustomAlg\u0028\u0029",
-            "name": "customAlg",
-            "summary": "Custom\u0020spagetti\u0020logic",
-            "url": "classes/passwordHandler.html#method_customAlg"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AcustomAlgEnc\u0028\u0029",
-            "name": "customAlgEnc",
-            "summary": "Encryption\u0020function\u003A\u0020uses\u0020str\u0020as\u0020key",
-            "url": "classes/passwordHandler.html#method_customAlgEnc"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AprocessStr\u0028\u0029",
-            "name": "processStr",
-            "summary": "Processes\u0020a\u0020password",
-            "url": "classes/passwordHandler.html#method_processStr"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AgenerateCheckOptions\u0028\u0029",
-            "name": "generateCheckOptions",
-            "summary": "Function\u0020to\u0020generate\u0020all\u0020Pepper\u0020options",
-            "url": "classes/passwordHandler.html#method_generateCheckOptions"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AcreatePassword\u0028\u0029",
-            "name": "createPassword",
-            "summary": "Creates\u0020a\u0020password\u0020object\u0020out\u0020of\u0020a\u0020raw\u0020password",
-            "url": "classes/passwordHandler.html#method_createPassword"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003AcheckPassword\u0028\u0029",
-            "name": "checkPassword",
-            "summary": "Checks\u0020if\u0020a\u0020password\u0020belongs\u0020to\u0020a\u0020hashed\u0020version",
-            "url": "classes/passwordHandler.html#method_checkPassword"
-        },                {
-            "fqsen": "\\passwordHandler\u003A\u003A\u0024charUniverse",
-            "name": "charUniverse",
-            "summary": "",
-            "url": "classes/passwordHandler.html#property_charUniverse"
-        },                {
             "fqsen": "\\z_model",
             "name": "z_model",
             "summary": "Base\u0020class\u0020for\u0020all\u0020models.\u0020Models\u0020should\u0020inherit\u0020from\u0020this.",
@@ -1676,21 +1221,6 @@ Search.appendIndex(
             "summary": "Gets\u0020a\u0020cookie",
             "url": "classes/Request.html#method_getCookie"
         },                {
-            "fqsen": "\\Request\u003A\u003AgetControllerStack\u0028\u0029",
-            "name": "getControllerStack",
-            "summary": "Returns\u0020a\u0020list\u0020of\u0020all\u0020visited\u0020controllers",
-            "url": "classes/Request.html#method_getControllerStack"
-        },                {
-            "fqsen": "\\Request\u003A\u003AgetLastController\u0028\u0029",
-            "name": "getLastController",
-            "summary": "Returns\u0020the\u0020last\u0020controller\u0020visited\u0020before\u0020the\u0020current\u0020one",
-            "url": "classes/Request.html#method_getLastController"
-        },                {
-            "fqsen": "\\Request\u003A\u003AgetActionStack\u0028\u0029",
-            "name": "getActionStack",
-            "summary": "Returns\u0020a\u0020list\u0020of\u0020all\u0020visited\u0020actions",
-            "url": "classes/Request.html#method_getActionStack"
-        },                {
             "fqsen": "\\Request\u003A\u003AgetCurrentURL\u0028\u0029",
             "name": "getCurrentURL",
             "summary": "Returns\u0020the\u0020current\u0020URL",
@@ -1706,20 +1236,10 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020app\u0020domain\u0020as\u0020specified\u0020in\u0020the\u0020configuration\u0020\u0028\u0060host\u003D\u0060\u0029",
             "url": "classes/Request.html#method_getDomain"
         },                {
-            "fqsen": "\\Request\u003A\u003AgetPreAction\u0028\u0029",
-            "name": "getPreAction",
-            "summary": "Returns\u0020the\u0020last\u0020action\u0020visited\u0020before\u0020the\u0020current\u0020one",
-            "url": "classes/Request.html#method_getPreAction"
-        },                {
             "fqsen": "\\Request\u003A\u003AgetParameters\u0028\u0029",
             "name": "getParameters",
             "summary": "Gets\u0020the\u0020URL\u0020parameters\u0020\u0028including\u0020the\u0020leading\u0020controller\u0020and\u0020action\u0029\u0020specified\u0020by\u0020the\u0020path.",
             "url": "classes/Request.html#method_getParameters"
-        },                {
-            "fqsen": "\\Request\u003A\u003AgetReCaptchaV3Score\u0028\u0029",
-            "name": "getReCaptchaV3Score",
-            "summary": "A\u0020backend\u0020implementation\u0020of\u0020the\u0020Google\u0020reCAPTCHA\u0020v3\u0020API",
-            "url": "classes/Request.html#method_getReCaptchaV3Score"
         },                {
             "fqsen": "\\Request\u003A\u003AgetReadableParameter\u0028\u0029",
             "name": "getReadableParameter",
@@ -1731,20 +1251,15 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020user\u0020who\u0020made\u0020the\u0020request.",
             "url": "classes/Request.html#method_getRequestingUser"
         },                {
-            "fqsen": "\\Request\u003A\u003AgetConfigFile\u0028\u0029",
-            "name": "getConfigFile",
-            "summary": "Gets\u0020the\u0020relative\u0020path\u0020to\u0020the\u0020config\u0020file\u0020of\u0020the\u0020framework",
-            "url": "classes/Request.html#method_getConfigFile"
-        },                {
             "fqsen": "\\Request\u003A\u003AgetRootFolder\u0028\u0029",
             "name": "getRootFolder",
             "summary": "Gets\u0020the\u0020path\u0020to\u0020the\u0020root\u0020folder\u0020of\u0020the\u0020project.",
             "url": "classes/Request.html#method_getRootFolder"
         },                {
-            "fqsen": "\\Request\u003A\u003AupdateErrorHandling\u0028\u0029",
-            "name": "updateErrorHandling",
-            "summary": "Updates\u0020the\u0020error\u0020handling\u0020state.",
-            "url": "classes/Request.html#method_updateErrorHandling"
+            "fqsen": "\\Request\u003A\u003AcheckSuperPermission\u0028\u0029",
+            "name": "checkSuperPermission",
+            "summary": "",
+            "url": "classes/Request.html#method_checkSuperPermission"
         },                {
             "fqsen": "\\Request\u003A\u003AcheckPermission\u0028\u0029",
             "name": "checkPermission",
@@ -1981,36 +1496,6 @@ Search.appendIndex(
             "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
             "url": "classes/Response.html#method_render"
         },                {
-            "fqsen": "\\Response\u003A\u003AminifyHTML\u0028\u0029",
-            "name": "minifyHTML",
-            "summary": "Minifies\u0020HTML",
-            "url": "classes/Response.html#method_minifyHTML"
-        },                {
-            "fqsen": "\\Response\u003A\u003Aparse_opt_lang\u0028\u0029",
-            "name": "parse_opt_lang",
-            "summary": "Replaces\u0020tags\u0020with\u0020data",
-            "url": "classes/Response.html#method_parse_opt_lang"
-        },                {
-            "fqsen": "\\Response\u003A\u003Aparse_i18n\u0028\u0029",
-            "name": "parse_i18n",
-            "summary": "Parses\u0020the\u0020i18n\u0020data\u0020into\u0020language\u0020arrays",
-            "url": "classes/Response.html#method_parse_i18n"
-        },                {
-            "fqsen": "\\Response\u003A\u003ArenderPDF\u0028\u0029",
-            "name": "renderPDF",
-            "summary": "Renders\u0020a\u0020PDF\u0020file",
-            "url": "classes/Response.html#method_renderPDF"
-        },                {
-            "fqsen": "\\Response\u003A\u003Asend\u0028\u0029",
-            "name": "send",
-            "summary": "Sends\u0020simple\u0020text.\u0020Use\u0020only\u0020for\u0020debugging\u0020purposes\u0021",
-            "url": "classes/Response.html#method_send"
-        },                {
-            "fqsen": "\\Response\u003A\u003AshowFile\u0028\u0029",
-            "name": "showFile",
-            "summary": "Sends\u0020a\u0020file\u0020to\u0020the\u0020user\u0020and\u0020forces\u0020the\u0020browser\u0020to\u0020display\u0020the\u0020file\u0020if\u0020possible.\u0020Useful\u0020for\u0020sending\u0020files\u0020the\u0020user\u0020does\u0020not\u0020have\u0020access\u0020to.",
-            "url": "classes/Response.html#method_showFile"
-        },                {
             "fqsen": "\\Response\u003A\u003Areroute\u0028\u0029",
             "name": "reroute",
             "summary": "Reroutes\u0020to\u0020another\u0020action",
@@ -2246,15 +1731,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/User.html#method_anonymousRequest"
         },                {
-            "fqsen": "\\User\u003A\u003AchooseNonLoginLanguage\u0028\u0029",
-            "name": "chooseNonLoginLanguage",
-            "summary": "",
-            "url": "classes/User.html#method_chooseNonLoginLanguage"
-        },                {
             "fqsen": "\\User\u003A\u003AcheckPermission\u0028\u0029",
             "name": "checkPermission",
             "summary": "Checks\u0020if\u0020a\u0020user\u0020has\u0020a\u0020given\u0020permission",
             "url": "classes/User.html#method_checkPermission"
+        },                {
+            "fqsen": "\\User\u003A\u003AcheckSuperPermission\u0028\u0029",
+            "name": "checkSuperPermission",
+            "summary": "",
+            "url": "classes/User.html#method_checkSuperPermission"
+        },                {
+            "fqsen": "\\User\u003A\u003AcheckPermissionOf\u0028\u0029",
+            "name": "checkPermissionOf",
+            "summary": "",
+            "url": "classes/User.html#method_checkPermissionOf"
         },                {
             "fqsen": "\\User\u003A\u003AgetSessionToken\u0028\u0029",
             "name": "getSessionToken",
@@ -2275,11 +1765,6 @@ Search.appendIndex(
             "name": "execUserId",
             "summary": "",
             "url": "classes/User.html#property_execUserId"
-        },                {
-            "fqsen": "\\User\u003A\u003A\u0024language",
-            "name": "language",
-            "summary": "",
-            "url": "classes/User.html#property_language"
         },                {
             "fqsen": "\\User\u003A\u003A\u0024fields",
             "name": "fields",
@@ -2725,6 +2210,11 @@ Search.appendIndex(
             "name": "getUploadedFiles",
             "summary": "",
             "url": "classes/FormModel.html#method_getUploadedFiles"
+        },                {
+            "fqsen": "\\FormModel\u003A\u003AgetMediaFiles\u0028\u0029",
+            "name": "getMediaFiles",
+            "summary": "",
+            "url": "classes/FormModel.html#method_getMediaFiles"
         },                {
             "fqsen": "\\FormModel\u003A\u003AuploadFile\u0028\u0029",
             "name": "uploadFile",

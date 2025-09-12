@@ -111,20 +111,16 @@
 
 <dl class="phpdocumentor-table-of-contents">
     
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdminerVersionNoVerify.html"><abbr title="\AdminerVersionNoVerify">AdminerVersionNoVerify</abbr></a></dt>
-        <dd>Disable version checker</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdminerPlugin.html"><abbr title="\AdminerPlugin">AdminerPlugin</abbr></a></dt>
-        <dd>Adminer customization allowing usage of plugins</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ErrorController.html"><abbr title="\ErrorController">ErrorController</abbr></a></dt>
         <dd>The error controller handles all bad requests. Other controllers can redirect to this one.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/IndexController.html"><abbr title="\IndexController">IndexController</abbr></a></dt>
         <dd>The index controller handles by default all requests without a specified controller</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LoginController.html"><abbr title="\LoginController">LoginController</abbr></a></dt>
         <dd>The Login controller handles all login/logout stuff</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SitemapController.html"><abbr title="\SitemapController">SitemapController</abbr></a></dt>
-        <dd>The sitemap controller generates sitemaps and serves them to the client</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZController.html"><abbr title="\ZController">ZController</abbr></a></dt>
         <dd>The ZController contains actions for the admin dashboard / panel</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-adminDashboardModel.html"><abbr title="\z_adminDashboardModel">z_adminDashboardModel</abbr></a></dt>
+        <dd>Base class for all models. Models should inherit from this.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-fileModel.html"><abbr title="\z_fileModel">z_fileModel</abbr></a></dt>
         <dd>The file model handles dynamic files</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-generalModel.html"><abbr title="\z_generalModel">z_generalModel</abbr></a></dt>
@@ -141,8 +137,6 @@
         <dd>Base class for all controllers. Controllers should inherit from this class.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-db.html"><abbr title="\z_db">z_db</abbr></a></dt>
         <dd>Proxy for all database access. Also holds utility functions</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/passwordHandler.html"><abbr title="\passwordHandler">passwordHandler</abbr></a></dt>
-        <dd>Password handling class</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-model.html"><abbr title="\z_model">z_model</abbr></a></dt>
         <dd>Base class for all models. Models should inherit from this.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Request.html"><abbr title="\Request">Request</abbr></a></dt>
@@ -441,13 +435,6 @@
 <dd>Value for a succeeded upload</dd>
 
                         <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_adminer_object">adminer_object()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_getCaller">getCaller()</a>
     <span>
                         &nbsp;: <abbr title="\any">any</abbr>    </span>
@@ -1583,34 +1570,6 @@
             <a href="namespaces/default.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_adminer_object">
-        adminer_object()
-        <a href="namespaces/default.html#function_adminer_object" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/adminer/index.php"><a href="files/src-adminer-index.html"><abbr title="src/adminer/index.php">index.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">3</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">adminer_object</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_getCaller">
         getCaller()
         <a href="namespaces/default.html#function_getCaller" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2005,7 +1964,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/layout_essentials.php"><a href="files/src-layout-essentials.html"><abbr title="src/layout_essentials.php">layout_essentials.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
