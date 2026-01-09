@@ -1,6 +1,56 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\ZubZet\\Framework\\Console\\ActionDiscovery",
+            "name": "ActionDiscovery",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-ActionDiscovery.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\Application",
+            "name": "Application",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-Application.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\Application\u003A\u003Abootstrap\u0028\u0029",
+            "name": "bootstrap",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-Application.html#method_bootstrap"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand",
+            "name": "RunCommand",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-RunCommand.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-RunCommand.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-RunCommand.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-RunCommand.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand\u003A\u003A\u0024booter",
+            "name": "booter",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-RunCommand.html#property_booter"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\FunctionConflictResolution",
+            "name": "FunctionConflictResolution",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Core-FunctionConflictResolution.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\FunctionConflictResolution\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Core-FunctionConflictResolution.html#method_resolve"
+        },                {
             "fqsen": "\\ErrorController",
             "name": "ErrorController",
             "summary": "The\u0020error\u0020controller\u0020handles\u0020all\u0020bad\u0020requests.\u0020Other\u0020controllers\u0020can\u0020redirect\u0020to\u0020this\u0020one.",
@@ -431,25 +481,30 @@ Search.appendIndex(
             "summary": "Used\u0020to\u0020parse\u0020the\u0020URL\u0020into\u0020parts\u0020and\u0020parameters\nFormat\u003A\u0020root\/class\/method\/parameter\/parameter\/.",
             "url": "classes/z-framework.html#method_parseUrl"
         },                {
-            "fqsen": "\\z_framework\u003A\u003AhandleRequest\u0028\u0029",
-            "name": "handleRequest",
+            "fqsen": "\\z_framework\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
             "summary": "",
-            "url": "classes/z-framework.html#method_handleRequest"
+            "url": "classes/z-framework.html#method_execute"
         },                {
             "fqsen": "\\z_framework\u003A\u003AloadRoutes\u0028\u0029",
             "name": "loadRoutes",
             "summary": "",
             "url": "classes/z-framework.html#method_loadRoutes"
         },                {
-            "fqsen": "\\z_framework\u003A\u003Aexecute\u0028\u0029",
-            "name": "execute",
+            "fqsen": "\\z_framework\u003A\u003AhandleRequest\u0028\u0029",
+            "name": "handleRequest",
             "summary": "Executes\u0020the\u0020requested\u0020action",
-            "url": "classes/z-framework.html#method_execute"
+            "url": "classes/z-framework.html#method_handleRequest"
         },                {
             "fqsen": "\\z_framework\u003A\u003AexecuteControllerAction\u0028\u0029",
             "name": "executeControllerAction",
             "summary": "",
             "url": "classes/z-framework.html#method_executeControllerAction"
+        },                {
+            "fqsen": "\\z_framework\u003A\u003Areroute\u0028\u0029",
+            "name": "reroute",
+            "summary": "Tries\u0020to\u0020reroute\u0020the\u0020request\u0020using\u0020Slim\u0020first,\u0020if\u0020the\u0020route\u0020does\u0020not\u0020exist,\u0020it\u0020falls\u0020back\u0020to\u0020the\u0020ZubZet\u0020framework.",
+            "url": "classes/z-framework.html#method_reroute"
         },                {
             "fqsen": "\\z_framework\u003A\u003AexecutePath\u0028\u0029",
             "name": "executePath",
@@ -546,10 +601,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/z-framework.html#property_req"
         },                {
+            "fqsen": "\\z_framework\u003A\u003A\u0024slimApplication",
+            "name": "slimApplication",
+            "summary": "",
+            "url": "classes/z-framework.html#property_slimApplication"
+        },                {
             "fqsen": "\\z_framework\u003A\u003A\u0024action_pattern_replacement",
             "name": "action_pattern_replacement",
             "summary": "",
             "url": "classes/z-framework.html#property_action_pattern_replacement"
+        },                {
+            "fqsen": "\\z_framework\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/z-framework.html#property_instance"
         },                {
             "fqsen": "\\z_framework\u003A\u003A\u0024modelCache",
             "name": "modelCache",
@@ -686,6 +751,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_group"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformStoredGroupsMatchingPrefix\u0028\u0029",
+            "name": "performStoredGroupsMatchingPrefix",
+            "summary": "Performs\u0020middleware\u0020matching\u0020for\u0020stored\u0020groups\u0020based\u0020on\u0020the\u0020current\u0020URL\u0020parts.",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#method_performStoredGroupsMatchingPrefix"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
             "name": "performGroup",
             "summary": "Creates\u0020a\u0020route\u0020group.",
@@ -715,6 +785,11 @@ Search.appendIndex(
             "name": "prefixStack",
             "summary": "Stack\u0020to\u0020manage\u0020group\u0020prefixes.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#property_prefixStack"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024storedPrefixedGroups",
+            "name": "storedPrefixedGroups",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#property_storedPrefixedGroups"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024isCancelled",
             "name": "isCancelled",
@@ -1346,6 +1421,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/FormResult.html#property_fields"
         },                {
+            "fqsen": "\\FormResult\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/FormResult.html#property_name"
+        },                {
             "fqsen": "\\FormField",
             "name": "FormField",
             "summary": "Represents\u0020an\u0020input\u0020field\u0020of\u0020a\u0020form\u0020on\u0020the\u0020server\u0020side",
@@ -1831,6 +1911,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_fallback"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_command\u0028\u0029",
+            "name": "action_command",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_command"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_parameters\u0028\u0029",
             "name": "action_parameters",
             "summary": "",
@@ -2121,6 +2206,51 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/FrontendController.html#method_action_login"
         },                {
+            "fqsen": "\\HelperController",
+            "name": "HelperController",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020controllers.\u0020Controllers\u0020should\u0020inherit\u0020from\u0020this\u0020class.",
+            "url": "classes/HelperController.html"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_zubzet\u0028\u0029",
+            "name": "action_zubzet",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_zubzet"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_model\u0028\u0029",
+            "name": "action_model",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_model"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_request\u0028\u0029",
+            "name": "action_request",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_request"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_response\u0028\u0029",
+            "name": "action_response",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_response"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_config\u0028\u0029",
+            "name": "action_config",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_config"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_user\u0028\u0029",
+            "name": "action_user",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_user"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_db\u0028\u0029",
+            "name": "action_db",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_db"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_view\u0028\u0029",
+            "name": "action_view",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_view"
+        },                {
             "fqsen": "\\RenderingController",
             "name": "RenderingController",
             "summary": "Base\u0020class\u0020for\u0020all\u0020controllers.\u0020Controllers\u0020should\u0020inherit\u0020from\u0020this\u0020class.",
@@ -2135,6 +2265,26 @@ Search.appendIndex(
             "name": "action_mailuser",
             "summary": "",
             "url": "classes/RenderingController.html#method_action_mailuser"
+        },                {
+            "fqsen": "\\RouteAcceptController",
+            "name": "RouteAcceptController",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020controllers.\u0020Controllers\u0020should\u0020inherit\u0020from\u0020this\u0020class.",
+            "url": "classes/RouteAcceptController.html"
+        },                {
+            "fqsen": "\\RouteAcceptController\u003A\u003Aaction_check\u0028\u0029",
+            "name": "action_check",
+            "summary": "",
+            "url": "classes/RouteAcceptController.html#method_action_check"
+        },                {
+            "fqsen": "\\RouteDenyController",
+            "name": "RouteDenyController",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020controllers.\u0020Controllers\u0020should\u0020inherit\u0020from\u0020this\u0020class.",
+            "url": "classes/RouteDenyController.html"
+        },                {
+            "fqsen": "\\RouteDenyController\u003A\u003Aaction_check\u0028\u0029",
+            "name": "action_check",
+            "summary": "",
+            "url": "classes/RouteDenyController.html#method_action_check"
         },                {
             "fqsen": "\\db\u0028\u0029",
             "name": "db",
@@ -2220,6 +2370,16 @@ Search.appendIndex(
             "name": "uploadFile",
             "summary": "",
             "url": "classes/FormModel.html#method_uploadFile"
+        },                {
+            "fqsen": "\\HelperModel",
+            "name": "HelperModel",
+            "summary": "Base\u0020class\u0020for\u0020all\u0020models.\u0020Models\u0020should\u0020inherit\u0020from\u0020this.",
+            "url": "classes/HelperModel.html"
+        },                {
+            "fqsen": "\\HelperModel\u003A\u003AtestCall\u0028\u0029",
+            "name": "testCall",
+            "summary": "",
+            "url": "classes/HelperModel.html#method_testCall"
         },                {
             "fqsen": "\\QueryBuilderModel",
             "name": "QueryBuilderModel",
@@ -2311,15 +2471,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RequestModel.html#method_getUsers"
         },                {
+            "fqsen": "\\model\u0028\u0029",
+            "name": "model",
+            "summary": "",
+            "url": "namespaces/default.html#function_model"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing",
-            "name": "Routing",
+            "fqsen": "\\ZubZet\\Framework\\Console",
+            "name": "Console",
             "summary": "",
-            "url": "namespaces/zubzet-framework-routing.html"
+            "url": "namespaces/zubzet-framework-console.html"
         },                {
             "fqsen": "\\ZubZet\\Framework",
             "name": "Framework",
@@ -2330,5 +2495,15 @@ Search.appendIndex(
             "name": "ZubZet",
             "summary": "",
             "url": "namespaces/zubzet.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core",
+            "name": "Core",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-core.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing",
+            "name": "Routing",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-routing.html"
         }            ]
 );
