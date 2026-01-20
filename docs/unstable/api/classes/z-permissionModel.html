@@ -88,7 +88,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    QueryBuilderModel
+    z_permissionModel
 
         <span class="phpdocumentor-element__extends">
         extends <a href="classes/z-model.html"><abbr title="\z_model">z_model</abbr></a>
@@ -105,9 +105,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/default/models/z_permissionModel.php"><a href="files/src-default-models-z-permissionmodel.html"><abbr title="src/default/models/z_permissionModel.php">z_permissionModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3</span>
+    <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
@@ -200,13 +200,6 @@
 <dd>Create a new UpdateQuery instance for the CakePHP\Database Connection.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_deleteLanguage">deleteLanguage()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/z-model.html#method_exec">exec()</a>
     <span>
                         &nbsp;: <a href="classes/z-db.html"><abbr title="\z_db">z_db</abbr></a>    </span>
@@ -256,6 +249,20 @@
 <dd>Returns the result of the last query.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/z-permissionModel.html#method_getRolesByAccessToAll">getRolesByAccessToAll()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/z-permissionModel.html#method_getRolesByAccessToAnyOf">getRolesByAccessToAnyOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/z-model.html#method_getTableWhere">getTableWhere()</a>
     <span>
                         &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
@@ -263,18 +270,25 @@
 <dd>Selects a full table or specified fields, filtered with an additional where statement. It returns the result as a two-dimensional array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/z-permissionModel.html#method_getUsersByAccessToAll">getUsersByAccessToAll()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/z-permissionModel.html#method_getUsersByAccessToAnyOf">getUsersByAccessToAnyOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/z-model.html#method_heartbeat">heartbeat()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd>Runs a very lightweight query to keep the connection alive.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_insertLanguage">insertLanguage()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/z-model.html#method_logAction">logAction()</a>
@@ -304,69 +318,6 @@
 </dt>
 <dd>Returns one line of the last query.</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectLanguageById">selectLanguageById()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserExtended">selectUserExtended()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserIn">selectUserIn()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserJoin">selectUserJoin()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserLike">selectUserLike()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserLimit">selectUserLimit()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserLT">selectUserLT()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_selectUserORAND">selectUserORAND()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/QueryBuilderModel.html#method_updateLanguage">updateLanguage()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
         </dl>
 
 
@@ -377,7 +328,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/QueryBuilderModel.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/z-permissionModel.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -486,7 +437,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/QueryBuilderModel.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/z-permissionModel.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -893,39 +844,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_deleteLanguage">
-        deleteLanguage()
-        <a href="classes/QueryBuilderModel.html#method_deleteLanguage" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">113</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">deleteLanguage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_exec">
         exec()
         <a href="classes/z-model.html#method_exec" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1231,6 +1149,94 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getRolesByAccessToAll">
+        getRolesByAccessToAll()
+        <a href="classes/z-permissionModel.html#method_getRolesByAccessToAll" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/default/models/z_permissionModel.php"><a href="files/src-default-models-z-permissionmodel.html"><abbr title="src/default/models/z_permissionModel.php">z_permissionModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">451</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getRolesByAccessToAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$extractedPermissionsGroup</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$extractedPermissionsGroup</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRolesByAccessToAnyOf">
+        getRolesByAccessToAnyOf()
+        <a href="classes/z-permissionModel.html#method_getRolesByAccessToAnyOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/default/models/z_permissionModel.php"><a href="files/src-default-models-z-permissionmodel.html"><abbr title="src/default/models/z_permissionModel.php">z_permissionModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">423</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getRolesByAccessToAnyOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$extractedPermissions</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$extractedPermissions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getTableWhere">
         getTableWhere()
         <a href="classes/z-model.html#method_getTableWhere" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1296,6 +1302,94 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getUsersByAccessToAll">
+        getUsersByAccessToAll()
+        <a href="classes/z-permissionModel.html#method_getUsersByAccessToAll" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/default/models/z_permissionModel.php"><a href="files/src-default-models-z-permissionmodel.html"><abbr title="src/default/models/z_permissionModel.php">z_permissionModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">486</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getUsersByAccessToAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$extractedPermissionsGroup</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$extractedPermissionsGroup</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getUsersByAccessToAnyOf">
+        getUsersByAccessToAnyOf()
+        <a href="classes/z-permissionModel.html#method_getUsersByAccessToAnyOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/default/models/z_permissionModel.php"><a href="files/src-default-models-z-permissionmodel.html"><abbr title="src/default/models/z_permissionModel.php">z_permissionModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">553</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getUsersByAccessToAnyOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$extractedPermissions</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$extractedPermissions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_heartbeat">
         heartbeat()
         <a href="classes/z-model.html#method_heartbeat" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1331,39 +1425,6 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_insertLanguage">
-        insertLanguage()
-        <a href="classes/QueryBuilderModel.html#method_insertLanguage" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">80</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">insertLanguage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -1568,314 +1629,6 @@
 
     
 </article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectLanguageById">
-        selectLanguageById()
-        <a href="classes/QueryBuilderModel.html#method_selectLanguageById" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">73</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectLanguageById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserExtended">
-        selectUserExtended()
-        <a href="classes/QueryBuilderModel.html#method_selectUserExtended" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">5</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserExtended</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserIn">
-        selectUserIn()
-        <a href="classes/QueryBuilderModel.html#method_selectUserIn" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">46</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserIn</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserJoin">
-        selectUserJoin()
-        <a href="classes/QueryBuilderModel.html#method_selectUserJoin" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">13</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserJoin</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserLike">
-        selectUserLike()
-        <a href="classes/QueryBuilderModel.html#method_selectUserLike" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">32</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserLike</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserLimit">
-        selectUserLimit()
-        <a href="classes/QueryBuilderModel.html#method_selectUserLimit" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">66</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserLimit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserLT">
-        selectUserLT()
-        <a href="classes/QueryBuilderModel.html#method_selectUserLT" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">39</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserLT</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_selectUserORAND">
-        selectUserORAND()
-        <a href="classes/QueryBuilderModel.html#method_selectUserORAND" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">52</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">selectUserORAND</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_updateLanguage">
-        updateLanguage()
-        <a href="classes/QueryBuilderModel.html#method_updateLanguage" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Models/QueryBuilderModel.php"><a href="files/tests-e2e-app-models-querybuildermodel.html"><abbr title="tests/e2e/app/Models/QueryBuilderModel.php">QueryBuilderModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">102</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">updateLanguage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
             </section>
 
         
@@ -1954,7 +1707,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/QueryBuilderModel.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/z-permissionModel.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
