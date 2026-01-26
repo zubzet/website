@@ -916,6 +916,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1887,73 +1915,73 @@ It is based on <a href="https://book.cakephp.org/4/en/orm/query-builder.html">Ca
 <p>Inside a <a href="/docs/core-features/models">model</a>, you can now use helper methods like <code>select</code>, <code>update</code>, <code>delete</code>, and <code>insert</code>.
 These methods internally delegate to the CakePHP Query Builder.</p>
 <p>Example methods inside a model:</p>
-<div class="highlight"><pre><span></span><code><span class="x">public function select($fields = [], $table = [], array $types = []) {</span>
+<div class="highlight"><pre><span></span><code><span class="x">public function dbSelect($fields = [], $table = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;selectQuery($fields, $table, $types);</span>
 <span class="x">}</span>
 
-<span class="x">public function update($table = null, array $values = [], array $conditions = [], array $types = []) {</span>
+<span class="x">public function dbUpdate($table = null, array $values = [], array $conditions = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;updateQuery($table, $values, $conditions, $types);</span>
 <span class="x">}</span>
 
-<span class="x">public function delete(string $table, array $conditions = [], array $types = []) {</span>
+<span class="x">public function dbDelete(string $table, array $conditions = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;deleteQuery($table, $conditions, $types);</span>
 <span class="x">}</span>
 
-<span class="x">public function insert(string $table = null, array $values = [], array $types = []) {</span>
+<span class="x">public function dbInsert(string $table = null, array $values = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;insertQuery($table, $values, $types);</span>
 <span class="x">}</span>
 
 <span class="x">public function getQueryBuilder() {</span>
-<span class="x">    return $this-&gt;z_db-&gt;cakePHPDatabase;</span>
+<span class="x">    return db()-&gt;cakePHPDatabase;</span>
 <span class="x">}</span>
 </code></pre></div>
 <hr />
 <h2 id="executing-queries">Executing Queries<a class="headerlink" href="#executing-queries" title="Permanent link">&para;</a></h2>
 <p>Once you have built a query, you can execute it with the <code>exec</code> method:
-<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;select(...);</span>
+<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbSelect(...);</span>
 
 <span class="x">$this-&gt;exec($query);</span>
 </code></pre></div></p>
 <hr />
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="select-example">Select Example<a class="headerlink" href="#select-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;select([&#39;id&#39;, &#39;name&#39;], &#39;users&#39;) // Build a SELECT query on table &quot;users&quot;, fetching only the columns &quot;id&quot; and &quot;name&quot;</span>
-<span class="x">              -&gt;where([&#39;id&#39; =&gt; 42]);            // Add a WHERE condition: only rows where &quot;id&quot; equals 42</span>
+<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbSelect([&#39;id&#39;, &#39;name&#39;], &#39;users&#39;) // Build a SELECT query on table &quot;users&quot;, fetching only the columns &quot;id&quot; and &quot;name&quot;</span>
+<span class="x">              -&gt;where([&#39;id&#39; =&gt; 42]); // Add a WHERE condition: only rows where &quot;id&quot; equals 42</span>
 
-<span class="x">$result = $this-&gt;exec($query);                  // Execute the query and return the result</span>
+<span class="x">$result = $this-&gt;exec($query); // Execute the query and return the result</span>
 </code></pre></div>
 <p>This will execute a query equivalent to:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 </code></pre></div>
 <hr />
 <h3 id="insert-example">Insert Example<a class="headerlink" href="#insert-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;insert(&#39;users&#39;, [               // Build an INSERT query for the &quot;users&quot; table</span>
-<span class="x">    &#39;name&#39;  =&gt; &#39;John Doe&#39;,                      // Set column &quot;name&quot; to &quot;John Doe&quot;</span>
-<span class="x">    &#39;email&#39; =&gt; &#39;john@example.com&#39;               // Set column &quot;email&quot; to &quot;john@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbInsert(&#39;users&#39;, [ // Build an INSERT query for the &quot;users&quot; table</span>
+<span class="x">    &#39;name&#39;  =&gt; &#39;John Doe&#39;, // Set column &quot;name&quot; to &quot;John Doe&quot;</span>
+<span class="x">    &#39;email&#39; =&gt; &#39;john@example.com&#39; // Set column &quot;email&quot; to &quot;john@example.com&quot;</span>
 <span class="x">]);</span>
 
-<span class="x">$this-&gt;exec($query);                            // Execute the query to insert the new record</span>
+<span class="x">$this-&gt;exec($query); // Execute the query to insert the new record</span>
 </code></pre></div>
 <p>Equivalent SQL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;john@example.com&#39;</span><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h3 id="update-example">Update Example<a class="headerlink" href="#update-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;update(&#39;users&#39;, [               // Build an UPDATE query on the &quot;users&quot; table</span>
-<span class="x">    &#39;email&#39; =&gt; &#39;new@example.com&#39;                // Set column &quot;email&quot; to &quot;new@example.com&quot;</span>
-<span class="x">])-&gt;where([&#39;id&#39; =&gt; 42]);                        // Add WHERE condition: only update the row where &quot;id&quot; equals 42</span>
+<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbUpdate(&#39;users&#39;, [ // Build an UPDATE query on the &quot;users&quot; table</span>
+<span class="x">    &#39;email&#39; =&gt; &#39;new@example.com&#39; // Set column &quot;email&quot; to &quot;new@example.com&quot;</span>
+<span class="x">])-&gt;where([&#39;id&#39; =&gt; 42]); // Add WHERE condition: only update the row where &quot;id&quot; equals 42</span>
 
-<span class="x">$this-&gt;exec($query);                            // Execute the query to apply the update</span>
+<span class="x">$this-&gt;exec($query); // Execute the query to apply the update</span>
 </code></pre></div>
 <p>Equivalent SQL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;new@example.com&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 </code></pre></div>
 <hr />
 <h3 id="delete-example">Delete Example<a class="headerlink" href="#delete-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;delete(&quot;users&quot;)                 // Build a DELETE query on the &quot;users&quot; table</span>
-<span class="x">            -&gt;where([&quot;id&quot; =&gt; 42]);              // Add WHERE condition: only delete the row where &quot;id&quot; equals 42</span>
+<div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbDelete(&quot;users&quot;) // Build a DELETE query on the &quot;users&quot; table</span>
+<span class="x">            -&gt;where([&quot;id&quot; =&gt; 42]); // Add WHERE condition: only delete the row where &quot;id&quot; equals 42</span>
 
-<span class="x">$this-&gt;exec($query);                            // Execute the query to remove the record</span>
+<span class="x">$this-&gt;exec($query); // Execute the query to remove the record</span>
 </code></pre></div>
 <p>Equivalent SQL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
