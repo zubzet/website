@@ -12,7 +12,7 @@
         <meta name="author" content="Alexander Zierhut">
       
       
-        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/configuration/">
+        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/access-control/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>The Booter Settings - ZubZet</title>
+        <title>Access Control - ZubZet</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-booter-settings" class="md-skip">
+        <a href="#access-control" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Booter Settings
+              Access Control
             
           </span>
         </div>
@@ -811,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../configuration" class="md-nav__link">
         
   
   
@@ -1201,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access-control" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   
@@ -2055,57 +2055,234 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-this" class="md-nav__link">
+  <a href="#user-object" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is this?
+        User Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Retrieval
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#loading-a-user-from-database-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to use it
+        Loading a User from Database Data
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#what-do-you-actually-put-in-here" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What do you actually put in here?
+        Creating a User
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#updating-user-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Updating User Data
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        Removing a User
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-based-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-Based Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-retrieval-and-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Retrieval and Refresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-data-utility-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Data &amp; Utility Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-creation-and-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Creation and Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-and-removing-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating and Removing Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Data Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-permission-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Permission Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refreshing-role-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refreshing Role Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2126,7 +2303,7 @@
 
 
   
-    <a href="https://github.com/zubzet/framework/docs/core-features/configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/zubzet/framework/docs/core-features/access-control.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2134,28 +2311,360 @@
   
 
 
-<h1 id="the-booter-settings">The Booter Settings<a class="headerlink" href="#the-booter-settings" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
-<p>The booter settings are a way of getting your most basic settings. If you have something like the uploads folder or the database connection, that might be changed by a customer/admin after finishing this project, those values can be stored under your <code>z_config folder</code> as a key of <code>z_settings.ini</code>.</p>
-<h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
-<p>If you want to use another key, simply create a new key in your <code>z_settings.ini</code>. To recall the value use <code>$res-&gt;getBooterSettings("key")</code>. If you don't pass a key, the whole array of values will be returned.</p>
-<h2 id="what-do-you-actually-put-in-here">What do you actually put in here?<a class="headerlink" href="#what-do-you-actually-put-in-here" title="Permanent link">&para;</a></h2>
+<h1 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h1>
+<p>ZubZet now includes significantly enhanced <strong>access control and permission capabilities</strong>.
+The system is built to provide a <strong>flexible and extensible authorization workflow</strong>, improved <strong>developer ergonomics</strong>, and full support for <strong>user-based and role-based permissions</strong>.</p>
+<p>At its core, the access control system introduces two primary domain objects: <strong>User</strong> and <strong>Role</strong>.
+Permissions can be assigned directly to users or indirectly through roles. All permission checks automatically resolve the <strong>combined permission set</strong>.</p>
+<hr />
+<h2 id="user-object">User Object<a class="headerlink" href="#user-object" title="Permanent link">&para;</a></h2>
+<p>The <code>User</code> object represents an application user and exposes a comprehensive API for retrieval, lifecycle management, and permission handling.</p>
+<h3 id="user-retrieval">User Retrieval<a class="headerlink" href="#user-retrieval" title="Permanent link">&para;</a></h3>
+<p>All retrieval methods are <strong>public static</strong> and return fully hydrated <code>User</code> objects.</p>
 <ul>
-<li>Database connection details</li>
-<li>Connections to other external tools like a Mailer, Storage or Api keys.</li>
-<li>Basic Framework settings</li>
-</ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="x">public function action_chatgpt(Request $req, Response $res) {</span>
-<span class="x">    $chatgptApiKey = $res-&gt;getBooterSettings(&quot;chatgpt_api_key&quot;);</span>
-
-<span class="x">    /* remaining code */</span>
-
-<span class="x">    return $res-&gt;render(&quot;admin/chatgpt.php&quot;);</span>
-<span class="x">}</span>
+<li>
+<p>Returns all users assigned to the given role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byRole(Role $role): array</span>
 </code></pre></div>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>This helps manage credentials and settings more easily, while keeping sensitive data separate from everything else.</p>
+</li>
+<li>
+<p>Returns a single user by email address or <code>null</code> if no user exists.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byEmail(string $email): ?User</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users that were <strong>not verified up to the given date</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byNotVerified(DateTime $since): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users that have <strong>all</strong> of the specified permissions.
+  This includes <strong>user-based permissions and role-based permissions</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byAccessToAll(string ...$permissions): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users that have <strong>at least one</strong> of the specified permissions.
+  This includes <strong>user-based permissions and role-based permissions</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byAccessToAnyOf(string ...$permissions): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::all(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns a user by its ID or <code>null</code> if not found.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byId(int|string $id): ?User</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users matching the given IDs.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byIds(int ...$ids): array</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="loading-a-user-from-database-data">Loading a User from Database Data<a class="headerlink" href="#loading-a-user-from-database-data" title="Permanent link">&para;</a></h3>
+<p>If a user instance needs to be created from an existing database row, the object can be hydrated manually.</p>
+<ul>
+<li>
+<p>Loads raw database data into a user object.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user = (new User())-&gt;loadObject(array $data);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="creating-a-user">Creating a User<a class="headerlink" href="#creating-a-user" title="Permanent link">&para;</a></h3>
+<p>Users can be created through the static <code>add</code> method.</p>
+<ul>
+<li>
+<p>Creates a new user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::add(?string $email, string $password, ?DateTime $verified = null);</span>
+</code></pre></div>
+</li>
+</ul>
+<p>If no verification date is provided, the user is created as <strong>unverified</strong>.</p>
+<hr />
+<h3 id="updating-user-data">Updating User Data<a class="headerlink" href="#updating-user-data" title="Permanent link">&para;</a></h3>
+<p>User attributes can be updated directly on the instance.</p>
+<ul>
+<li>
+<p>Updates the user’s email address.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updateEmail(?string $email);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Updates the user’s password.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updatePassword(string $password);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="removing-a-user">Removing a User<a class="headerlink" href="#removing-a-user" title="Permanent link">&para;</a></h3>
+<p>Removing a user performs a <strong>soft delete</strong>.</p>
+<ul>
+<li>
+<p>Soft deletes the user (<code>active = 0</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;remove();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="verification-handling">Verification Handling<a class="headerlink" href="#verification-handling" title="Permanent link">&para;</a></h3>
+<p>Verification status is time-aware and can be set or queried at arbitrary points in time.</p>
+<ul>
+<li>
+<p>Marks the user as verified.
+  Defaults to <code>NOW</code> if no date is provided.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;verify(?DateTime $date = null);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Checks whether the user was verified at a specific time.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;isVerified(string $at = &quot;NOW&quot;): bool</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="role-assignment">Role Assignment<a class="headerlink" href="#role-assignment" title="Permanent link">&para;</a></h3>
+<p>Users can have multiple roles assigned or removed dynamically.</p>
+<ul>
+<li>
+<p>Adds one or more roles to the user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;rolesAdd(Role ...$roles);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Removes one or more roles from the user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;rolesRemove(Role ...$roles);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="user-based-permissions">User-Based Permissions<a class="headerlink" href="#user-based-permissions" title="Permanent link">&para;</a></h3>
+<p>Permissions can be assigned directly to users in addition to role-based permissions.</p>
+<ul>
+<li>
+<p>Adds user-based permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;permissionsAdd(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Removes user-based permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;permissionsRemove(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="permission-checks">Permission Checks<a class="headerlink" href="#permission-checks" title="Permanent link">&para;</a></h3>
+<p>Permission checks always resolve the <strong>complete permission set</strong>.</p>
+<ul>
+<li>
+<p>Checks whether the user has <strong>all</strong> specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;hasAccessAll(string ...$permissionNames): bool</span>
+</code></pre></div>
+</li>
+<li>
+<p>Checks whether the user has <strong>at least one</strong> of the specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;hasAccessAnyOf(string ...$permissionNames): bool</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="permission-retrieval-and-refresh">Permission Retrieval and Refresh<a class="headerlink" href="#permission-retrieval-and-refresh" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns only user-based permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getUserPermissions(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all effective permissions (user-based + role-based).</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getPermissions(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads user-based permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;refreshPermissions();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads all permissions including roles.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;refreshAllPermissions();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="user-data-utility-methods">User Data &amp; Utility Methods<a class="headerlink" href="#user-data-utility-methods" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Reloads the user data from the database.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;refresh();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the user’s email address.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;email(): ?string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the verification timestamp.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;verified(): ?string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the user ID.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;id(): int|string|null</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all roles assigned to the user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getRoles(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Validates that the instance exists and is not null.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;checkInstance(): bool</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h2 id="role-object">Role Object<a class="headerlink" href="#role-object" title="Permanent link">&para;</a></h2>
+<p>The <code>Role</code> object represents a named collection of permissions that can be assigned to users.</p>
+<h3 id="role-retrieval">Role Retrieval<a class="headerlink" href="#role-retrieval" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns all roles assigned to a user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byUser(User $user): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns a role by its name.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byName(string $name): ?Role</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all roles that have <strong>all</strong> specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byAccessToAll(string ...$permissions): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all roles that have <strong>at least one</strong> of the specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byAccessToAnyOf(string ...$permissions): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all roles.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::all(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns a role by ID.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byId(int|string $id): ?Role</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all roles matching the given IDs.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byIds(int ...$ids): array</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="role-creation-and-loading">Role Creation and Loading<a class="headerlink" href="#role-creation-and-loading" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Creates a new role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::add(string $roleName);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Loads a role from database data.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role = (new Role())-&gt;loadObject(array $data);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="updating-and-removing-roles">Updating and Removing Roles<a class="headerlink" href="#updating-and-removing-roles" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Updates the role name.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;update(string $newName);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Soft deletes the role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;remove();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="role-data-access">Role Data Access<a class="headerlink" href="#role-data-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns the role name.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;name(): string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all users assigned to the role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;getUsers(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads the role’s users.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refreshUsers();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="role-permissions">Role Permissions<a class="headerlink" href="#role-permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns all permissions assigned to the role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;getPermissions(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads role permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refreshPermissions();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Adds permissions to the role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;permissionsAdd(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Removes permissions from the role.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;permissionsRemove(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="role-permission-checks">Role Permission Checks<a class="headerlink" href="#role-permission-checks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Checks whether the role has <strong>all</strong> specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;hasAccessAll(string ...$permissionNames): bool</span>
+</code></pre></div>
+</li>
+<li>
+<p>Checks whether the role has <strong>at least one</strong> of the specified permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;hasAccessAnyOf(string ...$permissionNames): bool</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="refreshing-role-data">Refreshing Role Data<a class="headerlink" href="#refreshing-role-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Reloads the role data from the database.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refresh();</span>
+</code></pre></div>
+</li>
+</ul>
 
 
 

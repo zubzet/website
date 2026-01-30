@@ -12,7 +12,7 @@
         <meta name="author" content="Alexander Zierhut">
       
       
-        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/configuration/">
+        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/console-commands/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>The Booter Settings - ZubZet</title>
+        <title>Console commands - ZubZet</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-booter-settings" class="md-skip">
+        <a href="#console-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Booter Settings
+              Console commands
             
           </span>
         </div>
@@ -811,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../configuration" class="md-nav__link">
         
   
   
@@ -1173,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../console-commands" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   
@@ -2045,8 +2045,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2055,10 +2053,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-this" class="md-nav__link">
+  <a href="#console-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is this?
+        Console Commands
       
     </span>
   </a>
@@ -2066,10 +2064,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
+  <a href="#how-to-run-a-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to use it
+        How to Run a Command
       
     </span>
   </a>
@@ -2077,10 +2075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-do-you-actually-put-in-here" class="md-nav__link">
+  <a href="#available-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What do you actually put in here?
+        Available Commands
       
     </span>
   </a>
@@ -2088,10 +2086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#completion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        completion
       
     </span>
   </a>
@@ -2099,10 +2097,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#help" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run
       
     </span>
   </a>
@@ -2126,7 +2146,7 @@
 
 
   
-    <a href="https://github.com/zubzet/framework/docs/core-features/configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/zubzet/framework/docs/core-features/console-commands.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2134,28 +2154,29 @@
   
 
 
-<h1 id="the-booter-settings">The Booter Settings<a class="headerlink" href="#the-booter-settings" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
-<p>The booter settings are a way of getting your most basic settings. If you have something like the uploads folder or the database connection, that might be changed by a customer/admin after finishing this project, those values can be stored under your <code>z_config folder</code> as a key of <code>z_settings.ini</code>.</p>
-<h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
-<p>If you want to use another key, simply create a new key in your <code>z_settings.ini</code>. To recall the value use <code>$res-&gt;getBooterSettings("key")</code>. If you don't pass a key, the whole array of values will be returned.</p>
-<h2 id="what-do-you-actually-put-in-here">What do you actually put in here?<a class="headerlink" href="#what-do-you-actually-put-in-here" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Database connection details</li>
-<li>Connections to other external tools like a Mailer, Storage or Api keys.</li>
-<li>Basic Framework settings</li>
-</ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="x">public function action_chatgpt(Request $req, Response $res) {</span>
-<span class="x">    $chatgptApiKey = $res-&gt;getBooterSettings(&quot;chatgpt_api_key&quot;);</span>
+  <h1>Console commands</h1>
 
-<span class="x">    /* remaining code */</span>
-
-<span class="x">    return $res-&gt;render(&quot;admin/chatgpt.php&quot;);</span>
-<span class="x">}</span>
+<h3 id="console-commands">Console Commands<a class="headerlink" href="#console-commands" title="Permanent link">&para;</a></h3>
+<p>ZubZet provides a built-in console interface that allows you to manage and interact with the framework directly from the command line.
+Console commands enable automation, debugging, and execution of application logic outside the HTTP context.</p>
+<h3 id="how-to-run-a-command">How to Run a Command<a class="headerlink" href="#how-to-run-a-command" title="Permanent link">&para;</a></h3>
+<p>To execute a console command inside the Docker container, first access the container shell:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>shell
 </code></pre></div>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>This helps manage credentials and settings more easily, while keeping sensitive data separate from everything else.</p>
+<p>Then navigate to the root directory of your project (where the <code>index.php</code> file is located) and run:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span><span class="o">{</span>command<span class="o">}</span>
+</code></pre></div>
+<h3 id="available-commands">Available Commands<a class="headerlink" href="#available-commands" title="Permanent link">&para;</a></h3>
+<h3 id="completion">completion<a class="headerlink" href="#completion" title="Permanent link">&para;</a></h3>
+<p>Dumps the shell completion script for the ZubZet console.
+This improves command-line usability by enabling tab completion.</p>
+<h3 id="help">help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p>Displays help information for a specific command or for the console in general.</p>
+<h3 id="list">list<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
+<p>Lists all available console commands.</p>
+<h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
+<p>Executes a controller action directly from the console environment.
+This is useful for running application logic, maintenance tasks, or background operations without an HTTP request.</p>
 
 
 
