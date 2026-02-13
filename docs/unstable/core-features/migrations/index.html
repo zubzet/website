@@ -2298,32 +2298,32 @@ This validation is performed <strong>in advance</strong>, ensuring that no parti
 <p><strong>environments-included</strong> (Alias: <code>i</code>) <code>{environment_name}</code><br />
   Defines which environments should be included in the sync.<br />
 <em>Default: <code>default</code>.</em><br />
-<em>Usage: <code>db:import -i production -i testing</code></em></p>
+<em>Usage: <code>db:migrate -i production -i testing</code></em></p>
 </li>
 <li>
 <p><strong>environments-excluded</strong> (Alias: <code>e</code>) <code>{environment_name}</code><br />
   Defines which environments should be excluded from the sync.<br />
-<em>Usage: <code>db:import -e production</code></em></p>
+<em>Usage: <code>db:migrate -e production</code></em></p>
 </li>
 <li>
 <p><strong>dry</strong> (Alias: <code>d</code>)<br />
   Runs the sync in dry-run mode without applying any changes.<br />
-<em>Usage: <code>db:import -d</code></em></p>
+<em>Usage: <code>db:migrate -d</code></em></p>
 </li>
 <li>
 <p><strong>exclude-external</strong><br />
   Excludes Framework migrations from the sync.<br />
-<em>Usage: <code>db:import --exclude-external</code></em></p>
+<em>Usage: <code>db:migrate --exclude-external</code></em></p>
 </li>
 <li>
 <p><strong>force</strong> (Alias: <code>f</code>)<br />
   Execute the migrations without checking for skipped migrations<br />
-<em>Usage: <code>db:import -f</code></em></p>
+<em>Usage: <code>db:migrate -f</code></em></p>
 </li>
 <li>
 <p><strong>enforce-external-timeline</strong><br />
   Execute the migrations without checking for skipped migrations within ZubZet-Migrations<br />
-<em>Usage: <code>db:import --enforce-external-timeline</code></em></p>
+<em>Usage: <code>db:migrate --enforce-external-timeline</code></em></p>
 </li>
 </ul>
 <h4 id="file-convention">File Convention<a class="headerlink" href="#file-convention" title="Permanent link">&para;</a></h4>

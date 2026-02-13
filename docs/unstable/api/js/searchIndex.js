@@ -726,25 +726,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Interaction.html#property_insertId"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Import",
-            "name": "Import",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Migrate",
+            "name": "Migrate",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Import.html"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Migrate.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Import\u003A\u003Aconfigure\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Migrate\u003A\u003Aconfigure\u0028\u0029",
             "name": "configure",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Import.html#method_configure"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Migrate.html#method_configure"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Import\u003A\u003Aexecute\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Migrate\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Import.html#method_execute"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Migrate.html#method_execute"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Import\u003A\u003AexecuteSqlBuffer\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Migrate\u003A\u003AexecuteSqlBuffer\u0028\u0029",
             "name": "executeSqlBuffer",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Import.html#method_executeSqlBuffer"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Migrate.html#method_executeSqlBuffer"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed",
             "name": "Seed",
