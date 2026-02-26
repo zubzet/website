@@ -261,6 +261,11 @@ Search.appendIndex(
             "summary": "Update\u0020the\u0020password\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020password\u0020in\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updatePassword"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AclearSessions\u0028\u0029",
+            "name": "clearSessions",
+            "summary": "Clear\u0020all\u0020sessions\u0020of\u0020the\u0020user",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_clearSessions"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "Deactivate\u0020this\u0020user",
@@ -1500,6 +1505,11 @@ Search.appendIndex(
             "name": "invalidateSession",
             "summary": "Invalidates\u0020and\u0020removes\u0020a\u0020login\u0020token\u0020\u0028session\u0029\u0020for\u0020a\u0020user",
             "url": "classes/z-loginModel.html#method_invalidateSession"
+        },                {
+            "fqsen": "\\z_loginModel\u003A\u003AclearSessions\u0028\u0029",
+            "name": "clearSessions",
+            "summary": "",
+            "url": "classes/z-loginModel.html#method_clearSessions"
         },                {
             "fqsen": "\\z_loginModel\u003A\u003AcreateLoginToken\u0028\u0029",
             "name": "createLoginToken",

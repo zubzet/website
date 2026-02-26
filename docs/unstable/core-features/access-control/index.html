@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -2398,6 +2398,11 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Updates the user’s password.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updatePassword(string $password);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Clears all active login sessions for the user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;clearSessions();</span>
 </code></pre></div>
 </li>
 </ul>
