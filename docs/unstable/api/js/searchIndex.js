@@ -401,10 +401,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-User.html#property_fields"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024permissions",
-            "name": "permissions",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024permissionsByUserCache",
+            "name": "permissionsByUserCache",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-User.html#property_permissions"
+            "url": "classes/ZubZet-Framework-Authentication-User.html#property_permissionsByUserCache"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024sessionToken",
             "name": "sessionToken",

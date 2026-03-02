@@ -2211,6 +2211,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#internal-tables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2296,23 +2307,24 @@ This validation is performed <strong>in advance</strong>, ensuring that no parti
 <ul>
 <li>
 <p><strong>environments-included</strong> (Alias: <code>i</code>) <code>{environment_name}</code><br />
-  Defines which environments should be included in the sync.<br />
+  Defines which environments should be included in the import.<br />
 <em>Default: <code>default</code>.</em><br />
-<em>Usage: <code>db:migrate -i production -i testing</code></em></p>
+<em>Usage: <code>db:migrate -i production -i testing</code></em><br />
+<em>Note: The <code>default</code> environment is added automatically to the included  environments</em></p>
 </li>
 <li>
 <p><strong>environments-excluded</strong> (Alias: <code>e</code>) <code>{environment_name}</code><br />
-  Defines which environments should be excluded from the sync.<br />
+  Defines which environments should be excluded from the import.<br />
 <em>Usage: <code>db:migrate -e production</code></em></p>
 </li>
 <li>
 <p><strong>dry</strong> (Alias: <code>d</code>)<br />
-  Runs the sync in dry-run mode without applying any changes.<br />
+  Runs the import in dry-run mode without applying any changes.<br />
 <em>Usage: <code>db:migrate -d</code></em></p>
 </li>
 <li>
 <p><strong>exclude-external</strong><br />
-  Excludes Framework migrations from the sync.<br />
+  Excludes Framework migrations from the import.<br />
 <em>Usage: <code>db:migrate --exclude-external</code></em></p>
 </li>
 <li>
@@ -2617,7 +2629,8 @@ PHP seed files use <strong>CakePHP\Database</strong> as their Query Builder.</p>
 <p><strong>environments-included</strong> (Alias: <code>i</code>) <code>{environment_name}</code><br />
   Defines which environments should be included in the sync.<br />
 <em>Default: <code>default</code>.</em>
-  <em>Usage: <code>db:sync -i production -i testing</code></em></p>
+  <em>Usage: <code>db:sync -i production -i testing</code></em>
+  <em>Note: The <code>default</code> environment is added automatically to the included  environments</em></p>
 </li>
 <li>
 <p><strong>environments-excluded</strong> (Alias: <code>e</code>) <code>{environment_name}</code><br />
@@ -2643,6 +2656,7 @@ PHP seed files use <strong>CakePHP\Database</strong> as their Query Builder.</p>
 <li><strong>LOCKED (0)</strong> – A migration is currently running or the database is protected against concurrent migration execution.</li>
 <li><strong>UNLOCKED (1)</strong> – No migration is running and migrations can be executed safely.</li>
 </ul>
+<h2 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
 <h2 id="internal-tables">Internal Tables<a class="headerlink" href="#internal-tables" title="Permanent link">&para;</a></h2>
 <p>To support the migration system, ZubZet automatically creates <strong>two internal database tables</strong>.
 These tables are required for locking and version tracking and are managed fully by the framework.</p>
