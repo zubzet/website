@@ -2075,10 +2075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modelstring-modelname" class="md-nav__link">
+  <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        model(string $modelName)
+        model()
       
     </span>
   </a>
@@ -2108,10 +2108,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configstring-key-bool-usedefault-false-mixed-default-null" class="md-nav__link">
+  <a href="#config" class="md-nav__link">
     <span class="md-ellipsis">
       
-        config(string $key, bool $useDefault = false, mixed $default = null)
+        config()
       
     </span>
   </a>
@@ -2130,10 +2130,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dbstring-connection-default" class="md-nav__link">
+  <a href="#db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        db(string $connection = "default")
+        db()
       
     </span>
   </a>
@@ -2141,10 +2141,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewstring-document-array-opt-array-options" class="md-nav__link">
+  <a href="#view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        view(string $document, array $opt = [], array $options = [])
+        view()
       
     </span>
   </a>
@@ -2179,54 +2179,78 @@
   <h1>Global helper functions</h1>
 
 <h3 id="global-helper-functions">Global Helper Functions<a class="headerlink" href="#global-helper-functions" title="Permanent link">&para;</a></h3>
-<p>To improve developer experience and reduce boilerplate code, <strong>global helper functions</strong> have been introduced.
-These helpers provide quick and consistent access to commonly used framework components and services.</p>
-<p>All previously available alternatives remain <strong>fully supported</strong> to ensure backward compatibility.</p>
-<h3 id="zubzet">zubzet()<a class="headerlink" href="#zubzet" title="Permanent link">&para;</a></h3>
+<p>To optimize developer experience and eliminate redundant boilerplate, <strong>global helper functions</strong> have finally been integrated. These helpers offer immediate and consistent access to core framework components and services. All previously available methods remain <strong>fully supported</strong> to ensure seamless backward compatibility.</p>
+<hr />
+<h3 id="zubzet"><code>zubzet()</code><a class="headerlink" href="#zubzet" title="Permanent link">&para;</a></h3>
 <p>Returns the main instance of the ZubZet framework.</p>
-<h3 id="modelstring-modelname">model(string $modelName)<a class="headerlink" href="#modelstring-modelname" title="Permanent link">&para;</a></h3>
-<p>Provides access to a specific model instance.</p>
-<p>In controller actions, <code>$reqObj-&gt;getModel($modelName)</code> remains a supported alternative.</p>
+<p><strong>Syntax:</strong> <code>zubzet()</code></p>
+<hr />
+<h3 id="model"><code>model()</code><a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
+<p>Provides direct access to a specific model instance.</p>
+<p><strong>Syntax:</strong> <code>model(string $modelName)</code></p>
+<ul>
+<li><strong>$modelName</strong>: The name of the model to be instantiated.</li>
+</ul>
+<p><strong>Note:</strong> In controller actions, <code>$reqObj-&gt;getModel($modelName)</code> remains a supported alternative.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">model(&quot;Test&quot;)-&gt;onTest();</span>
 </code></pre></div>
-<h3 id="request">request()<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
-<p>Returns the instance of the <strong>current request</strong>.</p>
+<hr />
+<h3 id="request"><code>request()</code><a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
+<p>Accesses the instance of the current request.</p>
+<p><strong>Syntax:</strong> <code>request()</code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">request()-&gt;getPost(&quot;POST_PARAMETER&quot;);</span>
 </code></pre></div>
-<h3 id="response">response()<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
-<p>Returns the instance of the <strong>current response</strong>.</p>
+<hr />
+<h3 id="response"><code>response()</code><a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<p>Accesses the instance of the current response.</p>
+<p><strong>Syntax:</strong> <code>response()</code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">response()-&gt;sendEMail($to, $subject, $document);</span>
 </code></pre></div>
-<h3 id="configstring-key-bool-usedefault-false-mixed-default-null">config(string $key, bool $useDefault = false, mixed $default = null)<a class="headerlink" href="#configstring-key-bool-usedefault-false-mixed-default-null" title="Permanent link">&para;</a></h3>
-<p>Returns a configuration value by key.</p>
-<p>Previously, this was accessible via
-<code>$req-&gt;getBooterSettings($key, $useDefault, $default)</code> inside controller actions.
-This approach is still fully supported.</p>
+<hr />
+<h3 id="config"><code>config()</code><a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
+<p>Retrieves a configuration value by its key.</p>
+<p><strong>Syntax:</strong> <code>config(string $key, bool $useDefault = false, mixed $default = null)</code></p>
+<ul>
+<li><strong>$key</strong>: The configuration identifier.</li>
+<li><strong>$useDefault</strong>: Whether to return a fallback value if the key is not found.</li>
+<li><strong>$default</strong>: The value to return if <code>$useDefault</code> is true and the key is missing.</li>
+</ul>
+<p><strong>Note:</strong> Previously accessible via <code>$req-&gt;getBooterSettings(...)</code> inside controller actions; this approach remains fully supported.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">config(&quot;db_username&quot;);</span>
 </code></pre></div>
-<h3 id="user">user()<a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
-<p>Returns the instance of the <strong>currently authenticated user</strong>.</p>
-<p>Previously accessible via
-<code>$req-&gt;getRequestingUser()</code> inside controller actions.
-This approach remains supported.</p>
+<hr />
+<h3 id="user"><code>user()</code><a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
+<p>Returns the instance of the currently authenticated user.</p>
+<p><strong>Syntax:</strong> <code>user()</code></p>
+<p><strong>Note:</strong> This streamlines the previous method of calling <code>$req-&gt;getRequestingUser()</code> within controller actions.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">user()-&gt;userId;</span>
 </code></pre></div>
-<h3 id="dbstring-connection-default">db(string $connection = "default")<a class="headerlink" href="#dbstring-connection-default" title="Permanent link">&para;</a></h3>
-<p>Returns the database instance for the specified connection.</p>
-<p>Previously, database access was only available within models via <code>$this-&gt;z_db</code>.
-This method remains supported.</p>
+<hr />
+<h3 id="db"><code>db()</code><a class="headerlink" href="#db" title="Permanent link">&para;</a></h3>
+<p>Provides the database instance for a specified connection.</p>
+<p><strong>Syntax:</strong> <code>db(string $connection = "default")</code></p>
+<ul>
+<li><strong>$connection</strong>: The name of the database connection (defaults to "default").</li>
+</ul>
+<p><strong>Note:</strong> Database access is no longer restricted to using <code>$this-&gt;z_db</code> within models.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">db()-&gt;exec(&quot;SELECT * FROM z_user&quot;);</span>
 </code></pre></div>
-<h3 id="viewstring-document-array-opt-array-options">view(string $document, array $opt = [], array $options = [])<a class="headerlink" href="#viewstring-document-array-opt-array-options" title="Permanent link">&para;</a></h3>
-<p>Renders a view template.</p>
-<p>Previously rendered via the response object using <code>$resObj-&gt;render(...)</code>.
-This approach remains supported.</p>
+<hr />
+<h3 id="view"><code>view()</code><a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
+<p>Renders a view template directly.</p>
+<p><strong>Syntax:</strong> <code>view(string $document, array $opt = [], array $options = [])</code></p>
+<ul>
+<li><strong>$document</strong>: The path to the view file.</li>
+<li><strong>$opt</strong>: Data array passed to the view.</li>
+<li><strong>$options</strong>: Additional rendering options.</li>
+</ul>
+<p><strong>Note:</strong> This serves as a streamlined alternative to rendering via the response object using <code>$resObj-&gt;render(...)</code>.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">view(&quot;adminpanel/dashboard&quot;);</span>
 </code></pre></div>

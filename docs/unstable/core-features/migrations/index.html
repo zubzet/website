@@ -2090,6 +2090,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#safety-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety and Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#available-options" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2203,6 +2214,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lock-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lock States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2218,6 +2246,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-synchronize-dbsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Synchronize (db:sync)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-migrate-dbmigrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Migrate (db:migrate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2286,101 +2342,114 @@
 
 
 <h1 id="migrations-in-zubzet">Migrations in ZubZet<a class="headerlink" href="#migrations-in-zubzet" title="Permanent link">&para;</a></h1>
-<p>Since version <strong>1.1.0</strong>, ZubZet includes a <strong>Migration system</strong>.</p>
-<p>As part of this overhaul, migrations received many new features and improvements, making them more powerful, safer, and easier to manage.</p>
+<p>With the release of version <strong>1.1.0</strong>, a dedicated <strong>Migration system</strong> has finally been integrated into ZubZet.</p>
+<p>This implementation introduces a comprehensive overhaul of how database changes are handled. Migrations now feature a robust set of tools and improvements designed to make database management more powerful, secure, and intuitive for developers.</p>
+<hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The migration system is responsible for managing database schema changes in a controlled and repeatable way.</p>
-<p>With the new system:</p>
+<p>By centralizing these processes, the system provides several key advantages:</p>
 <ul>
-<li>Migrations are more flexible and feature-rich</li>
-<li>Multiple commands are available to cover different migration workflows</li>
+<li><strong>Enhanced Flexibility:</strong> Migrations are more feature-rich, allowing for complex schema evolutions.</li>
+<li><strong>Streamlined Workflows:</strong> A variety of dedicated commands are available to cover every stage of the migration lifecycle.</li>
 </ul>
 <h2 id="available-commands">Available Commands<a class="headerlink" href="#available-commands" title="Permanent link">&para;</a></h2>
-<p>ZubZet provides the following migration-related commands.</p>
+<p>The following commands are integrated into the ZubZet CLI to manage your database lifecycle efficiently.</p>
 <h3 id="import">Import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h3>
-<p>The <strong>Import</strong> command is used to <strong>execute migrations</strong>.</p>
-<p>It applies all pending migrations to the database in the correct order and ensures that each migration is only executed once.  </p>
-<p>By default, <strong>all available migrations</strong> are executed when no specific configuration is provided, <strong>regardless of the current environment.</strong>  </p>
-<p>If the import process detects that <strong>a migration has been skipped</strong> and no additional configuration has been provided to handle this case, <strong>the import will be aborted before any migration is executed</strong>.
-This validation is performed <strong>in advance</strong>, ensuring that no partial or inconsistent migration state can occur.</p>
+<p>The <strong>Import</strong> command is used to <strong>execute pending migrations</strong> and synchronize the database schema.</p>
+<p><strong>Syntax:</strong> <code>php zubzet migrate:import</code></p>
+<p>This command applies all pending migrations in their correct chronological order, ensuring each migration is executed exactly once. By default, the system will attempt to run <strong>all available migrations</strong>, regardless of the current environment settings, unless specific configurations are applied.</p>
+<h4 id="safety-and-validation">Safety and Validation<a class="headerlink" href="#safety-and-validation" title="Permanent link">&para;</a></h4>
+<p>To prevent database inconsistency, the system performs a pre-execution validation:</p>
+<ul>
+<li><strong>Integrity Check:</strong> If the process detects a <strong>skipped migration</strong> and no explicit configuration is provided to handle it, the import is <strong>aborted immediately</strong>.</li>
+<li><strong>Atomic Validation:</strong> This check is performed <strong>before any changes are made</strong>, ensuring that your database never enters a partial or inconsistent state.</li>
+</ul>
 <h4 id="available-options">Available Options<a class="headerlink" href="#available-options" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>environments-included</strong> (Alias: <code>i</code>) <code>{environment_name}</code><br />
-  Defines which environments should be included in the import.<br />
-<em>Default: <code>default</code>.</em><br />
-<em>Usage: <code>db:migrate -i production -i testing</code></em><br />
-<em>Note: The <code>default</code> environment is added automatically to the included  environments</em></p>
+<p><strong><code>environments-included</code></strong> | <strong><code>-i</code></strong> <code>{environment_name}</code><br />
+Determines which environment-specific migrations are processed during the import.</p>
+<blockquote>
+<p><strong>Details:</strong> The <code>default</code> environment is always included automatically. You can include multiple environments by repeating the flag.<br />
+<strong>Usage:</strong> <code>db:migrate -i production -i testing</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>environments-excluded</strong> (Alias: <code>e</code>) <code>{environment_name}</code><br />
-  Defines which environments should be excluded from the import.<br />
-<em>Usage: <code>db:migrate -e production</code></em></p>
+<p><strong><code>environments-excluded</code></strong> | <strong><code>-e</code></strong> <code>{environment_name}</code><br />
+Defines specific environments that should be explicitly skipped during the migration process.</p>
+<blockquote>
+<p><strong>Details:</strong> Use this to suppress migrations intended only for certain stages (e.g., <code>dev</code> or <code>staging</code>) when updating a production database.<br />
+<strong>Usage:</strong> <code>db:migrate -e production</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>dry</strong> (Alias: <code>d</code>)<br />
-  Runs the import in dry-run mode without applying any changes.<br />
-<em>Usage: <code>db:migrate -d</code></em></p>
+<p><strong><code>dry</code></strong> | <strong><code>-d</code></strong><br />
+Simulates the migration process without committing any actual changes to the database.</p>
+<blockquote>
+<p><strong>Details:</strong> Highly recommended for verifying exactly which migration files will be applied before executing them on a live system.<br />
+<strong>Usage:</strong> <code>db:migrate -d</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>exclude-external</strong><br />
-  Excludes Framework migrations from the import.<br />
-<em>Usage: <code>db:migrate --exclude-external</code></em></p>
+<p><strong><code>exclude-external</code></strong><br />
+Filters the import to only include local project migrations.</p>
+<blockquote>
+<p><strong>Details:</strong> When this flag is active, any migrations provided by the <strong>ZubZet Framework</strong> itself are ignored.<br />
+<strong>Usage:</strong> <code>db:migrate --exclude-external</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>force</strong> (Alias: <code>f</code>)<br />
-  Execute the migrations without checking for skipped migrations<br />
-<em>Usage: <code>db:migrate -f</code></em></p>
+<p><strong><code>force</code></strong> | <strong><code>-f</code></strong><br />
+Bypasses the integrity check for skipped migrations.</p>
+<blockquote>
+<p><strong>Details:</strong> Normally, the process aborts if an older migration is detected as missing. This flag overrides that safety mechanism to run all pending migrations.<br />
+<strong>Usage:</strong> <code>db:migrate -f</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>enforce-external-timeline</strong><br />
-  Execute the migrations without checking for skipped migrations within ZubZet-Migrations<br />
-<em>Usage: <code>db:migrate --enforce-external-timeline</code></em></p>
+<p><strong><code>enforce-external-timeline</code></strong><br />
+A targeted bypass for framework-level integrity checks.</p>
+<blockquote>
+<p><strong>Details:</strong> Allows the migration to proceed even if migrations within the <strong>ZubZet Framework</strong> were skipped, while maintaining strict validation for local project migrations.<br />
+<strong>Usage:</strong> <code>db:migrate --enforce-external-timeline</code></p>
+</blockquote>
 </li>
 </ul>
 <h4 id="file-convention">File Convention<a class="headerlink" href="#file-convention" title="Permanent link">&para;</a></h4>
 <p>Every migration file <strong>must</strong> be located in the following directory:</p>
 <div class="highlight"><pre><span></span><code>app/Database/migrations
 </code></pre></div>
-<p>Migration files located outside of this directory are <strong>not considered</strong> by the migration system.</p>
+<p><strong>Note:</strong> Migration files located outside of this directory are not considered by the migration system. This strict structure ensures that the framework can reliably scan, order, and track the status of your database schema changes.</p>
 <h4 id="filename-convention">Filename Convention<a class="headerlink" href="#filename-convention" title="Permanent link">&para;</a></h4>
-<p>Each migration filename <strong>must</strong> follow a defined and consistent format.</p>
+<p>Each migration filename <strong>must</strong> follow a defined and consistent format to ensure the correct execution order.</p>
 <p><strong>Structure</strong></p>
 <div class="highlight"><pre><span></span><code>YYYY-MM-DD_{INDEX}_{NAME}.{php/sql}
 </code></pre></div>
 <p><strong>Component Description</strong></p>
 <ul>
-<li>
-<p><strong>YYYY-MM-DD</strong> – Required
-  A valid date in ISO format <em>(year-month-day)</em></p>
-</li>
-<li>
-<p><strong>INDEX</strong> – Optional
-  A numeric index used to distinguish multiple files created on the same date</p>
-</li>
-<li>
-<p><strong>NAME</strong> – Required
-  A descriptive name identifying the file</p>
-</li>
+<li><strong><code>YYYY-MM-DD</code></strong> | <strong>Required</strong> A valid date in ISO format (<em>year-month-day</em>). This acts as the primary sorting criteria.</li>
+<li><strong><code>INDEX</code></strong> | <strong>Optional</strong> A numeric index used to distinguish and order multiple files created on the same day.</li>
+<li><strong><code>NAME</code></strong> | <strong>Required</strong> A descriptive name identifying the purpose of the migration (e.g., <code>create_users_table</code>).</li>
 </ul>
 <p><strong>Examples</strong></p>
-<div class="highlight"><pre><span></span><code>2025-10-10_1_Test.php
-2025-10-10_Test.php
+<div class="highlight"><pre><span></span><code>2026-03-03_1_CreateUserTable.php
+2026-03-03_AddStatusToOrders.sql
 </code></pre></div>
-<p>If a migration file <strong>does not follow this filename convention</strong>, the migration system will <strong>throw an error</strong> and abort the import process.</p>
+<blockquote>
+<p><strong>Important:</strong> If a migration file <strong>does not follow this filename convention</strong>, the migration system will <strong>throw an error</strong> and abort the import process immediately to prevent sequence errors.</p>
+</blockquote>
 <h4 id="supported-migration-file-types">Supported Migration File Types<a class="headerlink" href="#supported-migration-file-types" title="Permanent link">&para;</a></h4>
-<p>The Migration system supports <strong>two different file formats</strong>, which can also be mixed freely.</p>
+<p>The Migration system supports <strong>two different file formats</strong>, which can be mixed freely within your project.</p>
 <ul>
 <li>
 <p><strong>SQL Migration Files (<code>.sql</code>)</strong></p>
-<p>You can use <code>.sql</code> files to define <strong>raw SQL statements</strong>.</p>
-<p>All SQL statements found in these files are executed directly against the database.</p>
+<p>You can use <code>.sql</code> files to define <strong>raw SQL statements</strong>. All statements found in these files are executed directly against the database in the order they appear.</p>
 </li>
 <li>
 <p><strong>PHP Migration Files (<code>.php</code>)</strong></p>
-<p>For more advanced migration logic, ZubZet supports <strong>PHP-based migration files</strong>.</p>
-<p>These files must follow a specific structure and extend the base <code>Migration</code> class.  </p>
-<p><strong>Structure:</strong>
+<p>For advanced logic, ZubZet supports <strong>PHP-based migrations</strong>. These files allow you to use the Schema QueryBuilder and conditional logic.</p>
+<p><strong>Class Structure:</strong><br />
+Every PHP migration must extend the base <code>Migration</code> class and implement the <code>execute()</code> method.</p>
 <div class="highlight"><pre><span></span><code><span class="x">use ZubZet\Framework\Database\Migration\Migration;</span>
 
 <span class="x">class Migration_2025_10_01_MigrationEnv extends Migration {</span>
@@ -2394,121 +2463,132 @@ This validation is performed <strong>in advance</strong>, ensuring that no parti
 <span class="x">        $table-&gt;addColumn(&quot;name&quot;, &quot;string&quot;, [&quot;length&quot; =&gt; 255, &quot;notnull&quot; =&gt; true]);</span>
 <span class="x">    }</span>
 <span class="x">}</span>
-</code></pre></div></p>
-<p>Each migration class must implement a <code>run()</code> method.<br />
-All database operations are defined inside this method.</p>
-<p><strong>Classname:</strong></p>
+</code></pre></div>
+<p><strong>Classname Convention:</strong><br />
+The migration system automatically resolves the class name based on the filename:</p>
 <ul>
-<li>"Migration" plus the file name (without <code>.php</code>) is used as the class name</li>
-<li>Any hyphens (<code>-</code>) in the file name are automatically converted to underscores (<code>_</code>)</li>
+<li>The prefix <code>Migration_</code> is added to the filename (without extension).</li>
+<li>Any hyphens (<code>-</code>) in the filename are converted to underscores (<code>_</code>).<blockquote>
+<p>Example: <code>2026-03-03_Test.php</code> becomes class <code>Migration_2026_03_03_Test</code></p>
+</blockquote>
+</li>
 </ul>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="x">2025-10-01_Test.php</span>
-</code></pre></div></p>
-<p>Must define the following class:
-<div class="highlight"><pre><span></span><code><span class="x">class Migration_2025_10_01_Test extends Migration {</span>
-<span class="x">    public function execute(): void {</span>
-<span class="x">        // ...</span>
-<span class="x">    }</span>
-<span class="x">}</span>
-</code></pre></div></p>
-<p><strong>Settings</strong><br />
-Settings can be applied <strong>within the <code>execute()</code> method</strong>.<br />
-The following settings exist:</p>
+<p><strong>Migration Settings</strong><br />
+The following settings can be applied <strong>inside the <code>execute()</code> method</strong> to control migration behavior:</p>
 <ul>
 <li>
-<p><strong>Skip</strong></p>
-<p>Marks a migration as <em>skipped</em>, so it will not be imported when running the <code>migrate</code> command.<br />
-<strong>Usage:</strong> <code>$this-&gt;skip();</code></p>
-<p>A skipped migration will still be <strong>marked as executed</strong> to prevent it from being applied in future runs.</p>
+<p><strong>Skip</strong><br />
+  Marks the migration as skipped. It will not be imported, but it will be <strong>marked as executed</strong> in the database to prevent it from ever running in future updates.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>$this-&gt;skip();</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>Environment</strong></p>
-<p>Assigns an environment to a migration to control when it should be imported.<br />
-<strong>Usage:</strong> <code>$this-&gt;setEnvironment(name);</code><br />
+<p><strong>Environment</strong><br />
+  Assigns the migration to a specific environment (e.g., <code>production</code>, <code>testing</code>)  </p>
+<blockquote>
+<p><strong>Usage:</strong> <code>$this-&gt;setEnvironment(name);</code><br />
 <strong>Default:</strong> <code>default</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>Manual</strong></p>
-<p>Marks a migration as <strong>manual</strong> and stops the import process when this migration is reached.
-This is useful when a migration must be executed manually to verify correctness or perform controlled changes.<br />
+<p><strong>Manual</strong><br />
+      Marks the migration as manual. When the import reaches this file, it will stop and leave the database locked.  </p>
+<blockquote>
+<p><strong>Note</strong> You must manually verify changes, <a href="#sync">synchronize</a> the state, and then re-run the import to continue.<br />
 <strong>Usage:</strong> <code>$this-&gt;setManual(true);</code></p>
-<p><strong>Important:</strong>
-When the import stops due to a manual migration, the database <strong>remains locked</strong>.
-To continue the import process, you must <strong><a href="#sync">synchronize</a> the current database state</strong> (using the date of the manual migration) and then <strong>re-run the import</strong>.</p>
+</blockquote>
 </li>
 </ul>
-<p><strong>Usage</strong></p>
-<p>We are Using <code>Doctrine</code> to Support a Schema QueryBuilder.<br />
-Doctrine Documentation: <a href="https://www.doctrine-project.org/projects/doctrine-dbal/en/4.4/reference/schema-representation.html#schema-representation">Doctrine</a>.<br />
-The PHP Migrations support the following Schema Update Statements:</p>
+<p><strong>Schema Operations</strong><br />
+ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You can find the full documentation <a href="https://www.doctrine-project.org/projects/doctrine-dbal/en/4.4/reference/schema-representation.html#schema-representation">here</a>.</p>
 <ul>
 <li>
-<p><strong>tableCreate(<code>name</code>)</strong></p>
-<p>This is used to create Tables.</p>
-<p><strong>Example:</strong>  </p>
-<p>SQL:
-<div class="highlight"><pre><span></span><code>CREATE TABLE `testTable` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT,
-    `name` VARCHAR(255),
-    `active` TINYINT(1) DEFAULT 1,
-    `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+<p><strong><code>tableCreate(string $name)</code></strong>  </p>
+<blockquote>
+<p>Creates a new table. Returns a Table object to define columns and indexes.</p>
+</blockquote>
+<details class="example">
+<summary>Example</summary>
+<p><strong>SQL:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">testTable</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">active</span><span class="o">`</span><span class="w"> </span><span class="n">TINYINT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">created</span><span class="o">`</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span>
+<span class="p">);</span>
 </code></pre></div></p>
-<p>Doctrine: 
+<p><strong>Doctrine:</strong>
 <div class="highlight"><pre><span></span><code><span class="x">$table = $this-&gt;tableCreate(&quot;testTable&quot;);</span>
 <span class="x">$table-&gt;addColumn(&quot;id&quot;, &quot;integer&quot;, [&quot;autoincrement&quot; =&gt; true]);</span>
 <span class="x">$table-&gt;setPrimaryKey([&quot;id&quot;]);</span>
 <span class="x">$table-&gt;addColumn(&quot;name&quot;, &quot;string&quot;, [&quot;length&quot; =&gt; 255]);</span>
 <span class="x">$table-&gt;addColumn(&quot;active&quot;, &quot;boolean&quot;, [&quot;length&quot; =&gt; 1, &quot;default&quot; =&gt; 1]);</span>
-<span class="x">$table-&gt;addColumn(&quot;created&quot;, &quot;timestamp&quot;, [&quot;length&quot; =&gt; 1, &quot;default&quot; =&gt; &quot;CURRENT_TIMESTAMP&quot;]);</span>
+<span class="x">$table-&gt;addColumn(&quot;created&quot;, &quot;timestamp&quot;, [&quot;default&quot; =&gt; &quot;CURRENT_TIMESTAMP&quot;]);</span>
 </code></pre></div></p>
+</details>
 </li>
 <li>
-<p><strong>tableDrop(<code>name</code>)</strong>
-    This is used to create Tables.</p>
-<p><strong>Example:</strong><br />
-SQL:
-<div class="highlight"><pre><span></span><code>DROP TABLE `testTable`;
+<p><strong><code>tableDrop(string $name)</code></strong></p>
+<blockquote>
+<p>Drops an existing table</p>
+</blockquote>
+<details class="example">
+<summary>Example</summary>
+<p><strong>SQL:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">testTable</span><span class="o">`</span><span class="p">;</span>
 </code></pre></div></p>
-<p>Doctrine: 
+<p><strong>Doctrine:</strong>
 <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableDrop(&quot;testTable&quot;);</span>
 </code></pre></div></p>
+</details>
 </li>
 <li>
-<p><strong>tableRename(<code>name</code>)</strong>
-    This is used to rename Tables.</p>
-<p><strong>Example:</strong><br />
-SQL:
-<div class="highlight"><pre><span></span><code>ALTER TABLE testTable RENAME TO newName;
+<p><strong><code>tableRename(string $oldName, string $newName)</code></strong></p>
+<blockquote>
+<p>Renames a table</p>
+</blockquote>
+<details class="example">
+<summary>Example</summary>
+<p><strong>SQL:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">testTable</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">newName</span><span class="p">;</span>
 </code></pre></div></p>
-<p>Doctrine: 
+<p><strong>Doctrine:</strong>
 <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableRename(&quot;testTable&quot;, &quot;newName&quot;);</span>
 </code></pre></div></p>
+</details>
 </li>
 <li>
-<p><strong>run(<code>sql</code>)</strong>
-    This is used to execute custom SQL</p>
-<p><strong>Example:</strong><br />
-<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;</span>
-<span class="s1">    CREATE TABLE `testTable` (</span>
-<span class="s1">        `id` INT PRIMARY KEY AUTO_INCREMENT,</span>
-<span class="s1">        `name` VARCHAR(255)</span>
-<span class="s1">    );</span>
-<span class="s1">&#39;</span><span class="p">);</span>
-</code></pre></div></p>
+<p><strong><code>run(string $sql)</code></strong></p>
+<blockquote>
+<p>Executes a raw SQL string within the PHP migration.</p>
+</blockquote>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code>$this-&gt;run(&#39;
+    CREATE TABLE `testTable` (
+        `id` INT PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255)
+    );
+&#39;);
+</code></pre></div>
+</details>
 </li>
 <li>
-<p><strong>tableAlter(<code>name</code>)</strong>
-    This is used to edit Tables</p>
-<p><strong>Example:</strong><br />
-SQL:
-<div class="highlight"><pre><span></span><code>ALTER TABLE z_user ADD description LONGTEXT DEFAULT NULL
+<p><strong><code>tableAlter(string $name)</code></strong></p>
+<blockquote>
+<p>Modifies an existing table structure (adding/removing columns).</p>
+</blockquote>
+<details class="example">
+<summary>Example</summary>
+<p><strong>SQL:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">z_user</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">LONGTEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </code></pre></div></p>
-<p>Doctrine: 
+<p><strong>Doctrine:</strong>
 <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableAlter(&quot;tableTest&quot;)</span>
-<span class="x">        -&gt;addColumn(&quot;description&quot;, &quot;text&quot;, [&quot;notnull&quot; =&gt; false]);</span>
+<span class="x">      -&gt;addColumn(&quot;description&quot;, &quot;text&quot;, [&quot;notnull&quot; =&gt; false]);</span>
 </code></pre></div></p>
+</details>
 </li>
 </ul>
 <p>More examples can be found <a href="examples/">here</a>  </p>
@@ -2516,26 +2596,29 @@ SQL:
 </ul>
 <h3 id="seed">Seed<a class="headerlink" href="#seed" title="Permanent link">&para;</a></h3>
 <p>The <strong>Seed</strong> command is used to <strong>completely recreate the database</strong> and then insert <strong>seed data</strong>, making it ideal for <strong>test and development environments</strong> where a clean, reproducible database state is required.</p>
-<p>When executed, the command performs the following steps:</p>
+<blockquote>
+<p>Running this command will <strong>permanently delete</strong> all existing data in your database. It is not reversible. Do <strong>not</strong> use this on production unless you explicitly intend to wipe the entire system.</p>
+</blockquote>
+<p><strong>Execution Workflow</strong>
+When executed, the command performs the following sequence:</p>
 <ol>
-<li>Drops the existing database</li>
-<li>Recreates the database</li>
-<li>Rebuilds the schema (using <a href="#import">Import</a>)</li>
-<li>Executes all seed files found in <code>./app/Database/seed</code></li>
+<li><strong>Drop:</strong> Delete the existing database.</li>
+<li><strong>Create:</strong> Recreated the database from scratch.</li>
+<li><strong>Migrate:</strong> Rebuilds the schema (see <a href="#import">Import</a>)</li>
+<li><strong>Populate:</strong> Executes all seed files found in <code>app/Database/seed</code></li>
 </ol>
 <h4 id="supported-seed-file-types">Supported Seed File Types<a class="headerlink" href="#supported-seed-file-types" title="Permanent link">&para;</a></h4>
-<p>The Seed system supports <strong>two different file formats</strong>, which can also be mixed freely.</p>
+<p>The Seed system supports <strong>two different file formats</strong>, which can be mixed freely within your project.</p>
 <ul>
 <li>
 <p><strong>SQL Seed Files (<code>.sql</code>)</strong></p>
-<p>You can use <code>.sql</code> files to define <strong>raw SQL statements</strong>.</p>
-<p>All SQL statements found in these files are executed directly against the database.</p>
+<p>You can use .sql files to define <strong>raw SQL statements</strong>. All statements in these files are executed directly against the database in the order they appear.</p>
 </li>
 <li>
 <p><strong>PHP Seed Files (<code>.php</code>)</strong></p>
-<p>For more advanced seeding logic, ZubZet supports <strong>PHP-based seed files</strong>.</p>
-<p>These files must follow a specific structure and extend the base <code>Seed</code> class.  </p>
-<p><strong>Structure:</strong>
+<p>For complex data generation or dynamic logic, ZubZet supports <strong>PHP-based seed files</strong>. These files must extend the base <code>Seed</code> class.</p>
+<p><strong>Class Structure:</strong><br />
+Each seed class must implement a <code>run()</code> method where all database operations are defined.
 <div class="highlight"><pre><span></span><code><span class="x">use ZubZet\Framework\Database\Migration\Seed;</span>
 
 <span class="x">class TestSeed extends Seed {</span>
@@ -2547,116 +2630,156 @@ SQL:
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div></p>
-<p>Each seed class must implement a <code>run()</code> method.<br />
-All database operations are defined inside this method.</p>
-<p><strong>Classname:</strong></p>
+<p><strong>Classname Convention:</strong></p>
 <ul>
-<li>The file name (without <code>.php</code>) is used as the class name</li>
-<li>Any hyphens (<code>-</code>) in the file name are automatically converted to underscores (<code>_</code>)</li>
+<li>The <strong>file name</strong> (without <code>.php</code>) is used as the <strong>class name</strong>.</li>
+<li>Any hyphens (<code>-</code>) in the file name are automatically converted to underscores (<code>_</code>)<blockquote>
+<p><strong>Example:</strong> <code>Test-Seed-File.php</code> ➔ <code>class Test_Seed_File extends Seed</code></p>
+</blockquote>
+</li>
 </ul>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="nb">Test-Seed</span><span class="o">-File</span><span class="p">.</span><span class="n">php</span>
-</code></pre></div></p>
-<p>Must define the following class:
-<div class="highlight"><pre><span></span><code><span class="x">class Test_Seed_File extends Seed {</span>
-<span class="x">    public function run() {</span>
-<span class="x">        // ...</span>
-<span class="x">    }</span>
-<span class="x">}</span>
-</code></pre></div></p>
-<p><strong>QueryBuilder:</strong><br />
-PHP seed files use <strong>CakePHP\Database</strong> as their Query Builder.</p>
+<p><strong>QueryBuilder Usage:</strong><br />
+PHP seed files utilize <strong>CakePHP\Database</strong> for building queries.</p>
 <p>For more detailed information about the Query Builder, see: <a href="/docs/core-features/query-builder/">QueryBuilder</a></p>
+<p><strong>Registering Queries</strong><br />
+To ensure reliable execution, every query <strong>must be explicitly registered</strong> within the system.</p>
 <ul>
 <li>
-<p>Every query <strong>must be explicitly added</strong> using:
-    <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;addQuery($query);</span>
-</code></pre></div></p>
-<p><strong>Except</strong> for queries that are executed via helper methods such as</p>
-<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;insert(...)</span>
-</code></pre></div>
-<p>These helper methods automatically register the underlying query internally, so no manual call to <code>addQuery()</code> is required.</p>
-<p>Queries that are not added via <code>addQuery(Query)</code> <strong>will not be executed</strong>.</p>
+<p><strong>Automatic Registration:</strong><br />
+  Helper methods like <code>$this-&gt;dbInsert(...)</code> register the query internally. No further action is needed.</p>
 </li>
 <li>
-<p>A <code>Query</code> is always an instance of:
-    <div class="highlight"><pre><span></span><code><span class="x">Cake\Database\Query</span>
+<p><strong>Manual Registration:</strong><br />
+  For custom queries built via the QueryBuilder, you <strong>must</strong> use:
+  <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;addQuery($query);</span>
 </code></pre></div></p>
-</li>
-<li>
-<p>You can access the underlying Query Builder connection (<code>\Cake\Database\Connection</code>) via:
-    <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;getQueryBuilder();</span>
-</code></pre></div></p>
+<blockquote>
+<p>Queries that are not added via <code>addQuery()</code> <strong>will not be executed</strong>.</p>
+</blockquote>
 </li>
 </ul>
-<p>This ensures that all seed queries are collected, processed, and executed reliably by ZubZet.</p>
+<p>If you need direct access to the underlying connection (<code>\Cake\Database\Connection</code>), use:
+<div class="highlight"><pre><span></span><code><span class="x">$connection = $this-&gt;getQueryBuilder();</span>
+</code></pre></div></p>
+<p>All queries must be instances of:
+<code>Cake\Database\Query</code></p>
 </li>
 </ul>
 <h3 id="sync">Sync<a class="headerlink" href="#sync" title="Permanent link">&para;</a></h3>
-<p>The <strong>Sync</strong> command marks migrations as <strong>executed</strong> without actually running them.</p>
-<p>This is useful when:</p>
+<p>The <strong>Sync</strong> command marks migrations as <strong>executed</strong> in the migration history without actually applying any changes to the database schema.</p>
 <ul>
-<li>the database schema already matches the defined migrations</li>
-<li>you need to align migration history without making changes to the database</li>
+<li>
+<p><strong>Manual Adjustments:</strong> You already manually updated the database and need to tell the system "this is done."</p>
+</li>
+<li>
+<p><strong>Aligning History:</strong> You are setting up an existing database with a new codebase and want to skip old migrations that are already present in the schema.</p>
+</li>
+<li>
+<p><strong>Conflict Resolution:</strong> Fixing a broken migration state after manual intervention.</p>
+</li>
 </ul>
 <h4 id="available-options_1">Available Options<a class="headerlink" href="#available-options_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>start <code>{start_date}</code></strong><br />
-  Specifies the start date from which migrations should be synced<br />
-<em>(Format: <code>YYYY-MM-DD</code>)</em><br />
-<em>Usage: <code>db:sync --start 2025-12-01</code></em></p>
+<p><strong><code>start_date</code></strong> <code>{start_date}</code><br />
+Specifies the start date from which migrations should be synced.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync --start 2026-03-01</code><br />
+<strong>Format:</strong> <code>YYYY-MM-DD</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>startVersion <code>{start_version}</code></strong><br />
-  Specifies the index from which the sync should start.<br />
-<em>Requires the <code>start</code> option.</em><br />
-<em>Usage: <code>db:sync --start 2025-12-01 --startVersion 2</code></em></p>
+<p><strong><code>startVersion</code></strong> <code>{index}</code><br />
+Specifies the numeric index from which the sync should start.  </p>
+<blockquote>
+<p><strong>Note:</strong> Requires the <code>--start</code> option to bet set
+<strong>Usage:</strong> <code>db:sync --start 2025-12-01 --startVersion 2</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>end <code>{end_date}</code></strong><br />
-  Specifies the end date up to which migrations should be synced<br />
-<em>(Format: <code>YYYY-MM-DD</code>)</em><br />
-<em>Usage: <code>db:sync --end 2025-12-01</code></em></p>
+<p><strong><code>end_date</code></strong> <code>{end_date}</code><br />
+Specifies the end date up to which migrations should be synced.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync --end 2026-03-01</code><br />
+<strong>Format:</strong> <code>YYYY-MM-DD</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>endVersion <code>{end_version}</code></strong><br />
-  Specifies the index up to which the sync should run.<br />
-<em>Requires the <code>end</code> option.</em><br />
-<em>Usage: <code>db:sync --end 2025-12-01 --endVersion 2</code></em></p>
+<p><strong><code>endVersion</code></strong> <code>{index}</code><br />
+Specifies the numeric index up to which the sync should run.  </p>
+<blockquote>
+<p><strong>Note:</strong> Requires the <code>--end</code> option to bet set<br />
+<strong>Usage:</strong> <code>db:sync --end 2025-12-01 --endVersion 2</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>environments-included</strong> (Alias: <code>i</code>) <code>{environment_name}</code><br />
-  Defines which environments should be included in the sync.<br />
-<em>Default: <code>default</code>.</em>
-  <em>Usage: <code>db:sync -i production -i testing</code></em>
-  <em>Note: The <code>default</code> environment is added automatically to the included  environments</em></p>
+<p><strong><code>environments-included</code></strong> | <strong><code>i</code></strong> <code>{environment_name}</code><br />
+Determines which environment-specific migrations are processed.</p>
+<blockquote>
+<p><strong>Details:</strong> The <code>default</code> environment is always included automatically.
+<strong>Usage:</strong> <code>db:sync -i production -i testing</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>environments-excluded</strong> (Alias: <code>e</code>) <code>{environment_name}</code><br />
-  Defines which environments should be excluded from the sync.<br />
-<em>Usage: <code>db:sync -e production</code></em></p>
+<p><strong><code>environments-excluded</code></strong> | <strong><code>e</code></strong> <code>{environment_name}</code><br />
+Defines which environments should be explicitly ignored during the sync.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync -e staging</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>dry</strong> (Alias: <code>d</code>)<br />
-  Runs the sync in dry-run mode without applying any changes.<br />
-<em>Usage: <code>db:sync -d</code></em></p>
+<p><strong><code>dry</code></strong> | <strong><code>d</code></strong><br />
+Simulates the sync process. It shows which files would be marked as executed without updating the database history.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync -d</code></p>
+</blockquote>
 </li>
 <li>
-<p><strong>include-external</strong><br />
-  Includes Framework migrations for the sync.<br />
-<em>Usage: <code>db:sync --include-external</code></em></p>
+<p><strong><code>include-external</code></strong><br />
+Includes migrations provided by the ZubZet Framework in the sync process.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync --include-external</code></p>
+</blockquote>
 </li>
 </ul>
 <h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h3>
-<p>The <strong>Status</strong> command shows the <strong>current migration lock state</strong> of the database.</p>
-<p>While a migration is running, ZubZet applies a <strong>database lock</strong> to ensure that <strong>no two migrations run in parallel</strong>. This prevents race conditions, broken schemas, and inconsistent migration states.</p>
-<p>The command checks whether this lock is currently active and reports one of the following states:</p>
+<p>The <strong>Status</strong> command provides a quick health check of the <strong>database lock state</strong>.</p>
+<p>To prevent race conditions, broken schemas, and inconsistent data, ZubZet applies a <strong>strict database lock</strong> during every migration process. This ensures that no two migration instances can run in parallel.</p>
+<h4 id="lock-states">Lock States<a class="headerlink" href="#lock-states" title="Permanent link">&para;</a></h4>
+<p>The command reports one of the following states:</p>
 <ul>
-<li><strong>LOCKED (0)</strong> – A migration is currently running or the database is protected against concurrent migration execution.</li>
-<li><strong>UNLOCKED (1)</strong> – No migration is running and migrations can be executed safely.</li>
+<li><strong><code>LOCKED</code> (0)</strong> – A migration is currently in progress, or a previous migration was interrupted (e.g., a <strong>Manual Migration</strong>), leaving the database protected against concurrent execution.</li>
+<li><strong><code>UNLOCKED</code> (1)</strong> – The database is clear. No migration is currently active, and new migrations can be started safely.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the status remains <strong>LOCKED</strong> even though no migration is running, it usually means a <strong>Manual Migration</strong> was reached or a process <strong>crashed</strong>.</p>
+<p>To resolve this, you must either:</p>
+<ol>
+<li>Complete the manual task and <a href="#sync">Synchronize</a> the state.</li>
+<li>Manually clear the lock (if you are certain no process is active).</li>
+</ol>
+</div>
+<p><strong>Usage</strong>
+<div class="highlight"><pre><span></span><code>db:status
+</code></pre></div></p>
 <h2 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
+<p>When deploying to a <strong>Production environment</strong>, ensuring that the migration history is perfectly aligned with the actual database schema is critical before applying new changes.</p>
+<p>The standard workflow for a safe production update follows these two essential steps:</p>
+<h3 id="1-synchronize-dbsync">1. Synchronize (<code>db:sync</code>)<a class="headerlink" href="#1-synchronize-dbsync" title="Permanent link">&para;</a></h3>
+<p>First, align the internal migration history. This ensures that any schema states already present in the database are correctly marked as "executed," preventing the system from attempting to re-run legacy migrations.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:sync</code></p>
+</blockquote>
+<h3 id="2-migrate-dbmigrate">2. Migrate (<code>db:migrate</code>)<a class="headerlink" href="#2-migrate-dbmigrate" title="Permanent link">&para;</a></h3>
+<p>Once the history is synchronized, execute the pending migrations to bring the production database up to the latest version.</p>
+<blockquote>
+<p><strong>Usage:</strong> <code>db:migrate</code></p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To avoid unexpected downtime, always perform a <strong>Dry-Run</strong> first to preview exactly which files will be affected.</p>
+</div>
 <h2 id="internal-tables">Internal Tables<a class="headerlink" href="#internal-tables" title="Permanent link">&para;</a></h2>
 <p>To support the migration system, ZubZet automatically creates <strong>two internal database tables</strong>.
 These tables are required for locking and version tracking and are managed fully by the framework.</p>

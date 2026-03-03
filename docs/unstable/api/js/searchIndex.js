@@ -2456,6 +2456,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/AdminController.html#method_action_loginas"
         },                {
+            "fqsen": "\\AdminController\u003A\u003Aaction_e2e_loginas_exec\u0028\u0029",
+            "name": "action_e2e_loginas_exec",
+            "summary": "",
+            "url": "classes/AdminController.html#method_action_e2e_loginas_exec"
+        },                {
             "fqsen": "\\AdvancedController",
             "name": "AdvancedController",
             "summary": "",
@@ -2550,6 +2555,11 @@ Search.appendIndex(
             "name": "action_renderlayout",
             "summary": "",
             "url": "classes/CoreController.html#method_action_renderlayout"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_e2e_superpermission\u0028\u0029",
+            "name": "action_e2e_superpermission",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_e2e_superpermission"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_permission\u0028\u0029",
             "name": "action_permission",

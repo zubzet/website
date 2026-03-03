@@ -2127,22 +2127,67 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-changes" class="md-nav__link">
+  <a href="#upgrade-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other Changes
+        Upgrade Steps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Other Changes">
+    <nav class="md-nav" aria-label="Upgrade Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
+  <a href="#1-automated-migration-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File Structure
+        1. Automated Migration (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manual-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manual Configuration Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manual Configuration Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-update-database-settings-z_settingsini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Update Database Settings (z_settings.ini)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-update-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Update package.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-docker-integration-docker-compose-baseyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Docker Integration (docker-compose-base.yml)
       
     </span>
   </a>
@@ -2153,15 +2198,48 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade-steps" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-file-schema-cleanup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upgrade Steps
+        3. File &amp; Schema Cleanup
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. File &amp; Schema Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-filename-convention-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Filename Convention Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-remove-legacy-framework-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Remove Legacy Framework Migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2194,7 +2272,6 @@
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#new-features">New Features</a></li>
-<li><a href="#other-changes">Other Changes</a></li>
 <li><a href="#upgrade-steps">Upgrade Steps</a></li>
 </ul>
 <h2 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
@@ -2202,20 +2279,73 @@
 <p>ZubZet now includes significantly enhanced <a href="../../../core-features/access-control"><strong>access control and permission capabilities</strong></a>.
 This update introduces improved developer ergonomics, support for <strong>user-based permissions</strong>, and a more flexible and extensible authorization workflow.</p>
 <h3 id="migration-system">Migration System<a class="headerlink" href="#migration-system" title="Permanent link">&para;</a></h3>
-<p>A new <a href="../../../core-features/migrations"><strong>migration system</strong></a> has been added.
-It enables developers to easily create and manage database migrations and seed data, as well as handle environments and migration execution in a structured and consistent manner.</p>
+<p>The <a href="../../../core-features/migrations"><strong>migration system</strong></a> has been implemented. It provides developers with a structured and consistent way to manage database migrations, seed data, and environment-specific execution.</p>
 <h3 id="global-helper-functions">Global Helper Functions<a class="headerlink" href="#global-helper-functions" title="Permanent link">&para;</a></h3>
 <p>To simplify development and reduce boilerplate, a set of <a href="../../../core-features/global-helper-functions"><strong>global helper functions</strong></a> is now available.
 These helpers provide more convenient access to application objects and services.</p>
 <h3 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
 <p>ZubZet can now be managed more efficiently through <a href="../../../core-features/console-commands"><strong>console commands</strong></a>.
 This allows for improved automation, maintenance, and development workflows.</p>
-<h2 id="other-changes">Other Changes<a class="headerlink" href="#other-changes" title="Permanent link">&para;</a></h2>
-<h3 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h3>
-<p>The project file structure has been revised to improve <strong>maintainability, clarity, and scalability</strong>.
-Several directories and files have been reorganized to better reflect their responsibilities.</p>
 <h2 id="upgrade-steps">Upgrade Steps<a class="headerlink" href="#upgrade-steps" title="Permanent link">&para;</a></h2>
-<p><em>Coming soon.</em></p>
+<p>Follow these steps to upgrade your project to version <strong>1.1.0</strong>. These changes ensure compatibility with the new migration architecture and automated deployment workflow.</p>
+<hr />
+<h3 id="1-automated-migration-recommended">1. Automated Migration (Recommended)<a class="headerlink" href="#1-automated-migration-recommended" title="Permanent link">&para;</a></h3>
+<p>You can automate most of these steps using the <strong>ZubZet Version Migrator</strong>.</p>
+<ol>
+<li>Clone the tool: <a href="https://github.com/zubzet/version-migration/tree/v1_1_0">zubzet/version-migration</a></li>
+<li>Run the upgrade command in your terminal:
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="o">{</span>YOUR_CURRENT_VERSION<span class="o">}</span><span class="w"> </span><span class="m">1</span>.1.0
+</code></pre></div></li>
+</ol>
+<hr />
+<h3 id="2-manual-configuration-changes">2. Manual Configuration Changes<a class="headerlink" href="#2-manual-configuration-changes" title="Permanent link">&para;</a></h3>
+<h4 id="21-update-database-settings-z_settingsini">2.1 Update Database Settings (<code>z_settings.ini</code>)<a class="headerlink" href="#21-update-database-settings-z_settingsini" title="Permanent link">&para;</a></h4>
+<p>Add two new keys to your configuration. These elevated credentials are used specifically for schema modifications.</p>
+<ul>
+<li><strong><code>dbusername_elevated</code></strong></li>
+<li><strong><code>dbpassword_elevated</code></strong></li>
+</ul>
+<blockquote>
+<p>If left empty, the system falls back to the default database user.</p>
+</blockquote>
+<h4 id="22-update-packagejson">2.2 Update <code>package.json</code><a class="headerlink" href="#22-update-packagejson" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Seed Command:</strong> Change <code>"php app/Database/import.php"</code> to <code>"php zubzet db:seed"</code> in your seed script.</li>
+<li><strong>Start Script:</strong> Remove the <code>&amp;&amp; npm run seed</code> suffix from your start script.</li>
+</ul>
+<h4 id="23-docker-integration-docker-compose-baseyml">2.3 Docker Integration (<code>docker-compose-base.yml</code>)<a class="headerlink" href="#23-docker-integration-docker-compose-baseyml" title="Permanent link">&para;</a></h4>
+<p>Update your Docker configuration to include the new migration service and dependency checks.</p>
+<p><strong>Add the migration service:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">migration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*built-application-image</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php zubzet db:migrate</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">database</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_healthy</span>
+</code></pre></div>
+<p><strong>Update <code>x-built-application-image</code> dependencies:</strong>
+Add the following to the <code>depends_on</code> section of your application image:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">migration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_completed_successfully</span>
+</code></pre></div>
+<hr />
+<h3 id="3-file-schema-cleanup">3. File &amp; Schema Cleanup<a class="headerlink" href="#3-file-schema-cleanup" title="Permanent link">&para;</a></h3>
+<h4 id="31-filename-convention-check">3.1 Filename Convention Check<a class="headerlink" href="#31-filename-convention-check" title="Permanent link">&para;</a></h4>
+<p>Every migration file in <code>app/Database/migrations</code> <strong>must</strong> follow the new format:
+<code>YYYY-MM-DD_{INDEX}_{NAME}.{php/sql}</code></p>
+<blockquote>
+<p>Review all existing files. If they do not match this pattern, rename them accordingly, or the migration system will abort.</p>
+</blockquote>
+<h4 id="32-remove-legacy-framework-migrations">3.2 Remove Legacy Framework Migrations<a class="headerlink" href="#32-remove-legacy-framework-migrations" title="Permanent link">&para;</a></h4>
+<p>Delete migrations that target internal <code>z_</code> tables (e.g., <code>z_user</code>, <code>z_role</code>, <code>z_file</code>).</p>
+<ul>
+<li><strong>Standard files to remove:</strong> <code>2021-02-04_zubzet.sql</code>, <code>2025-11-06_user_permissions</code>.</li>
+</ul>
+<p>Ensure no local migrations modify these tables:
+<code>z_email_verify</code>, <code>z_file</code>, <code>z_interaction_log</code>, <code>z_interaction_log_category</code>, <code>z_language</code>, <code>z_logintoken</code>, <code>z_logintry</code>, <code>z_login_too_many_tries</code>, <code>z_password_reset</code>, <code>z_role</code>, <code>z_role_permission</code>, <code>z_uniqueref</code>, <code>z_user</code>, <code>z_user_role</code>, <code>z_user_permission</code>.</p>
 
 
 
