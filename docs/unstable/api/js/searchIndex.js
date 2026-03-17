@@ -841,6 +841,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-Platform.html#method_getPlatform"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\UnlockMigration",
+            "name": "UnlockMigration",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\UnlockMigration\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\UnlockMigration\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_execute"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Migration",
             "name": "Migration",
             "summary": "",
@@ -3360,6 +3375,16 @@ Search.appendIndex(
             "name": "selectLanguageById",
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_selectLanguageById"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectInsert\u0028\u0029",
+            "name": "selectInsert",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectInsert"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003Ainsert\u0028\u0029",
+            "name": "insert",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_insert"
         },                {
             "fqsen": "\\QueryBuilderModel\u003A\u003AinsertLanguage\u0028\u0029",
             "name": "insertLanguage",

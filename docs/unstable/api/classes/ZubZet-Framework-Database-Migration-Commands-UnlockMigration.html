@@ -86,13 +86,18 @@
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet.html">ZubZet</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework.html">Framework</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-console.html">Console</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-database.html">Database</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-database-migration.html">Migration</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-database-migration-commands.html">Commands</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Application
+    UnlockMigration
 
+        <span class="phpdocumentor-element__extends">
+        extends <abbr title="\Symfony\Component\Console\Command\Command">Command</abbr>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -102,12 +107,15 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\DatabaseConnection">DatabaseConnection</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Console/Application.php"><a href="files/src-console-application.html"><abbr title="src/Console/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/UnlockMigration.php"><a href="files/src-database-migration-commands-unlockmigration.html"><abbr title="src/Database/Migration/Commands/UnlockMigration.php">UnlockMigration.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
@@ -127,10 +135,24 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Console-Application.html#method_bootstrap">bootstrap()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_configure">configure()</a>
     <span>
-                        &nbsp;: <abbr title="\Symfony\Component\Console\Application">Application</abbr>    </span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_execute">execute()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_setDatabaseConnection">setDatabaseConnection()</a>
+    <span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
@@ -145,37 +167,78 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/ZubZet-Framework-Console-Application.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
             -method
-            -public
-                                    -static                    "
+            -protected
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_bootstrap">
-        bootstrap()
-        <a href="classes/ZubZet-Framework-Console-Application.html#method_bootstrap" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_configure">
+        configure()
+        <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_configure" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Console/Application.php"><a href="files/src-console-application.html"><abbr title="src/Console/Application.php">Application.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/UnlockMigration.php"><a href="files/src-database-migration-commands-unlockmigration.html"><abbr title="src/Database/Migration/Commands/UnlockMigration.php">UnlockMigration.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">bootstrap</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\z_framework">z_framework</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$booter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\Console\Application">Application</abbr></span></code>
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">configure</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_execute">
+        execute()
+        <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#method_execute" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/UnlockMigration.php"><a href="files/src-database-migration-commands-unlockmigration.html"><abbr title="src/Database/Migration/Commands/UnlockMigration.php">UnlockMigration.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">execute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Input\InputInterface">InputInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$in</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$out</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$booter</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\z_framework">z_framework</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$in</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$out</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -186,7 +249,40 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\Console\Application">Application</abbr></span>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setDatabaseConnection">
+        setDatabaseConnection()
+        <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_setDatabaseConnection" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/Traits/DatabaseConnection.php"><a href="files/src-database-migration-commands-traits-databaseconnection.html"><abbr title="src/Database/Migration/Commands/Traits/DatabaseConnection.php">DatabaseConnection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">5</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">setDatabaseConnection</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -269,7 +365,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/ZubZet-Framework-Console-Application.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/ZubZet-Framework-Database-Migration-Commands-UnlockMigration.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
