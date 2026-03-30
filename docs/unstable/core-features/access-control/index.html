@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2286,6 +2286,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#session-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifetime-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifetime Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalidation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expiry-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiry Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refreshing-session-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refreshing Session Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2667,6 +2761,116 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Reloads the role data from the database.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refresh();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h2 id="session-object">Session Object<a class="headerlink" href="#session-object" title="Permanent link">&para;</a></h2>
+<p>The <code>Session</code> object represents a login session (stored in <code>z_logintoken</code>) and provides methods for creation, retrieval, lifetime management, and invalidation.</p>
+<h3 id="session-retrieval">Session Retrieval<a class="headerlink" href="#session-retrieval" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns a session by its token string, or <code>null</code> if not found.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::byToken(string $token): ?Session</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all active sessions for a given user.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::byUser(User $user): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns a session by its ID.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::byId(int|string $id): ?Session</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all sessions matching the given IDs.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::byIds(int ...$ids): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all sessions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::all(): array</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="creating-a-session">Creating a Session<a class="headerlink" href="#creating-a-session" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Creates a new login session for a user. An optional <code>$userExec</code> can be passed to create an impersonation session where <code>$user</code> is the target user and <code>$userExec</code> is the acting. If omitted, both are set to <code>$user</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Session::add(User $user, ?User $userExec = null): Session</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="lifetime-management">Lifetime Management<a class="headerlink" href="#lifetime-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Extends the session's lifetime by the given number of seconds on top of the base timeout and any existing extension.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;extend(int $seconds): void</span>
+</code></pre></div>
+</li>
+<li>
+<p>Sets the total extension time in seconds, replacing any previously set extension.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;setExtensionTime(int $seconds): void</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="invalidation">Invalidation<a class="headerlink" href="#invalidation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Immediately invalidates the session, preventing further use.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;invalidate(): void</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="expiry-check">Expiry Check<a class="headerlink" href="#expiry-check" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns <code>true</code> if the session has expired. The expiry is calculated from <code>created</code> plus the configured <code>loginTimeoutSeconds</code> (defaults to 7 days) plus any <code>extended_seconds</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;isExpired(): bool</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="session-data">Session Data<a class="headerlink" href="#session-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns the session token string.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;token(): string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the ID of the user who owns the session.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userId(): int|string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the ID of the user being executed as (relevant for impersonation sessions).</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userIdExec(): int|string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the number of seconds the session has been extended by, or <code>null</code> if not extended.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;extendedSeconds(): ?int</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the creation timestamp of the session.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;created(): string</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="refreshing-session-data">Refreshing Session Data<a class="headerlink" href="#refreshing-session-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Reloads the session data from the database.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;refresh(): void</span>
 </code></pre></div>
 </li>
 </ul>

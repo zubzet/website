@@ -92,10 +92,10 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Role
+    Group
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html"><abbr title="\ZubZet\Framework\Authentication\AuthenticationObject">AuthenticationObject</abbr></a>
+        extends <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -106,15 +106,12 @@
         </div>
     
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Permission">Permission</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Role.php"><a href="files/src-authentication-permission-role.html"><abbr title="src/Authentication/Permission/Role.php">Role.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Group.php"><a href="files/src-authentication-permission-group.html"><abbr title="src/Authentication/Permission/Group.php">Group.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">5</span>
 
     </aside>
 
@@ -135,6 +132,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html#property_dbExpression">$dbExpression</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#property_dbPermissionsObjectColumn">$dbPermissionsObjectColumn</a>
     <span>
                 &nbsp;: string            </span>
@@ -170,13 +174,6 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#property_dbExpression">$dbExpression</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -184,7 +181,7 @@
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#method___construct">__construct()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -405,8 +402,42 @@ This will deactivate the Role in the Database</dd>
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_dbExpression">
+        $dbExpression
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html#property_dbExpression" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Group.php"><a href="files/src-authentication-permission-group.html"><abbr title="src/Authentication/Permission/Group.php">Group.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">7</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$dbExpression</span>
+     = <span class="phpdocumentor-signature__default-value">[&quot;zr.is_group&quot; =&gt; 1]</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -582,40 +613,6 @@ This will deactivate the Role in the Database</dd>
             phpdocumentor-element
             -property
             -private
-            -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_dbExpression">
-        $dbExpression
-        <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#property_dbExpression" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Role.php"><a href="files/src-authentication-permission-role.html"><abbr title="src/Authentication/Permission/Role.php">Role.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$dbExpression</span>
-     = <span class="phpdocumentor-signature__default-value">[&quot;zr.is_group&quot; =&gt; 0]</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_id">
@@ -650,7 +647,7 @@ This will deactivate the Role in the Database</dd>
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -660,12 +657,12 @@ This will deactivate the Role in the Database</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Role.php"><a href="files/src-authentication-permission-role.html"><abbr title="src/Authentication/Permission/Role.php">Role.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -1969,7 +1966,7 @@ This will deactivate the Role in the Database</p>
 </section>
             </div>
         </div>
-        <a href="classes/ZubZet-Framework-Authentication-Permission-Role.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

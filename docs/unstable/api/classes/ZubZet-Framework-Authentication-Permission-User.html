@@ -95,7 +95,7 @@
     User
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html"><abbr title="\ZubZet\Framework\Authentication\Permission\AuthenticationObject">AuthenticationObject</abbr></a>
+        extends <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html"><abbr title="\ZubZet\Framework\Authentication\AuthenticationObject">AuthenticationObject</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -108,13 +108,13 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Permission">Permission</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\Permission\RetrievalTrait">RetrievalTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-Permission-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\Permission\HandleTrait">HandleTrait</abbr></a>                    </span>
+                            <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Permission">Permission</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
@@ -135,6 +135,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbExpression">$dbExpression</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbPermissionsObjectColumn">$dbPermissionsObjectColumn</a>
     <span>
                 &nbsp;: string            </span>
@@ -156,7 +163,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_data">$data</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data">$data</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
 </dt>
@@ -170,7 +177,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_id">$id</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
     <span>
                 &nbsp;: int|null            </span>
 </dt>
@@ -192,7 +199,7 @@
 This will insert the user into the database and return the created user object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_all">all()</a>
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all">all()</a>
     <span>
                         &nbsp;: array&lt;string|int, object&gt;    </span>
 </dt>
@@ -227,14 +234,21 @@ This will insert the user into the database and return the created user object</
 <dd>Get a user by their email address</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byId">byId()</a>
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_byGroup">byGroup()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId">byId()</a>
     <span>
                         &nbsp;: object|null    </span>
 </dt>
 <dd>Get a permission object (user or role) by its id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byIds">byIds()</a>
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds">byIds()</a>
     <span>
                         &nbsp;: array&lt;string|int, object&gt;    </span>
 </dt>
@@ -255,14 +269,14 @@ This will insert the user into the database and return the created user object</
 <dd>Get a list of users by a specific role</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_checkInstance">checkInstance()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance">checkInstance()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_clearFields">clearFields()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_clearFields">clearFields()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -283,18 +297,25 @@ This will insert the user into the database and return the created user object</
 <dd>Get the user&#039;s email from the cache</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getAll">getAll()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getAll">getAll()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getField">getField()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getField">getField()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups">getGroups()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;    </span>
+</dt>
+<dd>Get the user&#039;s groups</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getPermissions">getPermissions()</a>
@@ -318,6 +339,22 @@ This will insert the user into the database and return the created user object</
 <dd>Get the user&#039;s permissions</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsAdd">groupsAdd()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Add Groups to the user
+This will add the groups automatically into the database</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsRemove">groupsRemove()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Remove groups from the user
+This will remove the groups automatically from the database</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAll">hasAccessAll()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -332,7 +369,7 @@ This will insert the user into the database and return the created user object</
 <dd>Check if the permission object (user or role) has one of the permissions</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_id">id()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_id">id()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -353,7 +390,7 @@ This will insert the user into the database and return the created user object</
 <dd>Re-/Loads the user object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_nullId">nullId()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId">nullId()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -374,7 +411,7 @@ This will insert the user into the database and return the created user object</
 <dd>Remove permissions from the permission object (user or role)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-HandleTrait.html#method_refresh">refresh()</a>
+    <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh">refresh()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -448,7 +485,7 @@ This will update the password in the database</dd>
 <dd>Verify the User</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_setField">setField()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField">setField()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -473,6 +510,40 @@ This will update the password in the database</dd>
             -public
             -static                                            "
 >
+    <h4 class="phpdocumentor-element__name" id="property_dbExpression">
+        $dbExpression
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbExpression" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$dbExpression</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+            -static                                            "
+>
     <h4 class="phpdocumentor-element__name" id="property_dbPermissionsObjectColumn">
         $dbPermissionsObjectColumn
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbPermissionsObjectColumn" class="headerlink"><i class="fas fa-link"></i></a>
@@ -482,7 +553,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -516,7 +587,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -550,7 +621,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -577,12 +648,12 @@ This will update the password in the database</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_data">
         $data
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_data" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">12</span>
 
@@ -645,12 +716,12 @@ This will update the password in the database</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">8</span>
 
@@ -690,7 +761,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -734,7 +805,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
@@ -795,10 +866,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_all">
         all()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_all" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/RetrievalTrait.php"><a href="files/src-authentication-permission-retrievaltrait.html"><abbr title="src/Authentication/Permission/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">12</span>
 
@@ -882,7 +953,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -926,7 +997,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -970,7 +1041,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -1010,12 +1081,56 @@ This will insert the user into the database and return the created user object</
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_byId">
-        byId()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byId" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_byGroup">
+        byGroup()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_byGroup" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/RetrievalTrait.php"><a href="files/src-authentication-permission-retrievaltrait.html"><abbr title="src/Authentication/Permission/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">44</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$group</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byId">
+        byId()
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">31</span>
 
@@ -1059,10 +1174,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_byIds">
         byIds()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byIds" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/RetrievalTrait.php"><a href="files/src-authentication-permission-retrievaltrait.html"><abbr title="src/Authentication/Permission/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">45</span>
 
@@ -1111,7 +1226,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -1158,7 +1273,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1200,10 +1315,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_checkInstance">
         checkInstance()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_checkInstance" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 
@@ -1233,10 +1348,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_clearFields">
         clearFields()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_clearFields" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_clearFields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">37</span>
 
@@ -1271,7 +1386,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
@@ -1304,7 +1419,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 
     </aside>
 
@@ -1334,10 +1449,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_getAll">
         getAll()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getAll" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getAll" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">44</span>
 
@@ -1367,10 +1482,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_getField">
         getField()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getField" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getField" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">26</span>
 
@@ -1409,6 +1524,41 @@ This will insert the user into the database and return the created user object</
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getGroups">
+        getGroups()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">318</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the user&#039;s groups</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getGroups</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Array of group objects</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getPermissions">
         getPermissions()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getPermissions" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1416,7 +1566,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">282</span>
+    <span class="phpdocumentor-element-found-in__line">343</span>
 
     </aside>
 
@@ -1451,7 +1601,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 
     </aside>
 
@@ -1486,7 +1636,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">330</span>
 
     </aside>
 
@@ -1506,6 +1656,98 @@ This will insert the user into the database and return the created user object</
             <section class="phpdocumentor-description"><p>Array of permissions</p>
 </section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_groupsAdd">
+        groupsAdd()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsAdd" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">213</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add Groups to the user
+This will add the groups automatically into the database</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">groupsAdd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$groups</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$groups</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The groups to add to the user</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_groupsRemove">
+        groupsRemove()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsRemove" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">251</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove groups from the user
+This will remove the groups automatically from the database</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">groupsRemove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$groups</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$groups</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The groups to remove from the user</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
     
 </article>
                     <article
@@ -1610,10 +1852,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_id">
         id()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_id" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">59</span>
 
@@ -1648,7 +1890,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 
     </aside>
 
@@ -1695,7 +1937,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -1735,10 +1977,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_nullId">
         nullId()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_nullId" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">65</span>
 
@@ -1858,10 +2100,10 @@ This will insert the user into the database and return the created user object</
 >
     <h4 class="phpdocumentor-element__name" id="method_refresh">
         refresh()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-HandleTrait.html#method_refresh" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/HandleTrait.php"><a href="files/src-authentication-permission-handletrait.html"><abbr title="src/Authentication/Permission/HandleTrait.php">HandleTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/HandleTrait.php"><a href="files/src-authentication-handletrait.html"><abbr title="src/Authentication/HandleTrait.php">HandleTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">13</span>
 
@@ -1912,7 +2154,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">365</span>
 
     </aside>
 
@@ -1945,7 +2187,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 
     </aside>
 
@@ -1978,7 +2220,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
@@ -2011,7 +2253,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
@@ -2057,7 +2299,7 @@ This will add the roles automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -2103,7 +2345,7 @@ This will remove the roles automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -2149,7 +2391,7 @@ This will update the email in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -2195,7 +2437,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 
     </aside>
 
@@ -2230,7 +2472,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -2270,10 +2512,10 @@ This will update the password in the database</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_setField">
         setField()
-        <a href="classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_setField" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/AuthenticationObject.php"><a href="files/src-authentication-permission-authenticationobject.html"><abbr title="src/Authentication/Permission/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">51</span>
 

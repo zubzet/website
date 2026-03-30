@@ -1,65 +1,75 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject",
             "name": "AuthenticationObject",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method___construct"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method___construct"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AcheckInstance\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AcheckInstance\u0028\u0029",
             "name": "checkInstance",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_checkInstance"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AgetField\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AgetField\u0028\u0029",
             "name": "getField",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getField"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getField"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AclearFields\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AclearFields\u0028\u0029",
             "name": "clearFields",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_clearFields"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_clearFields"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AgetAll\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AgetAll\u0028\u0029",
             "name": "getAll",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_getAll"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getAll"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AsetField\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AsetField\u0028\u0029",
             "name": "setField",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_setField"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003A\u0024id",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_id"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003AnullId\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AnullId\u0028\u0029",
             "name": "nullId",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#method_nullId"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\AuthenticationObject\u003A\u003A\u0024data",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-AuthenticationObject.html#property_data"
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\HandleTrait",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\HandleTrait",
             "name": "HandleTrait",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-HandleTrait.html"
+            "url": "classes/ZubZet-Framework-Authentication-HandleTrait.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\HandleTrait\u003A\u003Arefresh\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\HandleTrait\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
             "summary": "Refresh\u0020the\u0020current\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020clearing\u0020all\u0020its\u0020fields\u0020and\u0020setting\u0020them\u0020new",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-HandleTrait.html#method_refresh"
+            "url": "classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Group",
+            "name": "Group",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-Group.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Group\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-Group.html#property_dbExpression"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Permission",
             "name": "Permission",
@@ -95,26 +105,6 @@ Search.appendIndex(
             "name": "permissionChanged",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Permission.html#property_permissionChanged"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\RetrievalTrait",
-            "name": "RetrievalTrait",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\RetrievalTrait\u003A\u003Aall\u0028\u0029",
-            "name": "all",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_all"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\RetrievalTrait\u003A\u003AbyId\u0028\u0029",
-            "name": "byId",
-            "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020its\u0020id",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byId"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\RetrievalTrait\u003A\u003AbyIds\u0028\u0029",
-            "name": "byIds",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020their\u0020ids",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-RetrievalTrait.html#method_byIds"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role",
             "name": "Role",
@@ -206,6 +196,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#property_dbPermissionsObjectColumn"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#property_dbExpression"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User",
             "name": "User",
             "summary": "",
@@ -220,6 +215,11 @@ Search.appendIndex(
             "name": "byRole",
             "summary": "Get\u0020a\u0020list\u0020of\u0020users\u0020by\u0020a\u0020specific\u0020role",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_byRole"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyGroup\u0028\u0029",
+            "name": "byGroup",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_byGroup"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyEmail\u0028\u0029",
             "name": "byEmail",
@@ -281,10 +281,20 @@ Search.appendIndex(
             "summary": "Add\u0020roles\u0020to\u0020the\u0020user\nThis\u0020will\u0020add\u0020the\u0020roles\u0020automatically\u0020into\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_rolesAdd"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgroupsAdd\u0028\u0029",
+            "name": "groupsAdd",
+            "summary": "Add\u0020Groups\u0020to\u0020the\u0020user\nThis\u0020will\u0020add\u0020the\u0020groups\u0020automatically\u0020into\u0020the\u0020database",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsAdd"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArolesRemove\u0028\u0029",
             "name": "rolesRemove",
             "summary": "Remove\u0020roles\u0020from\u0020the\u0020user\nThis\u0020will\u0020remove\u0020the\u0020roles\u0020automatically\u0020from\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_rolesRemove"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgroupsRemove\u0028\u0029",
+            "name": "groupsRemove",
+            "summary": "Remove\u0020groups\u0020from\u0020the\u0020user\nThis\u0020will\u0020remove\u0020the\u0020groups\u0020automatically\u0020from\u0020the\u0020database",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsRemove"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Aemail\u0028\u0029",
             "name": "email",
@@ -305,6 +315,11 @@ Search.appendIndex(
             "name": "getRoles",
             "summary": "Get\u0020the\u0020user\u0027s\u0020roles",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_getRoles"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgetGroups\u0028\u0029",
+            "name": "getGroups",
+            "summary": "Get\u0020the\u0020user\u0027s\u0020groups",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgetUserPermissions\u0028\u0029",
             "name": "getUserPermissions",
@@ -340,6 +355,126 @@ Search.appendIndex(
             "name": "dbPermissionsObjectColumn",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbPermissionsObjectColumn"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbExpression"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait",
+            "name": "RetrievalTrait",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003Aall\u0028\u0029",
+            "name": "all",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyId\u0028\u0029",
+            "name": "byId",
+            "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020its\u0020id",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyIds\u0028\u0029",
+            "name": "byIds",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020their\u0020ids",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session",
+            "name": "Session",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AloadObject\u0028\u0029",
+            "name": "loadObject",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_loadObject"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_add"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AbyToken\u0028\u0029",
+            "name": "byToken",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_byToken"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AbyUser\u0028\u0029",
+            "name": "byUser",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_byUser"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AsetExtensionTime\u0028\u0029",
+            "name": "setExtensionTime",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_setExtensionTime"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Aextend\u0028\u0029",
+            "name": "extend",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_extend"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Ainvalidate\u0028\u0029",
+            "name": "invalidate",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_invalidate"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AisExpired\u0028\u0029",
+            "name": "isExpired",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_isExpired"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Atoken\u0028\u0029",
+            "name": "token",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_token"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AuserId\u0028\u0029",
+            "name": "userId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_userId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AuserIdExec\u0028\u0029",
+            "name": "userIdExec",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_userIdExec"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AextendedSeconds\u0028\u0029",
+            "name": "extendedSeconds",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_extendedSeconds"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Acreated\u0028\u0029",
+            "name": "created",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_created"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003ArefreshOnNextUse\u0028\u0029",
+            "name": "refreshOnNextUse",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_refreshOnNextUse"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024dbTable",
+            "name": "dbTable",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#property_dbTable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#property_dbExpression"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024shouldRefresh",
+            "name": "shouldRefresh",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#property_shouldRefresh"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User",
             "name": "User",
@@ -1426,6 +1561,11 @@ Search.appendIndex(
             "summary": "Action\u0020for\u0020logging\u0020in\u0020as\u0020someone\u0020else",
             "url": "classes/ZController.html#method_action_login_as"
         },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_groups\u0028\u0029",
+            "name": "action_groups",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_groups"
+        },                {
             "fqsen": "\\ZController\u003A\u003Aaction_roles\u0028\u0029",
             "name": "action_roles",
             "summary": "Action\u0020for\u0020the\u0020role\u0020configuration\u0020page",
@@ -1506,25 +1646,15 @@ Search.appendIndex(
             "summary": "Checks\u0020for\u0020a\u0020unique\u0020reference",
             "url": "classes/z-generalModel.html#method_checkUniqueRef"
         },                {
+            "fqsen": "\\z_generalModel\u003A\u003AgetGroups\u0028\u0029",
+            "name": "getGroups",
+            "summary": "",
+            "url": "classes/z-generalModel.html#method_getGroups"
+        },                {
             "fqsen": "\\z_loginModel",
             "name": "z_loginModel",
             "summary": "The\u0020login\u0020model\u0020holds\u0020logging\u0020in\u0020and\u0020out\u0020of\u0020users",
             "url": "classes/z-loginModel.html"
-        },                {
-            "fqsen": "\\z_loginModel\u003A\u003AvalidateCookie\u0028\u0029",
-            "name": "validateCookie",
-            "summary": "Validate\u0020a\u0020login\u0020token\u0020retrieved\u0020from\u0020the\u0020users\u0020Cookie",
-            "url": "classes/z-loginModel.html#method_validateCookie"
-        },                {
-            "fqsen": "\\z_loginModel\u003A\u003AinvalidateSession\u0028\u0029",
-            "name": "invalidateSession",
-            "summary": "Invalidates\u0020and\u0020removes\u0020a\u0020login\u0020token\u0020\u0028session\u0029\u0020for\u0020a\u0020user",
-            "url": "classes/z-loginModel.html#method_invalidateSession"
-        },                {
-            "fqsen": "\\z_loginModel\u003A\u003AclearSessions\u0028\u0029",
-            "name": "clearSessions",
-            "summary": "",
-            "url": "classes/z-loginModel.html#method_clearSessions"
         },                {
             "fqsen": "\\z_loginModel\u003A\u003AcreateLoginToken\u0028\u0029",
             "name": "createLoginToken",
@@ -1630,31 +1760,6 @@ Search.appendIndex(
             "name": "parseMigration",
             "summary": "",
             "url": "classes/z-migrationModel.html#method_parseMigration"
-        },                {
-            "fqsen": "\\z_permissionModel",
-            "name": "z_permissionModel",
-            "summary": "",
-            "url": "classes/z-permissionModel.html"
-        },                {
-            "fqsen": "\\z_permissionModel\u003A\u003AgetRolesByAccessToAnyOf\u0028\u0029",
-            "name": "getRolesByAccessToAnyOf",
-            "summary": "",
-            "url": "classes/z-permissionModel.html#method_getRolesByAccessToAnyOf"
-        },                {
-            "fqsen": "\\z_permissionModel\u003A\u003AgetRolesByAccessToAll\u0028\u0029",
-            "name": "getRolesByAccessToAll",
-            "summary": "",
-            "url": "classes/z-permissionModel.html#method_getRolesByAccessToAll"
-        },                {
-            "fqsen": "\\z_permissionModel\u003A\u003AgetUsersByAccessToAll\u0028\u0029",
-            "name": "getUsersByAccessToAll",
-            "summary": "",
-            "url": "classes/z-permissionModel.html#method_getUsersByAccessToAll"
-        },                {
-            "fqsen": "\\z_permissionModel\u003A\u003AgetUsersByAccessToAnyOf\u0028\u0029",
-            "name": "getUsersByAccessToAnyOf",
-            "summary": "",
-            "url": "classes/z-permissionModel.html#method_getUsersByAccessToAnyOf"
         },                {
             "fqsen": "\\z_statisticsModel",
             "name": "z_statisticsModel",
@@ -2100,6 +2205,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
             "url": "classes/ZubZet-Framework-Rendering-View.html#method_render"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\ViewNotFoundException",
+            "name": "ViewNotFoundException",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-ViewNotFoundException.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\HttpMethod",
             "name": "HttpMethod",
@@ -2716,6 +2826,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_queryBuilderDelete"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_static\u0028\u0029",
+            "name": "action_sendemail_static",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_static"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_static_mail_layout\u0028\u0029",
+            "name": "action_sendemail_static_mail_layout",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_static_mail_layout"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_static_mail_layout_path\u0028\u0029",
+            "name": "action_sendemail_static_mail_layout_path",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_static_mail_layout_path"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_dynamic\u0028\u0029",
+            "name": "action_sendemail_dynamic",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_dynamic"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemailtouser_static\u0028\u0029",
+            "name": "action_sendemailtouser_static",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemailtouser_static"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemailtouser_dynamic\u0028\u0029",
+            "name": "action_sendemailtouser_dynamic",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemailtouser_dynamic"
+        },                {
             "fqsen": "\\DashboardController",
             "name": "DashboardController",
             "summary": "",
@@ -2790,6 +2930,121 @@ Search.appendIndex(
             "name": "action_login",
             "summary": "",
             "url": "classes/FrontendController.html#method_action_login"
+        },                {
+            "fqsen": "\\GroupController",
+            "name": "GroupController",
+            "summary": "",
+            "url": "classes/GroupController.html"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byId\u0028\u0029",
+            "name": "action_byId",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byId"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byIdInactive\u0028\u0029",
+            "name": "action_byIdInactive",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byIdInactive"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byIds\u0028\u0029",
+            "name": "action_byIds",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byIds"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byName\u0028\u0029",
+            "name": "action_byName",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byName"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byNameInactive\u0028\u0029",
+            "name": "action_byNameInactive",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byNameInactive"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byUser\u0028\u0029",
+            "name": "action_byUser",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byUser"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byAccessToAll\u0028\u0029",
+            "name": "action_byAccessToAll",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byAccessToAll"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_byAccessToAnyOf\u0028\u0029",
+            "name": "action_byAccessToAnyOf",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_byAccessToAnyOf"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_remove\u0028\u0029",
+            "name": "action_remove",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_remove"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_removeInteraction\u0028\u0029",
+            "name": "action_removeInteraction",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_removeInteraction"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_update\u0028\u0029",
+            "name": "action_update",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_update"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_refresh\u0028\u0029",
+            "name": "action_refresh",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_refresh"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_getPermissions\u0028\u0029",
+            "name": "action_getPermissions",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_getPermissions"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_getUsers\u0028\u0029",
+            "name": "action_getUsers",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_getUsers"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_add\u0028\u0029",
+            "name": "action_add",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_add"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_hasAccessToAll\u0028\u0029",
+            "name": "action_hasAccessToAll",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_hasAccessToAll"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_hasAccessToAnyOf\u0028\u0029",
+            "name": "action_hasAccessToAnyOf",
+            "summary": "",
+            "url": "classes/GroupController.html#method_action_hasAccessToAnyOf"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003Aaction_isolation\u0028\u0029",
+            "name": "action_isolation",
+            "summary": "Isolation\u003A\u0020a\u0020Group\u0020ID\u0020must\u0020not\u0020be\u0020returned\u0020by\u0020Role\u003A\u003AbyId\nand\u0020a\u0020Role\u0020ID\u0020must\u0020not\u0020be\u0020returned\u0020by\u0020Group\u003A\u003AbyId",
+            "url": "classes/GroupController.html#method_action_isolation"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003AechoGroup\u0028\u0029",
+            "name": "echoGroup",
+            "summary": "",
+            "url": "classes/GroupController.html#method_echoGroup"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003AechoGroups\u0028\u0029",
+            "name": "echoGroups",
+            "summary": "",
+            "url": "classes/GroupController.html#method_echoGroups"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003AgetGroups\u0028\u0029",
+            "name": "getGroups",
+            "summary": "",
+            "url": "classes/GroupController.html#method_getGroups"
+        },                {
+            "fqsen": "\\GroupController\u003A\u003AgetGroup\u0028\u0029",
+            "name": "getGroup",
+            "summary": "",
+            "url": "classes/GroupController.html#method_getGroup"
         },                {
             "fqsen": "\\HelperController",
             "name": "HelperController",
@@ -3015,6 +3270,111 @@ Search.appendIndex(
             "name": "action_check",
             "summary": "",
             "url": "classes/RouteDenyController.html#method_action_check"
+        },                {
+            "fqsen": "\\SessionController",
+            "name": "SessionController",
+            "summary": "",
+            "url": "classes/SessionController.html"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_byUser\u0028\u0029",
+            "name": "action_byUser",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_byUser"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_getters\u0028\u0029",
+            "name": "action_getters",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_getters"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_invalidate\u0028\u0029",
+            "name": "action_invalidate",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_invalidate"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_setExtensionTime\u0028\u0029",
+            "name": "action_setExtensionTime",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_setExtensionTime"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_extendSession\u0028\u0029",
+            "name": "action_extendSession",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_extendSession"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_refresh\u0028\u0029",
+            "name": "action_refresh",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_refresh"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_isExpiredActive\u0028\u0029",
+            "name": "action_isExpiredActive",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_isExpiredActive"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_isExpiredExpired\u0028\u0029",
+            "name": "action_isExpiredExpired",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_isExpiredExpired"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_isExpiredExtended\u0028\u0029",
+            "name": "action_isExpiredExtended",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_isExpiredExtended"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_byToken\u0028\u0029",
+            "name": "action_byToken",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_byToken"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_byTokenInactive\u0028\u0029",
+            "name": "action_byTokenInactive",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_byTokenInactive"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_byTokenNotFound\u0028\u0029",
+            "name": "action_byTokenNotFound",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_byTokenNotFound"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_add\u0028\u0029",
+            "name": "action_add",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_add"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_addWithExec\u0028\u0029",
+            "name": "action_addWithExec",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_addWithExec"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_whoami\u0028\u0029",
+            "name": "action_whoami",
+            "summary": "Returns\u0020the\u0020authentication\u0020state\u0020of\u0020the\u0020current\u0020HTTP\u0020request.",
+            "url": "classes/SessionController.html#method_action_whoami"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_invalidateForAuth\u0028\u0029",
+            "name": "action_invalidateForAuth",
+            "summary": "Invalidates\u0020session\u0020412\u0020\u0028token\u00200410a...\u0029\u0020so\u0020the\u0020subsequent\u0020whoami\nrequest\u0020with\u0020that\u0020cookie\u0020is\u0020rejected.",
+            "url": "classes/SessionController.html#method_action_invalidateForAuth"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_extendAfterExpire\u0028\u0029",
+            "name": "action_extendAfterExpire",
+            "summary": "After\u0020an\u0020expired\u0020session\u0020\u0028415\u0029\u0020has\u0020been\u0020used\u0020once\u0020\u0028which\u0020auto\u002Dinvalidates\u0020it\u0029,\nthis\u0020action\u0020tries\u0020to\u0020call\u0020setExtensionTime\u0020on\u0020it.",
+            "url": "classes/SessionController.html#method_action_extendAfterExpire"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AechoSessions\u0028\u0029",
+            "name": "echoSessions",
+            "summary": "",
+            "url": "classes/SessionController.html#method_echoSessions"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AgetSessions\u0028\u0029",
+            "name": "getSessions",
+            "summary": "",
+            "url": "classes/SessionController.html#method_getSessions"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AgetSession\u0028\u0029",
+            "name": "getSession",
+            "summary": "",
+            "url": "classes/SessionController.html#method_getSession"
         },                {
             "fqsen": "\\TestController",
             "name": "TestController",
@@ -3511,15 +3871,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission",
-            "name": "Permission",
-            "summary": "",
-            "url": "namespaces/zubzet-framework-authentication-permission.html"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication",
             "name": "Authentication",
             "summary": "",
             "url": "namespaces/zubzet-framework-authentication.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission",
+            "name": "Permission",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-authentication-permission.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Console",
             "name": "Console",
