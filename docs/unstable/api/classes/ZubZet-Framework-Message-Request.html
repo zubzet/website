@@ -105,12 +105,15 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <a href="classes/ZubZet-Framework-Form-Validation-CanValidateForm.html"><abbr title="\ZubZet\Framework\Form\Validation\CanValidateForm">CanValidateForm</abbr></a>,                             <a href="classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html"><abbr title="\ZubZet\Framework\Form\Validation\CanValidateMultiForm">CanValidateMultiForm</abbr></a>,                             <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html"><abbr title="\ZubZet\Framework\Message\Input\CanRetrieveFromInput">CanRetrieveFromInput</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -138,6 +141,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Message-Request.html#property_input">$input</a>
+    <span>
+                &nbsp;: <a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#property_store">$store</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
@@ -151,12 +161,19 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Message-Request.html#property_urlParts">$urlParts</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method___construct">__construct()</a>
+    <a href="classes/ZubZet-Framework-Message-Request.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor that every request and response object should have</dd>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_checkPermission">checkPermission()</a>
@@ -175,7 +192,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getBody">getBody()</a>
     <span>
-                        &nbsp;: string    </span>
+                        &nbsp;: string|null    </span>
 </dt>
 <dd>Get the body of the request</dd>
 
@@ -187,11 +204,18 @@
 <dd>Gets a booter setting</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_getCookie">getCookie()</a>
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookie">getCookie()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Gets a cookie</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookies">getCookies()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Alias for getCookie() to get all cookies</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getCurrentURL">getCurrentURL()</a>
@@ -210,19 +234,26 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getExecutionTime">getExecutionTime()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: float|null    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_getFile">getFile()</a>
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFile">getFile()</a>
     <span>
-                        &nbsp;: string|mixed    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd>Gets a posted file</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_getGet">getGet()</a>
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFiles">getFiles()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Alias for getFile() to get all posted files</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getGet">getGet()</a>
     <span>
                         &nbsp;: string|mixed    </span>
 </dt>
@@ -236,11 +267,11 @@
 <dd>Decode request body as JSON.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getModel">getModel()</a>
+    <a href="classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel">getModel()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a>    </span>
 </dt>
-<dd>Gets the database communication interface</dd>
+<dd>Returns a model</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getParameters">getParameters()</a>
@@ -250,7 +281,7 @@
 <dd>Gets the URL parameters (including the leading controller and action) specified by the path.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_getPost">getPost()</a>
+    <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getPost">getPost()</a>
     <span>
                         &nbsp;: string|mixed    </span>
 </dt>
@@ -292,6 +323,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-Request.html#method_getUrlParts">getUrlParts()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZControllers">getZControllers()</a>
     <span>
                         &nbsp;: string    </span>
@@ -322,7 +360,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_ip">ip()</a>
     <span>
-                        &nbsp;: bool|string    </span>
+                        &nbsp;: string|null    </span>
 </dt>
 <dd>Gets the IP of a request</dd>
 
@@ -343,26 +381,26 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_referer">referer()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_userAgent">userAgent()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_validateCED">validateCED()</a>
+    <a href="classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html#method_validateCED">validateCED()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>    </span>
 </dt>
 <dd>Validates a &quot;Create Edit Delete&quot; input</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Message-Request.html#method_validateForm">validateForm()</a>
+    <a href="classes/ZubZet-Framework-Form-Validation-CanValidateForm.html#method_validateForm">validateForm()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>    </span>
 </dt>
@@ -396,7 +434,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -421,6 +459,40 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_input">
+        $input
+        <a href="classes/ZubZet-Framework-Message-Request.html#property_input" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$input</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_store">
         $store
         <a href="classes/ZubZet-Framework-Message-Request.html#property_store" class="headerlink"><i class="fas fa-link"></i></a>
@@ -430,7 +502,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -464,7 +536,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -474,6 +546,40 @@
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$urlParameters</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_urlParts">
+        $urlParts
+        <a href="classes/ZubZet-Framework-Message-Request.html#property_urlParts" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$urlParts</span>
+    </code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -497,31 +603,30 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Message-Request.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor that every request and response object should have</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-ZubZet.html"><abbr title="\ZubZet\Framework\ZubZet">ZubZet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$booter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$booter</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-ZubZet.html"><abbr title="\ZubZet\Framework\ZubZet">ZubZet</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$input</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The framework object</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
@@ -547,7 +652,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -611,7 +716,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
@@ -663,7 +768,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 
     </aside>
 
@@ -671,7 +776,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getBody</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">getBody</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
         <section class="phpdocumentor-description"><p>Reads the raw input from the request body.</p>
 </section>
@@ -680,7 +785,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
             <section class="phpdocumentor-description"><p>The raw body content of the request (Returns an empty string if empty or unavailable).</p>
 </section>
@@ -700,7 +805,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -758,12 +863,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getCookie">
         getCookie()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_getCookie" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookie" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -771,7 +876,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -779,7 +884,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The key of the parameter</p>
 </section>
@@ -812,6 +917,41 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getCookies">
+        getCookies()
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookies" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Alias for getCookie() to get all cookies</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getCookies</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The cookies</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getCurrentURL">
         getCurrentURL()
         <a href="classes/ZubZet-Framework-Message-Request.html#method_getCurrentURL" class="headerlink"><i class="fas fa-link"></i></a>
@@ -819,7 +959,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -836,7 +976,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The actual URL that was requested including parameters and host</p>
+            <section class="phpdocumentor-description"><p>Returns the current URL, consisting of the configured host and the actual current path</p>
 </section>
 
     
@@ -854,7 +994,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
@@ -889,14 +1029,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getExecutionTime</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getExecutionTime</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -904,7 +1044,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">float|null</span>
             &mdash;
         
     
@@ -917,12 +1057,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getFile">
         getFile()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_getFile" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFile" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -930,15 +1070,15 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
+                <span class="phpdocumentor-signature__name">getFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The name of the file</p>
 </section>
@@ -958,7 +1098,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|mixed</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
             <section class="phpdocumentor-description"><p>The posted file</p>
 </section>
@@ -971,14 +1111,49 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getGet">
-        getGet()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_getGet" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getFiles">
+        getFiles()
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFiles" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Alias for getFile() to get all posted files</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getFiles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The posted files</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getGet">
+        getGet()
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getGet" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -986,7 +1161,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
+                <span class="phpdocumentor-signature__name">getGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -994,7 +1169,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The key of the parameter</p>
 </section>
@@ -1034,7 +1209,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">446</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1083,29 +1258,52 @@ Objects and arrays are returned as associative arrays.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getModel">
         getModel()
-        <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getModel" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveModel.php"><a href="files/src-core-canretrievemodel.html"><abbr title="src/Core/CanRetrieveModel.php">CanRetrieveModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets the database communication interface</p>
+        <p class="phpdocumentor-summary">Returns a model</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$model</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Name of the model</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dir</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The model</p>
+</section>
+
     
 </article>
                     <article
@@ -1121,7 +1319,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -1179,12 +1377,12 @@ Objects and arrays are returned as associative arrays.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getPost">
         getPost()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_getPost" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getPost" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/CanRetrieveFromInput.php"><a href="files/src-message-input-canretrievefrominput.html"><abbr title="src/Message/Input/CanRetrieveFromInput.php">CanRetrieveFromInput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -1192,15 +1390,15 @@ Objects and arrays are returned as associative arrays.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getPost</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
+                <span class="phpdocumentor-signature__name">getPost</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The key of the parameter</p>
 </section>
@@ -1240,7 +1438,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1287,7 +1485,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -1322,7 +1520,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -1357,7 +1555,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">220</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -1392,7 +1590,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -1429,6 +1627,39 @@ Objects and arrays are returned as associative arrays.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getUrlParts">
+        getUrlParts()
+        <a href="classes/ZubZet-Framework-Message-Request.html#method_getUrlParts" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getUrlParts</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getZControllers">
         getZControllers()
         <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZControllers" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1436,7 +1667,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -1469,7 +1700,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -1502,7 +1733,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -1535,7 +1766,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">378</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -1568,7 +1799,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1576,14 +1807,14 @@ Objects and arrays are returned as associative arrays.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">ip</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|string</span></code>
+                <span class="phpdocumentor-signature__name">ip</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool|string</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
             <section class="phpdocumentor-description"><p>The IP of the client. False if no IP is detected</p>
 </section>
@@ -1603,7 +1834,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 
     </aside>
 
@@ -1650,7 +1881,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -1685,14 +1916,14 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">referer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">referer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1700,7 +1931,7 @@ Objects and arrays are returned as associative arrays.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
         
     
@@ -1718,14 +1949,14 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">userAgent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">userAgent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1733,7 +1964,7 @@ Objects and arrays are returned as associative arrays.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
         
     
@@ -1746,12 +1977,12 @@ Objects and arrays are returned as associative arrays.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_validateCED">
         validateCED()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_validateCED" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html#method_validateCED" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/CanValidateMultiForm.php"><a href="files/src-form-validation-canvalidatemultiform.html"><abbr title="src/Form/Validation/CanValidateMultiForm.php">CanValidateMultiForm.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -1802,12 +2033,12 @@ Objects and arrays are returned as associative arrays.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_validateForm">
         validateForm()
-        <a href="classes/ZubZet-Framework-Message-Request.html#method_validateForm" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Form-Validation-CanValidateForm.html#method_validateForm" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/CanValidateForm.php"><a href="files/src-form-validation-canvalidateform.html"><abbr title="src/Form/Validation/CanValidateForm.php">CanValidateForm.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -1834,7 +2065,7 @@ Objects and arrays are returned as associative arrays.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Input for the validation. $_GET or $_POST can be used here as parameters</p>
+                    <section class="phpdocumentor-description"><p>Input for the validation. getGet() or getPost() can be used here as parameters</p>
 </section>
 
             </dd>

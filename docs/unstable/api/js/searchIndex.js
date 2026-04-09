@@ -426,6 +426,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Session.html#method_invalidate"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AexpiresAt\u0028\u0029",
+            "name": "expiresAt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_expiresAt"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AisExpired\u0028\u0029",
             "name": "isExpired",
             "summary": "",
@@ -546,6 +551,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-User.html#property_sessionToken"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Bootstrap\\Configuration",
+            "name": "Configuration",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Bootstrap-Configuration.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Bootstrap\\Configuration\u003A\u003AloadConfiguration\u0028\u0029",
+            "name": "loadConfiguration",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Bootstrap-Configuration.html#method_loadConfiguration"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Console\\ActionDiscovery",
             "name": "ActionDiscovery",
             "summary": "",
@@ -575,6 +590,16 @@ Search.appendIndex(
             "name": "execute",
             "summary": "",
             "url": "classes/ZubZet-Framework-Console-RunCommand.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveModel",
+            "name": "CanRetrieveModel",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Core-CanRetrieveModel.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveModel\u003A\u003AgetModel\u0028\u0029",
+            "name": "getModel",
+            "summary": "Returns\u0020a\u0020model",
+            "url": "classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Controller",
             "name": "Controller",
@@ -610,11 +635,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Creates\u0020a\u0020z_model\u0020instance.",
             "url": "classes/ZubZet-Framework-Core-Model.html#method___construct"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AgetModel\u0028\u0029",
-            "name": "getModel",
-            "summary": "Returns\u0020a\u0020model",
-            "url": "classes/ZubZet-Framework-Core-Model.html#method_getModel"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003Aexec\u0028\u0029",
             "name": "exec",
@@ -666,21 +686,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020number\u0020of\u0020results\u0020in\u0020the\u0020last\u0020query.",
             "url": "classes/ZubZet-Framework-Core-Model.html#method_countResults"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AgetLogCategoryIdByName\u0028\u0029",
-            "name": "getLogCategoryIdByName",
-            "summary": "Gets\u0020the\u0020ID\u0020of\u0020a\u0020log\u0020category.\u0020If\u0020a\u0020category\u0020does\u0020not\u0020exist,\u0020this\u0020function\u0020will\u0020create\u0020it.",
-            "url": "classes/ZubZet-Framework-Core-Model.html#method_getLogCategoryIdByName"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AlogAction\u0028\u0029",
-            "name": "logAction",
-            "summary": "Logs\u0020an\u0020action.",
-            "url": "classes/ZubZet-Framework-Core-Model.html#method_logAction"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AlogActionByCategory\u0028\u0029",
-            "name": "logActionByCategory",
-            "summary": "Logs\u0020an\u0020action.",
-            "url": "classes/ZubZet-Framework-Core-Model.html#method_logActionByCategory"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003A\u0024z_db",
             "name": "z_db",
             "summary": "",
@@ -721,6 +726,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_assertConnection"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AexecQuery\u0028\u0029",
+            "name": "execQuery",
+            "summary": "Executes\u0020a\u0020CakePHP\u0020Query\u0020object\u0020using\u0020ZubZet\u0060s\u0020own\u0020value\u0020binder\u0020to\u0020extract\u0020the\u0020SQL\u0020and\u0020bindings,\u0020then\u0020executing\u0020it\u0020as\u0020a\u0020prepared\u0020statement",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_execQuery"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Aexec\u0028\u0029",
             "name": "exec",
             "summary": "Executes\u0020a\u0020query\u0020as\u0020prepared\u0020statement",
@@ -735,11 +745,6 @@ Search.appendIndex(
             "name": "getDatabaseConnection",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_getDatabaseConnection"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AextractQueryBuilderSQL\u0028\u0029",
-            "name": "extractQueryBuilderSQL",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_extractQueryBuilderSQL"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Aheartbeat\u0028\u0029",
             "name": "heartbeat",
@@ -756,10 +761,10 @@ Search.appendIndex(
             "summary": "Closes\u0020the\u0020database\u0020connection\u0020on\u0020exit",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method___destruct"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024cakePHPDatabase",
-            "name": "cakePHPDatabase",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024queryBuilderConnection",
+            "name": "queryBuilderConnection",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#property_cakePHPDatabase"
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_queryBuilderConnection"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024conn",
             "name": "conn",
@@ -791,15 +796,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#property_connectTimeout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024user",
-            "name": "user",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024host",
+            "name": "host",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#property_user"
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_host"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024password",
             "name": "password",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#property_password"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024user",
+            "name": "user",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_user"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024database",
+            "name": "database",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_database"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction",
             "name": "Interaction",
@@ -906,15 +921,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_resetDatabase"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003AexecuteBufferedStatements\u0028\u0029",
+            "name": "executeBufferedStatements",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_executeBufferedStatements"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003AimportFile\u0028\u0029",
             "name": "importFile",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_importFile"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003AexecuteSqlBuffer\u0028\u0029",
-            "name": "executeSqlBuffer",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003AexecutePHPStatements\u0028\u0029",
+            "name": "executePHPStatements",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_executeSqlBuffer"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_executePHPStatements"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003AexecuteSQLStatements\u0028\u0029",
+            "name": "executeSQLStatements",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#method_executeSQLStatements"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Seed\u003A\u003A\u0024bufferedStatements",
+            "name": "bufferedStatements",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Seed.html#property_bufferedStatements"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Status",
             "name": "Status",
@@ -1246,6 +1276,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Type-TimeStamp.html#method_getName"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption",
+            "name": "BehaviorOption",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003AisValidOption\u0028\u0029",
+            "name": "isValidOption",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#method_isValidOption"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003ANONE",
+            "name": "NONE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#constant_NONE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003AEXCEPTIONS",
+            "name": "EXCEPTIONS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#constant_EXCEPTIONS"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003AALL",
+            "name": "ALL",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#constant_ALL"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior",
+            "name": "ExceptionBehavior",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AsetExceptionBehavior\u0028\u0029",
+            "name": "setExceptionBehavior",
+            "summary": "Updates\u0020the\u0020error\u0020handling\u0020state\nOptions\u0020are\u0020defined\u0020in\u0020the\u0020BehaviorOption\u0020class",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_setExceptionBehavior"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload",
             "name": "Upload",
             "summary": "Class\u0020that\u0020handles\u0020file\u0020uploads\u0020and\u0020checking\u0020types",
@@ -1310,6 +1375,26 @@ Search.appendIndex(
             "name": "res",
             "summary": "",
             "url": "classes/ZubZet-Framework-Form-Upload.html#property_res"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\CanValidateForm",
+            "name": "CanValidateForm",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Form-Validation-CanValidateForm.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\CanValidateForm\u003A\u003AvalidateForm\u0028\u0029",
+            "name": "validateForm",
+            "summary": "Validates\u0020form\u0020data\u0020from\u0020the\u0020client",
+            "url": "classes/ZubZet-Framework-Form-Validation-CanValidateForm.html#method_validateForm"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\CanValidateMultiForm",
+            "name": "CanValidateMultiForm",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\CanValidateMultiForm\u003A\u003AvalidateCED\u0028\u0029",
+            "name": "validateCED",
+            "summary": "Validates\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022\u0020input",
+            "url": "classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html#method_validateCED"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Field",
             "name": "Field",
@@ -1571,11 +1656,6 @@ Search.appendIndex(
             "summary": "Action\u0020for\u0020the\u0020role\u0020configuration\u0020page",
             "url": "classes/ZController.html#method_action_roles"
         },                {
-            "fqsen": "\\ZController\u003A\u003Aaction_log\u0028\u0029",
-            "name": "action_log",
-            "summary": "Action\u0020for\u0020seeing\u0020the\u0020logs",
-            "url": "classes/ZController.html#method_action_log"
-        },                {
             "fqsen": "\\ZController\u003A\u003Aaction_database\u0028\u0029",
             "name": "action_database",
             "summary": "",
@@ -1650,6 +1730,26 @@ Search.appendIndex(
             "name": "getGroups",
             "summary": "",
             "url": "classes/z-generalModel.html#method_getGroups"
+        },                {
+            "fqsen": "\\z_loggerModel",
+            "name": "z_loggerModel",
+            "summary": "",
+            "url": "classes/z-loggerModel.html"
+        },                {
+            "fqsen": "\\z_loggerModel\u003A\u003AencodeLogValue\u0028\u0029",
+            "name": "encodeLogValue",
+            "summary": "Encodes\u0020a\u0020normalized\u0020log\u0020payload\u0020as\u0020JSON,\u0020with\u0020a\u0020safe\u0020fallback\u0020on\u0020failure.",
+            "url": "classes/z-loggerModel.html#method_encodeLogValue"
+        },                {
+            "fqsen": "\\z_loggerModel\u003A\u003AappendEnvironment\u0028\u0029",
+            "name": "appendEnvironment",
+            "summary": "",
+            "url": "classes/z-loggerModel.html#method_appendEnvironment"
+        },                {
+            "fqsen": "\\z_loggerModel\u003A\u003Alog\u0028\u0029",
+            "name": "log",
+            "summary": "",
+            "url": "classes/z-loggerModel.html#method_log"
         },                {
             "fqsen": "\\z_loginModel",
             "name": "z_loginModel",
@@ -1761,21 +1861,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/z-migrationModel.html#method_parseMigration"
         },                {
-            "fqsen": "\\z_statisticsModel",
-            "name": "z_statisticsModel",
-            "summary": "The\u0020statistics\u0020model\u0020handles\u0020log\u0020data",
-            "url": "classes/z-statisticsModel.html"
-        },                {
-            "fqsen": "\\z_statisticsModel\u003A\u003AgetLogCategories\u0028\u0029",
-            "name": "getLogCategories",
-            "summary": "Returns\u0020a\u0020list\u0020of\u0020all\u0020log\u0020categorys",
-            "url": "classes/z-statisticsModel.html#method_getLogCategories"
-        },                {
-            "fqsen": "\\z_statisticsModel\u003A\u003AgetLogTableByCategories\u0028\u0029",
-            "name": "getLogTableByCategories",
-            "summary": "Gets\u0020logs\u0020specified\u0020by\u0020attributes",
-            "url": "classes/z-statisticsModel.html#method_getLogTableByCategories"
-        },                {
             "fqsen": "\\z_userModel",
             "name": "z_userModel",
             "summary": "User\u0020Model",
@@ -1866,25 +1951,295 @@ Search.appendIndex(
             "summary": "Call\u0020this\u0020to\u0020paste\u0020the\u0020essential\u0020body\u0020part\u0020of\u0020a\u0020page\u0020into\u0020the\u0020layout",
             "url": "namespaces/default.html#function_essentialsBody"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\DatabaseLogger",
+            "name": "DatabaseLogger",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-DatabaseLogger.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\DatabaseLogger\u003A\u003Awrite\u0028\u0029",
+            "name": "write",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-DatabaseLogger.html#method_write"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\JsonFormatter",
+            "name": "JsonFormatter",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-JsonFormatter.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\JsonFormatter\u003A\u003Aformat\u0028\u0029",
+            "name": "format",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-JsonFormatter.html#method_format"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType",
+            "name": "LogEventType",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003Arender",
+            "name": "render",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_render"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AaccountLoginRateLimited",
+            "name": "accountLoginRateLimited",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_accountLoginRateLimited"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ApasswordResetRequested",
+            "name": "passwordResetRequested",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_passwordResetRequested"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ApasswordReset",
+            "name": "passwordReset",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_passwordReset"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AaccountUpdated",
+            "name": "accountUpdated",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_accountUpdated"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserCreated",
+            "name": "userCreated",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userCreated"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedIn",
+            "name": "userLoggedIn",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedIn"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedInAnother",
+            "name": "userLoggedInAnother",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedInAnother"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedOut",
+            "name": "userLoggedOut",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedOut"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ArestError",
+            "name": "restError",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_restError"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory",
+            "name": "LoggerFactory",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "Register\u0020a\u0020fully\u0020configured\u0020Logger\u0020in\u0020the\u0020cache\u0020with\u0020the\u0020given\u0020name.",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_register"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AgetOrCreateLogger\u0028\u0029",
+            "name": "getOrCreateLogger",
+            "summary": "Get\u0020an\u0020existing\u0020logger\u0020from\u0020the\u0020cache\u0020or\u0020create\u0020a\u0020new\u0020one\u0020if\u0020it\u0020doesn\u0027t\u0020exist.",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getOrCreateLogger"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003ACACHE_KEY",
+            "name": "CACHE_KEY",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_CACHE_KEY"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AZUBZET",
+            "name": "ZUBZET",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_ZUBZET"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\StreamLogger",
+            "name": "StreamLogger",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-StreamLogger.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\StreamLogger\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-StreamLogger.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput",
+            "name": "CanRetrieveFromInput",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetGet\u0028\u0029",
+            "name": "getGet",
+            "summary": "Gets\u0020a\u0020GET\u0020parameter",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getGet"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetPost\u0028\u0029",
+            "name": "getPost",
+            "summary": "Gets\u0020a\u0020POST\u0020parameter",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getPost"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetFile\u0028\u0029",
+            "name": "getFile",
+            "summary": "Gets\u0020a\u0020posted\u0020file",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFile"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetFiles\u0028\u0029",
+            "name": "getFiles",
+            "summary": "Alias\u0020for\u0020getFile\u0028\u0029\u0020to\u0020get\u0020all\u0020posted\u0020files",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getFiles"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetCookie\u0028\u0029",
+            "name": "getCookie",
+            "summary": "Gets\u0020a\u0020cookie",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookie"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput\u003A\u003AgetCookies\u0028\u0029",
+            "name": "getCookies",
+            "summary": "Alias\u0020for\u0020getCookie\u0028\u0029\u0020to\u0020get\u0020all\u0020cookies",
+            "url": "classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getCookies"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State",
+            "name": "State",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AfromRequest\u0028\u0029",
+            "name": "fromRequest",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_fromRequest"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AfromOverwrite\u0028\u0029",
+            "name": "fromOverwrite",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_fromOverwrite"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithUrl\u0028\u0029",
+            "name": "withUrl",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withUrl"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithPath\u0028\u0029",
+            "name": "withPath",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withPath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithGet\u0028\u0029",
+            "name": "withGet",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withGet"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithBody\u0028\u0029",
+            "name": "withBody",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withBody"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithPost\u0028\u0029",
+            "name": "withPost",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withPost"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithFiles\u0028\u0029",
+            "name": "withFiles",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withFiles"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithSession\u0028\u0029",
+            "name": "withSession",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withSession"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithCookies\u0028\u0029",
+            "name": "withCookies",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withCookies"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithMethod\u0028\u0029",
+            "name": "withMethod",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withMethod"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithPreviousAsReferer\u0028\u0029",
+            "name": "withPreviousAsReferer",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withPreviousAsReferer"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AwithReferer\u0028\u0029",
+            "name": "withReferer",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_withReferer"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003AupdateRequest\u0028\u0029",
+            "name": "updateRequest",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#method_updateRequest"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024previous",
+            "name": "previous",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_previous"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024body",
+            "name": "body",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_body"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024SERVER",
+            "name": "SERVER",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_SERVER"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024GET",
+            "name": "GET",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_GET"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024POST",
+            "name": "POST",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_POST"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024FILES",
+            "name": "FILES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_FILES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024REQUEST",
+            "name": "REQUEST",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_REQUEST"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024SESSION",
+            "name": "SESSION",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_SESSION"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input\\State\u003A\u003A\u0024COOKIE",
+            "name": "COOKIE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Input-State.html#property_COOKIE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Output\\State",
+            "name": "State",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Output-State.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request",
             "name": "Request",
             "summary": "Base\u0020class\u0020for\u0020Response\u0020and\u0020Request",
             "url": "classes/ZubZet-Framework-Message-Request.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method___construct"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetRouteParameter\u0028\u0029",
             "name": "getRouteParameter",
             "summary": "",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getRouteParameter"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetGet\u0028\u0029",
-            "name": "getGet",
-            "summary": "Gets\u0020a\u0020GET\u0020parameter",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_getGet"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetPost\u0028\u0029",
-            "name": "getPost",
-            "summary": "Gets\u0020a\u0020POST\u0020parameter",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_getPost"
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetUrlParts\u0028\u0029",
+            "name": "getUrlParts",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_getUrlParts"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003Aip\u0028\u0029",
             "name": "ip",
@@ -1910,16 +2265,6 @@ Search.appendIndex(
             "name": "getExecutionTime",
             "summary": "",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getExecutionTime"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetFile\u0028\u0029",
-            "name": "getFile",
-            "summary": "Gets\u0020a\u0020posted\u0020file",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_getFile"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetCookie\u0028\u0029",
-            "name": "getCookie",
-            "summary": "Gets\u0020a\u0020cookie",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_getCookie"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetCurrentURL\u0028\u0029",
             "name": "getCurrentURL",
@@ -1966,11 +2311,6 @@ Search.appendIndex(
             "summary": "Checks\u0020if\u0020the\u0020current\u0020user\u0020has\u0020a\u0020permission.\u0020If\u0020the\u0020user\u0020is\u0020not\u0020logged\u0020in,\u0020they\u0020will\u0020be\u0020redirected\u0020to\u0020the\u0020login\u0020page.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_checkPermission"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AvalidateForm\u0028\u0029",
-            "name": "validateForm",
-            "summary": "Validates\u0020form\u0020data\u0020from\u0020the\u0020client",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_validateForm"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AhasFormData\u0028\u0029",
             "name": "hasFormData",
             "summary": "Checks\u0020if\u0020the\u0020request\u0020contains\u0020form\u0020data.\u0020When\u0020it\u0020contains\u0020form\u0020data,\u0020methods\u0020like\u0020validateForm\u0028\u0029\u0020can\u0020be\u0020used.",
@@ -1980,11 +2320,6 @@ Search.appendIndex(
             "name": "isAction",
             "summary": "Checks\u0020if\u0020the\u0020request\u0020is\u0020an\u0020async\u0020AJAX\u0020request\u0020of\u0020a\u0020given\u0020type",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_isAction"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AvalidateCED\u0028\u0029",
-            "name": "validateCED",
-            "summary": "Validates\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022\u0020input",
-            "url": "classes/ZubZet-Framework-Message-Request.html#method_validateCED"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetBody\u0028\u0029",
             "name": "getBody",
@@ -1996,15 +2331,25 @@ Search.appendIndex(
             "summary": "Decode\u0020request\u0020body\u0020as\u0020JSON.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getJson"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024urlParameters",
-            "name": "urlParameters",
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024input",
+            "name": "input",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Message-Request.html#property_urlParameters"
+            "url": "classes/ZubZet-Framework-Message-Request.html#property_input"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024store",
             "name": "store",
             "summary": "",
             "url": "classes/ZubZet-Framework-Message-Request.html#property_store"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024urlParameters",
+            "name": "urlParameters",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#property_urlParameters"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024urlParts",
+            "name": "urlParts",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#property_urlParts"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler",
             "name": "RequestResponseHandler",
@@ -2013,7 +2358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor\u0020that\u0020every\u0020request\u0020and\u0020response\u0020object\u0020should\u0020have",
+            "summary": "",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method___construct"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZViews\u0028\u0029",
@@ -2031,11 +2376,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020framework\u0020root\u0020directory",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZRoot"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetModel\u0028\u0029",
-            "name": "getModel",
-            "summary": "Gets\u0020the\u0020database\u0020communication\u0020interface",
-            "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getModel"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetBooterSettings\u0028\u0029",
             "name": "getBooterSettings",
             "summary": "Gets\u0020a\u0020booter\u0020setting",
@@ -2050,6 +2390,11 @@ Search.appendIndex(
             "name": "Response",
             "summary": "The\u0020Response\u0020class\u0020provides\u0020functions\u0020used\u0020by\u0020controllers\u0020to\u0020respond\u0020to\u0020requests",
             "url": "classes/ZubZet-Framework-Message-Response.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Response.html#method___construct"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Areroute\u0028\u0029",
             "name": "reroute",
@@ -2136,11 +2481,6 @@ Search.appendIndex(
             "summary": "Deletes\u0020the\u0020login\u0020token\u0020for\u0020the\u0020domain\u0020specified\u0020in\n\u0060login_scope_allow_subdomains_delete_domainscope_name\u0060.",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_deleteOldLoginCookieDomainScope"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Alog\u0028\u0029",
-            "name": "log",
-            "summary": "Logs\u0020something",
-            "url": "classes/ZubZet-Framework-Message-Response.html#method_log"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AinsertOrUpdateDatabase\u0028\u0029",
             "name": "insertOrUpdateDatabase",
             "summary": "Inserts\u0020a\u0020set\u0020into\u0020the\u0020database\u0020with\u0020data\u0020from\u0020a\u0020form.\u0020Updates\u0020if\u0020the\u0020set\u0020already\u0020exists",
@@ -2165,6 +2505,11 @@ Search.appendIndex(
             "name": "doCED",
             "summary": "Executes\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_doCED"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003A\u0024output",
+            "name": "output",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Response.html#property_output"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery",
             "name": "CanBuildQuery",
@@ -2196,15 +2541,35 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_getQueryBuilder"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\View",
-            "name": "View",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-View.html"
+            "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\ZubZetValueBinder",
+            "name": "ZubZetValueBinder",
+            "summary": "This\u0020class\u0020extends\u0020CakePHP\u0060s\u0020ValueBinder\u0020to\u0020change\u0020the\u0020placeholder\u0020format\u0020to\u0020\u0027\u003F\u0027\nand\u0020to\u0020change\u0020the\u0020bind\u0020method\u0020to\u0020match\u0020that\u0020of\u0020mysqli.",
+            "url": "classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\View\u003A\u003Arender\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\ZubZetValueBinder\u003A\u003Aplaceholder\u0028\u0029",
+            "name": "placeholder",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html#method_placeholder"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\ZubZetValueBinder\u003A\u003Abind\u0028\u0029",
+            "name": "bind",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html#method_bind"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\ZubZetValueBinder\u003A\u003AgenerateManyNamed\u0028\u0029",
+            "name": "generateManyNamed",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html#method_generateManyNamed"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView",
+            "name": "CanRenderView",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003Arender\u0028\u0029",
             "name": "render",
             "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
-            "url": "classes/ZubZet-Framework-Rendering-View.html#method_render"
+            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\ViewNotFoundException",
             "name": "ViewNotFoundException",
@@ -2386,6 +2751,86 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#property_isCancelled"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router",
+            "name": "Router",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003AexecuteControllerAction\u0028\u0029",
+            "name": "executeControllerAction",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#method_executeControllerAction"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003Areroute\u0028\u0029",
+            "name": "reroute",
+            "summary": "Tries\u0020to\u0020reroute\u0020the\u0020request\u0020using\u0020Slim\u0020first,\u0020if\u0020the\u0020route\u0020does\u0020not\u0020exist,\u0020it\u0020falls\u0020back\u0020to\u0020the\u0020ZubZet\u0020framework.",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#method_reroute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003AexecutePath\u0028\u0029",
+            "name": "executePath",
+            "summary": "Executes\u0020an\u0020action\u0020for\u0020a\u0020specified\u0020path",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#method_executePath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003A\u0024slimRouter",
+            "name": "slimRouter",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#property_slimRouter"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003A\u0024maxReroutes",
+            "name": "maxReroutes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#property_maxReroutes"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003A\u0024reroutes",
+            "name": "reroutes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#property_reroutes"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes",
+            "name": "HasDynamicAttributes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003A__set\u0028\u0029",
+            "name": "__set",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method___set"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method___get"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003A__isset\u0028\u0029",
+            "name": "__isset",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method___isset"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003AgetAllAttributes\u0028\u0029",
+            "name": "getAllAttributes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method_getAllAttributes"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003AsetAttributes\u0028\u0029",
+            "name": "setAttributes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method_setAttributes"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003AoverwriteAttributes\u0028\u0029",
+            "name": "overwriteAttributes",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#method_overwriteAttributes"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\HasDynamicAttributes\u003A\u003A\u0024dynamicAttributesStore",
+            "name": "dynamicAttributesStore",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-HasDynamicAttributes.html#property_dynamicAttributesStore"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Rest",
             "name": "Rest",
             "summary": "The\u0020rest\u0020class\u0020is\u0020used\u0020to\u0020provide\u0020raw\u0020JSON\u0020API\u0020data\u0020to\u0020the\u0020client",
@@ -2416,6 +2861,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Support-Rest.html#property_json"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache",
+            "name": "StaticCache",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003Aset\u0028\u0029",
+            "name": "set",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html#method_set"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html#method_get"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003Ahas\u0028\u0029",
+            "name": "has",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html#method_has"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003A\u0024cache",
+            "name": "cache",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html#property_cache"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet",
             "name": "ZubZet",
             "summary": "",
@@ -2426,150 +2896,40 @@ Search.appendIndex(
             "summary": "Parses\u0020all\u0020the\u0020options\u0020as\u0020variables,\u0020instantiates\u0020the\u0020z_db,\u0020and\u0020establishes\u0020the\u0020db\u0020connection.",
             "url": "classes/ZubZet-Framework-ZubZet.html#method___construct"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A__set\u0028\u0029",
-            "name": "__set",
+            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AsetRequestResponse\u0028\u0029",
+            "name": "setRequestResponse",
             "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method___set"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A__get\u0028\u0029",
-            "name": "__get",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method___get"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AupdateErrorHandling\u0028\u0029",
-            "name": "updateErrorHandling",
-            "summary": "Updates\u0020the\u0020error\u0020handling\u0020state",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_updateErrorHandling"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AparseUrl\u0028\u0029",
-            "name": "parseUrl",
-            "summary": "Used\u0020to\u0020parse\u0020the\u0020URL\u0020into\u0020parts\u0020and\u0020parameters\nFormat\u003A\u0020root\/class\/method\/parameter\/parameter\/.",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_parseUrl"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003Aexecute\u0028\u0029",
-            "name": "execute",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_execute"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AloadRoutes\u0028\u0029",
-            "name": "loadRoutes",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_loadRoutes"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AhandleRequest\u0028\u0029",
-            "name": "handleRequest",
-            "summary": "Executes\u0020the\u0020requested\u0020action",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_handleRequest"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AexecuteControllerAction\u0028\u0029",
-            "name": "executeControllerAction",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_executeControllerAction"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003Areroute\u0028\u0029",
-            "name": "reroute",
-            "summary": "Tries\u0020to\u0020reroute\u0020the\u0020request\u0020using\u0020Slim\u0020first,\u0020if\u0020the\u0020route\u0020does\u0020not\u0020exist,\u0020it\u0020falls\u0020back\u0020to\u0020the\u0020ZubZet\u0020framework.",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_reroute"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AexecutePath\u0028\u0029",
-            "name": "executePath",
-            "summary": "Executes\u0020an\u0020action\u0020for\u0020a\u0020specified\u0020path",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_executePath"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AdecodePost\u0028\u0029",
-            "name": "decodePost",
-            "summary": "Decodes\u0020all\u0020data\u0020sent\u0020via\u0020POST.\u0020Decoding\u0020method\u0020can\u0020be\u0020determined\u0020by\u0020the\u0020prefix\u0020of\u0020the\u0020value.",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_decodePost"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AgetModel\u0028\u0029",
-            "name": "getModel",
-            "summary": "Returns\u0020a\u0020model",
-            "url": "classes/ZubZet-Framework-ZubZet.html#method_getModel"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024settings",
-            "name": "settings",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_settings"
+            "url": "classes/ZubZet-Framework-ZubZet.html#method_setRequestResponse"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024z_db",
             "name": "z_db",
             "summary": "",
             "url": "classes/ZubZet-Framework-ZubZet.html#property_z_db"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024maxReroutes",
-            "name": "maxReroutes",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_maxReroutes"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024reroutes",
-            "name": "reroutes",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_reroutes"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024z_framework_root",
-            "name": "z_framework_root",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_z_framework_root"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024z_controllers",
-            "name": "z_controllers",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_z_controllers"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024z_models",
-            "name": "z_models",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_z_models"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024z_views",
-            "name": "z_views",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_z_views"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024routes",
-            "name": "routes",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_routes"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024config_file",
-            "name": "config_file",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_config_file"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024config",
-            "name": "config",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_config"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024user",
             "name": "user",
             "summary": "",
             "url": "classes/ZubZet-Framework-ZubZet.html#property_user"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024res",
-            "name": "res",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_res"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024req",
             "name": "req",
             "summary": "",
             "url": "classes/ZubZet-Framework-ZubZet.html#property_req"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024slimApplication",
-            "name": "slimApplication",
+            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024requestStack",
+            "name": "requestStack",
             "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_slimApplication"
+            "url": "classes/ZubZet-Framework-ZubZet.html#property_requestStack"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024action_pattern_replacement",
-            "name": "action_pattern_replacement",
+            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024res",
+            "name": "res",
             "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_action_pattern_replacement"
+            "url": "classes/ZubZet-Framework-ZubZet.html#property_res"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024modelCache",
-            "name": "modelCache",
+            "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A\u0024responseStack",
+            "name": "responseStack",
             "summary": "",
-            "url": "classes/ZubZet-Framework-ZubZet.html#property_modelCache"
+            "url": "classes/ZubZet-Framework-ZubZet.html#property_responseStack"
         },                {
             "fqsen": "\\AdminController",
             "name": "AdminController",
@@ -2825,6 +3185,16 @@ Search.appendIndex(
             "name": "action_queryBuilderDelete",
             "summary": "",
             "url": "classes/CoreController.html#method_action_queryBuilderDelete"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_queryBuilderCakePHPCompat\u0028\u0029",
+            "name": "action_queryBuilderCakePHPCompat",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_queryBuilderCakePHPCompat"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_queryBuilderInjectionTest\u0028\u0029",
+            "name": "action_queryBuilderInjectionTest",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_queryBuilderInjectionTest"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_static\u0028\u0029",
             "name": "action_sendemail_static",
@@ -3090,6 +3460,26 @@ Search.appendIndex(
             "name": "action_view",
             "summary": "",
             "url": "classes/HelperController.html#method_action_view"
+        },                {
+            "fqsen": "\\LoggerController",
+            "name": "LoggerController",
+            "summary": "",
+            "url": "classes/LoggerController.html"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_clearDatabaseLogs\u0028\u0029",
+            "name": "action_clearDatabaseLogs",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_clearDatabaseLogs"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_getDatabaseLogs\u0028\u0029",
+            "name": "action_getDatabaseLogs",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_getDatabaseLogs"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_log\u0028\u0029",
+            "name": "action_log",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_log"
         },                {
             "fqsen": "\\MigrationController",
             "name": "MigrationController",
@@ -3651,6 +4041,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HelperModel.html#method_testCall"
         },                {
+            "fqsen": "\\LoggerModel",
+            "name": "LoggerModel",
+            "summary": "",
+            "url": "classes/LoggerModel.html"
+        },                {
+            "fqsen": "\\LoggerModel\u003A\u003AclearLogs\u0028\u0029",
+            "name": "clearLogs",
+            "summary": "",
+            "url": "classes/LoggerModel.html#method_clearLogs"
+        },                {
+            "fqsen": "\\LoggerModel\u003A\u003AgetLogs\u0028\u0029",
+            "name": "getLogs",
+            "summary": "",
+            "url": "classes/LoggerModel.html#method_getLogs"
+        },                {
             "fqsen": "\\MigrationModel",
             "name": "MigrationModel",
             "summary": "",
@@ -3760,6 +4165,11 @@ Search.appendIndex(
             "name": "deleteLanguage",
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_deleteLanguage"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AinjectionTest\u0028\u0029",
+            "name": "injectionTest",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_injectionTest"
         },                {
             "fqsen": "\\RequestModel",
             "name": "RequestModel",
@@ -3881,6 +4291,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-authentication-permission.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Bootstrap",
+            "name": "Bootstrap",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-bootstrap.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Console",
             "name": "Console",
             "summary": "",
@@ -3921,6 +4336,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-database-migration-type.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling",
+            "name": "ErrorHandling",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-errorhandling.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Form",
             "name": "Form",
             "summary": "",
@@ -3930,6 +4350,21 @@ Search.appendIndex(
             "name": "Validation",
             "summary": "",
             "url": "namespaces/zubzet-framework-form-validation.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger",
+            "name": "Logger",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-logger.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Input",
+            "name": "Input",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-message-input.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Output",
+            "name": "Output",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-message-output.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message",
             "name": "Message",

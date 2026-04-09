@@ -84,14 +84,17 @@
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet.html">ZubZet</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework.html">Framework</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-logger.html">Logger</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    z_statisticsModel
+    JsonFormatter
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\z_model">z_model</abbr>
+        extends <abbr title="\Monolog\Formatter\JsonFormatter">JsonFormatter</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -105,14 +108,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/models/z_statisticsModel.php"><a href="files/src-includedcomponents-models-z-statisticsmodel.html"><abbr title="src/IncludedComponents/models/z_statisticsModel.php">z_statisticsModel.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/JsonFormatter.php"><a href="files/src-logger-jsonformatter.html"><abbr title="src/Logger/JsonFormatter.php">JsonFormatter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">7</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">The statistics model handles log data</p>
-
+        
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -128,18 +131,11 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/z-statisticsModel.html#method_getLogCategories">getLogCategories()</a>
+    <a href="classes/ZubZet-Framework-Logger-JsonFormatter.html#method_format">format()</a>
     <span>
-                        &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
+                        &nbsp;: string    </span>
 </dt>
-<dd>Returns a list of all log categorys</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/z-statisticsModel.html#method_getLogTableByCategories">getLogTableByCategories()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
-</dt>
-<dd>Gets logs specified by attributes</dd>
+<dd></dd>
 
         </dl>
 
@@ -152,7 +148,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/z-statisticsModel.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ZubZet-Framework-Logger-JsonFormatter.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -160,86 +156,32 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getLogCategories">
-        getLogCategories()
-        <a href="classes/z-statisticsModel.html#method_getLogCategories" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_format">
+        format()
+        <a href="classes/ZubZet-Framework-Logger-JsonFormatter.html#method_format" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/models/z_statisticsModel.php"><a href="files/src-includedcomponents-models-z-statisticsmodel.html"><abbr title="src/IncludedComponents/models/z_statisticsModel.php">z_statisticsModel.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/JsonFormatter.php"><a href="files/src-logger-jsonformatter.html"><abbr title="src/Logger/JsonFormatter.php">JsonFormatter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns a list of all log categorys</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getLogCategories</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
+                <span class="phpdocumentor-signature__name">format</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$record</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
-    
-    
+        <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The list from the database</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getLogTableByCategories">
-        getLogTableByCategories()
-        <a href="classes/z-statisticsModel.html#method_getLogTableByCategories" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/models/z_statisticsModel.php"><a href="files/src-includedcomponents-models-z-statisticsmodel.html"><abbr title="src/IncludedComponents/models/z_statisticsModel.php">z_statisticsModel.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">26</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Gets logs specified by attributes</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getLogTableByCategories</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$start</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$end</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$categories</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
-
-    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$start</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$record</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The start date from which logs should be returned in a sql format</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$end</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The end date to which the logs should be returned in sql format</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$categories</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>A list of category ids</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
@@ -247,11 +189,9 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The datasets from the database in an array</p>
-</section>
-
+        
     
 </article>
             </section>
@@ -332,7 +272,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/z-statisticsModel.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/ZubZet-Framework-Logger-JsonFormatter.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

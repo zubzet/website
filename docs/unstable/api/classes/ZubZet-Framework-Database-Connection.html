@@ -110,7 +110,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -133,14 +133,7 @@
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Database-Connection.html#property_booter">$booter</a>
     <span>
-                &nbsp;: <abbr title="\z_framework">z_framework</abbr>            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#property_cakePHPDatabase">$cakePHPDatabase</a>
-    <span>
-                &nbsp;: <abbr title="\Cake\Database\Connection">Connection</abbr>            </span>
+                &nbsp;: <a href="classes/ZubZet-Framework-ZubZet.html"><abbr title="\ZubZet\Framework\ZubZet">ZubZet</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -173,6 +166,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#property_queryBuilderConnection">$queryBuilderConnection</a>
+    <span>
+                &nbsp;: <abbr title="\Cake\Database\Connection">Connection</abbr>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Database-Interaction.html#property_result">$result</a>
     <span>
                 &nbsp;: null|bool|<abbr title="\mysqli_result">mysqli_result</abbr>            </span>
@@ -187,9 +187,23 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#property_database">$database</a>
+    <span>
+                &nbsp;: string|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#property_host">$host</a>
+    <span>
+                &nbsp;: string|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#property_password">$password</a>
     <span>
-                &nbsp;: string            </span>
+                &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
@@ -203,7 +217,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#property_user">$user</a>
     <span>
-                &nbsp;: string            </span>
+                &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
@@ -271,16 +285,16 @@
 <dd>Executes a query as prepared statement</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#method_execQuery">execQuery()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a>    </span>
+</dt>
+<dd>Executes a CakePHP Query object using ZubZet`s own value binder to extract the SQL and bindings, then executing it as a prepared statement</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_executeMultiQuery">executeMultiQuery()</a>
     <span>
                         &nbsp;: bool    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_extractQueryBuilderSQL">extractQueryBuilderSQL()</a>
-    <span>
-                        &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
@@ -382,49 +396,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\z_framework">z_framework</abbr></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/ZubZet-Framework-ZubZet.html"><abbr title="\ZubZet\Framework\ZubZet">ZubZet</abbr></a></span>
     <span class="phpdocumentor-signature__name">$booter</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_cakePHPDatabase">
-        $cakePHPDatabase
-        <a href="classes/ZubZet-Framework-Database-Connection.html#property_cakePHPDatabase" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">13</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Cake\Database\Connection">Connection</abbr></span>
-    <span class="phpdocumentor-signature__name">$cakePHPDatabase</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -450,7 +430,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -518,7 +498,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -552,7 +532,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -561,6 +541,40 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$lastHeartbeat</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_queryBuilderConnection">
+        $queryBuilderConnection
+        <a href="classes/ZubZet-Framework-Database-Connection.html#property_queryBuilderConnection" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">16</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Cake\Database\Connection">Connection</abbr></span>
+    <span class="phpdocumentor-signature__name">$queryBuilderConnection</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -620,7 +634,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -629,6 +643,74 @@
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><abbr title="\mysqli">mysqli</abbr></span>
     <span class="phpdocumentor-signature__name">$conn</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_database">
+        $database
+        <a href="classes/ZubZet-Framework-Database-Connection.html#property_database" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$database</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_host">
+        $host
+        <a href="classes/ZubZet-Framework-Database-Connection.html#property_host" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$host</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -654,14 +736,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$password</span>
     </code>
 
@@ -688,7 +770,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -722,14 +804,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$user</span>
     </code>
 
@@ -760,29 +842,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\z_framework">z_framework</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$booter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$booter</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\z_framework">z_framework</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -804,7 +875,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 
     </aside>
 
@@ -837,7 +908,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
@@ -1104,7 +1175,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 
     </aside>
 
@@ -1137,7 +1208,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -1177,6 +1248,53 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_execQuery">
+        execQuery()
+        <a href="classes/ZubZet-Framework-Database-Connection.html#method_execQuery" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">124</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Executes a CakePHP Query object using ZubZet`s own value binder to extract the SQL and bindings, then executing it as a prepared statement</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">execQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Cake\Database\Query">Query</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Cake\Database\Query">Query</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The CakePHP Query object to execute</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Returning this for chaining</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_executeMultiQuery">
         executeMultiQuery()
         <a href="classes/ZubZet-Framework-Database-Connection.html#method_executeMultiQuery" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1184,7 +1302,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
@@ -1229,50 +1347,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_extractQueryBuilderSQL">
-        extractQueryBuilderSQL()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_extractQueryBuilderSQL" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">159</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">extractQueryBuilderSQL</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Cake\Database\Query">Query</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$query</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Cake\Database\Query">Query</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getDatabaseConnection">
         getDatabaseConnection()
         <a href="classes/ZubZet-Framework-Database-Connection.html#method_getDatabaseConnection" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1280,7 +1354,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 
     </aside>
 
@@ -1487,7 +1561,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 
     </aside>
 
@@ -1678,7 +1752,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -1730,7 +1804,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
