@@ -3401,6 +3401,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_sendemailtouser_static"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_bigintFileSize\u0028\u0029",
+            "name": "action_bigintFileSize",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_bigintFileSize"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_sendemailtouser_dynamic\u0028\u0029",
             "name": "action_sendemailtouser_dynamic",
             "summary": "",
@@ -4165,6 +4170,11 @@ Search.appendIndex(
             "name": "getModelLastId",
             "summary": "",
             "url": "classes/CoreModel.html#method_getModelLastId"
+        },                {
+            "fqsen": "\\CoreModel\u003A\u003AinsertLargeFile\u0028\u0029",
+            "name": "insertLargeFile",
+            "summary": "",
+            "url": "classes/CoreModel.html#method_insertLargeFile"
         },                {
             "fqsen": "\\FormModel",
             "name": "FormModel",
