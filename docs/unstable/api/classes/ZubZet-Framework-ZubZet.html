@@ -186,9 +186,9 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Routing-Router.html#property_slimRouter">$slimRouter</a>
+    <a href="classes/ZubZet-Framework-Routing-Router.html#property_routeDispatcher">$routeDispatcher</a>
     <span>
-                &nbsp;: <abbr title="\Slim\App">App</abbr>            </span>
+                &nbsp;: <abbr title="\FastRoute\Dispatcher">Dispatcher</abbr>|null            </span>
 </dt>
 <dd></dd>
 
@@ -235,11 +235,19 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-ZubZet.html#method_replaceRequest">replaceRequest()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Routing-Router.html#method_reroute">reroute()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Tries to reroute the request using Slim first, if the route does not exist, it falls back to the ZubZet framework.</dd>
+<dd>Tries to reroute the request using FastRoute first, if the route does not exist,
+it falls back to the ZubZet framework.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_setExceptionBehavior">setExceptionBehavior()</a>
@@ -253,6 +261,13 @@ Options are defined in the BehaviorOption class</dd>
     <a href="classes/ZubZet-Framework-ZubZet.html#method_setRequestResponse">setRequestResponse()</a>
     <span>
                         &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Routing-Router.html#method_getRouteDispatcher">getRouteDispatcher()</a>
+    <span>
+                        &nbsp;: <abbr title="\FastRoute\Dispatcher">Dispatcher</abbr>    </span>
 </dt>
 <dd></dd>
 
@@ -284,7 +299,7 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 
     </aside>
 
@@ -386,7 +401,7 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -547,25 +562,25 @@ Options are defined in the BehaviorOption class</dd>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_slimRouter">
-        $slimRouter
-        <a href="classes/ZubZet-Framework-Routing-Router.html#property_slimRouter" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_routeDispatcher">
+        $routeDispatcher
+        <a href="classes/ZubZet-Framework-Routing-Router.html#property_routeDispatcher" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Slim\App">App</abbr></span>
-    <span class="phpdocumentor-signature__name">$slimRouter</span>
-    </code>
+        <span class="phpdocumentor-signature__type"><abbr title="\FastRoute\Dispatcher">Dispatcher</abbr>|null</span>
+    <span class="phpdocumentor-signature__name">$routeDispatcher</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -638,7 +653,7 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -682,14 +697,14 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">executeControllerAction</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$controller</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">executeControllerAction</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$controller</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arguments</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -719,6 +734,14 @@ Options are defined in the BehaviorOption class</dd>
                     <section class="phpdocumentor-description"></section>
 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$arguments</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
             </dl>
 
     
@@ -742,7 +765,7 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
@@ -888,6 +911,50 @@ Options are defined in the BehaviorOption class</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_replaceRequest">
+        replaceRequest()
+        <a href="classes/ZubZet-Framework-ZubZet.html#method_replaceRequest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ZubZet.php"><a href="files/src-zubzet.html"><abbr title="src/ZubZet.php">ZubZet.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">83</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">replaceRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$newState</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$newState</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_reroute">
         reroute()
         <a href="classes/ZubZet-Framework-Routing-Router.html#method_reroute" class="headerlink"><i class="fas fa-link"></i></a>
@@ -895,22 +962,23 @@ Options are defined in the BehaviorOption class</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Tries to reroute the request using Slim first, if the route does not exist, it falls back to the ZubZet framework.</p>
+        <p class="phpdocumentor-summary">Tries to reroute the request using FastRoute first, if the route does not exist,
+it falls back to the ZubZet framework.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">reroute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$parts</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">reroute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$parts</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$parts</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The parts of the new route. Example: [&quot;auth&quot;, &quot;login&quot;]</p>
@@ -1019,6 +1087,39 @@ Options are defined in the BehaviorOption class</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRouteDispatcher">
+        getRouteDispatcher()
+        <a href="classes/ZubZet-Framework-Routing-Router.html#method_getRouteDispatcher" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">72</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">getRouteDispatcher</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\FastRoute\Dispatcher">Dispatcher</abbr></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\FastRoute\Dispatcher">Dispatcher</abbr></span>
             &mdash;
         
     
