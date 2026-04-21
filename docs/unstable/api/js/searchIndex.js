@@ -596,6 +596,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Console-RunCommand.html#method_execute"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveBooterSettings",
+            "name": "CanRetrieveBooterSettings",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveBooterSettings\u003A\u003AgetBooterSettings\u0028\u0029",
+            "name": "getBooterSettings",
+            "summary": "Gets\u0020a\u0020booter\u0020setting",
+            "url": "classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html#method_getBooterSettings"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveModel",
             "name": "CanRetrieveModel",
             "summary": "",
@@ -2411,11 +2421,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020framework\u0020root\u0020directory",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZRoot"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetBooterSettings\u0028\u0029",
-            "name": "getBooterSettings",
-            "summary": "Gets\u0020a\u0020booter\u0020setting",
-            "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getBooterSettings"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003A\u0024booter",
             "name": "booter",
             "summary": "",
@@ -2465,6 +2470,11 @@ Search.appendIndex(
             "name": "generateRest",
             "summary": "Generates\u0020a\u0020Rest\u0020object",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_generateRest"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Ajson\u0028\u0029",
+            "name": "json",
+            "summary": "Sends\u0020a\u0020JSON\u0020response.",
+            "url": "classes/ZubZet-Framework-Message-Response.html#method_json"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AgenerateRestError\u0028\u0029",
             "name": "generateRestError",
@@ -2610,6 +2620,31 @@ Search.appendIndex(
             "name": "ViewNotFoundException",
             "summary": "",
             "url": "classes/ZubZet-Framework-Rendering-ViewNotFoundException.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy",
+            "name": "AssetProxy",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003AregisterWebRootSource\u0028\u0029",
+            "name": "registerWebRootSource",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method_registerWebRootSource"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003Aserve\u0028\u0029",
+            "name": "serve",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method_serve"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003A\u0024assetSources",
+            "name": "assetSources",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#property_assetSources"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\HttpMethod",
             "name": "HttpMethod",
@@ -3125,6 +3160,51 @@ Search.appendIndex(
             "name": "action_command",
             "summary": "",
             "url": "classes/AdvancedController.html#method_action_command"
+        },                {
+            "fqsen": "\\AssetProxyController",
+            "name": "AssetProxyController",
+            "summary": "",
+            "url": "classes/AssetProxyController.html"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_sibling_prefix_traversal\u0028\u0029",
+            "name": "action_sibling_prefix_traversal",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_sibling_prefix_traversal"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_directory_request\u0028\u0029",
+            "name": "action_directory_request",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_directory_request"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_null_mime\u0028\u0029",
+            "name": "action_null_mime",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_null_mime"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_symlink_escape\u0028\u0029",
+            "name": "action_symlink_escape",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_symlink_escape"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_null_byte\u0028\u0029",
+            "name": "action_null_byte",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_null_byte"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_source_root_empty\u0028\u0029",
+            "name": "action_source_root_empty",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_source_root_empty"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_source_root_dot\u0028\u0029",
+            "name": "action_source_root_dot",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_source_root_dot"
+        },                {
+            "fqsen": "\\AssetProxyController\u003A\u003Aaction_source_root_dot_slash\u0028\u0029",
+            "name": "action_source_root_dot_slash",
+            "summary": "",
+            "url": "classes/AssetProxyController.html#method_action_source_root_dot_slash"
         },                {
             "fqsen": "\\CoreController",
             "name": "CoreController",
@@ -4530,6 +4610,11 @@ Search.appendIndex(
             "name": "Rendering",
             "summary": "",
             "url": "namespaces/zubzet-framework-rendering.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources",
+            "name": "Resources",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-resources.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing",
             "name": "Routing",

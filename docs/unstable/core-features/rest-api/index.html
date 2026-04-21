@@ -2188,6 +2188,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        json
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2222,30 +2233,34 @@
 <h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
 <p>As the client and the server are completely separated, they need to have a way communicated. It is basically a standardized way of transfering, in our case JSON data, from the server to the client.</p>
 <h2 id="how-to-use-this">How to use this?<a class="headerlink" href="#how-to-use-this" title="Permanent link">&para;</a></h2>
-<p>There is a file called <code>z_rest.php</code>, which handles all the REST responses. You'll probably not be using this as another layer of abstraction exists within the response class. There are two functions regarding this topic. </p>
+<p>The REST response pipeline lives in <code>z_rest.php</code>, but you'll typically reach for one of the response helpers instead:</p>
 <table>
 <thead>
 <tr>
 <th>Call</th>
-<th>zdoc</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>$res-&gt;generateRest</code></td>
-<td><a href="https://zdoc.zierhut-it.de/classes/Response.html#method_generateRest">Here</a></td>
+<td>Sends a REST payload wrapped in a <code>meta</code> envelope and exits by default</td>
 </tr>
 <tr>
 <td><code>$res-&gt;generateRestError</code></td>
-<td><a href="https://zdoc.zierhut-it.de/classes/Response.html#method_generateRestError">Here</a></td>
+<td>Sends a REST error envelope</td>
 </tr>
 <tr>
 <td><code>$res-&gt;error</code></td>
-<td><a href="https://zdoc.zierhut-it.de/classes/Response.html#method_generateRestError">Here</a></td>
+<td>Convenience for <code>generateRest</code> with <code>result=error</code></td>
 </tr>
 <tr>
 <td><code>$res-&gt;success</code></td>
-<td><a href="https://zdoc.zierhut-it.de/classes/Response.html#method_generateRestError">Here</a></td>
+<td>Convenience for <code>generateRest</code> with <code>result=success</code></td>
+</tr>
+<tr>
+<td><code>$res-&gt;json</code></td>
+<td>Sends a raw JSON payload (no <code>meta</code> wrapper); does not exit</td>
 </tr>
 </tbody>
 </table>
@@ -2275,6 +2290,18 @@
 <p><div class="highlight"><pre><span></span><code><span class="x">$res-&gt;error(&quot;MESSAGE&quot;);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REST API&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;URL&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9999999</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MESSAGE&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="json">json<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<p>Use <code>json</code> when you need to send a raw JSON payload without the REST <code>meta</code> wrapper. It sets <code>Content-Type: application/json</code> and echoes <code>json_encode($data)</code>. Unlike the other helpers above it does not exit — call <code>exit</code> yourself if you need to stop the request here. <code>JSON_THROW_ON_ERROR</code> is always applied, so unencodable values raise a <code>JsonException</code>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="x">$res-&gt;json([</span>
+<span class="x">    &quot;ok&quot; =&gt; true,</span>
+<span class="x">    &quot;items&quot; =&gt; [1, 2, 3],</span>
+<span class="x">]);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;items&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]}</span>
+</code></pre></div></p>
+<p>Pass extra <code>json_encode</code> options as the second argument:
+<div class="highlight"><pre><span></span><code><span class="x">$res-&gt;json($data, JSON_PRETTY_PRINT);</span>
 </code></pre></div></p>
 
 

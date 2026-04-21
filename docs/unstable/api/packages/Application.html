@@ -207,6 +207,8 @@
 and to change the bind method to match that of mysqli.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-ViewNotFoundException.html"><abbr title="\ZubZet\Framework\Rendering\ViewNotFoundException">ViewNotFoundException</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-AssetProxy.html"><abbr title="\ZubZet\Framework\Resources\AssetProxy">AssetProxy</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Routing-PendingAction.html"><abbr title="\ZubZet\Framework\Routing\PendingAction">PendingAction</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Routing-PendingGroup.html"><abbr title="\ZubZet\Framework\Routing\PendingGroup">PendingGroup</abbr></a></dt>
@@ -232,6 +234,8 @@ and to change the bind method to match that of mysqli.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdminController.html"><abbr title="\AdminController">AdminController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdvancedController.html"><abbr title="\AdvancedController">AdvancedController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AssetProxyController.html"><abbr title="\AssetProxyController">AssetProxyController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CoreController.html"><abbr title="\CoreController">CoreController</abbr></a></dt>
         <dd></dd>
@@ -303,6 +307,8 @@ and to change the bind method to match that of mysqli.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Bootstrap-Configuration.html"><abbr title="\ZubZet\Framework\Bootstrap\Configuration">Configuration</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html"><abbr title="\ZubZet\Framework\Core\CanRetrieveBooterSettings">CanRetrieveBooterSettings</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Core-CanRetrieveModel.html"><abbr title="\ZubZet\Framework\Core\CanRetrieveModel">CanRetrieveModel</abbr></a></dt>
         <dd></dd>
@@ -387,14 +393,14 @@ and to change the bind method to match that of mysqli.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">essentialsHead</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customBootstrap</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">essentialsHead</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customBootstrap</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$opt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Object holding options for rendering</p>
@@ -435,14 +441,14 @@ and to change the bind method to match that of mysqli.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">essentialsBody</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">essentialsBody</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$opt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Object holding options for rendering</p>
