@@ -2370,6 +2370,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#local-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Development Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vscode-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSCode Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2460,6 +2488,21 @@ From now on, we use <a href="https://www.conventionalcommits.org/">Conventional 
 - <code>feat: add a query builder</code>
 - <code>chore(dev): setup docker development environment</code>
 - <code>test: migrate all qa-suite tests</code></p>
+<h2 id="local-development-environment">Local Development Environment<a class="headerlink" href="#local-development-environment" title="Permanent link">&para;</a></h2>
+<p>The dockerized test app under <code>tests/e2e/</code> doubles as the local development environment. From <code>tests/e2e/</code>:</p>
+<ul>
+<li><code>npm run start</code> — bootstrap the stack: <code>npm install</code>, <code>docker compose up -d --build</code>, <code>composer install</code>, run seeds, print startup info. Returns to the shell when ready.</li>
+<li><code>npm run startup</code> — same bootstrap as <code>start</code>, then keeps <code>docker compose up</code> attached in the foreground so logs stream live. Exit (Ctrl-C / closing the terminal) tears the containers down.</li>
+<li><code>npm run stop</code> — <code>docker compose down -v</code>.</li>
+</ul>
+<h3 id="vscode-tasks">VSCode Tasks<a class="headerlink" href="#vscode-tasks" title="Permanent link">&para;</a></h3>
+<p>Both the framework root (<code>.vscode/tasks.json</code>) and the e2e folder (<code>tests/e2e/.vscode/tasks.json</code>) ship the same two tasks, so the auto-start fires whichever folder you open in VSCode:</p>
+<ul>
+<li><strong>Start Dev Environment</strong> — runs <code>npm run startup</code> automatically on <code>folderOpen</code>, bringing the stack up and attaching to it.</li>
+<li><strong>Stop Dev Environment</strong> — runs <code>npm run stop</code> on demand.</li>
+</ul>
+<p>Both tasks render in a dedicated panel. On first open VSCode prompts to <strong>Allow Automatic Tasks</strong> — accept it, otherwise the auto-start is silently suppressed (re-enable later via <code>Tasks: Manage Automatic Tasks</code>).</p>
+<p>Closing the VSCode window does <strong>not</strong> stop the stack — VSCode kills task terminals too aggressively for any cleanup hook to run reliably. Before opening the next project, run <strong>Stop Dev Environment</strong> from the command palette (or <code>npm run stop</code> from <code>tests/e2e/</code>) to free the ports.</p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
