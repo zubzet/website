@@ -107,7 +107,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -127,13 +127,6 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_ZUBZET">ZUBZET</a>
-    <span>
-        &nbsp;= &quot;zubzet&quot;                    </span>
-</dt>
-<dd></dd>
-
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
     <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_CACHE_KEY">CACHE_KEY</a>
     <span>
@@ -142,16 +135,37 @@
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getLogger">getLogger()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getOrCreateLogger">getOrCreateLogger()</a>
     <span>
-                        &nbsp;: <abbr title="\Monolog\Logger">Logger</abbr>    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>    </span>
 </dt>
 <dd>Get an existing logger from the cache or create a new one if it doesn&#039;t exist.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getTraceId">getTraceId()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_handleSlowRequest">handleSlowRequest()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_register">register()</a>
     <span>
-                        &nbsp;: <abbr title="\Monolog\Logger">Logger</abbr>    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>    </span>
 </dt>
 <dd>Register a fully configured Logger in the cache with the given name.</dd>
 
@@ -165,35 +179,6 @@
             Constants
             <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ZUBZET">
-        ZUBZET
-        <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_ZUBZET" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ZUBZET</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;zubzet&quot;</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
                     <article class="phpdocumentor-element -constant -private ">
     <h4 class="phpdocumentor-element__name" id="constant_CACHE_KEY">
         CACHE_KEY
@@ -203,7 +188,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -238,6 +223,50 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getLogger">
+        getLogger()
+        <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getLogger" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">92</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_getOrCreateLogger">
         getOrCreateLogger()
         <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getOrCreateLogger" class="headerlink"><i class="fas fa-link"></i></a>
@@ -245,7 +274,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -253,7 +282,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getOrCreateLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Monolog\Logger">Logger</abbr></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getOrCreateLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>This uses the configuration settings to determine the type and level of the logger, and caches it for future use.</p>
 </section>
@@ -290,11 +319,77 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Monolog\Logger">Logger</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>The logger instance</p>
 </section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTraceId">
+        getTraceId()
+        <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getTraceId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">83</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getTraceId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_handleSlowRequest">
+        handleSlowRequest()
+        <a href="classes/ZubZet-Framework-Logger-LoggerFactory.html#method_handleSlowRequest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">97</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">handleSlowRequest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
     
 </article>
                     <article
@@ -310,7 +405,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/LoggerFactory.php"><a href="files/src-logger-loggerfactory.html"><abbr title="src/Logger/LoggerFactory.php">LoggerFactory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -318,7 +413,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">register</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Monolog\Logger">Logger</abbr>|<abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Monolog\Logger">Logger</abbr></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">register</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>|<abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>This allows you to create and configure a Logger instance manually and
 then register it for future use.</p>
@@ -337,7 +432,7 @@ then register it for future use.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$logger</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Monolog\Logger">Logger</abbr>|<abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a>|<abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The fully configured Logger instance to register</p>
@@ -349,7 +444,7 @@ then register it for future use.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Monolog\Logger">Logger</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>The registered Logger instance</p>
 </section>

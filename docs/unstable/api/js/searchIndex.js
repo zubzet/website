@@ -1336,10 +1336,85 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AclassifyErrorSeverity\u0028\u0029",
+            "name": "classifyErrorSeverity",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_classifyErrorSeverity"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AlogError\u0028\u0029",
+            "name": "logError",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_logError"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AsetExceptionBehavior\u0028\u0029",
             "name": "setExceptionBehavior",
-            "summary": "Updates\u0020the\u0020error\u0020handling\u0020state\nOptions\u0020are\u0020defined\u0020in\u0020the\u0020BehaviorOption\u0020class",
+            "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_setExceptionBehavior"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AregisterExceptionHandler\u0028\u0029",
+            "name": "registerExceptionHandler",
+            "summary": "Logs\u0020uncaught\u0020throwables\u0020and\u0020dispatches\u0020rendering.\u0020When\u0020Whoops\u0020is\nactive\u0020we\u0020invoke\u0020it\u0020directly\u0020so\u0020it\u0020receives\u0020the\u0020full\u0020throwable\u0020\u2014\nre\u002Dthrowing\u0020hands\u0020off\u0020to\u0020PHP\u0027s\u0020default\u0020fatal\u0020display,\u0020after\u0020which\nWhoops\u0020only\u0020sees\u0020the\u0020tail\u0020via\u0020\u0060handleShutdown\u0028\u0029\u0060\u0020and\u0020loses\u0020every\nvendor\/framework\u0020frame.",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_registerExceptionHandler"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AregisterWhoopsHandler\u0028\u0029",
+            "name": "registerWhoopsHandler",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_registerWhoopsHandler"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\GenericException\\NotInstantiatedException",
+            "name": "NotInstantiatedException",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\GenericException\\NotInstantiatedException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler",
+            "name": "WhoopsHandler",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003AconfigureEditorLink\u0028\u0029",
+            "name": "configureEditorLink",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method_configureEditorLink"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003AconfigureApplicationPaths\u0028\u0029",
+            "name": "configureApplicationPaths",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method_configureApplicationPaths"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003AmaskSensitiveSuperglobalKeys\u0028\u0029",
+            "name": "maskSensitiveSuperglobalKeys",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method_maskSensitiveSuperglobalKeys"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003AkeyLooksSensitive\u0028\u0029",
+            "name": "keyLooksSensitive",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method_keyLooksSensitive"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003ASENSITIVE_KEY_PATTERNS",
+            "name": "SENSITIVE_KEY_PATTERNS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#constant_SENSITIVE_KEY_PATTERNS"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003AMASKED_SUPERGLOBALS",
+            "name": "MASKED_SUPERGLOBALS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#constant_MASKED_SUPERGLOBALS"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003A\u0024run",
+            "name": "run",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#property_run"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload",
             "name": "Upload",
@@ -1660,6 +1735,11 @@ Search.appendIndex(
             "name": "action_index",
             "summary": "Serves\u0020an\u0020empty\u0020index\u0020page\u0020with\u0020the\u0020admin\u0020layout",
             "url": "classes/ZController.html#method_action_index"
+        },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_maintenance\u0028\u0029",
+            "name": "action_maintenance",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_maintenance"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_add_user\u0028\u0029",
             "name": "action_add_user",
@@ -1986,20 +2066,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Logger-BacktraceProcessor.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\BacktraceProcessor\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-BacktraceProcessor.html#method___construct"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\BacktraceProcessor\u003A\u003A__invoke\u0028\u0029",
             "name": "__invoke",
             "summary": "",
             "url": "classes/ZubZet-Framework-Logger-BacktraceProcessor.html#method___invoke"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\DatabaseLogger",
-            "name": "DatabaseLogger",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\BacktraceProcessor\u003A\u003A\u0024logger",
+            "name": "logger",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-DatabaseLogger.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\DatabaseLogger\u003A\u003Awrite\u0028\u0029",
-            "name": "write",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-DatabaseLogger.html#method_write"
+            "url": "classes/ZubZet-Framework-Logger-BacktraceProcessor.html#property_logger"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\JsonFormatter",
             "name": "JsonFormatter",
@@ -2016,55 +2096,150 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Logger-LogEventType.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003Arender",
-            "name": "render",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ARENDER",
+            "name": "RENDER",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_render"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_RENDER"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AaccountLoginRateLimited",
-            "name": "accountLoginRateLimited",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ASLOW_REQUEST",
+            "name": "SLOW_REQUEST",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_accountLoginRateLimited"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_SLOW_REQUEST"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ApasswordResetRequested",
-            "name": "passwordResetRequested",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ASLOW_QUERY",
+            "name": "SLOW_QUERY",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_passwordResetRequested"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_SLOW_QUERY"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ApasswordReset",
-            "name": "passwordReset",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AEXCEPTION",
+            "name": "EXCEPTION",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_passwordReset"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_EXCEPTION"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AaccountUpdated",
-            "name": "accountUpdated",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AERROR",
+            "name": "ERROR",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_accountUpdated"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_ERROR"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserCreated",
-            "name": "userCreated",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AWARNING",
+            "name": "WARNING",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userCreated"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_WARNING"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedIn",
-            "name": "userLoggedIn",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ANOTICE",
+            "name": "NOTICE",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedIn"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_NOTICE"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedInAnother",
-            "name": "userLoggedInAnother",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ADEPRECATION",
+            "name": "DEPRECATION",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedInAnother"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_DEPRECATION"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AuserLoggedOut",
-            "name": "userLoggedOut",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003APARSE",
+            "name": "PARSE",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_userLoggedOut"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_PARSE"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ArestError",
-            "name": "restError",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003ASTRICT",
+            "name": "STRICT",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_restError"
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_STRICT"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AREST_ERROR",
+            "name": "REST_ERROR",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_REST_ERROR"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AACCOUNT_LOGIN_RATE_LIMITED",
+            "name": "ACCOUNT_LOGIN_RATE_LIMITED",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_ACCOUNT_LOGIN_RATE_LIMITED"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003APASSWORD_RESET_REQUESTED",
+            "name": "PASSWORD_RESET_REQUESTED",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_PASSWORD_RESET_REQUESTED"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003APASSWORD_RESET",
+            "name": "PASSWORD_RESET",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_PASSWORD_RESET"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AACCOUNT_UPDATED",
+            "name": "ACCOUNT_UPDATED",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_ACCOUNT_UPDATED"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AUSER_CREATED",
+            "name": "USER_CREATED",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_USER_CREATED"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AUSER_LOGGED_IN",
+            "name": "USER_LOGGED_IN",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_USER_LOGGED_IN"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AUSER_LOGGED_IN_ANOTHER",
+            "name": "USER_LOGGED_IN_ANOTHER",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_USER_LOGGED_IN_ANOTHER"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LogEventType\u003A\u003AUSER_LOGGED_OUT",
+            "name": "USER_LOGGED_OUT",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LogEventType.html#constant_USER_LOGGED_OUT"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger",
+            "name": "Logger",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AcontextAdd\u0028\u0029",
+            "name": "contextAdd",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_contextAdd"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AcontextMergeFrom\u0028\u0029",
+            "name": "contextMergeFrom",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_contextMergeFrom"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AcontextInspect\u0028\u0029",
+            "name": "contextInspect",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_contextInspect"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AcontextClear\u0028\u0029",
+            "name": "contextClear",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_contextClear"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AgetTraceId\u0028\u0029",
+            "name": "getTraceId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_getTraceId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AsetTraceId\u0028\u0029",
+            "name": "setTraceId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#method_setTraceId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AAPP",
+            "name": "APP",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#constant_APP"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003AZUBZET",
+            "name": "ZUBZET",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#constant_ZUBZET"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Logger\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Logger.html#property_context"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory",
             "name": "LoggerFactory",
@@ -2081,25 +2256,50 @@ Search.appendIndex(
             "summary": "Get\u0020an\u0020existing\u0020logger\u0020from\u0020the\u0020cache\u0020or\u0020create\u0020a\u0020new\u0020one\u0020if\u0020it\u0020doesn\u0027t\u0020exist.",
             "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getOrCreateLogger"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AgetTraceId\u0028\u0029",
+            "name": "getTraceId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getTraceId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AgetLogger\u0028\u0029",
+            "name": "getLogger",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_getLogger"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AhandleSlowRequest\u0028\u0029",
+            "name": "handleSlowRequest",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#method_handleSlowRequest"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003ACACHE_KEY",
             "name": "CACHE_KEY",
             "summary": "",
             "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_CACHE_KEY"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\LoggerFactory\u003A\u003AZUBZET",
-            "name": "ZUBZET",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method\\DatabaseLogger",
+            "name": "DatabaseLogger",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-LoggerFactory.html#constant_ZUBZET"
+            "url": "classes/ZubZet-Framework-Logger-Method-DatabaseLogger.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\StreamLogger",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method\\DatabaseLogger\u003A\u003Awrite\u0028\u0029",
+            "name": "write",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Method-DatabaseLogger.html#method_write"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method\\DatabaseLogger\u003A\u003A\u0024isWriting",
+            "name": "isWriting",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Logger-Method-DatabaseLogger.html#property_isWriting"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method\\StreamLogger",
             "name": "StreamLogger",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-StreamLogger.html"
+            "url": "classes/ZubZet-Framework-Logger-Method-StreamLogger.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Logger\\StreamLogger\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method\\StreamLogger\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Logger-StreamLogger.html#method___construct"
+            "url": "classes/ZubZet-Framework-Logger-Method-StreamLogger.html#method___construct"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput",
             "name": "CanRetrieveFromInput",
@@ -2916,6 +3116,66 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Router.html#property_reroutes"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint",
+            "name": "CanCheckpoint",
+            "summary": "Snapshot\u0020\/\u0020Restore\u0020selected\u0020instance\u0020properties\u0020via\u0020a\u0020Checkpoint\u0020handle.",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-CanCheckpoint.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint\u003A\u003AcheckpointCurrentState\u0028\u0029",
+            "name": "checkpointCurrentState",
+            "summary": "Snapshot\u0020selected\u0020properties\u0020into\u0020a\u0020Checkpoint\u0020for\u0020later\u0020restore\u0028\u0029",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-CanCheckpoint.html#method_checkpointCurrentState"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint\u003A\u003AcheckpointablePropertyNames\u0028\u0029",
+            "name": "checkpointablePropertyNames",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-CanCheckpoint.html#method_checkpointablePropertyNames"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint",
+            "name": "Checkpoint",
+            "summary": "Handle\u0020returned\u0020by\u0020CanCheckpoint\u003A\u003AcheckpointCurrentState\u0028\u0029.",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint\u003A\u003Arestore\u0028\u0029",
+            "name": "restore",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html#method_restore"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint\u003A\u003A\u0024state",
+            "name": "state",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html#property_state"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint\u003A\u003A\u0024uninitialized",
+            "name": "uninitialized",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html#property_uninitialized"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpoint\u003A\u003A\u0024target",
+            "name": "target",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html#property_target"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpointable",
+            "name": "Checkpointable",
+            "summary": "Contract\u0020for\u0020classes\u0020that\u0020want\u0020checkpoint\/restore\u0020of\u0020their\u0020state.",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpointable.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\Checkpointable\u003A\u003AcheckpointCurrentState\u0028\u0029",
+            "name": "checkpointCurrentState",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-Checkpointable.html#method_checkpointCurrentState"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\IncludeInCheckpoint",
+            "name": "IncludeInCheckpoint",
+            "summary": "Marks\u0020a\u0020property\u0020for\u0020inclusion\u0020in\u0020CanCheckpoint\u0027s\u0020default\u0020snapshot.",
+            "url": "classes/ZubZet-Framework-Support-Checkpoint-IncludeInCheckpoint.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Startup",
             "name": "Startup",
             "summary": "",
@@ -3040,6 +3300,11 @@ Search.appendIndex(
             "name": "get",
             "summary": "",
             "url": "classes/ZubZet-Framework-Support-StaticCache.html#method_get"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003AgetOrNull\u0028\u0029",
+            "name": "getOrNull",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-StaticCache.html#method_getOrNull"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\StaticCache\u003A\u003Ahas\u0028\u0029",
             "name": "has",
@@ -3226,6 +3491,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_fallback"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_throwsException\u0028\u0029",
+            "name": "action_throwsException",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_throwsException"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_triggersDeprecation\u0028\u0029",
+            "name": "action_triggersDeprecation",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_triggersDeprecation"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_command\u0028\u0029",
             "name": "action_command",
             "summary": "",
@@ -3285,6 +3560,11 @@ Search.appendIndex(
             "name": "action_renderlayout",
             "summary": "",
             "url": "classes/CoreController.html#method_action_renderlayout"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_renderemptylayout\u0028\u0029",
+            "name": "action_renderemptylayout",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_renderemptylayout"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_e2e_superpermission\u0028\u0029",
             "name": "action_e2e_superpermission",
@@ -3516,6 +3796,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/FormController.html"
         },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_interactions\u0028\u0029",
+            "name": "action_interactions",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_interactions"
+        },                {
             "fqsen": "\\FormController\u003A\u003Aaction_validationText\u0028\u0029",
             "name": "action_validationText",
             "summary": "",
@@ -3746,6 +4031,91 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/LoggerController.html#method_action_log"
         },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_multiLog\u0028\u0029",
+            "name": "action_multiLog",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_multiLog"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_getTraceId\u0028\u0029",
+            "name": "action_getTraceId",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_getTraceId"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_setTraceId\u0028\u0029",
+            "name": "action_setTraceId",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_setTraceId"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_context\u0028\u0029",
+            "name": "action_context",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_context"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_contextInspect\u0028\u0029",
+            "name": "action_contextInspect",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_contextInspect"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_contextMerge\u0028\u0029",
+            "name": "action_contextMerge",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_contextMerge"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_contextClear\u0028\u0029",
+            "name": "action_contextClear",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_contextClear"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_contextMergeFromEmpty\u0028\u0029",
+            "name": "action_contextMergeFromEmpty",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_contextMergeFromEmpty"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_contextMergeFromMissing\u0028\u0029",
+            "name": "action_contextMergeFromMissing",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_contextMergeFromMissing"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_slowQuery\u0028\u0029",
+            "name": "action_slowQuery",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_slowQuery"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_slowInsertId\u0028\u0029",
+            "name": "action_slowInsertId",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_slowInsertId"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_slowSelectResult\u0028\u0029",
+            "name": "action_slowSelectResult",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_slowSelectResult"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_slowRequest\u0028\u0029",
+            "name": "action_slowRequest",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_slowRequest"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_slowRequestThenException\u0028\u0029",
+            "name": "action_slowRequestThenException",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_slowRequestThenException"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_deprecation\u0028\u0029",
+            "name": "action_deprecation",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_deprecation"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_suppressedWarning\u0028\u0029",
+            "name": "action_suppressedWarning",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_suppressedWarning"
+        },                {
+            "fqsen": "\\LoggerController\u003A\u003Aaction_uncaughtException\u0028\u0029",
+            "name": "action_uncaughtException",
+            "summary": "",
+            "url": "classes/LoggerController.html#method_action_uncaughtException"
+        },                {
             "fqsen": "\\MigrationController",
             "name": "MigrationController",
             "summary": "",
@@ -3795,6 +4165,21 @@ Search.appendIndex(
             "name": "action_mailuser",
             "summary": "",
             "url": "classes/RenderingController.html#method_action_mailuser"
+        },                {
+            "fqsen": "\\ResponseController",
+            "name": "ResponseController",
+            "summary": "",
+            "url": "classes/ResponseController.html"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_json_happy\u0028\u0029",
+            "name": "action_json_happy",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_json_happy"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_json_non_encodable\u0028\u0029",
+            "name": "action_json_non_encodable",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_json_non_encodable"
         },                {
             "fqsen": "\\RoleController",
             "name": "RoleController",
@@ -4571,6 +4956,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-errorhandling.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\GenericException",
+            "name": "GenericException",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-errorhandling-genericexception.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Form",
             "name": "Form",
             "summary": "",
@@ -4585,6 +4975,16 @@ Search.appendIndex(
             "name": "Logger",
             "summary": "",
             "url": "namespaces/zubzet-framework-logger.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Logger\\Method",
+            "name": "Method",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-logger-method.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Maintenance",
+            "name": "Maintenance",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-maintenance.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Input",
             "name": "Input",
@@ -4620,6 +5020,11 @@ Search.appendIndex(
             "name": "Routing",
             "summary": "",
             "url": "namespaces/zubzet-framework-routing.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint",
+            "name": "Checkpoint",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-support-checkpoint.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Commands",
             "name": "Commands",

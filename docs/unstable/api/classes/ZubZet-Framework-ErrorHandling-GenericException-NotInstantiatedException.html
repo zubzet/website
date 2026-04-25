@@ -86,15 +86,16 @@
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet.html">ZubZet</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework.html">Framework</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-logger.html">Logger</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-errorhandling.html">ErrorHandling</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/zubzet-framework-errorhandling-genericexception.html">GenericException</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    StreamLogger
+    NotInstantiatedException
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\Monolog\Handler\StreamHandler">StreamHandler</abbr>
+        extends <abbr title="\LogicException">LogicException</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -108,9 +109,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/StreamLogger.php"><a href="files/src-logger-streamlogger.html"><abbr title="src/Logger/StreamLogger.php">StreamLogger.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ErrorHandling/GenericException/NotInstantiatedException.php"><a href="files/src-errorhandling-genericexception-notinstantiatedexception.html"><abbr title="src/ErrorHandling/GenericException/NotInstantiatedException.php">NotInstantiatedException.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">5</span>
 
     </aside>
 
@@ -131,7 +132,7 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Logger-StreamLogger.html#method___construct">__construct()</a>
+    <a href="classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -148,7 +149,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/ZubZet-Framework-Logger-StreamLogger.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -158,35 +159,27 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/ZubZet-Framework-Logger-StreamLogger.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Logger/StreamLogger.php"><a href="files/src-logger-streamlogger.html"><abbr title="src/Logger/StreamLogger.php">StreamLogger.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ErrorHandling/GenericException/NotInstantiatedException.php"><a href="files/src-errorhandling-genericexception-notinstantiatedexception.html"><abbr title="src/ErrorHandling/GenericException/NotInstantiatedException.php">NotInstantiatedException.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">7</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stream</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$targetName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$stream</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$targetName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -280,7 +273,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/ZubZet-Framework-Logger-StreamLogger.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/ZubZet-Framework-ErrorHandling-GenericException-NotInstantiatedException.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
