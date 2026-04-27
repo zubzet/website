@@ -1250,6 +1250,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../core-features/debug-bar" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debug Bar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2303,6 +2331,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#console-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2415,7 +2454,7 @@
 <li><code>Bootstrap/</code> — <code>Configuration</code> trait that parses <code>z_settings.ini</code></li>
 <li><code>Core/</code> — Foundation traits (<code>CanRetrieveModel</code>, <code>CanRetrieveBooterSettings</code>, <code>Constants</code>, <code>FunctionConflictResolution</code>)</li>
 <li><code>Database/</code> — <code>Connection</code>, prepared-statement <code>Interaction</code>, migration commands</li>
-<li><code>ErrorHandling/</code> — <code>ExceptionBehavior</code>, <code>WhoopsHandler</code>, <code>BehaviorOption</code></li>
+<li><code>ErrorHandling/</code> — <code>ExceptionBehavior</code>, <code>WhoopsHandler</code>, <code>BehaviorOption</code>, <code>DebugBar/</code> (bridge, collectors, traits)</li>
 <li><code>Form/</code> — Validation rules (<code>required</code>, <code>unique</code>, <code>exists</code>, <code>length</code>, …)</li>
 <li><code>Logger/</code> — <code>LoggerFactory</code>, channels, slow-request logging</li>
 <li><code>Maintenance/</code> — Standalone maintenance gate (see <a href="../../../core-features/maintenance/">Maintenance Mode</a>)</li>
@@ -2524,11 +2563,10 @@
 npm<span class="w"> </span>run<span class="w"> </span>start
 
 <span class="c1"># Run the full suite headless (~3 min, 300+ tests)</span>
-env<span class="w"> </span>-u<span class="w"> </span>ELECTRON_RUN_AS_NODE<span class="w"> </span>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>tests
+npm<span class="w"> </span>run<span class="w"> </span>tests
 
 <span class="c1"># Run one spec</span>
-env<span class="w"> </span>-u<span class="w"> </span>ELECTRON_RUN_AS_NODE<span class="w"> </span>npx<span class="w"> </span>cypress<span class="w"> </span>run<span class="w"> </span>--project<span class="w"> </span>tests<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--spec<span class="w"> </span><span class="s1">&#39;tests/cypress/e2e/core/maintenance.cy.js&#39;</span>
+npm<span class="w"> </span>run<span class="w"> </span>tests<span class="w"> </span>--<span class="w"> </span>--spec<span class="w"> </span><span class="s1">&#39;tests/cypress/e2e/core/maintenance.cy.js&#39;</span>
 
 <span class="c1"># Open Cypress UI</span>
 npm<span class="w"> </span>run<span class="w"> </span>cypress
@@ -2590,6 +2628,44 @@ curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>
 cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_config/z_settings.ini
 </code></pre></div>
 <p>Occasional flake: a single failing run sometimes recovers on re-run. Re-run once before debugging.</p>
+<h2 id="debug-bar">Debug bar<a class="headerlink" href="#debug-bar" title="Permanent link">&para;</a></h2>
+<p>User-facing docs: <a href="../../../core-features/debug-bar/">Debug Bar</a>.</p>
+<p>All debug-bar code lives in <code>src/ErrorHandling/DebugBar/</code>:</p>
+<ul>
+<li><code>DebugBarBridge.php</code> is the only static entry point. It bootstraps <code>StandardDebugBar</code>, registers collectors, wires the asset proxy, and exposes <code>renderHead()</code> / <code>renderBody()</code> for the layout. It returns early when <code>execution_type !== "test"</code>.</li>
+<li><code>Collectors/</code> holds the framework's own collectors (<code>QueryCollector</code>, <code>TemplateCollector</code>, <code>MonologCollector</code>).</li>
+<li><code>CanCollect</code> is a trait used by the bridge to expose strongly typed <code>collectQuery()</code> / <code>collectTemplate()</code> / <code>collectLogger()</code> static helpers that forward into the right collector.</li>
+<li><code>CanFormatValue</code> is a small trait that normalizes scalars/arrays/objects into a readable string for display.</li>
+</ul>
+<p>Call sites that feed the bar:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Trait/Helper</th>
+<th>Collector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Connection::exec</code></td>
+<td><code>DebugBarBridge::collectQuery(...)</code></td>
+<td><code>QueryCollector</code></td>
+</tr>
+<tr>
+<td><code>CanRenderView::render</code></td>
+<td><code>DebugBarBridge::collectTemplate(...)</code></td>
+<td><code>TemplateCollector</code></td>
+</tr>
+<tr>
+<td><code>LoggerFactory::getOrCreateLogger</code></td>
+<td><code>DebugBarBridge::collectLogger(...)</code></td>
+<td><code>MonologCollector</code> (a Monolog handler)</td>
+</tr>
+</tbody>
+</table>
+<p>Internal-query filtering uses source tagging: models that mark themselves with the <code>IsInternalModel</code> trait set <code>isInternalModel = true</code>, and <code>Connection::exec</code> records the calling model on the connection before the query runs. <code>QueryCollector::addQuery</code> then drops queries from internal models when <code>debugbar_hide_internal_queries = true</code> (default). Direct <code>db()-&gt;exec(...)</code> calls have no calling model and are always shown.</p>
+<p>To add a new collector, implement <code>DebugBar\DataCollector\DataCollector</code> (or extend an existing one), register it in <code>DebugBarBridge::bootstrap()</code>, and expose a <code>collectXxx()</code> method on <code>CanCollect</code> that forwards via <code>self::collect("name", "addXxx", func_get_args())</code>.</p>
 <h2 id="console-commands">Console commands<a class="headerlink" href="#console-commands" title="Permanent link">&para;</a></h2>
 <p>Run commands inside the application container:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>application<span class="w"> </span>php<span class="w"> </span>index.php<span class="w"> </span>&lt;command&gt;
