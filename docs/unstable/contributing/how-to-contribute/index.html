@@ -2288,6 +2288,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#branching-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branching model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2311,10 +2322,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update-your-local-main-branch-from-upstream" class="md-nav__link">
+  <a href="#update-your-local-develop-branch-from-upstream" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update your local main branch from upstream
+        Update your local develop branch from upstream
       
     </span>
   </a>
@@ -2355,10 +2366,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#keep-your-main-branch-in-sync" class="md-nav__link">
+  <a href="#keep-your-develop-branch-in-sync" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keep your main branch in sync
+        Keep your develop branch in sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promote-develop-to-main-maintainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promote develop to main (maintainer)
       
     </span>
   </a>
@@ -2463,16 +2485,45 @@
 
 <h1 id="how-to-contribute">How To Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h1>
 <h2 id="git-workflow">Git Workflow<a class="headerlink" href="#git-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="branching-model">Branching model<a class="headerlink" href="#branching-model" title="Permanent link">&para;</a></h3>
+<p>The framework uses a two-tier integration flow:</p>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Stability</th>
+<th>Source of changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>develop</code></td>
+<td><strong>Unstable.</strong> Active integration branch. Features land here once reviewed. May contain in-progress combinations that haven't been validated together.</td>
+<td>Feature-branch PRs</td>
+</tr>
+<tr>
+<td><code>main</code></td>
+<td><strong>Release-candidate.</strong> Mostly working, comparable to an RC. Only merged to from <code>develop</code> when the combined state is green and reviewed.</td>
+<td>Promotion PRs from <code>develop</code></td>
+</tr>
+</tbody>
+</table>
+<p>Practical implications:</p>
+<ul>
+<li>Feature work targets <code>develop</code>. PRs may be opened as <strong>draft / WIP</strong> while in progress.</li>
+<li>Promotions to <code>main</code> happen as a separate PR (<code>develop</code> → <code>main</code>) when the maintainer is satisfied with the integrated state.</li>
+<li>CI runs the full PHP matrix (8.0–8.5) on pushes to <code>develop</code>, <code>main</code>, and version tags. PRs and other branches run an extremes-only smoke (8.0 + 8.5).</li>
+</ul>
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Origin</strong> (your fork): <code>git@github.com:your-username/framework.git</code></li>
 <li><strong>Upstream</strong> (main repo): <code>git@github.com:zubzet/framework.git</code></li>
 </ul>
 <h3 id="common-workflows">Common Workflows<a class="headerlink" href="#common-workflows" title="Permanent link">&para;</a></h3>
-<h4 id="update-your-local-main-branch-from-upstream">Update your local main branch from upstream<a class="headerlink" href="#update-your-local-main-branch-from-upstream" title="Permanent link">&para;</a></h4>
+<h4 id="update-your-local-develop-branch-from-upstream">Update your local develop branch from upstream<a class="headerlink" href="#update-your-local-develop-branch-from-upstream" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
-git<span class="w"> </span>checkout<span class="w"> </span>main
-git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+git<span class="w"> </span>checkout<span class="w"> </span>develop
+git<span class="w"> </span>merge<span class="w"> </span>upstream/develop
 </code></pre></div>
 <h4 id="create-and-push-a-feature-branch">Create and push a feature branch<a class="headerlink" href="#create-and-push-a-feature-branch" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
@@ -2485,27 +2536,36 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <ol>
 <li>Go to <code>https://github.com/zubzet/framework</code></li>
 <li>Click "New Pull Request"</li>
-<li>Select <code>main</code> as base branch</li>
+<li>Select <code>develop</code> as base branch</li>
 <li>Select your feature branch as compare branch</li>
-<li>Create PR and request reviews</li>
+<li>Create PR and request reviews — open as draft while still in progress</li>
 </ol>
 <h4 id="sync-your-fork-with-upstream">Sync your fork with upstream<a class="headerlink" href="#sync-your-fork-with-upstream" title="Permanent link">&para;</a></h4>
-<p>If main has changed while you're working on a feature branch:</p>
+<p>If develop has changed while you're working on a feature branch:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
-git<span class="w"> </span>rebase<span class="w"> </span>upstream/main
+git<span class="w"> </span>rebase<span class="w"> </span>upstream/develop
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name<span class="w"> </span>-f
 </code></pre></div>
-<h4 id="keep-your-main-branch-in-sync">Keep your main branch in sync<a class="headerlink" href="#keep-your-main-branch-in-sync" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
+<h4 id="keep-your-develop-branch-in-sync">Keep your develop branch in sync<a class="headerlink" href="#keep-your-develop-branch-in-sync" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>develop
 git<span class="w"> </span>fetch<span class="w"> </span>upstream
+git<span class="w"> </span>merge<span class="w"> </span>upstream/develop
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+</code></pre></div>
+<h4 id="promote-develop-to-main-maintainer">Promote develop to main (maintainer)<a class="headerlink" href="#promote-develop-to-main-maintainer" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+git<span class="w"> </span>merge<span class="w"> </span>upstream/develop
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+<span class="c1"># then open the PR upstream and let the full matrix run</span>
 </code></pre></div>
 <h3 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Always work on feature branches, never directly on main</li>
-<li>Keep your fork updated frequently to avoid conflicts</li>
-<li>Push to <code>origin</code> (your fork), create PR to <code>upstream</code> (main repo)</li>
+<li>Always work on feature branches, never directly on <code>develop</code> or <code>main</code>.</li>
+<li>Feature PRs target <code>develop</code>; only <code>develop</code> → <code>main</code> PRs target <code>main</code>.</li>
+<li>Keep your fork updated frequently to avoid conflicts.</li>
+<li>Push to <code>origin</code> (your fork), create PR to <code>upstream</code> (main repo).</li>
 </ul>
 <h2 id="commit-messages">Commit Messages<a class="headerlink" href="#commit-messages" title="Permanent link">&para;</a></h2>
 <p>We previously used <a href="https://gitmoji.dev/">gitmoji</a> for commits.

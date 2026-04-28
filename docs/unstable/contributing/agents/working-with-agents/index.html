@@ -2725,8 +2725,8 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 <li><strong>Conventional commits with a scope</strong>: <code>feat(admin): …</code>, <code>fix(layout): …</code>, <code>refactor(maintenance): …</code>, <code>test(...)</code>, <code>docs(...)</code>. See <a href="../../how-to-contribute/">How To Contribute</a> for the migration from Gitmoji.</li>
 <li><strong>Atomic commits.</strong> Split work by scope. Example: a feature touching code + tests + docs becomes <code>refactor(...)</code>, <code>feat(...)</code>, <code>test(...)</code>, <code>docs(...)</code> — four commits, one scope each. Combining (<code>feat+test</code>) is not the project style.</li>
 <li><strong>One-line messages, no <code>Co-Authored-By</code> trailer.</strong></li>
-<li><strong>PR base is <code>main</code>.</strong> Verify with <code>gh pr view &lt;n&gt; --json baseRefName</code> if unsure; some tooling surfaces stale branch names.</li>
-<li>CI runs e2e on PHP 8.0, 8.1, 8.2, 8.3, 8.4, 8.5 in parallel. Watch with <code>gh pr checks &lt;n&gt; --repo zubzet/framework --watch</code>.</li>
+<li><strong>PR base is <code>develop</code>.</strong> Feature work merges into <code>develop</code>; <code>develop</code> is later promoted to <code>main</code> via a separate PR. Verify with <code>gh pr view &lt;n&gt; --json baseRefName</code> if unsure; some tooling surfaces stale branch names. See <a href="../../how-to-contribute/#branching-model">How To Contribute → Branching model</a>.</li>
+<li>CI runs e2e on PHP 8.0 and 8.5 for PRs and feature-branch pushes (the version-edge smoke). Pushes to <code>develop</code>, <code>main</code>, and version tags run the full matrix (8.0–8.5). Watch with <code>gh pr checks &lt;n&gt; --repo zubzet/framework --watch</code>.</li>
 </ul>
 <h2 id="working-style-for-ai-agents">Working style for AI agents<a class="headerlink" href="#working-style-for-ai-agents" title="Permanent link">&para;</a></h2>
 <ul>
