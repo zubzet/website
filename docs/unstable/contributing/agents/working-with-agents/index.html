@@ -2375,6 +2375,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2719,6 +2730,7 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 </ul>
 <h2 id="working-style-for-ai-agents">Working style for AI agents<a class="headerlink" href="#working-style-for-ai-agents" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Never commit or push without an explicit ask.</strong> This is critical framework code. AI output is reviewed by hand before it lands — leave changes uncommitted in the working tree (or staged, if helpful) and wait. Even after a successful test run, do not run <code>git commit</code>, <code>git push</code>, or <code>gh pr</code> write actions unless the maintainer asks for them in that turn.</li>
 <li><strong>Iterative pace.</strong> Make small changes, run tests, report concisely, wait. Don't pre-build large structures unless asked.</li>
 <li><strong>Watch for parallel edits.</strong> A <code>&lt;system-reminder&gt;</code> notice that a file was modified means re-read it before any further change — never assume your in-context view is current.</li>
 <li><strong>"Any other ideas?"</strong> is a request for 3–4 ranked options with trade-offs and a recommendation. Don't implement until asked.</li>
@@ -2726,6 +2738,16 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 <li><strong>Inline aggressively.</strong> When a private function has only one caller, inlining is the project default. Drop dead code and unused parameters confidently.</li>
 <li><strong>Run the full e2e suite after any framework-internals change.</strong> Three minutes catches the kind of subtle ordering bugs that bootstrap-adjacent changes cause.</li>
 </ul>
+<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h2>
+<p>Framework migrations live in <code>src/IncludedComponents/database/Migration/</code> and ship with the framework. Project migrations live in <code>app/Database/migrations</code>. See <a href="../../../core-features/migrations/">Migrations</a> for the file/filename conventions and CLI commands.</p>
+<p><strong>Bundled migrations must be idempotent.</strong> They may already be partially applied on consumer projects (manual schema work, partial sync state, replays after a recovery) and re-running must not fail. Concretely:</p>
+<ul>
+<li><code>CREATE TABLE IF NOT EXISTS …</code></li>
+<li><code>ALTER TABLE … ADD COLUMN IF NOT EXISTS …</code></li>
+<li><code>ALTER TABLE … ADD INDEX IF NOT EXISTS …</code> (and the <code>DROP</code> variants)</li>
+<li><code>INSERT … ON DUPLICATE KEY UPDATE</code> or guarded with <code>WHERE NOT EXISTS</code></li>
+</ul>
+<p>The <code>z_version</code> table prevents re-execution under normal flow, but the rule still applies — a migration that fails on second run is a bug.</p>
 <h2 id="common-pitfalls">Common pitfalls<a class="headerlink" href="#common-pitfalls" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Port confusion.</strong> App is at <code>:8080</code>, not <code>:4000</code>. The <code>host</code> setting in INI is informational, not the listening port.</li>

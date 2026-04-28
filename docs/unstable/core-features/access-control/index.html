@@ -2508,6 +2508,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#organization-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organization Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#organization-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating an Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-and-removing-organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating and Removing Organizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization Data Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#session-object" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2665,6 +2726,11 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 </code></pre></div>
 </li>
 <li>
+<p>Returns all active users assigned to the given organization.</p>
+<div class="highlight"><pre><span></span><code><span class="x">User::byOrganization(Organization $organization): array</span>
+</code></pre></div>
+</li>
+<li>
 <p>Returns all users.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::all(): array</span>
 </code></pre></div>
@@ -2713,6 +2779,11 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Updates the user’s password.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updatePassword(string $password);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Assigns the user to an organization, or unsets it when <code>null</code> is passed.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updateOrganization(?Organization $organization);</span>
 </code></pre></div>
 </li>
 <li>
@@ -2842,6 +2913,12 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Returns all roles assigned to the user.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getRoles(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the organization the user belongs to, or <code>null</code> if none is assigned.
+  The result is cached on the instance — including the <code>null</code> case — until <code>clearFields()</code> or a write operation invalidates it.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;organization(): ?Organization</span>
 </code></pre></div>
 </li>
 <li>
@@ -2982,6 +3059,80 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Reloads the role data from the database.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refresh();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h2 id="organization-object">Organization Object<a class="headerlink" href="#organization-object" title="Permanent link">&para;</a></h2>
+<p>The <code>Organization</code> object represents a group of users. Users can belong to at most one organization. An organization has a name (not unique) and is soft-deletable like the other authentication objects.</p>
+<h3 id="organization-retrieval">Organization Retrieval<a class="headerlink" href="#organization-retrieval" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns the organization a user belongs to, or <code>null</code> if the user has none.
+  This is a convenience pass-through to <code>$user-&gt;organization()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byUser(User $user): ?Organization</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all active organizations matching the given name. Names are not unique, so the result may contain zero, one, or multiple organizations.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byName(string $name): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all organizations.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::all(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns an organization by its ID, or <code>null</code> if not found or inactive.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byId(int|string $id): ?Organization</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all organizations matching the given IDs.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byIds(int ...$ids): array</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="creating-an-organization">Creating an Organization<a class="headerlink" href="#creating-an-organization" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Creates a new organization with the given name (which may be <code>null</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name): Organization</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="updating-and-removing-organizations">Updating and Removing Organizations<a class="headerlink" href="#updating-and-removing-organizations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Updates the organization's name.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;updateName(string $name);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Soft deletes the organization (<code>active = 0</code>). Users that referenced it will then return <code>null</code> from <code>$user-&gt;organization()</code>, even though their <code>organizationId</code> column is preserved.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;remove();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="organization-data-access">Organization Data Access<a class="headerlink" href="#organization-data-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Returns the organization's name.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;name(): string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all active users assigned to this organization.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;getUsers(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads the cached users list.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;refreshUsers();</span>
 </code></pre></div>
 </li>
 </ul>

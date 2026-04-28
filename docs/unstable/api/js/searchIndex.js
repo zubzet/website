@@ -61,6 +61,71 @@ Search.appendIndex(
             "summary": "Refresh\u0020the\u0020current\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020clearing\u0020all\u0020its\u0020fields\u0020and\u0020setting\u0020them\u0020new",
             "url": "classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization",
+            "name": "Organization",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AloadObject\u0028\u0029",
+            "name": "loadObject",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_loadObject"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_add"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyUser\u0028\u0029",
+            "name": "byUser",
+            "summary": "Get\u0020the\u0020organization\u0020a\u0020given\u0020user\u0020belongs\u0020to.",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byUser"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyName\u0028\u0029",
+            "name": "byName",
+            "summary": "Get\u0020all\u0020active\u0020organizations\u0020matching\u0020the\u0020given\u0020name.",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byName"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AupdateName\u0028\u0029",
+            "name": "updateName",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_updateName"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aname\u0028\u0029",
+            "name": "name",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_name"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetUsers\u0028\u0029",
+            "name": "getUsers",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_getUsers"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003ArefreshUsers\u0028\u0029",
+            "name": "refreshUsers",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_refreshUsers"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_remove"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A\u0024dbTable",
+            "name": "dbTable",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbTable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbExpression"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Group",
             "name": "Group",
             "summary": "",
@@ -221,6 +286,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_byGroup"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyOrganization\u0028\u0029",
+            "name": "byOrganization",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_byOrganization"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyEmail\u0028\u0029",
             "name": "byEmail",
             "summary": "Get\u0020a\u0020user\u0020by\u0020their\u0020email\u0020address",
@@ -260,6 +330,11 @@ Search.appendIndex(
             "name": "updatePassword",
             "summary": "Update\u0020the\u0020password\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020password\u0020in\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updatePassword"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdateOrganization\u0028\u0029",
+            "name": "updateOrganization",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updateOrganization"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AclearSessions\u0028\u0029",
             "name": "clearSessions",
@@ -301,9 +376,14 @@ Search.appendIndex(
             "summary": "Get\u0020the\u0020user\u0027s\u0020email\u0020from\u0020the\u0020cache",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_email"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Aorganization\u0028\u0029",
+            "name": "organization",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_organization"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Averified\u0028\u0029",
             "name": "verified",
-            "summary": "Get\u0020the\u0020users\u0060\u0020verfied\u0020date",
+            "summary": "Get\u0020the\u0020users\u0060\u0020verified\u0020date",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_verified"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AisVerified\u0028\u0029",
@@ -530,6 +610,11 @@ Search.appendIndex(
             "name": "userId",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-User.html#property_userId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024orgId",
+            "name": "orgId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-User.html#property_orgId"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024execUserId",
             "name": "execUserId",
@@ -1955,6 +2040,36 @@ Search.appendIndex(
             "name": "action_database",
             "summary": "",
             "url": "classes/ZController.html#method_action_database"
+        },                {
+            "fqsen": "\\z_organizationModel",
+            "name": "z_organizationModel",
+            "summary": "",
+            "url": "classes/z-organizationModel.html"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_create"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AupdateName\u0028\u0029",
+            "name": "updateName",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_updateName"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AbyName\u0028\u0029",
+            "name": "byName",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_byName"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AbyId\u0028\u0029",
+            "name": "byId",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_byId"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_remove"
         },                {
             "fqsen": "\\essentialsHead\u0028\u0029",
             "name": "essentialsHead",
@@ -4055,6 +4170,106 @@ Search.appendIndex(
             "name": "action_checkSeeding",
             "summary": "",
             "url": "classes/MigrationController.html#method_action_checkSeeding"
+        },                {
+            "fqsen": "\\OrganizationController",
+            "name": "OrganizationController",
+            "summary": "",
+            "url": "classes/OrganizationController.html"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byId\u0028\u0029",
+            "name": "action_byId",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byId"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byIdInactive\u0028\u0029",
+            "name": "action_byIdInactive",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byIdInactive"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byName\u0028\u0029",
+            "name": "action_byName",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byName"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byNameInactive\u0028\u0029",
+            "name": "action_byNameInactive",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byNameInactive"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byUser\u0028\u0029",
+            "name": "action_byUser",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byUser"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_add\u0028\u0029",
+            "name": "action_add",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_add"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_updateName\u0028\u0029",
+            "name": "action_updateName",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_updateName"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_remove\u0028\u0029",
+            "name": "action_remove",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_remove"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_getUsers\u0028\u0029",
+            "name": "action_getUsers",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_getUsers"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userOrganization\u0028\u0029",
+            "name": "action_userOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userOrganizationNull\u0028\u0029",
+            "name": "action_userOrganizationNull",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userOrganizationNull"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationAssign\u0028\u0029",
+            "name": "action_userUpdateOrganizationAssign",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationAssign"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationChange\u0028\u0029",
+            "name": "action_userUpdateOrganizationChange",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationChange"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationUnset\u0028\u0029",
+            "name": "action_userUpdateOrganizationUnset",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationUnset"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userByOrganization\u0028\u0029",
+            "name": "action_userByOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userByOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userByOrganizationEmpty\u0028\u0029",
+            "name": "action_userByOrganizationEmpty",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userByOrganizationEmpty"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003AechoOrganization\u0028\u0029",
+            "name": "echoOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_echoOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003AechoOrganizations\u0028\u0029",
+            "name": "echoOrganizations",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_echoOrganizations"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003AgetOrganization\u0028\u0029",
+            "name": "getOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_getOrganization"
         },                {
             "fqsen": "\\RenderingController",
             "name": "RenderingController",
