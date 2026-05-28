@@ -1278,6 +1278,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-features/error-handling" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-features/asset-proxy" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-features/maintenance" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2269,6 +2353,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-development-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start the development stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-your-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access your application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyday-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everyday commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2293,20 +2462,100 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p>ZubZet ships as a Composer package. New projects start from the <strong><code>zubzet/zubzet</code></strong> skeleton, which pulls in the framework and bundles a Docker development stack: Apache + PHP, MariaDB,
+phpMyAdmin, and a mail catcher.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Docker</strong> and <strong>Docker Compose</strong></li>
+<li><strong>Composer</strong></li>
+<li><strong>Node.js</strong> and <strong>npm</strong></li>
+</ul>
+<p>PHP itself is not required on your host as it runs inside the application container.</p>
+<h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>create-project<span class="w"> </span>zubzet/zubzet<span class="w"> </span>your-folder-name
+<span class="nb">cd</span><span class="w"> </span>your-folder-name
+</code></pre></div>
+<h2 id="start-the-development-stack">Start the development stack<a class="headerlink" href="#start-the-development-stack" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>start
+</code></pre></div>
+<p>This single command:</p>
 <ol>
-<li>Create a new folder for your project.</li>
-<li>Initialize an empty Git repository using<br>
-   <code>git init</code></li>
-<li>Add the framework as a submodule using<br> 
-   <code>git submodule add https://github.com/zubzet/framework.git z_framework</code></li>
-<li>Login with your account if needed.</li>
-<li>You are required to have your php environment variable set. Use <code>php -v</code> to check. Fix this problem first, if you get an error.</li>
-<li>Navigate to your project in your browser. (Don't forget to use a webserver)</li>
-<li>Open the folder <code>z_framework</code></li>
-<li>Run <code>installer.php</code></li>
-<li>Make sure your mysql capable service of choice is running.</li>
-<li>Fill out all the inputs and click <strong>Install</strong>.</li>
+<li>Installs the npm dev dependencies,</li>
+<li>Builds and starts the Docker stack (detached),</li>
+<li>Runs <code>composer install</code> inside the application container,</li>
+<li>Seeds the database with <code>db:seed</code>, which applies all pending migrations</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">First run</p>
+<p>The first <code>npm run start</code> builds the container image and downloads dependencies, so it takes a few minutes. Subsequent starts are fast.</p>
+</div>
+<h2 id="access-your-application">Access your application<a class="headerlink" href="#access-your-application" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td><a href="http://localhost:8080">http://localhost:8080</a></td>
+</tr>
+<tr>
+<td>Database UI (phpMyAdmin)</td>
+<td><a href="http://localhost:8081">http://localhost:8081</a></td>
+</tr>
+<tr>
+<td>Mail catcher (smtp4dev)</td>
+<td><a href="http://localhost:3300">http://localhost:3300</a></td>
+</tr>
+</tbody>
+</table>
+<p>The seed creates demo accounts:
+1. <code>admin@zubzet.com</code>
+2. <code>support@zubzet.com</code>
+3. <code>customer@zubzet.com</code></p>
+<p>(see <code>app/Database/seed/accounts/</code>). Adjust or remove them before going to production.</p>
+<h2 id="everyday-commands">Everyday commands<a class="headerlink" href="#everyday-commands" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run start</code></td>
+<td>Start the stack and seed the database</td>
+</tr>
+<tr>
+<td><code>npm run stop</code></td>
+<td>Stop and remove the stack (and its volumes)</td>
+</tr>
+<tr>
+<td><code>npm run restart</code></td>
+<td>Restart the stack</td>
+</tr>
+<tr>
+<td><code>npm run shell</code></td>
+<td>Open a shell inside the application container</td>
+</tr>
+<tr>
+<td><code>npm run seed</code></td>
+<td>Reset the database: run migrations, then load seed data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>Settings live in <code>z_config/z_settings.ini</code>. When <code>allow_env_config = true</code>, any setting can be overridden by a <code>CONFIG_*</code> environment variable. The Docker stack uses this to inject the database and mailer credentials (see <code>packaging/docker/docker-compose-base.yml</code>). Keep secrets out of the committed INI file and provide them via the environment.</p>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../core-features/migrations/">Migrations</a> — schema management and the migration CLI.</li>
+<li><a href="../../core-features/configuration/">Configuration</a> — every available setting.</li>
+<li><a href="../../core-features/mvc/">MVC</a> and <a href="../../core-features/routing/">Routing</a> — build your first pages.</li>
+</ul>
 
 
 

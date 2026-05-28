@@ -25,6 +25,10 @@
          <lastmod>2026-05-28</lastmod>
     </url>
     <url>
+         <loc>https://zubzet.com/docs/unstable/core-features/asset-proxy/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
          <loc>https://zubzet.com/docs/unstable/core-features/configuration/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
@@ -38,6 +42,10 @@
     </url>
     <url>
          <loc>https://zubzet.com/docs/unstable/core-features/debug-bar/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://zubzet.com/docs/unstable/core-features/error-handling/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
     <url>
@@ -182,10 +190,6 @@
     </url>
     <url>
          <loc>https://zubzet.com/docs/unstable/z-admin/usage/</loc>
-         <lastmod>2026-05-28</lastmod>
-    </url>
-    <url>
-         <loc>https://zubzet.com/docs/unstable/zjs/modals/</loc>
          <lastmod>2026-05-28</lastmod>
     </url>
 </urlset>

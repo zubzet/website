@@ -12,7 +12,7 @@
         <meta name="author" content="Alexander Zierhut">
       
       
-        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/logging/">
+        <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/asset-proxy/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Logging - ZubZet</title>
+        <title>Asset Proxy - ZubZet</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logging" class="md-skip">
+        <a href="#asset-proxy" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logging
+              Asset Proxy
             
           </span>
         </div>
@@ -1229,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../logging" class="md-nav__link">
         
   
   
@@ -1313,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asset-proxy" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   
@@ -2360,10 +2360,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-this" class="md-nav__link">
+  <a href="#how-assets-are-requested" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is this?
+        How assets are requested
       
     </span>
   </a>
@@ -2371,10 +2371,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disabling-logging" class="md-nav__link">
+  <a href="#referencing-assets-in-views" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disabling Logging
+        Referencing assets in views
       
     </span>
   </a>
@@ -2382,66 +2382,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#bundled-assets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#log-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Log Levels
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#writing-log-entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Writing Log Entries
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Writing Log Entries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#available-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#registering-a-custom-logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Registering a Custom Logger
+        Bundled assets
       
     </span>
   </a>
@@ -2449,77 +2393,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logger-types" class="md-nav__link">
+  <a href="#registering-your-own-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Logger Types
+        Registering your own source
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Logger Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#database-logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Database Logger
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Logger">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#value-column-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        value Column Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#value-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Value Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stream-logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stream Logger
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Security
       
     </span>
   </a>
@@ -2543,7 +2431,7 @@
 
 
   
-    <a href="https://github.com/zubzet/framework/edit/main/docs/core-features/logging.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/zubzet/framework/edit/main/docs/core-features/asset-proxy.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2551,267 +2439,78 @@
   
 
 
-<h1 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
-<p>ZubZet provides a built-in logging system powered by <a href="https://github.com/Seldaek/monolog">Monolog</a>. It allows you to record application events, errors, and diagnostic information either to a database table or to a stream (file or stderr). The framework automatically logs certain system events such as logins, page views, and REST errors.</p>
-<p>Loggers are created lazily on first use and cached for the lifetime of the request, so there is no overhead for channels that are never written to.</p>
-<h2 id="disabling-logging">Disabling Logging<a class="headerlink" href="#disabling-logging" title="Permanent link">&para;</a></h2>
-<p>Logging is <strong>enabled by default</strong>. To disable it, set the following in <code>z_config/z_settings.ini</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="na">logger_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+<h1 id="asset-proxy">Asset Proxy<a class="headerlink" href="#asset-proxy" title="Permanent link">&para;</a></h1>
+<p>Since version <strong>1.2.0</strong>, ZubZet serves CSS, JavaScript, fonts, and other static assets through an
+<strong>asset proxy</strong> instead of exposing them as files in your web root. A single internal route resolves
+each request against a list of registered source directories, which means framework- and
+package-bundled assets no longer have to be copied into every project.</p>
+<h2 id="how-assets-are-requested">How assets are requested<a class="headerlink" href="#how-assets-are-requested" title="Permanent link">&para;</a></h2>
+<p>The proxy listens on:</p>
+<div class="highlight"><pre><span></span><code>/_zubzet/asset-proxy/{path}
 </code></pre></div>
-<p>When disabled, all <code>logger()</code> calls still work but write to a <code>NullHandler</code> — log messages are silently discarded without any errors.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>All logger settings are configured in <code>z_config/z_settings.ini</code>.</p>
+<p>For example, <code>/_zubzet/asset-proxy/css/bootstrap.min.css</code> resolves Bootstrap's stylesheet from the
+first registered source that contains it.</p>
+<h2 id="referencing-assets-in-views">Referencing assets in views<a class="headerlink" href="#referencing-assets-in-views" title="Permanent link">&para;</a></h2>
+<p>Use the <code>generateResourceLink</code> helper available on every view's <code>$opt</code> array — it builds a correct,
+root-relative URL for you:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">return</span> <span class="p">[</span>
+    <span class="s2">&quot;head&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span><span class="p">(</span><span class="nv">$opt</span><span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span>
+<span class="x">        &lt;link rel=&quot;stylesheet&quot;</span>
+<span class="x">              href=&quot;</span><span class="cp">&lt;?php</span> <span class="nv">$opt</span><span class="p">[</span><span class="s2">&quot;generateResourceLink&quot;</span><span class="p">](</span><span class="s2">&quot;_zubzet/asset-proxy/css/bootstrap.min.css&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="p">},</span>
+    <span class="s2">&quot;body&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span><span class="p">(</span><span class="nv">$opt</span><span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span>
+<span class="x">        &lt;script src=&quot;</span><span class="cp">&lt;?php</span> <span class="nv">$opt</span><span class="p">[</span><span class="s2">&quot;generateResourceLink&quot;</span><span class="p">](</span><span class="s2">&quot;_zubzet/asset-proxy/js/jquery.min.js&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;&lt;/script&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="p">}</span>
+<span class="p">];</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<h2 id="bundled-assets">Bundled assets<a class="headerlink" href="#bundled-assets" title="Permanent link">&para;</a></h2>
+<p>The framework registers these sources automatically at bootstrap, so they work out of the box:</p>
 <table>
 <thead>
 <tr>
-<th>Key</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
+<th>Asset</th>
+<th>Proxy path</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>logger_enabled</code></td>
-<td>boolean</td>
-<td><code>true</code></td>
-<td>Enables or disables the logging system entirely</td>
+<td>jQuery</td>
+<td><code>_zubzet/asset-proxy/js/jquery.min.js</code></td>
 </tr>
 <tr>
-<td><code>logger_type</code></td>
-<td>string</td>
-<td><code>database</code></td>
-<td>The logger backend to use: <code>database</code> or <code>stream</code></td>
+<td>Bootstrap (JS/CSS)</td>
+<td><code>_zubzet/asset-proxy/js/bootstrap.min.js</code>, <code>_zubzet/asset-proxy/css/bootstrap.min.css</code></td>
 </tr>
 <tr>
-<td><code>logger_level</code></td>
-<td>string</td>
-<td><code>notice</code></td>
-<td>Minimum log level to record (see levels below)</td>
+<td>Font Awesome</td>
+<td><code>_zubzet/asset-proxy/css/font-awesome/all.min.css</code></td>
 </tr>
 <tr>
-<td><code>logger_stream_url</code></td>
-<td>string</td>
-<td><code>php://stderr</code></td>
-<td>Stream target — only used when <code>logger_type = stream</code></td>
+<td>Z.js</td>
+<td><code>_zubzet/asset-proxy/Z.js</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="log-levels">Log Levels<a class="headerlink" href="#log-levels" title="Permanent link">&para;</a></h3>
-<p>Log levels follow the <a href="https://www.php-fig.org/psr/psr-3/">Monolog/PSR-3 standard</a>. Set <code>logger_level</code> to a level name — only records at or above that level are stored.</p>
-<table>
-<thead>
-<tr>
-<th><code>logger_level</code> value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>debug</code></td>
-<td>Detailed diagnostic information</td>
-</tr>
-<tr>
-<td><code>info</code></td>
-<td>Normal operational events</td>
-</tr>
-<tr>
-<td><code>notice</code></td>
-<td>Significant but expected events</td>
-</tr>
-<tr>
-<td><code>warning</code></td>
-<td>Exceptional but non-critical events</td>
-</tr>
-<tr>
-<td><code>error</code></td>
-<td>Runtime errors</td>
-</tr>
-<tr>
-<td><code>critical</code></td>
-<td>Critical conditions</td>
-</tr>
-<tr>
-<td><code>alert</code></td>
-<td>Action must be taken immediately</td>
-</tr>
-<tr>
-<td><code>emergency</code></td>
-<td>System is unusable</td>
-</tr>
-</tbody>
-</table>
-<h2 id="writing-log-entries">Writing Log Entries<a class="headerlink" href="#writing-log-entries" title="Permanent link">&para;</a></h2>
-<p>Use the global <code>logger()</code> helper function anywhere in your application.</p>
-<div class="highlight"><pre><span></span><code><span class="x">// Log to the app channel</span>
-<span class="x">logger()-&gt;info(&quot;User submitted a contact form&quot;, [&quot;email&quot; =&gt; $email]);</span>
-
-<span class="x">// Log to a named channel</span>
-<span class="x">logger(&quot;payments&quot;)-&gt;warning(&quot;Payment gateway timeout&quot;, [&quot;orderId&quot; =&gt; $id]);</span>
+<p>These come from the <code>components/jquery</code>, <code>components/bootstrap</code>, and <code>components/font-awesome</code> Composer
+packages — no files are copied into your project.</p>
+<h2 id="registering-your-own-source">Registering your own source<a class="headerlink" href="#registering-your-own-source" title="Permanent link">&para;</a></h2>
+<p>To expose an additional directory (for example, assets shipped by one of your own Composer packages),
+register it on the proxy with an absolute path and an optional URL prefix:</p>
+<div class="highlight"><pre><span></span><code><span class="x">zubzet()-&gt;assetProxy-&gt;registerWebRootSource(&quot;/var/www/vendor/acme/ui-kit/dist&quot;, &quot;ui-kit&quot;);</span>
 </code></pre></div>
-<p><code>logger()</code> without arguments defaults to the <code>"app"</code> channel. Any string can be passed to create a named channel — each channel is cached after the first call.</p>
-<h3 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">logger()-&gt;debug(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;info(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;notice(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;warning(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;error(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;critical(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;alert(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;emergency(&quot;message&quot;, $context);</span>
-</code></pre></div>
-<p>The second parameter <code>$context</code> is an optional associative array with additional data to attach to the log record.</p>
-<h2 id="registering-a-custom-logger">Registering a Custom Logger<a class="headerlink" href="#registering-a-custom-logger" title="Permanent link">&para;</a></h2>
-<p>If you need full control over a logger — custom handlers, formatters, or processors — you can build a Monolog <code>Logger</code> instance manually and register it under a channel name using <code>LoggerFactory::register()</code>. Once registered, it is returned by <code>logger()</code> like any other channel.</p>
-<div class="highlight"><pre><span></span><code><span class="x">use Monolog\Logger;</span>
-<span class="x">use Monolog\Handler\RotatingFileHandler;</span>
-<span class="x">use ZubZet\Framework\Logger\LoggerFactory;</span>
-
-<span class="x">$customLogger = new Logger(&quot;audit&quot;);</span>
-<span class="x">$customLogger-&gt;pushHandler(new RotatingFileHandler(&quot;/var/log/audit.log&quot;, 30));</span>
-
-<span class="x">LoggerFactory::register(&quot;audit&quot;, $customLogger);</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="x">// Anywhere in your application</span>
-<span class="x">logger(&quot;audit&quot;)-&gt;info(&quot;User exported data&quot;, [&quot;userId&quot; =&gt; $id]);</span>
-</code></pre></div>
-<p>If a logger with that name was already created by the framework, <code>register()</code> overwrites it in the cache.</p>
-<h2 id="logger-types">Logger Types<a class="headerlink" href="#logger-types" title="Permanent link">&para;</a></h2>
-<h3 id="database-logger">Database Logger<a class="headerlink" href="#database-logger" title="Permanent link">&para;</a></h3>
-<p>Stores log records in the <code>z_interaction_log</code> database table. This is the default logger type.</p>
-<div class="highlight"><pre><span></span><code><span class="na">logger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">database</span>
-</code></pre></div>
-<p>Each log entry is stored as a row with the following columns:</p>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>INT</td>
-<td>Auto-incrementing primary key</td>
-</tr>
-<tr>
-<td><code>text</code></td>
-<td>MEDIUMTEXT</td>
-<td>The plain log message</td>
-</tr>
-<tr>
-<td><code>value</code></td>
-<td>MEDIUMTEXT</td>
-<td>Full log record as a JSON string (see below)</td>
-</tr>
-<tr>
-<td><code>userId</code></td>
-<td>INT</td>
-<td>ID of the currently logged-in user (nullable)</td>
-</tr>
-<tr>
-<td><code>userId_exec</code></td>
-<td>INT</td>
-<td>ID of the executing user when using "login as" (nullable)</td>
-</tr>
-<tr>
-<td><code>created</code></td>
-<td>TIMESTAMP</td>
-<td>Timestamp of the log entry</td>
-</tr>
-</tbody>
-</table>
-<p>If the database connection is not available at the time of logging, the entry is silently skipped.</p>
-<h4 id="value-column-structure"><code>value</code> Column Structure<a class="headerlink" href="#value-column-structure" title="Permanent link">&para;</a></h4>
-<p>The <code>value</code> column contains a JSON-encoded object with the full log record and environment context:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User logged in&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zubzet&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-08T12:00:00+00:00&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;extra&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">    </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;execUserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The <code>environment.source</code> field is either <code>"web"</code> or <code>"cli"</code> depending on how the request was triggered.</p>
-<h4 id="value-normalization">Value Normalization<a class="headerlink" href="#value-normalization" title="Permanent link">&para;</a></h4>
-<p>Before JSON encoding, context values are automatically normalized to ensure safe serialization:</p>
-<table>
-<thead>
-<tr>
-<th>PHP type</th>
-<th>Stored as</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>string</code>, <code>int</code>, <code>float</code>, <code>bool</code>, <code>null</code></td>
-<td>Passed through unchanged</td>
-</tr>
-<tr>
-<td><code>array</code></td>
-<td>Recursively normalized</td>
-</tr>
-<tr>
-<td><code>DateTimeInterface</code></td>
-<td>ISO-8601 string (e.g. <code>2026-04-08T12:00:00+00:00</code>)</td>
-</tr>
-<tr>
-<td><code>JsonSerializable</code></td>
-<td>Result of <code>jsonSerialize()</code>, then normalized</td>
-</tr>
-<tr>
-<td>Object with <code>__toString</code></td>
-<td>String representation</td>
-</tr>
-<tr>
-<td>Other objects</td>
-<td>Fully qualified class name</td>
-</tr>
-<tr>
-<td>Resource</td>
-<td><code>resource(stream)</code> style string</td>
-</tr>
-</tbody>
-</table>
-<p>If JSON encoding fails despite normalization, a fallback record containing only the message and the encoding error is stored instead.</p>
-<hr />
-<h3 id="stream-logger">Stream Logger<a class="headerlink" href="#stream-logger" title="Permanent link">&para;</a></h3>
-<p>Writes log records as JSON to a file or PHP stream, one record per line.</p>
-<div class="highlight"><pre><span></span><code><span class="na">logger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">stream</span>
-<span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stderr</span>
-</code></pre></div>
-<p><code>logger_stream_url</code> accepts any valid PHP stream URL or file path:</p>
-<div class="highlight"><pre><span></span><code><span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stderr</span>
-<span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stdout</span>
-<span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/app.log</span>
-<span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">z_config/app.log</span>
-</code></pre></div>
-<p>Each log entry is a single JSON object followed by a newline character. The environment context is appended automatically before formatting:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;User logged in&quot;</span><span class="p">,</span><span class="nt">&quot;context&quot;</span><span class="p">:{</span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">},</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="s2">&quot;zubzet&quot;</span><span class="p">,</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="s2">&quot;2026-04-08 12:00:00&quot;</span><span class="p">,</span><span class="nt">&quot;extra&quot;</span><span class="p">:{},</span><span class="nt">&quot;environment&quot;</span><span class="p">:{</span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;execUserId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;web&quot;</span><span class="p">}}</span>
-</code></pre></div>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># z_config/z_settings.ini</span>
-<span class="na">logger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">database</span>
-<span class="na">logger_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">info</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="x">public function action_order(Request $req, Response $res) {</span>
-<span class="x">    $orderId = model(&quot;order&quot;)-&gt;createOrder($req-&gt;getPost(&quot;items&quot;));</span>
-
-<span class="x">    logger()-&gt;info(&quot;Order placed&quot;, [&quot;orderId&quot; =&gt; $orderId]);</span>
-
-<span class="x">    return $res-&gt;success([&quot;orderId&quot; =&gt; $orderId]);</span>
-<span class="x">}</span>
-</code></pre></div>
+<p>The file <code>dist/app.css</code> is then available at <code>/_zubzet/asset-proxy/ui-kit/app.css</code>. Registration is
+lazy — the directory is only touched when a matching request arrives. Sources are checked in
+registration order, and the first match wins.</p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>The proxy is designed to serve only files that live inside a registered source:</p>
+<ul>
+<li><strong>Path traversal is blocked.</strong> Each request is resolved with <code>realpath()</code> and rejected unless the
+  result stays within the registered source directory, so <code>../</code> sequences and symlink escapes cannot
+  reach files outside the mount.</li>
+<li><strong>Only readable, existing files are served</strong>; anything else returns <code>404</code>.</li>
+<li><strong>Content types are detected</strong> with <code>league/mime-type-detection</code>, falling back to
+  <code>application/octet-stream</code> when the type is unknown.</li>
+</ul>
 
 
 

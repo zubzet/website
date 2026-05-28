@@ -1278,6 +1278,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-handling" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-proxy" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2350,6 +2434,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#infostartup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        info:startup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2398,6 +2515,62 @@ This improves command-line usability by enabling tab completion.</p>
 <h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
 <p>Executes a controller action directly from the console environment.
 This is useful for running application logic, maintenance tasks, or background operations without an HTTP request.</p>
+<h3 id="infostartup">info:startup<a class="headerlink" href="#infostartup" title="Permanent link">&para;</a></h3>
+<p>Prints a startup banner with the ZubZet version, application name, environment, PHP version, and asset
+version — a quick health check after deployment.</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>info:startup
+</code></pre></div>
+<p>Pass <code>--pwd "$(pwd)"</code> so clickable file links in the <a href="../error-handling/">error page</a> resolve to your
+host paths (the dev stack's <code>npm run info</code> does this for you).</p>
+<h3 id="database-commands">Database commands<a class="headerlink" href="#database-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db:migrate</code></td>
+<td>Run all pending migrations (framework-bundled and your own under <code>app/Database/migrations</code>).</td>
+</tr>
+<tr>
+<td><code>db:seed</code></td>
+<td>Run migrations, then load seed data from <code>app/Database/seed</code>.</td>
+</tr>
+<tr>
+<td><code>db:status</code></td>
+<td>Show which migrations have been applied.</td>
+</tr>
+<tr>
+<td><code>db:sync</code></td>
+<td>Mark migrations as applied up to a version/date without running their SQL.</td>
+</tr>
+<tr>
+<td><code>db:unlock-migration</code></td>
+<td>Release a stuck migration lock.</td>
+</tr>
+</tbody>
+</table>
+<p><code>db:seed</code> accepts environment filters to control which seed folders run:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Only seed the &quot;Dev&quot; environment</span>
+php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--environments-included<span class="o">=</span>Dev
+
+<span class="c1"># Seed everything except &quot;Prod&quot; (repeatable)</span>
+php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--environments-excluded<span class="o">=</span>Prod
+
+<span class="c1"># Skip the automatic migration step</span>
+php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--skip-migrations
+</code></pre></div>
+<p>See <a href="../migrations/">Migrations</a> for the full migration workflow.</p>
+<h3 id="coverage">Coverage<a class="headerlink" href="#coverage" title="Permanent link">&para;</a></h3>
+<p>Collect a runtime code-coverage report:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>testing:coverage:start
+<span class="c1"># ... exercise the app via tests or manual requests ...</span>
+php<span class="w"> </span>index.php<span class="w"> </span>testing:coverage:stop
+</code></pre></div>
+<p>Add <code>--cli</code> to <code>testing:coverage:stop</code> to print a text summary instead of generating the HTML report.</p>
 
 
 

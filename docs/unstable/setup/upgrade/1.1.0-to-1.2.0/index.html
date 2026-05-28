@@ -1278,6 +1278,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../core-features/error-handling" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../core-features/asset-proxy" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../core-features/maintenance" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2559,10 +2643,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-remove-calls-to-deprecated-model-methods" class="md-nav__link">
+  <a href="#1-automated-migration-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Remove calls to deprecated model methods
+        1. Automated migration (recommended)
       
     </span>
   </a>
@@ -2570,10 +2654,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-run-the-database-migration" class="md-nav__link">
+  <a href="#2-replace-removed-model-methods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Run the database migration
+        2. Replace removed model methods
       
     </span>
   </a>
@@ -2581,10 +2665,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-configure-logging-optional" class="md-nav__link">
+  <a href="#3-move-request-input-off-superglobals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Configure logging (optional)
+        3. Move request input off superglobals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-apply-the-database-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Apply the database migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-configure-logging-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configure logging (optional)
       
     </span>
   </a>
@@ -2707,9 +2813,25 @@ Applications that deal with video, archives, or other large binary assets will b
 All request input must now be read through the request object, for example via <code>$req-&gt;input</code>.
 This keeps request handling consistent, testable, and decoupled from PHP's global state — but it does mean that any code still relying on the superglobals needs to be migrated to the request API.</p>
 <h2 id="upgrade-steps">Upgrade Steps<a class="headerlink" href="#upgrade-steps" title="Permanent link">&para;</a></h2>
+<p>Follow these steps to upgrade your project to <strong>v1.2.0</strong>.</p>
 <hr />
-<h3 id="1-remove-calls-to-deprecated-model-methods">1. Remove calls to deprecated model methods<a class="headerlink" href="#1-remove-calls-to-deprecated-model-methods" title="Permanent link">&para;</a></h3>
-<p>Search your application code for calls to the removed methods and replace them with <code>logger()</code>:</p>
+<h3 id="1-automated-migration-recommended">1. Automated migration (recommended)<a class="headerlink" href="#1-automated-migration-recommended" title="Permanent link">&para;</a></h3>
+<p>Most of the changes below can be applied automatically with the <strong>ZubZet Version Migrator</strong>.</p>
+<ol>
+<li>Clone the tool: <a href="https://github.com/zubzet/version-migration">zubzet/version-migration</a></li>
+<li>Preview the changes with a dry run, then apply them:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.1.0<span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span>--dry
+php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.1.0<span class="w"> </span><span class="m">1</span>.2.0
+</code></pre></div>
+<p>The migrator bumps the framework dependency, adds the new <code>z_settings.ini</code> keys (logging,
+maintenance mode, debug bar, editor), updates <code>.gitignore</code> and <code>package.json</code>, rewrites direct
+superglobal and <code>php://input</code> access to the request API, and installs the VS Code tasks. Review each
+prompted change before accepting it.</p>
+<p>After the migrator finishes, apply the database changes (step 4) and rebuild your stack.</p>
+<hr />
+<h3 id="2-replace-removed-model-methods">2. Replace removed model methods<a class="headerlink" href="#2-replace-removed-model-methods" title="Permanent link">&para;</a></h3>
+<p>Search your application code for the removed methods and replace them with <code>logger()</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="x">// Before</span>
 <span class="x">$this-&gt;logAction(&quot;Something happened&quot;);</span>
 <span class="x">$this-&gt;logActionByCategory(&quot;Something happened&quot;, &quot;category&quot;);</span>
@@ -2718,15 +2840,56 @@ This keeps request handling consistent, testable, and decoupled from PHP's globa
 <span class="x">logger()-&gt;info(&quot;Something happened&quot;);</span>
 </code></pre></div>
 <hr />
-<h3 id="2-run-the-database-migration">2. Run the database migration<a class="headerlink" href="#2-run-the-database-migration" title="Permanent link">&para;</a></h3>
-<p>The following schema changes are applied automatically when the framework updates.
-If you manage migrations manually, apply them yourself:</p>
-<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">z_interaction_log_category</span><span class="o">`</span><span class="p">;</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">z_interaction_log</span><span class="o">`</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">categoryId</span><span class="o">`</span><span class="p">;</span>
+<h3 id="3-move-request-input-off-superglobals">3. Move request input off superglobals<a class="headerlink" href="#3-move-request-input-off-superglobals" title="Permanent link">&para;</a></h3>
+<p>The framework no longer populates <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code>, etc. Read input through the request
+object instead (the migrator automates this rewrite):</p>
+<div class="highlight"><pre><span></span><code><span class="x">// Before</span>
+<span class="x">$_POST[&quot;email&quot;];</span>
+<span class="x">file_get_contents(&quot;php://input&quot;);</span>
+
+<span class="x">// After</span>
+<span class="x">request()-&gt;input-&gt;POST[&quot;email&quot;];</span>
+<span class="x">request()-&gt;input-&gt;body;</span>
 </code></pre></div>
 <hr />
-<h3 id="3-configure-logging-optional">3. Configure logging (optional)<a class="headerlink" href="#3-configure-logging-optional" title="Permanent link">&para;</a></h3>
-<p>Logging is <strong>enabled by default</strong> with the database backend. To adjust the behavior, add the relevant keys to <code>z_config/z_settings.ini</code>:</p>
+<h3 id="4-apply-the-database-migrations">4. Apply the database migrations<a class="headerlink" href="#4-apply-the-database-migrations" title="Permanent link">&para;</a></h3>
+<p>The framework-bundled migrations below are applied automatically by the project's normal start/seed
+flow (<code>npm run start</code>, which runs <code>db:seed</code> → migrations then seed) or directly with:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>application<span class="w"> </span>php<span class="w"> </span>index.php<span class="w"> </span>db:migrate
+</code></pre></div>
+<p>New since v1.1.0:</p>
+<table>
+<thead>
+<tr>
+<th>Migration</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2026-03-27_session-handling.sql</code></td>
+<td>Adds <code>z_logintoken.extended_seconds</code> and <code>active</code>. Corrects a file misdated <code>2027-03-27</code> in 1.1.0 — it re-applies safely (idempotent).</td>
+</tr>
+<tr>
+<td><code>2026-04-02_deprecate_interactionlog.sql</code></td>
+<td>Drops <code>z_interaction_log_category</code> and <code>z_interaction_log.categoryId</code>.</td>
+</tr>
+<tr>
+<td><code>2026-04-27_organization.sql</code></td>
+<td>Creates <code>z_organization</code>; adds <code>z_user.organizationId</code>.</td>
+</tr>
+<tr>
+<td><code>2026-05-04_organization_role.sql</code></td>
+<td>Adds <code>z_organization.groupId</code> for organization-level roles.</td>
+</tr>
+</tbody>
+</table>
+<p>If you manage schema by hand, the equivalent statements are idempotent (<code>... IF NOT EXISTS</code> /
+<code>IF EXISTS</code>).</p>
+<hr />
+<h3 id="5-configure-logging-optional">5. Configure logging (optional)<a class="headerlink" href="#5-configure-logging-optional" title="Permanent link">&para;</a></h3>
+<p>Logging is <strong>enabled by default</strong> with the <strong>database</strong> backend at <strong>info</strong> level. To adjust the
+behavior, set the relevant keys in <code>z_config/z_settings.ini</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="na">logger_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 <span class="na">logger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">database</span>
 <span class="na">logger_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">info</span>

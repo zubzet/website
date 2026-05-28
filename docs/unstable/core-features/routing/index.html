@@ -1278,6 +1278,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-handling" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asset-proxy" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2453,6 +2537,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#static-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Arguments
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2480,7 +2575,7 @@
 
 <h1 id="routing-in-zubzet">Routing in ZubZet<a class="headerlink" href="#routing-in-zubzet" title="Permanent link">&para;</a></h1>
 <p>Since version <strong>1.0.0</strong>, ZubZet not only includes the internal routing system (<a href="/docs/core-features/controllers-and-actions">controller-based actions</a>) but also provides a route definition system.<br />
-The routing definition system is based on <a href="https://www.slimframework.com/">Slim</a>.</p>
+The routing definition system is powered by <a href="https://github.com/nikic/FastRoute">FastRoute</a>. <em>(ZubZet 1.2.0 switched the underlying engine from Slim to FastRoute — your route definitions are unchanged.)</em></p>
 <hr />
 <h2 id="what-does-routing-mean">What does "Routing" mean?<a class="headerlink" href="#what-does-routing-mean" title="Permanent link">&para;</a></h2>
 <p>Routing is the process of defining how your application responds to different HTTP requests.
@@ -2640,6 +2735,25 @@ These placeholders are automatically treated as route parameters.</p>
 <span class="x">    }</span>
 <span class="x">  }</span>
 <span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="static-arguments">Static Arguments<a class="headerlink" href="#static-arguments" title="Permanent link">&para;</a></h2>
+<p>Since version <strong>1.2.0</strong>, you can attach <strong>static arguments</strong> to a route, middleware, or
+afterMiddleware directly in its definition. Unlike <a href="#route-parameters">route parameters</a> (which come
+from the URL), static arguments are fixed values baked into the route — handy for reusing one handler
+with different configuration.</p>
+<p>Pass an array as the <strong>third argument</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">Route::get(&#39;/reports/sales&#39;, [ReportController::class, &#39;render&#39;], [&#39;sales&#39;, 2026]);</span>
+</code></pre></div>
+<p>The values are handed to the action <strong>after</strong> <code>Request</code> and <code>Response</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function render(Request $req, Response $res, string $type, int $year) {</span>
+<span class="x">    // $type === &#39;sales&#39;, $year === 2026</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>Middlewares and afterMiddlewares accept static arguments the same way:</p>
+<div class="highlight"><pre><span></span><code><span class="x">Route::get(&#39;/admin&#39;, [AdminController::class, &#39;index&#39;], [&#39;dashboard&#39;])</span>
+<span class="x">    -&gt;middleware([AuthController::class, &#39;requireRole&#39;], [&#39;admin&#39;])</span>
+<span class="x">    -&gt;afterMiddleware([AuditController::class, &#39;log&#39;], [&#39;admin-view&#39;]);</span>
 </code></pre></div>
 
 
