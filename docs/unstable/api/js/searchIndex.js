@@ -111,6 +111,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_refreshUsers"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetGroup\u0028\u0029",
+            "name": "getGroup",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_getGroup"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003ArefreshGroup\u0028\u0029",
+            "name": "refreshGroup",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_refreshGroup"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "",
@@ -245,6 +255,11 @@ Search.appendIndex(
             "name": "refreshPermissions",
             "summary": "Reset\u0020the\u0020Permissions\u0020Cache",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_refreshPermissions"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003AsetPermissionsByRole\u0028\u0029",
+            "name": "setPermissionsByRole",
+            "summary": "Replace\u0020this\u0020Role\u0027s\u0020permissions\u0020with\u0020the\u0020permissions\u0020of\u0020another\u0020Role.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_setPermissionsByRole"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003A\u0024dbTable",
             "name": "dbTable",
@@ -1796,6 +1811,16 @@ Search.appendIndex(
             "summary": "Adds\u0020an\u0020exists\u0020rule",
             "url": "classes/ZubZet-Framework-Form-Validation-Field.html#method_exists"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Field\u003A\u003Ain\u0028\u0029",
+            "name": "in",
+            "summary": "Adds\u0020an\u0020\u0060in\u0060\u0020rule",
+            "url": "classes/ZubZet-Framework-Form-Validation-Field.html#method_in"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Field\u003A\u003Achecked\u0028\u0029",
+            "name": "checked",
+            "summary": "Adds\u0020a\u0020\u0022must\u0020be\u0020ticked\u0022\u0020rule\u0020for\u0020checkboxes.",
+            "url": "classes/ZubZet-Framework-Form-Validation-Field.html#method_checked"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Field\u003A\u003Arequired\u0028\u0029",
             "name": "required",
             "summary": "Adds\u0020a\u0020required\u0020rule",
@@ -2001,9 +2026,14 @@ Search.appendIndex(
             "summary": "The\u0020ZController\u0020contains\u0020actions\u0020for\u0020the\u0020admin\u0020dashboard\u0020\/\u0020panel",
             "url": "classes/ZController.html"
         },                {
+            "fqsen": "\\ZController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZController.html#method___construct"
+        },                {
             "fqsen": "\\ZController\u003A\u003Aaction_index\u0028\u0029",
             "name": "action_index",
-            "summary": "Serves\u0020an\u0020empty\u0020index\u0020page\u0020with\u0020the\u0020admin\u0020layout",
+            "summary": "",
             "url": "classes/ZController.html#method_action_index"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_maintenance\u0028\u0029",
@@ -2013,17 +2043,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_add_user\u0028\u0029",
             "name": "action_add_user",
-            "summary": "Action\u0020for\u0020adding\u0020a\u0020user",
+            "summary": "",
             "url": "classes/ZController.html#method_action_add_user"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_edit_user\u0028\u0029",
             "name": "action_edit_user",
-            "summary": "Action\u0020for\u0020editing\u0020a\u0020user",
+            "summary": "",
             "url": "classes/ZController.html#method_action_edit_user"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_login_as\u0028\u0029",
             "name": "action_login_as",
-            "summary": "Action\u0020for\u0020logging\u0020in\u0020as\u0020someone\u0020else",
+            "summary": "",
             "url": "classes/ZController.html#method_action_login_as"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_groups\u0028\u0029",
@@ -2033,7 +2063,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_roles\u0028\u0029",
             "name": "action_roles",
-            "summary": "Action\u0020for\u0020the\u0020role\u0020configuration\u0020page",
+            "summary": "",
             "url": "classes/ZController.html#method_action_roles"
         },                {
             "fqsen": "\\ZController\u003A\u003Aaction_database\u0028\u0029",
@@ -2631,11 +2661,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020ZViews\u0020directory",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZViews"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZControllers\u0028\u0029",
-            "name": "getZControllers",
-            "summary": "Returns\u0020the\u0020ZControllers\u0020directory",
-            "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZControllers"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZRoot\u0028\u0029",
             "name": "getZRoot",
             "summary": "Returns\u0020the\u0020framework\u0020root\u0020directory",
@@ -2836,6 +2861,56 @@ Search.appendIndex(
             "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
             "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout",
+            "name": "HandlesDefaultLayout",
+            "summary": "Default\u002Dlayout\u0020management\u0020for\u0020Response.",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AsetGlobalDefaultLayout\u0028\u0029",
+            "name": "setGlobalDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setGlobalDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApushGlobalDefaultLayout\u0028\u0029",
+            "name": "pushGlobalDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushGlobalDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApopGlobalDefaultLayout\u0028\u0029",
+            "name": "popGlobalDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popGlobalDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AsetDefaultLayout\u0028\u0029",
+            "name": "setDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApushDefaultLayout\u0028\u0029",
+            "name": "pushDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApopDefaultLayout\u0028\u0029",
+            "name": "popDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AresolveDefaultLayout\u0028\u0029",
+            "name": "resolveDefaultLayout",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_resolveDefaultLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003A\u0024globalDefaultLayoutStack",
+            "name": "globalDefaultLayoutStack",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_globalDefaultLayoutStack"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003A\u0024instanceDefaultLayoutStack",
+            "name": "instanceDefaultLayoutStack",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_instanceDefaultLayoutStack"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\ViewNotFoundException",
             "name": "ViewNotFoundException",
             "summary": "",
@@ -2853,7 +2928,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003AregisterWebRootSource\u0028\u0029",
             "name": "registerWebRootSource",
-            "summary": "",
+            "summary": "This\u0020function\u0020registers\u0020a\u0020directory\u0020on\u0020disk\u0020as\u0020a\u0020source\u0020of\u0020assets\u0020to\u0020be\u0020served\u0020by\u0020the\u0020proxy.",
             "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method_registerWebRootSource"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003Aserve\u0028\u0029",
@@ -2861,10 +2936,80 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method_serve"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003A\u0024assetSources",
-            "name": "assetSources",
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003A\u0024mounts",
+            "name": "mounts",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#property_assetSources"
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#property_mounts"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledAssets",
+            "name": "BundledAssets",
+            "summary": "Registers\u0020the\u0020framework\u0027s\u0020vendored\u0020frontend\u0020libraries\u0020\u0028jQuery,\u0020Bootstrap,\nFont\u0020Awesome\u0029\u0020with\u0020an\u0020AssetProxy\u0020at\u0020the\u0020URL\u0020paths\u0020the\u0020framework\nhistorically\u0020exposed.",
+            "url": "classes/ZubZet-Framework-Resources-BundledAssets.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledAssets\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledAssets.html#method_register"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledAssets\u003A\u003Apackages\u0028\u0029",
+            "name": "packages",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledAssets.html#method_packages"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage",
+            "name": "BundledPackage",
+            "summary": "One\u0020Composer\u002Dinstalled\u0020frontend\u0020library\u0020that\u0020should\u0020be\u0020exposed\u0020via\u0020the\nAssetProxy.\u0020Resolves\u0020its\u0020on\u002Ddisk\u0020path\u0020through\u0020Composer\u0020at\u0020mount\u0020time.",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage\u003A\u003Amount\u0028\u0029",
+            "name": "mount",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html#method_mount"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage\u003A\u003A\u0024package",
+            "name": "package",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html#property_package"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage\u003A\u003A\u0024directoryInPackage",
+            "name": "directoryInPackage",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html#property_directoryInPackage"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\BundledPackage\u003A\u003A\u0024urlPrefix",
+            "name": "urlPrefix",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-BundledPackage.html#property_urlPrefix"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\Mount",
+            "name": "Mount",
+            "summary": "Maps\u0020an\u0020asset\u0020URL\u0020onto\u0020a\u0020directory\u0020on\u0020disk,\u0020optionally\u0020scoped\u0020to\u0020a\u0020URL\nprefix.\u0020All\u0020filesystem\u0020work\u0020is\u0020deferred\u0020to\u0020resolve\u0028\u0029\u003B\u0020construction\u0020is\njust\u0020a\u0020string\u0020trim.",
+            "url": "classes/ZubZet-Framework-Resources-Mount.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\Mount\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-Mount.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\Mount\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "Returns\u0020the\u0020full\u0020file\u0020path\u0020or\u0020null\u0020if\u0020it\u0020does\u0020not\u0020belong\u0020to\u0020this\u0020mount.",
+            "url": "classes/ZubZet-Framework-Resources-Mount.html#method_resolve"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\Mount\u003A\u003A\u0024sourceRoot",
+            "name": "sourceRoot",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-Mount.html#property_sourceRoot"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\Mount\u003A\u003A\u0024urlPrefix",
+            "name": "urlPrefix",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Resources-Mount.html#property_urlPrefix"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\HttpMethod",
             "name": "HttpMethod",
@@ -3446,6 +3591,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/AdvancedController.html#method_action_command"
         },                {
+            "fqsen": "\\AdvancedController\u003A\u003Aaction_automatedHostWorkingDirectory\u0028\u0029",
+            "name": "action_automatedHostWorkingDirectory",
+            "summary": "",
+            "url": "classes/AdvancedController.html#method_action_automatedHostWorkingDirectory"
+        },                {
+            "fqsen": "\\AliasController",
+            "name": "AliasController",
+            "summary": "",
+            "url": "classes/AliasController.html"
+        },                {
+            "fqsen": "\\AliasController\u003A\u003Aaction_check\u0028\u0029",
+            "name": "action_check",
+            "summary": "",
+            "url": "classes/AliasController.html#method_action_check"
+        },                {
+            "fqsen": "\\AliasController\u003A\u003A\u0024pairs",
+            "name": "pairs",
+            "summary": "",
+            "url": "classes/AliasController.html#property_pairs"
+        },                {
             "fqsen": "\\AssetProxyController",
             "name": "AssetProxyController",
             "summary": "",
@@ -3491,6 +3656,146 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/AssetProxyController.html#method_action_source_root_dot_slash"
         },                {
+            "fqsen": "\\AuthProbeController",
+            "name": "AuthProbeController",
+            "summary": "",
+            "url": "classes/AuthProbeController.html"
+        },                {
+            "fqsen": "\\AuthProbeController\u003A\u003Aaction_lastResetCode\u0028\u0029",
+            "name": "action_lastResetCode",
+            "summary": "Latest\u0020active\u0020reset\u0020code\u0020for\u0020a\u0020user.",
+            "url": "classes/AuthProbeController.html#method_action_lastResetCode"
+        },                {
+            "fqsen": "\\AuthProbeController\u003A\u003Aaction_tokenActive\u0028\u0029",
+            "name": "action_tokenActive",
+            "summary": "Whether\u0020a\u0020login\u0020token\u0020is\u0020still\u0020active\u0020in\u0020z_logintoken.",
+            "url": "classes/AuthProbeController.html#method_action_tokenActive"
+        },                {
+            "fqsen": "\\AuthProbeController\u003A\u003Aaction_userVerified\u0028\u0029",
+            "name": "action_userVerified",
+            "summary": "Reads\u0020the\u0020user\u0027s\u0020verified\u0020timestamp\u0020from\u0020the\u0020DB.",
+            "url": "classes/AuthProbeController.html#method_action_userVerified"
+        },                {
+            "fqsen": "\\AuthProbeController\u003A\u003Aaction_checkPassword\u0028\u0029",
+            "name": "action_checkPassword",
+            "summary": "Verify\u0020a\u0020password\u0020against\u0020the\u0020stored\u0020hash\u0020for\u0020a\u0020user\u0020\u0028used\u0020by\u0020reset\u0020test\u0029.",
+            "url": "classes/AuthProbeController.html#method_action_checkPassword"
+        },                {
+            "fqsen": "\\ConnectionProbeController",
+            "name": "ConnectionProbeController",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_switchUser\u0028\u0029",
+            "name": "action_switchUser",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_switchUser"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execPrepareFail\u0028\u0029",
+            "name": "action_execPrepareFail",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execPrepareFail"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execBindFail\u0028\u0029",
+            "name": "action_execBindFail",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execBindFail"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execExecuteFail\u0028\u0029",
+            "name": "action_execExecuteFail",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execExecuteFail"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_heartbeatForce\u0028\u0029",
+            "name": "action_heartbeatForce",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_heartbeatForce"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_heartbeatRecent\u0028\u0029",
+            "name": "action_heartbeatRecent",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_heartbeatRecent"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_assertConnectionHappy\u0028\u0029",
+            "name": "action_assertConnectionHappy",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_assertConnectionHappy"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_assertConnectionViaHeartbeat\u0028\u0029",
+            "name": "action_assertConnectionViaHeartbeat",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_assertConnectionViaHeartbeat"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execQueryWithBindings\u0028\u0029",
+            "name": "action_execQueryWithBindings",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execQueryWithBindings"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execQueryWithoutBindings\u0028\u0029",
+            "name": "action_execQueryWithoutBindings",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execQueryWithoutBindings"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_execQueryAllBindingTypes\u0028\u0029",
+            "name": "action_execQueryAllBindingTypes",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_execQueryAllBindingTypes"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_executeMultiQueryHappy\u0028\u0029",
+            "name": "action_executeMultiQueryHappy",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_executeMultiQueryHappy"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_executeMultiQueryFailSwallowed\u0028\u0029",
+            "name": "action_executeMultiQueryFailSwallowed",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_executeMultiQueryFailSwallowed"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_executeMultiQueryThrows\u0028\u0029",
+            "name": "action_executeMultiQueryThrows",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_executeMultiQueryThrows"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_getDatabaseConnection\u0028\u0029",
+            "name": "action_getDatabaseConnection",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_getDatabaseConnection"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_constructorNonNumericTimeout\u0028\u0029",
+            "name": "action_constructorNonNumericTimeout",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_constructorNonNumericTimeout"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_catchHelperHappyPath\u0028\u0029",
+            "name": "action_catchHelperHappyPath",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_catchHelperHappyPath"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AensureConnection\u0028\u0029",
+            "name": "ensureConnection",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_ensureConnection"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AcatchThrowableMessage\u0028\u0029",
+            "name": "catchThrowableMessage",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_catchThrowableMessage"
+        },                {
+            "fqsen": "\\ConsoleController",
+            "name": "ConsoleController",
+            "summary": "",
+            "url": "classes/ConsoleController.html"
+        },                {
+            "fqsen": "\\ConsoleController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ConsoleController.html#method___construct"
+        },                {
+            "fqsen": "\\ConsoleController\u003A\u003Aaction_run\u0028\u0029",
+            "name": "action_run",
+            "summary": "",
+            "url": "classes/ConsoleController.html#method_action_run"
+        },                {
             "fqsen": "\\CoreController",
             "name": "CoreController",
             "summary": "",
@@ -3515,6 +3820,11 @@ Search.appendIndex(
             "name": "action_throwsException",
             "summary": "",
             "url": "classes/CoreController.html#method_action_throwsException"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_throwsExceptionAfterBehaviorNone\u0028\u0029",
+            "name": "action_throwsExceptionAfterBehaviorNone",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_throwsExceptionAfterBehaviorNone"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_triggersDeprecation\u0028\u0029",
             "name": "action_triggersDeprecation",
@@ -3586,6 +3896,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_renderemptylayout"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_renderRaw\u0028\u0029",
+            "name": "action_renderRaw",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_renderRaw"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_e2e_superpermission\u0028\u0029",
             "name": "action_e2e_superpermission",
             "summary": "",
@@ -3621,6 +3936,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_get"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_getAll\u0028\u0029",
+            "name": "action_getAll",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_getAll"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_post\u0028\u0029",
             "name": "action_post",
             "summary": "",
@@ -3636,65 +3956,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_cookiesset"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_cookiessetMulti\u0028\u0029",
+            "name": "action_cookiessetMulti",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_cookiessetMulti"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_cookieget\u0028\u0029",
             "name": "action_cookieget",
             "summary": "",
             "url": "classes/CoreController.html#method_action_cookieget"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_cookiesAll\u0028\u0029",
+            "name": "action_cookiesAll",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_cookiesAll"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_cookieunset\u0028\u0029",
             "name": "action_cookieunset",
             "summary": "",
             "url": "classes/CoreController.html#method_action_cookieunset"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ATestRoute\u0028\u0029",
-            "name": "TestRoute",
-            "summary": "Testing\u0020the\u0020Routing\u0020System\u0020with\u0020Middleware",
-            "url": "classes/CoreController.html#method_TestRoute"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ARoute_Middleware_Accept\u0028\u0029",
-            "name": "Route_Middleware_Accept",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Route_Middleware_Accept"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003AGroup_Middleware_Accept\u0028\u0029",
-            "name": "Group_Middleware_Accept",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Group_Middleware_Accept"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ARoute_Middleware_Block\u0028\u0029",
-            "name": "Route_Middleware_Block",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Route_Middleware_Block"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003AGroup_Middleware_Block\u0028\u0029",
-            "name": "Group_Middleware_Block",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Group_Middleware_Block"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ARoute_Afterware\u0028\u0029",
-            "name": "Route_Afterware",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Route_Afterware"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003AGroup_Afterware\u0028\u0029",
-            "name": "Group_Afterware",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Group_Afterware"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ATestRoute_WithArguments\u0028\u0029",
-            "name": "TestRoute_WithArguments",
-            "summary": "",
-            "url": "classes/CoreController.html#method_TestRoute_WithArguments"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ARoute_Middleware_Accept_WithArguments\u0028\u0029",
-            "name": "Route_Middleware_Accept_WithArguments",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Route_Middleware_Accept_WithArguments"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003ARoute_Afterware_WithArguments\u0028\u0029",
-            "name": "Route_Afterware_WithArguments",
-            "summary": "",
-            "url": "classes/CoreController.html#method_Route_Afterware_WithArguments"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_querybuilderSelectWhereExtended\u0028\u0029",
             "name": "action_querybuilderSelectWhereExtended",
@@ -3791,6 +4071,56 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_sendemailtouser_dynamic"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_clientIp\u0028\u0029",
+            "name": "action_clientIp",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_clientIp"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_referer\u0028\u0029",
+            "name": "action_referer",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_referer"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_userAgent\u0028\u0029",
+            "name": "action_userAgent",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_userAgent"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_executionTime\u0028\u0029",
+            "name": "action_executionTime",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_executionTime"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_currentUrl\u0028\u0029",
+            "name": "action_currentUrl",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_currentUrl"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_domain\u0028\u0029",
+            "name": "action_domain",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_domain"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_readable\u0028\u0029",
+            "name": "action_readable",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_readable"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_consoleBool\u0028\u0029",
+            "name": "action_consoleBool",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_consoleBool"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_permissionCheck\u0028\u0029",
+            "name": "action_permissionCheck",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_permissionCheck"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_requestBody\u0028\u0029",
+            "name": "action_requestBody",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_requestBody"
+        },                {
             "fqsen": "\\DashboardController",
             "name": "DashboardController",
             "summary": "",
@@ -3801,15 +4131,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/DashboardController.html#method_action_index"
         },                {
-            "fqsen": "\\FallbackController",
-            "name": "FallbackController",
+            "fqsen": "\\DatabaseProbeController",
+            "name": "DatabaseProbeController",
             "summary": "",
-            "url": "classes/FallbackController.html"
+            "url": "classes/DatabaseProbeController.html"
         },                {
-            "fqsen": "\\FallbackController\u003A\u003Aaction_fallback\u0028\u0029",
-            "name": "action_fallback",
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_mergeAsGroupBasic\u0028\u0029",
+            "name": "action_mergeAsGroupBasic",
             "summary": "",
-            "url": "classes/FallbackController.html#method_action_fallback"
+            "url": "classes/DatabaseProbeController.html#method_action_mergeAsGroupBasic"
+        },                {
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_mergeAsGroupSubElement\u0028\u0029",
+            "name": "action_mergeAsGroupSubElement",
+            "summary": "",
+            "url": "classes/DatabaseProbeController.html#method_action_mergeAsGroupSubElement"
+        },                {
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_mergeAsGroupEmpty\u0028\u0029",
+            "name": "action_mergeAsGroupEmpty",
+            "summary": "",
+            "url": "classes/DatabaseProbeController.html#method_action_mergeAsGroupEmpty"
+        },                {
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_mergeAsGroupSingleGroup\u0028\u0029",
+            "name": "action_mergeAsGroupSingleGroup",
+            "summary": "",
+            "url": "classes/DatabaseProbeController.html#method_action_mergeAsGroupSingleGroup"
+        },                {
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_countTableEntriesHappy\u0028\u0029",
+            "name": "action_countTableEntriesHappy",
+            "summary": "",
+            "url": "classes/DatabaseProbeController.html#method_action_countTableEntriesHappy"
+        },                {
+            "fqsen": "\\DatabaseProbeController\u003A\u003Aaction_countTableEntriesEmpty\u0028\u0029",
+            "name": "action_countTableEntriesEmpty",
+            "summary": "",
+            "url": "classes/DatabaseProbeController.html#method_action_countTableEntriesEmpty"
         },                {
             "fqsen": "\\FormController",
             "name": "FormController",
@@ -3821,10 +4176,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/FormController.html#method_action_interactions"
         },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_ergonomics\u0028\u0029",
+            "name": "action_ergonomics",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_ergonomics"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_weirdPatterns\u0028\u0029",
+            "name": "action_weirdPatterns",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_weirdPatterns"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_domContract\u0028\u0029",
+            "name": "action_domContract",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_domContract"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_validationCheckbox\u0028\u0029",
+            "name": "action_validationCheckbox",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_validationCheckbox"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_validateIntegerExists\u0028\u0029",
+            "name": "action_validateIntegerExists",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_validateIntegerExists"
+        },                {
             "fqsen": "\\FormController\u003A\u003Aaction_validationText\u0028\u0029",
             "name": "action_validationText",
             "summary": "",
             "url": "classes/FormController.html#method_action_validationText"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_validationRegex\u0028\u0029",
+            "name": "action_validationRegex",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_validationRegex"
         },                {
             "fqsen": "\\FormController\u003A\u003Aaction_validationNumber\u0028\u0029",
             "name": "action_validationNumber",
@@ -3850,6 +4235,146 @@ Search.appendIndex(
             "name": "action_validationFile",
             "summary": "",
             "url": "classes/FormController.html#method_action_validationFile"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_probeUploadFileEmpty\u0028\u0029",
+            "name": "action_probeUploadFileEmpty",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_probeUploadFileEmpty"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_probeGetFileDefault\u0028\u0029",
+            "name": "action_probeGetFileDefault",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_probeGetFileDefault"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_probeUploadFileMoveFails\u0028\u0029",
+            "name": "action_probeUploadFileMoveFails",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_probeUploadFileMoveFails"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_validationMultiSelect\u0028\u0029",
+            "name": "action_validationMultiSelect",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_validationMultiSelect"
+        },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_validationListRules\u0028\u0029",
+            "name": "action_validationListRules",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_validationListRules"
+        },                {
+            "fqsen": "\\FrameworkApiController",
+            "name": "FrameworkApiController",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_languageList\u0028\u0029",
+            "name": "action_languageList",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_languageList"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_languageByValueKnown\u0028\u0029",
+            "name": "action_languageByValueKnown",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_languageByValueKnown"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_languageByValueUnknown\u0028\u0029",
+            "name": "action_languageByValueUnknown",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_languageByValueUnknown"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_roleIdByName\u0028\u0029",
+            "name": "action_roleIdByName",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_roleIdByName"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_changeRoleStateAdd\u0028\u0029",
+            "name": "action_changeRoleStateAdd",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_changeRoleStateAdd"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003Aaction_changeRoleStateRemove\u0028\u0029",
+            "name": "action_changeRoleStateRemove",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_action_changeRoleStateRemove"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003AhasRole\u0028\u0029",
+            "name": "hasRole",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_hasRole"
+        },                {
+            "fqsen": "\\FrameworkApiController\u003A\u003AcountRoleLinks\u0028\u0029",
+            "name": "countRoleLinks",
+            "summary": "",
+            "url": "classes/FrameworkApiController.html#method_countRoleLinks"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController",
+            "name": "FrameworkViewProbeController",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003AframeworkView\u0028\u0029",
+            "name": "frameworkView",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_frameworkView"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_login\u0028\u0029",
+            "name": "action_login",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_login"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginSignup\u0028\u0029",
+            "name": "action_loginSignup",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginSignup"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginForgotPassword\u0028\u0029",
+            "name": "action_loginForgotPassword",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginForgotPassword"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginReset\u0028\u0029",
+            "name": "action_loginReset",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginReset"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginVerifySuccess\u0028\u0029",
+            "name": "action_loginVerifySuccess",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginVerifySuccess"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginVerifyFailure\u0028\u0029",
+            "name": "action_loginVerifyFailure",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginVerifyFailure"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_loginVerifyWait\u0028\u0029",
+            "name": "action_loginVerifyWait",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_loginVerifyWait"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_emailVerify\u0028\u0029",
+            "name": "action_emailVerify",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_emailVerify"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_layoutDefault\u0028\u0029",
+            "name": "action_layoutDefault",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_layoutDefault"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_layoutMin\u0028\u0029",
+            "name": "action_layoutMin",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_layoutMin"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_layoutEmpty\u0028\u0029",
+            "name": "action_layoutEmpty",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_layoutEmpty"
+        },                {
+            "fqsen": "\\FrameworkViewProbeController\u003A\u003Aaction_layoutMail\u0028\u0029",
+            "name": "action_layoutMail",
+            "summary": "",
+            "url": "classes/FrameworkViewProbeController.html#method_action_layoutMail"
         },                {
             "fqsen": "\\FrontendController",
             "name": "FrontendController",
@@ -3988,7 +4513,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HelperController",
             "name": "HelperController",
-            "summary": "",
+            "summary": "Probes\u0020for\u0020global\u0020references\u0020and\u0020pure\u0020helper\u0020functions\u0020used\u0020by\ntests\/cypress\/e2e\/support\/.",
             "url": "classes/HelperController.html"
         },                {
             "fqsen": "\\HelperController\u003A\u003Aaction_zubzet\u0028\u0029",
@@ -4030,6 +4555,141 @@ Search.appendIndex(
             "name": "action_view",
             "summary": "",
             "url": "classes/HelperController.html#method_action_view"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_makeSlug\u0028\u0029",
+            "name": "action_function_makeSlug",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_makeSlug"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_uecho\u0028\u0029",
+            "name": "action_function_uecho",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_uecho"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_shortenStr\u0028\u0029",
+            "name": "action_function_shortenStr",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_shortenStr"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_de_strtolower\u0028\u0029",
+            "name": "action_function_de_strtolower",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_de_strtolower"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_var_swap\u0028\u0029",
+            "name": "action_function_var_swap",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_var_swap"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_emptyToNull\u0028\u0029",
+            "name": "action_function_emptyToNull",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_emptyToNull"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_getCaller\u0028\u0029",
+            "name": "action_function_getCaller",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_getCaller"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Acaller_helper\u0028\u0029",
+            "name": "caller_helper",
+            "summary": "",
+            "url": "classes/HelperController.html#method_caller_helper"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003ArunTests\u0028\u0029",
+            "name": "runTests",
+            "summary": "",
+            "url": "classes/HelperController.html#method_runTests"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003ArunTest\u0028\u0029",
+            "name": "runTest",
+            "summary": "",
+            "url": "classes/HelperController.html#method_runTest"
+        },                {
+            "fqsen": "\\LayoutConstructorController",
+            "name": "LayoutConstructorController",
+            "summary": "",
+            "url": "classes/LayoutConstructorController.html"
+        },                {
+            "fqsen": "\\LayoutConstructorController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/LayoutConstructorController.html#method___construct"
+        },                {
+            "fqsen": "\\LayoutConstructorController\u003A\u003Aaction_render\u0028\u0029",
+            "name": "action_render",
+            "summary": "",
+            "url": "classes/LayoutConstructorController.html#method_action_render"
+        },                {
+            "fqsen": "\\LayoutMiddlewareController",
+            "name": "LayoutMiddlewareController",
+            "summary": "",
+            "url": "classes/LayoutMiddlewareController.html"
+        },                {
+            "fqsen": "\\LayoutMiddlewareController\u003A\u003ALayout_Middleware_SetDefault\u0028\u0029",
+            "name": "Layout_Middleware_SetDefault",
+            "summary": "",
+            "url": "classes/LayoutMiddlewareController.html#method_Layout_Middleware_SetDefault"
+        },                {
+            "fqsen": "\\LayoutMiddlewareController\u003A\u003Aaction_render\u0028\u0029",
+            "name": "action_render",
+            "summary": "",
+            "url": "classes/LayoutMiddlewareController.html#method_action_render"
+        },                {
+            "fqsen": "\\LayoutResolutionController",
+            "name": "LayoutResolutionController",
+            "summary": "Exercises\u0020the\u0020layout\u0020resolution\u0020chain\u0020from\u0020HandlesDefaultLayout\u003A\n\u0020\u0020explicit\u0020arg\u0020\u003E\u0020instance\u0020default\u0020\u003E\u0020global\u0020default\u0020\u003E\u0020framework\u0020default",
+            "url": "classes/LayoutResolutionController.html"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_neither\u0028\u0029",
+            "name": "action_neither",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_neither"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_globalonly\u0028\u0029",
+            "name": "action_globalonly",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_globalonly"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_instanceonly\u0028\u0029",
+            "name": "action_instanceonly",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_instanceonly"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_instanceoverglobal\u0028\u0029",
+            "name": "action_instanceoverglobal",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_instanceoverglobal"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_explicitwins\u0028\u0029",
+            "name": "action_explicitwins",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_explicitwins"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_pushpopinstance\u0028\u0029",
+            "name": "action_pushpopinstance",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_pushpopinstance"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_pushpopglobal\u0028\u0029",
+            "name": "action_pushpopglobal",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_pushpopglobal"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_underflowinstance\u0028\u0029",
+            "name": "action_underflowinstance",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_underflowinstance"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_underflowglobal\u0028\u0029",
+            "name": "action_underflowglobal",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_underflowglobal"
+        },                {
+            "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_pushpopnested\u0028\u0029",
+            "name": "action_pushpopnested",
+            "summary": "",
+            "url": "classes/LayoutResolutionController.html#method_action_pushpopnested"
         },                {
             "fqsen": "\\LoggerController",
             "name": "LoggerController",
@@ -4171,6 +4831,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MigrationController.html#method_action_checkSeeding"
         },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_checkTimestampType\u0028\u0029",
+            "name": "action_checkTimestampType",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_checkTimestampType"
+        },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_lockMigration\u0028\u0029",
+            "name": "action_lockMigration",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_lockMigration"
+        },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_isMigrationLocked\u0028\u0029",
+            "name": "action_isMigrationLocked",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_isMigrationLocked"
+        },                {
             "fqsen": "\\OrganizationController",
             "name": "OrganizationController",
             "summary": "",
@@ -4256,6 +4931,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/OrganizationController.html#method_action_userByOrganizationEmpty"
         },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_addWithGroup\u0028\u0029",
+            "name": "action_addWithGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_addWithGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_addWithoutGroup\u0028\u0029",
+            "name": "action_addWithoutGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_addWithoutGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_getGroup\u0028\u0029",
+            "name": "action_getGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_getGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_getGroupNull\u0028\u0029",
+            "name": "action_getGroupNull",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_getGroupNull"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationGroupSyncAssign\u0028\u0029",
+            "name": "action_userUpdateOrganizationGroupSyncAssign",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationGroupSyncAssign"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationGroupSyncChange\u0028\u0029",
+            "name": "action_userUpdateOrganizationGroupSyncChange",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationGroupSyncChange"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userUpdateOrganizationGroupSyncUnset\u0028\u0029",
+            "name": "action_userUpdateOrganizationGroupSyncUnset",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userUpdateOrganizationGroupSyncUnset"
+        },                {
             "fqsen": "\\OrganizationController\u003A\u003AechoOrganization\u0028\u0029",
             "name": "echoOrganization",
             "summary": "",
@@ -4270,6 +4980,11 @@ Search.appendIndex(
             "name": "getOrganization",
             "summary": "",
             "url": "classes/OrganizationController.html#method_getOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003AgetGroupsOfUser\u0028\u0029",
+            "name": "getGroupsOfUser",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_getGroupsOfUser"
         },                {
             "fqsen": "\\RenderingController",
             "name": "RenderingController",
@@ -4300,6 +5015,76 @@ Search.appendIndex(
             "name": "action_json_non_encodable",
             "summary": "",
             "url": "classes/ResponseController.html#method_action_json_non_encodable"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_cookieDomainScopeDefault\u0028\u0029",
+            "name": "action_cookieDomainScopeDefault",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_cookieDomainScopeDefault"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_cookieDomainScopeSubdomain\u0028\u0029",
+            "name": "action_cookieDomainScopeSubdomain",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_cookieDomainScopeSubdomain"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_loginAsWithSubdomainScope\u0028\u0029",
+            "name": "action_loginAsWithSubdomainScope",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_loginAsWithSubdomainScope"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_loginAsWithoutSubdomainScope\u0028\u0029",
+            "name": "action_loginAsWithoutSubdomainScope",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_loginAsWithoutSubdomainScope"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_loginAsWithLegacyScope\u0028\u0029",
+            "name": "action_loginAsWithLegacyScope",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_loginAsWithLegacyScope"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003AprobeFields\u0028\u0029",
+            "name": "probeFields",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_probeFields"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_insertForm\u0028\u0029",
+            "name": "action_insertForm",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_insertForm"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_updateForm\u0028\u0029",
+            "name": "action_updateForm",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_updateForm"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_insertOrUpdateForm\u0028\u0029",
+            "name": "action_insertOrUpdateForm",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_insertOrUpdateForm"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_probeRow\u0028\u0029",
+            "name": "action_probeRow",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_probeRow"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_rerouteNonAlias\u0028\u0029",
+            "name": "action_rerouteNonAlias",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_rerouteNonAlias"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_rerouteFinal\u0028\u0029",
+            "name": "action_rerouteFinal",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_rerouteFinal"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_cedForm\u0028\u0029",
+            "name": "action_cedForm",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_cedForm"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_probeCedRows\u0028\u0029",
+            "name": "action_probeCedRows",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_probeCedRows"
         },                {
             "fqsen": "\\RoleController",
             "name": "RoleController",
@@ -4391,6 +5176,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RoleController.html#method_action_hasAccessToAnyOf"
         },                {
+            "fqsen": "\\RoleController\u003A\u003Aaction_setPermissionsByRoleReplace\u0028\u0029",
+            "name": "action_setPermissionsByRoleReplace",
+            "summary": "",
+            "url": "classes/RoleController.html#method_action_setPermissionsByRoleReplace"
+        },                {
+            "fqsen": "\\RoleController\u003A\u003Aaction_setPermissionsByRoleFromEmpty\u0028\u0029",
+            "name": "action_setPermissionsByRoleFromEmpty",
+            "summary": "",
+            "url": "classes/RoleController.html#method_action_setPermissionsByRoleFromEmpty"
+        },                {
+            "fqsen": "\\RoleController\u003A\u003Aaction_setPermissionsByRoleToEmpty\u0028\u0029",
+            "name": "action_setPermissionsByRoleToEmpty",
+            "summary": "",
+            "url": "classes/RoleController.html#method_action_setPermissionsByRoleToEmpty"
+        },                {
             "fqsen": "\\RoleController\u003A\u003AechoRole\u0028\u0029",
             "name": "echoRole",
             "summary": "",
@@ -4411,25 +5211,85 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RoleController.html#method_getRole"
         },                {
-            "fqsen": "\\RouteAcceptController",
-            "name": "RouteAcceptController",
-            "summary": "",
-            "url": "classes/RouteAcceptController.html"
+            "fqsen": "\\RoutingController",
+            "name": "RoutingController",
+            "summary": "Test\u0020fixtures\u0020for\u0020tests\/cypress\/e2e\/core\/routing.cy.js.",
+            "url": "classes/RoutingController.html"
         },                {
-            "fqsen": "\\RouteAcceptController\u003A\u003Aaction_check\u0028\u0029",
+            "fqsen": "\\RoutingController\u003A\u003Aaction_check\u0028\u0029",
             "name": "action_check",
             "summary": "",
-            "url": "classes/RouteAcceptController.html#method_action_check"
+            "url": "classes/RoutingController.html#method_action_check"
         },                {
-            "fqsen": "\\RouteDenyController",
-            "name": "RouteDenyController",
+            "fqsen": "\\RoutingController\u003A\u003ATestRoute\u0028\u0029",
+            "name": "TestRoute",
             "summary": "",
-            "url": "classes/RouteDenyController.html"
+            "url": "classes/RoutingController.html#method_TestRoute"
         },                {
-            "fqsen": "\\RouteDenyController\u003A\u003Aaction_check\u0028\u0029",
-            "name": "action_check",
+            "fqsen": "\\RoutingController\u003A\u003ARoute_Middleware_Accept\u0028\u0029",
+            "name": "Route_Middleware_Accept",
             "summary": "",
-            "url": "classes/RouteDenyController.html#method_action_check"
+            "url": "classes/RoutingController.html#method_Route_Middleware_Accept"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003AGroup_Middleware_Accept\u0028\u0029",
+            "name": "Group_Middleware_Accept",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Group_Middleware_Accept"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003ARoute_Middleware_Block\u0028\u0029",
+            "name": "Route_Middleware_Block",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Route_Middleware_Block"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003AGroup_Middleware_Block\u0028\u0029",
+            "name": "Group_Middleware_Block",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Group_Middleware_Block"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003ARoute_Afterware\u0028\u0029",
+            "name": "Route_Afterware",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Route_Afterware"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003AGroup_Afterware\u0028\u0029",
+            "name": "Group_Afterware",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Group_Afterware"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003ATestRoute_WithArguments\u0028\u0029",
+            "name": "TestRoute_WithArguments",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_TestRoute_WithArguments"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003ARoute_Middleware_Accept_WithArguments\u0028\u0029",
+            "name": "Route_Middleware_Accept_WithArguments",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Route_Middleware_Accept_WithArguments"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003ARoute_Afterware_WithArguments\u0028\u0029",
+            "name": "Route_Afterware_WithArguments",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_Route_Afterware_WithArguments"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_TestRouteByKey\u0028\u0029",
+            "name": "action_TestRouteByKey",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_TestRouteByKey"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_urlPartsProbe\u0028\u0029",
+            "name": "action_urlPartsProbe",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_urlPartsProbe"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_urlPartsProbe_strip1\u0028\u0029",
+            "name": "action_urlPartsProbe_strip1",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_urlPartsProbe_strip1"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_urlPartsProbe_strip2\u0028\u0029",
+            "name": "action_urlPartsProbe_strip2",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_urlPartsProbe_strip2"
         },                {
             "fqsen": "\\SessionController",
             "name": "SessionController",
@@ -4536,35 +5396,220 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SessionController.html#method_getSession"
         },                {
-            "fqsen": "\\TestController",
-            "name": "TestController",
+            "fqsen": "\\StateProbeController",
+            "name": "StateProbeController",
             "summary": "",
-            "url": "classes/TestController.html"
+            "url": "classes/StateProbeController.html"
         },                {
-            "fqsen": "\\TestController\u003A\u003Aaction_test\u0028\u0029",
-            "name": "action_test",
+            "fqsen": "\\StateProbeController\u003A\u003AfreshState\u0028\u0029",
+            "name": "freshState",
             "summary": "",
-            "url": "classes/TestController.html#method_action_test"
+            "url": "classes/StateProbeController.html#method_freshState"
         },                {
-            "fqsen": "\\TestController\u003A\u003At0\u0028\u0029",
-            "name": "t0",
+            "fqsen": "\\StateProbeController\u003A\u003Asnapshot\u0028\u0029",
+            "name": "snapshot",
             "summary": "",
-            "url": "classes/TestController.html#method_t0"
+            "url": "classes/StateProbeController.html#method_snapshot"
         },                {
-            "fqsen": "\\TestController\u003A\u003At1\u0028\u0029",
-            "name": "t1",
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_fromOverwrite_basic_merge\u0028\u0029",
+            "name": "action_fromOverwrite_basic_merge",
             "summary": "",
-            "url": "classes/TestController.html#method_t1"
+            "url": "classes/StateProbeController.html#method_action_fromOverwrite_basic_merge"
         },                {
-            "fqsen": "\\TestController\u003A\u003At3\u0028\u0029",
-            "name": "t3",
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_fromOverwrite_previous_ref\u0028\u0029",
+            "name": "action_fromOverwrite_previous_ref",
             "summary": "",
-            "url": "classes/TestController.html#method_t3"
+            "url": "classes/StateProbeController.html#method_action_fromOverwrite_previous_ref"
         },                {
-            "fqsen": "\\TestController\u003A\u003At2\u0028\u0029",
-            "name": "t2",
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_fromOverwrite_unknown_throws\u0028\u0029",
+            "name": "action_fromOverwrite_unknown_throws",
             "summary": "",
-            "url": "classes/TestController.html#method_t2"
+            "url": "classes/StateProbeController.html#method_action_fromOverwrite_unknown_throws"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_fromOverwrite_parent_isolated\u0028\u0029",
+            "name": "action_fromOverwrite_parent_isolated",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_fromOverwrite_parent_isolated"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withUrl_all_parts\u0028\u0029",
+            "name": "action_withUrl_all_parts",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withUrl_all_parts"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withUrl_https_on\u0028\u0029",
+            "name": "action_withUrl_https_on",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withUrl_https_on"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withUrl_https_off\u0028\u0029",
+            "name": "action_withUrl_https_off",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withUrl_https_off"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withUrl_path_only\u0028\u0029",
+            "name": "action_withUrl_path_only",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withUrl_path_only"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withUrl_query_only\u0028\u0029",
+            "name": "action_withUrl_query_only",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withUrl_query_only"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPath_basic\u0028\u0029",
+            "name": "action_withPath_basic",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPath_basic"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPath_strips_leading_slashes\u0028\u0029",
+            "name": "action_withPath_strips_leading_slashes",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPath_strips_leading_slashes"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPath_preserves_query\u0028\u0029",
+            "name": "action_withPath_preserves_query",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPath_preserves_query"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPath_no_query\u0028\u0029",
+            "name": "action_withPath_no_query",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPath_no_query"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withGet_replaces\u0028\u0029",
+            "name": "action_withGet_replaces",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withGet_replaces"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withGet_empty_clears_query\u0028\u0029",
+            "name": "action_withGet_empty_clears_query",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withGet_empty_clears_query"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withGet_missing_request_uri\u0028\u0029",
+            "name": "action_withGet_missing_request_uri",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withGet_missing_request_uri"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withGet_preserves_base_path\u0028\u0029",
+            "name": "action_withGet_preserves_base_path",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withGet_preserves_base_path"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPost_replaces_and_updates_request\u0028\u0029",
+            "name": "action_withPost_replaces_and_updates_request",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPost_replaces_and_updates_request"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withFiles_replaces\u0028\u0029",
+            "name": "action_withFiles_replaces",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withFiles_replaces"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withSession_replaces\u0028\u0029",
+            "name": "action_withSession_replaces",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withSession_replaces"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withBody_sets\u0028\u0029",
+            "name": "action_withBody_sets",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withBody_sets"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withMethod_sets\u0028\u0029",
+            "name": "action_withMethod_sets",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withMethod_sets"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withCookies_replaces_and_updates_request\u0028\u0029",
+            "name": "action_withCookies_replaces_and_updates_request",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withCookies_replaces_and_updates_request"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withReferer_sets\u0028\u0029",
+            "name": "action_withReferer_sets",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withReferer_sets"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_updateRequest_precedence\u0028\u0029",
+            "name": "action_updateRequest_precedence",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_updateRequest_precedence"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withArgs_keeps_first_two\u0028\u0029",
+            "name": "action_withArgs_keeps_first_two",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withArgs_keeps_first_two"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withArgs_empty_prior_argv\u0028\u0029",
+            "name": "action_withArgs_empty_prior_argv",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withArgs_empty_prior_argv"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003AwithChildState\u0028\u0029",
+            "name": "withChildState",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_withChildState"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPreviousAsReferer_happy\u0028\u0029",
+            "name": "action_withPreviousAsReferer_happy",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPreviousAsReferer_happy"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPreviousAsReferer_no_previous_throws\u0028\u0029",
+            "name": "action_withPreviousAsReferer_no_previous_throws",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPreviousAsReferer_no_previous_throws"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPreviousAsReferer_no_host_throws\u0028\u0029",
+            "name": "action_withPreviousAsReferer_no_host_throws",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPreviousAsReferer_no_host_throws"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_withPreviousAsReferer_no_scheme_throws\u0028\u0029",
+            "name": "action_withPreviousAsReferer_no_scheme_throws",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_withPreviousAsReferer_no_scheme_throws"
+        },                {
+            "fqsen": "\\StateProbeController\u003A\u003Aaction_decURI\u0028\u0029",
+            "name": "action_decURI",
+            "summary": "",
+            "url": "classes/StateProbeController.html#method_action_decURI"
+        },                {
+            "fqsen": "\\SupportProbeController",
+            "name": "SupportProbeController",
+            "summary": "",
+            "url": "classes/SupportProbeController.html"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_staticCacheMissingType\u0028\u0029",
+            "name": "action_staticCacheMissingType",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_staticCacheMissingType"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_staticCacheMissingKey\u0028\u0029",
+            "name": "action_staticCacheMissingKey",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_staticCacheMissingKey"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_dynamicAttributesGetStore\u0028\u0029",
+            "name": "action_dynamicAttributesGetStore",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_dynamicAttributesGetStore"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_dynamicAttributesIssetStore\u0028\u0029",
+            "name": "action_dynamicAttributesIssetStore",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_dynamicAttributesIssetStore"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_dynamicAttributesMissing\u0028\u0029",
+            "name": "action_dynamicAttributesMissing",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_dynamicAttributesMissing"
+        },                {
+            "fqsen": "\\SupportProbeController\u003A\u003Aaction_checkpointRestore\u0028\u0029",
+            "name": "action_checkpointRestore",
+            "summary": "",
+            "url": "classes/SupportProbeController.html#method_action_checkpointRestore"
         },                {
             "fqsen": "\\UserController",
             "name": "UserController",
@@ -4676,6 +5721,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/UserController.html#method_action_add"
         },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_addWithoutPassword\u0028\u0029",
+            "name": "action_addWithoutPassword",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_addWithoutPassword"
+        },                {
             "fqsen": "\\UserController\u003A\u003Aaction_hasAccessToAll\u0028\u0029",
             "name": "action_hasAccessToAll",
             "summary": "",
@@ -4705,6 +5755,36 @@ Search.appendIndex(
             "name": "getUser",
             "summary": "",
             "url": "classes/UserController.html#method_getUser"
+        },                {
+            "fqsen": "\\VisualController",
+            "name": "VisualController",
+            "summary": "Renders\u0020deterministic\u0020kitchen\u002Dsink\u0020pages\u0020used\u0020as\u0020the\u0020source\u002Dof\u002Dtruth\nfor\u0020our\u0020visual\u002Dregression\u0020specs\u0020\u0028tests\/cypress\/e2e\/visual\/...\u0029.",
+            "url": "classes/VisualController.html"
+        },                {
+            "fqsen": "\\VisualController\u003A\u003Aaction_icons\u0028\u0029",
+            "name": "action_icons",
+            "summary": "",
+            "url": "classes/VisualController.html#method_action_icons"
+        },                {
+            "fqsen": "\\VisualController\u003A\u003Aaction_bootstrap\u0028\u0029",
+            "name": "action_bootstrap",
+            "summary": "",
+            "url": "classes/VisualController.html#method_action_bootstrap"
+        },                {
+            "fqsen": "\\VisualController\u003A\u003Aicons\u0028\u0029",
+            "name": "icons",
+            "summary": "",
+            "url": "classes/VisualController.html#method_icons"
+        },                {
+            "fqsen": "\\Migration_2026_05_08_TimeStampType",
+            "name": "Migration_2026_05_08_TimeStampType",
+            "summary": "Permanent\u0020test\u0020fixture\u003A\u0020exercises\u0020the\u0020framework\u0027s\u0020custom\u0020TimeStamp\u0020DBAL\ntype\u0020\u0028src\/Database\/Migration\/Type\/TimeStamp.php\u0029.\u0020Doctrine\u0020resolves\n\u0060\u0027timestamp\u0027\u0060\u0020to\u0020that\u0020type\u0020when\u0020generating\u0020CREATE\u0020TABLE\u0020SQL,\u0020so\u0020this\nmigration\u0027s\u0020apply\u0020path\u0020runs\u0020both\u0020\u0060getSQLDeclaration\u0028\u0029\u0060\u0020and\u0020\u0060getName\u0028\u0029\u0060.",
+            "url": "classes/Migration-2026-05-08-TimeStampType.html"
+        },                {
+            "fqsen": "\\Migration_2026_05_08_TimeStampType\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/Migration-2026-05-08-TimeStampType.html#method_execute"
         },                {
             "fqsen": "\\Test",
             "name": "Test",
@@ -4881,35 +5961,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_selectUserLimit"
         },                {
-            "fqsen": "\\QueryBuilderModel\u003A\u003AselectLanguageById\u0028\u0029",
-            "name": "selectLanguageById",
-            "summary": "",
-            "url": "classes/QueryBuilderModel.html#method_selectLanguageById"
-        },                {
             "fqsen": "\\QueryBuilderModel\u003A\u003AselectInsert\u0028\u0029",
             "name": "selectInsert",
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_selectInsert"
+        },                {
+            "fqsen": "\\QueryBuilderModel\u003A\u003AselectInsertById\u0028\u0029",
+            "name": "selectInsertById",
+            "summary": "",
+            "url": "classes/QueryBuilderModel.html#method_selectInsertById"
         },                {
             "fqsen": "\\QueryBuilderModel\u003A\u003Ainsert\u0028\u0029",
             "name": "insert",
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_insert"
         },                {
-            "fqsen": "\\QueryBuilderModel\u003A\u003AinsertLanguage\u0028\u0029",
-            "name": "insertLanguage",
+            "fqsen": "\\QueryBuilderModel\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
             "summary": "",
-            "url": "classes/QueryBuilderModel.html#method_insertLanguage"
+            "url": "classes/QueryBuilderModel.html#method_update"
         },                {
-            "fqsen": "\\QueryBuilderModel\u003A\u003AupdateLanguage\u0028\u0029",
-            "name": "updateLanguage",
+            "fqsen": "\\QueryBuilderModel\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
             "summary": "",
-            "url": "classes/QueryBuilderModel.html#method_updateLanguage"
-        },                {
-            "fqsen": "\\QueryBuilderModel\u003A\u003AdeleteLanguage\u0028\u0029",
-            "name": "deleteLanguage",
-            "summary": "",
-            "url": "classes/QueryBuilderModel.html#method_deleteLanguage"
+            "url": "classes/QueryBuilderModel.html#method_delete"
         },                {
             "fqsen": "\\QueryBuilderModel\u003A\u003AinjectionTest\u0028\u0029",
             "name": "injectionTest",

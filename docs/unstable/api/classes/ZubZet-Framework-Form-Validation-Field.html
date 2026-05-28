@@ -192,6 +192,13 @@
 <dd>Creates a form field representation</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_checked">checked()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>    </span>
+</dt>
+<dd>Adds a &quot;must be ticked&quot; rule for checkboxes.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_date">date()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>    </span>
@@ -218,6 +225,13 @@
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>    </span>
 </dt>
 <dd>Adds a filter rule</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_in">in()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>    </span>
+</dt>
+<dd>Adds an `in` rule</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_integer">integer()</a>
@@ -612,6 +626,46 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_checked">
+        checked()
+        <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_checked" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">165</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a &quot;must be ticked&quot; rule for checkboxes.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">checked</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"><p>A <code class="prettyprint">checkbox</code> field always submits &quot;1&quot; (ticked) or &quot;0&quot; (unticked),
+so <code class="prettyprint">required()</code> is a no-op for it. Use this to enforce that the box
+is actually ticked (e.g. accept-terms). Sugar over <code class="prettyprint">in()</code> with the
+common truthy representations.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Returns itself to allow chaining</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_date">
         date()
         <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_date" class="headerlink"><i class="fas fa-link"></i></a>
@@ -619,7 +673,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 
     </aside>
 
@@ -629,7 +683,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">date</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$format</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;Y-m-d&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>This rule checks if the input value adheres to a given date format</p>
+        <section class="phpdocumentor-description"><p>This rule checks if the input value adheres to a given date format.</p>
+<p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — <code class="prettyprint">strtotime()</code>
+expects a scalar.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -668,7 +724,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -678,8 +734,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">exists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>This rule checks if a dataset with a specific value already exists.
-A set to ignore can also be specified. An error will be created when the set does not exist.</p>
+        <section class="phpdocumentor-description"><p>This rule checks if a dataset with a specific value already exists
+in the database. For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) the
+rule is applied per item, every picked entry must exist.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -727,7 +784,7 @@ A set to ignore can also be specified. An error will be created when the set doe
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 
     </aside>
 
@@ -783,7 +840,7 @@ A set to ignore can also be specified. An error will be created when the set doe
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -794,6 +851,8 @@ A set to ignore can also be specified. An error will be created when the set doe
                 <span class="phpdocumentor-signature__name">filter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>Creates an error when a filter fails. All filter_var compatible filters are available.</p>
+<p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — <code class="prettyprint">filter_var()</code>
+expects a scalar; pair <code class="prettyprint">multi-select</code> with <code class="prettyprint">-&gt;in()</code> instead.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -825,6 +884,60 @@ A set to ignore can also be specified. An error will be created when the set doe
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_in">
+        in()
+        <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_in" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">146</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds an `in` rule</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">in</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allowedValues</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"><p>The submitted value must appear in the given in-memory allow-list.
+Unlike <code class="prettyprint">exists()</code> this does not hit the database. Useful to guard
+<code class="prettyprint">select</code> / <code class="prettyprint">multi-select</code> fields against tampered POST payloads
+where the client sent an option that wasn't in the rendered
+dropdown. For array-valued fields the rule is applied per item:
+every picked entry must be in the allow-list.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$allowedValues</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The list of allowed values</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Returns itself to allow chaining</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_integer">
         integer()
         <a href="classes/ZubZet-Framework-Form-Validation-Field.html#method_integer" class="headerlink"><i class="fas fa-link"></i></a>
@@ -832,7 +945,7 @@ A set to ignore can also be specified. An error will be created when the set doe
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 
     </aside>
 
@@ -844,6 +957,8 @@ A set to ignore can also be specified. An error will be created when the set doe
 
         <section class="phpdocumentor-description"><p>This rule will create an error when the input was not a value that could be parsed to an integer.
 Also this function sets the type of the field to &quot;i&quot;.</p>
+<p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — <code class="prettyprint">filter_var()</code>
+and <code class="prettyprint">intval()</code> expect a scalar.</p>
 </section>
 
     
@@ -870,7 +985,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 
     </aside>
 
@@ -880,7 +995,10 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">length</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>This rule will create an error when the input is too long or too short</p>
+        <section class="phpdocumentor-description"><p>This rule will create an error when the input is too long or too short.</p>
+<p>For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) length is measured as
+the item count (<code class="prettyprint">count($value)</code>) instead of the character count, so
+<code class="prettyprint">-&gt;length(1, 3)</code> means &quot;between 1 and 3 selections.&quot;</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -890,7 +1008,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Minimum number of chars</p>
+                    <section class="phpdocumentor-description"><p>Minimum number of chars (or items for arrays)</p>
 </section>
 
             </dd>
@@ -899,7 +1017,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Maximum number of chars</p>
+                    <section class="phpdocumentor-description"><p>Maximum number of chars (or items for arrays)</p>
 </section>
 
             </dd>
@@ -928,7 +1046,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -939,6 +1057,8 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
                 <span class="phpdocumentor-signature__name">range</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$min</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>This rule checks if the input, as a number, is within a range. If the number is not in the range, an error will be created.</p>
+<p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — the comparison
+(<code class="prettyprint">$value &lt; $min</code>) expects a scalar.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -986,7 +1106,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">240</span>
+    <span class="phpdocumentor-element-found-in__line">299</span>
 
     </aside>
 
@@ -996,7 +1116,10 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">regex</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$expression</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exceptions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-    
+        <section class="phpdocumentor-description"><p>For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) the regex is applied
+per item; the field fails as soon as any single item fails.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1042,7 +1165,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
@@ -1079,7 +1202,7 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
@@ -1091,6 +1214,8 @@ Also this function sets the type of the field to &quot;i&quot;.</p>
 
         <section class="phpdocumentor-description"><p>This rule checks if a dataset with a specific value already exists.
 A set to ignore can also be specified. An error will be created when the set exists.</p>
+<p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — the rule
+runs a single uniqueness query against a scalar value.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>

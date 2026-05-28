@@ -2762,11 +2762,12 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <ul>
 <li>
 <p>Creates a new user.</p>
-<div class="highlight"><pre><span></span><code><span class="x">User::add(?string $email, string $password, ?DateTime $verified = null);</span>
+<div class="highlight"><pre><span></span><code><span class="x">User::add(?string $email, ?string $password, ?DateTime $verified = null);</span>
 </code></pre></div>
 </li>
 </ul>
 <p>If no verification date is provided, the user is created as <strong>unverified</strong>.</p>
+<p>The <code>$password</code> parameter is optional. When <code>null</code> is passed, the user is created without a password - useful for invite or SSO flows where a credential is set later via <code>updatePassword()</code>.</p>
 <hr />
 <h3 id="updating-user-data">Updating User Data<a class="headerlink" href="#updating-user-data" title="Permanent link">&para;</a></h3>
 <p>User attributes can be updated directly on the instance.</p>
@@ -2782,7 +2783,8 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 </code></pre></div>
 </li>
 <li>
-<p>Assigns the user to an organization, or unsets it when <code>null</code> is passed.</p>
+<p>Assigns the user to an organization, or unsets it when <code>null</code> is passed.
+  If the previous and/or the new organization has a linked permission group (see <code>Organization::getGroup()</code>), the user's group memberships are kept in sync: the previous organization's group is removed and the new organization's group is added.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updateOrganization(?Organization $organization);</span>
 </code></pre></div>
 </li>
@@ -2917,7 +2919,7 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 </li>
 <li>
 <p>Returns the organization the user belongs to, or <code>null</code> if none is assigned.
-  The result is cached on the instance — including the <code>null</code> case — until <code>clearFields()</code> or a write operation invalidates it.</p>
+  The result is cached on the instance - including the <code>null</code> case - until <code>clearFields()</code> or a write operation invalidates it.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;organization(): ?Organization</span>
 </code></pre></div>
 </li>
@@ -3038,6 +3040,11 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;permissionsRemove(string ...$permissionNames);</span>
 </code></pre></div>
 </li>
+<li>
+<p>Replaces this role's permissions with the permissions of another role. The current permissions are removed and the source role's active permissions are copied over.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;setPermissionsByRole(Role $role);</span>
+</code></pre></div>
+</li>
 </ul>
 <hr />
 <h3 id="role-permission-checks">Role Permission Checks<a class="headerlink" href="#role-permission-checks" title="Permanent link">&para;</a></h3>
@@ -3098,8 +3105,9 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <h3 id="creating-an-organization">Creating an Organization<a class="headerlink" href="#creating-an-organization" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Creates a new organization with the given name (which may be <code>null</code>).</p>
-<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name): Organization</span>
+<p>Creates a new organization with the given name (which may be <code>null</code>).
+  When <code>$createGroup</code> is <code>true</code>, a permission <code>Group</code> named <code>"{$name}_Group"</code> is created and linked to the organization. The linked group is then available via <code>$organization-&gt;getGroup()</code> and is used by <code>User::updateOrganization()</code> to sync group membership.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name, bool $createGroup = false): Organization</span>
 </code></pre></div>
 </li>
 </ul>
@@ -3133,6 +3141,16 @@ Permissions can be assigned directly to users or indirectly through roles. All p
 <li>
 <p>Reloads the cached users list.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;refreshUsers();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the permission <code>Group</code> linked to this organization, or <code>null</code> if none is linked. The result is cached on the instance until <code>clearFields()</code> or a write operation invalidates it.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;getGroup(): ?Group</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads the cached linked group.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;refreshGroup();</span>
 </code></pre></div>
 </li>
 </ul>

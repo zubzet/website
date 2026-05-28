@@ -217,6 +217,17 @@ and to change the bind method to match that of mysqli.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-AssetProxy.html"><abbr title="\ZubZet\Framework\Resources\AssetProxy">AssetProxy</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-BundledAssets.html"><abbr title="\ZubZet\Framework\Resources\BundledAssets">BundledAssets</abbr></a></dt>
+        <dd>Registers the framework&#039;s vendored frontend libraries (jQuery, Bootstrap,
+Font Awesome) with an AssetProxy at the URL paths the framework
+historically exposed.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-BundledPackage.html"><abbr title="\ZubZet\Framework\Resources\BundledPackage">BundledPackage</abbr></a></dt>
+        <dd>One Composer-installed frontend library that should be exposed via the
+AssetProxy. Resolves its on-disk path through Composer at mount time.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-Mount.html"><abbr title="\ZubZet\Framework\Resources\Mount">Mount</abbr></a></dt>
+        <dd>Maps an asset URL onto a directory on disk, optionally scoped to a URL
+prefix. All filesystem work is deferred to resolve(); construction is
+just a string trim.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Routing-PendingAction.html"><abbr title="\ZubZet\Framework\Routing\PendingAction">PendingAction</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Routing-PendingGroup.html"><abbr title="\ZubZet\Framework\Routing\PendingGroup">PendingGroup</abbr></a></dt>
@@ -247,22 +258,42 @@ and to change the bind method to match that of mysqli.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdvancedController.html"><abbr title="\AdvancedController">AdvancedController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AliasController.html"><abbr title="\AliasController">AliasController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AssetProxyController.html"><abbr title="\AssetProxyController">AssetProxyController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AuthProbeController.html"><abbr title="\AuthProbeController">AuthProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ConnectionProbeController.html"><abbr title="\ConnectionProbeController">ConnectionProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ConsoleController.html"><abbr title="\ConsoleController">ConsoleController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CoreController.html"><abbr title="\CoreController">CoreController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DashboardController.html"><abbr title="\DashboardController">DashboardController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FallbackController.html"><abbr title="\FallbackController">FallbackController</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseProbeController.html"><abbr title="\DatabaseProbeController">DatabaseProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FormController.html"><abbr title="\FormController">FormController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FrameworkApiController.html"><abbr title="\FrameworkApiController">FrameworkApiController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FrameworkViewProbeController.html"><abbr title="\FrameworkViewProbeController">FrameworkViewProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FrontendController.html"><abbr title="\FrontendController">FrontendController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GroupController.html"><abbr title="\GroupController">GroupController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/HelperController.html"><abbr title="\HelperController">HelperController</abbr></a></dt>
+        <dd>Probes for global references and pure helper functions used by
+tests/cypress/e2e/support/.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutConstructorController.html"><abbr title="\LayoutConstructorController">LayoutConstructorController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutMiddlewareController.html"><abbr title="\LayoutMiddlewareController">LayoutMiddlewareController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutResolutionController.html"><abbr title="\LayoutResolutionController">LayoutResolutionController</abbr></a></dt>
+        <dd>Exercises the layout resolution chain from HandlesDefaultLayout:
+  explicit arg &gt; instance default &gt; global default &gt; framework default</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LoggerController.html"><abbr title="\LoggerController">LoggerController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/MigrationController.html"><abbr title="\MigrationController">MigrationController</abbr></a></dt>
@@ -275,16 +306,24 @@ and to change the bind method to match that of mysqli.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RoleController.html"><abbr title="\RoleController">RoleController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RouteAcceptController.html"><abbr title="\RouteAcceptController">RouteAcceptController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RouteDenyController.html"><abbr title="\RouteDenyController">RouteDenyController</abbr></a></dt>
-        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RoutingController.html"><abbr title="\RoutingController">RoutingController</abbr></a></dt>
+        <dd>Test fixtures for tests/cypress/e2e/core/routing.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SessionController.html"><abbr title="\SessionController">SessionController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TestController.html"><abbr title="\TestController">TestController</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/StateProbeController.html"><abbr title="\StateProbeController">StateProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SupportProbeController.html"><abbr title="\SupportProbeController">SupportProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UserController.html"><abbr title="\UserController">UserController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/VisualController.html"><abbr title="\VisualController">VisualController</abbr></a></dt>
+        <dd>Renders deterministic kitchen-sink pages used as the source-of-truth
+for our visual-regression specs (tests/cypress/e2e/visual/...).</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Migration-2026-05-08-TimeStampType.html"><abbr title="\Migration_2026_05_08_TimeStampType">Migration_2026_05_08_TimeStampType</abbr></a></dt>
+        <dd>Permanent test fixture: exercises the framework&#039;s custom TimeStamp DBAL
+type (src/Database/Migration/Type/TimeStamp.php). Doctrine resolves
+`&#039;timestamp&#039;` to that type when generating CREATE TABLE SQL, so this
+migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Test.html"><abbr title="\Test">Test</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CoreModel.html"><abbr title="\CoreModel">CoreModel</abbr></a></dt>
@@ -354,6 +393,8 @@ and to change the bind method to match that of mysqli.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Rendering-CanRenderView.html"><abbr title="\ZubZet\Framework\Rendering\CanRenderView">CanRenderView</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html"><abbr title="\ZubZet\Framework\Rendering\HandlesDefaultLayout">HandlesDefaultLayout</abbr></a></dt>
+        <dd>Default-layout management for Response.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Routing-HttpMethod.html"><abbr title="\ZubZet\Framework\Routing\HttpMethod">HttpMethod</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Routing-Router.html"><abbr title="\ZubZet\Framework\Routing\Router">Router</abbr></a></dt>

@@ -2442,7 +2442,7 @@ Returns "action"</p>
 <p>The framework includes some extra functionality when it comes to the above mentioned features and you should use the framework instead of the traditional way. This is because the framework employes extra filtering and processing methods as well as error handling already for you.</p>
 <h3 id="getting-post-and-get-parameters">Getting POST and GET parameters<a class="headerlink" href="#getting-post-and-get-parameters" title="Permanent link">&para;</a></h3>
 <p><code>$req-&gt;getGet</code> and <code>$req-&gt;getPost</code> are methods to get form parameters. These also enable to set default parameters if some are not set.<br>
-<strong>Note:</strong> Post parameters get decoded automatically if their values have a special prefix like <code>&lt;#decb64#&gt;</code> or <code>&lt;#decURI#&gt;</code>. This decoding allows to transmit special characters.</p>
+<strong>Note:</strong> Post parameters get decoded automatically if their values have the special prefix <code>&lt;#decURI#&gt;</code>. This decoding allows to transmit special characters.</p>
 <h3 id="cookies">Cookies<a class="headerlink" href="#cookies" title="Permanent link">&para;</a></h3>
 <p><code>$req-&gt;getCookie</code> gets a cookie. It has a second parameter to set a default if the cookie is not set.</p>
 <p><code>$res-&gt;setCookie</code> has the same parameters as the native <code>setcookie</code> function of php. It should be used, because in the future may more logic build into the framework that deals with cookies.</p>

@@ -102,6 +102,17 @@
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-AssetProxy.html"><abbr title="\ZubZet\Framework\Resources\AssetProxy">AssetProxy</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-BundledAssets.html"><abbr title="\ZubZet\Framework\Resources\BundledAssets">BundledAssets</abbr></a></dt>
+        <dd>Registers the framework&#039;s vendored frontend libraries (jQuery, Bootstrap,
+Font Awesome) with an AssetProxy at the URL paths the framework
+historically exposed.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-BundledPackage.html"><abbr title="\ZubZet\Framework\Resources\BundledPackage">BundledPackage</abbr></a></dt>
+        <dd>One Composer-installed frontend library that should be exposed via the
+AssetProxy. Resolves its on-disk path through Composer at mount time.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-Mount.html"><abbr title="\ZubZet\Framework\Resources\Mount">Mount</abbr></a></dt>
+        <dd>Maps an asset URL onto a directory on disk, optionally scoped to a URL
+prefix. All filesystem work is deferred to resolve(); construction is
+just a string trim.</dd>
     
     </dl>
 

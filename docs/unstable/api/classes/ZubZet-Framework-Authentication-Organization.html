@@ -113,7 +113,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
@@ -239,6 +239,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getGroup">getGroup()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getUsers">getUsers()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -279,6 +286,13 @@
                         &nbsp;: void    </span>
 </dt>
 <dd>Refresh the current permission object (user or role) by clearing all its fields and setting them new</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshGroup">refreshGroup()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshUsers">refreshUsers()</a>
@@ -336,7 +350,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -370,7 +384,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -476,7 +490,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -520,14 +534,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Organization.html"><abbr title="\ZubZet\Framework\Authentication\Organization">Organization</abbr></a></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$createGroup</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupName</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Organization.html"><abbr title="\ZubZet\Framework\Authentication\Organization">Organization</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -537,6 +551,22 @@
                 <span class="phpdocumentor-signature__argument__name">$name</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$createGroup</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$groupName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -691,7 +721,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -701,7 +731,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Organization.html"><abbr title="\ZubZet\Framework\Authentication\Organization">Organization</abbr></a>&gt;</span></code>
 
-        <section class="phpdocumentor-description"><p>Organization names are not unique, so this returns an array — possibly empty,
+        <section class="phpdocumentor-description"><p>Organization names are not unique, so this returns an array - possibly empty,
 possibly containing multiple organizations sharing the same name.</p>
 </section>
 
@@ -741,7 +771,7 @@ possibly containing multiple organizations sharing the same name.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -927,6 +957,39 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getGroup">
+        getGroup()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getGroup" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">91</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getGroup</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getUsers">
         getUsers()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getUsers" class="headerlink"><i class="fas fa-link"></i></a>
@@ -934,7 +997,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -1000,7 +1063,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -1044,7 +1107,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -1152,6 +1215,39 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_refreshGroup">
+        refreshGroup()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshGroup" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">97</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">refreshGroup</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_refreshUsers">
         refreshUsers()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshUsers" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1159,7 +1255,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -1192,7 +1288,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -1225,7 +1321,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 

@@ -2325,6 +2325,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-a-default-layout-for-part-of-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting a default layout for part of your app
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2386,6 +2397,8 @@
 <span class="x">    return $res-&gt;render(&quot;admin/index.php&quot;, [], &quot;admin/layout.php&quot;);</span>
 <span class="x">}</span>
 </code></pre></div>
+<h2 id="setting-a-default-layout-for-part-of-your-app">Setting a default layout for part of your app<a class="headerlink" href="#setting-a-default-layout-for-part-of-your-app" title="Permanent link">&para;</a></h2>
+<p>When <code>$res-&gt;render</code> is called without an explicit layout, the framework picks one in this order: per-instance default → global default → <code>layout/default_layout.php</code>. Use <code>$res-&gt;setDefaultLayout("admin/layout.php")</code> from a route middleware (instance scope) or <code>Response::setGlobalDefaultLayout("admin/layout.php")</code> from a controller <code>__construct</code> (request scope) to change that default for a section of the app. Both scopes also expose <code>pushDefaultLayout</code> / <code>popDefaultLayout</code> (and the global equivalents) so nested components can install a layout and restore the previous one when they're done.</p>
 
 
 
