@@ -91,10 +91,52 @@
     <div class="phpdocumentor-row">
         <h2 class="phpdocumentor-content__title">Deprecated</h2>
 
+                <h3>Table of Contents</h3>
+        <table class="phpdocumentor-table_of_contents">
+                            <tr>
+                    <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/Core/Model.php">src/Core/Model.php</a></td>
+                </tr>
+                            <tr>
+                    <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/Database/Connection.php">src/Database/Connection.php</a></td>
+                </tr>
+                    </table>
         
-                    <div class="phpdocumentor-admonition phpdocumentor-admonition--success">
-                No deprecated elements have been found in this project.
-            </div>
+                    <a id="src/Core/Model.php"></a>
+            <h3><abbr title="src/Core/Model.php">Model.php</abbr></h3>
+            <table>
+                <tr>
+                    <th class="phpdocumentor-heading">Line</th>
+                    <th class="phpdocumentor-heading">Element</th>
+                    <th class="phpdocumentor-heading">Reason</th>
+                </tr>
+                                                            <tr>
+                            <td class="phpdocumentor-cell">128</td>
+                            <td class="phpdocumentor-cell"><a href="classes/ZubZet-Framework-Core-Model.html#method_heartbeat"><abbr title="\ZubZet\Framework\Core\Model::heartbeat()">Model::heartbeat()</abbr></a></td>
+                            <td class="phpdocumentor-cell"><p>since 1.2.0 Connections self-heal on use via the database
+layer's assertConnection(); manual keep-alive loops are no longer
+necessary. Remove your heartbeat() calls.</p>
+</td>
+                        </tr>
+                                                </table>
+                    <a id="src/Database/Connection.php"></a>
+            <h3><abbr title="src/Database/Connection.php">Connection.php</abbr></h3>
+            <table>
+                <tr>
+                    <th class="phpdocumentor-heading">Line</th>
+                    <th class="phpdocumentor-heading">Element</th>
+                    <th class="phpdocumentor-heading">Reason</th>
+                </tr>
+                                                            <tr>
+                            <td class="phpdocumentor-cell">318</td>
+                            <td class="phpdocumentor-cell"><a href="classes/ZubZet-Framework-Database-Connection.html#method_heartbeat"><abbr title="\ZubZet\Framework\Database\Connection::heartbeat()">Connection::heartbeat()</abbr></a></td>
+                            <td class="phpdocumentor-cell"><p>since 1.2.0 The connection now self-heals on use via
+assertConnection(), so a manual keep-alive loop is no longer
+necessary. Simply remove your heartbeat() calls and let queries
+transparently (re)connect as needed. Kept for backward
+compatibility with existing worker loops.</p>
+</td>
+                        </tr>
+                                                </table>
             </div>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">

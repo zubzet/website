@@ -783,6 +783,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../core-features/password-handling" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Password Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../core-features/localization" class="md-nav__link">
         
   
@@ -931,10 +959,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
         
           
-          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
             
   
   
@@ -952,8 +980,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1042,10 +1070,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
             
   
   
@@ -1063,8 +1091,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2525,6 +2553,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#native-argon2id-password-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Argon2id Password Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2697,6 +2736,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4-adopt-native-password-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Adopt native password hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2786,6 +2836,11 @@ This makes it much easier to maintain separate seed data sets for development, t
 <p>ZubZet now officially supports PHP 8.5.
 The framework has been tested against the latest PHP release and runs out of the box on 8.5, so you can take advantage of the newest language features and runtime improvements.
 Older supported PHP versions continue to work as before, allowing you to upgrade on your own schedule.</p>
+<h3 id="native-argon2id-password-hashing">Native Argon2id Password Hashing<a class="headerlink" href="#native-argon2id-password-hashing" title="Permanent link">&para;</a></h3>
+<p>Password storage now uses PHP's native <strong>Argon2id</strong>, the algorithm recommended by the current OWASP Password Storage guidance, in place of the previous SHA-512 based scheme.
+Argon2id is memory hard and purpose built for password storage, and the native PHP functions embed the algorithm, cost, and salt in every stored value.
+Existing passwords are safe and keep working: they are upgraded to Argon2id automatically the next time their owner logs in, so adopting the modern format requires no password reset.
+See the new <a href="../../../core-features/password-handling">Password Handling documentation</a> for the full picture, including the verify and hash API and how to add users.</p>
 <h2 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">&para;</a></h2>
 <h3 id="missing-migration-folder">Missing Migration Folder<a class="headerlink" href="#missing-migration-folder" title="Permanent link">&para;</a></h3>
 <p>Running migrations no longer fails when the migration folder does not exist.
@@ -2898,6 +2953,19 @@ behavior, set the relevant keys in <code>z_config/z_settings.ini</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="na">logger_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
 </code></pre></div>
 <p>See the <a href="../../../core-features/logging">Logging documentation</a> for all available options.</p>
+<hr />
+<h3 id="4-adopt-native-password-hashing">4. Adopt native password hashing<a class="headerlink" href="#4-adopt-native-password-hashing" title="Permanent link">&para;</a></h3>
+<p>The schema migration runs automatically when the framework updates. It adds a
+<code>password_scheme</code> and a <code>last_password_rehash_at</code> column to <code>z_user</code> and marks
+every existing password row as <code>legacy</code>. No action is required for accounts to
+keep working: they verify through the legacy path and upgrade themselves to
+Argon2id on the next successful login.</p>
+<p>Rehash on login only reaches accounts that log in. To bring accounts that have
+not logged in yet onto Argon2id as well, run the onion migration once. It is
+idempotent and safe to re run:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>auth:migrate-hashing
+</code></pre></div>
+<p>See the <a href="../../../core-features/password-handling">Password Handling documentation</a> for the verify and hash API, the scheme model, and how to add users.</p>
 
 
 

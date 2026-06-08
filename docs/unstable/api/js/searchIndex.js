@@ -46,10 +46,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003A\u0024permissionChanged",
+            "name": "permissionChanged",
+            "summary": "Process\u002Dwide\u0020flag\u0020indicating\u0020that\u0020permission\u002Drelated\u0020data\u0020has\u0020changed.",
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Commands\\HashingAlgorithmMigration",
+            "name": "HashingAlgorithmMigration",
+            "summary": "Wraps\u0020every\u0020\u0060legacy\u0060\u0020password\u0020hash\u0020in\u0020a\u0020fresh\u0020native\u0020hash\u0020\u0028the\u0020\u0022onion\u0022\u0029,\nprotecting\u0020dormant\u0020accounts\u0020at\u0020rest\u0020against\u0020a\u0020future\u0020breach\u0020without\u0020needing\nthe\u0020plaintext.\u0020Idempotent\u0020and\u0020reusable\u003A\u0020it\u0020only\u0020touches\u0020rows\u0020still\u0020on\u0020the\n\u0060legacy\u0060\u0020scheme,\u0020so\u0020re\u002Drunning\u0020\u0028or\u0020running\u0020after\u0020some\u0020users\u0020have\u0020already\nlogged\u0020in\u0020and\u0020been\u0020upgraded\u0029\u0020is\u0020safe\u0020and\u0020does\u0020no\u0020redundant\u0020work.",
+            "url": "classes/ZubZet-Framework-Authentication-Commands-HashingAlgorithmMigration.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Commands\\HashingAlgorithmMigration\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Commands-HashingAlgorithmMigration.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Commands\\HashingAlgorithmMigration\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Commands-HashingAlgorithmMigration.html#method_execute"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\HandleTrait",
             "name": "HandleTrait",
@@ -136,6 +156,96 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbExpression"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password",
+            "name": "Password",
+            "summary": "Password\u0020hashing\u0020on\u0020PHP\u0027s\u0020native\u0020Argon2id\u0020\u0028at\u0020PHP\u0027s\u0020default\u0020cost\u0029,\u0020the\u0020public\nentry\u0020point\u0020for\u0020the\u0020framework\u0027s\u0020password\u0020handling.\u0020A\u0020\u0060password_scheme\u0060\u0020marker\nlets\u0020legacy\u0020and\u0020onion\u002Dwrapped\u0020hashes\u0020coexist\u0020and\u0020self\u002Dheal\u0020to\u0020native\u0020on\u0020login.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003Ahash\u0028\u0029",
+            "name": "hash",
+            "summary": "Create\u0020a\u0020native\u0020hash\u0020from\u0020a\u0020plaintext\u0020password.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_hash"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003Averify\u0028\u0029",
+            "name": "verify",
+            "summary": "Verify\u0020a\u0020plaintext\u0020against\u0020a\u0020stored\u0020credential.\u0020\u0060scheme\u0060\u0020selects\u0020how\u0020to\nread\u0020the\u0020stored\u0020value\u0020\u0028defaults\u0020to\u0020native\u0029\u003B\u0020\u0060salt\u0060\u0020is\u0020only\u0020needed\u0020for\nlegacy\/onion\u0020rows.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_verify"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AverifyNative\u0028\u0029",
+            "name": "verifyNative",
+            "summary": "Native\u0020Argon2id\u003A\u0020matches,\u0020and\u0020self\u002Dheals\u0020when\u0020below\u0020the\u0020current\u0020cost.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_verifyNative"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AverifyLegacy\u0028\u0029",
+            "name": "verifyLegacy",
+            "summary": "Legacy\u0020or\u0020onion\u0020\u0028the\u0020shim\u0020detects\u0020which\u0029\u003B\u0020any\u0020match\u0020self\u002Dheals\u0020to\u0020native.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_verifyLegacy"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003ANATIVE",
+            "name": "NATIVE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_NATIVE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003ALEGACY",
+            "name": "LEGACY",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_LEGACY"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AONION",
+            "name": "ONION",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_ONION"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AMIN_LENGTH_BYTES",
+            "name": "MIN_LENGTH_BYTES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_MIN_LENGTH_BYTES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AMAX_LENGTH_BYTES",
+            "name": "MAX_LENGTH_BYTES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_MAX_LENGTH_BYTES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AONION_OPTS",
+            "name": "ONION_OPTS",
+            "summary": "Reduced\u0020cost\u0020for\u0020the\u0020onion\u0020layer\u0020only.\u0020An\u0020un\u002Dpeeled\u0020onion\u0020row\u0020is\u0020verified\nup\u0020to\u002026\u0020times\u0020\u0028the\u0020legacy\u0020a\u002Dz\u0020\u0022pepper\u0022\u0020was\u0020never\u0020stored\u0029,\u0020so\u0020the\u0020default\ncost\u0020would\u0020make\u0020one\u0020login\u0020multi\u002Dsecond\u0020and\u0020a\u0020DoS\u0020vector.\u0020Still\u0020far\nstronger\u0020than\u0020the\u0020bare\u0020SHA\u002D512\u0020it\u0020wraps,\u0020and\u0020peeled\u0020to\u0020the\u0020default\u0020on\u0020the\nnext\u0020login.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_ONION_OPTS"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification",
+            "name": "Verification",
+            "summary": "The\u0020outcome\u0020of\u0020a\u0020\u007B\u0040see\u0020Password\u003A\u003Averify\u0028\u0029\u007D\u0020call\u003B\u0020read\u0020it\u0020via\u0020\u007B\u0040see\u0020isCorrect\u0028\u0029\u007D.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003AisCorrect\u0028\u0029",
+            "name": "isCorrect",
+            "summary": "Whether\u0020the\u0020supplied\u0020password\u0020was\u0020correct.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#method_isCorrect"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003AisUpgradeNeeded\u0028\u0029",
+            "name": "isUpgradeNeeded",
+            "summary": "Whether\u0020a\u0020fresh\u0020hash\u0020should\u0020be\u0020persisted\u0020after\u0020this\u0020\u0028correct\u0029\u0020verify.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#method_isUpgradeNeeded"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003AupgradePassword\u0028\u0029",
+            "name": "upgradePassword",
+            "summary": "The\u0020fresh\u0020native\u0020hash\u0020to\u0020persist.\u0020Run\u0020after\u0020isUpgradeNeeded\u0028\u0029",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#method_upgradePassword"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003A\u0024correct",
+            "name": "correct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#property_correct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Verification\u003A\u003A\u0024upgradePlaintext",
+            "name": "upgradePlaintext",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Verification.html#property_upgradePlaintext"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Group",
             "name": "Group",
             "summary": "",
@@ -175,11 +285,6 @@ Search.appendIndex(
             "name": "buildPermissionVariants",
             "summary": "Build\u0020permission\u0020variants\u0020for\u0020a\u0020given\u0020permission\u0020name",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_buildPermissionVariants"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Permission\u003A\u003A\u0024permissionChanged",
-            "name": "permissionChanged",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Permission-Permission.html#property_permissionChanged"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role",
             "name": "Role",
@@ -345,6 +450,11 @@ Search.appendIndex(
             "name": "updatePassword",
             "summary": "Update\u0020the\u0020password\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020password\u0020in\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updatePassword"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AverifyPassword\u0028\u0029",
+            "name": "verifyPassword",
+            "summary": "Verify\u0020a\u0020plaintext\u0020password\u0020against\u0020this\u0020user\u0027s\u0020stored\u0020credential\u0020and,\u0020on\na\u0020correct\u0020match,\u0020transparently\u0020upgrade\u0020the\u0020stored\u0020hash\u0020when\u0020it\u0020is\nstale\u0020\u0028rehash\u002Don\u002Dlogin\u0020\/\u0020onion\u0020peel\u0029.\u0020Self\u002Dhealing.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyPassword"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdateOrganization\u0028\u0029",
             "name": "updateOrganization",
@@ -863,8 +973,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Aheartbeat\u0028\u0029",
             "name": "heartbeat",
-            "summary": "Run\u0020a\u0020very\u0020lightweight\u0020query\u0020to\u0020keep\u0020the\u0020connection\u0020alive",
+            "summary": "Run\u0020a\u0020very\u0020lightweight\u0020query\u0020to\u0020keep\u0020the\u0020connection\u0020alive.",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_heartbeat"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ApingConnection\u0028\u0029",
+            "name": "pingConnection",
+            "summary": "Sends\u0020a\u0020lightweight\u0020query\u0020to\u0020check\u0020whether\u0020an\u0020already\u002Destablished\nconnection\u0020is\u0020still\u0020responding.\u0020Assumes\u0020a\u0020connection\u0020has\u0020been\u0020opened.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_pingConnection"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Adisconnect\u0028\u0029",
             "name": "disconnect",
@@ -3611,6 +3726,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/AliasController.html#property_pairs"
         },                {
+            "fqsen": "\\ApiCompatProbeController",
+            "name": "ApiCompatProbeController",
+            "summary": "Guards\u0020the\u0020framework\u0027s\u0020password\u0020API\u0020against\u0020breaking\u0020changes\u0020for\u0020consuming\napps.\u0020They\u0020call\u0020model\u0028\u0022z_login\u0022\u0029\u002D\u003EcheckPassword\u0028\u0024pw,\u0020\u0024hash,\u0020\u0024salt\u0029\u0020with\u0020the\n3\u002Dargument\u0020shape\u0020\u0028no\u0020scheme\u0029\u0020on\u0020their\u0020own\u0020user\u0020tables,\u0020and\u0020rely\u0020on\u0020legacy\nhashes\u0020still\u0020verifying.\u0020See\u0020jouri\u0027s\u0020Authentication\/UserController.",
+            "url": "classes/ApiCompatProbeController.html"
+        },                {
+            "fqsen": "\\ApiCompatProbeController\u003A\u003Aaction_legacy3Arg\u0028\u0029",
+            "name": "action_legacy3Arg",
+            "summary": "Consumer\u0020call\u003A\u0020checkPassword\u0028\u0024pw,\u0020\u0024legacyHash,\u0020\u0024salt\u0029\u0020\u2014\u0020no\u0020scheme.",
+            "url": "classes/ApiCompatProbeController.html#method_action_legacy3Arg"
+        },                {
+            "fqsen": "\\ApiCompatProbeController\u003A\u003Aaction_native3Arg\u0028\u0029",
+            "name": "action_native3Arg",
+            "summary": "Consumer\u0020call\u003A\u0020checkPassword\u0028\u0024pw,\u0020\u0024nativeHash,\u0020null\u0029\u0020\u2014\u0020no\u0020scheme,\u0020no\u0020salt.",
+            "url": "classes/ApiCompatProbeController.html#method_action_native3Arg"
+        },                {
+            "fqsen": "\\ApiCompatProbeController\u003A\u003ALEGACY_PW",
+            "name": "LEGACY_PW",
+            "summary": "",
+            "url": "classes/ApiCompatProbeController.html#constant_LEGACY_PW"
+        },                {
+            "fqsen": "\\ApiCompatProbeController\u003A\u003ALEGACY_SALT",
+            "name": "LEGACY_SALT",
+            "summary": "",
+            "url": "classes/ApiCompatProbeController.html#constant_LEGACY_SALT"
+        },                {
+            "fqsen": "\\ApiCompatProbeController\u003A\u003ALEGACY_HASH",
+            "name": "LEGACY_HASH",
+            "summary": "",
+            "url": "classes/ApiCompatProbeController.html#constant_LEGACY_HASH"
+        },                {
             "fqsen": "\\AssetProxyController",
             "name": "AssetProxyController",
             "summary": "",
@@ -3681,6 +3826,11 @@ Search.appendIndex(
             "summary": "Verify\u0020a\u0020password\u0020against\u0020the\u0020stored\u0020hash\u0020for\u0020a\u0020user\u0020\u0028used\u0020by\u0020reset\u0020test\u0029.",
             "url": "classes/AuthProbeController.html#method_action_checkPassword"
         },                {
+            "fqsen": "\\AuthProbeController\u003A\u003Aaction_scheme\u0028\u0029",
+            "name": "action_scheme",
+            "summary": "The\u0020stored\u0020password_scheme\u0020for\u0020a\u0020user\u0020\u0028legacy\u007Conion\u007Cnative\u007Cnull\u0029.",
+            "url": "classes/AuthProbeController.html#method_action_scheme"
+        },                {
             "fqsen": "\\ConnectionProbeController",
             "name": "ConnectionProbeController",
             "summary": "",
@@ -3715,6 +3865,11 @@ Search.appendIndex(
             "name": "action_heartbeatRecent",
             "summary": "",
             "url": "classes/ConnectionProbeController.html#method_action_heartbeatRecent"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_heartbeatBeforeConnect\u0028\u0029",
+            "name": "action_heartbeatBeforeConnect",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_heartbeatBeforeConnect"
         },                {
             "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_assertConnectionHappy\u0028\u0029",
             "name": "action_assertConnectionHappy",
@@ -4986,6 +5141,121 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/OrganizationController.html#method_getGroupsOfUser"
         },                {
+            "fqsen": "\\PasswordHashProbeController",
+            "name": "PasswordHashProbeController",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_hashValid\u0028\u0029",
+            "name": "action_hashValid",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_hashValid"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_hashTooShort\u0028\u0029",
+            "name": "action_hashTooShort",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_hashTooShort"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_hashTooLong\u0028\u0029",
+            "name": "action_hashTooLong",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_hashTooLong"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyNativeMatch\u0028\u0029",
+            "name": "action_verifyNativeMatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyNativeMatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyNativeMismatch\u0028\u0029",
+            "name": "action_verifyNativeMismatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyNativeMismatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyNativeRehash\u0028\u0029",
+            "name": "action_verifyNativeRehash",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyNativeRehash"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyEmptyStored\u0028\u0029",
+            "name": "action_verifyEmptyStored",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyEmptyStored"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyPasswordTooShort\u0028\u0029",
+            "name": "action_verifyPasswordTooShort",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyPasswordTooShort"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyPasswordTooLong\u0028\u0029",
+            "name": "action_verifyPasswordTooLong",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyPasswordTooLong"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyUnknownScheme\u0028\u0029",
+            "name": "action_verifyUnknownScheme",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyUnknownScheme"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyLegacyMatch\u0028\u0029",
+            "name": "action_verifyLegacyMatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyLegacyMatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyLegacyMismatch\u0028\u0029",
+            "name": "action_verifyLegacyMismatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyLegacyMismatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyLegacyMissingSalt\u0028\u0029",
+            "name": "action_verifyLegacyMissingSalt",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyLegacyMissingSalt"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyOnionMatch\u0028\u0029",
+            "name": "action_verifyOnionMatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyOnionMatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyOnionMismatch\u0028\u0029",
+            "name": "action_verifyOnionMismatch",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyOnionMismatch"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_upgradeWithoutPending\u0028\u0029",
+            "name": "action_upgradeWithoutPending",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_upgradeWithoutPending"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_upgradePassword\u0028\u0029",
+            "name": "action_upgradePassword",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_upgradePassword"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_catchHelperHappyPath\u0028\u0029",
+            "name": "action_catchHelperHappyPath",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_catchHelperHappyPath"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003AcatchThrowableMessage\u0028\u0029",
+            "name": "catchThrowableMessage",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_catchThrowableMessage"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003ALEGACY_PW",
+            "name": "LEGACY_PW",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_LEGACY_PW"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003ALEGACY_SALT",
+            "name": "LEGACY_SALT",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_LEGACY_SALT"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003ALEGACY_HASH",
+            "name": "LEGACY_HASH",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_LEGACY_HASH"
+        },                {
             "fqsen": "\\RenderingController",
             "name": "RenderingController",
             "summary": "",
@@ -6095,6 +6365,16 @@ Search.appendIndex(
             "name": "Authentication",
             "summary": "",
             "url": "namespaces/zubzet-framework-authentication.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Commands",
+            "name": "Commands",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-authentication-commands.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash",
+            "name": "PasswordHash",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-authentication-passwordhash.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission",
             "name": "Permission",

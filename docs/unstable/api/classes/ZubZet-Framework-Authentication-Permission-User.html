@@ -114,7 +114,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -170,11 +170,11 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#property_permissionChanged">$permissionChanged</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged">$permissionChanged</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: bool            </span>
 </dt>
-<dd></dd>
+<dd>Process-wide flag indicating that permission-related data has changed.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
@@ -505,6 +505,15 @@ This will update the password in the database</dd>
 </dt>
 <dd>Verify the User</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyPassword">verifyPassword()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Verify a plaintext password against this user&#039;s stored credential and, on
+a correct match, transparently upgrade the stored hash when it is
+stale (rehash-on-login / onion peel). Self-healing.</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField">setField()</a>
     <span>
@@ -540,7 +549,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -574,7 +583,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -608,7 +617,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -642,7 +651,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -676,7 +685,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -703,28 +712,32 @@ This will update the password in the database</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_permissionChanged">
         $permissionChanged
-        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#property_permissionChanged" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Process-wide flag indicating that permission-related data has changed.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$permissionChanged</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Declared once on the base class (and never redeclared in the trait or
+subclasses) so that User, Role and Group all share a single storage slot.
+When true, cached permissions are reloaded on each access, regardless of
+which authentication object triggered the change.</p>
+</section>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
 
 </article>
@@ -744,7 +757,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -782,7 +795,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -826,7 +839,7 @@ This will update the password in the database</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -925,7 +938,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -974,7 +987,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -1018,7 +1031,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -1062,7 +1075,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -1109,7 +1122,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -1247,7 +1260,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -1294,7 +1307,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -1338,7 +1351,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -1385,7 +1398,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -1418,7 +1431,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -1451,7 +1464,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">208</span>
 
     </aside>
 
@@ -1484,7 +1497,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 
     </aside>
 
@@ -1519,7 +1532,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -1552,7 +1565,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -1596,7 +1609,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 
     </aside>
 
@@ -1631,7 +1644,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">378</span>
+    <span class="phpdocumentor-element-found-in__line">402</span>
 
     </aside>
 
@@ -1666,7 +1679,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">341</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -1701,7 +1714,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">365</span>
+    <span class="phpdocumentor-element-found-in__line">391</span>
 
     </aside>
 
@@ -1736,7 +1749,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 
     </aside>
 
@@ -1782,7 +1795,7 @@ This will add the groups automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 
     </aside>
 
@@ -1828,7 +1841,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -1875,7 +1888,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -1922,7 +1935,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -1955,7 +1968,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">322</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -2002,7 +2015,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -2047,7 +2060,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -2080,7 +2093,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">294</span>
+    <span class="phpdocumentor-element-found-in__line">320</span>
 
     </aside>
 
@@ -2113,7 +2126,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -2158,7 +2171,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -2252,7 +2265,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">400</span>
+    <span class="phpdocumentor-element-found-in__line">422</span>
 
     </aside>
 
@@ -2285,7 +2298,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">391</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
@@ -2318,7 +2331,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -2351,7 +2364,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -2397,7 +2410,7 @@ This will add the roles automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 
     </aside>
 
@@ -2443,7 +2456,7 @@ This will remove the roles automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 
     </aside>
 
@@ -2489,7 +2502,7 @@ This will update the email in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -2533,7 +2546,7 @@ This will update the email in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
@@ -2579,7 +2592,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 
     </aside>
 
@@ -2614,7 +2627,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -2649,6 +2662,57 @@ This will update the password in the database</p>
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_verifyPassword">
+        verifyPassword()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyPassword" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">167</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Verify a plaintext password against this user&#039;s stored credential and, on
+a correct match, transparently upgrade the stored hash when it is
+stale (rehash-on-login / onion peel). Self-healing.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">verifyPassword</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>This is the password-check entry point for logging a user in.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$password</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The plaintext password to check</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Whether the password matched</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -protected
                                                         "
 >
@@ -2659,7 +2723,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 

@@ -154,6 +154,13 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged">$permissionChanged</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd>Process-wide flag indicating that permission-related data has changed.</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
     <span>
@@ -418,7 +425,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -440,6 +447,44 @@
         class="
             phpdocumentor-element
             -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_permissionChanged">
+        $permissionChanged
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">17</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Process-wide flag indicating that permission-related data has changed.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$permissionChanged</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
+
+        <section class="phpdocumentor-description"><p>Declared once on the base class (and never redeclared in the trait or
+subclasses) so that User, Role and Group all share a single storage slot.
+When true, cached permissions are reloaded on each access, regardless of
+which authentication object triggered the change.</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
             -private
                                                         "
 >
@@ -452,7 +497,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -821,7 +866,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -854,7 +899,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -887,7 +932,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -920,7 +965,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -1030,7 +1075,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -1140,7 +1185,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -1365,7 +1410,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
