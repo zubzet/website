@@ -1756,11 +1756,6 @@ Search.appendIndex(
             "summary": "Logs\u0020uncaught\u0020throwables\u0020and\u0020dispatches\u0020rendering.\u0020When\u0020Whoops\u0020is\nactive\u0020we\u0020invoke\u0020it\u0020directly\u0020so\u0020it\u0020receives\u0020the\u0020full\u0020throwable\u0020\u2014\nre\u002Dthrowing\u0020hands\u0020off\u0020to\u0020PHP\u0027s\u0020default\u0020fatal\u0020display,\u0020after\u0020which\nWhoops\u0020only\u0020sees\u0020the\u0020tail\u0020via\u0020\u0060handleShutdown\u0028\u0029\u0060\u0020and\u0020loses\u0020every\nvendor\/framework\u0020frame.",
             "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_registerExceptionHandler"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\ExceptionBehavior\u003A\u003AregisterWhoopsHandler\u0028\u0029",
-            "name": "registerWhoopsHandler",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-ErrorHandling-ExceptionBehavior.html#method_registerWhoopsHandler"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\GenericException\\NotInstantiatedException",
             "name": "NotInstantiatedException",
             "summary": "",
@@ -1775,6 +1770,11 @@ Search.appendIndex(
             "name": "WhoopsHandler",
             "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html#method_initialize"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\WhoopsHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
@@ -4320,6 +4320,16 @@ Search.appendIndex(
             "name": "action_countTableEntriesEmpty",
             "summary": "",
             "url": "classes/DatabaseProbeController.html#method_action_countTableEntriesEmpty"
+        },                {
+            "fqsen": "\\ExceptionController",
+            "name": "ExceptionController",
+            "summary": "",
+            "url": "classes/ExceptionController.html"
+        },                {
+            "fqsen": "\\ExceptionController\u003A\u003Aaction_whoops\u0028\u0029",
+            "name": "action_whoops",
+            "summary": "",
+            "url": "classes/ExceptionController.html#method_action_whoops"
         },                {
             "fqsen": "\\FormController",
             "name": "FormController",
