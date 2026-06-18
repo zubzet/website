@@ -2799,11 +2799,11 @@ Filters the import to only include local project migrations.</p>
 </blockquote>
 </li>
 <li>
-<p><strong><code>force</code></strong> | <strong><code>-f</code></strong><br />
+<p><strong><code>force</code></strong> | <strong><code>-f</code></strong> <code>[true|false]</code><br />
 Bypasses the integrity check for skipped migrations.</p>
 <blockquote>
-<p><strong>Details:</strong> Normally, the process aborts if an older migration is detected as missing. This flag overrides that safety mechanism to run all pending migrations.<br />
-<strong>Usage:</strong> <code>db:migrate -f</code></p>
+<p><strong>Details:</strong> Enabled by default, so the process runs all pending migrations even if an older migration is detected as missing. Omitting the option or passing it without a value (<code>-f</code> / <code>--force</code>) keeps it enabled. Pass a falsy value (e.g. <code>--force false</code>, <code>--force=false</code> or <code>-f false</code>) to restore the strict behavior, which aborts the import when a skipped migration is detected.<br />
+<strong>Usage:</strong> <code>db:migrate --force false</code></p>
 </blockquote>
 </li>
 <li>
