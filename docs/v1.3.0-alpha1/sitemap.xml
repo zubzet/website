@@ -2,210 +2,210 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/advanced-features/aliases-and-virtual-links/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/advanced-features/commands/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/contributing/how-to-contribute/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/contributing/how-to-release/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/contributing/agents/working-with-agents/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/access-control/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/asset-proxy/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/configuration/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/console-commands/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/controllers-and-actions/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/debug-bar/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/error-handling/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/global-helper-functions/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/health-endpoint/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/layouts/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/logging/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/maintenance/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/models/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/mvc/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/parameter-abstraction/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/password-handling/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/permission-system/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/rest-api/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/routing/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/views/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/migrations/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/migrations/examples/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/query-builder/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/core-features/query-builder/examples/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/forms/auto-form-validation/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/forms/ced-validation/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/forms/file-uploads/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/frontend-integration/backend-requests/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/frontend-integration/presets/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/email/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/guest-list/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/layout/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/library/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/shop/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/guides/todo/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/how-to-update/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/installation/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/0.10-to-0.11/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/0.11-to-1.0.0/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/0.9-to-0.10/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/1.0.0-to-1.1.0/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/1.1.0-to-1.2.0/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/setup/upgrade/1.2.0-to-1.3.0/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/template-rendering-usages/sending-an-email/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/z-admin/login-as-another-user/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
     <url>
          <loc>https://zubzet.com/docs/v1.3.0-alpha1/z-admin/usage/</loc>
-         <lastmod>2026-07-26</lastmod>
+         <lastmod>2026-07-27</lastmod>
     </url>
 </urlset>
