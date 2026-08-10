@@ -62,6 +62,14 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/module.html">Module</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/module-guestbook.html">Guestbook</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -107,7 +115,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">6</span>
 
     </aside>
 
@@ -247,11 +255,48 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ConnectionProbeController.html#method_action_persistentReuse">action_persistentReuse()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ConnectionProbeController.html#method_action_switchUser">action_switchUser()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ConnectionProbeController.html#method_action_tlsHostWithPort">action_tlsHostWithPort()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>A host:port dbhost cannot be verified; the error must say why.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ConnectionProbeController.html#method_action_tlsTransport">action_tlsTransport()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>How the application&#039;s configured connection is talking right now.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ConnectionProbeController.html#method_action_tlsVerified">action_tlsVerified()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>db_ssl = true alone: encrypted, verified via the system store.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ConnectionProbeController.html#method_action_tlsWrongHost">action_tlsWrongHost()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>The endpoint&#039;s IP is not a name on the certificate, so this must
+be refused. Proof that verification really happens - mysqli given
+no authority skips every check and would connect happily.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ConnectionProbeController.html#method_catchThrowableMessage">catchThrowableMessage()</a>
@@ -261,11 +306,59 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_connectWith">connectWith()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Opens a connection under the given settings and reports how it
+went. Failures are reported as data, not as a 500, so the spec can
+assert on the negative cases too.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ConnectionProbeController.html#method_ensureConnection">ensureConnection()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_resetEndpoint">resetEndpoint()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>The framework reads the endpoint once per request (a singleton);
+these probes vary it within one request, so the cached instance is
+cleared around every override. Test-only reflection, deliberately
+not a framework API.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_sessionStatus">sessionStatus()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_transportOf">transportOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>The transport actually negotiated for this session. Both status
+variables are empty on a plaintext connection.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_twoSessions">twoSessions()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Identifies the server session of two consecutive connections.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ConnectionProbeController.html#method_withSettings">withSettings()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Runs the callback with booter settings temporarily overridden.</dd>
 
         </dl>
 
@@ -293,7 +386,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -345,7 +438,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -397,7 +490,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -449,7 +542,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">220</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -501,7 +594,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -553,7 +646,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -605,7 +698,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -657,7 +750,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 
     </aside>
 
@@ -709,7 +802,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -761,7 +854,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 
     </aside>
 
@@ -813,7 +906,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -865,7 +958,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 
     </aside>
 
@@ -917,7 +1010,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
@@ -969,7 +1062,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -1021,7 +1114,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -1073,7 +1166,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -1125,7 +1218,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1170,6 +1263,58 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_action_persistentReuse">
+        action_persistentReuse()
+        <a href="classes/ConnectionProbeController.html#method_action_persistentReuse" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">280</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_persistentReuse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_action_switchUser">
         action_switchUser()
         <a href="classes/ConnectionProbeController.html#method_action_switchUser" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1177,7 +1322,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -1219,6 +1364,216 @@
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_action_tlsHostWithPort">
+        action_tlsHostWithPort()
+        <a href="classes/ConnectionProbeController.html#method_action_tlsHostWithPort" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">267</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">A host:port dbhost cannot be verified; the error must say why.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_tlsHostWithPort</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_action_tlsTransport">
+        action_tlsTransport()
+        <a href="classes/ConnectionProbeController.html#method_action_tlsTransport" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">248</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">How the application&#039;s configured connection is talking right now.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_tlsTransport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_action_tlsVerified">
+        action_tlsVerified()
+        <a href="classes/ConnectionProbeController.html#method_action_tlsVerified" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">253</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">db_ssl = true alone: encrypted, verified via the system store.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_tlsVerified</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_action_tlsWrongHost">
+        action_tlsWrongHost()
+        <a href="classes/ConnectionProbeController.html#method_action_tlsWrongHost" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">262</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The endpoint&#039;s IP is not a name on the certificate, so this must
+be refused. Proof that verification really happens - mysqli given
+no authority skips every check and would connect happily.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_tlsWrongHost</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -private
                                                         "
 >
@@ -1229,7 +1584,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">387</span>
 
     </aside>
 
@@ -1266,6 +1621,60 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_connectWith">
+        connectWith()
+        <a href="classes/ConnectionProbeController.html#method_connectWith" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">312</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Opens a connection under the given settings and reports how it
+went. Failures are reported as data, not as a 500, so the spec can
+assert on the negative cases too.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">connectWith</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$settings</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$settings</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_ensureConnection">
         ensureConnection()
         <a href="classes/ConnectionProbeController.html#method_ensureConnection" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1273,7 +1682,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 
     </aside>
 
@@ -1289,6 +1698,239 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetEndpoint">
+        resetEndpoint()
+        <a href="classes/ConnectionProbeController.html#method_resetEndpoint" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">358</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The framework reads the endpoint once per request (a singleton);
+these probes vary it within one request, so the cached instance is
+cleared around every override. Test-only reflection, deliberately
+not a framework API.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">resetEndpoint</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>setStaticPropertyValue() reaches the private property on every
+supported version: ReflectionProperty would need setAccessible()
+on 8.0, which is deprecated as of 8.5.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_sessionStatus">
+        sessionStatus()
+        <a href="classes/ConnectionProbeController.html#method_sessionStatus" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">375</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">sessionStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$connection</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$variable</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$connection</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$variable</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_transportOf">
+        transportOf()
+        <a href="classes/ConnectionProbeController.html#method_transportOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">366</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The transport actually negotiated for this session. Both status
+variables are empty on a plaintext connection.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">transportOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$connection</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$connection</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_twoSessions">
+        twoSessions()
+        <a href="classes/ConnectionProbeController.html#method_twoSessions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">288</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Identifies the server session of two consecutive connections.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">twoSessions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$persistent</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$persistent</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withSettings">
+        withSettings()
+        <a href="classes/ConnectionProbeController.html#method_withSettings" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/ConnectionProbeController.php"><a href="files/tests-e2e-app-controllers-connectionprobecontroller.html"><abbr title="tests/e2e/app/Controllers/ConnectionProbeController.php">ConnectionProbeController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">330</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Runs the callback with booter settings temporarily overridden.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">withSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$settings</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$settings</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$action</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     

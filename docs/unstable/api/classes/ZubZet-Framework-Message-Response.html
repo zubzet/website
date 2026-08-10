@@ -62,6 +62,14 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/module.html">Module</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/module-guestbook.html">Guestbook</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -107,7 +115,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html"><abbr title="\ZubZet\Framework\Rendering\CanRenderView">CanRenderView</abbr></a>,                             <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html"><abbr title="\ZubZet\Framework\Rendering\HandlesDefaultLayout">HandlesDefaultLayout</abbr></a>                    </span>
+                            <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html"><abbr title="\ZubZet\Framework\Rendering\CanRenderView">CanRenderView</abbr></a>,                             <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html"><abbr title="\ZubZet\Framework\Rendering\Resolver\DefaultLayout">DefaultLayout</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -148,14 +156,14 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_globalDefaultLayoutStack">$globalDefaultLayoutStack</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_globalDefaultLayoutStack">$globalDefaultLayoutStack</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_instanceDefaultLayoutStack">$instanceDefaultLayoutStack</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_instanceDefaultLayoutStack">$instanceDefaultLayoutStack</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
@@ -274,28 +282,28 @@
 <dd>Logs the user out</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popDefaultLayout">popDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popDefaultLayout">popDefaultLayout()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popGlobalDefaultLayout">popGlobalDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popGlobalDefaultLayout">popGlobalDefaultLayout()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushDefaultLayout">pushDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushDefaultLayout">pushDefaultLayout()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushGlobalDefaultLayout">pushGlobalDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushGlobalDefaultLayout">pushGlobalDefaultLayout()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -345,14 +353,14 @@
 See: https://www.php.net/manual/en/function.setcookie.php</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setDefaultLayout">setDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout">setDefaultLayout()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setGlobalDefaultLayout">setGlobalDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setGlobalDefaultLayout">setGlobalDefaultLayout()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -387,7 +395,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 <dd>Creates an upload object that handles the rest of the upload.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_resolveDefaultLayout">resolveDefaultLayout()</a>
+    <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_resolveDefaultLayout">resolveDefaultLayout()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
@@ -407,6 +415,13 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
                         &nbsp;: <a href="classes/ZubZet-Framework-Support-Rest.html"><abbr title="\ZubZet\Framework\Support\Rest">Rest</abbr></a>    </span>
 </dt>
 <dd>Gets a new Rest object</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion">legacyOptExpansion()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_uploadFromForm">uploadFromForm()</a>
@@ -504,12 +519,12 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_globalDefaultLayoutStack">
         $globalDefaultLayoutStack
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_globalDefaultLayoutStack" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_globalDefaultLayoutStack" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 
@@ -538,12 +553,12 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_instanceDefaultLayoutStack">
         $instanceDefaultLayoutStack
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_instanceDefaultLayoutStack" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_instanceDefaultLayoutStack" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">21</span>
 
@@ -616,7 +631,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">519</span>
 
     </aside>
 
@@ -679,7 +694,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
@@ -724,7 +739,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 
     </aside>
 
@@ -940,7 +955,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
@@ -973,7 +988,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveModel.php"><a href="files/src-core-canretrievemodel.html"><abbr title="src/Core/CanRetrieveModel.php">CanRetrieveModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -1095,7 +1110,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">450</span>
+    <span class="phpdocumentor-element-found-in__line">451</span>
 
     </aside>
 
@@ -1158,7 +1173,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">385</span>
+    <span class="phpdocumentor-element-found-in__line">386</span>
 
     </aside>
 
@@ -1320,7 +1335,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 
     </aside>
 
@@ -1374,7 +1389,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 
     </aside>
 
@@ -1402,10 +1417,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method_popDefaultLayout">
         popDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">48</span>
 
@@ -1435,10 +1450,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method_popGlobalDefaultLayout">
         popGlobalDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">31</span>
 
@@ -1468,10 +1483,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method_pushDefaultLayout">
         pushDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">44</span>
 
@@ -1512,10 +1527,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
 >
     <h4 class="phpdocumentor-element__name" id="method_pushGlobalDefaultLayout">
         pushGlobalDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">27</span>
 
@@ -1561,7 +1576,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -1840,7 +1855,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 
     </aside>
 
@@ -1950,10 +1965,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_setDefaultLayout">
         setDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">40</span>
 
@@ -1994,10 +2009,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_setGlobalDefaultLayout">
         setGlobalDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setGlobalDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">23</span>
 
@@ -2043,7 +2058,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 
     </aside>
 
@@ -2151,7 +2166,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">405</span>
 
     </aside>
 
@@ -2270,10 +2285,10 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_resolveDefaultLayout">
         resolveDefaultLayout()
-        <a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_resolveDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_resolveDefaultLayout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/HandlesDefaultLayout.php"><a href="files/src-rendering-handlesdefaultlayout.html"><abbr title="src/Rendering/HandlesDefaultLayout.php">HandlesDefaultLayout.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/Resolver/DefaultLayout.php"><a href="files/src-rendering-resolver-defaultlayout.html"><abbr title="src/Rendering/Resolver/DefaultLayout.php">DefaultLayout.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">57</span>
 
@@ -2308,7 +2323,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">366</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -2380,6 +2395,50 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
         class="phpdocumentor-element
             -method
             -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_legacyOptExpansion">
+        legacyOptExpansion()
+        <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">65</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">legacyOptExpansion</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$opt</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_uploadFromForm">
@@ -2389,7 +2448,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">489</span>
+    <span class="phpdocumentor-element-found-in__line">490</span>
 
     </aside>
 

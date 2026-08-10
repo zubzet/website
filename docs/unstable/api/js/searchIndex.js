@@ -791,6 +791,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Console-Application.html#method_bootstrap"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Console\\CommandDiscovery",
+            "name": "CommandDiscovery",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Console-CommandDiscovery.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Console\\RunCommand",
             "name": "RunCommand",
             "summary": "",
@@ -961,6 +966,46 @@ Search.appendIndex(
             "summary": "Executes\u0020a\u0020query\u0020as\u0020prepared\u0020statement",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_exec"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AexecWithRecovery\u0028\u0029",
+            "name": "execWithRecovery",
+            "summary": "Runs\u0020the\u0020statement\u0020until\u0020it\u0020succeeds,\u0020recovering\u0020two\u0020failure\nclasses\u0020within\u0020the\u0020shared\u0020db_max_retries\u0020budget\u003A",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_execWithRecovery"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AattemptStatement\u0028\u0029",
+            "name": "attemptStatement",
+            "summary": "Makes\u0020one\u0020attempt\u0020at\u0020the\u0020statement\u003A\u0020reconnect\u0020when\u0020asked\u0020to,\nprepare,\u0020bind,\u0020execute.\u0020Returns\u0020null\u0020on\u0020success\u0020and\u0020a\u0020failure\ndescriptor\u0020\u0028see\u0020failure\u0028\u0029\u0029\u0020otherwise.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_attemptStatement"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Afailure\u0028\u0029",
+            "name": "failure",
+            "summary": "Failure\u0020descriptor\u0020for\u0020one\u0020statement\u0020attempt,\u0020carrying\u0020what\u0020the\nrecovery\u0020decision\u0020needs\u0020and\u0020the\u0020ready\u002Dto\u002Dthrow\u0020exception\u0020with\u0020the\nhistorical\u0020prefix\u003A\u0020\u0022SQL\u0020Error\u0022\u0020for\u0020connect\u0020and\u0020prepare\u0020failures,\n\u0022SQL\u0020Execution\u0020Error\u0022\u0020for\u0020execute\u0020failures.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_failure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AshouldRetry\u0028\u0029",
+            "name": "shouldRetry",
+            "summary": "Whether\u0020a\u0020just\u002Dfailed\u0020query\u0020should\u0020be\u0020retried\u003A\u0020there\u0020must\u0020be\u0020retry\nbudget\u0020left\u0020and\u0020the\u0020error\u0020must\u0020be\u0020a\u0020transient,\u0020cluster\u002Drelated\u0020one.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_shouldRetry"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AshouldReconnect\u0028\u0029",
+            "name": "shouldReconnect",
+            "summary": "Whether\u0020a\u0020just\u002Dfailed\u0020query\u0020should\u0020be\u0020recovered\u0020by\u0020reconnecting\u003A\nthere\u0020must\u0020be\u0020retry\u0020budget\u0020left\u0020and\u0020the\u0020error\u0020must\u0020mean\u0020the\nconnection\u0020itself\u0020is\u0020gone.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_shouldReconnect"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AreconnectBackoffUs\u0028\u0029",
+            "name": "reconnectBackoffUs",
+            "summary": "Attempt\u002Dscaled\u0020backoff\u0020slept\u0020before\u0020a\u0020reconnect\u0020attempt.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_reconnectBackoffUs"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AisRetryable\u0028\u0029",
+            "name": "isRetryable",
+            "summary": "Classifies\u0020an\u0020error\u0020as\u0020retryable.\u0020Retries\u0020are\u0020limited\u0020to\u0020transient\ncontention\u0020errors\u0020where\u0020the\u0020server\u0020already\u0020discarded\u0020the\u0020statement,\nmaking\u0020a\u0020re\u002Drun\u0020safe.\u0020Pure\u0020decision,\u0020no\u0020side\u0020effects.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_isRetryable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AsqlStateOf\u0028\u0029",
+            "name": "sqlStateOf",
+            "summary": "Reads\u0020the\u0020SQLSTATE\u0020from\u0020a\u0020thrown\u0020mysqli\u0020exception,\u0020where\nmysqli_sql_exception\u003A\u003AgetSqlState\u0028\u0029\u0020only\u0020exists\u0020on\u0020PHP\u00208.1\u002B.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_sqlStateOf"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AexecuteMultiQuery\u0028\u0029",
             "name": "executeMultiQuery",
             "summary": "",
@@ -990,6 +1035,46 @@ Search.appendIndex(
             "name": "__destruct",
             "summary": "Closes\u0020the\u0020database\u0020connection\u0020on\u0020exit",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method___destruct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARETRYABLE_ERROR_CODES",
+            "name": "RETRYABLE_ERROR_CODES",
+            "summary": "MySQL\/MariaDB\u0020error\u0020codes\u0020that\u0020are\u0020safe\u0020to\u0020retry\u003A\u0020the\u0020server\u0020has\nalready\u0020rolled\u0020the\u0020offending\u0020statement\u0020back,\u0020so\u0020re\u002Drunning\u0020it\u0020does\nnot\u0020risk\u0020double\u002Dapplying\u0020it.\u0020These\u0020are\u0020the\u0020transient\u0020contention\nerrors\u0020typical\u0020of\u0020busy\u0020single\u002Dnode\u0020and\u0020cluster\u0020\u0028Galera\u0029\u0020setups.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RETRYABLE_ERROR_CODES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARETRYABLE_SQL_STATES",
+            "name": "RETRYABLE_SQL_STATES",
+            "summary": "SQLSTATE\u0020values\u0020that\u0020are\u0020safe\u0020to\u0020retry\u0020\u0028e.g.\u0020Galera\u0020certification\u0020conflicts\u0029.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RETRYABLE_SQL_STATES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARETRY_BACKOFF_MIN_US",
+            "name": "RETRY_BACKOFF_MIN_US",
+            "summary": "Randomized\u0020backoff\u0020bounds\u0020\u0028microseconds\u0029\u0020slept\u0020between\u0020retry\u0020attempts.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RETRY_BACKOFF_MIN_US"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARETRY_BACKOFF_MAX_US",
+            "name": "RETRY_BACKOFF_MAX_US",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RETRY_BACKOFF_MAX_US"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ACONNECTION_LOSS_ERROR_CODES",
+            "name": "CONNECTION_LOSS_ERROR_CODES",
+            "summary": "Client\/server\u0020error\u0020codes\u0020meaning\u0020this\u0020connection\u0020cannot\u0020serve\u0020the\nstatement\u0020\u0028endpoint\u0020moved\u0020by\u0020the\u0020mesh,\u0020node\u0020died,\u0020network\u0020blip,\u0020or\na\u0020Galera\u0020node\u0020refusing\u0020service\u0020while\u0020desynced\u0020as\u0020an\u0020SST\/IST\u0020donor\u0029.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_CONNECTION_LOSS_ERROR_CODES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARECONNECT_BACKOFF_STEP_US",
+            "name": "RECONNECT_BACKOFF_STEP_US",
+            "summary": "Reconnect\u0020backoff\u0020grows\u0020with\u0020the\u0020attempt\u0020\u0028attempt\u0020x\u0020step,\u0020capped\u0029\u0020so\nthe\u0020budget\u0020spans\u0020a\u0020realistic\u0020failover\u0020window\u0020instead\u0020of\u0020burning\u0020out\nin\u0020milliseconds\u0020while\u0020the\u0020mesh\u0020is\u0020still\u0020promoting\u0020a\u0020healthy\u0020node.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RECONNECT_BACKOFF_STEP_US"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARECONNECT_BACKOFF_CAP_US",
+            "name": "RECONNECT_BACKOFF_CAP_US",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_RECONNECT_BACKOFF_CAP_US"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ACONNECT_TIMEOUT_SECONDS",
+            "name": "CONNECT_TIMEOUT_SECONDS",
+            "summary": "Seconds\u0020a\u0020single\u0020connect\u0020attempt\u0020may\u0020take\u0020before\u0020failing\u0020over.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_CONNECT_TIMEOUT_SECONDS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024queryBuilderConnection",
             "name": "queryBuilderConnection",
@@ -1026,10 +1111,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#property_connectTimeout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024host",
-            "name": "host",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024maxRetries",
+            "name": "maxRetries",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#property_host"
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_maxRetries"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024password",
             "name": "password",
@@ -1045,6 +1130,56 @@ Search.appendIndex(
             "name": "database",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#property_database"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003A\u0024persistent",
+            "name": "persistent",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#property_persistent"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint",
+            "name": "Endpoint",
+            "summary": "Where\u0020and\u0020how\u0020the\u0020database\u0020is\u0020reached,\u0020read\u0020from\u0020the\u0020booter\u0020settings\nand\u0020shared\u0020by\u0020the\u0020runtime\u0020connection\u0020and\u0020the\u0020migrations\u0027\u0020Doctrine\u0020DBAL\nconnection\u003A\u0020\u0060dbhost\u0060,\u0020\u0060dbport\u0060\u0020and\u0020the\u0020transport\u0020encryption\u0020\u0028\u0060db_ssl\u0060\u0029.",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "The\u0020endpoint\u0020is\u0020read\u0020from\u0020the\u0020configuration\u0020once\u0020per\u0020request.",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#method_get"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003AapplyTls\u0028\u0029",
+            "name": "applyTls",
+            "summary": "Prepares\u0020a\u0020not\u002Dyet\u002Dconnected\u0020mysqli\u0020handle\u0020for\u0020the\u0020configured\ntransport\u0020and\u0020returns\u0020the\u0020flags\u0020for\u0020real_connect\u0028\u0029.\u0020Plaintext\nconnections\u0020are\u0020left\u0020untouched.",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#method_applyTls"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003AtrustStore\u0028\u0029",
+            "name": "trustStore",
+            "summary": "The\u0020system\u0020trust\u0020store,\u0020as\u0020a\u0020\u005Bfile,\u0020directory\u005D\u0020pair.\u0020mysqli\u0020only\nverifies\u0020the\u0020server\u0020certificate\u0020when\u0020handed\u0020an\u0020authority\u0020and\u0020never\nresolves\u0020one\u0020itself\u003B\u0020without\u0020this,\u0020db_ssl\u0020would\u0020silently\u0020accept\nany\u0020certificate.\u0020A\u0020private\u0020authority\u0020is\u0020added\u0020to\u0020the\u0020system\u0020store,\nor\u0020configured\u0020PHP\u002Dwide\u0020via\u0020openssl.cafile.",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#method_trustStore"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#property_instance"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A\u0024host",
+            "name": "host",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#property_host"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A\u0024port",
+            "name": "port",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#property_port"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A\u0024tls",
+            "name": "tls",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Endpoint.html#property_tls"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction",
             "name": "Interaction",
@@ -1235,6 +1370,16 @@ Search.appendIndex(
             "name": "execute",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Commands-Sync.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\ChecksDuplicateBasenames",
+            "name": "ChecksDuplicateBasenames",
+            "summary": "Executed\u0020migration\u0020state\u0020is\u0020keyed\u0020on\u0020the\u0020basename,\u0020so\u0020two\u0020files\u0020sharing\none\u0020basename\u0020across\u0020roots\u0020\u0028or\u0020subdirectories\u0029\u0020would\u0020silently\u0020swallow\u0020one\nof\u0020them.\u0020Commands\u0020assembling\u0020multi\u002Droot\u0020migration\u0020sets\u0020refuse\u0020to\u0020run.",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\ChecksDuplicateBasenames\u003A\u003ArejectDuplicateBasenames\u0028\u0029",
+            "name": "rejectDuplicateBasenames",
+            "summary": "Returns\u0020true\u0020when\u0020duplicates\u0020were\u0020found\u0020\u0028and\u0020reported\u0020to\u0020\u0024out\u0029.",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html#method_rejectDuplicateBasenames"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\DatabaseConnection",
             "name": "DatabaseConnection",
@@ -1581,6 +1726,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-CanCollect.html#method_collectLogger"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\CanCollect\u003A\u003AcollectResolution\u0028\u0029",
+            "name": "collectResolution",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-CanCollect.html#method_collectResolution"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\CanFormatValue",
             "name": "CanFormatValue",
             "summary": "",
@@ -1655,6 +1805,36 @@ Search.appendIndex(
             "name": "executedQueries",
             "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-QueryCollector.html#property_executedQueries"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector",
+            "name": "ResolutionCollector",
+            "summary": "Provenance\u0020for\u0020every\u0020convention\u0020lookup\u0020the\u0020Registry\u0020performed\u0020this\nrequest\u003A\u0020which\u0020root\u0020\u0028userspace,\u0020a\u0020module,\u0020or\u0020the\u0020framework\u0029\u0020won\u0020each\ncontroller,\u0020model,\u0020and\u0020route\u0020file.\u0020Makes\u0020shadowing\u0020visible\u0020per\u0020page.",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector\u003A\u003AaddResolution\u0028\u0029",
+            "name": "addResolution",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html#method_addResolution"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html#method_getName"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector\u003A\u003Acollect\u0028\u0029",
+            "name": "collect",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html#method_collect"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector\u003A\u003AgetWidgets\u0028\u0029",
+            "name": "getWidgets",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html#method_getWidgets"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\ResolutionCollector\u003A\u003A\u0024resolutions",
+            "name": "resolutions",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html#property_resolutions"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\DebugBar\\Collectors\\TemplateCollector",
             "name": "TemplateCollector",
@@ -2186,6 +2366,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZController.html#method_action_database"
         },                {
+            "fqsen": "\\ZubZetController",
+            "name": "ZubZetController",
+            "summary": "",
+            "url": "classes/ZubZetController.html"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003Ahealth\u0028\u0029",
+            "name": "health",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_health"
+        },                {
             "fqsen": "\\z_organizationModel",
             "name": "z_organizationModel",
             "summary": "",
@@ -2215,16 +2405,6 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/z-organizationModel.html#method_remove"
-        },                {
-            "fqsen": "\\essentialsHead\u0028\u0029",
-            "name": "essentialsHead",
-            "summary": "Call\u0020this\u0020to\u0020paste\u0020the\u0020essential\u0020head\u0020part\u0020of\u0020a\u0020page\u0020into\u0020the\u0020layout",
-            "url": "namespaces/default.html#function_essentialsHead"
-        },                {
-            "fqsen": "\\essentialsBody\u0028\u0029",
-            "name": "essentialsBody",
-            "summary": "Call\u0020this\u0020to\u0020paste\u0020the\u0020essential\u0020body\u0020part\u0020of\u0020a\u0020page\u0020into\u0020the\u0020layout",
-            "url": "namespaces/default.html#function_essentialsBody"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\BacktraceProcessor",
             "name": "BacktraceProcessor",
@@ -2723,7 +2903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AhasFormData\u0028\u0029",
             "name": "hasFormData",
-            "summary": "Checks\u0020if\u0020the\u0020request\u0020contains\u0020form\u0020data.\u0020When\u0020it\u0020contains\u0020form\u0020data,\u0020methods\u0020like\u0020validateForm\u0028\u0029\u0020can\u0020be\u0020used.",
+            "summary": "Checks\u0020if\u0020the\u0020request\u0020contains\u0020form\u0020data.\u0020When\u0020a\u0020form\u0020action\u0020is\u0020provided,\u0020it\u0020must\u0020match\u0020the\u0020submitted\u0020action.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_hasFormData"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AisAction\u0028\u0029",
@@ -2966,6 +3146,216 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html#method_generateManyNamed"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup",
+            "name": "ModuleSetup",
+            "summary": "Proof\u0020of\u0020concept\u003A\u0020copies\u0020MISSING\u0020default\u0020settings\u0020from\u0020each\u0020installed\nmodule\u0027s\u0020z_config\/z_settings.ini\u0020into\u0020the\u0020app\u0027s\u0020settings\u0020file.\u0020Existing\nkeys\u0020are\u0020never\u0020touched,\u0020existing\u0020lines\u0020are\u0020never\u0020rewritten\u003B\u0020the\u0020merge\u0020is\nappend\u002Donly\u0020and\u0020idempotent.\u0020Run\u0020manually,\u0020never\u0020at\u0020boot.",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003AparseIniFile\u0028\u0029",
+            "name": "parseIniFile",
+            "summary": "Reads\u0020a\u0020flat\u0020settings\u0020ini\u0020with\u0020inline\u0020\u003B\/\u0023\u0020treated\u0020as\u0020content,\u0020using\nthe\u0020same\u0020workaround\u0020as\u0020the\u0020bootstrap\u0020Configuration\u0020loader.",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#method_parseIniFile"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003Avalidate\u0028\u0029",
+            "name": "validate",
+            "summary": "Returns\u0020an\u0020error\u0020description,\u0020or\u0020null\u0020when\u0020the\u0020pair\u0020is\u0020safe\u0020to\u0020append.",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#method_validate"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003ARESERVED_KEYS",
+            "name": "RESERVED_KEYS",
+            "summary": "Settings\u0020a\u0020module\u0020must\u0020never\u0020introduce\u003A\u0020framework\u0020behavior\u0020switches\nand\u0020infrastructure\u0020credentials\u0020stay\u0020under\u0020the\u0020operator\u0027s\u0020control.",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#constant_RESERVED_KEYS"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands\\ModuleSetup\u003A\u003ARESERVED_PREFIXES",
+            "name": "RESERVED_PREFIXES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html#constant_RESERVED_PREFIXES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind",
+            "name": "Kind",
+            "summary": "Describes\u0020one\u0020resolvable\u0020kind\u0020of\u0020framework\u0020component\u003A\u0020where\u0020it\u0020lives\u0020in\nuserspace,\u0020inside\u0020a\u0020module,\u0020and\u0020inside\u0020the\u0020framework\u0020itself.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003AuserspaceRoot\u0028\u0029",
+            "name": "userspaceRoot",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#method_userspaceRoot"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "Kind\u0020identifier,\u0020e.g.\u0020\u0022controllers\u0022.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_name"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024userspaceConfigKey",
+            "name": "userspaceConfigKey",
+            "summary": "Config\u0020key\u0020holding\u0020the\u0020userspace\u0020root\u0020\u0028e.g.\u0020\u0022z_controllers\u0022\u0029,\u0020or\u0020null.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_userspaceConfigKey"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024userspacePath",
+            "name": "userspacePath",
+            "summary": "Fixed\u0020userspace\u0020root\u0020when\u0020no\u0020config\u0020key\u0020exists\u0020\u0028e.g.\u0020\u0022.\/app\/Database\/seed\u0022\u0029.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_userspacePath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024moduleSubPath",
+            "name": "moduleSubPath",
+            "summary": "Root\u002Drelative\u0020path\u0020inside\u0020a\u0020module,\u0020e.g.\u0020\u0022app\/Controllers\u0022.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_moduleSubPath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024frameworkSubPath",
+            "name": "frameworkSubPath",
+            "summary": "Path\u0020under\u0020z_framework_root,\u0020or\u0020null\u0020when\u0020the\u0020framework\u0020ships\u0020none\u0020\u0028seeds\u0029.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_frameworkSubPath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024extensions",
+            "name": "extensions",
+            "summary": "Extensions\u0020probed\u0020by\u0020find\u0028\u0029,\u0020in\u0020order.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_extensions"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024deepFind",
+            "name": "deepFind",
+            "summary": "Whether\u0020find\u0028\u0029\u0020may\u0020fall\u0020back\u0020to\u0020the\u0020recursive\u0020per\u002Droot\u0020index.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_deepFind"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kind\u003A\u003A\u0024deepFiles",
+            "name": "deepFiles",
+            "summary": "Whether\u0020files\u0028\u0029\u0020enumerates\u0020recursively\u0020\u0028false\u0020\u003D\u0020flat\u0020glob,\u0020like\u0020routes\u0029.",
+            "url": "classes/ZubZet-Framework-Registry-Kind.html#property_deepFiles"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kinds",
+            "name": "Kinds",
+            "summary": "Static\u0020table\u0020of\u0020the\u0020framework\u0027s\u0020built\u002Din\u0020kinds.\u0020New\u0020kinds\u0020are\u0020added\u0020via\nregister\u0028\u0029,\u0020so\u0020framework\u0020features\u0020\u0028or\u0020later,\u0020modules\u0029\u0020can\u0020join\u0020the\nuserspace\u0020\u002D\u003E\u0020modules\u0020\u002D\u003E\u0020framework\u0020resolution\u0020without\u0020new\u0020plumbing.",
+            "url": "classes/ZubZet-Framework-Registry-Kinds.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kinds\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kinds.html#method_get"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kinds\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kinds.html#method_register"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kinds\u003A\u003Abootstrap\u0028\u0029",
+            "name": "bootstrap",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kinds.html#method_bootstrap"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Kinds\u003A\u003A\u0024kinds",
+            "name": "kinds",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Kinds.html#property_kinds"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Modules",
+            "name": "Modules",
+            "summary": "Discovery\u0020and\u0020ordering\u0020of\u0020installed\u0020modules\u0020\u0028composer\u0020type\u0020\u0022zubzet\u002Dmodule\u0022\u0029.",
+            "url": "classes/ZubZet-Framework-Registry-Modules.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Modules\u003A\u003Apackages\u0028\u0029",
+            "name": "packages",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Modules.html#method_packages"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Modules\u003A\u003Aroots\u0028\u0029",
+            "name": "roots",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Modules.html#method_roots"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Modules\u003A\u003APACKAGE_TYPE",
+            "name": "PACKAGE_TYPE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Modules.html#constant_PACKAGE_TYPE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry",
+            "name": "Registry",
+            "summary": "Central\u0020resolver\u0020for\u0020everything\u0020the\u0020framework\u0020loads\u0020by\u0020convention.",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry\u003A\u003Apaths\u0028\u0029",
+            "name": "paths",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html#method_paths"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry\u003A\u003AlabeledPaths\u0028\u0029",
+            "name": "labeledPaths",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html#method_labeledPaths"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry\u003A\u003AmoduleRoots\u0028\u0029",
+            "name": "moduleRoots",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html#method_moduleRoots"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry\u003A\u003Afiles\u0028\u0029",
+            "name": "files",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html#method_files"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Registry\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "Locates\u0020one\u0020file\u0020of\u0020\u0024kind\u0020in\u0020two\u0020passes\u0020over\u0020the\u0020ordered\u0020roots.",
+            "url": "classes/ZubZet-Framework-Registry-Registry.html#method_find"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex",
+            "name": "RootIndex",
+            "summary": "Lazy\u0020recursive\u0020filename\u0020index\u0020of\u0020one\u0020root\u0020directory.\u0020This\u0020is\u0020the\u0020slow\npath\u0020behind\u0020Registry\u003A\u003Afind\u0028\u0029\u003A\u0020it\u0020is\u0020only\u0020built\u0020after\u0020every\u0020direct\u0020probe\nmissed,\u0020and\u0020is\u0020memoized\u0020per\u0020\u0028root,\u0020extensions\u0029\u0020for\u0020the\u0020request.",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003Afor\u0028\u0029",
+            "name": "for",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#method_for"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003A\u0024all",
+            "name": "all",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#property_all"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "Locates\u0020a\u0020bare\u0020name\u0020inside\u0020this\u0020root\u003A\u0020shallowest\u0020match\u0020first,\u0020ties\nbroken\u0020by\u0020byte\u002Dorder\u0020comparison\u0020of\u0020the\u0020relative\u0020path,\u0020so\u0020resolution\nis\u0020identical\u0020across\u0020filesystems.",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#method_find"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#method_build"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003A\u0024byName",
+            "name": "byName",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#property_byName"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003A\u0024root",
+            "name": "root",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#property_root"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\RootIndex\u003A\u003A\u0024extensions",
+            "name": "extensions",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Registry-RootIndex.html#property_extensions"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView",
             "name": "CanRenderView",
             "summary": "",
@@ -2976,60 +3366,95 @@ Search.appendIndex(
             "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
             "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout",
-            "name": "HandlesDefaultLayout",
-            "summary": "Default\u002Dlayout\u0020management\u0020for\u0020Response.",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html"
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003AlegacyOptExpansion\u0028\u0029",
+            "name": "legacyOptExpansion",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AsetGlobalDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Engine",
+            "name": "Engine",
+            "summary": "Thin\u0020adapter\u0020around\u0020the\u0020Katana\u0020Blade\u0020engine.",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Engine.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Engine\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Engine.html#method_render"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Engine\u003A\u003AcachePath\u0028\u0029",
+            "name": "cachePath",
+            "summary": "On\u002Ddisk\u0020directory\u0020for\u0020compiled\u0020views,\u0020namespaced\u0020per\u0020project\u0020and\u0020per\u0020installed\u0020engine\nreference.\u0020The\u0020engine\u0020segment\u0020forces\u0020a\u0020clean\u0020cache\u0020on\u0020upgrade\u0020\u0028Katana\u0020keys\u0020a\u0020compiled\nview\u0020on\u0020path\u0020\u002B\u0020mtime,\u0020not\u0020engine\u0020version\u0029.\u0020Seam\u0020for\u0020a\u0020future\u0020generalized\u0020framework\u0020cache.",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Engine.html#method_cachePath"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Hooks",
+            "name": "Hooks",
+            "summary": "Framework\u0020hooks\u0020bound\u0020into\u0020the\u0020Katana\u0020engine\u003A\u0020directives\u0020and\u0020callbacks\u0020tied\u0020to\u0020the\nrequest\u0020context.\u0020Today\u0020this\u0020is\u0020only\u0020\u0040auth\u0020\/\u0020\u0040guest,\u0020but\u0020this\u0020is\u0020the\u0020home\u0020for\u0020every\nfuture\u0020framework\u0020directive\/callback,\u0020so\u0020it\u0020is\u0020expected\u0020to\u0020grow.",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Hooks.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Hooks\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "Wire\u0020all\u0020framework\u0020hooks\u0020into\u0020a\u0020Katana\u0020Config.",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Hooks.html#method_register"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Hooks\u003A\u003Aauth\u0028\u0029",
+            "name": "auth",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-Hooks.html#method_auth"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout",
+            "name": "DefaultLayout",
+            "summary": "Default\u002Dlayout\u0020management\u0020for\u0020Response.",
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003AsetGlobalDefaultLayout\u0028\u0029",
             "name": "setGlobalDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setGlobalDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setGlobalDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApushGlobalDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003ApushGlobalDefaultLayout\u0028\u0029",
             "name": "pushGlobalDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushGlobalDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushGlobalDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApopGlobalDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003ApopGlobalDefaultLayout\u0028\u0029",
             "name": "popGlobalDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popGlobalDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popGlobalDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AsetDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003AsetDefaultLayout\u0028\u0029",
             "name": "setDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_setDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApushDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003ApushDefaultLayout\u0028\u0029",
             "name": "pushDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_pushDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_pushDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003ApopDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003ApopDefaultLayout\u0028\u0029",
             "name": "popDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_popDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003AresolveDefaultLayout\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003AresolveDefaultLayout\u0028\u0029",
             "name": "resolveDefaultLayout",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#method_resolveDefaultLayout"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_resolveDefaultLayout"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003A\u0024globalDefaultLayoutStack",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003A\u0024globalDefaultLayoutStack",
             "name": "globalDefaultLayoutStack",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_globalDefaultLayoutStack"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_globalDefaultLayoutStack"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\HandlesDefaultLayout\u003A\u003A\u0024instanceDefaultLayoutStack",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\DefaultLayout\u003A\u003A\u0024instanceDefaultLayoutStack",
             "name": "instanceDefaultLayoutStack",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html#property_instanceDefaultLayoutStack"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#property_instanceDefaultLayoutStack"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\ViewNotFoundException",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver\\ViewNotFoundException",
             "name": "ViewNotFoundException",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-ViewNotFoundException.html"
+            "url": "classes/ZubZet-Framework-Rendering-Resolver-ViewNotFoundException.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy",
             "name": "AssetProxy",
@@ -3050,6 +3475,11 @@ Search.appendIndex(
             "name": "serve",
             "summary": "",
             "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#method_serve"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003ADENIED_EXTENSIONS",
+            "name": "DENIED_EXTENSIONS",
+            "summary": "Extensions\u0020that\u0020are\u0020never\u0020served,\u0020whatever\u0020mount\u0020they\u0020resolve\u0020in.",
+            "url": "classes/ZubZet-Framework-Resources-AssetProxy.html#constant_DENIED_EXTENSIONS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Resources\\AssetProxy\u003A\u003A\u0024mounts",
             "name": "mounts",
@@ -3676,6 +4106,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-ZubZet.html#property_responseStack"
         },                {
+            "fqsen": "\\AppGuestbookGreetCommand",
+            "name": "AppGuestbookGreetCommand",
+            "summary": "",
+            "url": "classes/AppGuestbookGreetCommand.html"
+        },                {
+            "fqsen": "\\AppGuestbookGreetCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/AppGuestbookGreetCommand.html#method_configure"
+        },                {
+            "fqsen": "\\AppGuestbookGreetCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/AppGuestbookGreetCommand.html#method_execute"
+        },                {
+            "fqsen": "\\QaHelloCommand",
+            "name": "QaHelloCommand",
+            "summary": "",
+            "url": "classes/QaHelloCommand.html"
+        },                {
+            "fqsen": "\\QaHelloCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/QaHelloCommand.html#method_configure"
+        },                {
+            "fqsen": "\\QaHelloCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/QaHelloCommand.html#method_execute"
+        },                {
             "fqsen": "\\AdminController",
             "name": "AdminController",
             "summary": "",
@@ -3831,6 +4291,31 @@ Search.appendIndex(
             "summary": "The\u0020stored\u0020password_scheme\u0020for\u0020a\u0020user\u0020\u0028legacy\u007Conion\u007Cnative\u007Cnull\u0029.",
             "url": "classes/AuthProbeController.html#method_action_scheme"
         },                {
+            "fqsen": "\\CompatController",
+            "name": "CompatController",
+            "summary": "Exercises\u0020Blade\/Katana\u0020compatibility\u0020guarantees\u0020through\u0020the\u0020real\u0020render\u0020path\u003A\n\u0020\u002D\u0020action_probe\u003A\u0020a\u0020migrated\u0020legacy\u0020view\u0020whose\u0020literal\u0020\u007B\u007B\u0020\u007D\u007D,\u0020\u007B\u0021\u0021\u0020\u0021\u0021\u007D\u0020and\n\u0020\u0020\u0020\u007B\u007B\u002D\u002D\u0020\u002D\u002D\u007D\u007D\u0020markers\u0020must\u0020survive\u0020verbatim\u0020\u0028see\u0020Views\/compat\/probe\u0029.",
+            "url": "classes/CompatController.html"
+        },                {
+            "fqsen": "\\CompatController\u003A\u003Aaction_probe\u0028\u0029",
+            "name": "action_probe",
+            "summary": "",
+            "url": "classes/CompatController.html#method_action_probe"
+        },                {
+            "fqsen": "\\CompatController\u003A\u003Aaction_component\u0028\u0029",
+            "name": "action_component",
+            "summary": "",
+            "url": "classes/CompatController.html#method_action_component"
+        },                {
+            "fqsen": "\\ComponentNamespaceController",
+            "name": "ComponentNamespaceController",
+            "summary": "Renders\u0020renderprobe\/namespace,\u0020which\u0020places\u0020the\u0020framework\u0027s\u0020namespaced\n\u003Cx\u002Dzubzet\u003A\u003Ahead\/\u003E\u0020next\u0020to\u0020a\u0020plain\u0020app\u0020\u003Cx\u002Dhead\/\u003E\u0020so\u0020the\u0020test\u0020can\u0020prove\u0020the\ntwo\u0020never\u0020shadow\u0020each\u0020other\u0020\u0028katanaphp\/blade\u002366\u0029.",
+            "url": "classes/ComponentNamespaceController.html"
+        },                {
+            "fqsen": "\\ComponentNamespaceController\u003A\u003Aaction_isolation\u0028\u0029",
+            "name": "action_isolation",
+            "summary": "",
+            "url": "classes/ComponentNamespaceController.html#method_action_isolation"
+        },                {
             "fqsen": "\\ConnectionProbeController",
             "name": "ConnectionProbeController",
             "summary": "",
@@ -3925,6 +4410,61 @@ Search.appendIndex(
             "name": "action_catchHelperHappyPath",
             "summary": "",
             "url": "classes/ConnectionProbeController.html#method_action_catchHelperHappyPath"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_tlsTransport\u0028\u0029",
+            "name": "action_tlsTransport",
+            "summary": "How\u0020the\u0020application\u0027s\u0020configured\u0020connection\u0020is\u0020talking\u0020right\u0020now.",
+            "url": "classes/ConnectionProbeController.html#method_action_tlsTransport"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_tlsVerified\u0028\u0029",
+            "name": "action_tlsVerified",
+            "summary": "db_ssl\u0020\u003D\u0020true\u0020alone\u003A\u0020encrypted,\u0020verified\u0020via\u0020the\u0020system\u0020store.",
+            "url": "classes/ConnectionProbeController.html#method_action_tlsVerified"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_tlsWrongHost\u0028\u0029",
+            "name": "action_tlsWrongHost",
+            "summary": "The\u0020endpoint\u0027s\u0020IP\u0020is\u0020not\u0020a\u0020name\u0020on\u0020the\u0020certificate,\u0020so\u0020this\u0020must\nbe\u0020refused.\u0020Proof\u0020that\u0020verification\u0020really\u0020happens\u0020\u002D\u0020mysqli\u0020given\nno\u0020authority\u0020skips\u0020every\u0020check\u0020and\u0020would\u0020connect\u0020happily.",
+            "url": "classes/ConnectionProbeController.html#method_action_tlsWrongHost"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_tlsHostWithPort\u0028\u0029",
+            "name": "action_tlsHostWithPort",
+            "summary": "A\u0020host\u003Aport\u0020dbhost\u0020cannot\u0020be\u0020verified\u003B\u0020the\u0020error\u0020must\u0020say\u0020why.",
+            "url": "classes/ConnectionProbeController.html#method_action_tlsHostWithPort"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003Aaction_persistentReuse\u0028\u0029",
+            "name": "action_persistentReuse",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_action_persistentReuse"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AtwoSessions\u0028\u0029",
+            "name": "twoSessions",
+            "summary": "Identifies\u0020the\u0020server\u0020session\u0020of\u0020two\u0020consecutive\u0020connections.",
+            "url": "classes/ConnectionProbeController.html#method_twoSessions"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AconnectWith\u0028\u0029",
+            "name": "connectWith",
+            "summary": "Opens\u0020a\u0020connection\u0020under\u0020the\u0020given\u0020settings\u0020and\u0020reports\u0020how\u0020it\nwent.\u0020Failures\u0020are\u0020reported\u0020as\u0020data,\u0020not\u0020as\u0020a\u0020500,\u0020so\u0020the\u0020spec\u0020can\nassert\u0020on\u0020the\u0020negative\u0020cases\u0020too.",
+            "url": "classes/ConnectionProbeController.html#method_connectWith"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AwithSettings\u0028\u0029",
+            "name": "withSettings",
+            "summary": "Runs\u0020the\u0020callback\u0020with\u0020booter\u0020settings\u0020temporarily\u0020overridden.",
+            "url": "classes/ConnectionProbeController.html#method_withSettings"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AresetEndpoint\u0028\u0029",
+            "name": "resetEndpoint",
+            "summary": "The\u0020framework\u0020reads\u0020the\u0020endpoint\u0020once\u0020per\u0020request\u0020\u0028a\u0020singleton\u0029\u003B\nthese\u0020probes\u0020vary\u0020it\u0020within\u0020one\u0020request,\u0020so\u0020the\u0020cached\u0020instance\u0020is\ncleared\u0020around\u0020every\u0020override.\u0020Test\u002Donly\u0020reflection,\u0020deliberately\nnot\u0020a\u0020framework\u0020API.",
+            "url": "classes/ConnectionProbeController.html#method_resetEndpoint"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AtransportOf\u0028\u0029",
+            "name": "transportOf",
+            "summary": "The\u0020transport\u0020actually\u0020negotiated\u0020for\u0020this\u0020session.\u0020Both\u0020status\nvariables\u0020are\u0020empty\u0020on\u0020a\u0020plaintext\u0020connection.",
+            "url": "classes/ConnectionProbeController.html#method_transportOf"
+        },                {
+            "fqsen": "\\ConnectionProbeController\u003A\u003AsessionStatus\u0028\u0029",
+            "name": "sessionStatus",
+            "summary": "",
+            "url": "classes/ConnectionProbeController.html#method_sessionStatus"
         },                {
             "fqsen": "\\ConnectionProbeController\u003A\u003AensureConnection\u0028\u0029",
             "name": "ensureConnection",
@@ -4286,6 +4826,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/DashboardController.html#method_action_index"
         },                {
+            "fqsen": "\\DatabaseClusterProbeController",
+            "name": "DatabaseClusterProbeController",
+            "summary": "",
+            "url": "classes/DatabaseClusterProbeController.html"
+        },                {
+            "fqsen": "\\DatabaseClusterProbeController\u003A\u003Aaction_status\u0028\u0029",
+            "name": "action_status",
+            "summary": "",
+            "url": "classes/DatabaseClusterProbeController.html#method_action_status"
+        },                {
+            "fqsen": "\\DatabaseClusterProbeController\u003A\u003Aaction_slowread\u0028\u0029",
+            "name": "action_slowread",
+            "summary": "",
+            "url": "classes/DatabaseClusterProbeController.html#method_action_slowread"
+        },                {
+            "fqsen": "\\DatabaseClusterProbeController\u003A\u003Aaction_write\u0028\u0029",
+            "name": "action_write",
+            "summary": "",
+            "url": "classes/DatabaseClusterProbeController.html#method_action_write"
+        },                {
+            "fqsen": "\\DatabaseClusterProbeController\u003A\u003AcurrentNode\u0028\u0029",
+            "name": "currentNode",
+            "summary": "",
+            "url": "classes/DatabaseClusterProbeController.html#method_currentNode"
+        },                {
             "fqsen": "\\DatabaseProbeController",
             "name": "DatabaseProbeController",
             "summary": "",
@@ -4320,6 +4885,36 @@ Search.appendIndex(
             "name": "action_countTableEntriesEmpty",
             "summary": "",
             "url": "classes/DatabaseProbeController.html#method_action_countTableEntriesEmpty"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController",
+            "name": "DatabaseRetryProbeController",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController\u003A\u003Aaction_lockWaitRetry\u0028\u0029",
+            "name": "action_lockWaitRetry",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html#method_action_lockWaitRetry"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController\u003A\u003Aaction_crossNodeConflict\u0028\u0029",
+            "name": "action_crossNodeConflict",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html#method_action_crossNodeConflict"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController\u003A\u003AcontendedUpdate\u0028\u0029",
+            "name": "contendedUpdate",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html#method_contendedUpdate"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController\u003A\u003AtryConnect\u0028\u0029",
+            "name": "tryConnect",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html#method_tryConnect"
+        },                {
+            "fqsen": "\\DatabaseRetryProbeController\u003A\u003ANODES",
+            "name": "NODES",
+            "summary": "",
+            "url": "classes/DatabaseRetryProbeController.html#constant_NODES"
         },                {
             "fqsen": "\\ExceptionController",
             "name": "ExceptionController",
@@ -4721,6 +5316,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HelperController.html#method_action_view"
         },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_view_dotted\u0028\u0029",
+            "name": "action_view_dotted",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_view_dotted"
+        },                {
+            "fqsen": "\\HelperController\u003A\u003Aaction_function_e\u0028\u0029",
+            "name": "action_function_e",
+            "summary": "",
+            "url": "classes/HelperController.html#method_action_function_e"
+        },                {
             "fqsen": "\\HelperController\u003A\u003Aaction_function_makeSlug\u0028\u0029",
             "name": "action_function_makeSlug",
             "summary": "",
@@ -4803,7 +5408,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\LayoutResolutionController",
             "name": "LayoutResolutionController",
-            "summary": "Exercises\u0020the\u0020layout\u0020resolution\u0020chain\u0020from\u0020HandlesDefaultLayout\u003A\n\u0020\u0020explicit\u0020arg\u0020\u003E\u0020instance\u0020default\u0020\u003E\u0020global\u0020default\u0020\u003E\u0020framework\u0020default",
+            "summary": "Exercises\u0020the\u0020layout\u0020resolution\u0020chain\u0020from\u0020Resolver\\DefaultLayout\u003A\n\u0020\u0020explicit\u0020arg\u0020\u003E\u0020instance\u0020default\u0020\u003E\u0020global\u0020default\u0020\u003E\u0020framework\u0020default",
             "url": "classes/LayoutResolutionController.html"
         },                {
             "fqsen": "\\LayoutResolutionController\u003A\u003Aaction_neither\u0028\u0029",
@@ -4991,6 +5596,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MigrationController.html#method_action_syncMigrations"
         },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_checkDryRunUser\u0028\u0029",
+            "name": "action_checkDryRunUser",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_checkDryRunUser"
+        },                {
             "fqsen": "\\MigrationController\u003A\u003Aaction_checkSeeding\u0028\u0029",
             "name": "action_checkSeeding",
             "summary": "",
@@ -5010,6 +5620,56 @@ Search.appendIndex(
             "name": "action_isMigrationLocked",
             "summary": "",
             "url": "classes/MigrationController.html#method_action_isMigrationLocked"
+        },                {
+            "fqsen": "\\ModuleHostController",
+            "name": "ModuleHostController",
+            "summary": "Probes\u0020the\u0020app\u002Dside\u0020view\u0020of\u0020the\u0020module\u0020system\u003A\u0020composer\u0020autoloading\u0020of\u0020a\nmodule\u0020namespace,\u0020module\u002Dcontributed\u0020config\u0020defaults,\u0020and\u0020a\u0020module\u0020view\nshadowing\u0020a\u0020framework\u0020view.",
+            "url": "classes/ModuleHostController.html"
+        },                {
+            "fqsen": "\\ModuleHostController\u003A\u003Aaction_service\u0028\u0029",
+            "name": "action_service",
+            "summary": "",
+            "url": "classes/ModuleHostController.html#method_action_service"
+        },                {
+            "fqsen": "\\ModuleHostController\u003A\u003Aaction_config\u0028\u0029",
+            "name": "action_config",
+            "summary": "",
+            "url": "classes/ModuleHostController.html#method_action_config"
+        },                {
+            "fqsen": "\\ModuleHostController\u003A\u003Aaction_email\u0028\u0029",
+            "name": "action_email",
+            "summary": "",
+            "url": "classes/ModuleHostController.html#method_action_email"
+        },                {
+            "fqsen": "\\MultipleFormController",
+            "name": "MultipleFormController",
+            "summary": "",
+            "url": "classes/MultipleFormController.html"
+        },                {
+            "fqsen": "\\MultipleFormController\u003A\u003Aaction_multiple\u0028\u0029",
+            "name": "action_multiple",
+            "summary": "",
+            "url": "classes/MultipleFormController.html#method_action_multiple"
+        },                {
+            "fqsen": "\\MultipleFormController\u003A\u003Aaction_named\u0028\u0029",
+            "name": "action_named",
+            "summary": "",
+            "url": "classes/MultipleFormController.html#method_action_named"
+        },                {
+            "fqsen": "\\MultipleFormController\u003A\u003Aaction_domFallback\u0028\u0029",
+            "name": "action_domFallback",
+            "summary": "",
+            "url": "classes/MultipleFormController.html#method_action_domFallback"
+        },                {
+            "fqsen": "\\MultipleFormController\u003A\u003Aaction_unnamed\u0028\u0029",
+            "name": "action_unnamed",
+            "summary": "",
+            "url": "classes/MultipleFormController.html#method_action_unnamed"
+        },                {
+            "fqsen": "\\MultipleFormController\u003A\u003Aaction_probe\u0028\u0029",
+            "name": "action_probe",
+            "summary": "",
+            "url": "classes/MultipleFormController.html#method_action_probe"
         },                {
             "fqsen": "\\OrganizationController",
             "name": "OrganizationController",
@@ -5266,6 +5926,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/PasswordHashProbeController.html#constant_LEGACY_HASH"
         },                {
+            "fqsen": "\\RenderDirectiveController",
+            "name": "RenderDirectiveController",
+            "summary": "Renders\u0020renderprobe\/directives,\u0020which\u0020exercises\u0020the\u0020\u0040auth\u0020\/\u0020\u0040guest\u0020Blade\ndirectives\u0020bound\u0020by\u0020Rendering\\Katana\\Hooks.\u0020The\u0020view\u0020is\u0020layout\u002Dfree\n\u0028layout\/empty\u0029\u0020so\u0020the\u0020test\u0020reads\u0020only\u0020the\u0020directive\u0020branches.",
+            "url": "classes/RenderDirectiveController.html"
+        },                {
+            "fqsen": "\\RenderDirectiveController\u003A\u003Aaction_directives\u0028\u0029",
+            "name": "action_directives",
+            "summary": "",
+            "url": "classes/RenderDirectiveController.html#method_action_directives"
+        },                {
             "fqsen": "\\RenderingController",
             "name": "RenderingController",
             "summary": "",
@@ -5280,6 +5950,71 @@ Search.appendIndex(
             "name": "action_mailuser",
             "summary": "",
             "url": "classes/RenderingController.html#method_action_mailuser"
+        },                {
+            "fqsen": "\\RenderProbeController",
+            "name": "RenderProbeController",
+            "summary": "Drives\u0020the\u0020Katana\u0020render\u0020engine\u0027s\u0020resolution\u0020\u002B\u0020\u0024opt\u0020contract\u0020through\u0020the\nreal\u0020render\u0020path\u0020\u0028Rendering\\CanRenderView\u0020\u002D\u003E\u0020Rendering\\Katana\\Engine\u0029.",
+            "url": "classes/RenderProbeController.html"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_opt\u0028\u0029",
+            "name": "action_opt",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_opt"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_optDefaultTitle\u0028\u0029",
+            "name": "action_optDefaultTitle",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_optDefaultTitle"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_resourceLink\u0028\u0029",
+            "name": "action_resourceLink",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_resourceLink"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_extNone\u0028\u0029",
+            "name": "action_extNone",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_extNone"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_extBlade\u0028\u0029",
+            "name": "action_extBlade",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_extBlade"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_extPhp\u0028\u0029",
+            "name": "action_extPhp",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_extPhp"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_dotted\u0028\u0029",
+            "name": "action_dotted",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_dotted"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_overrideAppWins\u0028\u0029",
+            "name": "action_overrideAppWins",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_overrideAppWins"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_crossRoot\u0028\u0029",
+            "name": "action_crossRoot",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_crossRoot"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_missingView\u0028\u0029",
+            "name": "action_missingView",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_missingView"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_validViewMissingLayout\u0028\u0029",
+            "name": "action_validViewMissingLayout",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_validViewMissingLayout"
+        },                {
+            "fqsen": "\\RenderProbeController\u003A\u003Aaction_missingViewAndLayout\u0028\u0029",
+            "name": "action_missingViewAndLayout",
+            "summary": "",
+            "url": "classes/RenderProbeController.html#method_action_missingViewAndLayout"
         },                {
             "fqsen": "\\ResponseController",
             "name": "ResponseController",
@@ -6271,6 +7006,116 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/QueryBuilderModel.html#method_injectionTest"
         },                {
+            "fqsen": "\\GuestbookGreetCommand",
+            "name": "GuestbookGreetCommand",
+            "summary": "",
+            "url": "classes/GuestbookGreetCommand.html"
+        },                {
+            "fqsen": "\\GuestbookGreetCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/GuestbookGreetCommand.html#method_configure"
+        },                {
+            "fqsen": "\\GuestbookGreetCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/GuestbookGreetCommand.html#method_execute"
+        },                {
+            "fqsen": "\\GuestbookStatsCommand",
+            "name": "GuestbookStatsCommand",
+            "summary": "",
+            "url": "classes/GuestbookStatsCommand.html"
+        },                {
+            "fqsen": "\\GuestbookStatsCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/GuestbookStatsCommand.html#method_configure"
+        },                {
+            "fqsen": "\\GuestbookStatsCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/GuestbookStatsCommand.html#method_execute"
+        },                {
+            "fqsen": "\\GuestbookAdminController",
+            "name": "GuestbookAdminController",
+            "summary": "",
+            "url": "classes/GuestbookAdminController.html"
+        },                {
+            "fqsen": "\\GuestbookAdminController\u003A\u003Aaction_stats\u0028\u0029",
+            "name": "action_stats",
+            "summary": "",
+            "url": "classes/GuestbookAdminController.html#method_action_stats"
+        },                {
+            "fqsen": "\\GuestbookAdminController\u003A\u003Aaction_statsExplicit\u0028\u0029",
+            "name": "action_statsExplicit",
+            "summary": "",
+            "url": "classes/GuestbookAdminController.html#method_action_statsExplicit"
+        },                {
+            "fqsen": "\\GuestbookAdminController\u003A\u003Aaction_statsMissing\u0028\u0029",
+            "name": "action_statsMissing",
+            "summary": "",
+            "url": "classes/GuestbookAdminController.html#method_action_statsMissing"
+        },                {
+            "fqsen": "\\GuestbookController",
+            "name": "GuestbookController",
+            "summary": "",
+            "url": "classes/GuestbookController.html"
+        },                {
+            "fqsen": "\\GuestbookController\u003A\u003Aaction_index\u0028\u0029",
+            "name": "action_index",
+            "summary": "",
+            "url": "classes/GuestbookController.html#method_action_index"
+        },                {
+            "fqsen": "\\GuestbookController\u003A\u003Aaction_add\u0028\u0029",
+            "name": "action_add",
+            "summary": "",
+            "url": "classes/GuestbookController.html#method_action_add"
+        },                {
+            "fqsen": "\\GuestbookModel",
+            "name": "GuestbookModel",
+            "summary": "",
+            "url": "classes/GuestbookModel.html"
+        },                {
+            "fqsen": "\\GuestbookModel\u003A\u003AgetEntries\u0028\u0029",
+            "name": "getEntries",
+            "summary": "",
+            "url": "classes/GuestbookModel.html#method_getEntries"
+        },                {
+            "fqsen": "\\GuestbookModel\u003A\u003AaddEntry\u0028\u0029",
+            "name": "addEntry",
+            "summary": "",
+            "url": "classes/GuestbookModel.html#method_addEntry"
+        },                {
+            "fqsen": "\\GuestbookStatsModel",
+            "name": "GuestbookStatsModel",
+            "summary": "",
+            "url": "classes/GuestbookStatsModel.html"
+        },                {
+            "fqsen": "\\GuestbookStatsModel\u003A\u003AcountEntries\u0028\u0029",
+            "name": "countEntries",
+            "summary": "",
+            "url": "classes/GuestbookStatsModel.html#method_countEntries"
+        },                {
+            "fqsen": "\\Module\\Guestbook\\Support\\EntryFormatter",
+            "name": "EntryFormatter",
+            "summary": "",
+            "url": "classes/Module-Guestbook-Support-EntryFormatter.html"
+        },                {
+            "fqsen": "\\Module\\Guestbook\\Support\\EntryFormatter\u003A\u003Aformat\u0028\u0029",
+            "name": "format",
+            "summary": "",
+            "url": "classes/Module-Guestbook-Support-EntryFormatter.html#method_format"
+        },                {
+            "fqsen": "\\Migration_2025_10_01_MigrationDrySideEffect",
+            "name": "Migration_2025_10_01_MigrationDrySideEffect",
+            "summary": "",
+            "url": "classes/Migration-2025-10-01-MigrationDrySideEffect.html"
+        },                {
+            "fqsen": "\\Migration_2025_10_01_MigrationDrySideEffect\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/Migration-2025-10-01-MigrationDrySideEffect.html#method_execute"
+        },                {
             "fqsen": "\\Migration_2025_10_01_MigrationEnv",
             "name": "Migration_2025_10_01_MigrationEnv",
             "summary": "",
@@ -6501,10 +7346,30 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-querybuilder.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry\\Commands",
+            "name": "Commands",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-registry-commands.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Registry",
+            "name": "Registry",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-registry.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering",
             "name": "Rendering",
             "summary": "",
             "url": "namespaces/zubzet-framework-rendering.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana",
+            "name": "Katana",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-rendering-katana.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Resolver",
+            "name": "Resolver",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-rendering-resolver.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Resources",
             "name": "Resources",
@@ -6545,5 +7410,20 @@ Search.appendIndex(
             "name": "Commands",
             "summary": "",
             "url": "namespaces/zubzet-framework-testing-coverage-commands.html"
+        },                {
+            "fqsen": "\\Module\\Guestbook\\Support",
+            "name": "Support",
+            "summary": "",
+            "url": "namespaces/module-guestbook-support.html"
+        },                {
+            "fqsen": "\\Module\\Guestbook",
+            "name": "Guestbook",
+            "summary": "",
+            "url": "namespaces/module-guestbook.html"
+        },                {
+            "fqsen": "\\Module",
+            "name": "Module",
+            "summary": "",
+            "url": "namespaces/module.html"
         }            ]
 );

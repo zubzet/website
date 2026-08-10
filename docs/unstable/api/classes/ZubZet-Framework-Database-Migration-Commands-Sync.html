@@ -62,6 +62,14 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/module.html">Module</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/module-guestbook.html">Guestbook</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -109,13 +117,13 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\DatabaseConnection">DatabaseConnection</abbr></a>                    </span>
+                            <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\DatabaseConnection">DatabaseConnection</abbr></a>,                             <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\ChecksDuplicateBasenames">ChecksDuplicateBasenames</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/Sync.php"><a href="files/src-database-migration-commands-sync.html"><abbr title="src/Database/Migration/Commands/Sync.php">Sync.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -150,6 +158,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html#method_rejectDuplicateBasenames">rejectDuplicateBasenames()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Returns true when duplicates were found (and reported to $out).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_setDatabaseConnection">setDatabaseConnection()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -182,7 +197,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/Sync.php"><a href="files/src-database-migration-commands-sync.html"><abbr title="src/Database/Migration/Commands/Sync.php">Sync.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -215,7 +230,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/Sync.php"><a href="files/src-database-migration-commands-sync.html"><abbr title="src/Database/Migration/Commands/Sync.php">Sync.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -250,6 +265,58 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_rejectDuplicateBasenames">
+        rejectDuplicateBasenames()
+        <a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html#method_rejectDuplicateBasenames" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Migration/Commands/Traits/ChecksDuplicateBasenames.php"><a href="files/src-database-migration-commands-traits-checksduplicatebasenames.html"><abbr title="src/Database/Migration/Commands/Traits/ChecksDuplicateBasenames.php">ChecksDuplicateBasenames.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns true when duplicates were found (and reported to $out).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">rejectDuplicateBasenames</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$migrationFiles</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$out</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$migrationFiles</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$out</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     

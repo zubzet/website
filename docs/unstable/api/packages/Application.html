@@ -62,6 +62,14 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/module.html">Module</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/module-guestbook.html">Guestbook</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -130,6 +138,8 @@ lets legacy and onion-wrapped hashes coexist and self-heal to native on login.</
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-Application.html"><abbr title="\ZubZet\Framework\Console\Application">Application</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-CommandDiscovery.html"><abbr title="\ZubZet\Framework\Console\CommandDiscovery">CommandDiscovery</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-RunCommand.html"><abbr title="\ZubZet\Framework\Console\RunCommand">RunCommand</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Core-Controller.html"><abbr title="\ZubZet\Framework\Core\Controller">Controller</abbr></a></dt>
@@ -140,6 +150,10 @@ lets legacy and onion-wrapped hashes coexist and self-heal to native on login.</
         <dd>Base class for all models. Models should inherit from this.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Endpoint.html"><abbr title="\ZubZet\Framework\Database\Endpoint">Endpoint</abbr></a></dt>
+        <dd>Where and how the database is reached, read from the booter settings
+and shared by the runtime connection and the migrations&#039; Doctrine DBAL
+connection: `dbhost`, `dbport` and the transport encryption (`db_ssl`).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Migration-Commands-Migrate.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Migrate">Migrate</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Migration-Commands-Seed.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Seed">Seed</abbr></a></dt>
@@ -172,6 +186,10 @@ lets legacy and onion-wrapped hashes coexist and self-heal to native on login.</
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-QueryCollector.html"><abbr title="\ZubZet\Framework\ErrorHandling\DebugBar\Collectors\QueryCollector">QueryCollector</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-ResolutionCollector.html"><abbr title="\ZubZet\Framework\ErrorHandling\DebugBar\Collectors\ResolutionCollector">ResolutionCollector</abbr></a></dt>
+        <dd>Provenance for every convention lookup the Registry performed this
+request: which root (userspace, a module, or the framework) won each
+controller, model, and route file. Makes shadowing visible per page.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-ErrorHandling-DebugBar-Collectors-TemplateCollector.html"><abbr title="\ZubZet\Framework\ErrorHandling\DebugBar\Collectors\TemplateCollector">TemplateCollector</abbr></a></dt>
         <dd>Mirrors the API of DebugBar\DataCollector\TemplateCollector (shipped
 in php-debugbar v3.x) so we feed PhpDebugBar.Widgets.TemplatesWidget
@@ -196,6 +214,8 @@ the same shape it expects, without forcing the v3 dependency bump.</dd>
         <dd>The Login controller handles all login/logout stuff</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZController.html"><abbr title="\ZController">ZController</abbr></a></dt>
         <dd>The ZController contains actions for the admin dashboard / panel</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZetController.html"><abbr title="\ZubZetController">ZubZetController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-organizationModel.html"><abbr title="\z_organizationModel">z_organizationModel</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Logger-BacktraceProcessor.html"><abbr title="\ZubZet\Framework\Logger\BacktraceProcessor">BacktraceProcessor</abbr></a></dt>
@@ -225,7 +245,33 @@ the same shape it expects, without forcing the v3 dependency bump.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-QueryBuilder-ZubZetValueBinder.html"><abbr title="\ZubZet\Framework\QueryBuilder\ZubZetValueBinder">ZubZetValueBinder</abbr></a></dt>
         <dd>This class extends CakePHP`s ValueBinder to change the placeholder format to &#039;?&#039;
 and to change the bind method to match that of mysqli.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-ViewNotFoundException.html"><abbr title="\ZubZet\Framework\Rendering\ViewNotFoundException">ViewNotFoundException</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-Commands-ModuleSetup.html"><abbr title="\ZubZet\Framework\Registry\Commands\ModuleSetup">ModuleSetup</abbr></a></dt>
+        <dd>Proof of concept: copies MISSING default settings from each installed
+module&#039;s z_config/z_settings.ini into the app&#039;s settings file. Existing
+keys are never touched, existing lines are never rewritten; the merge is
+append-only and idempotent. Run manually, never at boot.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-Kind.html"><abbr title="\ZubZet\Framework\Registry\Kind">Kind</abbr></a></dt>
+        <dd>Describes one resolvable kind of framework component: where it lives in
+userspace, inside a module, and inside the framework itself.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-Kinds.html"><abbr title="\ZubZet\Framework\Registry\Kinds">Kinds</abbr></a></dt>
+        <dd>Static table of the framework&#039;s built-in kinds. New kinds are added via
+register(), so framework features (or later, modules) can join the
+userspace -&gt; modules -&gt; framework resolution without new plumbing.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-Modules.html"><abbr title="\ZubZet\Framework\Registry\Modules">Modules</abbr></a></dt>
+        <dd>Discovery and ordering of installed modules (composer type &quot;zubzet-module&quot;).</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-Registry.html"><abbr title="\ZubZet\Framework\Registry\Registry">Registry</abbr></a></dt>
+        <dd>Central resolver for everything the framework loads by convention.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Registry-RootIndex.html"><abbr title="\ZubZet\Framework\Registry\RootIndex">RootIndex</abbr></a></dt>
+        <dd>Lazy recursive filename index of one root directory. This is the slow
+path behind Registry::find(): it is only built after every direct probe
+missed, and is memoized per (root, extensions) for the request.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Katana-Engine.html"><abbr title="\ZubZet\Framework\Rendering\Katana\Engine">Engine</abbr></a></dt>
+        <dd>Thin adapter around the Katana Blade engine.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Katana-Hooks.html"><abbr title="\ZubZet\Framework\Rendering\Katana\Hooks">Hooks</abbr></a></dt>
+        <dd>Framework hooks bound into the Katana engine: directives and callbacks tied to the
+request context. Today this is only @auth / @guest, but this is the home for every
+future framework directive/callback, so it is expected to grow.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Resolver-ViewNotFoundException.html"><abbr title="\ZubZet\Framework\Rendering\Resolver\ViewNotFoundException">ViewNotFoundException</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-AssetProxy.html"><abbr title="\ZubZet\Framework\Resources\AssetProxy">AssetProxy</abbr></a></dt>
         <dd></dd>
@@ -266,6 +312,10 @@ just a string trim.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-ZubZet.html"><abbr title="\ZubZet\Framework\ZubZet">ZubZet</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppGuestbookGreetCommand.html"><abbr title="\AppGuestbookGreetCommand">AppGuestbookGreetCommand</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/QaHelloCommand.html"><abbr title="\QaHelloCommand">QaHelloCommand</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdminController.html"><abbr title="\AdminController">AdminController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdvancedController.html"><abbr title="\AdvancedController">AdvancedController</abbr></a></dt>
@@ -281,6 +331,14 @@ hashes still verifying. See jouri&#039;s Authentication/UserController.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AuthProbeController.html"><abbr title="\AuthProbeController">AuthProbeController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CompatController.html"><abbr title="\CompatController">CompatController</abbr></a></dt>
+        <dd>Exercises Blade/Katana compatibility guarantees through the real render path:
+ - action_probe: a migrated legacy view whose literal {{ }}, {!! !!} and
+   {{-- --}} markers must survive verbatim (see Views/compat/probe).</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ComponentNamespaceController.html"><abbr title="\ComponentNamespaceController">ComponentNamespaceController</abbr></a></dt>
+        <dd>Renders renderprobe/namespace, which places the framework&#039;s namespaced
+&lt;x-zubzet::head/&gt; next to a plain app &lt;x-head/&gt; so the test can prove the
+two never shadow each other (katanaphp/blade#66).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ConnectionProbeController.html"><abbr title="\ConnectionProbeController">ConnectionProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ConsoleController.html"><abbr title="\ConsoleController">ConsoleController</abbr></a></dt>
@@ -289,7 +347,11 @@ hashes still verifying. See jouri&#039;s Authentication/UserController.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DashboardController.html"><abbr title="\DashboardController">DashboardController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseClusterProbeController.html"><abbr title="\DatabaseClusterProbeController">DatabaseClusterProbeController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseProbeController.html"><abbr title="\DatabaseProbeController">DatabaseProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseRetryProbeController.html"><abbr title="\DatabaseRetryProbeController">DatabaseRetryProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExceptionController.html"><abbr title="\ExceptionController">ExceptionController</abbr></a></dt>
         <dd></dd>
@@ -311,18 +373,31 @@ tests/cypress/e2e/support/.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutMiddlewareController.html"><abbr title="\LayoutMiddlewareController">LayoutMiddlewareController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutResolutionController.html"><abbr title="\LayoutResolutionController">LayoutResolutionController</abbr></a></dt>
-        <dd>Exercises the layout resolution chain from HandlesDefaultLayout:
+        <dd>Exercises the layout resolution chain from Resolver\DefaultLayout:
   explicit arg &gt; instance default &gt; global default &gt; framework default</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LoggerController.html"><abbr title="\LoggerController">LoggerController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/MigrationController.html"><abbr title="\MigrationController">MigrationController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ModuleHostController.html"><abbr title="\ModuleHostController">ModuleHostController</abbr></a></dt>
+        <dd>Probes the app-side view of the module system: composer autoloading of a
+module namespace, module-contributed config defaults, and a module view
+shadowing a framework view.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/MultipleFormController.html"><abbr title="\MultipleFormController">MultipleFormController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/OrganizationController.html"><abbr title="\OrganizationController">OrganizationController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/PasswordHashProbeController.html"><abbr title="\PasswordHashProbeController">PasswordHashProbeController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RenderDirectiveController.html"><abbr title="\RenderDirectiveController">RenderDirectiveController</abbr></a></dt>
+        <dd>Renders renderprobe/directives, which exercises the @auth / @guest Blade
+directives bound by Rendering\Katana\Hooks. The view is layout-free
+(layout/empty) so the test reads only the directive branches.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RenderingController.html"><abbr title="\RenderingController">RenderingController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RenderProbeController.html"><abbr title="\RenderProbeController">RenderProbeController</abbr></a></dt>
+        <dd>Drives the Katana render engine&#039;s resolution + $opt contract through the
+real render path (Rendering\CanRenderView -&gt; Rendering\Katana\Engine).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ResponseController.html"><abbr title="\ResponseController">ResponseController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RoleController.html"><abbr title="\RoleController">RoleController</abbr></a></dt>
@@ -359,6 +434,22 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/QueryBuilderModel.html"><abbr title="\QueryBuilderModel">QueryBuilderModel</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookGreetCommand.html"><abbr title="\GuestbookGreetCommand">GuestbookGreetCommand</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookStatsCommand.html"><abbr title="\GuestbookStatsCommand">GuestbookStatsCommand</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookAdminController.html"><abbr title="\GuestbookAdminController">GuestbookAdminController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookController.html"><abbr title="\GuestbookController">GuestbookController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookModel.html"><abbr title="\GuestbookModel">GuestbookModel</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuestbookStatsModel.html"><abbr title="\GuestbookStatsModel">GuestbookStatsModel</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Module-Guestbook-Support-EntryFormatter.html"><abbr title="\Module\Guestbook\Support\EntryFormatter">EntryFormatter</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Migration-2025-10-01-MigrationDrySideEffect.html"><abbr title="\Migration_2025_10_01_MigrationDrySideEffect">Migration_2025_10_01_MigrationDrySideEffect</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Migration-2025-10-01-MigrationEnv.html"><abbr title="\Migration_2025_10_01_MigrationEnv">Migration_2025_10_01_MigrationEnv</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Migration-2025-10-01-MigrationEnv1.html"><abbr title="\Migration_2025_10_01_MigrationEnv1">Migration_2025_10_01_MigrationEnv1</abbr></a></dt>
@@ -392,6 +483,10 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Database-IsInternalModel.html"><abbr title="\ZubZet\Framework\Database\IsInternalModel">IsInternalModel</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-ChecksDuplicateBasenames.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\ChecksDuplicateBasenames">ChecksDuplicateBasenames</abbr></a></dt>
+        <dd>Executed migration state is keyed on the basename, so two files sharing
+one basename across roots (or subdirectories) would silently swallow one
+of them. Commands assembling multi-root migration sets refuse to run.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\DatabaseConnection">DatabaseConnection</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Database-Migration-Commands-Traits-DbalConnection.html"><abbr title="\ZubZet\Framework\Database\Migration\Commands\Traits\DbalConnection">DbalConnection</abbr></a></dt>
@@ -414,7 +509,7 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Rendering-CanRenderView.html"><abbr title="\ZubZet\Framework\Rendering\CanRenderView">CanRenderView</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Rendering-HandlesDefaultLayout.html"><abbr title="\ZubZet\Framework\Rendering\HandlesDefaultLayout">HandlesDefaultLayout</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html"><abbr title="\ZubZet\Framework\Rendering\Resolver\DefaultLayout">DefaultLayout</abbr></a></dt>
         <dd>Default-layout management for Response.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Framework-Routing-HttpMethod.html"><abbr title="\ZubZet\Framework\Routing\HttpMethod">HttpMethod</abbr></a></dt>
         <dd></dd>
@@ -434,20 +529,6 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_essentialsHead">essentialsHead()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Call this to paste the essential head part of a page into the layout</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_essentialsBody">essentialsBody()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Call this to paste the essential body part of a page into the layout</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_model">model()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -463,94 +544,6 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
             Functions
             <a href="packages/Application.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_essentialsHead">
-        essentialsHead()
-        <a href="namespaces/default.html#function_essentialsHead" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/views/layout/layout_essentials.php"><a href="files/src-includedcomponents-views-layout-layout-essentials.html"><abbr title="src/IncludedComponents/views/layout/layout_essentials.php">layout_essentials.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">12</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Call this to paste the essential head part of a page into the layout</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">essentialsHead</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customBootstrap</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$opt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Object holding options for rendering</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$customBootstrap</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_essentialsBody">
-        essentialsBody()
-        <a href="namespaces/default.html#function_essentialsBody" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/views/layout/layout_essentials.php"><a href="files/src-includedcomponents-views-layout-layout-essentials.html"><abbr title="src/IncludedComponents/views/layout/layout_essentials.php">layout_essentials.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">48</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Call this to paste the essential body part of a page into the layout</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">essentialsBody</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$opt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Object holding options for rendering</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
                     <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_model">
         model()

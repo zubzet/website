@@ -9,7 +9,7 @@
         <meta name="description" content="A modular, prototyping speed oriented PHP framework.">
       
       
-        <meta name="author" content="Alexander Zierhut">
+        <meta name="author" content="ZubZet contributors">
       
       
         <link rel="canonical" href="https://zubzet.com/docs/unstable/core-features/views/">
@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -405,6 +405,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/upgrade/1.2.0-to-1.3.0" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2.0 to 1.3.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -811,14 +839,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../localization" class="md-nav__link">
+      <a href="../configuration" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Localization
+    Configuration
   
 
     
@@ -839,14 +867,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration" class="md-nav__link">
+      <a href="../database-connection" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Configuration
+    Database Connection
   
 
     
@@ -1377,6 +1405,34 @@
     
   
     Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../health-endpoint" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health Endpoint
   
 
     
@@ -1940,6 +1996,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-features/modules" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2189,6 +2273,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/building-a-module" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building A Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2305,6 +2417,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../contributing/module-system-architecture" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -2314,10 +2454,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
         
           
-          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
             
   
   
@@ -2335,8 +2475,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2427,10 +2567,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#the-render-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        The render engine
       
     </span>
   </a>
@@ -2438,10 +2578,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-example-view" class="md-nav__link">
+  <a href="#a-first-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simple example view
+        A first view
       
     </span>
   </a>
@@ -2449,10 +2589,170 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-view-using-a-passed-value-option" class="md-nav__link">
+  <a href="#passing-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example view using a passed value / option
+        Passing data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echoing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Echoing data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditionals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw PHP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#including-partials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Including partials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth directives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-html-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional HTML attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-to-the-layout-with-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pushing to the layout with stacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-from-the-previous-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed from the previous engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-available-in-katana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not available in Katana
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn more
       
     </span>
   </a>
@@ -2476,7 +2776,7 @@
 
 
   
-    <a href="https://github.com/zubzet/framework/edit/main/docs/core-features/views.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/zubzet/framework/edit/develop/docs/core-features/views.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2486,31 +2786,220 @@
 
 <h1 id="getting-started-views">Getting Started: Views<a class="headerlink" href="#getting-started-views" title="Permanent link">&para;</a></h1>
 <h2 id="what-does-a-view-do">What does a view do?<a class="headerlink" href="#what-does-a-view-do" title="Permanent link">&para;</a></h2>
-<p>A view contains the html the user should see. All additional resources like css, images or javascript are also loaded from views. Views do usually <strong>not</strong> contain a footer, navigation, header or other elements that belong to the overall layout of the page. For this, layouts should be used as without a layout, a view can't be renderer. Read more about layouts <a href="layouts">here</a>.</p>
-<p>Database access and heavy logic should not be used in the view as that belong into other parts of the application.</p>
-<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
-<p>A view should be placed in the <code>z_views</code> directory of your project, otherwise it will not be found when called from the render method.</p>
-<p>It is a php file which returns an array with up to three attributes. <code>head</code> and <code>body</code> are functions that get executed in the layout at the matching place.</p>
-<p><code>head</code> and <code>body</code> should accept a parameter called $opt. It contains data passed into the $opt parameter of the <code>render</code> method. For the view to communicate back to a controller, asynchronous methods must be used.</p>
-<h2 id="simple-example-view">Simple example view<a class="headerlink" href="#simple-example-view" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;body&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span><span class="p">(</span><span class="nv">$opt</span><span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span>
-<span class="x">    &lt;h1&gt;Hello World&lt;/h1&gt;</span>
-<span class="cp">&lt;?php</span> <span class="p">}];</span> <span class="cp">?&gt;</span>
+<p>A view contains the HTML the user should see, along with the CSS, images and JavaScript that page needs. Views do usually <strong>not</strong> contain a footer, navigation, header or other elements that belong to the overall layout of the page. For this, layouts should be used, as without a layout a view can't be rendered. Read more about layouts <a href="../layouts/">here</a>.</p>
+<p>Database access and heavy logic should not be used in the view, as that belongs into other parts of the application.</p>
+<h2 id="the-render-engine">The render engine<a class="headerlink" href="#the-render-engine" title="Permanent link">&para;</a></h2>
+<p>Since v1.3.0 ZubZet renders views with <a href="https://github.com/katanaphp/blade">Katana</a>, a standalone implementation of the <a href="https://laravel.com/docs/13.x/blade">Blade</a> templating language. A view is a <code>.blade.php</code> file placed in your project's <code>z_views</code> directory, otherwise it will not be found when called from the <a href="../../api/classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render">render method</a>.</p>
+<p>Blade gives you a concise syntax for the things you do in every template: escaping output, loops, conditionals, reusable components and page inheritance. This page covers the parts you reach for day to day, which is most of what you need. For the complete directive reference, the <a href="https://laravel.com/docs/13.x/blade">Laravel Blade documentation</a> is the final backstop (Katana implements the common Blade set, see <a href="#not-available-in-katana">Not available in Katana</a>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Blade is a superset of PHP</p>
+<p>Every <code>.blade.php</code> file is still a PHP file. Plain PHP works verbatim: <code>&lt;?php ... ?&gt;</code>, <code>&lt;?= $x ?&gt;</code> and any function call run exactly as they would in a normal template. Blade directives like <code>@if</code> or <code>@foreach</code> are just shorthand that compiles down to that same PHP, so you never have to give up raw PHP, Blade only adds to it. If you prefer to stay inside Blade's syntax, <code>@php ... @endphp</code> is identical to <code>&lt;?php ... ?&gt;</code>.</p>
+</div>
+<h2 id="a-first-view">A first view<a class="headerlink" href="#a-first-view" title="Permanent link">&para;</a></h2>
+<p>A view extends a layout and fills in its content:
+<div class="highlight"><pre><span></span><code>@extends($layout)
+
+@section(&quot;content&quot;)
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+@endsection
 </code></pre></div>
-<h2 id="example-view-using-a-passed-value-option">Example view using a passed value / option<a class="headerlink" href="#example-view-using-a-passed-value-option" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><span class="x">// Controller</span>
+<code>@extends($layout)</code> plugs the view into the layout the <a href="../controllers-and-actions/">controller</a> chose. The framework passes the layout name in as <code>$layout</code>, so you never hardcode it. <code>@section("content")</code> is the main body, and the layout decides where it lands. An optional <code>@section("head")</code> adds page specific tags to the document <code>&lt;head&gt;</code> (a stylesheet, a meta tag). Read more about how the two fit together in <a href="../layouts/">Layouts</a>.</p>
+<h2 id="passing-data">Passing data<a class="headerlink" href="#passing-data" title="Permanent link">&para;</a></h2>
+<p>Whatever you pass to <code>render</code> is available in the view, both as a top level variable and inside the <code>$opt</code> array:
+<div class="highlight"><pre><span></span><code><span class="x">// Controller</span>
 <span class="x">public function action_index(Request $req, Response $res) {</span>
-<span class="x">    return $res-&gt;render(&quot;employee/employee_index.php&quot;, [</span>
-<span class="x">        &quot;value&quot; =&gt; &quot;Hello World&quot;</span>
+<span class="x">    return $res-&gt;render(&quot;employee/index&quot;, [</span>
+<span class="x">        &quot;name&quot; =&gt; &quot;Ada&quot;,</span>
 <span class="x">    ]);</span>
 <span class="x">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="x">// View</span>
-<span class="cp">&lt;?php</span> <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;body&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span><span class="p">(</span><span class="nv">$opt</span><span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span>
-<span class="x">    &lt;h1&gt;$opt[&quot;value&quot;]&lt;/h1&gt;</span>
-<span class="cp">&lt;?php</span> <span class="p">}];</span> <span class="cp">?&gt;</span>
+<div class="highlight"><pre><span></span><code>{<del class="critic"> View: z_views/employee/index.blade.php </del>}
+@extends($layout)
+
+@section(&quot;content&quot;)
+    &lt;h1&gt;Hello {{ $name }}&lt;/h1&gt;   {<del class="critic"> or $opt[&quot;name&quot;] </del>}
+@endsection
+</code></pre></div>
+The framework also injects a set of helpers into <code>$opt</code> for every render: <code>$opt["root"]</code> (the application's root path), <code>$opt["host"]</code>, <code>$opt["user"]</code>, <code>$opt["request"]</code>, <code>$opt["response"]</code>, <code>$opt["title"]</code> and <code>$opt["generateResourceLink"]</code>. For a view to communicate back to a controller, asynchronous methods must be used (see <a href="../../frontend-integration/backend-requests/">Backend Requests</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">View names and the file extension</p>
+<p>The view above is addressed as <code>"employee/index"</code> while the file on disk is <code>z_views/employee/index.blade.php</code>. The extension is optional and dot notation works too, so <code>"employee/index"</code>, <code>"employee/index.blade.php"</code> and <code>"employee.index"</code> all resolve to the same file. A view in your project overrides a framework view of the same name.</p>
+</div>
+<h2 id="echoing-data">Echoing data<a class="headerlink" href="#echoing-data" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code>{{ $name }}              {<del class="critic"> escaped output, HTML safe </del>}
+{!! $trustedHtml !!}     {<del class="critic"> raw, unescaped output </del>}
+{<del class="critic"> this is a comment and is not rendered </del>}
+{{ $title ?? &quot;Untitled&quot; }}   {<del class="critic"> any PHP expression works inside the braces </del>}
+</code></pre></div>
+<code>{{ }}</code> escapes its output the same way the framework's <a href="../global-helper-functions/#e"><code>e()</code> helper</a> does, so it is safe for user input by default. Use <code>{!! !!}</code> only for HTML you trust.</p>
+<h2 id="conditionals">Conditionals<a class="headerlink" href="#conditionals" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>@if($user-&gt;isLoggedIn)
+    &lt;span&gt;Welcome back&lt;/span&gt;
+@elseif($showGuestBanner)
+    &lt;span&gt;Hello, guest&lt;/span&gt;
+@else
+    &lt;a href=&quot;{{ $opt[&quot;root&quot;] }}login&quot;&gt;Log in&lt;/a&gt;
+@endif
+
+@unless($employees)
+    &lt;p&gt;No employees yet.&lt;/p&gt;
+@endunless
+
+@isset($employee)
+    &lt;p&gt;{{ $employee[&quot;name&quot;] }}&lt;/p&gt;
+@endisset
+</code></pre></div>
+<h2 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code>@foreach($employees as $employee)
+    &lt;li&gt;{{ $employee[&quot;name&quot;] }}&lt;/li&gt;
+@endforeach
+
+{<del class="critic"> @forelse handles the empty case in a single construct </del>}
+@forelse($employees as $employee)
+    &lt;li&gt;{{ $employee[&quot;name&quot;] }}&lt;/li&gt;
+@empty
+    &lt;li&gt;No employees found.&lt;/li&gt;
+@endforelse
+
+@for($i = 0; $i &lt; 3; $i++)
+    &lt;span&gt;{{ $i }}&lt;/span&gt;
+@endfor
+</code></pre></div>
+Inside any loop the <code>$loop</code> variable is available, exposing <code>$loop-&gt;index</code>, <code>$loop-&gt;iteration</code>, <code>$loop-&gt;first</code>, <code>$loop-&gt;last</code>, <code>$loop-&gt;count</code> and <code>$loop-&gt;remaining</code>:
+<div class="highlight"><pre><span></span><code>@foreach($employees as $employee)
+    &lt;li class=&quot;{{ $loop-&gt;first ? &#39;is-first&#39; : &#39;&#39; }}&quot;&gt;
+        {{ $loop-&gt;iteration }}. {{ $employee[&quot;name&quot;] }}
+    &lt;/li&gt;
+@endforeach
 </code></pre></div></p>
-<p>More examples for views can be found in <a href="https://git.zierhut-it.de/Zierhut-IT/z_framework/src/branch/DEV/default/views"><code>z_framework/default/views</code></a>.</p>
+<h2 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>@switch($status)
+    @case(&quot;active&quot;)
+        &lt;span class=&quot;badge&quot;&gt;Active&lt;/span&gt;
+        @break
+    @case(&quot;pending&quot;)
+        &lt;span class=&quot;badge&quot;&gt;Pending&lt;/span&gt;
+        @break
+    @default
+        &lt;span class=&quot;badge&quot;&gt;Unknown&lt;/span&gt;
+@endswitch
+</code></pre></div>
+<h2 id="raw-php">Raw PHP<a class="headerlink" href="#raw-php" title="Permanent link">&para;</a></h2>
+<p>Because Blade is a superset of PHP, these two are equivalent. Use whichever reads better:
+<div class="highlight"><pre><span></span><code>&lt;?php $total = array_sum($amounts); ?&gt;
+
+@php
+    $total = array_sum($amounts);
+@endphp
+
+&lt;p&gt;Total: {{ $total }}&lt;/p&gt;
+</code></pre></div></p>
+<h2 id="including-partials">Including partials<a class="headerlink" href="#including-partials" title="Permanent link">&para;</a></h2>
+<p>Split shared markup into its own view and pull it in wherever you need it:
+<div class="highlight"><pre><span></span><code>@include(&quot;partials.employee_card&quot;, [&quot;employee&quot; =&gt; $employee])
+
+@includeIf(&quot;partials.banner&quot;)             {<del class="critic"> only if the view exists </del>}
+@includeWhen($showTips, &quot;partials.tips&quot;)  {<del class="critic"> only when the condition is true </del>}
+</code></pre></div>
+An included partial receives the current view's data plus anything you pass in the second argument. Because the render engine resolves names across your project and the framework, a partial can live in either.</p>
+<h2 id="auth-directives">Auth directives<a class="headerlink" href="#auth-directives" title="Permanent link">&para;</a></h2>
+<p>ZubZet binds Blade's <code>@auth</code> and <code>@guest</code> to its own permission system. With no argument they test whether a user is logged in, and with an argument they test a permission (dotted and wildcard aware). <code>@guest</code> is the negation of <code>@auth</code>:
+<div class="highlight"><pre><span></span><code>@auth
+    &lt;a href=&quot;{{ $opt[&quot;root&quot;] }}account&quot;&gt;My account&lt;/a&gt;
+@endauth
+
+@auth(&quot;employee.edit&quot;)
+    &lt;a href=&quot;{{ $opt[&quot;root&quot;] }}employee/edit&quot;&gt;Edit&lt;/a&gt;
+@endauth
+
+@guest
+    &lt;a href=&quot;{{ $opt[&quot;root&quot;] }}login&quot;&gt;Log in&lt;/a&gt;
+@endguest
+</code></pre></div>
+See the <a href="../permission-system/">Permission System</a> for how permissions are defined.</p>
+<h2 id="conditional-html-attributes">Conditional HTML attributes<a class="headerlink" href="#conditional-html-attributes" title="Permanent link">&para;</a></h2>
+<p>Blade has small helpers for the attributes you toggle most often, so you do not have to write the <code>&lt;?php echo $x ? "checked" : "" ?&gt;</code> dance:
+<div class="highlight"><pre><span></span><code>&lt;div @class([&quot;card&quot;, &quot;card-active&quot; =&gt; $isActive, &quot;card-muted&quot; =&gt; !$isActive])&gt;...&lt;/div&gt;
+
+&lt;input type=&quot;checkbox&quot; @checked($subscribed)&gt;
+&lt;option value=&quot;de&quot; @selected($lang === &quot;de&quot;)&gt;German&lt;/option&gt;
+&lt;button @disabled($isSaving)&gt;Save&lt;/button&gt;
+</code></pre></div></p>
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
+<p>Components are reusable pieces of UI you drop in with an <code>&lt;x-...&gt;</code> tag. Create one as a <code>.blade.php</code> file under <code>z_views/components</code>, then use it by file name:
+<div class="highlight"><pre><span></span><code>{<del class="critic"> z_views/components/alert.blade.php </del>}
+@props([&quot;type&quot; =&gt; &quot;info&quot;])
+&lt;div class=&quot;alert alert-{{ $type }}&quot;&gt;
+    {{ $slot }}
+&lt;/div&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{<del class="critic"> in any view </del>}
+&lt;x-alert type=&quot;warning&quot;&gt;
+    Your session is about to expire.
+&lt;/x-alert&gt;
+</code></pre></div>
+Attributes on the tag (<code>type="warning"</code>) become variables inside the component (<code>$type</code>), and the content between the open and close tags is available as <code>{{ $slot }}</code>. <code>@props</code> declares the inputs a component expects and their defaults. A component in your project's <code>components</code> directory overrides a framework component of the same name.</p>
+<h3 id="framework-components">Framework components<a class="headerlink" href="#framework-components" title="Permanent link">&para;</a></h3>
+<p>The framework ships its own components under the <code>zubzet</code> namespace. The two you see in every layout are the page essentials:
+<div class="highlight"><pre><span></span><code>&lt;x-zubzet::head :opt=&quot;$opt&quot;/&gt;   {<del class="critic"> jQuery, Bootstrap, Font Awesome, Z.js, the debug bar head </del>}
+&lt;x-zubzet::body :opt=&quot;$opt&quot;/&gt;   {<del class="critic"> the session watcher and the debug bar body </del>}
+</code></pre></div>
+The <code>zubzet::</code> namespace keeps these separate from your own components, so an app component named <code>head</code> never collides with <code>&lt;x-zubzet::head/&gt;</code>. You normally only place them in layouts, see <a href="../layouts/">Layouts</a>.</p>
+<h2 id="pushing-to-the-layout-with-stacks">Pushing to the layout with stacks<a class="headerlink" href="#pushing-to-the-layout-with-stacks" title="Permanent link">&para;</a></h2>
+<p>A view can push markup into a named stack that the layout renders elsewhere, which is handy for adding a page specific script without a dedicated section:
+<div class="highlight"><pre><span></span><code>{<del class="critic"> layout </del>}
+&lt;head&gt;
+    ...
+    @stack(&quot;scripts&quot;)
+&lt;/head&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{<del class="critic"> view </del>}
+@push(&quot;scripts&quot;)
+    &lt;script src=&quot;&lt;?php $opt[&quot;generateResourceLink&quot;](&#39;js/chart.js&#39;); ?&gt;&quot;&gt;&lt;/script&gt;
+@endpush
+</code></pre></div></p>
+<h2 id="what-changed-from-the-previous-engine">What changed from the previous engine<a class="headerlink" href="#what-changed-from-the-previous-engine" title="Permanent link">&para;</a></h2>
+<p>Before v1.3.0 a view was a PHP file that returned an array of <code>head</code> and <code>body</code> closures, and the layout was chosen from the outside. Now a view is a Blade template that extends a layout. The migrator rewrites this for you (see <a href="../../setup/upgrade/1.2.0-to-1.3.0/">Migrating to 1.3.0</a>), and the mapping is:</p>
+<table>
+<thead>
+<tr>
+<th>Before (closure array)</th>
+<th>Now (Blade)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>return ["body" =&gt; function($opt) { ... }]</code></td>
+<td><code>@section("content") ... @endsection</code></td>
+</tr>
+<tr>
+<td><code>return ["head" =&gt; function($opt) { ... }]</code></td>
+<td><code>@section("head") ... @endsection</code></td>
+</tr>
+<tr>
+<td>the layout picked externally</td>
+<td><code>@extends($layout)</code> inside the view</td>
+</tr>
+<tr>
+<td>copy and pasting shared markup</td>
+<td><code>@include</code> and components (<code>&lt;x-...&gt;</code>)</td>
+</tr>
+<tr>
+<td>hand written <code>foreach</code> loops only</td>
+<td><code>@foreach</code>, <code>@forelse</code>, <code>$loop</code> and more (raw PHP still works)</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond a cleaner syntax, the engine unlocks real template inheritance, reusable components and shared partials that the old closure format could not express.</p>
+<h2 id="not-available-in-katana">Not available in Katana<a class="headerlink" href="#not-available-in-katana" title="Permanent link">&para;</a></h2>
+<p>Katana implements the common Blade directives, which is everything on this page. A handful of Laravel specific directives are <strong>not</strong> available, because they depend on parts of Laravel the framework does not use: <code>@csrf</code>, <code>@method</code>, <code>@error</code>, <code>@can</code> / <code>@cannot</code>, <code>@lang</code> / <code>@choice</code>, <code>@vite</code>, <code>@dump</code> / <code>@dd</code> and <code>@inject</code>. Use the framework's own equivalents (for example <code>@auth("permission")</code> in place of <code>@can</code>) or plain PHP.</p>
+<h2 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/katanaphp/blade">Katana</a>, the render engine ZubZet uses.</li>
+<li><a href="https://laravel.com/docs/13.x/blade">Laravel Blade documentation</a>, the full reference for the Blade language.</li>
+<li><a href="../layouts/">Layouts</a>, how views and layouts fit together.</li>
+</ul>
+<p>More examples for views can be found in the framework's <code>src/IncludedComponents/views</code> directory.</p>
 
 
 
@@ -2558,25 +3047,6 @@
     
     
     
-    <a href="mailto:info@zierhut-it.de" target="_blank" rel="noopener" title="Contact via mail" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
-    </a>
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://x.com/zierhut_it" target="_blank" rel="noopener" title="x.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
-    </a>
-  
-    
-    
-    
-    
       
       
     
@@ -2613,7 +3083,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
