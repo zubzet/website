@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body data-spy="scroll" data-target=".site-nav" data-offset="120">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top site-nav">
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top site-nav">
             <div class="container">
                 <a class="navbar-brand font-weight-bold d-flex align-items-center" href="#">
                     <img src="assets/logo.png" alt="ZubZet logo" class="brand-logo mr-2">
@@ -36,7 +36,7 @@
                         <li class="nav-item"><a class="nav-link" href="#quality">Quality</a></li>
                         <li class="nav-item"><a class="nav-link" href="#support">Enterprise Support</a></li>
                     </ul>
-                    <ul class="navbar-nav align-items-lg-center">
+                    <ul class="navbar-nav align-items-xl-center">
                         <li class="nav-item">
                             <a class="nav-link" href="https://github.com/zubzet">
                                 <i class="fa fa-fw fa-github" aria-hidden="true"></i>
@@ -882,7 +882,20 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                         map: ['tok-cm', 'tok-str', 'tok-var', 'tok-kw'],
                     },
                     blade: {
-                        re: /(\{\{--[\s\S]*?--\}\})|(\{\{[\s\S]*?\}\})|("(?:[^"\\]|\\.)*")|(\$[A-Za-z_]\w*)|(@[a-zA-Z]\w*)|(&lt;\/?[a-zA-Z][\w.:-]*|(?<![=-])\/?&gt;)/g,
+                        re: (function() {
+                            let close = '\\/?&gt;';
+                            try {
+                                close = new RegExp('(?<![=-])' + close).source;
+                            } catch (e) { /* no lookbehind support: keep the plain pattern */ }
+                            return new RegExp([
+                                '(\\{\\{--[\\s\\S]*?--\\}\\})',
+                                '(\\{\\{[\\s\\S]*?\\}\\})',
+                                '("(?:[^"\\\\]|\\\\.)*")',
+                                '(\\$[A-Za-z_]\\w*)',
+                                '(@[a-zA-Z]\\w*)',
+                                '(&lt;\\/?[a-zA-Z][\\w.:-]*|' + close + ')',
+                            ].join('|'), 'g');
+                        })(),
                         map: ['tok-cm', 'tok-var', 'tok-str', 'tok-var', 'tok-kw', 'tok-tag'],
                     },
                     sql: {

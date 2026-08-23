@@ -107,7 +107,7 @@ code {
     font-weight: 600;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .site-nav.navbar-light .navbar-nav .nav-link-cta {
         background-color: var(--brand-tint);
         color: var(--bg-primary);
@@ -416,7 +416,7 @@ a.feature-card > .d-flex > div:last-child {
 @media (max-width: 767px) {
     #example-tabs {
         position: sticky;
-        top: 62px;
+        top: 4.25rem;
         z-index: 20;
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -563,6 +563,30 @@ a.feature-card > .d-flex > div:last-child {
         rgba(0, 120, 62, 0.45),
         rgba(0, 120, 62, 0.12));
     margin-bottom: 0.45rem;
+}
+
+/* On desktop, pin the connector line to the pipeline's vertical center
+   so all segments form one axis regardless of label length */
+@media (min-width: 992px) {
+    .pipe-link {
+        position: relative;
+        min-height: 6.5rem;
+    }
+
+    .pipe-link::before {
+        position: absolute;
+        top: 50%;
+        left: 0.7rem;
+        right: 0.7rem;
+        margin: -1px 0 0;
+    }
+
+    .pipe-link span {
+        position: absolute;
+        top: calc(50% + 0.6rem);
+        left: 0;
+        right: 0;
+    }
 }
 
 @media (max-width: 991px) {
@@ -869,6 +893,21 @@ a.feature-card > .d-flex > div:last-child {
 .orbit-spark-1 { bottom: 58px; left: 44px; }
 .orbit-spark-2 { top: 104px; left: 8px; opacity: 0.45; }
 
+@media (max-width: 359px) {
+    .orbit {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbit-ring-1 { width: 270px; height: 270px; }
+    .orbit-ring-2 { width: 208px; height: 208px; }
+    .orbit-ring-3 { width: 146px; height: 146px; }
+
+    .orbit-sat { top: 40px; right: 0; }
+    .orbit-spark-1 { bottom: 44px; left: 34px; }
+    .orbit-spark-2 { top: 84px; left: 4px; }
+}
+
 @media (max-width: 568px) {
     .matrix-panel {
         padding: 1.25rem;
@@ -896,7 +935,7 @@ a.feature-card > .d-flex > div:last-child {
     border-radius: 0.9rem;
     background:
         linear-gradient(#ffffff, #ffffff) padding-box,
-        conic-gradient(from var(--ring-angle),
+        conic-gradient(from var(--ring-angle, 0deg),
             var(--border-soft) 0%,
             var(--ring-accent) 22%,
             var(--ring-accent) 38%,
@@ -1017,7 +1056,7 @@ a.feature-card > .d-flex > div:last-child {
 
     .timeline::before {
         top: 10px;
-        bottom: 10px;
+        bottom: 2rem;
         left: 6px;
         right: auto;
         width: 2px;
