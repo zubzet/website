@@ -3,40 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The ZubZet PHP framework</title>
+        <title>ZubZet: The PHP framework that starts simple and grows to enterprise</title>
+        <meta name="description" content="ZubZet is an opinionated PHP framework that starts simple and grows to enterprise. In production since 2019, stable at 1.x, built on proven open-source components, with documented upgrade paths and professional support available.">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
 
         <script src="jquery.min.js"></script>
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="font-awesome/all.min.css">
-        <link rel="stylesheet" href="font-awesome/brands.min.css">
         <link rel="stylesheet" href="font-awesome/v4-shims.min.css">
-        <link rel="stylesheet" href="font-awesome/fontawesome.min.css">
         <script src="bootstrap.min.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-primary px-5 shadow-sm">
+    <body data-spy="scroll" data-target=".site-nav" data-offset="120">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top site-nav">
             <div class="container">
-                <a class="navbar-brand font-weight-bold text-white d-flex align-items-center" href="#">
-                    <span>ZubZet</span>
+                <a class="navbar-brand font-weight-bold d-flex align-items-center" href="#">
+                    <img src="assets/logo.png" alt="ZubZet logo" class="brand-logo mr-2">
+                    <span class="brand-name">ZubZet</span>
+                    <span class="badge version-badge ml-2 d-none d-sm-inline-block" data-zz-version="latest">v1.2.0</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbar-content">
-                    <ul class="navbar-nav mr-auto"></ul>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#examples">Samples</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ai">AI Ready</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#channels">Releases</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#quality">Quality</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#support">Enterprise Support</a></li>
+                    </ul>
+                    <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="https://github.com/zubzet">
-                                <i class="fa fa-github"></i>
+                            <a class="nav-link" href="https://github.com/zubzet">
+                                <i class="fa fa-fw fa-github" aria-hidden="true"></i>
                                 GitHub
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="https://zubzet.com/docs">
-                                <i class="fa fa-fw fa-book"></i>
+                            <a class="nav-link nav-link-cta" href="https://zubzet.com/docs">
+                                <i class="fa fa-fw fa-book" aria-hidden="true"></i>
                                 Documentation
                             </a>
                         </li>
@@ -45,228 +54,771 @@
             </div>
         </nav>
 
-        <main style="margin-top: 120px;">
-            <section>
+        <main>
+            <section class="hero">
                 <div class="container">
-                    <div class="row justify-content-center text-center mb-5">
-                        <div class="col-8">
-                            <div class="text-center">
-                                <span class="display-4 font-weight-bold">
-                                    <span class="text-primary">
-                                        ZubZet
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-9">
+                            <h1 class="display-4 font-weight-bold">
+                                Start <span class="gradient-text">simple</span>.
+                                Grow to enterprise.
+                            </h1>
+                            <p class="mt-4 hero-subtitle mx-auto">
+                                ZubZet is an opinionated PHP framework that stays simple until you
+                                need more. In production since 2019, actively maintained, and built
+                                on open-source components the PHP ecosystem already trusts.
+                            </p>
+                            <div class="mt-5">
+                                <a class="btn btn-primary btn-hero font-weight-bold mr-sm-3 mb-3" href="https://zubzet.com/docs">
+                                    <i class="fa fa-book mr-2" aria-hidden="true"></i>
+                                    Get Started
+                                </a>
+                                <a class="btn btn-outline-brand btn-hero font-weight-bold mb-3" href="https://github.com/zubzet">
+                                    <i class="fa fa-github mr-2" aria-hidden="true"></i>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-7 col-md-9">
+                            <div class="codebox p-4 rounded-lg text-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="codebox-command">
+                                        <span class="codebox-prompt">$</span> composer create-project zubzet/zubzet
                                     </span>
-                                    – Lightweight, portable and easy to learn
-                                </span>
-                            </div>
-                            <div class="mt-4 text-center">
-                                <span class="text-muted">
-                                    A lightweight opinionated PHP framework built with complexity adversity in mind,
-                                    empowering developers and easy learning.
-                                </span>
-                            </div>
-                            <div class="mt-5 text-center">
-                                <a class="btn btn-primary font-weight-bold px-4 py-3 mr-3 cursor-pointer mb-2" href="https://github.com/zubzet">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa fa-github mr-2 fa-lg"></i>
-                                        View on Github
-                                    </div>
-                                </a>
-
-                                <a class="btn btn-secondary font-weight-bold px-4 py-3 cursor-pointer mb-2" href="https://zubzet.com/docs">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa fa-book mr-2 fa-lg"></i>
-                                        View Documentation
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-8 p-4 rounded-lg text-white codebox">
-                           <div class="d-flex justify-content-between align-items-center">
-                                <span>
-                                    <span class="text-primary">$</span> composer create-project zubzet/zubzet
-                                </span>
-                                <span class="text-muted copy-click cursor-pointer" data-copy-text="composer create-project zubzet/zubzet">
-                                    <i class="fa fa-copy"></i>
-                                    Copy
-                                </span>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- <section style="margin-top: 120px;">
-                <div class="contaner d-flex justify-content-center">
-                    <div class="row justify-content-around col-8">
-                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex mr-4">
-                                        <div class="p-3 rounded master-icon">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-2 font-weight-bold">Token-Based Security</h4>
-                                        <p class="lead">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        </p>
-                                     </div>
+                                    <button type="button" class="copy-click cursor-pointer" data-copy-text="composer create-project zubzet/zubzet" aria-label="Copy install command">
+                                        <i class="fa fa-copy" aria-hidden="true"></i>
+                                        Copy
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex mr-4">
-                                        <div class="p-3 rounded master-icon">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-2 font-weight-bold">Role-Based Permissions</h4>
-                                        <p class="lead">
-                                           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex mr-4">
-                                        <div class="p-3 rounded master-icon">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-2 font-weight-bold">Session Management</h4>
-                                        <p class="lead">
-                                           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        </p>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-5 mb-5 col-sm-10 mx-4">
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex mr-4">
-                                        <div class="p-3 rounded master-icon">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-fingerprint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" /><path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" /><path d="M12 11v2a14 14 0 0 0 2.5 8" /><path d="M8 15a18 18 0 0 0 1.8 6" /><path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-2 font-weight-bold">Multi-Factor Authentication (MFA) Ready</h4>
-                                        <p class="lead">
-                                           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        </p>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-
-            <section style="margin-top: 120px;">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <h1>
-                            Features
-                        </h1>
-                        <div class="mt-4">
-                            <div class="d-flex justify-content-center flex-wrap">
-                                <li class="feature-item list-group-item border-0 col-lg-4 col-sm-6 d-flex">
-                                    <a class="d-flex p-4 rounded border border-light align-items-center ">
-                                        <div class="mr-3">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-zip"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" /><path d="M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2z" /><path d="M11 5l-1 0" /><path d="M13 7l-1 0" /><path d="M11 9l-1 0" /><path d="M13 11l-1 0" /><path d="M11 13l-1 0" /><path d="M13 15l-1 0" /></svg>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <span class="font-weight-bold">
-                                                Auto Form Validation
-                                            </span>
-                                            <span class="feature-description">
-                                                Automate form validation with error reporting and database integration.
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
-                                    <a class="d-flex p-4 rounded border border-light align-items-center">
-                                        <div class="mr-3">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <span class="font-weight-bold">
-                                                Permission System
-                                            </span>
-                                            <span class="feature-description">
-                                                Manage roles and permissions with flexible access control, including wildcards.
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
-                                    <a class="d-flex p-4 rounded border border-light align-items-center">
-                                        <div class="mr-3">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-upload"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 9l5 -5l5 5" /><path d="M12 4l0 12" /></svg>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <span class="font-weight-bold">
-                                                File Uploads
-                                            </span>
-                                            <span class="feature-description">
-                                                Handle file uploads seamlessly with pre-set rules for type and size validation.
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="list-group-item border-0 col-lg-4 col-sm-6 d-flex">
-                                    <a class="d-flex p-4 rounded border border-light align-items-center">
-                                        <div class="mr-3">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <span class="font-weight-bold">
-                                                Email Integration
-                                            </span>
-                                            <span class="feature-description">
-                                                Send emails directly from your application with customizable templates.
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
+                            <div class="d-flex justify-content-center flex-wrap mt-4 fact-chips">
+                                <span class="fact-chip" data-zz-version="latest" data-zz-prefix="Stable ">Stable v1.2.0</span>
+                                <span class="fact-chip">PHP 8.0 – 8.5</span>
+                                <span class="fact-chip">Apache-2.0</span>
+                                <span class="fact-chip">Since 2019</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="pt-4 bg-light" style="margin-top: 100px">
+            <section class="section" id="features">
                 <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="eyebrow">Features</span>
+                        <h2 class="section-title mt-2">Enterprise essentials, built in</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/forms/auto-form-validation/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11l3 3l8 -8" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">Auto Form Validation</span>
+                                        <span class="feature-description">
+                                            Automate form validation with error reporting and database integration.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/core-features/permission-system/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">Authorization</span>
+                                        <span class="feature-description">
+                                            Manage roles and permissions with flexible access control, including wildcards.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/core-features/migrations/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">Migrations &amp; Query Builder</span>
+                                        <span class="feature-description">
+                                            Evolve your database schema with migrations and an expressive query builder.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/forms/file-uploads/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 9l5 -5l5 5" /><path d="M12 4l0 12" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">File Uploads</span>
+                                        <span class="feature-description">
+                                            Handle file uploads with preset rules for type and size validation.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/template-rendering-usages/sending-an-email/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">Email Integration</span>
+                                        <span class="feature-description">
+                                            Send emails directly from your application with customizable templates.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+                            <a class="feature-card p-4 w-100" href="https://zubzet.com/docs/latest/core-features/console-commands/">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-chip mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3l-3 3" /><path d="M13 15l3 0" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block mb-1">CLI Tooling</span>
+                                        <span class="feature-description">
+                                            Ship and operate your app with built-in console commands based on Symfony Console.
+                                        </span>
+                                        <span class="card-more">
+                                            Find out more
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-band" id="examples">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="eyebrow">Show, don't tell</span>
+                        <h2 class="section-title mt-2 mb-4">What ZubZet code looks like</h2>
+                        <p class="text-muted-soft mx-auto section-intro">
+                            ZubZet has one principle: simple by default, more when you need it.
+                            Every lightweight tool has a heavier sibling for the day you outgrow
+                            it, and the two work together without breaking your project.
+                        </p>
+                    </div>
+                    <ul class="nav nav-pills justify-content-center flex-wrap mb-4" id="example-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tab-routing" data-toggle="pill" href="#ex-routing" role="tab" aria-controls="ex-routing" aria-selected="true">Routing</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-forms" data-toggle="pill" href="#ex-forms" role="tab" aria-controls="ex-forms" aria-selected="false">Forms</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-permissions" data-toggle="pill" href="#ex-permissions" role="tab" aria-controls="ex-permissions" aria-selected="false">Authorization</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-database" data-toggle="pill" href="#ex-database" role="tab" aria-controls="ex-database" aria-selected="false">Database</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-migrations" data-toggle="pill" href="#ex-migrations" role="tab" aria-controls="ex-migrations" aria-selected="false">Migrations</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-views" data-toggle="pill" href="#ex-views" role="tab" aria-controls="ex-views" aria-selected="false">Views</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="ex-routing" role="tabpanel" aria-labelledby="tab-routing">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">Zero config, full control when you need it</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        Drop a controller into <code>app/Controllers/</code> and the
+                                        URL exists. <code>/Employee/view/2</code> resolves straight
+                                        to <code>action_view</code> with <code>2</code> as a
+                                        parameter. No route table, no annotations, no cache to
+                                        rebuild.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        The day an API needs HTTP-method compliance, versioned
+                                        endpoints or middleware, you add the explicit router. It
+                                        runs alongside your convention routes without breaking a
+                                        single one of them.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/latest/core-features/controllers-and-actions/">Convention routing</a>
+                                    <a class="example-link ml-3" href="https://zubzet.com/docs/latest/core-features/routing/">The router</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">The default: controllers become URLs</div>
+                                    <pre class="code-sample mb-0"><code>class EmployeeController extends z_controller {
+
+    // GET {root}/Employee/view/2
+    public function action_view(Request $req, Response $res) {
+        $req-&gt;checkPermission("employee.view");
+
+        $employeeId = $req-&gt;getParameters(0, 1);
+        $employee = $req-&gt;getModel("Employee")-&gt;getById($employeeId);
+
+        return $res-&gt;render("employee/employee_view", [
+            "employee" =&gt; $employee,
+        ]);
+    }
+}</code></pre>
+                                    <div class="code-caption mt-4">When you need more: the explicit router</div>
+                                    <pre class="code-sample mb-0"><code>use ZubZet\Framework\Routing\Route;
+
+Route::group('/api/{apiVersion}', function () {
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/{id}', [UserController::class, 'show']);
+})
+-&gt;middleware([AuthController::class, 'checkAuth'])
+-&gt;afterMiddleware([LogController::class, 'logRequest']);</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ex-forms" role="tabpanel" aria-labelledby="tab-forms">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">Forms that validate themselves</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        Declare your fields once. ZubZet validates the input, ships
+                                        error messages back to the exact field that failed, and
+                                        writes the validated result to the database. You never
+                                        touch <code>$_POST</code>, never hand-map columns, never
+                                        write the error rendering twice.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        It is the code you have written a hundred times, reduced to
+                                        the few lines that actually differ per form.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/latest/forms/auto-form-validation/">Form validation docs</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">One declaration, the whole round trip</div>
+                                    <pre class="code-sample mb-0"><code>public function action_add(Request $req, Response $res) {
+    $req-&gt;checkPermission("todo.add");
+
+    if($req-&gt;hasFormData()) {
+        $formResult = $req-&gt;validateForm([
+            (new FormField("description"))
+                -&gt;required()-&gt;length(5, 15),
+        ]);
+
+        if($formResult-&gt;hasErrors) {
+            return $res-&gt;formErrors($formResult-&gt;errors);
+        }
+
+        $res-&gt;insertDatabase("todo", $formResult);
+        return $res-&gt;success();
+    }
+
+    return $res-&gt;render("todo/add");
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ex-permissions" role="tabpanel" aria-labelledby="tab-permissions">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">One permission model, everywhere</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        Permissions are dotted strings with wildcard support:
+                                        <code>employee.view</code> is granted by
+                                        <code>employee.*</code> or <code>*.*</code>. One line
+                                        guards an action with a 403, and the same permission
+                                        string shows or hides a button in your view.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        Access is decided in exactly one place, and reads the same
+                                        everywhere it is enforced.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/latest/core-features/permission-system/">Permission system docs</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">Guard an action</div>
+                                    <pre class="code-sample mb-0"><code>// Kicks the request out with a 403 when the current user
+// is missing "employee.view".
+// Also granted by: employee.*  and  *.*
+public function action_view(Request $req, Response $res) {
+    $req-&gt;checkPermission("employee.view");
+
+    return $res-&gt;render("employee/employee_view");
+}</code></pre>
+                                    <div class="code-caption mt-4">The same permission in a view</div>
+                                    <pre class="code-sample mb-0"><code class="lang-blade">@auth("employee.edit")
+    &lt;button&gt;Edit employee&lt;/button&gt;
+@endauth</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ex-database" role="tabpanel" aria-labelledby="tab-database">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">Your SQL first, a query builder when it grows</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        Write the SQL you already know.
+                                        <code>exec()</code> collapses prepare, bind and execute
+                                        into one call with real prepared parameters, so untrusted
+                                        input is never concatenated into the SQL string. Results
+                                        come back as plain PHP arrays.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        When a query outgrows raw SQL, a report, a filter, a
+                                        dashboard, switch that one method to the query builder.
+                                        Same model, same <code>exec()</code> call, and the rest of
+                                        your SQL stays untouched.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/latest/core-features/models/">Models docs</a>
+                                    <a class="example-link ml-3" href="https://zubzet.com/docs/latest/core-features/query-builder/">Query builder docs</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">The default: your SQL, safely</div>
+                                    <pre class="code-sample mb-0"><code>class EmployeeModel extends z_model {
+
+    public function getAll(): array {
+        return $this-&gt;exec("SELECT * FROM `employee`")-&gt;resultToArray();
+    }
+
+    public function getById($employeeId): array {
+        $sql = "SELECT * FROM `employee` WHERE `id` = ?";
+        return $this-&gt;exec($sql, "i", $employeeId)-&gt;resultToLine();
+    }
+
+}</code></pre>
+                                    <div class="code-caption mt-4">When you need more: the query builder</div>
+                                    <pre class="code-sample mb-0"><code>$query = $this-&gt;dbSelect([
+        'u.id',
+        'u.name',
+        'order_count' =&gt; 'COUNT(o.id)',
+    ], ['u' =&gt; 'users'])
+    -&gt;leftJoin(['o' =&gt; 'orders'], ['u.id = o.user_id'])
+    -&gt;where(['u.status' =&gt; 'active'])
+    -&gt;group(['u.id', 'u.name'])
+    -&gt;orderDesc('order_count')
+    -&gt;limit(10);
+
+$result = $this-&gt;exec($query);</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ex-migrations" role="tabpanel" aria-labelledby="tab-migrations">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">Plain SQL migrations, PHP when you need logic</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        A schema change is a file in
+                                        <code>app/Database/migrations/</code>, applied exactly once
+                                        and in chronological order, and the importer checks the
+                                        timeline for gaps before importing.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        Plain <code>.sql</code> files cover the everyday case. The
+                                        day one migration needs conditions or computed data, write
+                                        that one in PHP with a Doctrine DBAL schema builder. Both
+                                        formats mix freely in the same timeline.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/latest/core-features/migrations/">Migrations docs</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">The default: plain SQL</div>
+                                    <pre class="code-sample mb-0"><code class="lang-sql">-- app/Database/migrations/2026-03-03_1_CreateOrders.sql
+CREATE TABLE `orders` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `userId` INT NOT NULL,
+    `total` DECIMAL(10, 2),
+    `status` VARCHAR(50) DEFAULT 'pending'
+);</code></pre>
+                                    <div class="code-caption mt-4">When you need logic: the same migration in PHP</div>
+                                    <pre class="code-sample mb-0"><code>use ZubZet\Framework\Database\Migration\Migration;
+
+// app/Database/migrations/2026-03-03_1_CreateOrders.php
+class Migration_2026_03_03_1_CreateOrders extends Migration {
+
+    public function execute(): void {
+        $table = $this-&gt;tableCreate("orders");
+        $table-&gt;addColumn("id", "integer", ["autoincrement" =&gt; true]);
+        $table-&gt;setPrimaryKey(["id"]);
+        $table-&gt;addColumn("userId", "integer", ["notnull" =&gt; true]);
+        $table-&gt;addColumn("total", "decimal", [
+            "precision" =&gt; 10, "scale" =&gt; 2,
+        ]);
+        $table-&gt;addIndex(["userId"], "idx_orders_user");
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ex-views" role="tabpanel" aria-labelledby="tab-views">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-5 mb-4 pr-lg-5">
+                                    <h3 class="h5 font-weight-bold">Blade views and components</h3>
+                                    <p class="text-muted-soft text-justify">
+                                        Views are Blade templates: template inheritance with
+                                        <code>@extends</code>, reusable components with
+                                        <code>@props</code> and slots, and the framework's own
+                                        page essentials shipped as
+                                        <code>&lt;x-zubzet::...&gt;</code> components you can
+                                        override.
+                                    </p>
+                                    <p class="text-muted-soft text-justify">
+                                        Even access control reads naturally in a template: the
+                                        <code>@auth</code> directive speaks the same permission
+                                        strings as your controllers.
+                                    </p>
+                                    <a class="example-link" href="https://zubzet.com/docs/edge/core-features/views/">Views docs</a>
+                                </div>
+                                <div class="col-lg-7 mb-4">
+                                    <div class="code-caption">A component, defined once</div>
+                                    <pre class="code-sample mb-0"><code class="lang-blade">{{-- app/Views/components/alert.blade.php --}}
+@props(["type" =&gt; "info"])
+&lt;div class="alert alert-{{ $type }}"&gt;
+    {{ $slot }}
+&lt;/div&gt;</code></pre>
+                                    <div class="code-caption mt-4">Used anywhere</div>
+                                    <pre class="code-sample mb-0"><code class="lang-blade">@extends($layout)
+
+@section("content")
+    &lt;x-alert type="warning"&gt;
+        Your session is about to expire.
+    &lt;/x-alert&gt;
+
+    @auth("employee.edit")
+        &lt;button&gt;Edit&lt;/button&gt;
+    @endauth
+@endsection</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                        <section class="section" id="ai">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-4 order-lg-2 pl-lg-5">
+                            <span class="eyebrow">AI Ready</span>
+                            <h2 class="section-title mt-2 mb-4">Built for AI coding agents</h2>
+                            <p class="text-muted-soft text-justify">
+                                Predictable conventions, public documentation and a strong test
+                                suite are exactly what coding agents need. ZubZet leans into that.
+                            </p>
+                            <ul class="list-unstyled ai-list mb-0">
+                                <li class="d-flex align-items-start">
+                                    <div class="icon-chip icon-chip-sm mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block">Agent guide included</span>
+                                        <span class="feature-description">
+                                            An <a href="https://github.com/zubzet/framework/blob/main/AGENTS.md">AGENTS.md</a>
+                                            in the repository and a dedicated
+                                            <a href="https://zubzet.com/docs/latest/contributing/agents/working-with-agents/">agents chapter</a>
+                                            in the docs orient Claude Code, Cursor, Codex and friends.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-start">
+                                    <div class="icon-chip icon-chip-sm mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block">Predictable by convention</span>
+                                        <span class="feature-description">
+                                            Convention over configuration means an agent always knows
+                                            where controllers, models and views live, and where
+                                            changes belong.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-start">
+                                    <div class="icon-chip icon-chip-sm mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3l6 0" /><path d="M10 9l4 0" /><path d="M10 3v6l-4 11a0.7 .7 0 0 0 .5 1h11a0.7 .7 0 0 0 .5 -1l-4 -11v-6" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block">A real feedback loop</span>
+                                        <span class="feature-description">
+                                            760+ end-to-end tests against a real database cluster
+                                            let agents verify their own changes before a human ever
+                                            reviews them.
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-start">
+                                    <div class="icon-chip icon-chip-sm mr-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold d-block">Docs where agents look</span>
+                                        <span class="feature-description">
+                                            The full documentation is public, versioned per release,
+                                            and ships as Markdown inside the package, readable
+                                            straight from <code>vendor/</code>.
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 mb-4 order-lg-1">
+                            <div class="terminal-panel">
+                                <div class="terminal-bar">
+                                    <span class="terminal-dot-r" aria-hidden="true"></span>
+                                    <span class="terminal-dot-y" aria-hidden="true"></span>
+                                    <span class="terminal-dot-g" aria-hidden="true"></span>
+                                    <span class="terminal-title">agent session</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <div class="term-line"><span class="term-prompt">$</span> agent "Add a CSV export to the report page"</div>
+                                    <div class="term-line term-dim"><span class="term-status" aria-hidden="true"></span>Reading AGENTS.md</div>
+                                    <div class="term-line term-dim"><span class="term-status" aria-hidden="true"></span>Reading vendor/zubzet/framework/docs/&hellip;</div>
+                                    <div class="term-line term-dim"><span class="term-status" aria-hidden="true"></span>Writing app/Controllers/ReportController.php</div>
+                                    <div class="term-line term-dim"><span class="term-status" aria-hidden="true"></span>Running the e2e suite</div>
+                                    <div class="term-line term-ok"><span class="term-status" aria-hidden="true"></span>Suite green. /Report/exportCsv is routed by convention.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-band" id="longevity">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="eyebrow">Longevity</span>
+                        <h2 class="section-title mt-2">Built for the long term</h2>
+                    </div>
+                    <div class="timeline mx-auto" aria-label="Release history">
+                        <div class="timeline-item">
+                            <span class="timeline-dot" aria-hidden="true"></span>
+                            <span class="timeline-year">2019</span>
+                            <span class="timeline-label">Development begins</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot" aria-hidden="true"></span>
+                            <span class="timeline-year">2020</span>
+                            <span class="timeline-label">First release, v0.9</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot" aria-hidden="true"></span>
+                            <span class="timeline-year">2026</span>
+                            <span class="timeline-label">v1.0, the first major version</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot" aria-hidden="true"></span>
+                            <span class="timeline-year">Today</span>
+                            <span class="timeline-label">v1.2.0, the largest release yet</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot timeline-dot-next" aria-hidden="true"></span>
+                            <span class="timeline-year">Next</span>
+                            <span class="timeline-label" data-zz-version="edge">v1.3.0-alpha2</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-4 px-lg-4">
+                            <div class="icon-chip icon-chip-lg mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /><path d="M7 7l0 10" /><path d="M4 8l0 8" /></svg>
+                            </div>
+                            <h3 class="h5 font-weight-bold">Stable and versioned</h3>
+                            <p class="text-muted-soft text-justify">
+                                ZubZet is stable at 1.x. Every version step ships with a documented
+                                <a href="https://zubzet.com/docs/latest/setup/how-to-update/">upgrade guide</a>,
+                                all the way back to 0.9, and the
+                                <a href="https://github.com/zubzet/version-migration">ZubZet Version Migrator</a>
+                                automates the mechanical steps for you, so updating is routine,
+                                not a rewrite.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-4 px-lg-4">
+                            <div class="icon-chip icon-chip-lg mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-8 4l8 4l8 -4l-8 -4" /><path d="M4 12l8 4l8 -4" /><path d="M4 16l8 4l8 -4" /></svg>
+                            </div>
+                            <h3 class="h5 font-weight-bold">Proven foundations</h3>
+                            <p class="text-muted-soft text-justify">
+                                Under the hood, ZubZet builds on software the PHP ecosystem trusts:
+                                Doctrine DBAL, Symfony Console, Monolog, FastRoute, PHPMailer and
+                                the Blade template syntax. A thin, maintainable layer over
+                                well-known components, not a private universe.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-4 px-lg-4">
+                            <div class="icon-chip icon-chip-lg mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8l0 4l2 2" /><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg>
+                            </div>
+                            <h3 class="h5 font-weight-bold">Actively maintained</h3>
+                            <p class="text-muted-soft text-justify">
+                                Developed and used in production since 2019, with regular releases
+                                across the 1.x line,
+                                <a href="https://zubzet.com/docs">extensive documentation</a>
+                                and support for PHP 8.0 through the current 8.5.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="channels">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="eyebrow">Releases</span>
+                        <h2 class="section-title mt-2">Pick your channel</h2>
+                    </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-8 text-center">
-                            <h2>
-                                Who supports this?
-                            </h2>
-                            <div class="p-4 d-flex align-items-center">
-                                <span class="h5 text-muted">
-                                    ZubZet is an open and free project everyone can use, that was started
-                                    at Zierhut IT GmbH. We use this framework in all of our projects and
-                                    have been doing so for years. With that context, you can be sure that
-                                    this project is here to stay. There will always be enough time and
-                                    resources made available for maintenance. Also, if you ever need
-                                    enterprise support, we are here to help.
+                        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                            <a class="channel-card channel-card-stable p-4 w-100" href="https://zubzet.com/docs/latest/">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="font-weight-bold d-inline-flex align-items-center"><span class="channel-dot channel-dot-stable" aria-hidden="true"></span>Stable</span>
+                                    <span class="badge version-badge" data-zz-version="latest">v1.2.0</span>
+                                </div>
+                                <span class="feature-description">
+                                    Recommended for production. Hardened through release candidates
+                                    and commercial projects before it ships.
                                 </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                            <a class="channel-card channel-card-edge p-4 w-100" href="https://zubzet.com/docs/edge/">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="font-weight-bold d-inline-flex align-items-center"><span class="channel-dot channel-dot-edge" aria-hidden="true"></span>Edge</span>
+                                    <span class="badge version-badge" data-zz-version="edge">v1.3.0-alpha2</span>
+                                </div>
+                                <span class="feature-description">
+                                    A preview of the next release, for early adopters and for
+                                    testing your upgrade before the stable release lands.
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                            <a class="channel-card channel-card-unstable p-4 w-100" href="https://zubzet.com/docs/unstable/">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="font-weight-bold d-inline-flex align-items-center"><span class="channel-dot channel-dot-unstable" aria-hidden="true"></span>Unstable</span>
+                                    <span class="badge version-badge">development head</span>
+                                </div>
+                                <span class="feature-description">
+                                    The latest pre-release state, published straight from the
+                                    repository. For contributors and the curious.
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                        <section class="section section-band" id="quality">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <span class="eyebrow">Quality Assurance</span>
+                            <h2 class="section-title mt-2 mb-3">Tested like production</h2>
+                            <p class="text-muted-soft text-justify mb-3">
+                                Every change runs through an end-to-end suite that drives a real
+                                browser against a real database cluster, and the suite contains
+                                more code than the framework itself. One failover test terminates
+                                the active database node mid-request and requires the request to
+                                complete successfully. Stable versions ship only after a green run
+                                across every supported PHP version, hardened through release
+                                candidates and validated in commercial projects.
+                            </p>
+                            <a class="example-link" href="https://github.com/zubzet/framework/tree/main/tests/e2e">Browse the test suite</a>
+                        </div>
+                    </div>
+                    <div class="pipeline">
+                        <div class="pipe-stage">
+                            <span class="mp-node mp-node-2l"><i class="fab fa-chrome mp-icon" aria-hidden="true"></i><span>Test suite runs<br>in a real browser</span></span>
+                        </div>
+                        <div class="pipe-link"><span>on every PHP version</span></div>
+                        <div class="pipe-stage pipe-grid">
+                            <span class="mp-node mp-php">PHP 8.0</span>
+                            <span class="mp-node mp-php">PHP 8.1</span>
+                            <span class="mp-node mp-php">PHP 8.2</span>
+                            <span class="mp-node mp-php">PHP 8.3</span>
+                            <span class="mp-node mp-php">PHP 8.4</span>
+                            <span class="mp-node mp-php">PHP 8.5</span>
+                        </div>
+                        <div class="pipe-link"><span>using a real DB cluster</span></div>
+                        <div class="pipe-stage pipe-col">
+                            <span class="mp-node"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>DB node 1</span>
+                            <span class="mp-node"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>DB node 2</span>
+                            <span class="mp-node"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>DB node 3</span>
+                        </div>
+                        <div class="pipe-link"><span>adding up to</span></div>
+                        <div class="pipe-stage">
+                            <div class="pipe-result">
+                                <span class="pipe-result-number">9,000+</span>
+                                <span class="pipe-result-label">test assertions across versions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="support">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-4 pr-lg-5">
+                            <span class="eyebrow">Enterprise Support</span>
+                            <h2 class="section-title mt-2 mb-4">Commercially proven. Independently&nbsp;maintained.</h2>
+                            <p class="text-muted-soft text-justify">
+                                ZubZet is an independent, maintainer-led open-source project that
+                                powers real commercial software.
+                                <a href="https://zierhut-it.de/?utm_source=zubzet.com&amp;utm_medium=domain">Zierhut IT GmbH</a>
+                                has built on ZubZet in production for years and contributes
+                                engineering resources to its development. Stewardship of the
+                                framework remains with its maintainers, so its continuity is not
+                                tied to any single company.
+                            </p>
+                            <ul class="list-unstyled partner-list mb-0">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10" /></svg>Professional and enterprise support</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10" /></svg>Long-term agreements over multiple years</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10" /></svg>Building on ZubZet in production since 2019</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 mb-4 d-flex justify-content-center">
+                            <div class="orbit">
+                                <span class="orbit-ring orbit-ring-1" aria-hidden="true"></span>
+                                <span class="orbit-ring orbit-ring-2" aria-hidden="true"></span>
+                                <span class="orbit-ring orbit-ring-3" aria-hidden="true"></span>
+                                <span class="orbit-spark orbit-spark-1" aria-hidden="true"></span>
+                                <span class="orbit-spark orbit-spark-2" aria-hidden="true"></span>
+                                <div class="orbit-center">
+                                    <img src="assets/logo.png" alt="ZubZet" class="orbit-logo">
+                                </div>
+                                <a class="orbit-sat" href="https://zierhut-it.de/?utm_source=zubzet.com&amp;utm_medium=domain">
+                                    <span class="zierhut-brand">Zierhut IT</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -274,37 +826,226 @@
             </section>
         </main>
 
-        <footer class="py-3 mt-5">
-            <ul class="nav justify-content-center border-bottom mb-3">
-                <li class="nav-item">
-                    <a href="https://github.com/zubzet" class="nav-link text-muted px-2 text-body-secondary">
-                        Github
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://zubzet.com/docs" class="nav-link px-2 text-muted text-body-secondary">
-                        Documentation
-                    </a>
-                </li>
-            </ul>
-            <p class="text-center text-body-secondary text-muted">
-                © The ZubZet contributors
-            </p>
+        <footer class="pt-5 pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 pr-lg-5">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="assets/logo.png" alt="ZubZet logo" class="brand-logo mr-2">
+                            <span class="font-weight-bold brand-name h5 mb-0">ZubZet</span>
+                        </div>
+                        <p class="footer-note">
+                            A lightweight, opinionated PHP framework for business applications
+                            that are meant to last. Open source under the Apache-2.0 license.
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Project</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/zubzet" class="footer-link">GitHub</a></li>
+                            <li><a href="https://github.com/zubzet/framework/releases" class="footer-link">Releases</a></li>
+                            <li><a href="https://github.com/zubzet/framework/blob/main/Changelog.md" class="footer-link">Changelog</a></li>
+                            <li><a href="https://github.com/zubzet/framework/blob/main/LICENSE" class="footer-link">License</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Documentation</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://zubzet.com/docs/latest/setup/installation/" class="footer-link">Getting started</a></li>
+                            <li><a href="https://zubzet.com/docs" class="footer-link">Documentation</a></li>
+                            <li><a href="https://zubzet.com/docs/latest/setup/how-to-update/" class="footer-link">Upgrade guides</a></li>
+                            <li><a href="https://zubzet.com/docs/edge/" class="footer-link">Edge docs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Community &amp; Support</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/zubzet/framework/issues" class="footer-link">Issues</a></li>
+                            <li><a href="https://zubzet.com/docs/latest/contributing/how-to-contribute/" class="footer-link">Contributing</a></li>
+                            <li><a href="https://zierhut-it.de/?utm_source=zubzet.com&amp;utm_medium=domain" class="footer-link">Enterprise support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom pt-3">
+                    <p class="text-center footer-note mb-0">
+                        © The ZubZet contributors · Apache-2.0 licensed
+                    </p>
+                </div>
+            </div>
         </footer>
 
         <script>
             $(document).ready(function() {
-                $('.copy-click').on('click', function() {
-                    const textToCopy = $(this).data('copy-text');
-                    const $button = $(this);
+                const HIGHLIGHT = {
+                    php: {
+                        re: /(\/\/[^\n]*)|("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')|(\$[A-Za-z_]\w*|\bthis\b)|\b(class|extends|implements|public|protected|private|function|return|new|use|static|void|int|string|array|bool|if|else|foreach|as|true|false|null)\b/g,
+                        map: ['tok-cm', 'tok-str', 'tok-var', 'tok-kw'],
+                    },
+                    blade: {
+                        re: /(\{\{--[\s\S]*?--\}\})|(\{\{[\s\S]*?\}\})|("(?:[^"\\]|\\.)*")|(\$[A-Za-z_]\w*)|(@[a-zA-Z]\w*)|(&lt;\/?[a-zA-Z][\w.:-]*|(?<![=-])\/?&gt;)/g,
+                        map: ['tok-cm', 'tok-var', 'tok-str', 'tok-var', 'tok-kw', 'tok-tag'],
+                    },
+                    sql: {
+                        re: /(--[^\n]*)|('(?:[^'\\]|\\.)*')|\b(CREATE|TABLE|INT|NOT|NULL|PRIMARY|KEY|AUTO_INCREMENT|DECIMAL|VARCHAR|DEFAULT)\b/g,
+                        map: ['tok-cm', 'tok-str', 'tok-kw'],
+                    },
+                };
 
-                    navigator.clipboard.writeText(textToCopy).then(() => {
-                        $button.html('<i class="fa fa-check"></i> Copied!');
-
-                        setTimeout(() => {
-                            $button.html('<i class="fa fa-copy"></i> Copy');
-                        }, 5000);
+                $('pre.code-sample code').each(function() {
+                    const mode = this.className.indexOf('lang-blade') !== -1 ? 'blade'
+                        : this.className.indexOf('lang-sql') !== -1 ? 'sql'
+                        : 'php';
+                    const conf = HIGHLIGHT[mode];
+                    const esc = this.textContent
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    this.innerHTML = esc.replace(conf.re, function() {
+                        for (let i = 1; i <= conf.map.length; i++) {
+                            if (arguments[i] !== undefined) {
+                                return '<span class="' + conf.map[i - 1] + '">' + arguments[0] + '</span>';
+                            }
+                        }
+                        return arguments[0];
                     });
+                });
+
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+                // Card-deck scrolling from the Samples section down: each section
+                // pins once fully shown and the next one slides over it. Every card
+                // sits in a slot slightly taller than itself, so after a short
+                // overlap the slot edge pushes the pinned card along natively,
+                // like sliding-door panels. No per-frame JavaScript involved.
+                const STACK_PEEK = 36;
+                const stacked = $('#features, #features ~ section').toArray();
+                if (!reduceMotion.matches && stacked.length) {
+                    stacked.forEach(function(el) {
+                        $(el).wrap('<div class="stack-slot"></div>');
+                    });
+                    const footerEl = document.querySelector('footer');
+                    const applyStack = function() {
+                        const vh = window.innerHeight;
+                        stacked.forEach(function(el, i) {
+                            const slot = el.parentElement;
+                            el.style.marginTop = '';
+                            slot.style.height = '';
+                            const overlap = parseFloat(window.getComputedStyle(el).marginTop) || 0;
+                            el.style.marginTop = '0px';
+                            el.style.position = 'sticky';
+                            el.style.top = Math.min(0, vh - el.offsetHeight) + 'px';
+                            slot.style.height = (el.offsetHeight + STACK_PEEK) + 'px';
+                            slot.style.marginTop = (i === 0 ? overlap : overlap - STACK_PEEK) + 'px';
+                        });
+                        if (footerEl) {
+                            footerEl.style.marginTop = '';
+                            const footerOverlap = parseFloat(window.getComputedStyle(footerEl).marginTop) || 0;
+                            footerEl.style.marginTop = (footerOverlap - STACK_PEEK) + 'px';
+                        }
+                    };
+                    applyStack();
+                    $(window).on('resize load', applyStack);
+                    $(document).on('shown.bs.tab', applyStack);
+                }
+
+                const termPanel = document.querySelector('.terminal-panel');
+                if (termPanel) {
+                    const termLines = $('.terminal-body .term-line').toArray();
+                    termLines.forEach(function(el) { el.classList.add('term-pending'); });
+                    let termStarted = false;
+                    const playTerminal = function() {
+                        if (termStarted) return;
+                        termStarted = true;
+                        if (reduceMotion.matches) {
+                            termLines.forEach(function(el) {
+                                el.classList.remove('term-pending');
+                                const s = el.querySelector('.term-status');
+                                if (s) s.classList.add('term-done');
+                            });
+                            return;
+                        }
+                        let i = 0;
+                        const next = function() {
+                            if (i >= termLines.length) return;
+                            const el = termLines[i];
+                            el.classList.remove('term-pending');
+                            const status = el.querySelector('.term-status');
+                            i += 1;
+                            if (status) {
+                                status.classList.add('term-running');
+                                setTimeout(function() {
+                                    status.classList.remove('term-running');
+                                    status.classList.add('term-done');
+                                    setTimeout(next, 140);
+                                }, 700);
+                            } else {
+                                setTimeout(next, 500);
+                            }
+                        };
+                        next();
+                    };
+                    if ('IntersectionObserver' in window) {
+                        const termObserver = new IntersectionObserver(function(entries) {
+                            if (entries.some(function(e) { return e.isIntersecting; })) {
+                                termObserver.disconnect();
+                                playTerminal();
+                            }
+                        }, { threshold: 0.5 });
+                        termObserver.observe(termPanel);
+                    } else {
+                        playTerminal();
+                    }
+                }
+
+                $('#navbar-content').on('click', '.nav-link', function() {
+                    $('#navbar-content').collapse('hide');
+                });
+
+                $('#example-tabs').on('keydown', '[role="tab"]', function(e) {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    const tabs = $('#example-tabs [role="tab"]');
+                    let i = tabs.index(this) + (e.key === 'ArrowRight' ? 1 : -1);
+                    i = (i + tabs.length) % tabs.length;
+                    tabs.eq(i).tab('show').trigger('focus');
+                });
+
+                fetch('https://zubzet.com/docs/versions.json')
+                    .then(function(res) { return res.json(); })
+                    .then(function(versions) {
+                        ['latest', 'edge'].forEach(function(alias) {
+                            const entry = versions.find(function(v) {
+                                return (v.aliases || []).indexOf(alias) !== -1;
+                            });
+                            if (!entry) return;
+                            $('[data-zz-version="' + alias + '"]').each(function() {
+                                const prefix = $(this).data('zz-prefix') || '';
+                                $(this).text(prefix + entry.version);
+                            });
+                        });
+                    })
+                    .catch(function() {});
+
+                let copyResetTimer = null;
+                $('.copy-click').on('click', function() {
+                    const $button = $(this);
+                    const textToCopy = $button.data('copy-text');
+                    const restore = function() {
+                        clearTimeout(copyResetTimer);
+                        copyResetTimer = setTimeout(function() {
+                            $button.html('<i class="fa fa-copy" aria-hidden="true"></i> Copy');
+                        }, 5000);
+                    };
+                    const fail = function() {
+                        $button.html('<i class="fa fa-copy" aria-hidden="true"></i> Copy failed');
+                        restore();
+                    };
+
+                    if (!navigator.clipboard) return fail();
+                    navigator.clipboard.writeText(textToCopy).then(function() {
+                        $button.html('<i class="fa fa-check" aria-hidden="true"></i> Copied!');
+                        restore();
+                    }, fail);
                 });
             });
         </script>
