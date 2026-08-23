@@ -281,8 +281,7 @@ code {
 
 /* ---------- Sections ---------- */
 
-/* Sections stack like sheets: each one slides slightly over the previous
-   (the scroll-tied shuffle itself lives in the page script) */
+/* Sections stack like sheets, each overlapping the previous one slightly */
 .section {
     position: relative;
     background-color: #ffffff;
@@ -292,8 +291,7 @@ code {
     box-shadow: 0 -1px 0 rgba(23, 36, 29, 0.05), 0 -8px 16px rgba(23, 36, 29, 0.05);
 }
 
-.hero + .section,
-.hero + .stack-slot > .section {
+.hero + .section {
     box-shadow: none;
 }
 

@@ -912,42 +912,6 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
 
                 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-                // Card-deck scrolling from the Samples section down: each section
-                // pins once fully shown and the next one slides over it. Every card
-                // sits in a slot slightly taller than itself, so after a short
-                // overlap the slot edge pushes the pinned card along natively,
-                // like sliding-door panels. No per-frame JavaScript involved.
-                const STACK_PEEK = 36;
-                const stacked = $('#features, #features ~ section').toArray();
-                if (!reduceMotion.matches && stacked.length) {
-                    stacked.forEach(function(el) {
-                        $(el).wrap('<div class="stack-slot"></div>');
-                    });
-                    const footerEl = document.querySelector('footer');
-                    const applyStack = function() {
-                        const vh = window.innerHeight;
-                        stacked.forEach(function(el, i) {
-                            const slot = el.parentElement;
-                            el.style.marginTop = '';
-                            slot.style.height = '';
-                            const overlap = parseFloat(window.getComputedStyle(el).marginTop) || 0;
-                            el.style.marginTop = '0px';
-                            el.style.position = 'sticky';
-                            el.style.top = Math.min(0, vh - el.offsetHeight) + 'px';
-                            slot.style.height = (el.offsetHeight + STACK_PEEK) + 'px';
-                            slot.style.marginTop = (i === 0 ? overlap : overlap - STACK_PEEK) + 'px';
-                        });
-                        if (footerEl) {
-                            footerEl.style.marginTop = '';
-                            const footerOverlap = parseFloat(window.getComputedStyle(footerEl).marginTop) || 0;
-                            footerEl.style.marginTop = (footerOverlap - STACK_PEEK) + 'px';
-                        }
-                    };
-                    applyStack();
-                    $(window).on('resize load', applyStack);
-                    $(document).on('shown.bs.tab', applyStack);
-                }
-
                 const termPanel = document.querySelector('.terminal-panel');
                 if (termPanel) {
                     const termLines = $('.terminal-body .term-line').toArray();
