@@ -226,7 +226,9 @@ code {
 
 .codebox-command {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    overflow-x: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
@@ -407,6 +409,46 @@ a.feature-card > .d-flex > div:last-child {
 
 /* ---------- Code examples ---------- */
 
+#example-tabs {
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    #example-tabs {
+        position: sticky;
+        top: 62px;
+        z-index: 20;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        background-color: var(--surface);
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 0.5rem 15px;
+    }
+
+    #example-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    #example-tabs .nav-link {
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+}
+
+.keep-together {
+    display: inline;
+}
+
+@media (min-width: 992px) {
+    .keep-together {
+        white-space: nowrap;
+    }
+}
+
 #example-tabs .nav-link {
     color: var(--ink-soft);
     font-weight: 600;
@@ -527,6 +569,16 @@ a.feature-card > .d-flex > div:last-child {
     .pipeline {
         flex-direction: column;
         margin: 3rem 0;
+    }
+
+    .pipe-grid {
+        max-width: 320px;
+    }
+
+    .pipe-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .pipe-link {
@@ -1072,13 +1124,14 @@ footer {
         padding: 1.1rem !important;
     }
 
-    .codebox .d-flex {
-        flex-wrap: wrap;
+    .codebox .copy-click {
+        margin-left: 0.75rem;
     }
 
-    .codebox .copy-click {
-        margin-left: 0;
-        margin-top: 0.6rem;
+    .mp-node {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.6rem;
+        margin: 0.15rem;
     }
 
     footer {
