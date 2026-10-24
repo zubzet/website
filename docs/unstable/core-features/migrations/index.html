@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -783,6 +783,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../translations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../permission-system" class="md-nav__link">
         
   
@@ -819,6 +847,62 @@
     
   
     Password Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csrf-protection" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSRF Protection
   
 
     
@@ -987,10 +1071,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
             
   
   
@@ -1008,8 +1092,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1098,10 +1182,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
         
           
-          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
             
   
   
@@ -1119,8 +1203,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_14">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1265,6 +1349,34 @@
     
   
     Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-factor-authentication" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two Factor Authentication
   
 
     
@@ -1543,6 +1655,62 @@
     
   
     Login as another User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/organization-management" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/profile" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
   
 
     
@@ -2995,12 +3163,12 @@ Every PHP migration must extend the base <a href="../../api/classes/ZubZet-Frame
 <span class="x">class Migration_2025_10_01_MigrationEnv extends Migration {</span>
 
 <span class="x">    public function execute(): void {</span>
-<span class="x">        $this-&gt;setEnvironment(&quot;production&quot;);</span>
+<span class="x">        $this-&gt;setEnvironment("production");</span>
 
-<span class="x">        $table = $this-&gt;tableCreate(&quot;migration_env&quot;);</span>
-<span class="x">        $table-&gt;addColumn(&quot;id&quot;, &quot;integer&quot;, [&quot;autoincrement&quot; =&gt; true]);</span>
-<span class="x">        $table-&gt;setPrimaryKey([&quot;id&quot;]);</span>
-<span class="x">        $table-&gt;addColumn(&quot;name&quot;, &quot;string&quot;, [&quot;length&quot; =&gt; 255, &quot;notnull&quot; =&gt; true]);</span>
+<span class="x">        $table = $this-&gt;tableCreate("migration_env");</span>
+<span class="x">        $table-&gt;addColumn("id", "integer", ["autoincrement" =&gt; true]);</span>
+<span class="x">        $table-&gt;setPrimaryKey(["id"]);</span>
+<span class="x">        $table-&gt;addColumn("name", "string", ["length" =&gt; 255, "notnull" =&gt; true]);</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div>
@@ -3059,12 +3227,12 @@ ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You 
 <span class="p">);</span>
 </code></pre></div></p>
 <p><strong>Doctrine:</strong>
-<div class="highlight"><pre><span></span><code><span class="x">$table = $this-&gt;tableCreate(&quot;testTable&quot;);</span>
-<span class="x">$table-&gt;addColumn(&quot;id&quot;, &quot;integer&quot;, [&quot;autoincrement&quot; =&gt; true]);</span>
-<span class="x">$table-&gt;setPrimaryKey([&quot;id&quot;]);</span>
-<span class="x">$table-&gt;addColumn(&quot;name&quot;, &quot;string&quot;, [&quot;length&quot; =&gt; 255]);</span>
-<span class="x">$table-&gt;addColumn(&quot;active&quot;, &quot;boolean&quot;, [&quot;length&quot; =&gt; 1, &quot;default&quot; =&gt; 1]);</span>
-<span class="x">$table-&gt;addColumn(&quot;created&quot;, &quot;timestamp&quot;, [&quot;default&quot; =&gt; &quot;CURRENT_TIMESTAMP&quot;]);</span>
+<div class="highlight"><pre><span></span><code><span class="x">$table = $this-&gt;tableCreate("testTable");</span>
+<span class="x">$table-&gt;addColumn("id", "integer", ["autoincrement" =&gt; true]);</span>
+<span class="x">$table-&gt;setPrimaryKey(["id"]);</span>
+<span class="x">$table-&gt;addColumn("name", "string", ["length" =&gt; 255]);</span>
+<span class="x">$table-&gt;addColumn("active", "boolean", ["length" =&gt; 1, "default" =&gt; 1]);</span>
+<span class="x">$table-&gt;addColumn("created", "timestamp", ["default" =&gt; "CURRENT_TIMESTAMP"]);</span>
 </code></pre></div></p>
 </details>
 </li>
@@ -3079,7 +3247,7 @@ ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You 
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">testTable</span><span class="o">`</span><span class="p">;</span>
 </code></pre></div></p>
 <p><strong>Doctrine:</strong>
-<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableDrop(&quot;testTable&quot;);</span>
+<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableDrop("testTable");</span>
 </code></pre></div></p>
 </details>
 </li>
@@ -3094,7 +3262,7 @@ ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You 
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">testTable</span><span class="w"> </span><span class="k">RENAME</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">newName</span><span class="p">;</span>
 </code></pre></div></p>
 <p><strong>Doctrine:</strong>
-<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableRename(&quot;testTable&quot;, &quot;newName&quot;);</span>
+<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableRename("testTable", "newName");</span>
 </code></pre></div></p>
 </details>
 </li>
@@ -3105,12 +3273,12 @@ ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You 
 </blockquote>
 <details class="example">
 <summary>Example</summary>
-<div class="highlight"><pre><span></span><code>$this-&gt;run(&#39;
+<div class="highlight"><pre><span></span><code>$this-&gt;run('
     CREATE TABLE `testTable` (
         `id` INT PRIMARY KEY AUTO_INCREMENT,
         `name` VARCHAR(255)
     );
-&#39;);
+');
 </code></pre></div>
 </details>
 </li>
@@ -3125,8 +3293,8 @@ ZubZet utilizes <strong>Doctrine DBAL</strong> for its Schema QueryBuilder. You 
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">z_user</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">LONGTEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </code></pre></div></p>
 <p><strong>Doctrine:</strong>
-<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableAlter(&quot;tableTest&quot;)</span>
-<span class="x">      -&gt;addColumn(&quot;description&quot;, &quot;text&quot;, [&quot;notnull&quot; =&gt; false]);</span>
+<div class="highlight"><pre><span></span><code><span class="x">$this-&gt;tableAlter("tableTest")</span>
+<span class="x">      -&gt;addColumn("description", "text", ["notnull" =&gt; false]);</span>
 </code></pre></div></p>
 </details>
 </li>
@@ -3205,8 +3373,8 @@ Each seed class must implement a <code>run()</code> method where all database op
 <span class="x">class TestSeed extends Seed {</span>
 
 <span class="x">    public function run() {</span>
-<span class="x">        $this-&gt;insert(&quot;model_test_insert&quot;, [</span>
-<span class="x">            &quot;value&quot; =&gt; &quot;test value&quot;</span>
+<span class="x">        $this-&gt;insert("model_test_insert", [</span>
+<span class="x">            "value" =&gt; "test value"</span>
 <span class="x">        ]);</span>
 <span class="x">    }</span>
 <span class="x">}</span>
@@ -3330,9 +3498,10 @@ Includes migrations provided by the ZubZet Framework in the sync process.</p>
 <h4 id="lock-states">Lock States<a class="headerlink" href="#lock-states" title="Permanent link">&para;</a></h4>
 <p>The command reports one of the following states:</p>
 <ul>
-<li><strong><code>LOCKED</code> (0)</strong> – A migration is currently in progress, or a previous migration was interrupted (e.g., a <strong>Manual Migration</strong>), leaving the database protected against concurrent execution.</li>
-<li><strong><code>UNLOCKED</code> (1)</strong> – The database is clear. No migration is currently active, and new migrations can be started safely.</li>
+<li><strong><code>LOCKED</code> (exit code 1)</strong> – A migration is currently in progress, or a previous migration was interrupted (e.g., a <strong>Manual Migration</strong>), leaving the database protected against concurrent execution.</li>
+<li><strong><code>UNLOCKED</code> (exit code 0)</strong> – The database is clear. No migration is currently active, and new migrations can be started safely.</li>
 </ul>
+<p>The exit code makes the command usable as a check in scripts, e.g. <code>db:status &amp;&amp; db:migrate</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If the status remains <strong>LOCKED</strong> even though no migration is running, it usually means a <strong>Manual Migration</strong> was reached or a process <strong>crashed</strong>.</p>
@@ -3467,10 +3636,10 @@ They are an essential part of ensuring safe, repeatable, and reliable database m
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

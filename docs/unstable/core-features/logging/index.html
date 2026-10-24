@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -783,6 +783,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../translations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../permission-system" class="md-nav__link">
         
   
@@ -819,6 +847,62 @@
     
   
     Password Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csrf-protection" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSRF Protection
   
 
     
@@ -987,10 +1071,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
             
   
   
@@ -1008,8 +1092,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1098,10 +1182,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
         
           
-          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
             
   
   
@@ -1119,8 +1203,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_14">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1265,6 +1349,34 @@
     
   
     Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-factor-authentication" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two Factor Authentication
   
 
     
@@ -1543,6 +1655,62 @@
     
   
     Login as another User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/organization-management" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/profile" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
   
 
     
@@ -2841,21 +3009,21 @@
 <h2 id="writing-log-entries">Writing Log Entries<a class="headerlink" href="#writing-log-entries" title="Permanent link">&para;</a></h2>
 <p>Use the global <code>logger()</code> <a href="../global-helper-functions/">helper function</a> anywhere in your application.</p>
 <div class="highlight"><pre><span></span><code><span class="x">// Log to the app channel</span>
-<span class="x">logger()-&gt;info(&quot;User submitted a contact form&quot;, [&quot;email&quot; =&gt; $email]);</span>
+<span class="x">logger()-&gt;info("User submitted a contact form", ["email" =&gt; $email]);</span>
 
 <span class="x">// Log to a named channel</span>
-<span class="x">logger(&quot;payments&quot;)-&gt;warning(&quot;Payment gateway timeout&quot;, [&quot;orderId&quot; =&gt; $id]);</span>
+<span class="x">logger("payments")-&gt;warning("Payment gateway timeout", ["orderId" =&gt; $id]);</span>
 </code></pre></div>
 <p><code>logger()</code> without arguments defaults to the <code>"app"</code> channel. Any string can be passed to create a named channel — each channel is cached after the first call.</p>
 <h3 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="x">logger()-&gt;debug(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;info(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;notice(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;warning(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;error(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;critical(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;alert(&quot;message&quot;, $context);</span>
-<span class="x">logger()-&gt;emergency(&quot;message&quot;, $context);</span>
+<div class="highlight"><pre><span></span><code><span class="x">logger()-&gt;debug("message", $context);</span>
+<span class="x">logger()-&gt;info("message", $context);</span>
+<span class="x">logger()-&gt;notice("message", $context);</span>
+<span class="x">logger()-&gt;warning("message", $context);</span>
+<span class="x">logger()-&gt;error("message", $context);</span>
+<span class="x">logger()-&gt;critical("message", $context);</span>
+<span class="x">logger()-&gt;alert("message", $context);</span>
+<span class="x">logger()-&gt;emergency("message", $context);</span>
 </code></pre></div>
 <p>The second parameter <code>$context</code> is an optional associative array with additional data to attach to the log record.</p>
 <h2 id="registering-a-custom-logger">Registering a Custom Logger<a class="headerlink" href="#registering-a-custom-logger" title="Permanent link">&para;</a></h2>
@@ -2864,13 +3032,13 @@
 <span class="x">use Monolog\Handler\RotatingFileHandler;</span>
 <span class="x">use ZubZet\Framework\Logger\LoggerFactory;</span>
 
-<span class="x">$customLogger = new Logger(&quot;audit&quot;);</span>
-<span class="x">$customLogger-&gt;pushHandler(new RotatingFileHandler(&quot;/var/log/audit.log&quot;, 30));</span>
+<span class="x">$customLogger = new Logger("audit");</span>
+<span class="x">$customLogger-&gt;pushHandler(new RotatingFileHandler("/var/log/audit.log", 30));</span>
 
-<span class="x">LoggerFactory::register(&quot;audit&quot;, $customLogger);</span>
+<span class="x">LoggerFactory::register("audit", $customLogger);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="x">// Anywhere in your application</span>
-<span class="x">logger(&quot;audit&quot;)-&gt;info(&quot;User exported data&quot;, [&quot;userId&quot; =&gt; $id]);</span>
+<span class="x">logger("audit")-&gt;info("User exported data", ["userId" =&gt; $id]);</span>
 </code></pre></div>
 <p>If a logger with that name was already created by the framework, <code>register()</code> overwrites it in the cache.</p>
 <h2 id="logger-types">Logger Types<a class="headerlink" href="#logger-types" title="Permanent link">&para;</a></h2>
@@ -2924,17 +3092,17 @@
 <h4 id="value-column-structure"><code>value</code> Column Structure<a class="headerlink" href="#value-column-structure" title="Permanent link">&para;</a></h4>
 <p>The <code>value</code> column contains a JSON-encoded object with the full log record and environment context:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User logged in&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zubzet&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-08T12:00:00+00:00&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;extra&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">    </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;execUserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web&quot;</span>
+<span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User logged in"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INFO"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zubzet"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-08T12:00:00+00:00"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"environment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"execUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2993,7 +3161,7 @@
 <span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">z_config/app.log</span>
 </code></pre></div>
 <p>Each log entry is a single JSON object followed by a newline character. The environment context is appended automatically before formatting:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;User logged in&quot;</span><span class="p">,</span><span class="nt">&quot;context&quot;</span><span class="p">:{</span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">},</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;level_name&quot;</span><span class="p">:</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="s2">&quot;zubzet&quot;</span><span class="p">,</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="s2">&quot;2026-04-08 12:00:00&quot;</span><span class="p">,</span><span class="nt">&quot;extra&quot;</span><span class="p">:{},</span><span class="nt">&quot;environment&quot;</span><span class="p">:{</span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;execUserId&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;web&quot;</span><span class="p">}}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"User logged in"</span><span class="p">,</span><span class="nt">"context"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">},</span><span class="nt">"level"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">"level_name"</span><span class="p">:</span><span class="s2">"INFO"</span><span class="p">,</span><span class="nt">"channel"</span><span class="p">:</span><span class="s2">"zubzet"</span><span class="p">,</span><span class="nt">"datetime"</span><span class="p">:</span><span class="s2">"2026-04-08 12:00:00"</span><span class="p">,</span><span class="nt">"extra"</span><span class="p">:{},</span><span class="nt">"environment"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"execUserId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">}}</span>
 </code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># z_config/z_settings.ini</span>
@@ -3001,11 +3169,11 @@
 <span class="na">logger_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">info</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="x">public function action_order(Request $req, Response $res) {</span>
-<span class="x">    $orderId = model(&quot;order&quot;)-&gt;createOrder($req-&gt;getPost(&quot;items&quot;));</span>
+<span class="x">    $orderId = model("order")-&gt;createOrder($req-&gt;getPost("items"));</span>
 
-<span class="x">    logger()-&gt;info(&quot;Order placed&quot;, [&quot;orderId&quot; =&gt; $orderId]);</span>
+<span class="x">    logger()-&gt;info("Order placed", ["orderId" =&gt; $orderId]);</span>
 
-<span class="x">    return $res-&gt;success([&quot;orderId&quot; =&gt; $orderId]);</span>
+<span class="x">    return $res-&gt;success(["orderId" =&gt; $orderId]);</span>
 <span class="x">}</span>
 </code></pre></div>
 
@@ -3088,10 +3256,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

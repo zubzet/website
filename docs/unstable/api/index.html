@@ -57,6 +57,10 @@
                                     <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/zubzet.html">ZubZet</a></h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="namespaces/zubzet-tooling.html">Tooling</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/zubzet-framework.html">Framework</a>
                 
             </li>
@@ -128,9 +132,17 @@
         <dd>The Login controller handles all login/logout stuff</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZController.html"><abbr title="\ZController">ZController</abbr></a></dt>
         <dd>The ZController contains actions for the admin dashboard / panel</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZOrganizationController.html"><abbr title="\ZOrganizationController">ZOrganizationController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZetController.html"><abbr title="\ZubZetController">ZubZetController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/z-organizationModel.html"><abbr title="\z_organizationModel">z_organizationModel</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DashboardController.html"><abbr title="\DashboardController">DashboardController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExampleController.html"><abbr title="\ExampleController">ExampleController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExampleModel.html"><abbr title="\ExampleModel">ExampleModel</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppGuestbookGreetCommand.html"><abbr title="\AppGuestbookGreetCommand">AppGuestbookGreetCommand</abbr></a></dt>
         <dd></dd>
@@ -151,6 +163,8 @@ hashes still verifying. See jouri&#039;s Authentication/UserController.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AuthProbeController.html"><abbr title="\AuthProbeController">AuthProbeController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CollationProbeController.html"><abbr title="\CollationProbeController">CollationProbeController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CompatController.html"><abbr title="\CompatController">CompatController</abbr></a></dt>
         <dd>Exercises Blade/Katana compatibility guarantees through the real render path:
  - action_probe: a migrated legacy view whose literal {{ }}, {!! !!} and
@@ -165,6 +179,8 @@ two never shadow each other (katanaphp/blade#66).</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CoreController.html"><abbr title="\CoreController">CoreController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CsrfProbeController.html"><abbr title="\CsrfProbeController">CsrfProbeController</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DashboardController.html"><abbr title="\DashboardController">DashboardController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseClusterProbeController.html"><abbr title="\DatabaseClusterProbeController">DatabaseClusterProbeController</abbr></a></dt>
@@ -172,6 +188,8 @@ two never shadow each other (katanaphp/blade#66).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseProbeController.html"><abbr title="\DatabaseProbeController">DatabaseProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseRetryProbeController.html"><abbr title="\DatabaseRetryProbeController">DatabaseRetryProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/EncryptionProbeController.html"><abbr title="\EncryptionProbeController">EncryptionProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExceptionController.html"><abbr title="\ExceptionController">ExceptionController</abbr></a></dt>
         <dd></dd>
@@ -229,6 +247,10 @@ real render path (Rendering\CanRenderView -&gt; Rendering\Katana\Engine).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/StateProbeController.html"><abbr title="\StateProbeController">StateProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SupportProbeController.html"><abbr title="\SupportProbeController">SupportProbeController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TranslationController.html"><abbr title="\TranslationController">TranslationController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TwoFactorProbeController.html"><abbr title="\TwoFactorProbeController">TwoFactorProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UserController.html"><abbr title="\UserController">UserController</abbr></a></dt>
         <dd></dd>
@@ -295,6 +317,41 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_db">db()</a>
+    <span>
+                        &nbsp;: <abbr title="\mysqli">mysqli</abbr>    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_import">import()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_drop">drop()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_getFiles">getFiles()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_importFolder">importFolder()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_model">model()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -310,6 +367,179 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
             Functions
             <a href="namespaces/default.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_db">
+        db()
+        <a href="namespaces/default.html#function_db" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="migrator/files/1.0.0/import.php"><a href="files/migrator-files-1-0-0-import.html"><abbr title="migrator/files/1.0.0/import.php">import.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">10</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">db</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\mysqli">mysqli</abbr></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\mysqli">mysqli</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_import">
+        import()
+        <a href="namespaces/default.html#function_import" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="migrator/files/1.0.0/import.php"><a href="files/migrator-files-1-0-0-import.html"><abbr title="migrator/files/1.0.0/import.php">import.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">import</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$file</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_drop">
+        drop()
+        <a href="namespaces/default.html#function_drop" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="migrator/files/1.0.0/import.php"><a href="files/migrator-files-1-0-0-import.html"><abbr title="migrator/files/1.0.0/import.php">import.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">drop</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_getFiles">
+        getFiles()
+        <a href="namespaces/default.html#function_getFiles" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="migrator/files/1.0.0/import.php"><a href="files/migrator-files-1-0-0-import.html"><abbr title="migrator/files/1.0.0/import.php">import.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">getFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_importFolder">
+        importFolder()
+        <a href="namespaces/default.html#function_importFolder" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="migrator/files/1.0.0/import.php"><a href="files/migrator-files-1-0-0-import.html"><abbr title="migrator/files/1.0.0/import.php">import.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">importFolder</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
                     <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_model">
         model()

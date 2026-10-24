@@ -57,6 +57,10 @@
                                     <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/zubzet.html">ZubZet</a></h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="namespaces/zubzet-tooling.html">Tooling</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/zubzet-framework.html">Framework</a>
                 
             </li>
@@ -115,7 +119,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>                    </span>
+                            <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html"><abbr title="\ZubZet\Framework\Authentication\CanUseSession">CanUseSession</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -149,7 +153,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#property_dbTable">$dbTable</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#property_dbTable">$dbTable</a>
     <span>
                 &nbsp;: string            </span>
 </dt>
@@ -169,6 +173,13 @@
 </dt>
 <dd>Process-wide flag indicating that permission-related data has changed.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#property_shouldRefresh">$shouldRefresh</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
     <span>
@@ -176,15 +187,8 @@
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#property_shouldRefresh">$shouldRefresh</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd></dd>
-
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method___construct">__construct()</a>
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -212,6 +216,20 @@
 <dd>Get a permission object (user or role) by its id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier">byIdentifier()</a>
+    <span>
+                        &nbsp;: object|null    </span>
+</dt>
+<dd>Get a permission object (user or role) by one of its identifiers</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifiers">byIdentifiers()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, object&gt;    </span>
+</dt>
+<dd>Get a list of permission objects (user or role) by one of their identifiers</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds">byIds()</a>
     <span>
                         &nbsp;: array&lt;string|int, object&gt;    </span>
@@ -219,18 +237,39 @@
 <dd>Get a list of permission objects (user or role) by their ids</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_byToken">byToken()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byToken">byToken()</a>
     <span>
-                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|null    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|<a href="classes/ZubZet-Framework-Authentication-APIKey.html"><abbr title="\ZubZet\Framework\Authentication\APIKey">APIKey</abbr></a>|null    </span>
 </dt>
-<dd></dd>
+<dd>A session by its token, whichever kind the token opens</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_byUser">byUser()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byUser">byUser()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd></dd>
+<dd>All active sessions of a user, of the kind the called class stands for</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuid">byUuid()</a>
+    <span>
+                        &nbsp;: object|null    </span>
+</dt>
+<dd>Get a permission object (user or role) by its uuid</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuids">byUuids()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, object&gt;    </span>
+</dt>
+<dd>Get a list of permission objects (user or role) by their uuids</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_canExpire">canExpire()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Whether the session is subject to expiring at all</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance">checkInstance()</a>
@@ -247,28 +286,42 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_created">created()</a>
-    <span>
-                        &nbsp;: string|null    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_expiresAt">expiresAt()</a>
-    <span>
-                        &nbsp;: string|null    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_extend">extend()</a>
+    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_clearForUser">clearForUser()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_extendedSeconds">extendedSeconds()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_created">created()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_device">device()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>The user agent the session was started from, or null when none was sent</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_expiresAt">expiresAt()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>The point in time the session becomes unusable, or null when it cannot expire</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extend">extend()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extendedSeconds">extendedSeconds()</a>
     <span>
                         &nbsp;: int|null    </span>
 </dt>
@@ -296,23 +349,59 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_invalidate">invalidate()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_invalidate">invalidate()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_isExpired">isExpired()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipCreation">ipCreation()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>The address the session was created from, or null when it was not known</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipLast">ipLast()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>The address the session was last used from, or null while it is unused</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_isExpired">isExpired()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_loadObject">loadObject()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastTwoFactor">lastTwoFactor()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>When this session last passed a two factor check, or null while it
+never did</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastUsed">lastUsed()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>When the session was last used, or null while it is unused</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_loadObject">loadObject()</a>
     <span>
                         &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_name">name()</a>
+    <span>
+                        &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
@@ -324,6 +413,20 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_reason">reason()</a>
+    <span>
+                        &nbsp;: string|null    </span>
+</dt>
+<dd>Why the session was created, e.g. an impersonation, or null</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_recordTwoFactor">recordTwoFactor()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Stamps a freshly passed two factor check on the session</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh">refresh()</a>
     <span>
                         &nbsp;: void    </span>
@@ -331,42 +434,104 @@
 <dd>Refresh the current permission object (user or role) by clearing all its fields and setting them new</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_setExtensionTime">setExtensionTime()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_remainingTwoFactorTries">remainingTwoFactorTries()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>How many wrong two factor codes this session may still send. At zero it
+is signed out rather than asked again.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_requireRenew">requireRenew()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Whether this session has to pass two factor again before it is let near
+a guarded action.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_resetTwoFactorTries">resetTwoFactorTries()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Hands the session its full budget of two factor tries back</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setCanExpire">setCanExpire()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Subjects the session to expiring, or exempts it from it. A session that
+cannot expire is not invalidated on use, so an already expired one
+becomes usable again by turning this off.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExpiresAt">setExpiresAt()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Fixes the point in time the session expires, or hands it back to the
+computed lifetime when null is passed. A fixed expiry replaces that
+lifetime, so extending the session no longer moves it.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExtensionTime">setExtensionTime()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_token">token()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setName">setName()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Names the session, or removes its name when null is passed</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_spendTwoFactorTry">spendTwoFactorTry()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Spends one of the tries on a wrong code and answers how many are left</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_token">token()</a>
     <span>
                         &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_userId">userId()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userId">userId()</a>
     <span>
                         &nbsp;: int|null    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_userIdExec">userIdExec()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userIdExec">userIdExec()</a>
     <span>
                         &nbsp;: int|null    </span>
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid">uuid()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField">setField()</a>
+    <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_refreshOnNextUse">refreshOnNextUse()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Authentication-Session.html#method_refreshOnNextUse">refreshOnNextUse()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField">setField()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -409,7 +574,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$dbExpression</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&quot;zr.is_apikey&quot; =&gt; 0]</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -427,14 +592,14 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_dbTable">
         $dbTable
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#property_dbTable" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#property_dbTable" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
@@ -528,6 +693,40 @@ which authentication object triggered the change.</p>
         class="
             phpdocumentor-element
             -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shouldRefresh">
+        $shouldRefresh
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#property_shouldRefresh" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">12</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$shouldRefresh</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
             -private
                                                         "
 >
@@ -558,40 +757,6 @@ which authentication object triggered the change.</p>
     
 
 </article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_shouldRefresh">
-        $shouldRefresh
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#property_shouldRefresh" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$shouldRefresh</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -607,12 +772,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -656,14 +821,14 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userExec</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userExec</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reason</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -680,6 +845,22 @@ which authentication object triggered the change.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$userExec</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$reason</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -741,7 +922,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -781,6 +962,118 @@ which authentication object triggered the change.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_byIdentifier">
+        byIdentifier()
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a permission object (user or role) by one of its identifiers</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIdentifier</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$column</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$identifier</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$column</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The identifying column, e.g. &quot;id&quot; or &quot;uuid&quot;</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$identifier</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The value of the identifying column</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">object|null</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the permission object if found, null otherwise</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byIdentifiers">
+        byIdentifiers()
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifiers" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a list of permission objects (user or role) by one of their identifiers</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIdentifiers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$column</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;|array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$identifiers</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$column</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The identifying column, e.g. &quot;id&quot; or &quot;uuid&quot;</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$identifiers</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;|array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The values of the identifying column</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The list of permission objects</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_byIds">
         byIds()
         <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds" class="headerlink"><i class="fas fa-link"></i></a>
@@ -788,7 +1081,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -830,21 +1123,25 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_byToken">
         byToken()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_byToken" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byToken" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">A session by its token, whichever kind the token opens</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byToken</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byToken</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|<a href="classes/ZubZet-Framework-Authentication-APIKey.html"><abbr title="\ZubZet\Framework\Authentication\APIKey">APIKey</abbr></a>|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>A token does not say what it opens, so the row picks the class. This is
+the entry point of the authentication, which has to resolve both kinds -
+an api key must not be measured against the login timeout.</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -861,7 +1158,7 @@ which authentication object triggered the change.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a>|<a href="classes/ZubZet-Framework-Authentication-APIKey.html"><abbr title="\ZubZet\Framework\Authentication\APIKey">APIKey</abbr></a>|null</span>
             &mdash;
         
     
@@ -874,22 +1171,22 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_byUser">
         byUser()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_byUser" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byUser" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">All active sessions of a user, of the kind the called class stands for</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -897,7 +1194,8 @@ which authentication object triggered the change.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>The user whose sessions are returned</p>
+</section>
 
             </dd>
             </dl>
@@ -905,7 +1203,134 @@ which authentication object triggered the change.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byUuid">
+        byUuid()
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuid" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">84</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a permission object (user or role) by its uuid</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byUuid</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uuid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uuid</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the uuid of the object</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">object|null</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the permission object if found, null otherwise</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byUuids">
+        byUuids()
+        <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuids" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">94</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a list of permission objects (user or role) by their uuids</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byUuids</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$uuids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uuids</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The uuids of the objects to retrieve</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The list of permission objects</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_canExpire">
+        canExpire()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_canExpire" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">293</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether the session is subject to expiring at all</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">canExpire</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -980,16 +1405,60 @@ which authentication object triggered the change.</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_created">
-        created()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_created" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_clearForUser">
+        clearForUser()
+        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_clearForUser" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">clearForUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$user</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_created">
+        created()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_created" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -1015,23 +1484,60 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_expiresAt">
-        expiresAt()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_expiresAt" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_device">
+        device()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_device" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">The user agent the session was started from, or null when none was sent</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">device</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
     
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_expiresAt">
+        expiresAt()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_expiresAt" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">221</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The point in time the session becomes unusable, or null when it cannot expire</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">expiresAt</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$refresh</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>A fixed expiry wins over the computed lifetime, so neither the configured
+timeout nor an extension has a say once one is set. A session that cannot
+expire outranks both - it never becomes unusable at all.</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1061,12 +1567,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_extend">
         extend()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_extend" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extend" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1105,12 +1611,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_extendedSeconds">
         extendedSeconds()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_extendedSeconds" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extendedSeconds" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
@@ -1248,12 +1754,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_invalidate">
         invalidate()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_invalidate" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_invalidate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -1279,14 +1785,80 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isExpired">
-        isExpired()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_isExpired" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_ipCreation">
+        ipCreation()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipCreation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The address the session was created from, or null when it was not known</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">ipCreation</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_ipLast">
+        ipLast()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipLast" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">286</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The address the session was last used from, or null while it is unused</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">ipLast</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isExpired">
+        isExpired()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_isExpired" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">236</span>
 
     </aside>
 
@@ -1312,14 +1884,81 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_loadObject">
-        loadObject()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_loadObject" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_lastTwoFactor">
+        lastTwoFactor()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastTwoFactor" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">When this session last passed a two factor check, or null while it
+never did</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">lastTwoFactor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_lastUsed">
+        lastUsed()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastUsed" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">308</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">When the session was last used, or null while it is unused</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">lastUsed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_loadObject">
+        loadObject()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_loadObject" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -1356,6 +1995,39 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_name">
+        name()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_name" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">258</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">name</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_nullId">
         nullId()
         <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1363,7 +2035,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -1379,6 +2051,72 @@ which authentication object triggered the change.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_reason">
+        reason()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_reason" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">272</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Why the session was created, e.g. an impersonation, or null</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">reason</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_recordTwoFactor">
+        recordTwoFactor()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_recordTwoFactor" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">156</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Stamps a freshly passed two factor check on the session</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">recordTwoFactor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
@@ -1438,14 +2176,226 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setExtensionTime">
-        setExtensionTime()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_setExtensionTime" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_remainingTwoFactorTries">
+        remainingTwoFactorTries()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_remainingTwoFactorTries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">How many wrong two factor codes this session may still send. At zero it
+is signed out rather than asked again.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">remainingTwoFactorTries</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_requireRenew">
+        requireRenew()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_requireRenew" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">198</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether this session has to pass two factor again before it is let near
+a guarded action.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">requireRenew</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$freshnessSeconds</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>False for an account that carries no two factor - there is nothing to
+renew and the visitor could never satisfy it. Otherwise true while the
+session never passed a check, or once the last one aged past
+<code class="prettyprint">two_factor_freshness_seconds</code>. An api key starts without a stamp, so it
+stays stale for an account with two factor until it passes a renewal.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$freshnessSeconds</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetTwoFactorTries">
+        resetTwoFactorTries()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_resetTwoFactorTries" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">167</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Hands the session its full budget of two factor tries back</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">resetTwoFactorTries</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setCanExpire">
+        setCanExpire()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setCanExpire" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">120</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Subjects the session to expiring, or exempts it from it. A session that
+cannot expire is not invalidated on use, so an already expired one
+becomes usable again by turning this off.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setCanExpire</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$canExpire</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>The column stores the exemption, so it is inverted here once.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$canExpire</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setExpiresAt">
+        setExpiresAt()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExpiresAt" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">94</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Fixes the point in time the session expires, or hands it back to the
+computed lifetime when null is passed. A fixed expiry replaces that
+lifetime, so extending the session no longer moves it.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setExpiresAt</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\DateTime">DateTime</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$expiresAt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$expiresAt</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\DateTime">DateTime</abbr>|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setExtensionTime">
+        setExtensionTime()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExtensionTime" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -1482,14 +2432,91 @@ which authentication object triggered the change.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_token">
-        token()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_token" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setName">
+        setName()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setName" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Names the session, or removes its name when null is passed</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_spendTwoFactorTry">
+        spendTwoFactorTry()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_spendTwoFactorTry" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">178</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Spends one of the tries on a wrong code and answers how many are left</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">spendTwoFactorTry</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_token">
+        token()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_token" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -1517,12 +2544,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_userId">
         userId()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_userId" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userId" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 
     </aside>
 
@@ -1550,12 +2577,12 @@ which authentication object triggered the change.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_userIdExec">
         userIdExec()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_userIdExec" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userIdExec" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
@@ -1571,6 +2598,72 @@ which authentication object triggered the change.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_uuid">
+        uuid()
+        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">uuid</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_refreshOnNextUse">
+        refreshOnNextUse()
+        <a href="classes/ZubZet-Framework-Authentication-CanUseSession.html#method_refreshOnNextUse" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/CanUseSession.php"><a href="files/src-authentication-canusesession.html"><abbr title="src/Authentication/CanUseSession.php">CanUseSession.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">312</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">refreshOnNextUse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
@@ -1619,39 +2712,6 @@ which authentication object triggered the change.</p>
             </dd>
             </dl>
 
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_refreshOnNextUse">
-        refreshOnNextUse()
-        <a href="classes/ZubZet-Framework-Authentication-Session.html#method_refreshOnNextUse" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Session.php"><a href="files/src-authentication-session.html"><abbr title="src/Authentication/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">117</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">refreshOnNextUse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>

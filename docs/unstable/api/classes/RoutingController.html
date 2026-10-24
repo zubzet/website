@@ -57,6 +57,10 @@
                                     <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/zubzet.html">ZubZet</a></h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="namespaces/zubzet-tooling.html">Tooling</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/zubzet-framework.html">Framework</a>
                 
             </li>
@@ -115,7 +119,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
@@ -148,6 +152,20 @@ CoreController stay focused on actual core actions.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/RoutingController.html#method_action_dispatchBelowRoot">action_dispatchBelowRoot()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/RoutingController.html#method_action_group_guarded">action_group_guarded()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/RoutingController.html#method_action_TestRouteByKey">action_TestRouteByKey()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -170,6 +188,13 @@ CoreController stay focused on actual core actions.</p>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/RoutingController.html#method_action_urlPartsProbe_strip2">action_urlPartsProbe_strip2()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/RoutingController.html#method_action_urlPartsProbe_stripSlashes">action_urlPartsProbe_stripSlashes()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -271,7 +296,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -316,6 +341,110 @@ CoreController stay focused on actual core actions.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_action_dispatchBelowRoot">
+        action_dispatchBelowRoot()
+        <a href="classes/RoutingController.html#method_action_dispatchBelowRoot" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">137</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_dispatchBelowRoot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_action_group_guarded">
+        action_group_guarded()
+        <a href="classes/RoutingController.html#method_action_group_guarded" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_group_guarded</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_action_TestRouteByKey">
         action_TestRouteByKey()
         <a href="classes/RoutingController.html#method_action_TestRouteByKey" class="headerlink"><i class="fas fa-link"></i></a>
@@ -323,7 +452,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 
     </aside>
 
@@ -375,7 +504,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -427,7 +556,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -479,7 +608,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -524,6 +653,58 @@ CoreController stay focused on actual core actions.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_action_urlPartsProbe_stripSlashes">
+        action_urlPartsProbe_stripSlashes()
+        <a href="classes/RoutingController.html#method_action_urlPartsProbe_stripSlashes" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">129</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">action_urlPartsProbe_stripSlashes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$req</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$res</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_Group_Afterware">
         Group_Afterware()
         <a href="classes/RoutingController.html#method_Group_Afterware" class="headerlink"><i class="fas fa-link"></i></a>
@@ -531,7 +712,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -583,7 +764,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -635,7 +816,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -687,7 +868,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -739,7 +920,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -807,7 +988,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -859,7 +1040,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -927,7 +1108,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -979,7 +1160,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -1031,7 +1212,7 @@ CoreController stay focused on actual core actions.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/RoutingController.php"><a href="files/tests-e2e-app-controllers-routingcontroller.html"><abbr title="tests/e2e/app/Controllers/RoutingController.php">RoutingController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 

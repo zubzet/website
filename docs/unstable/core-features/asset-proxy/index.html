@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -783,6 +783,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../translations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../permission-system" class="md-nav__link">
         
   
@@ -819,6 +847,62 @@
     
   
     Password Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csrf-protection" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSRF Protection
   
 
     
@@ -987,10 +1071,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
             
   
   
@@ -1008,8 +1092,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1098,10 +1182,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
         
           
-          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
             
   
   
@@ -1119,8 +1203,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_14">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1265,6 +1349,34 @@
     
   
     Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-factor-authentication" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two Factor Authentication
   
 
     
@@ -1543,6 +1655,62 @@
     
   
     Login as another User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/organization-management" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../z-admin/profile" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
   
 
     
@@ -2662,13 +2830,13 @@ first registered source that contains it.</p>
 root-relative URL for you:</p>
 <div class="highlight"><pre><span></span><code>@extends($layout)
 
-@section(&quot;head&quot;)
-    &lt;link rel=&quot;stylesheet&quot;
-          href=&quot;&lt;?php $opt[&quot;generateResourceLink&quot;](&quot;_zubzet/asset-proxy/css/bootstrap.min.css&quot;); ?&gt;&quot;&gt;
+@section("head")
+    &lt;link rel="stylesheet"
+          href="&lt;?php $opt["generateResourceLink"]("_zubzet/asset-proxy/css/bootstrap.min.css"); ?&gt;"&gt;
 @endsection
 
-@section(&quot;content&quot;)
-    &lt;script src=&quot;&lt;?php $opt[&quot;generateResourceLink&quot;](&quot;_zubzet/asset-proxy/js/jquery.min.js&quot;); ?&gt;&quot;&gt;&lt;/script&gt;
+@section("content")
+    &lt;script src="&lt;?php $opt["generateResourceLink"]("_zubzet/asset-proxy/js/jquery.min.js"); ?&gt;"&gt;&lt;/script&gt;
 @endsection
 </code></pre></div>
 <h2 id="bundled-assets">Bundled assets<a class="headerlink" href="#bundled-assets" title="Permanent link">&para;</a></h2>
@@ -2704,7 +2872,7 @@ packages — no files are copied into your project.</p>
 <h2 id="registering-your-own-source">Registering your own source<a class="headerlink" href="#registering-your-own-source" title="Permanent link">&para;</a></h2>
 <p>To expose an additional directory (for example, assets shipped by one of your own Composer packages),
 <a href="../../api/classes/ZubZet-Framework-Resources-AssetProxy.html#method_registerWebRootSource">register it on the proxy</a> with an absolute path and an optional URL prefix:</p>
-<div class="highlight"><pre><span></span><code><span class="x">zubzet()-&gt;assetProxy-&gt;registerWebRootSource(&quot;/var/www/vendor/acme/ui-kit/dist&quot;, &quot;ui-kit&quot;);</span>
+<div class="highlight"><pre><span></span><code><span class="x">zubzet()-&gt;assetProxy-&gt;registerWebRootSource("/var/www/vendor/acme/ui-kit/dist", "ui-kit");</span>
 </code></pre></div>
 <p>The file <code>dist/app.css</code> is then available at <code>/_zubzet/asset-proxy/ui-kit/app.css</code>. Registration is
 lazy — the directory is only touched when a matching request arrives. Sources are checked in
@@ -2813,10 +2981,10 @@ this chain: the web server serves it directly, before PHP runs, so it always win
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

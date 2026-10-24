@@ -1,6 +1,846 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\db\u0028\u0029",
+            "name": "db",
+            "summary": "",
+            "url": "namespaces/default.html#function_db"
+        },                {
+            "fqsen": "\\import\u0028\u0029",
+            "name": "import",
+            "summary": "",
+            "url": "namespaces/default.html#function_import"
+        },                {
+            "fqsen": "\\drop\u0028\u0029",
+            "name": "drop",
+            "summary": "",
+            "url": "namespaces/default.html#function_drop"
+        },                {
+            "fqsen": "\\getFiles\u0028\u0029",
+            "name": "getFiles",
+            "summary": "",
+            "url": "namespaces/default.html#function_getFiles"
+        },                {
+            "fqsen": "\\importFolder\u0028\u0029",
+            "name": "importFolder",
+            "summary": "",
+            "url": "namespaces/default.html#function_importFolder"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_1_0\\MigrationNamingConventionChange",
+            "name": "MigrationNamingConventionChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-1-0-MigrationNamingConventionChange.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_1_0\\MigrationNamingConventionChange\u003A\u003AvalidateMigrationName\u0028\u0029",
+            "name": "validateMigrationName",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-1-0-MigrationNamingConventionChange.html#method_validateMigrationName"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_1_0\\MigrationNamingConventionChange\u003A\u003ArenameAutomateChange\u0028\u0029",
+            "name": "renameAutomateChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-1-0-MigrationNamingConventionChange.html#method_renameAutomateChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter",
+            "name": "LegacyViewConverter",
+            "summary": "Converts\u0020a\u0020legacy\u0020ZubZet\u0020view\/layout\u0020\u0028the\u0020\u0022return\u0020type\u0022\u0020syntax\u0029\u0020into\u0020a\nKatana\u0020.blade.php\u0020document,\u0020as\u0020part\u0020of\u0020the\u00201.3.0\u0020upgrade.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AisLayout\u0028\u0029",
+            "name": "isLayout",
+            "summary": "True\u0020when\u0020the\u0020source\u0020is\u0020a\u0020legacy\u0020layout\u0020\u0028returns\u0020a\u0020\u0022layout\u0022\u0020closure\u0029.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_isLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AisLegacyView\u0028\u0029",
+            "name": "isLegacyView",
+            "summary": "True\u0020when\u0020the\u0020source\u0020looks\u0020like\u0020a\u0020legacy\u0020return\u005B...\u005D\u0020view\/layout\u0020at\u0020all.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_isLegacyView"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AconvertFile\u0028\u0029",
+            "name": "convertFile",
+            "summary": "Convert\u0020any\u0020legacy\u0020view\u0020or\u0020layout.\u0020Returns\u0020the\u0020.blade.php\u0020document.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_convertFile"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AconvertView\u0028\u0029",
+            "name": "convertView",
+            "summary": "A\u0020legacy\u0020view\u0020\u002D\u003E\u0020an\u0020\u0040extends\u0020child\u0020with\u0020head\/content\u0020sections.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_convertView"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AconvertLayout\u0028\u0029",
+            "name": "convertLayout",
+            "summary": "A\u0020legacy\u0020layout\u0020\u002D\u003E\u0020the\u0020parent\u0020template\u0020with\u0020\u0040yield\u0020placeholders.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_convertLayout"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003Asection\u0028\u0029",
+            "name": "section",
+            "summary": "Section\u0020body\u003A\u0020keep\u0020its\u0020indentation\u0020\u0028it\u0020nests\u0020under\u0020\u0040section\u0029,\u0020trim\u0020blank\u0020edges.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_section"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AyieldCall\u0028\u0029",
+            "name": "yieldCall",
+            "summary": "Replace\u0020a\u0020call\u0020to\u0020a\u0020layout\u0020closure\u0020param\u0020\u0028\u0060\u003C\u003F\u003D\u0020\u0024body\u0028\u0024opt\u0029\u0020\u003F\u003E\u0060,\u0020the\u0020\u0022echo\u0022\nform\u0020or\u0020a\u0020bare\u0020statement\u0020form\u0029\u0020with\u0020the\u0020matching\u0020\u0040yield.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_yieldCall"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AessentialsTags\u0028\u0029",
+            "name": "essentialsTags",
+            "summary": "Replace\u0020the\u0020framework\u0027s\u0020layout\u002Dessentials\u0020closure\u0020calls\u0020with\u0020the\u0020Blade\ncomponents\u0020the\u0020framework\u0020provides\u0020for\u0020them\u0020\u0028resolved\u0020via\u0020a\u0020shared\nanonymous\u002Dcomponent\u0020path\u0029,\u0020so\u0020a\u0020layout\u0020carries\u0020no\u0020raw\u0020essentials\u0020PHP.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_essentialsTags"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003Aneutralize\u0028\u0029",
+            "name": "neutralize",
+            "summary": "Escape\u0020literal\u0020Blade\u0020markers\u0020so\u0020Katana\u0020emits\u0020them\u0020verbatim,\u0020but\u0020only\u0020in\ntemplate\u0020HTML\u0020\u0028T_INLINE_HTML\u0029.\u0020Markers\u0020inside\u0020raw\u0020PHP\u0020are\u0020already\u0020safe.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_neutralize"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AescapeMarkers\u0028\u0029",
+            "name": "escapeMarkers",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_escapeMarkers"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003Adedent\u0028\u0029",
+            "name": "dedent",
+            "summary": "Remove\u0020the\u0020common\u0020leading\u0020indentation\u0020\u0028the\u0020wrapper\u0020closure\u0027s\u0020indent\u0029\u0020so\u0020a\ndedented\u0020document\u0020sits\u0020at\u0020column\u00200.\u0020A\u0020first\u0020line\u0020left\u0020inline\u0020with\u0020the\nopening\u0020\u003F\u003E\u0020tag\u0020has\u0020a\u0020smaller\u0020indent\u0020than\u0020the\u0020block\u0020and\u0020is\u0020treated\u0020as\u0020an\noutlier\u0020so\u0020it\u0020does\u0020not\u0020shrink\u0020the\u0020common\u0020indent\u0020to\u0020remove.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_dedent"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AextractSections\u0028\u0029",
+            "name": "extractSections",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_extractSections"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AextractClosure\u0028\u0029",
+            "name": "extractClosure",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_extractClosure"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003AdetokenizeTemplate\u0028\u0029",
+            "name": "detokenizeTemplate",
+            "summary": "Reconstruct\u0020template\u0020text\u0020from\u0020closure\u002Dbody\u0020tokens,\u0020stripping\u0020the\u0020wrapping\u0020tags.",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_detokenizeTemplate"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter\u003A\u003Adescribe\u0028\u0029",
+            "name": "describe",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Blade-LegacyViewConverter.html#method_describe"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Exceptions\\AbortRequiringUserAction",
+            "name": "AbortRequiringUserAction",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Exceptions-AbortRequiringUserAction.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Exceptions\\AbortRequiringUserAction\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Exceptions-AbortRequiringUserAction.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Interactions\\CommandInteraction",
+            "name": "CommandInteraction",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Interactions-CommandInteraction.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Interactions\\CommandInteraction\u003A\u003ArunCommand\u0028\u0029",
+            "name": "runCommand",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Interactions-CommandInteraction.html#method_runCommand"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Issue",
+            "name": "Issue",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Issue.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Issue\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Issue.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Issue\u003A\u003A\u0024file",
+            "name": "file",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Issue.html#property_file"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Issue\u003A\u003A\u0024line",
+            "name": "line",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Issue.html#property_line"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Issue\u003A\u003A\u0024messages",
+            "name": "messages",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Issue.html#property_messages"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier",
+            "name": "BaseModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003AconfirmAutomatedChange\u0028\u0029",
+            "name": "confirmAutomatedChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#method_confirmAutomatedChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003AshouldSkipStep\u0028\u0029",
+            "name": "shouldSkipStep",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#method_shouldSkipStep"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003AabortRequiringUserAction\u0028\u0029",
+            "name": "abortRequiringUserAction",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#method_abortRequiringUserAction"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024version",
+            "name": "version",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_version"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024upgrade",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024in",
+            "name": "in",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_in"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024out",
+            "name": "out",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_out"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024stepName",
+            "name": "stepName",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_stepName"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\BaseModifier\u003A\u003A\u0024abortedRequiringUserAction",
+            "name": "abortedRequiringUserAction",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-BaseModifier.html#property_abortedRequiringUserAction"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\CommandModifier",
+            "name": "CommandModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-CommandModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ComposerModifier",
+            "name": "ComposerModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ComposerModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ComposerModifier\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ComposerModifier.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ComposerModifier\u003A\u003AupgradeToCurrentVersion\u0028\u0029",
+            "name": "upgradeToCurrentVersion",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ComposerModifier.html#method_upgradeToCurrentVersion"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent",
+            "name": "FileContent",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003Aoptional\u0028\u0029",
+            "name": "optional",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_optional"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AoptionalIfNotFound\u0028\u0029",
+            "name": "optionalIfNotFound",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_optionalIfNotFound"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_find"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AshouldChangeIfPattern\u0028\u0029",
+            "name": "shouldChangeIfPattern",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_shouldChangeIfPattern"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AshouldChangeIfIncludes\u0028\u0029",
+            "name": "shouldChangeIfIncludes",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_shouldChangeIfIncludes"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AshouldChangeIfNotIncludes\u0028\u0029",
+            "name": "shouldChangeIfNotIncludes",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_shouldChangeIfNotIncludes"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AautomateChange\u0028\u0029",
+            "name": "automateChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_automateChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AautomateChangeCmd\u0028\u0029",
+            "name": "automateChangeCmd",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_automateChangeCmd"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003AdemandChange\u0028\u0029",
+            "name": "demandChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#method_demandChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024fileContent",
+            "name": "fileContent",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_fileContent"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024filePath",
+            "name": "filePath",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_filePath"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024isOptional",
+            "name": "isOptional",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_isOptional"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024isOptionalIfNotFound",
+            "name": "isOptionalIfNotFound",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_isOptionalIfNotFound"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024searchedFile",
+            "name": "searchedFile",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_searchedFile"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024shouldChange",
+            "name": "shouldChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_shouldChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024automatedChange",
+            "name": "automatedChange",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_automatedChange"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024automatedChangeCmd",
+            "name": "automatedChangeCmd",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_automatedChangeCmd"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\Folder",
+            "name": "Folder",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-Folder.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\Folder\u003A\u003AshouldExist\u0028\u0029",
+            "name": "shouldExist",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-Folder.html#method_shouldExist"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\Folder\u003A\u003AshouldNotExist\u0028\u0029",
+            "name": "shouldNotExist",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-Folder.html#method_shouldNotExist"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\Folder\u003A\u003AshouldNotExistIfEmpty\u0028\u0029",
+            "name": "shouldNotExistIfEmpty",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-Folder.html#method_shouldNotExistIfEmpty"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FolderContent",
+            "name": "FolderContent",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FolderContent.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FolderContent\u003A\u003Amove\u0028\u0029",
+            "name": "move",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FolderContent.html#method_move"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FolderContent\u003A\u003AmoveWithParentFolder\u0028\u0029",
+            "name": "moveWithParentFolder",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FolderContent.html#method_moveWithParentFolder"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile",
+            "name": "IncludedFile",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003AoptionalIfNotFound\u0028\u0029",
+            "name": "optionalIfNotFound",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#method_optionalIfNotFound"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003Aexecutable\u0028\u0029",
+            "name": "executable",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#method_executable"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003Ato\u0028\u0029",
+            "name": "to",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#method_to"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003A\u0024isOptional",
+            "name": "isOptional",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#property_isOptional"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003A\u0024mode",
+            "name": "mode",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#property_mode"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\IncludedFile\u003A\u003A\u0024fromFile",
+            "name": "fromFile",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-IncludedFile.html#property_fromFile"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier",
+            "name": "JsonModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003Aoptional\u0028\u0029",
+            "name": "optional",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#method_optional"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003Amodify\u0028\u0029",
+            "name": "modify",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#method_modify"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003AifModified\u0028\u0029",
+            "name": "ifModified",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#method_ifModified"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003A\u0024isOptional",
+            "name": "isOptional",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#property_isOptional"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003A\u0024data",
+            "name": "data",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#property_data"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003A\u0024file",
+            "name": "file",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#property_file"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\JsonModifier\u003A\u003A\u0024hasBeenModified",
+            "name": "hasBeenModified",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-JsonModifier.html#property_hasBeenModified"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier",
+            "name": "MatchingModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003AmatchLineByLine\u0028\u0029",
+            "name": "matchLineByLine",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_matchLineByLine"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003Awarn\u0028\u0029",
+            "name": "warn",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_warn"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003AgetIssues\u0028\u0029",
+            "name": "getIssues",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_getIssues"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003A\u0024matchedFiles",
+            "name": "matchedFiles",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#property_matchedFiles"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003A\u0024linesChecked",
+            "name": "linesChecked",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#property_linesChecked"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003A\u0024issues",
+            "name": "issues",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#property_issues"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\RemoveFile",
+            "name": "RemoveFile",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-RemoveFile.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\RemoveFile\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-RemoveFile.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\RenameModifier",
+            "name": "RenameModifier",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-RenameModifier.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\RenameModifier\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-RenameModifier.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni",
+            "name": "SettingsIni",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003ApropertyExistsAt\u0028\u0029",
+            "name": "propertyExistsAt",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_propertyExistsAt"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AformatPropertyAsLine\u0028\u0029",
+            "name": "formatPropertyAsLine",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_formatPropertyAsLine"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AaddProperty\u0028\u0029",
+            "name": "addProperty",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_addProperty"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AremoveProperty\u0028\u0029",
+            "name": "removeProperty",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_removeProperty"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AmodifyProperty\u0028\u0029",
+            "name": "modifyProperty",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_modifyProperty"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AcollapseConsecutiveEmptyRows\u0028\u0029",
+            "name": "collapseConsecutiveEmptyRows",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_collapseConsecutiveEmptyRows"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003AassertEmptyLastRow\u0028\u0029",
+            "name": "assertEmptyLastRow",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_assertEmptyLastRow"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#method_save"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003A\u0024fileLocation",
+            "name": "fileLocation",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#property_fileLocation"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003A\u0024settings",
+            "name": "settings",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#property_settings"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003A\u0024isFirstAddition",
+            "name": "isFirstAddition",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#property_isFirstAddition"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003A\u0024shouldCollapseConsecutiveEmptyRows",
+            "name": "shouldCollapseConsecutiveEmptyRows",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#property_shouldCollapseConsecutiveEmptyRows"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\SettingsIni\u003A\u003A\u0024shouldAssertEmptyLastRow",
+            "name": "shouldAssertEmptyLastRow",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-SettingsIni.html#property_shouldAssertEmptyLastRow"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration",
+            "name": "ViewMigration",
+            "summary": "Migrates\u0020legacy\u0020\u0022return\u0020type\u0022\u0020views\u0020\u0028and\u0020layouts\u0029\u0020to\u0020Katana\u0020.blade.php\ndocuments.\u0020Introduced\u0020for\u0020the\u00201.3.0\u0020render\u002Dengine\u0020change.",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration\u003A\u003Afrom\u0028\u0029",
+            "name": "from",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html#method_from"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration\u003A\u003Aconsider\u0028\u0029",
+            "name": "consider",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html#method_consider"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration\u003A\u003Amigrate\u0028\u0029",
+            "name": "migrate",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html#method_migrate"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration\u003A\u003A\u0024planned",
+            "name": "planned",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html#property_planned"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\ViewMigration\u003A\u003A\u0024skipped",
+            "name": "skipped",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-ViewMigration.html#property_skipped"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState",
+            "name": "ReleaseState",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState\u003A\u003AReleaseCandidate",
+            "name": "ReleaseCandidate",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html#constant_ReleaseCandidate"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState\u003A\u003ADevelopment",
+            "name": "Development",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html#constant_Development"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState\u003A\u003AAlpha",
+            "name": "Alpha",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html#constant_Alpha"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState\u003A\u003ABeta",
+            "name": "Beta",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html#constant_Beta"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\ReleaseState\u003A\u003AStable",
+            "name": "Stable",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-ReleaseState.html#constant_Stable"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade",
+            "name": "Upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024defaultName",
+            "name": "defaultName",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_defaultName"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024defaultDescription",
+            "name": "defaultDescription",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_defaultDescription"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024skipSteps",
+            "name": "skipSteps",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_skipSteps"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024versions",
+            "name": "versions",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_versions"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024input",
+            "name": "input",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_input"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024output",
+            "name": "output",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_output"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024dry",
+            "name": "dry",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_dry"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024rootDir",
+            "name": "rootDir",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_rootDir"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Upgrade\u003A\u003A\u0024io",
+            "name": "io",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Upgrade.html#property_io"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\BaseVersion",
+            "name": "BaseVersion",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-BaseVersion.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\BaseVersion\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-BaseVersion.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\BaseVersion\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-BaseVersion.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\BaseVersion\u003A\u003A\u0024upgrade",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-BaseVersion.html#property_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\BaseVersion\u003A\u003A\u0024semanticVersion",
+            "name": "semanticVersion",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-BaseVersion.html#property_semanticVersion"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V0_11_0",
+            "name": "V0_11_0",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V0-11-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V0_11_0\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V0-11-0.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V0_11_0\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V0-11-0.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_0_0",
+            "name": "V1_0_0",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-0-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_0_0\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-0-0.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_0_0\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-0-0.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_1_0",
+            "name": "V1_1_0",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-1-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_1_0\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-1-0.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_1_0\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-1-0.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_2_0",
+            "name": "V1_2_0",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-2-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_2_0\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-2-0.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_2_0\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-2-0.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_3_0",
+            "name": "V1_3_0",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-3-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_3_0\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-3-0.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\V1_3_0\u003A\u003A\u0024stability",
+            "name": "stability",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-V1-3-0.html#property_stability"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\VersionInterface",
+            "name": "VersionInterface",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-VersionInterface.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version\\VersionInterface\u003A\u003Aupgrade\u0028\u0029",
+            "name": "upgrade",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Version-VersionInterface.html#method_upgrade"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\APIKey",
+            "name": "APIKey",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-APIKey.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\APIKey\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-APIKey.html#method_add"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\APIKey\u003A\u003ALIFETIMES",
+            "name": "LIFETIMES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-APIKey.html#constant_LIFETIMES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\APIKey\u003A\u003A\u0024dbExpression",
+            "name": "dbExpression",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-APIKey.html#property_dbExpression"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject",
             "name": "AuthenticationObject",
             "summary": "",
@@ -41,6 +881,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003Auuid\u0028\u0029",
+            "name": "uuid",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\AuthenticationObject\u003A\u003AnullId\u0028\u0029",
             "name": "nullId",
             "summary": "",
@@ -55,6 +900,176 @@ Search.appendIndex(
             "name": "data",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession",
+            "name": "CanUseSession",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AloadObject\u0028\u0029",
+            "name": "loadObject",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_loadObject"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AbyToken\u0028\u0029",
+            "name": "byToken",
+            "summary": "A\u0020session\u0020by\u0020its\u0020token,\u0020whichever\u0020kind\u0020the\u0020token\u0020opens",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byToken"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AbyUser\u0028\u0029",
+            "name": "byUser",
+            "summary": "All\u0020active\u0020sessions\u0020of\u0020a\u0020user,\u0020of\u0020the\u0020kind\u0020the\u0020called\u0020class\u0020stands\u0020for",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_byUser"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AsetExtensionTime\u0028\u0029",
+            "name": "setExtensionTime",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExtensionTime"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Aextend\u0028\u0029",
+            "name": "extend",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extend"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AsetExpiresAt\u0028\u0029",
+            "name": "setExpiresAt",
+            "summary": "Fixes\u0020the\u0020point\u0020in\u0020time\u0020the\u0020session\u0020expires,\u0020or\u0020hands\u0020it\u0020back\u0020to\u0020the\ncomputed\u0020lifetime\u0020when\u0020null\u0020is\u0020passed.\u0020A\u0020fixed\u0020expiry\u0020replaces\u0020that\nlifetime,\u0020so\u0020extending\u0020the\u0020session\u0020no\u0020longer\u0020moves\u0020it.",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setExpiresAt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "Names\u0020the\u0020session,\u0020or\u0020removes\u0020its\u0020name\u0020when\u0020null\u0020is\u0020passed",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setName"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AsetCanExpire\u0028\u0029",
+            "name": "setCanExpire",
+            "summary": "Subjects\u0020the\u0020session\u0020to\u0020expiring,\u0020or\u0020exempts\u0020it\u0020from\u0020it.\u0020A\u0020session\u0020that\ncannot\u0020expire\u0020is\u0020not\u0020invalidated\u0020on\u0020use,\u0020so\u0020an\u0020already\u0020expired\u0020one\nbecomes\u0020usable\u0020again\u0020by\u0020turning\u0020this\u0020off.",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_setCanExpire"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Ainvalidate\u0028\u0029",
+            "name": "invalidate",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_invalidate"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AlastTwoFactor\u0028\u0029",
+            "name": "lastTwoFactor",
+            "summary": "When\u0020this\u0020session\u0020last\u0020passed\u0020a\u0020two\u0020factor\u0020check,\u0020or\u0020null\u0020while\u0020it\nnever\u0020did",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastTwoFactor"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AremainingTwoFactorTries\u0028\u0029",
+            "name": "remainingTwoFactorTries",
+            "summary": "How\u0020many\u0020wrong\u0020two\u0020factor\u0020codes\u0020this\u0020session\u0020may\u0020still\u0020send.\u0020At\u0020zero\u0020it\nis\u0020signed\u0020out\u0020rather\u0020than\u0020asked\u0020again.",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_remainingTwoFactorTries"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003ArecordTwoFactor\u0028\u0029",
+            "name": "recordTwoFactor",
+            "summary": "Stamps\u0020a\u0020freshly\u0020passed\u0020two\u0020factor\u0020check\u0020on\u0020the\u0020session",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_recordTwoFactor"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AresetTwoFactorTries\u0028\u0029",
+            "name": "resetTwoFactorTries",
+            "summary": "Hands\u0020the\u0020session\u0020its\u0020full\u0020budget\u0020of\u0020two\u0020factor\u0020tries\u0020back",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_resetTwoFactorTries"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AspendTwoFactorTry\u0028\u0029",
+            "name": "spendTwoFactorTry",
+            "summary": "Spends\u0020one\u0020of\u0020the\u0020tries\u0020on\u0020a\u0020wrong\u0020code\u0020and\u0020answers\u0020how\u0020many\u0020are\u0020left",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_spendTwoFactorTry"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003ArequireRenew\u0028\u0029",
+            "name": "requireRenew",
+            "summary": "Whether\u0020this\u0020session\u0020has\u0020to\u0020pass\u0020two\u0020factor\u0020again\u0020before\u0020it\u0020is\u0020let\u0020near\na\u0020guarded\u0020action.",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_requireRenew"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AexpiresAt\u0028\u0029",
+            "name": "expiresAt",
+            "summary": "The\u0020point\u0020in\u0020time\u0020the\u0020session\u0020becomes\u0020unusable,\u0020or\u0020null\u0020when\u0020it\u0020cannot\u0020expire",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_expiresAt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AisExpired\u0028\u0029",
+            "name": "isExpired",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_isExpired"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Atoken\u0028\u0029",
+            "name": "token",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_token"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AuserId\u0028\u0029",
+            "name": "userId",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AuserIdExec\u0028\u0029",
+            "name": "userIdExec",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_userIdExec"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Aname\u0028\u0029",
+            "name": "name",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_name"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Adevice\u0028\u0029",
+            "name": "device",
+            "summary": "The\u0020user\u0020agent\u0020the\u0020session\u0020was\u0020started\u0020from,\u0020or\u0020null\u0020when\u0020none\u0020was\u0020sent",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_device"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Areason\u0028\u0029",
+            "name": "reason",
+            "summary": "Why\u0020the\u0020session\u0020was\u0020created,\u0020e.g.\u0020an\u0020impersonation,\u0020or\u0020null",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_reason"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AipCreation\u0028\u0029",
+            "name": "ipCreation",
+            "summary": "The\u0020address\u0020the\u0020session\u0020was\u0020created\u0020from,\u0020or\u0020null\u0020when\u0020it\u0020was\u0020not\u0020known",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipCreation"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AipLast\u0028\u0029",
+            "name": "ipLast",
+            "summary": "The\u0020address\u0020the\u0020session\u0020was\u0020last\u0020used\u0020from,\u0020or\u0020null\u0020while\u0020it\u0020is\u0020unused",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipLast"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AcanExpire\u0028\u0029",
+            "name": "canExpire",
+            "summary": "Whether\u0020the\u0020session\u0020is\u0020subject\u0020to\u0020expiring\u0020at\u0020all",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_canExpire"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AextendedSeconds\u0028\u0029",
+            "name": "extendedSeconds",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_extendedSeconds"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Acreated\u0028\u0029",
+            "name": "created",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_created"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AlastUsed\u0028\u0029",
+            "name": "lastUsed",
+            "summary": "When\u0020the\u0020session\u0020was\u0020last\u0020used,\u0020or\u0020null\u0020while\u0020it\u0020is\u0020unused",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_lastUsed"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003ArefreshOnNextUse\u0028\u0029",
+            "name": "refreshOnNextUse",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_refreshOnNextUse"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003A\u0024dbTable",
+            "name": "dbTable",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#property_dbTable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003A\u0024shouldRefresh",
+            "name": "shouldRefresh",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#property_shouldRefresh"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Commands\\HashingAlgorithmMigration",
             "name": "HashingAlgorithmMigration",
@@ -121,6 +1136,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_name"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AhasMember\u0028\u0029",
+            "name": "hasMember",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_hasMember"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetUsers\u0028\u0029",
             "name": "getUsers",
             "summary": "",
@@ -181,6 +1201,11 @@ Search.appendIndex(
             "summary": "Legacy\u0020or\u0020onion\u0020\u0028the\u0020shim\u0020detects\u0020which\u0029\u003B\u0020any\u0020match\u0020self\u002Dheals\u0020to\u0020native.",
             "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_verifyLegacy"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AverifyWordPress\u0028\u0029",
+            "name": "verifyWordPress",
+            "summary": "WordPress\u0020import,\u0020\u0060\u0024wp\u0024\u0060\u0020\u00286.8\u002B\u0029\u0020or\u0020\u0060\u0024P\u0024\u0060\u0020\u0028phpass\u0029\u003B\u0020the\u0020shims\u0020pick\u0020by\u0020prefix.\u0020Any\u0020match\u0020self\u002Dheals\u0020to\u0020native.",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#method_verifyWordPress"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003ANATIVE",
             "name": "NATIVE",
             "summary": "",
@@ -195,6 +1220,11 @@ Search.appendIndex(
             "name": "ONION",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_ONION"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AWORDPRESS",
+            "name": "WORDPRESS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-PasswordHash-Password.html#constant_WORDPRESS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\PasswordHash\\Password\u003A\u003AMIN_LENGTH_BYTES",
             "name": "MIN_LENGTH_BYTES",
@@ -441,6 +1471,11 @@ Search.appendIndex(
             "summary": "Create\u0020a\u0020new\u0020user\nThis\u0020will\u0020insert\u0020the\u0020user\u0020into\u0020the\u0020database\u0020and\u0020return\u0020the\u0020created\u0020user\u0020object",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_add"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AassertValidEmail\u0028\u0029",
+            "name": "assertValidEmail",
+            "summary": "Make\u0020sure\u0020an\u0020email\u0020is\u0020a\u0020valid\u0020address\u0020that\u0020no\u0020other\u0020user\u0020has",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_assertValidEmail"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdateEmail\u0028\u0029",
             "name": "updateEmail",
             "summary": "Update\u0020the\u0020email\u0020address\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020email\u0020in\u0020the\u0020database",
@@ -455,6 +1490,16 @@ Search.appendIndex(
             "name": "verifyPassword",
             "summary": "Verify\u0020a\u0020plaintext\u0020password\u0020against\u0020this\u0020user\u0027s\u0020stored\u0020credential\u0020and,\u0020on\na\u0020correct\u0020match,\u0020transparently\u0020upgrade\u0020the\u0020stored\u0020hash\u0020when\u0020it\u0020is\nstale\u0020\u0028rehash\u002Don\u002Dlogin\u0020\/\u0020onion\u0020peel\u0029.\u0020Self\u002Dhealing.",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyPassword"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArecordLoginTry\u0028\u0029",
+            "name": "recordLoginTry",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_recordLoginTry"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AcheckLoginTries\u0028\u0029",
+            "name": "checkLoginTries",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_checkLoginTries"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdateOrganization\u0028\u0029",
             "name": "updateOrganization",
@@ -506,6 +1551,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_organization"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AisMemberOf\u0028\u0029",
+            "name": "isMemberOf",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_isMemberOf"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Averified\u0028\u0029",
             "name": "verified",
             "summary": "Get\u0020the\u0020users\u0060\u0020verified\u0020date",
@@ -546,6 +1596,36 @@ Search.appendIndex(
             "summary": "Reset\u0020the\u0020permissions\u0020cache",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_refreshAllPermissions"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AhasTwoFactor\u0028\u0029",
+            "name": "hasTwoFactor",
+            "summary": "Whether\u0020two\u0020factor\u0020is\u0020active,\u0020which\u0020only\u0020a\u0020confirmed\u0020enrollment\u0020makes\u0020it.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_hasTwoFactor"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AtwoFactorConfirmedAt\u0028\u0029",
+            "name": "twoFactorConfirmedAt",
+            "summary": "When\u0020the\u0020user\u0020confirmed\u0020their\u0020authenticator",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_twoFactorConfirmedAt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AstartTwoFactor\u0028\u0029",
+            "name": "startTwoFactor",
+            "summary": "Begin\u0020an\u0020enrollment\u0020by\u0020storing\u0020a\u0020fresh\u0020secret\u0020that\u0020does\u0020not\u0020count\u0020yet.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_startTwoFactor"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AverifyTwoFactorCode\u0028\u0029",
+            "name": "verifyTwoFactorCode",
+            "summary": "Check\u0020a\u0020code\u0020against\u0020the\u0020stored\u0020secret.\u0020Answers\u0020false\u0020while\u0020the\u0020account\ncarries\u0020no\u0020secret,\u0020so\u0020a\u0020caller\u0020cannot\u0020tell\u0020enrollment\u0020states\u0020apart\u0020by\u0020it.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyTwoFactorCode"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AconfirmTwoFactor\u0028\u0029",
+            "name": "confirmTwoFactor",
+            "summary": "Finish\u0020an\u0020enrollment.\u0020Turning\u0020two\u0020factor\u0020on\u0020takes\u0020a\u0020code,\u0020which\u0020is\u0020what\nproves\u0020the\u0020secret\u0020reached\u0020the\u0020authenticator\u0020and\u0020was\u0020not\u0020lost\u0020in\u0020the\u0020page.",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_confirmTwoFactor"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AdisableTwoFactor\u0028\u0029",
+            "name": "disableTwoFactor",
+            "summary": "Drop\u0020two\u0020factor\u0020and\u0020the\u0020secret\u0020behind\u0020it",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_disableTwoFactor"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003A\u0024dbTable",
             "name": "dbTable",
             "summary": "",
@@ -576,6 +1656,16 @@ Search.appendIndex(
             "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029",
             "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyIdentifier\u0028\u0029",
+            "name": "byIdentifier",
+            "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020one\u0020of\u0020its\u0020identifiers",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyIdentifiers\u0028\u0029",
+            "name": "byIdentifiers",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020one\u0020of\u0020their\u0020identifiers",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifiers"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyId\u0028\u0029",
             "name": "byId",
             "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020its\u0020id",
@@ -586,105 +1676,35 @@ Search.appendIndex(
             "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020their\u0020ids",
             "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyUuid\u0028\u0029",
+            "name": "byUuid",
+            "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020its\u0020uuid",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuid"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyUuids\u0028\u0029",
+            "name": "byUuids",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020their\u0020uuids",
+            "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuids"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Session",
             "name": "Session",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Session.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method___construct"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AloadObject\u0028\u0029",
-            "name": "loadObject",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_loadObject"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Aadd\u0028\u0029",
             "name": "add",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Session.html#method_add"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AbyToken\u0028\u0029",
-            "name": "byToken",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AclearForUser\u0028\u0029",
+            "name": "clearForUser",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_byToken"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AbyUser\u0028\u0029",
-            "name": "byUser",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_byUser"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AsetExtensionTime\u0028\u0029",
-            "name": "setExtensionTime",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_setExtensionTime"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Aextend\u0028\u0029",
-            "name": "extend",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_extend"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Ainvalidate\u0028\u0029",
-            "name": "invalidate",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_invalidate"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AexpiresAt\u0028\u0029",
-            "name": "expiresAt",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_expiresAt"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AisExpired\u0028\u0029",
-            "name": "isExpired",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_isExpired"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Atoken\u0028\u0029",
-            "name": "token",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_token"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AuserId\u0028\u0029",
-            "name": "userId",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_userId"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AuserIdExec\u0028\u0029",
-            "name": "userIdExec",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_userIdExec"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003AextendedSeconds\u0028\u0029",
-            "name": "extendedSeconds",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_extendedSeconds"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003Acreated\u0028\u0029",
-            "name": "created",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_created"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003ArefreshOnNextUse\u0028\u0029",
-            "name": "refreshOnNextUse",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_refreshOnNextUse"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024dbTable",
-            "name": "dbTable",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#property_dbTable"
+            "url": "classes/ZubZet-Framework-Authentication-Session.html#method_clearForUser"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024dbExpression",
             "name": "dbExpression",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Session.html#property_dbExpression"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\Session\u003A\u003A\u0024shouldRefresh",
-            "name": "shouldRefresh",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-Session.html#property_shouldRefresh"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User",
             "name": "User",
@@ -698,7 +1718,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003Aidentify\u0028\u0029",
             "name": "identify",
-            "summary": "Checks\u0020if\u0020the\u0020user\u0020is\u0020registered.\u0020Checks\u0020by\u0020the\u0020z_login_token\u0020cookie.",
+            "summary": "Checks\u0020if\u0020the\u0020user\u0020is\u0020registered.\u0020Checks\u0020by\u0020the\u0020bearer\u0020token\u0020of\u0020the\u0020Authorization\u0020header,\u0020else\u0020by\u0020the\u0020z_login_token\u0020cookie.",
             "url": "classes/ZubZet-Framework-Authentication-User.html#method_identify"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003AanonymousRequest\u0028\u0029",
@@ -740,6 +1760,11 @@ Search.appendIndex(
             "name": "orgId",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-User.html#property_orgId"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024uuid",
+            "name": "uuid",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-User.html#property_uuid"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A\u0024execUserId",
             "name": "execUserId",
@@ -931,6 +1956,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Core-Model.html#property_lastInsertId"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Commands\\RepairCollation",
+            "name": "RepairCollation",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Commands-RepairCollation.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Commands\\RepairCollation\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Commands-RepairCollation.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Commands\\RepairCollation\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Commands-RepairCollation.html#method_execute"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection",
             "name": "Connection",
             "summary": "",
@@ -973,33 +2013,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AattemptStatement\u0028\u0029",
             "name": "attemptStatement",
-            "summary": "Makes\u0020one\u0020attempt\u0020at\u0020the\u0020statement\u003A\u0020reconnect\u0020when\u0020asked\u0020to,\nprepare,\u0020bind,\u0020execute.\u0020Returns\u0020null\u0020on\u0020success\u0020and\u0020a\u0020failure\ndescriptor\u0020\u0028see\u0020failure\u0028\u0029\u0029\u0020otherwise.",
+            "summary": "Makes\u0020one\u0020attempt\u0020at\u0020the\u0020statement\u003A\u0020reconnect\u0020when\u0020asked\u0020to,\nprepare,\u0020bind,\u0020execute.\u0020Returns\u0020null\u0020on\u0020success\u0020and\u0020a\nStatementFailure\u0020otherwise.",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_attemptStatement"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Afailure\u0028\u0029",
-            "name": "failure",
-            "summary": "Failure\u0020descriptor\u0020for\u0020one\u0020statement\u0020attempt,\u0020carrying\u0020what\u0020the\nrecovery\u0020decision\u0020needs\u0020and\u0020the\u0020ready\u002Dto\u002Dthrow\u0020exception\u0020with\u0020the\nhistorical\u0020prefix\u003A\u0020\u0022SQL\u0020Error\u0022\u0020for\u0020connect\u0020and\u0020prepare\u0020failures,\n\u0022SQL\u0020Execution\u0020Error\u0022\u0020for\u0020execute\u0020failures.",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_failure"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AshouldRetry\u0028\u0029",
-            "name": "shouldRetry",
-            "summary": "Whether\u0020a\u0020just\u002Dfailed\u0020query\u0020should\u0020be\u0020retried\u003A\u0020there\u0020must\u0020be\u0020retry\nbudget\u0020left\u0020and\u0020the\u0020error\u0020must\u0020be\u0020a\u0020transient,\u0020cluster\u002Drelated\u0020one.",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_shouldRetry"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AshouldReconnect\u0028\u0029",
-            "name": "shouldReconnect",
-            "summary": "Whether\u0020a\u0020just\u002Dfailed\u0020query\u0020should\u0020be\u0020recovered\u0020by\u0020reconnecting\u003A\nthere\u0020must\u0020be\u0020retry\u0020budget\u0020left\u0020and\u0020the\u0020error\u0020must\u0020mean\u0020the\nconnection\u0020itself\u0020is\u0020gone.",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_shouldReconnect"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AreconnectBackoffUs\u0028\u0029",
-            "name": "reconnectBackoffUs",
-            "summary": "Attempt\u002Dscaled\u0020backoff\u0020slept\u0020before\u0020a\u0020reconnect\u0020attempt.",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_reconnectBackoffUs"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AisRetryable\u0028\u0029",
-            "name": "isRetryable",
-            "summary": "Classifies\u0020an\u0020error\u0020as\u0020retryable.\u0020Retries\u0020are\u0020limited\u0020to\u0020transient\ncontention\u0020errors\u0020where\u0020the\u0020server\u0020already\u0020discarded\u0020the\u0020statement,\nmaking\u0020a\u0020re\u002Drun\u0020safe.\u0020Pure\u0020decision,\u0020no\u0020side\u0020effects.",
-            "url": "classes/ZubZet-Framework-Database-Connection.html#method_isRetryable"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AsqlStateOf\u0028\u0029",
             "name": "sqlStateOf",
@@ -1010,6 +2025,11 @@ Search.appendIndex(
             "name": "executeMultiQuery",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_executeMultiQuery"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AmultiQueryFailed\u0028\u0029",
+            "name": "multiQueryFailed",
+            "summary": "The\u0020single\u0020failure\u0020path\u0020of\u0020executeMultiQuery\u0028\u0029,\u0020applying\u0020the\nframework\u0027s\u0020throwOnFailure\u0020contract.\u0020A\u0020swallowed\u0020failure\u0020drains\u0020the\nconnection\u0020first,\u0020so\u0020the\u0020caller\u0020can\u0020keep\u0020using\u0020it.",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#method_multiQueryFailed"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AgetDatabaseConnection\u0028\u0029",
             "name": "getDatabaseConnection",
@@ -1035,6 +2055,16 @@ Search.appendIndex(
             "name": "__destruct",
             "summary": "Closes\u0020the\u0020database\u0020connection\u0020on\u0020exit",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method___destruct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ACHARSET",
+            "name": "CHARSET",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_CHARSET"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ACOLLATION",
+            "name": "COLLATION",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Connection.html#constant_COLLATION"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003ARETRYABLE_ERROR_CODES",
             "name": "RETRYABLE_ERROR_CODES",
@@ -1681,6 +2711,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Type-TimeStamp.html#method_getName"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure",
+            "name": "StatementFailure",
+            "summary": "One\u0020failed\u0020statement\u0020attempt\u003A\u0020what\u0020execWithRecovery\u0028\u0029\u0020classifies\u0020on,\u0020plus\u0020the\u0020exception\u0020to\u0020throw.",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003Apreparing\u0028\u0029",
+            "name": "preparing",
+            "summary": "Reaching\u0020the\u0020server\u0020or\u0020preparing\u0020the\u0020statement\u0020failed.",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#method_preparing"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003Aexecuting\u0028\u0029",
+            "name": "executing",
+            "summary": "Running\u0020the\u0020prepared\u0020statement\u0020failed.",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#method_executing"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003A\u0024exception",
+            "name": "exception",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#property_exception"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003A\u0024errorCode",
+            "name": "errorCode",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#property_errorCode"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\StatementFailure\u003A\u003A\u0024sqlState",
+            "name": "sqlState",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-StatementFailure.html#property_sqlState"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption",
             "name": "BehaviorOption",
             "summary": "",
@@ -1690,6 +2755,11 @@ Search.appendIndex(
             "name": "isValidOption",
             "summary": "",
             "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#method_isValidOption"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003AfromConfig\u0028\u0029",
+            "name": "fromConfig",
+            "summary": "Reads\u0020a\u0020configured\u0020value\u003A\u0020integers\u0020like\u0020\u00221\u0022\u0020are\u0020accepted,\u0020anything\u0020unrecognised\u0020shows\u0020no\u0020errors.",
+            "url": "classes/ZubZet-Framework-ErrorHandling-BehaviorOption.html#method_fromConfig"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ErrorHandling\\BehaviorOption\u003A\u003ANONE",
             "name": "NONE",
@@ -2271,10 +3341,20 @@ Search.appendIndex(
             "summary": "The\u0020Login\u0020controller\u0020handles\u0020all\u0020login\/logout\u0020stuff",
             "url": "classes/LoginController.html"
         },                {
+            "fqsen": "\\LoginController\u003A\u003AblockedByLoginLimit\u0028\u0029",
+            "name": "blockedByLoginLimit",
+            "summary": "",
+            "url": "classes/LoginController.html#method_blockedByLoginLimit"
+        },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_index\u0028\u0029",
             "name": "action_index",
             "summary": "The\u0020index\u0020action",
             "url": "classes/LoginController.html#method_action_index"
+        },                {
+            "fqsen": "\\LoginController\u003A\u003AtwoFactorLogin\u0028\u0029",
+            "name": "twoFactorLogin",
+            "summary": "Redeems\u0020a\u0020two\u0020factor\u0020challenge\u0020and\u0020starts\u0020the\u0020session\u0020behind\u0020it.",
+            "url": "classes/LoginController.html#method_twoFactorLogin"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_logout\u0028\u0029",
             "name": "action_logout",
@@ -2356,15 +3436,75 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZController.html#method_action_groups"
         },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_organization\u0028\u0029",
+            "name": "action_organization",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_organization"
+        },                {
             "fqsen": "\\ZController\u003A\u003Aaction_roles\u0028\u0029",
             "name": "action_roles",
             "summary": "",
             "url": "classes/ZController.html#method_action_roles"
         },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_profile\u0028\u0029",
+            "name": "action_profile",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_profile"
+        },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_add_organization\u0028\u0029",
+            "name": "action_add_organization",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_add_organization"
+        },                {
+            "fqsen": "\\ZController\u003A\u003Aaction_organizations\u0028\u0029",
+            "name": "action_organizations",
+            "summary": "",
+            "url": "classes/ZController.html#method_action_organizations"
+        },                {
             "fqsen": "\\ZController\u003A\u003Aaction_database\u0028\u0029",
             "name": "action_database",
             "summary": "",
             "url": "classes/ZController.html#method_action_database"
+        },                {
+            "fqsen": "\\ZController\u003A\u003AgetOrganizations\u0028\u0029",
+            "name": "getOrganizations",
+            "summary": "",
+            "url": "classes/ZController.html#method_getOrganizations"
+        },                {
+            "fqsen": "\\ZController\u003A\u003AapplyOrganization\u0028\u0029",
+            "name": "applyOrganization",
+            "summary": "",
+            "url": "classes/ZController.html#method_applyOrganization"
+        },                {
+            "fqsen": "\\ZOrganizationController",
+            "name": "ZOrganizationController",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Arename\u0028\u0029",
+            "name": "rename",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_rename"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Aroles\u0028\u0029",
+            "name": "roles",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_roles"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Ainvite\u0028\u0029",
+            "name": "invite",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_invite"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Arevoke\u0028\u0029",
+            "name": "revoke",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_revoke"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Aaccept\u0028\u0029",
+            "name": "accept",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_accept"
         },                {
             "fqsen": "\\ZubZetController",
             "name": "ZubZetController",
@@ -2375,6 +3515,56 @@ Search.appendIndex(
             "name": "health",
             "summary": "",
             "url": "classes/ZubZetController.html#method_health"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AchangePassword\u0028\u0029",
+            "name": "changePassword",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_changePassword"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AclearSessions\u0028\u0029",
+            "name": "clearSessions",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_clearSessions"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003ArenameToken\u0028\u0029",
+            "name": "renameToken",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_renameToken"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003ArevokeToken\u0028\u0029",
+            "name": "revokeToken",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_revokeToken"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AcreateApiKey\u0028\u0029",
+            "name": "createApiKey",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_createApiKey"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AstartTwoFactor\u0028\u0029",
+            "name": "startTwoFactor",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_startTwoFactor"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AconfirmTwoFactor\u0028\u0029",
+            "name": "confirmTwoFactor",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_confirmTwoFactor"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AdisableTwoFactor\u0028\u0029",
+            "name": "disableTwoFactor",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_disableTwoFactor"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AspendTwoFactorTry\u0028\u0029",
+            "name": "spendTwoFactorTry",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_spendTwoFactorTry"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003ArefreshTwoFactor\u0028\u0029",
+            "name": "refreshTwoFactor",
+            "summary": "Asks\u0020a\u0020login\u0020that\u0020already\u0020exists\u0020for\u0020a\u0020fresh\u0020code\u0020and\u0020stamps\u0020the\u0020moment\non\u0020the\u0020session\u0020it\u0020arrived\u0020with.\u0020No\u0020challenge\u0020is\u0020involved\u0020\u002D\u0020the\u0020password\nstep\u0020happened\u0020whenever\u0020this\u0020session\u0020was\u0020created.",
+            "url": "classes/ZubZetController.html#method_refreshTwoFactor"
         },                {
             "fqsen": "\\z_organizationModel",
             "name": "z_organizationModel",
@@ -2405,6 +3595,51 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/z-organizationModel.html#method_remove"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AcreateInvite\u0028\u0029",
+            "name": "createInvite",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_createInvite"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AgetInvite\u0028\u0029",
+            "name": "getInvite",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_getInvite"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AgetInviteByToken\u0028\u0029",
+            "name": "getInviteByToken",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_getInviteByToken"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AgetInvitesByOrganization\u0028\u0029",
+            "name": "getInvitesByOrganization",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_getInvitesByOrganization"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AhasOpenInvite\u0028\u0029",
+            "name": "hasOpenInvite",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_hasOpenInvite"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AdeactivateInvite\u0028\u0029",
+            "name": "deactivateInvite",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_deactivateInvite"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AgetAssignableRoles\u0028\u0029",
+            "name": "getAssignableRoles",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_getAssignableRoles"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AgetAssignedRoles\u0028\u0029",
+            "name": "getAssignedRoles",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_getAssignedRoles"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AINVITE_LIFETIME",
+            "name": "INVITE_LIFETIME",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#constant_INVITE_LIFETIME"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Logger\\BacktraceProcessor",
             "name": "BacktraceProcessor",
@@ -2851,6 +4086,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_userAgent"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AbearerToken\u0028\u0029",
+            "name": "bearerToken",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_bearerToken"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AacceptLanguage\u0028\u0029",
+            "name": "acceptLanguage",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_acceptLanguage"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetExecutionTime\u0028\u0029",
             "name": "getExecutionTime",
             "summary": "",
@@ -2900,6 +4145,16 @@ Search.appendIndex(
             "name": "checkPermission",
             "summary": "Checks\u0020if\u0020the\u0020current\u0020user\u0020has\u0020a\u0020permission.\u0020If\u0020the\u0020user\u0020is\u0020not\u0020logged\u0020in,\u0020they\u0020will\u0020be\u0020redirected\u0020to\u0020the\u0020login\u0020page.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_checkPermission"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003ArequireOrganization\u0028\u0029",
+            "name": "requireOrganization",
+            "summary": "Checks\u0020if\u0020the\u0020current\u0020user\u0020belongs\u0020to\u0020an\u0020organization.\u0020If\u0020the\u0020user\u0020is\u0020not\u0020logged\u0020in,\u0020they\u0020will\u0020be\u0020redirected\u0020to\u0020the\u0020login\u0020page.",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_requireOrganization"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003ArequireFreshTwoFactor\u0028\u0029",
+            "name": "requireFreshTwoFactor",
+            "summary": "Guards\u0020an\u0020action\u0020behind\u0020a\u0020recent\u0020two\u0020factor\u0020check.\u0020Answers\u0020true\u0020when\u0020the\nsession\u0020passed\u0020one\u0020inside\u0020\u0060two_factor_freshness_seconds\u0060,\u0020and\u0020for\u0020every\naccount\u0020that\u0020carries\u0020no\u0020two\u0020factor\u0020at\u0020all.",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_requireFreshTwoFactor"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AhasFormData\u0028\u0029",
             "name": "hasFormData",
@@ -2990,6 +4245,16 @@ Search.appendIndex(
             "name": "setCookie",
             "summary": "Sets\u0020a\u0020cookie\u0020just\u0020like\u0020the\u0020standard\u0020PHP\u0020function.\u0020\u0028Pass\u002Dthrough\u0029\nSee\u003A\u0020https\u003A\/\/www.php.net\/manual\/en\/function.setcookie.php",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_setCookie"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AcookieSecure\u0028\u0029",
+            "name": "cookieSecure",
+            "summary": "Whether\u0020the\u0020framework\u0027s\u0020own\u0020cookies\u0020carry\u0020the\u0020\u0060Secure\u0060\u0020attribute\u003A\nderived\u0020from\u0020the\u0020configured\u0020\u0060host\u0060,\u0020so\u0020an\u0020HTTPS\u0020deployment\u0020needs\u0020no\nsetting\u0020and\u0020a\u0020plain\u002DHTTP\u0020one\u0020is\u0020not\u0020locked\u0020out.",
+            "url": "classes/ZubZet-Framework-Message-Response.html#method_cookieSecure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AsetFrameworkCookie\u0028\u0029",
+            "name": "setFrameworkCookie",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Message-Response.html#method_setFrameworkCookie"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AunsetCookie\u0028\u0029",
             "name": "unsetCookie",
@@ -3696,6 +4961,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_afterMiddleware"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoutingState\u003A\u003A\u0024withoutCsrf",
+            "name": "withoutCsrf",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_withoutCsrf"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route",
             "name": "Route",
             "summary": "",
@@ -3760,6 +5030,11 @@ Search.appendIndex(
             "name": "callControllerAction",
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_callControllerAction"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003ANAME_REPLACEMENTS",
+            "name": "NAME_REPLACEMENTS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#constant_NAME_REPLACEMENTS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003A\u0024collector",
             "name": "collector",
@@ -3826,6 +5101,176 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Router.html#property_reroutes"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF",
+            "name": "CSRF",
+            "summary": "Stateless\u0020double\u002Dsubmit\u002Dcookie\u0020CSRF\u0020defense\u003A\u0020the\u0020server\u0020issues\u0020a\n\u0060z_csrf\u0060\u0020cookie,\u0020Z.js\u0020echoes\u0020it\u0020back\u0020as\u0020an\u0020\u0060X\u002DCSRF\u002DToken\u0060\u0020header,\u0020and\nnon\u002DGET\u0020requests\u0020must\u0020present\u0020both\u0020matching.\u0020A\u0020cross\u002Dorigin\u0020attacker\ngets\u0020the\u0020cookie\u0020sent\u0020for\u0020them\u0020but\u0020cannot\u0020read\u0020it,\u0020so\u0020they\u0020cannot\u0020fill\nin\u0020the\u0020header.",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003Averify\u0028\u0029",
+            "name": "verify",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_verify"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003Afield\u0028\u0029",
+            "name": "field",
+            "summary": "Hidden\u0020input\u0020for\u0020a\u0020raw\u0020HTML\u0020form,\u0020which\u0020cannot\u0020set\u0020the\u0020header.\u0020The\nRouter\u0020has\u0020already\u0020issued\u0020the\u0020token\u0020for\u0020this\u0020request.",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_field"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AensureToken\u0028\u0029",
+            "name": "ensureToken",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_ensureToken"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ACOOKIE",
+            "name": "COOKIE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_COOKIE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AHEADER",
+            "name": "HEADER",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_HEADER"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AFIELD",
+            "name": "FIELD",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_FIELD"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ASAFE",
+            "name": "SAFE",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ALIFETIME",
+            "name": "LIFETIME",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_LIFETIME"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ASIMPLE_CONTENT_TYPES",
+            "name": "SIMPLE_CONTENT_TYPES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_SIMPLE_CONTENT_TYPES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ABROWSER_AUTH_SCHEMES",
+            "name": "BROWSER_AUTH_SCHEMES",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_BROWSER_AUTH_SCHEMES"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003A\u0024token",
+            "name": "token",
+            "summary": "The\u0020token\u0020of\u0020this\u0020request,\u0020issued\u0020or\u0020reused\u0020by\u0020ensureToken\u0028\u0029.",
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#property_token"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher",
+            "name": "AesGcmCipher",
+            "summary": "AES\u002D256\u002DGCM\u0020through\u0020OpenSSL.\u0020Payload\u0020layout\u003A\u0020iv\u0020\u002812\u0029\u0020.\u0020tag\u0020\u002816\u0029\u0020.\u0020ciphertext.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher\u003A\u003Aencrypt\u0028\u0029",
+            "name": "encrypt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html#method_encrypt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher\u003A\u003Adecrypt\u0028\u0029",
+            "name": "decrypt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html#method_decrypt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher\u003A\u003AALGORITHM",
+            "name": "ALGORITHM",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html#constant_ALGORITHM"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher\u003A\u003AIV_LENGTH",
+            "name": "IV_LENGTH",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html#constant_IV_LENGTH"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher\u003A\u003ATAG_LENGTH",
+            "name": "TAG_LENGTH",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html#constant_TAG_LENGTH"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\Cipher",
+            "name": "Cipher",
+            "summary": "An\u0020authenticated\u0020cipher\u0020behind\u0020Encryption.\u0020Implementations\u0020must\u0020detect\u0020a\nwrong\u0020key\u0020or\u0020a\u0020modified\u0020payload,\u0020so\u0020only\u0020AEAD\u0020algorithms\u0020qualify.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-Cipher.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\Cipher\u003A\u003Aencrypt\u0028\u0029",
+            "name": "encrypt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-Cipher.html#method_encrypt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\Cipher\u003A\u003Adecrypt\u0028\u0029",
+            "name": "decrypt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Cipher-Cipher.html#method_decrypt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\DecryptionException",
+            "name": "DecryptionException",
+            "summary": "Thrown\u0020when\u0020a\u0020value\u0020cannot\u0020be\u0020decrypted\u003A\u0020a\u0020wrong\u0020key,\u0020or\u0020a\u0020malformed\u0020or\u0020modified\u0020value.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-DecryptionException.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption",
+            "name": "Encryption",
+            "summary": "Symmetric\u0020encryption\u0020for\u0020secrets\u0020that\u0020have\u0020to\u0020be\u0020stored\u0020and\u0020read\u0020back,\u0020like\nthird\u002Dparty\u0020credentials\u0020in\u0020the\u0020database.\u0020The\u0020key\u0020is\u0020the\u0020\u0060encryption_key\u0060\nsetting\u0020of\u0020z_settings.ini.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003AencryptSecret\u0028\u0029",
+            "name": "encryptSecret",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#method_encryptSecret"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003AdecryptSecret\u0028\u0029",
+            "name": "decryptSecret",
+            "summary": "Decrypt\u0020a\u0020value\u0020created\u0020by\u0020encryptSecret\u0028\u0029.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#method_decryptSecret"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "Derive\u0020a\u0020256\u002Dbit\u0020key\u0020for\u0020one\u0020cipher\u0020from\u0020the\u0020configured\u0020setting.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#method_key"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003Abase64UrlEncode\u0028\u0029",
+            "name": "base64UrlEncode",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#method_base64UrlEncode"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003Abase64UrlDecode\u0028\u0029",
+            "name": "base64UrlDecode",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#method_base64UrlDecode"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003ASETTING",
+            "name": "SETTING",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#constant_SETTING"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003AMIN_KEY_LENGTH",
+            "name": "MIN_KEY_LENGTH",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#constant_MIN_KEY_LENGTH"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003AMARKER",
+            "name": "MARKER",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#constant_MARKER"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003ADEFAULT_CIPHER",
+            "name": "DEFAULT_CIPHER",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#constant_DEFAULT_CIPHER"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Encryption\u003A\u003ACIPHERS",
+            "name": "CIPHERS",
+            "summary": "Released\u0020identifiers\u0020are\u0020stored\u0020in\u0020values\u0020and\u0020must\u0020never\u0020change.",
+            "url": "classes/ZubZet-Framework-Security-Secrets-Encryption.html#constant_CIPHERS"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint",
             "name": "CanCheckpoint",
             "summary": "Snapshot\u0020\/\u0020Restore\u0020selected\u0020instance\u0020properties\u0020via\u0020a\u0020Checkpoint\u0020handle.",
@@ -3886,6 +5331,21 @@ Search.appendIndex(
             "summary": "Marks\u0020a\u0020property\u0020for\u0020inclusion\u0020in\u0020CanCheckpoint\u0027s\u0020default\u0020snapshot.",
             "url": "classes/ZubZet-Framework-Support-Checkpoint-IncludeInCheckpoint.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Install",
+            "name": "Install",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Commands-Install.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Install\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Commands-Install.html#method_configure"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Install\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Commands-Install.html#method_execute"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Startup",
             "name": "Startup",
             "summary": "",
@@ -3915,6 +5375,11 @@ Search.appendIndex(
             "name": "getInstalledVersion",
             "summary": "",
             "url": "classes/ZubZet-Framework-Support-Commands-Startup.html#method_getInstalledVersion"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Startup\u003A\u003AgetStopCommand\u0028\u0029",
+            "name": "getStopCommand",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Support-Commands-Startup.html#method_getStopCommand"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Startup\u003A\u003AgetConfiguredHost\u0028\u0029",
             "name": "getConfiguredHost",
@@ -4026,6 +5491,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Support-StaticCache.html#property_cache"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Testing\\Coverage\\Commands\\CoverageCommand",
+            "name": "CoverageCommand",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Testing-Coverage-Commands-CoverageCommand.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Testing\\Coverage\\Commands\\CoverageCommand\u003A\u003AmissingCoverageLibrary\u0028\u0029",
+            "name": "missingCoverageLibrary",
+            "summary": "Prints\u0020the\u0020missing\u0020phpunit\/php\u002Dcode\u002Dcoverage\u0020error\u0020and\u0020returns\u0020the\u0020failure\u0020exit\u0020code.",
+            "url": "classes/ZubZet-Framework-Testing-Coverage-Commands-CoverageCommand.html#method_missingCoverageLibrary"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Testing\\Coverage\\Commands\\Start",
             "name": "Start",
             "summary": "",
@@ -4055,6 +5530,36 @@ Search.appendIndex(
             "name": "execute",
             "summary": "",
             "url": "classes/ZubZet-Framework-Testing-Coverage-Commands-Stop.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation",
+            "name": "Translation",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation\u003A\u003Atranslate\u0028\u0029",
+            "name": "translate",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html#method_translate"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation\u003A\u003Acatalogues\u0028\u0029",
+            "name": "catalogues",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html#method_catalogues"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation\u003A\u003Alocale\u0028\u0029",
+            "name": "locale",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html#method_locale"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation\u003A\u003AfallbackLocales\u0028\u0029",
+            "name": "fallbackLocales",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html#method_fallbackLocales"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation\\Translation\u003A\u003ALOADERS",
+            "name": "LOADERS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Translation-Translation.html#constant_LOADERS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet",
             "name": "ZubZet",
@@ -4105,6 +5610,36 @@ Search.appendIndex(
             "name": "responseStack",
             "summary": "",
             "url": "classes/ZubZet-Framework-ZubZet.html#property_responseStack"
+        },                {
+            "fqsen": "\\DashboardController",
+            "name": "DashboardController",
+            "summary": "",
+            "url": "classes/DashboardController.html"
+        },                {
+            "fqsen": "\\DashboardController\u003A\u003Aaction_index\u0028\u0029",
+            "name": "action_index",
+            "summary": "",
+            "url": "classes/DashboardController.html#method_action_index"
+        },                {
+            "fqsen": "\\ExampleController",
+            "name": "ExampleController",
+            "summary": "",
+            "url": "classes/ExampleController.html"
+        },                {
+            "fqsen": "\\ExampleController\u003A\u003AhelloWorld\u0028\u0029",
+            "name": "helloWorld",
+            "summary": "",
+            "url": "classes/ExampleController.html#method_helloWorld"
+        },                {
+            "fqsen": "\\ExampleModel",
+            "name": "ExampleModel",
+            "summary": "",
+            "url": "classes/ExampleModel.html"
+        },                {
+            "fqsen": "\\ExampleModel\u003A\u003AgetExamples\u0028\u0029",
+            "name": "getExamples",
+            "summary": "",
+            "url": "classes/ExampleModel.html#method_getExamples"
         },                {
             "fqsen": "\\AppGuestbookGreetCommand",
             "name": "AppGuestbookGreetCommand",
@@ -4290,6 +5825,21 @@ Search.appendIndex(
             "name": "action_scheme",
             "summary": "The\u0020stored\u0020password_scheme\u0020for\u0020a\u0020user\u0020\u0028legacy\u007Conion\u007Cnative\u007Cnull\u0029.",
             "url": "classes/AuthProbeController.html#method_action_scheme"
+        },                {
+            "fqsen": "\\CollationProbeController",
+            "name": "CollationProbeController",
+            "summary": "",
+            "url": "classes/CollationProbeController.html"
+        },                {
+            "fqsen": "\\CollationProbeController\u003A\u003Aaction_state\u0028\u0029",
+            "name": "action_state",
+            "summary": "",
+            "url": "classes/CollationProbeController.html#method_action_state"
+        },                {
+            "fqsen": "\\CollationProbeController\u003A\u003Aaction_misalign\u0028\u0029",
+            "name": "action_misalign",
+            "summary": "",
+            "url": "classes/CollationProbeController.html#method_action_misalign"
         },                {
             "fqsen": "\\CompatController",
             "name": "CompatController",
@@ -4816,15 +6366,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_requestBody"
         },                {
-            "fqsen": "\\DashboardController",
-            "name": "DashboardController",
+            "fqsen": "\\CsrfProbeController",
+            "name": "CsrfProbeController",
             "summary": "",
-            "url": "classes/DashboardController.html"
+            "url": "classes/CsrfProbeController.html"
         },                {
-            "fqsen": "\\DashboardController\u003A\u003Aaction_index\u0028\u0029",
-            "name": "action_index",
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_plain\u0028\u0029",
+            "name": "action_plain",
             "summary": "",
-            "url": "classes/DashboardController.html#method_action_index"
+            "url": "classes/CsrfProbeController.html#method_action_plain"
+        },                {
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_exempt\u0028\u0029",
+            "name": "action_exempt",
+            "summary": "",
+            "url": "classes/CsrfProbeController.html#method_action_exempt"
+        },                {
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_guarded\u0028\u0029",
+            "name": "action_guarded",
+            "summary": "",
+            "url": "classes/CsrfProbeController.html#method_action_guarded"
+        },                {
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_field\u0028\u0029",
+            "name": "action_field",
+            "summary": "",
+            "url": "classes/CsrfProbeController.html#method_action_field"
         },                {
             "fqsen": "\\DatabaseClusterProbeController",
             "name": "DatabaseClusterProbeController",
@@ -4915,6 +6480,111 @@ Search.appendIndex(
             "name": "NODES",
             "summary": "",
             "url": "classes/DatabaseRetryProbeController.html#constant_NODES"
+        },                {
+            "fqsen": "\\EncryptionProbeController",
+            "name": "EncryptionProbeController",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_roundTrip\u0028\u0029",
+            "name": "action_roundTrip",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_roundTrip"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_roundTripEmpty\u0028\u0029",
+            "name": "action_roundTripEmpty",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_roundTripEmpty"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_roundTripAllBytes\u0028\u0029",
+            "name": "action_roundTripAllBytes",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_roundTripAllBytes"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_roundTripJson\u0028\u0029",
+            "name": "action_roundTripJson",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_roundTripJson"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_randomIv\u0028\u0029",
+            "name": "action_randomIv",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_randomIv"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_wrongKey\u0028\u0029",
+            "name": "action_wrongKey",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_wrongKey"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_tampered\u0028\u0029",
+            "name": "action_tampered",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_tampered"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_unknownFormat\u0028\u0029",
+            "name": "action_unknownFormat",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_unknownFormat"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_unknownCipher\u0028\u0029",
+            "name": "action_unknownCipher",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_unknownCipher"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_malformed\u0028\u0029",
+            "name": "action_malformed",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_malformed"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_invalidCharacters\u0028\u0029",
+            "name": "action_invalidCharacters",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_invalidCharacters"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_invalidLength\u0028\u0029",
+            "name": "action_invalidLength",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_invalidLength"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_nonCanonicalEncoding\u0028\u0029",
+            "name": "action_nonCanonicalEncoding",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_nonCanonicalEncoding"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_shortKey\u0028\u0029",
+            "name": "action_shortKey",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_shortKey"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_missingKey\u0028\u0029",
+            "name": "action_missingKey",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_missingKey"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003Aaction_missingKeyOnDecrypt\u0028\u0029",
+            "name": "action_missingKeyOnDecrypt",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_action_missingKeyOnDecrypt"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003AwithKey\u0028\u0029",
+            "name": "withKey",
+            "summary": "Runs\u0020\u0024action\u0020with\u0020the\u0020key\u0020replaced,\u0020or\u0020removed\u0020from\u0020the\u0020settings\u0020when\u0020\u0024key\u0020is\u0020null.",
+            "url": "classes/EncryptionProbeController.html#method_withKey"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003AcatchThrowableMessage\u0028\u0029",
+            "name": "catchThrowableMessage",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#method_catchThrowableMessage"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003ASECRET",
+            "name": "SECRET",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#constant_SECRET"
+        },                {
+            "fqsen": "\\EncryptionProbeController\u003A\u003AHEADER",
+            "name": "HEADER",
+            "summary": "",
+            "url": "classes/EncryptionProbeController.html#constant_HEADER"
         },                {
             "fqsen": "\\ExceptionController",
             "name": "ExceptionController",
@@ -5621,6 +7291,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MigrationController.html#method_action_isMigrationLocked"
         },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_dbalUser\u0028\u0029",
+            "name": "action_dbalUser",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_dbalUser"
+        },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_dbalUserElevated\u0028\u0029",
+            "name": "action_dbalUserElevated",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_dbalUserElevated"
+        },                {
+            "fqsen": "\\MigrationController\u003A\u003AdbalUser\u0028\u0029",
+            "name": "dbalUser",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_dbalUser"
+        },                {
             "fqsen": "\\ModuleHostController",
             "name": "ModuleHostController",
             "summary": "Probes\u0020the\u0020app\u002Dside\u0020view\u0020of\u0020the\u0020module\u0020system\u003A\u0020composer\u0020autoloading\u0020of\u0020a\nmodule\u0020namespace,\u0020module\u002Dcontributed\u0020config\u0020defaults,\u0020and\u0020a\u0020module\u0020view\nshadowing\u0020a\u0020framework\u0020view.",
@@ -5755,6 +7440,31 @@ Search.appendIndex(
             "name": "action_userByOrganizationEmpty",
             "summary": "",
             "url": "classes/OrganizationController.html#method_action_userByOrganizationEmpty"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_hasMember\u0028\u0029",
+            "name": "action_hasMember",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_hasMember"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_isMemberOf\u0028\u0029",
+            "name": "action_isMemberOf",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_isMemberOf"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_requireLogin\u0028\u0029",
+            "name": "action_requireLogin",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_requireLogin"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_requireBool\u0028\u0029",
+            "name": "action_requireBool",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_requireBool"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_require\u0028\u0029",
+            "name": "action_require",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_require"
         },                {
             "fqsen": "\\OrganizationController\u003A\u003Aaction_addWithGroup\u0028\u0029",
             "name": "action_addWithGroup",
@@ -5891,6 +7601,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/PasswordHashProbeController.html#method_action_verifyOnionMismatch"
         },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyWordPressBcrypt\u0028\u0029",
+            "name": "action_verifyWordPressBcrypt",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyWordPressBcrypt"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyWordPressPortable\u0028\u0029",
+            "name": "action_verifyWordPressPortable",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyWordPressPortable"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyWordPressVectors\u0028\u0029",
+            "name": "action_verifyWordPressVectors",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyWordPressVectors"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_verifyWordPressMalformed\u0028\u0029",
+            "name": "action_verifyWordPressMalformed",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#method_action_verifyWordPressMalformed"
+        },                {
             "fqsen": "\\PasswordHashProbeController\u003A\u003Aaction_upgradeWithoutPending\u0028\u0029",
             "name": "action_upgradeWithoutPending",
             "summary": "",
@@ -5925,6 +7655,26 @@ Search.appendIndex(
             "name": "LEGACY_HASH",
             "summary": "",
             "url": "classes/PasswordHashProbeController.html#constant_LEGACY_HASH"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003AWP_PW",
+            "name": "WP_PW",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_WP_PW"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003AWP_BCRYPT",
+            "name": "WP_BCRYPT",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_WP_BCRYPT"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003AWP_PORTABLE",
+            "name": "WP_PORTABLE",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_WP_PORTABLE"
+        },                {
+            "fqsen": "\\PasswordHashProbeController\u003A\u003AWP_VECTORS",
+            "name": "WP_VECTORS",
+            "summary": "",
+            "url": "classes/PasswordHashProbeController.html#constant_WP_VECTORS"
         },                {
             "fqsen": "\\RenderDirectiveController",
             "name": "RenderDirectiveController",
@@ -6050,6 +7800,11 @@ Search.appendIndex(
             "name": "action_loginAsWithoutSubdomainScope",
             "summary": "",
             "url": "classes/ResponseController.html#method_action_loginAsWithoutSubdomainScope"
+        },                {
+            "fqsen": "\\ResponseController\u003A\u003Aaction_loginAsWithoutTimeoutSetting\u0028\u0029",
+            "name": "action_loginAsWithoutTimeoutSetting",
+            "summary": "",
+            "url": "classes/ResponseController.html#method_action_loginAsWithoutTimeoutSetting"
         },                {
             "fqsen": "\\ResponseController\u003A\u003Aaction_loginAsWithLegacyScope\u0028\u0029",
             "name": "action_loginAsWithLegacyScope",
@@ -6236,6 +7991,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RoutingController.html#method_action_check"
         },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_group_guarded\u0028\u0029",
+            "name": "action_group_guarded",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_group_guarded"
+        },                {
             "fqsen": "\\RoutingController\u003A\u003ATestRoute\u0028\u0029",
             "name": "TestRoute",
             "summary": "",
@@ -6306,6 +8066,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/RoutingController.html#method_action_urlPartsProbe_strip2"
         },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_urlPartsProbe_stripSlashes\u0028\u0029",
+            "name": "action_urlPartsProbe_stripSlashes",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_urlPartsProbe_stripSlashes"
+        },                {
+            "fqsen": "\\RoutingController\u003A\u003Aaction_dispatchBelowRoot\u0028\u0029",
+            "name": "action_dispatchBelowRoot",
+            "summary": "",
+            "url": "classes/RoutingController.html#method_action_dispatchBelowRoot"
+        },                {
             "fqsen": "\\SessionController",
             "name": "SessionController",
             "summary": "",
@@ -6371,6 +8141,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SessionController.html#method_action_byTokenNotFound"
         },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_tokenIndex\u0028\u0029",
+            "name": "action_tokenIndex",
+            "summary": "Every\u0020authenticated\u0020request\u0020looks\u0020its\u0020session\u0020up\u0020by\u0020token,\u0020so\u0020the\nlookup\u0020has\u0020to\u0020hit\u0020a\u0020unique\u0020index\u0020instead\u0020of\u0020scanning\u0020the\u0020table.",
+            "url": "classes/SessionController.html#method_action_tokenIndex"
+        },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_add\u0028\u0029",
             "name": "action_add",
             "summary": "",
@@ -6381,15 +8156,110 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SessionController.html#method_action_addWithExec"
         },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_addWithName\u0028\u0029",
+            "name": "action_addWithName",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_addWithName"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_addWithoutTimeoutSetting\u0028\u0029",
+            "name": "action_addWithoutTimeoutSetting",
+            "summary": "Without\u0020loginTimeoutSeconds\u0020a\u0020new\u0020session\u0020lives\u0020for\u0020the\u0020documented\u00207\u0020days.",
+            "url": "classes/SessionController.html#method_action_addWithoutTimeoutSetting"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_sessionPermanent\u0028\u0029",
+            "name": "action_sessionPermanent",
+            "summary": "Session\u0020438\u0020is\u0020an\u0020ordinary\u0020login\u0020created\u0020in\u0020the\u0020year\u00202000,\u0020so\u0020it\u0020is\nexpired\u0020until\u0020it\u0020is\u0020exempted\u0020from\u0020expiring.",
+            "url": "classes/SessionController.html#method_action_sessionPermanent"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_expiresAtFixed\u0028\u0029",
+            "name": "action_expiresAtFixed",
+            "summary": "Session\u0020440\u0020was\u0020created\u0020in\u0020the\u0020year\u00202000,\u0020so\u0020the\u0020computed\u0020lifetime\u0020has\nlong\u0020run\u0020out\u0020\u002D\u0020the\u0020expiry\u0020fixed\u0020on\u0020it\u0020is\u0020what\u0020keeps\u0020it\u0020usable.",
+            "url": "classes/SessionController.html#method_action_expiresAtFixed"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_expiresAtOverrules\u0028\u0029",
+            "name": "action_expiresAtOverrules",
+            "summary": "Session\u0020441\u0020was\u0020created\u0020now\u0020and\u0020extended\u0020by\u0020decades,\u0020both\u0020of\u0020which\u0020the\nexpiry\u0020fixed\u0020in\u0020the\u0020past\u0020overrules.",
+            "url": "classes/SessionController.html#method_action_expiresAtOverrules"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_setExpiresAt\u0028\u0029",
+            "name": "action_setExpiresAt",
+            "summary": "Session\u0020442\u0020is\u0020an\u0020ordinary\u0020login\u0020from\u0020the\u0020year\u00202000,\u0020so\u0020it\u0020expires\u0020by\u0020its\nage\u0020until\u0020an\u0020expiry\u0020is\u0020fixed\u0020on\u0020it,\u0020and\u0020again\u0020once\u0020that\u0020is\u0020dropped.",
+            "url": "classes/SessionController.html#method_action_setExpiresAt"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_expiresAtPermanent\u0028\u0029",
+            "name": "action_expiresAtPermanent",
+            "summary": "Session\u0020443\u0020carries\u0020an\u0020expiry\u0020long\u0020past\u0020but\u0020is\u0020exempt\u0020from\u0020expiring,\nwhich\u0020outranks\u0020the\u0020date.",
+            "url": "classes/SessionController.html#method_action_expiresAtPermanent"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_sessionOrigin\u0028\u0029",
+            "name": "action_sessionOrigin",
+            "summary": "A\u0020session\u0020records\u0020why\u0020it\u0020was\u0020created\u0020and\u0020where\u0020from,\u0020both\u0020taken\u0020at\ncreation\u0020time.\u0020User\u0020439\u0020has\u0020no\u0020seeded\u0020session,\u0020so\u0020this\u0020one\u0020is\u0020fresh.",
+            "url": "classes/SessionController.html#method_action_sessionOrigin"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_sessionIpLast\u0028\u0029",
+            "name": "action_sessionIpLast",
+            "summary": "Session\u0020439\u0020is\u0020seeded\u0020with\u0020a\u0020stale\u0020ip_last,\u0020which\u0020the\u0020authenticated\nrequest\u0020that\u0020carries\u0020its\u0020cookie\u0020has\u0020to\u0020correct.",
+            "url": "classes/SessionController.html#method_action_sessionIpLast"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyByUser\u0028\u0029",
+            "name": "action_apiKeyByUser",
+            "summary": "User\u0020430\u0020owns\u0020one\u0020login,\u0020two\u0020api\u0020keys\u0020and\u0020one\u0020revoked\u0020api\u0020key.\u0020Each\nclass\u0020lists\u0020its\u0020own\u0020kind\u0020only.",
+            "url": "classes/SessionController.html#method_action_apiKeyByUser"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyById\u0028\u0029",
+            "name": "action_apiKeyById",
+            "summary": "Session\u0020430\u0020is\u0020a\u0020login,\u0020session\u0020431\u0020an\u0020api\u0020key.\u0020Looking\u0020one\u0020up\u0020through\nthe\u0020other\u0020class\u0020finds\u0020nothing.",
+            "url": "classes/SessionController.html#method_action_apiKeyById"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyByToken\u0028\u0029",
+            "name": "action_apiKeyByToken",
+            "summary": "A\u0020token\u0020says\u0020nothing\u0020about\u0020its\u0020kind,\u0020so\u0020the\u0020row\u0020picks\u0020the\u0020class.\u0020This\u0020is\nshared\u0020through\u0020CanUseSession,\u0020so\u0020both\u0020classes\u0020resolve\u0020both\u0020kinds\u0020\u002D\u0020which\nis\u0020what\u0020keeps\u0020an\u0020api\u0020key\u0020out\u0020of\u0020the\u0020login\u0020timeout\u0020when\u0020it\u0020authenticates.",
+            "url": "classes/SessionController.html#method_action_apiKeyByToken"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyAdd\u0028\u0029",
+            "name": "action_apiKeyAdd",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_apiKeyAdd"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyManage\u0028\u0029",
+            "name": "action_apiKeyManage",
+            "summary": "Api\u0020key\u0020434\u0020starts\u0020out\u0020unnamed\u0020and\u0020expiring.\u0020Both\u0020are\u0020changed\u0020through\u0020the\nobject\u0020and\u0020read\u0020back\u0020from\u0020the\u0020refreshed\u0020object\u0020and\u0020a\u0020second\u0020lookup.",
+            "url": "classes/SessionController.html#method_action_apiKeyManage"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyPermanentExpiry\u0028\u0029",
+            "name": "action_apiKeyPermanentExpiry",
+            "summary": "Api\u0020key\u0020435\u0020was\u0020created\u0020in\u0020the\u0020year\u00202000\u0020without\u0020an\u0020extension,\u0020so\u0020only\nthe\u0020exemption\u0020from\u0020expiring\u0020keeps\u0020it\u0020alive.\u0020Dropping\u0020it\u0020expires\u0020it\u0020again.",
+            "url": "classes/SessionController.html#method_action_apiKeyPermanentExpiry"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_apiKeyClearName\u0028\u0029",
+            "name": "action_apiKeyClearName",
+            "summary": "Api\u0020key\u0020437\u0020is\u0020seeded\u0020with\u0020a\u0020name\u003B\u0020passing\u0020null\u0020is\u0020the\u0020way\u0020back\u0020to\u0020an\nunnamed\u0020key.",
+            "url": "classes/SessionController.html#method_action_apiKeyClearName"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_loginSessionNames\u0028\u0029",
+            "name": "action_loginSessionNames",
+            "summary": "The\u0020names\u0020of\u0020every\u0020session\u0020of\u0020user\u0020436,\u0020who\u0020is\u0020logged\u0020in\u0020for\u0020real\u0020by\u0020the\nlogin\u002Dnaming\u0020test,\u0020so\u0020cypress\u0020can\u0020see\u0020what\u0020loginAs\u0028\u0029\u0020stored.",
+            "url": "classes/SessionController.html#method_action_loginSessionNames"
+        },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_whoami\u0028\u0029",
             "name": "action_whoami",
             "summary": "Returns\u0020the\u0020authentication\u0020state\u0020of\u0020the\u0020current\u0020HTTP\u0020request.",
             "url": "classes/SessionController.html#method_action_whoami"
         },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_currentSession\u0028\u0029",
+            "name": "action_currentSession",
+            "summary": "The\u0020session\u0020behind\u0020the\u0020current\u0020cookie,\u0020so\u0020cypress\u0020can\u0020read\u0020back\u0020what\u0020a\nlogin\u0020path\u0020stored\u0020on\u0020it.",
+            "url": "classes/SessionController.html#method_action_currentSession"
+        },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_invalidateForAuth\u0028\u0029",
             "name": "action_invalidateForAuth",
             "summary": "Invalidates\u0020session\u0020412\u0020\u0028token\u00200410a...\u0029\u0020so\u0020the\u0020subsequent\u0020whoami\nrequest\u0020with\u0020that\u0020cookie\u0020is\u0020rejected.",
             "url": "classes/SessionController.html#method_action_invalidateForAuth"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_removeUserForAuth\u0028\u0029",
+            "name": "action_removeUserForAuth",
+            "summary": "Removes\u0020user\u0020414\u0020while\u0020its\u0020session\u0020416\u0020\u0028token\u00200414a...\u0029\u0020stays\u0020active,\nso\u0020the\u0020subsequent\u0020whoami\u0020request\u0020with\u0020that\u0020cookie\u0020must\u0020be\u0020rejected.",
+            "url": "classes/SessionController.html#method_action_removeUserForAuth"
         },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_extendAfterExpire\u0028\u0029",
             "name": "action_extendAfterExpire",
@@ -6410,6 +8280,26 @@ Search.appendIndex(
             "name": "getSession",
             "summary": "",
             "url": "classes/SessionController.html#method_getSession"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AgetNameAndExpiry\u0028\u0029",
+            "name": "getNameAndExpiry",
+            "summary": "",
+            "url": "classes/SessionController.html#method_getNameAndExpiry"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AgetExpiry\u0028\u0029",
+            "name": "getExpiry",
+            "summary": "",
+            "url": "classes/SessionController.html#method_getExpiry"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AsessionIds\u0028\u0029",
+            "name": "sessionIds",
+            "summary": "",
+            "url": "classes/SessionController.html#method_sessionIds"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003AclassName\u0028\u0029",
+            "name": "className",
+            "summary": "",
+            "url": "classes/SessionController.html#method_className"
         },                {
             "fqsen": "\\StateProbeController",
             "name": "StateProbeController",
@@ -6626,6 +8516,136 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SupportProbeController.html#method_action_checkpointRestore"
         },                {
+            "fqsen": "\\TranslationController",
+            "name": "TranslationController",
+            "summary": "",
+            "url": "classes/TranslationController.html"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_domain_message\u0028\u0029",
+            "name": "action_domain_message",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_domain_message"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_message\u0028\u0029",
+            "name": "action_message",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_message"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_param_message\u0028\u0029",
+            "name": "action_param_message",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_param_message"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_defined_locale\u0028\u0029",
+            "name": "action_defined_locale",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_defined_locale"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_fallback_locale\u0028\u0029",
+            "name": "action_fallback_locale",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_fallback_locale"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_catalogue_override\u0028\u0029",
+            "name": "action_catalogue_override",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_catalogue_override"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_lang\u0028\u0029",
+            "name": "action_lang",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_lang"
+        },                {
+            "fqsen": "\\TranslationController\u003A\u003Aaction_loader\u0028\u0029",
+            "name": "action_loader",
+            "summary": "",
+            "url": "classes/TranslationController.html#method_action_loader"
+        },                {
+            "fqsen": "\\TwoFactorProbeController",
+            "name": "TwoFactorProbeController",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_code\u0028\u0029",
+            "name": "action_code",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_code"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_codeForSecret\u0028\u0029",
+            "name": "action_codeForSecret",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_codeForSecret"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_user\u0028\u0029",
+            "name": "action_user",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_user"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_session\u0028\u0029",
+            "name": "action_session",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_session"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_ageSession\u0028\u0029",
+            "name": "action_ageSession",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_ageSession"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_resetSession\u0028\u0029",
+            "name": "action_resetSession",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_resetSession"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_setState\u0028\u0029",
+            "name": "action_setState",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_setState"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_clearLoginTries\u0028\u0029",
+            "name": "action_clearLoginTries",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_clearLoginTries"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_challenge\u0028\u0029",
+            "name": "action_challenge",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_challenge"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_expireChallenge\u0028\u0029",
+            "name": "action_expireChallenge",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_expireChallenge"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_challengeCount\u0028\u0029",
+            "name": "action_challengeCount",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_challengeCount"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_guardDefault\u0028\u0029",
+            "name": "action_guardDefault",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_guardDefault"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_guardCustom\u0028\u0029",
+            "name": "action_guardCustom",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_guardCustom"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_guardPage\u0028\u0029",
+            "name": "action_guardPage",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_guardPage"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_formPage\u0028\u0029",
+            "name": "action_formPage",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_formPage"
+        },                {
+            "fqsen": "\\TwoFactorProbeController\u003A\u003Aaction_actionPage\u0028\u0029",
+            "name": "action_actionPage",
+            "summary": "",
+            "url": "classes/TwoFactorProbeController.html#method_action_actionPage"
+        },                {
             "fqsen": "\\UserController",
             "name": "UserController",
             "summary": "",
@@ -6691,6 +8711,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/UserController.html#method_action_updateEmail"
         },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_updateEmailRejected\u0028\u0029",
+            "name": "action_updateEmailRejected",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_updateEmailRejected"
+        },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_updateEmailSame\u0028\u0029",
+            "name": "action_updateEmailSame",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_updateEmailSame"
+        },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_updateEmailNull\u0028\u0029",
+            "name": "action_updateEmailNull",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_updateEmailNull"
+        },                {
             "fqsen": "\\UserController\u003A\u003Aaction_updatePassword\u0028\u0029",
             "name": "action_updatePassword",
             "summary": "",
@@ -6725,6 +8760,11 @@ Search.appendIndex(
             "name": "action_getRoles",
             "summary": "",
             "url": "classes/UserController.html#method_action_getRoles"
+        },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_addRejected\u0028\u0029",
+            "name": "action_addRejected",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_addRejected"
         },                {
             "fqsen": "\\UserController\u003A\u003Aaction_getPermissions\u0028\u0029",
             "name": "action_getPermissions",
@@ -7206,15 +9246,55 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework",
-            "name": "Framework",
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_1_0",
+            "name": "V1_1_0",
             "summary": "",
-            "url": "namespaces/zubzet-framework.html"
+            "url": "namespaces/zubzet-tooling-automatedchanges-v1-1-0.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges",
+            "name": "AutomatedChanges",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-automatedchanges.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Blade",
+            "name": "Blade",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-blade.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Exceptions",
+            "name": "Exceptions",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-exceptions.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Interactions",
+            "name": "Interactions",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-interactions.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling",
+            "name": "Tooling",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling.html"
         },                {
             "fqsen": "\\ZubZet",
             "name": "ZubZet",
             "summary": "",
             "url": "namespaces/zubzet.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers",
+            "name": "Modifiers",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-modifiers.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Version",
+            "name": "Version",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-version.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework",
+            "name": "Framework",
+            "summary": "",
+            "url": "namespaces/zubzet-framework.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication",
             "name": "Authentication",
@@ -7250,6 +9330,11 @@ Search.appendIndex(
             "name": "Core",
             "summary": "",
             "url": "namespaces/zubzet-framework-core.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Commands",
+            "name": "Commands",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-database-commands.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database",
             "name": "Database",
@@ -7381,6 +9466,21 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-routing.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Security",
+            "name": "Security",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-security.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher",
+            "name": "Cipher",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-security-secrets-cipher.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Security\\Secrets",
+            "name": "Secrets",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-security-secrets.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint",
             "name": "Checkpoint",
             "summary": "",
@@ -7410,6 +9510,11 @@ Search.appendIndex(
             "name": "Commands",
             "summary": "",
             "url": "namespaces/zubzet-framework-testing-coverage-commands.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Translation",
+            "name": "Translation",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-translation.html"
         },                {
             "fqsen": "\\Module\\Guestbook\\Support",
             "name": "Support",

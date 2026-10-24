@@ -57,6 +57,10 @@
                                     <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/zubzet.html">ZubZet</a></h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="namespaces/zubzet-tooling.html">Tooling</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/zubzet-framework.html">Framework</a>
                 
             </li>
@@ -152,6 +156,20 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#constant_CHARSET">CHARSET</a>
+    <span>
+        &nbsp;= &quot;utf8mb4&quot;                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/ZubZet-Framework-Database-Connection.html#constant_COLLATION">COLLATION</a>
+    <span>
+        &nbsp;= &quot;utf8mb4_uca1400_ai_ci&quot;                    </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#constant_CONNECT_TIMEOUT_SECONDS">CONNECT_TIMEOUT_SECONDS</a>
     <span>
@@ -491,11 +509,11 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_attemptStatement">attemptStatement()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Database-StatementFailure.html"><abbr title="\ZubZet\Framework\Database\StatementFailure">StatementFailure</abbr></a>|null    </span>
 </dt>
 <dd>Makes one attempt at the statement: reconnect when asked to,
-prepare, bind, execute. Returns null on success and a failure
-descriptor (see failure()) otherwise.</dd>
+prepare, bind, execute. Returns null on success and a
+StatementFailure otherwise.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_connect">connect()</a>
@@ -513,23 +531,13 @@ descriptor (see failure()) otherwise.</dd>
 classes within the shared db_max_retries budget:</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_failure">failure()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Failure descriptor for one statement attempt, carrying what the
-recovery decision needs and the ready-to-throw exception with the
-historical prefix: &quot;SQL Error&quot; for connect and prepare failures,
-&quot;SQL Execution Error&quot; for execute failures.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_isRetryable">isRetryable()</a>
+    <a href="classes/ZubZet-Framework-Database-Connection.html#method_multiQueryFailed">multiQueryFailed()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Classifies an error as retryable. Retries are limited to transient
-contention errors where the server already discarded the statement,
-making a re-run safe. Pure decision, no side effects.</dd>
+<dd>The single failure path of executeMultiQuery(), applying the
+framework&#039;s throwOnFailure contract. A swallowed failure drains the
+connection first, so the caller can keep using it.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_pingConnection">pingConnection()</a>
@@ -538,30 +546,6 @@ making a re-run safe. Pure decision, no side effects.</dd>
 </dt>
 <dd>Sends a lightweight query to check whether an already-established
 connection is still responding. Assumes a connection has been opened.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_reconnectBackoffUs">reconnectBackoffUs()</a>
-    <span>
-                        &nbsp;: int    </span>
-</dt>
-<dd>Attempt-scaled backoff slept before a reconnect attempt.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_shouldReconnect">shouldReconnect()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Whether a just-failed query should be recovered by reconnecting:
-there must be retry budget left and the error must mean the
-connection itself is gone.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Database-Connection.html#method_shouldRetry">shouldRetry()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Whether a just-failed query should be retried: there must be retry
-budget left and the error must be a transient, cluster-related one.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_sqlStateOf">sqlStateOf()</a>
@@ -581,6 +565,64 @@ mysqli_sql_exception::getSqlState() only exists on PHP 8.1+.</dd>
             Constants
             <a href="classes/ZubZet-Framework-Database-Connection.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_CHARSET">
+        CHARSET
+        <a href="classes/ZubZet-Framework-Database-Connection.html#constant_CHARSET" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">CHARSET</span>
+    = <span class="phpdocumentor-signature__default-value">&quot;utf8mb4&quot;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_COLLATION">
+        COLLATION
+        <a href="classes/ZubZet-Framework-Database-Connection.html#constant_COLLATION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">COLLATION</span>
+    = <span class="phpdocumentor-signature__default-value">&quot;utf8mb4_uca1400_ai_ci&quot;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
                     <article class="phpdocumentor-element -constant -private ">
     <h4 class="phpdocumentor-element__name" id="constant_CONNECT_TIMEOUT_SECONDS">
         CONNECT_TIMEOUT_SECONDS
@@ -590,7 +632,7 @@ mysqli_sql_exception::getSqlState() only exists on PHP 8.1+.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -619,7 +661,7 @@ mysqli_sql_exception::getSqlState() only exists on PHP 8.1+.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -665,7 +707,7 @@ the lost-acknowledgment caveat only applies to 2006/2013.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -694,7 +736,7 @@ the lost-acknowledgment caveat only applies to 2006/2013.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
@@ -725,7 +767,7 @@ in milliseconds while the mesh is still promoting a healthy node.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -754,7 +796,7 @@ in milliseconds while the mesh is still promoting a healthy node.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -783,7 +825,7 @@ in milliseconds while the mesh is still promoting a healthy node.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -819,7 +861,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -863,7 +905,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -931,7 +973,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -999,7 +1041,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -1033,7 +1075,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1067,7 +1109,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -1101,7 +1143,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -1169,7 +1211,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -1203,7 +1245,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -1237,7 +1279,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1271,7 +1313,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1305,7 +1347,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -1339,7 +1381,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -1377,7 +1419,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -1410,7 +1452,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">535</span>
 
     </aside>
 
@@ -1443,7 +1485,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 
     </aside>
 
@@ -1762,7 +1804,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">562</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 
@@ -1795,7 +1837,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 
     </aside>
 
@@ -1842,7 +1884,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 
     </aside>
 
@@ -1889,7 +1931,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">457</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 
     </aside>
 
@@ -1941,7 +1983,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">460</span>
 
     </aside>
 
@@ -2148,7 +2190,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -2361,7 +2403,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -2458,21 +2500,23 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">370</span>
+    <span class="phpdocumentor-element-found-in__line">369</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Makes one attempt at the statement: reconnect when asked to,
-prepare, bind, execute. Returns null on success and a failure
-descriptor (see failure()) otherwise.</p>
+prepare, bind, execute. Returns null on success and a
+StatementFailure otherwise.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">attemptStatement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bindArgs</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reconnect</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+                <span class="phpdocumentor-signature__name">attemptStatement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bindArgs</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reconnect</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-StatementFailure.html"><abbr title="\ZubZet\Framework\Database\StatementFailure">StatementFailure</abbr></a>|null</span></code>
 
         <section class="phpdocumentor-description"><p>mysqli reports failures by throwing under PHP 8.1+ strict
 reporting and by return value on PHP 8.0; both are captured here,
-reading the SQLSTATE from the handle that recorded it.</p>
+reading the SQLSTATE from the handle that recorded it. The two
+phases are guarded separately so each one names its own error
+prefix, on the return-value path as well as the throwing one.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2506,7 +2550,7 @@ reading the SQLSTATE from the handle that recorded it.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-StatementFailure.html"><abbr title="\ZubZet\Framework\Database\StatementFailure">StatementFailure</abbr></a>|null</span>
             &mdash;
         
     
@@ -2524,7 +2568,7 @@ reading the SQLSTATE from the handle that recorded it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -2557,7 +2601,7 @@ reading the SQLSTATE from the handle that recorded it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 
     </aside>
 
@@ -2615,53 +2659,28 @@ is a single statement.</li>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_failure">
-        failure()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_failure" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_multiQueryFailed">
+        multiQueryFailed()
+        <a href="classes/ZubZet-Framework-Database-Connection.html#method_multiQueryFailed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">403</span>
+    <span class="phpdocumentor-element-found-in__line">446</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Failure descriptor for one statement attempt, carrying what the
-recovery decision needs and the ready-to-throw exception with the
-historical prefix: &quot;SQL Error&quot; for connect and prepare failures,
-&quot;SQL Execution Error&quot; for execute failures.</p>
+        <p class="phpdocumentor-summary">The single failure path of executeMultiQuery(), applying the
+framework&#039;s throwOnFailure contract. A swallowed failure drains the
+connection first, so the caller can keep using it.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">failure</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorPrefix</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sqlState</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\mysqli_sql_exception">mysqli_sql_exception</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">multiQueryFailed</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$throwOnFailure</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\mysqli_sql_exception">mysqli_sql_exception</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errorPrefix</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errorCode</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$sqlState</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$message</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
@@ -2679,63 +2698,17 @@ historical prefix: &quot;SQL Error&quot; for connect and prepare failures,
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$throwOnFailure</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$error</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\mysqli_sql_exception">mysqli_sql_exception</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_isRetryable">
-        isRetryable()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_isRetryable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">439</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Classifies an error as retryable. Retries are limited to transient
-contention errors where the server already discarded the statement,
-making a re-run safe. Pure decision, no side effects.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">isRetryable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sqlState</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errorCode</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$sqlState</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -2763,7 +2736,7 @@ making a re-run safe. Pure decision, no side effects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">506</span>
 
     </aside>
 
@@ -2792,165 +2765,6 @@ connection is still responding. Assumes a connection has been opened.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_reconnectBackoffUs">
-        reconnectBackoffUs()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_reconnectBackoffUs" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">430</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Attempt-scaled backoff slept before a reconnect attempt.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">reconnectBackoffUs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attempt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$attempt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_shouldReconnect">
-        shouldReconnect()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_shouldReconnect" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">424</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Whether a just-failed query should be recovered by reconnecting:
-there must be retry budget left and the error must mean the
-connection itself is gone.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">shouldReconnect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attempt</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorCode</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$attempt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errorCode</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_shouldRetry">
-        shouldRetry()
-        <a href="classes/ZubZet-Framework-Database-Connection.html#method_shouldRetry" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">415</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Whether a just-failed query should be retried: there must be retry
-budget left and the error must be a transient, cluster-related one.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">shouldRetry</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attempt</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sqlState</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$attempt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errorCode</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$sqlState</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_sqlStateOf">
         sqlStateOf()
         <a href="classes/ZubZet-Framework-Database-Connection.html#method_sqlStateOf" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2958,7 +2772,7 @@ budget left and the error must be a transient, cluster-related one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">409</span>
 
     </aside>
 
