@@ -2856,6 +2856,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-migrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version migrator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3155,7 +3166,7 @@ sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^mainte
 curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/tmp/page<span class="w"> </span>-w<span class="w"> </span><span class="s1">'HTTP %{http_code}\n'</span><span class="w"> </span>http://localhost:8080/
 cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_config/z_settings.ini
 </code></pre></div>
-<p>Occasional flake: a single failing run sometimes recovers on re-run. Re-run once before debugging.</p>
+<p>Several docker stacks side by side (the framework's and a customer project's) are fine. Cypress is the memory hog: one Cypress run at a time on a machine, never several in parallel, which ends in an OOM kill.</p>
 <h2 id="debug-bar">Debug bar<a class="headerlink" href="#debug-bar" title="Permanent link">&para;</a></h2>
 <p>User-facing docs: <a href="../../../core-features/debug-bar/">Debug Bar</a>.</p>
 <p>All debug-bar code lives in <code>src/ErrorHandling/DebugBar/</code>:</p>
@@ -3270,6 +3281,9 @@ command-name collision the userspace copy wins, then modules in order, then the 
 <li><strong>"Make a useful decision."</strong> Decide. State trade-offs in 1–2 lines, implement.</li>
 <li><strong>Inline aggressively.</strong> When a private function has only one caller, inlining is the project default. Drop dead code and unused parameters confidently.</li>
 <li><strong>Run the full e2e suite after any framework-internals change.</strong> Three minutes catches the kind of subtle ordering bugs that bootstrap-adjacent changes cause.</li>
+<li><strong>Compatibility is the first rule.</strong> Consumer projects run on this code. Before changing a public API, check how the real projects use it; the e2e app under <code>tests/e2e/app</code> is user code and must never need a change for a framework feature to work. A change that would break an existing app ships only together with a version migrator step.</li>
+<li><strong>A new setting travels as a set, in one PR.</strong> The key lands in <code>stubs/project/z_config/z_settings.ini</code>, in <code>tests/e2e/z_config/z_settings.ini</code>, in the migrator (<code>CONFIG_&lt;KEY&gt;</code> overrides apply only to keys the ini already has), in the docs and in <code>Changelog.md</code>. This is why everything lives in one repository.</li>
+<li><strong>Global helper names are specific.</strong> <code>encryptSecret()</code>, never <code>encrypt()</code>: the helpers live in the global namespace of every project, so a generic name collides sooner or later.</li>
 </ul>
 <h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h2>
 <p>Framework migrations live in <code>src/IncludedComponents/database/Migration/</code> and ship with the framework. Project migrations live in <code>app/Database/migrations</code>; module migrations join the run as part of the external set (like the framework's). Executed state is keyed on the basename, so <code>db:migrate</code>/<code>db:sync</code> abort on duplicate basenames anywhere in the assembled set: prefix module migration filenames with the module name. See <a href="../../../core-features/migrations/">Migrations</a> for the file/filename conventions and CLI commands.</p>
@@ -3280,14 +3294,23 @@ command-name collision the userspace copy wins, then modules in order, then the 
 <li><code>ALTER TABLE … ADD INDEX IF NOT EXISTS …</code> (and the <code>DROP</code> variants)</li>
 <li><code>INSERT … ON DUPLICATE KEY UPDATE</code> or guarded with <code>WHERE NOT EXISTS</code></li>
 </ul>
-<p>The <code>z_version</code> table prevents re-execution under normal flow, but the rule still applies — a migration that fails on second run is a bug.</p>
+<p>The <code>z_migration</code> table (with <code>z_migration_lock</code>) prevents re-execution under normal flow, but the rule still applies — a migration that fails on second run is a bug.</p>
+<h2 id="version-migrator">Version migrator<a class="headerlink" href="#version-migrator" title="Permanent link">&para;</a></h2>
+<p><code>migrator/</code> holds the upgrade tool, one class per framework version (<code>migrator/src/Version/V1_3_0.php</code>); the steps of a postponed release merge into the earlier version class.</p>
+<ul>
+<li><strong>Only mechanical file changes through its own primitives</strong> (<code>FileContent</code>, <code>shouldChangeIfIncludes</code>, <code>demandChange</code>, the modifiers in <code>migrator/src/Modifiers/</code>). No raw <code>scandir</code>, <code>is_dir</code> or <code>rmdir</code> in a version class, as little logic as possible. It never runs database migrations and prints no hints; those belong in the upgrade guide.</li>
+<li><strong><code>--dry</code> is absolute.</strong> A dry run changes nothing on disk, ever, and prints exactly what the real run would do.</li>
+<li><strong>Every step is idempotent.</strong> Running the same upgrade twice, or on a project that already has part of it by hand, changes nothing the second time and never fails.</li>
+<li><strong>A missed upgrade case is fixed in the migrator</strong>, not by making framework code tolerate the old shape.</li>
+<li>Test a change in dry mode and for real against the e2e app (reset its files afterwards) and against at least one real old project.</li>
+</ul>
 <h2 id="common-pitfalls">Common pitfalls<a class="headerlink" href="#common-pitfalls" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Port confusion.</strong> App is at <code>:8080</code>, not <code>:4000</code>. The <code>host</code> setting in INI is informational, not the listening port.</li>
 <li><strong>No PHPUnit / unit tests.</strong> All testing is Cypress e2e in <code>tests/e2e/</code>.</li>
-<li><strong>Multiple PHP versions in CI.</strong> Don't rely on a feature available only in PHP 8.4+ without checking the matrix.</li>
+<li><strong>Multiple PHP versions in CI.</strong> The floor is PHP 8.0, the ceiling the newest line. Known breakers: <code>#[\Override]</code> does not exist before 8.3; implicit nullable parameters (<code>string $x = null</code>) are deprecated since 8.4, write <code>?string $x = null</code>; <code>finfo_close()</code> is deprecated on the newest line; by-ref model constructors were removed in 1.2.</li>
 <li><strong><code>config()</code> is unavailable before bootstrap.</strong> Anything called from <code>MaintenanceHandler::gate()</code> must already have configuration loaded; anything earlier must read INI directly.</li>
-<li><strong>Cypress flake.</strong> Re-run a failing suite once before opening an issue, try to fix the flakiness if possible.</li>
+<li><strong>A red CI run is classified first</strong>: a flake, a rebase side effect, or a real regression. Reproduce on the base branch before blaming your change. Local green is not CI green: CI runs PHP 8.0 and 8.6 on fresh volumes. Flakiness is never acceptable: a test that fails sometimes is fixed (deterministic app state, retrying assertions, proper waits), never re-run until green.</li>
 <li><strong>The sample modules are part of the e2e app.</strong> <code>tests/e2e/modules/{guestbook,theme}</code> are installed on every run; a red <code>modules/</code> spec usually means a Registry or precedence regression, not a spec problem. Never "fix" one by renaming sample files to dodge a collision.</li>
 <li><strong>Convention classes are global.</strong> Controllers, models, and commands from userspace and modules share one global class namespace; the first include wins and <code>class_exists</code> guards prevent redeclaration fatals. Name module classes with a module prefix unless shadowing is intended.</li>
 </ul>

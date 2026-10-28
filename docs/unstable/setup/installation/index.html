@@ -2746,6 +2746,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-with-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install with an agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#start-the-project" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2819,7 +2830,10 @@
 <h2 id="requirement">Requirement<a class="headerlink" href="#requirement" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.docker.com/get-started/get-docker/"><strong>Docker</strong></a> is required. Nothing else needs to be installed on your host.</p>
 <h2 id="install-script">Install script<a class="headerlink" href="#install-script" title="Permanent link">&para;</a></h2>
-<p>Save the following script as <code>install.sh</code> and run it with <code>bash install.sh your-folder-name</code>. Without an argument it asks for the project directory.</p>
+<p>One command creates a project in a new folder (replace <code>my-project</code>):</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://zubzet.com/install.sh<span class="o">)</span><span class="w"> </span>my-project
+</code></pre></div>
+<p>Without the folder argument the script asks for it. <code>https://zubzet.com/install.sh</code> redirects to the script inside this documentation for the latest stable release, <code>https://zubzet.com/docs/latest/setup/install.sh</code>. The script is versioned with the framework, so for another version fetch it from that version's docs, <code>https://zubzet.com/docs/&lt;version&gt;/setup/install.sh</code>. It is printed in full below so you can read what it does before running it, or save it as <code>install.sh</code> and run it with <code>bash install.sh my-project</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
 
@@ -3031,6 +3045,16 @@ info_row<span class="w"> </span><span class="s2">"Issues"</span><span class="w">
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$rule</span><span class="s2">"</span>
 <span class="nb">echo</span>
 </code></pre></div>
+<h2 id="install-with-an-agent">Install with an agent<a class="headerlink" href="#install-with-an-agent" title="Permanent link">&para;</a></h2>
+<p>If an AI coding agent (Claude Code, Cursor, Codex, ...) does the setup or the work on an existing project, give it this one line first:</p>
+<div class="highlight"><pre><span></span><code>Fetch https://zubzet.com/agent.md and follow it before working on this ZubZet project. If you cannot fetch it, do nothing and tell me.
+</code></pre></div>
+<p>The page is a short signpost for agents. It tells them to run the install script above for a new project, where the documentation and the agent skill live inside <code>vendor/zubzet/framework/</code> (<code>docs/</code> and <code>skills/zubzet/</code>), how the <code>project</code> script drives the Docker stack, and that a project's own <code>AGENTS.md</code> wins over the skill. Two things to know before you paste it:</p>
+<ul>
+<li><strong>Docker must be installed and the agent must be allowed to run it.</strong> The install script, the application and the tests all run in containers; an agent in a sandbox without Docker can read the sources but cannot install, start or test the project.</li>
+<li><strong>The agent reads the skill.</strong> The skill is a directory in the framework package, <code>vendor/zubzet/framework/skills/zubzet</code>, that holds the architecture, design and style rules for ZubZet projects. Every agent can read it right there. A tool that loads project skills from a folder of its own gets a link to that directory, which the agent offers to create; the framework itself creates no tool specific folder in a project.</li>
+</ul>
+<p>The same prompt works on an existing project at any time; it is the fastest way to give a new agent session the full context.</p>
 <h2 id="start-the-project">Start the project<a class="headerlink" href="#start-the-project" title="Permanent link">&para;</a></h2>
 <p>Inside your project folder, run:</p>
 <div class="highlight"><pre><span></span><code>./project<span class="w"> </span>start

@@ -6691,6 +6691,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/FormController.html#method_action_validationListRules"
         },                {
+            "fqsen": "\\FormController\u003A\u003Aaction_autocomplete\u0028\u0029",
+            "name": "action_autocomplete",
+            "summary": "",
+            "url": "classes/FormController.html#method_action_autocomplete"
+        },                {
             "fqsen": "\\FrameworkApiController",
             "name": "FrameworkApiController",
             "summary": "",
