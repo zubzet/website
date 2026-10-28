@@ -262,6 +262,61 @@ code {
     border-radius: 4px;
 }
 
+.codebox-agent {
+    font-size: 0.85em;
+    box-shadow: 0 10px 30px rgba(16, 24, 21, 0.12);
+}
+
+.codebox-agent .codebox-command {
+    display: flex;
+    gap: 0.6em;
+    font-family: inherit;
+    white-space: normal;
+}
+
+.codebox-agent .codebox-prompt {
+    flex-shrink: 0;
+}
+
+.install-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.install-or {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.55;
+}
+
+.install-or::before,
+.install-or::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid currentColor;
+    opacity: 0.4;
+}
+
+.install-or span {
+    padding: 0 0.75rem;
+}
+
+.install-note {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    text-align: left;
+}
+
 /* ---------- Fact chips ---------- */
 
 .fact-chips {
