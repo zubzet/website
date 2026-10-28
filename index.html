@@ -82,17 +82,34 @@
                     </div>
                     <div class="row justify-content-center mt-4">
                         <div class="col-lg-7 col-md-9">
+                            <div class="install-label"><i class="fa fa-terminal mr-2" aria-hidden="true"></i>Install it yourself</div>
                             <div class="codebox p-4 rounded-lg text-white">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="codebox-command">
-                                        <span class="codebox-prompt">$</span> composer create-project zubzet/zubzet
+                                        <span class="codebox-prompt">$</span> bash <(curl -fsSL https://zubzet.com/install.sh) my-project
                                     </span>
-                                    <button type="button" class="copy-click cursor-pointer" data-copy-text="composer create-project zubzet/zubzet" aria-label="Copy install command">
+                                    <button type="button" class="copy-click cursor-pointer" data-copy-text="bash <(curl -fsSL https://zubzet.com/install.sh) my-project" aria-label="Copy install command">
                                         <i class="fa fa-copy" aria-hidden="true"></i>
                                         Copy
                                     </button>
                                 </div>
                             </div>
+                            <div class="install-or" aria-hidden="true"><span>or</span></div>
+                            <div class="install-label"><i class="fa fa-robot mr-2" aria-hidden="true"></i>Let your AI agent do it</div>
+                            <div class="codebox codebox-agent px-4 py-3 rounded-lg text-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="codebox-command">
+                                        <span class="codebox-prompt" aria-hidden="true">❯</span><span>Fetch https://zubzet.com/agent.md and follow it before working on this ZubZet project. If you cannot fetch it, do nothing and tell me.</span>
+                                    </span>
+                                    <button type="button" class="copy-click cursor-pointer" data-copy-text="Fetch https://zubzet.com/agent.md and follow it before working on this ZubZet project. If you cannot fetch it, do nothing and tell me." aria-label="Copy the prompt for AI agents">
+                                        <i class="fa fa-copy" aria-hidden="true"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="install-note mt-2 mb-0">
+                                Paste this prompt into your agent. The page points it to the docs and the agent skill bundled with every project.
+                            </p>
                             <div class="d-flex justify-content-center flex-wrap mt-4 fact-chips">
                                 <span class="fact-chip" data-zz-version="latest" data-zz-prefix="Stable ">Stable v1.2.0</span>
                                 <span class="fact-chip">PHP 8.0 – 8.6</span>
@@ -853,6 +870,7 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                         <h6 class="footer-heading">Documentation</h6>
                         <ul class="list-unstyled">
                             <li><a href="https://zubzet.com/docs/latest/setup/installation/" class="footer-link">Getting started</a></li>
+                            <li><a href="https://zubzet.com/agent.md" class="footer-link">For AI agents</a></li>
                             <li><a href="https://zubzet.com/docs" class="footer-link">Documentation</a></li>
                             <li><a href="https://zubzet.com/docs/latest/setup/how-to-update/" class="footer-link">Upgrade guides</a></li>
                             <li><a href="https://zubzet.com/docs/edge/" class="footer-link">Edge docs</a></li>
