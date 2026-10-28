@@ -16,7 +16,7 @@ Look for a `composer.json` that requires `zubzet/framework` and for the folder `
 
 `vendor/zubzet/framework/skills/zubzet/SKILL.md` holds the architecture, design and quality rules for ZubZet projects: what goes into a controller, a model and a view, how forms, migrations, seeds and tests are done, the coding style, and which further files to read for the area you are about to touch. It is written for you. Read it completely before you change or add any code, and follow the reading order it gives.
 
-Claude Code loads it automatically through the symlink `.claude/skills/zubzet`. Check that it is there. Only where it is missing, offer the user to create it. If you use a different folder to load project skills, use that and tell the user.
+Claude Code loads it when the project links it as `.claude/skills/zubzet`. Check whether that link exists. Where it is missing, offer the user to create it; the framework does not create it itself, because a `.claude` folder is one tool's convention. If you use a different folder to load project skills, use that and tell the user.
 
 ```bash
 mkdir -p .claude/skills
