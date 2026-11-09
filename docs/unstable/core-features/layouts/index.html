@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2841,8 +2841,8 @@
 &lt;/html&gt;
 </code></pre></div>
 - <code>@yield("content")</code> is where the view's <code>@section("content")</code> lands, the main page body.
-- <code>@yield("head")</code> is where the view's optional <code>@section("head")</code> lands, inside the document <code>&lt;head&gt;</code>.
-- <code>&lt;x-zubzet::head :opt="$opt"/&gt;</code> and <code>&lt;x-zubzet::body :opt="$opt"/&gt;</code> pull in the framework essentials (jQuery, Bootstrap, Font Awesome, Z.js and the <a href="../debug-bar/">debug bar</a>). Include them in every full page layout: the head component inside <code>&lt;head&gt;</code>, the body component at the end of <code>&lt;body&gt;</code>. Pass the render data through with <code>:opt="$opt"</code>.</p>
+- <code>@yield("head")</code> is where the view's optional <code>@section("head")</code> lands, inside the document <code>&lt;head&gt;</code>. A layout without it drops the view's head section.
+- <code>&lt;x-zubzet::head :opt="$opt"/&gt;</code> and <code>&lt;x-zubzet::body :opt="$opt"/&gt;</code> pull in the framework essentials (a <code>&lt;meta charset&gt;</code> and viewport tag, jQuery, Popper, Bootstrap, <code>bs-custom-file-input</code>, Font Awesome including its v4 class names, Z.js with <code>Z.Request.rootPath</code>, <code>rootHost</code> and <code>absRoot</code>, a watcher that reloads the page once the <code>z_login_token</code> cookie is gone, and the <a href="../debug-bar/">debug bar</a>). Include them in every full page layout: the head component inside <code>&lt;head&gt;</code> before <code>@yield("head")</code>, so view heads can use jQuery and <code>Z</code>, the body component at the end of <code>&lt;body&gt;</code>. Pass the render data through with <code>:opt="$opt"</code>; <code>:custom-bootstrap="true"</code> on the head component skips only the Bootstrap JS tag. Z.js needs jQuery, the global <code>bsCustomFileInput</code>, Bootstrap 4 and Font Awesome, which the head component loads.</p>
 <p>A view then selects and fills this layout:
 <div class="highlight"><pre><span></span><code>@extends($layout)
 
@@ -2856,14 +2856,14 @@
 </code></pre></div>
 Because the view carries <code>@extends($layout)</code> rather than naming a specific layout, the same view works with whatever layout you hand it, which is what makes switching layouts per request possible.</p>
 <h2 id="how-to-use-one-in-your-project">How to use one in your project?<a class="headerlink" href="#how-to-use-one-in-your-project" title="Permanent link">&para;</a></h2>
-<p>When using <a href="../../api/classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"><code>$res-&gt;render</code></a>, a third optional parameter accepts a path to a layout. If no parameter is given, the render engine will look for a layout with the standard name in your views folder. The standard location for a layout is <code>{your z_views folder}/layout/default_layout.blade.php</code>. If you wish to use a different location, you'll need to use the third parameter to specify a different path. This also allows you to use multiple layouts within the same project and even switch dynamically for content pages.</p>
+<p>When using <a href="../../api/classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"><code>$res-&gt;render</code></a>, a third optional parameter accepts a path to a layout, or an array whose only read key is <code>layout</code>. If no parameter is given, the render engine will look for a layout with the standard name in your views folder. The standard location for a layout is <code>{your z_views folder}/layout/default_layout.blade.php</code>. If you wish to use a different location, you'll need to use the third parameter to specify a different path. This also allows you to use multiple layouts within the same project and even switch dynamically for content pages. The framework bundles <code>layout/default_layout</code> (the default), <code>layout/min_layout</code> (the same head but the framework body scripts after the content, used by the login and the 403, 404 and 500 pages), and <code>layout/empty</code> and <code>layout/mail_layout</code> (only the view's content without any HTML, for partials and mails; <code>mail_layout</code> is the default of <code>sendEmailToUser()</code>). A same-named file in your views folder replaces a bundled one. The default and min layout link <code>{root}assets/img/favicon.png</code>, a static file your app has to supply.</p>
 <h3 id="example-usage">Example usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="x">public function action_index(Request $req, Response $res) {</span>
 <span class="x">    return $res-&gt;render("admin/index", [], "admin/layout");</span>
 <span class="x">}</span>
 </code></pre></div>
 <h2 id="setting-a-default-layout-for-part-of-your-app">Setting a default layout for part of your app<a class="headerlink" href="#setting-a-default-layout-for-part-of-your-app" title="Permanent link">&para;</a></h2>
-<p>When <code>$res-&gt;render</code> is called without an explicit layout, the framework picks one in this order: per-instance default → global default → <code>layout/default_layout</code>. Use <a href="../../api/classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout"><code>$res-&gt;setDefaultLayout("admin/layout")</code></a> from a <a href="../routing/#middleware-and-aftermiddleware">route middleware</a> (instance scope) or <code>Response::setGlobalDefaultLayout("admin/layout")</code> from a controller <code>__construct</code> (request scope) to change that default for a section of the app. Both scopes also expose <code>pushDefaultLayout</code> / <code>popDefaultLayout</code> (and the global equivalents) so nested components can install a layout and restore the previous one when they're done.</p>
+<p>When <code>$res-&gt;render</code> is called without an explicit layout, the framework picks one in this order: per-instance default → global default → <code>layout/default_layout</code>. Use <a href="../../api/classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout"><code>$res-&gt;setDefaultLayout("admin/layout")</code></a> (the request's single <code>Response</code>) or the static <code>Response::setGlobalDefaultLayout("admin/layout")</code> from a controller <code>__construct</code>, a <a href="../routing/#middleware-and-aftermiddleware">route middleware</a> or an action to change that default for a section of the app; both <code>set</code> methods discard any layouts pushed before, so the given one becomes the only entry. Both scopes also expose <code>pushDefaultLayout</code> / <code>popDefaultLayout</code> (and the global equivalents) so nested components can install a layout and restore the previous one when they're done: <code>pop</code> removes and returns the top entry and throws an <code>\UnderflowException</code> on an empty stack, so every push needs exactly one pop, in LIFO order.</p>
 
 
 
@@ -2947,7 +2947,7 @@ Because the view carries <code>@extends($layout)</code> rather than naming a spe
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

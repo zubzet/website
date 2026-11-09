@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2744,6 +2744,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#restricting-a-controller-to-the-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricting a controller to the console
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dedicated-console-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2784,8 +2795,21 @@
 <h2 id="creating-a-command">Creating a command<a class="headerlink" href="#creating-a-command" title="Permanent link">&para;</a></h2>
 <p>The current implementation simply uses the already existing <a href="../../core-features/controllers-and-actions/">controller structure</a>. Nothing extra needed to do.</p>
 <h2 id="running-a-command">Running a command<a class="headerlink" href="#running-a-command" title="Permanent link">&para;</a></h2>
-<p>To run a command, simply use: <code>php index.php run &lt;controller&gt; &lt;action&gt; &lt;param1&gt; ...</code> </p>
+<p>To run a command, simply use: <code>php index.php run &lt;controller&gt; &lt;action&gt; &lt;param1&gt; ...</code> (<code>action</code> defaults to <code>index</code>, names are case-insensitive). The extra tokens are readable in the action with <code>$req-&gt;getParameters()</code>. An unknown controller or action lists the known ones and exits with status <code>1</code>, otherwise <code>run</code> exits with <code>0</code> whatever the action returns. A controller with <code>action_fallback</code> accepts any action name. Only the top level of <code>app/Controllers/</code> and the module controller folders is scanned (every <code>*.php</code> there is included, so top-level code runs), and only <code>action_</code> methods declared in the class itself count, not inherited ones.</p>
 <p>Be sure to use <code>chdir(realpath(__DIR__))</code> in your index.php if you are running commands from a different working directory, e.g. as a cronjob.</p>
+<h2 id="restricting-a-controller-to-the-console">Restricting a controller to the console<a class="headerlink" href="#restricting-a-controller-to-the-console" title="Permanent link">&para;</a></h2>
+<p>Controller actions are also reachable over HTTP, so a command controller should refuse web requests. <code>$req-&gt;checkPermission("console")</code> is a reserved permission name: it passes only when PHP runs in CLI mode, no login or role is involved. Over HTTP the request is answered with the 403 page and cancelled. With <code>true</code> as second parameter it returns <code>false</code> instead of showing the 403 page.</p>
+<p>Calling it from the controller's <code>__construct</code> makes every action of that controller CLI-only, because the constructor runs before any action (and before the 404 check) is dispatched:</p>
+<div class="highlight"><pre><span></span><code><span class="x">class ReportController extends z_controller {</span>
+<span class="x">    public function __construct(Request $req, Response $res) {</span>
+<span class="x">        $req-&gt;checkPermission("console");</span>
+<span class="x">    }</span>
+
+<span class="x">    public function action_daily(Request $req, Response $res) {</span>
+<span class="x">        // Only reachable via: php index.php run report daily</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
 <h2 id="dedicated-console-commands">Dedicated console commands<a class="headerlink" href="#dedicated-console-commands" title="Permanent link">&para;</a></h2>
 <p>Since version 1.3.0, real Symfony console commands can live in <code>app/Commands/</code> (in the
 application and in <a href="../modules/">modules</a>). Each file declares one global class named like the
@@ -2810,7 +2834,7 @@ file, extending the Symfony <code>Command</code> class:</p>
 <p>Run it with <code>php index.php report:daily</code>; it appears in <code>php index.php list</code> next to the
 framework commands. The framework is fully booted before <code>execute()</code> runs, so <code>config()</code>,
 <code>model()</code>, and the database are available. When two roots register the same command name, the
-application wins over modules, and modules win over the framework.</p>
+application wins over modules, and modules win over the framework. The console dispatches as <code>GET /</code>, so an explicit route for <code>GET /</code> runs instead of any command.</p>
 
 
 
@@ -2894,7 +2918,7 @@ application wins over modules, and modules win over the framework.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

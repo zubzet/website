@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2732,6 +2732,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Requirement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHP extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2772,6 +2800,28 @@
     <span class="md-ellipsis">
       
         Access your application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web root
       
     </span>
   </a>
@@ -2829,12 +2879,36 @@
 <p>ZubZet projects are set up with an install script. It builds the project and bundles a Docker development stack: Apache + PHP, MariaDB, phpMyAdmin, and a mail catcher.</p>
 <h2 id="requirement">Requirement<a class="headerlink" href="#requirement" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.docker.com/get-started/get-docker/"><strong>Docker</strong></a> is required. Nothing else needs to be installed on your host.</p>
+<h3 id="database-server">Database server<a class="headerlink" href="#database-server" title="Permanent link">&para;</a></h3>
+<p>ZubZet requires <strong>MariaDB 11.7 or newer</strong> and does not support MySQL: the bundled migrations use MariaDB-only syntax (<code>ADD COLUMN IF NOT EXISTS</code>, <code>ADD INDEX IF NOT EXISTS</code>, <code>DROP COLUMN IF EXISTS</code>) and the native <code>UUID</code> column type. The Docker stack of a new project runs <code>mariadb:11.8</code>, and the framework's e2e suite runs MariaDB 11.8 as a three-node Galera cluster.</p>
+<p>No other SQL dialect is wired up: the runtime connection is <code>mysqli</code>, the migration tooling is hard-coded to the DBAL <code>mysqli</code> driver with <code>MySQL80Platform</code>, and the query builder uses the <code>Cake\Database\Driver\Mysql</code> driver.</p>
+<h3 id="php-extensions">PHP extensions<a class="headerlink" href="#php-extensions" title="Permanent link">&para;</a></h3>
+<p>The Docker image provides every extension the framework needs. On your own PHP build, <code>composer.json</code> only requires <code>ext-openssl</code>, but you also need:</p>
+<ul>
+<li><code>ext-mysqli</code> built against <code>mysqlnd</code>: every query calls <code>mysqli_stmt::get_result()</code>, which the <code>libmysqlclient</code> build of mysqli does not offer.</li>
+<li><code>ext-mbstring</code> and <code>ext-fileinfo</code>: the framework calls <code>mb_*</code> functions (e.g. in <code>Helpers</code>), and the asset proxy detects MIME types through <code>league/mime-type-detection</code>, which needs fileinfo.</li>
+<li><code>ext-ctype</code>, <code>ext-filter</code> and <code>ext-hash</code>: required by PHPMailer, which sends the mails of <code>Response::sendEmail()</code>.</li>
+<li>Argon2id support: new password hashes use <code>password_hash()</code> with <code>PASSWORD_ARGON2ID</code>, so PHP must be compiled with Argon2 (<code>--with-password-argon2</code>, or the <code>PASSWORD_ARGON2ID</code> constant is undefined).</li>
+</ul>
 <h2 id="install-script">Install script<a class="headerlink" href="#install-script" title="Permanent link">&para;</a></h2>
 <p>One command creates a project in a new folder (replace <code>my-project</code>):</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://zubzet.com/install.sh<span class="o">)</span><span class="w"> </span>my-project
 </code></pre></div>
 <p>Without the folder argument the script asks for it. <code>https://zubzet.com/install.sh</code> redirects to the script inside this documentation for the latest stable release, <code>https://zubzet.com/docs/latest/setup/install.sh</code>. The script is versioned with the framework, so for another version fetch it from that version's docs, <code>https://zubzet.com/docs/&lt;version&gt;/setup/install.sh</code>. It is printed in full below so you can read what it does before running it, or save it as <code>install.sh</code> and run it with <code>bash install.sh my-project</code>.</p>
+<p>The script asks which framework version to install; pass it as second argument to skip the question: <code>latest</code> for the newest stable release, a Composer constraint such as <code>^1.3</code>, or a branch such as <code>dev-develop</code>. It writes the project's <code>composer.json</code>, runs <code>composer require zubzet/framework</code> in the project folder and then <code>bin/install</code> from the new vendor, which copies the project template (Docker stack, <code>app/</code> skeleton, <code>zubzet</code> console entry point and the <code>project</code> script) around it and never overwrites an existing file. All of it runs inside the PHP image the project uses; the container exits when it is done. The script then runs <code>./project start</code> in the new project, see below.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+
+
+<span class="c1"># ----------------</span>
+<span class="c1"># Check Bash</span>
+<span class="c1"># ----------------</span>
+
+<span class="c1"># Before anything else and in plain POSIX syntax, since `sh install.sh` would choke on the Bash-only parts below</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BASH_VERSION</span><span class="k">:-</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: This installer needs Bash, but it was started with another shell."</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Run it with: bash install.sh"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
 
 
 <span class="c1"># ----------------</span>
@@ -2984,12 +3058,36 @@ cleanup<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="k">fi</span>
 <span class="nv">directory</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">directory</span><span class="k">:-</span><span class="p">.</span><span class="si">}</span><span class="s2">"</span>
 
+<span class="c1"># ----------------</span>
+<span class="c1"># Framework Version</span>
+<span class="c1"># ----------------</span>
+
+<span class="c1"># Given as second argument (./install.sh my-project 1.3.0), otherwise asked for. A release number,</span>
+<span class="c1"># any Composer constraint or branch (dev-develop), or "latest" for the newest stable release.</span>
+<span class="c1"># The docs deploy replaces the default with the version these docs belong to, so the script of a</span>
+<span class="c1"># release installs that release.</span>
+<span class="nv">default_version</span><span class="o">=</span><span class="s2">"latest"</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-ge<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">version</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nv">question</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">Which version would you like to install?</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">?</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> </span><span class="nv">$question</span><span class="s2"> </span><span class="si">${</span><span class="nv">dim</span><span class="si">}</span><span class="s2">(leave empty for </span><span class="nv">$default_version</span><span class="s2">, or enter a constraint like ^1.3 or dev-develop)</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>-p<span class="w"> </span><span class="s2">"&gt; "</span><span class="w"> </span>version
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-t<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-t<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\033[2A\r\033[J'</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">✔</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> </span><span class="nv">$question</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">version</span><span class="k">:-</span><span class="nv">$default_version</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">fi</span>
+<span class="nv">version</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">version</span><span class="k">:-</span><span class="nv">$default_version</span><span class="si">}</span><span class="s2">"</span>
+
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span>
 <span class="nv">directory</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">ℹ</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> Creating a new project in </span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="nv">$directory</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">."</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">ℹ</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> Creating a new project in </span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="nv">$directory</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> with zubzet/framework </span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="nv">$version</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">."</span>
 
-<span class="c1"># The project belongs to the user running the installer, the application container takes over its uid.</span>
-<span class="c1"># Apache refuses to run as root, so for root the project goes to uid 1000 instead.</span>
+<span class="c1"># The project belongs to the user running the installer.</span>
+<span class="c1"># Apache refuses to run as root, so for root the project goes to uid 1000 instead, the uid of the application container.</span>
 <span class="nv">owner</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="s2">:</span><span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="s2">"</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nv">owner</span><span class="o">=</span><span class="s2">"1000:1000"</span>
@@ -2997,17 +3095,57 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <span class="k">fi</span>
 
 <span class="c1"># ----------------</span>
-<span class="c1"># Require Framework, Run Install Command</span>
+<span class="c1"># Install</span>
 <span class="c1"># ----------------</span>
 
-<span class="c1"># The framework from source because the dist archive leaves out tests/, everything else as dist</span>
+<span class="c1"># Everything runs inside the PHP image the project uses, so the host needs nothing but Docker.</span>
+<span class="c1"># The project's composer.json comes first, then one `composer require` builds the vendor in place</span>
+<span class="c1"># (latest: without a constraint, so Composer picks the newest stable release and writes the ^</span>
+<span class="c1"># constraint itself), then bin/install from that vendor adds the rest of the project template.</span>
+<span class="nv">constraint</span><span class="o">=</span><span class="s2">"</span><span class="nv">$version</span><span class="s2">"</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$version</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>latest<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">constraint</span><span class="o">=</span><span class="s2">""</span>
+<span class="k">fi</span>
+
 <span class="nv">install_start</span><span class="o">=</span><span class="nv">$SECONDS</span>
 spinner_start
-<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-u<span class="w"> </span><span class="s2">"</span><span class="nv">$owner</span><span class="s2">"</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">HOME</span><span class="o">=</span>/tmp<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span>:/app<span class="w"> </span>--entrypoint<span class="w"> </span>sh<span class="w"> </span>ghcr.io/zubzet/php:8.5-apache<span class="w"> </span>-c<span class="w"> </span><span class="s1">'</span>
-<span class="s1">    mkdir /tmp/installer &amp;&amp; cd /tmp/installer &amp;&amp;</span>
-<span class="s1">    echo "{\"config\":{\"preferred-install\":{\"zubzet/framework\":\"source\",\"*\":\"dist\"}}}" &gt; composer.json &amp;&amp;</span>
-<span class="s1">    composer require --no-ansi zubzet/framework:dev-develop &amp;&amp;</span>
-<span class="s1">    cd vendor/zubzet/framework/tests/e2e &amp;&amp; COMPOSER_VENDOR_DIR=/tmp/installer/vendor php index.php install /app</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">/composer.json"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">/composer.json"</span><span class="w"> </span><span class="s">&lt;&lt;'JSON'</span>
+<span class="s">{</span>
+<span class="s">    "type": "project",</span>
+<span class="s">    "config": {</span>
+<span class="s">        "audit": {</span>
+<span class="s">            "ignore": {</span>
+<span class="s">                "GHSA-2jx3-65f3-xr8r": {</span>
+<span class="s">                    "apply": "block",</span>
+<span class="s">                    "reason": "otphp 11 requires PHP 8.1+, PHP 8.0 stays on 10.x"</span>
+<span class="s">                },</span>
+<span class="s">                "GHSA-g7m4-839x-ch6v": {</span>
+<span class="s">                    "apply": "block",</span>
+<span class="s">                    "reason": "otphp 11 requires PHP 8.1+, PHP 8.0 stays on 10.x"</span>
+<span class="s">                },</span>
+<span class="s">                "PKSA-g499-cm4q-v35y": {</span>
+<span class="s">                    "apply": "block",</span>
+<span class="s">                    "reason": "symfony/filesystem 6.4.50+ requires PHP 8.1+, PHP 8.0 stays on 6.0"</span>
+<span class="s">                }</span>
+<span class="s">            }</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "autoload": {</span>
+<span class="s">        "psr-4": {</span>
+<span class="s">            "App\\": "app/"</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">JSON</span>
+<span class="k">fi</span>
+<span class="c1"># Written by root -&gt; the container (uid 1000) must be able to update it</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>chown<span class="w"> </span><span class="s2">"</span><span class="nv">$owner</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">/composer.json"</span>
+<span class="k">fi</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-u<span class="w"> </span><span class="s2">"</span><span class="nv">$owner</span><span class="s2">"</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">HOME</span><span class="o">=</span>/tmp<span class="w"> </span>-e<span class="w"> </span><span class="s2">"ZUBZET_CONSTRAINT=</span><span class="nv">$constraint</span><span class="s2">"</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span>:/app<span class="w"> </span>-w<span class="w"> </span>/app<span class="w"> </span>--entrypoint<span class="w"> </span>sh<span class="w"> </span>ghcr.io/zubzet/php:8.5-apache<span class="w"> </span>-c<span class="w"> </span><span class="s1">'</span>
+<span class="s1">    composer require --no-ansi "zubzet/framework${ZUBZET_CONSTRAINT:+:$ZUBZET_CONSTRAINT}" &amp;&amp;</span>
+<span class="s1">    php vendor/zubzet/framework/bin/install /app</span>
 <span class="s1">'</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$log</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span>spinner_stop
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">red</span><span class="si">}${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">Error:</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> The installation failed:"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
@@ -3017,6 +3155,19 @@ spinner_start
 spinner_stop
 
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">✔</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> Done! ZubZet installed in </span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="nv">$directory</span><span class="s2">.</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">[</span><span class="k">$(</span>clock<span class="w"> </span><span class="s2">"</span><span class="k">$((</span><span class="nv">SECONDS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">install_start</span><span class="k">))</span><span class="s2">"</span><span class="k">)</span><span class="s2">]</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
+
+
+<span class="c1"># ----------------</span>
+<span class="c1"># Start</span>
+<span class="c1"># ----------------</span>
+
+<span class="c1"># The installer container is gone by now, the project starts on the host through its own script</span>
+<span class="nb">echo</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">ℹ</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> Starting the project..."</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./project<span class="w"> </span>start<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">red</span><span class="si">}${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">Error:</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> The project was installed but could not be started. Run </span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">./project start</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> in </span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="nv">$directory</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> again."</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
 
 
 <span class="c1"># ----------------</span>
@@ -3037,7 +3188,6 @@ info_row<span class="o">()</span><span class="w"> </span><span class="o">{</span
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span>info_row<span class="w"> </span><span class="s2">"Enter"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">cd </span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%q'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$directory</span><span class="s2">"</span><span class="k">)</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">fi</span>
-info_row<span class="w"> </span><span class="s2">"Start"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">./project start</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
 info_row<span class="w"> </span><span class="s2">"Stop"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">bold</span><span class="si">}</span><span class="s2">./project stop</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
 <span class="nb">echo</span>
 info_row<span class="w"> </span><span class="s2">"Docs"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">green</span><span class="si">}</span><span class="s2">https://zubzet.com/docs</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2">"</span>
@@ -3056,14 +3206,18 @@ info_row<span class="w"> </span><span class="s2">"Issues"</span><span class="w">
 </ul>
 <p>The same prompt works on an existing project at any time; it is the fastest way to give a new agent session the full context.</p>
 <h2 id="start-the-project">Start the project<a class="headerlink" href="#start-the-project" title="Permanent link">&para;</a></h2>
-<p>Inside your project folder, run:</p>
+<p>The install script starts the project itself. Later, or after a <code>./project stop</code>, run inside your project folder:</p>
 <div class="highlight"><pre><span></span><code>./project<span class="w"> </span>start
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Every start resets the database on purpose</p>
+<p><code>./project start</code> drops and recreates the database, so all local data is lost each time.</p>
+</div>
 <p>This single command:</p>
 <ol>
 <li>Builds the application image and starts the Docker stack (detached),</li>
 <li>Runs <code>composer install</code> inside the application container,</li>
-<li>Seeds the database with <code>db:seed</code>, which applies all pending migrations,</li>
+<li>Seeds the database with <code>db:seed</code>, which <strong>drops and recreates the database</strong>, runs all migrations and loads the seed data (local data is lost on every start),</li>
 <li>Prints the startup info with <code>info:startup</code>.</li>
 </ol>
 <p>To stop and remove the stack (and its volumes), run <code>./project stop</code>. <code>./project shell</code> opens a shell inside the application container. See <a href="../../core-features/console-commands/#project">console commands</a> for all <code>project</code> commands.</p>
@@ -3090,13 +3244,25 @@ info_row<span class="w"> </span><span class="s2">"Issues"</span><span class="w">
 </tr>
 </tbody>
 </table>
-<p>The seed creates demo accounts:
-1. <code>admin@zubzet.com</code>
-2. <code>support@zubzet.com</code>
-3. <code>customer@zubzet.com</code></p>
-<p>(see <code>app/Database/seed/accounts/</code>). Adjust or remove them before going to production.</p>
+<p>The seed creates no user accounts. <code>app/Database/seed/accounts/0_permissions.sql</code> adds the roles <code>Admin</code> (permission <code>*.*</code>) and <code>User</code> (permission <code>dashboard</code>); create a user and assign it a role, see <a href="../../z-admin/usage/#permissions">Z-Admin permissions</a>. Adjust or remove the seed before going to production.</p>
+<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
+<p><code>tests/e2e/</code> in the framework repository is a complete reference project. The framework resolves every default path relative to the process working directory, so an entry script has to <code>chdir()</code> to the project root before booting (the stub <code>index.php</code> does <code>chdir(realpath(__DIR__))</code>, <code>webroot/index.php</code> changes to its parent folder). This matters for cron jobs and other CLI calls started from elsewhere.</p>
+<ul>
+<li><code>index.php</code>: entry script in the project root that boots the framework, for HTTP requests (via <code>webroot/index.php</code>, which requires the first existing of <code>index.php</code>, <code>zubzet.php</code> and <code>zubzet</code>) and for CLI use (<code>php index.php &lt;command&gt;</code>). It calls <code>chdir(realpath(__DIR__))</code>, requires <code>autoload.php</code> from <code>$COMPOSER_VENDOR_DIR</code> (default <code>./vendor</code>), then runs <code>new z_framework()</code> (an alias of <code>ZubZet</code>) and <code>-&gt;execute()</code>. Web and CLI share this script: for <code>php index.php &lt;command&gt;</code>, <code>execute()</code> hands over to the console when no route matches.</li>
+<li><code>app/Controllers/</code>: default <code>z_controllers</code> directory with the <code>&lt;Name&gt;Controller.php</code> files. A controller in a sub-folder is found by its plain name, see <a href="../../core-features/controllers-and-actions/#controller-names-and-case">controllers</a>.</li>
+<li><code>app/Models/</code>: default <code>z_models</code> directory with the <code>&lt;Name&gt;Model.php</code> files. A sub-folder is addressed in lower case through dot notation, <code>getModel("reports.GuestbookStats")</code> loads <code>reports/GuestbookStatsModel.php</code>.</li>
+<li><code>app/Views/</code>: default <code>z_views</code> directory with views, mail templates and the <code>layout/</code> folder. Further sub-folders are allowed and addressed in the view name (<code>employee/index</code>).</li>
+<li><code>app/Routes/</code>: default <code>routes</code> directory. Every top-level <code>*.php</code> file in it is <code>require_once</code>d when the route dispatcher is built on the first request, sub-folders are not read.</li>
+<li><code>app/Database/migrations/</code>: migration files read by <code>db:migrate</code> and <code>db:sync</code>. A missing folder is created with mode <code>0755</code>.</li>
+<li><code>app/Database/seed/</code>: seed files read by <code>db:seed</code>. Sub-folders can be used as selectors for <code>-i</code> and <code>-e</code>. A missing folder is created with mode <code>0755</code>.</li>
+<li><code>z_config/z_settings.ini</code>: settings file at the default <code>config_file</code> path. It is read without an existence check, so a project without it does not boot.</li>
+</ul>
+<h2 id="web-root">Web root<a class="headerlink" href="#web-root" title="Permanent link">&para;</a></h2>
+<p>Apache serves only <code>webroot/</code> (<code>DocumentRoot /var/www/html/webroot</code>, see <code>packaging/docker/site-000-default.conf</code>). Everything above it is outside the web root and cannot be requested, so <code>/app/Controllers/AdminController.php</code>, <code>/composer.json</code>, <code>/vendor/autoload.php</code> and <code>/z_config/z_settings.ini</code> answer 404 and never expose source code or settings. The <code>.htaccess</code> in <code>webroot/</code> (<code>RewriteCond %{REQUEST_FILENAME} !-f</code> with <code>RewriteRule . index.php [L,QSA]</code>) sends every request that is not an existing file to <code>webroot/index.php</code> and keeps the query string, so such a request reaches the framework router, which has no route for it, and the response is the framework's 404 page. Existing files in <code>webroot/</code> (assets, <code>uploads/</code>) are served by Apache directly, and PHP files there are executed directly, bypassing the framework. Keep secrets and application code out of <code>webroot/</code>.</p>
+<p>The rewrite rule is an Apache <code>.htaccess</code>, so it needs <code>mod_rewrite</code> and <code>AllowOverride All</code> for the document root (set in <code>packaging/docker/site-000-default.conf</code> of the Docker stack). Any other web server needs an equivalent rule that sends requests for non-existing files to <code>webroot/index.php</code>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Settings live in <code>z_config/z_settings.ini</code>. When <code>allow_env_config = true</code>, any setting can be overridden by a <code>CONFIG_*</code> environment variable. The Docker stack uses this to inject the database and mailer credentials (see <code>packaging/docker/docker-compose-base.yml</code>). Keep secrets out of the committed INI file and provide them via the environment.</p>
+<p>Settings live in <code>z_config/z_settings.ini</code>. When <code>allow_env_config = true</code>, any setting can be overridden by a <code>CONFIG_*</code> environment variable. The Docker stack uses this to inject the database and mailer credentials (see <code>packaging/docker/docker-compose-base.yml</code>). Keep secrets out of the committed INI file and provide them via the environment, but declare a placeholder such as <code>dbpassword = env</code> in the INI for each of them: a variable is ignored unless its key already exists (see <a href="../../core-features/configuration/#environment-variable-overrides">environment variable overrides</a>).</p>
+<p>Three keys must exist in the INI, otherwise the framework does not boot: <code>host</code> (the base URL, e.g. <code>http://localhost:8080</code>), <code>rootDirectory</code> (the sub-path the app is served from; the key must be present, but its value may be empty; write it without leading or trailing slash, although surrounding slashes and backslashes are trimmed before use) and <code>showErrors</code> (<code>0</code>, <code>1</code> or <code>2</code>, see <a href="../../core-features/error-handling/#showerrors-levels">error handling</a>). A missing key throws an <code>InvalidArgumentException</code> ("The attribute '...' does not exist in the attribute store (yet)") during startup. <code>CONFIG_*</code> environment variables and constructor parameters only override keys that already exist, so they cannot supply a missing one. The project stub in <code>stubs/project/z_config/z_settings.ini</code> already defines all three.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../core-features/migrations/">Migrations</a> — schema management and the migration CLI.</li>
@@ -3186,7 +3352,7 @@ info_row<span class="w"> </span><span class="s2">"Issues"</span><span class="w">
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

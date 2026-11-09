@@ -135,7 +135,7 @@
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>    </span>
 </dt>
-<dd>Validates a &quot;Create Edit Delete&quot; input</dd>
+<dd>Validates each row of a &quot;Create Edit Delete&quot; input read from getPost($name); sets doNothing if it is absent, and errors carry the row&#039;s subname and index</dd>
 
         </dl>
 
@@ -165,11 +165,11 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Validates a &quot;Create Edit Delete&quot; input</p>
+        <p class="phpdocumentor-summary">Validates each row of a &quot;Create Edit Delete&quot; input read from getPost($name); sets doNothing if it is absent, and errors carry the row&#039;s subname and index</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">validateCED</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">validateCED</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -185,10 +185,10 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$rules</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Array of rules for validating</p>
+                    <section class="phpdocumentor-description"><p>Fields every row is validated against</p>
 </section>
 
             </dd>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2847,17 +2847,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#value-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Value Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2917,7 +2906,7 @@
 
 <h1 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
-<p>ZubZet provides a built-in logging system powered by <a href="https://github.com/Seldaek/monolog">Monolog</a>. It allows you to record application events, errors, and diagnostic information either to a database table or to a stream (file or stderr). The framework automatically logs certain system events such as logins, page views, and REST errors.</p>
+<p>ZubZet provides a built-in logging system powered by <a href="https://github.com/Seldaek/monolog">Monolog</a>. It allows you to record application events, errors, and diagnostic information either to a database table or to a stream (file or stderr). The framework automatically logs certain system events such as logins, page views, and REST errors. Which of them are stored depends on <a href="#log-levels"><code>logger_level</code></a>.</p>
 <p>Loggers are created lazily on first use and cached for the lifetime of the request, so there is no overhead for channels that are never written to.</p>
 <h2 id="disabling-logging">Disabling Logging<a class="headerlink" href="#disabling-logging" title="Permanent link">&para;</a></h2>
 <p>Logging is <strong>enabled by default</strong>. To disable it, set the following in <code>z_config/z_settings.ini</code>:</p>
@@ -2946,19 +2935,31 @@
 <td><code>logger_type</code></td>
 <td>string</td>
 <td><code>database</code></td>
-<td>The logger backend to use: <code>database</code> or <code>stream</code></td>
+<td>The logger backend, <code>database</code> or <code>stream</code> (case-sensitive); any other value throws an <code>InvalidArgumentException</code></td>
 </tr>
 <tr>
 <td><code>logger_level</code></td>
 <td>string</td>
 <td><code>notice</code></td>
-<td>Minimum log level to record (see levels below)</td>
+<td>Minimum log level to record: a name (case-insensitive) or number, see below; an unknown name throws an <code>InvalidArgumentException</code></td>
 </tr>
 <tr>
 <td><code>logger_stream_url</code></td>
 <td>string</td>
 <td><code>php://stderr</code></td>
 <td>Stream target — only used when <code>logger_type = stream</code></td>
+</tr>
+<tr>
+<td><code>logger_slow_request_ms</code></td>
+<td>number</td>
+<td><code>1000</code></td>
+<td>Requests at least this slow (<code>&gt;=</code>) are logged as <code>SLOW_REQUEST</code> at shutdown (not after an uncaught exception; console commands count too); a negative or non-numeric value disables it</td>
+</tr>
+<tr>
+<td><code>logger_slow_query_ms</code></td>
+<td>number</td>
+<td><code>300</code></td>
+<td><code>exec()</code> queries (so <code>execQuery()</code>, not <code>executeMultiQuery()</code>) taking at least this many milliseconds (<code>&gt;=</code>, so <code>0</code> logs every query; measured from prepare to execute, retries included, result fetch excluded) are logged as <code>SLOW_QUERY</code> (without disturbing <code>getInsertId()</code> or the current result); an INI file cannot disable it, so use a high threshold</td>
 </tr>
 </tbody>
 </table>
@@ -3006,6 +3007,30 @@
 </tr>
 </tbody>
 </table>
+<p>The framework logs its own events on the <code>zubzet</code> channel (<code>Logger::ZUBZET</code>) at different levels. The event names are the constants of <code>ZubZet\Framework\Logger\LogEventType</code> and become the record <code>message</code>. With the default <code>notice</code>, the <code>info</code> events are dropped by the handler and not stored; set <code>logger_level = info</code> to record them.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Framework events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>info</code></td>
+<td><code>RENDER</code> (every rendered view, mail renders included; context <code>location</code>, <code>view</code>, <code>viewName</code>, <code>layout</code>, <code>layoutName</code>), <code>USER_LOGGED_IN</code> (<code>userId</code>), <code>USER_LOGGED_IN_ANOTHER</code> (<code>userId</code>, <code>userId_exec</code>), <code>USER_LOGGED_OUT</code> (<code>userId</code>), <code>USER_CREATED</code> (<code>userId</code>, <code>email</code>; written by <code>z_userModel::add()</code>, so also by signup, <code>User::add()</code> and the admin add-user page), <code>ACCOUNT_UPDATED</code> (<code>userId</code>; admin edit-user adds the old <code>email</code>, two-factor changes a <code>reason</code>), <code>PASSWORD_RESET_REQUESTED</code> (<code>userId</code>; only when the email matched an account), <code>PASSWORD_RESET</code> (<code>userId</code>, <code>reason</code>)</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>SLOW_REQUEST</code> (<code>duration_ms</code>, <code>uri</code>), <code>SLOW_QUERY</code> (<code>duration_ms</code>, <code>query</code> without bound values), <code>REST_ERROR</code> (<code>code</code>, <code>message</code>), <code>ACCOUNT_LOGIN_RATE_LIMITED</code> (<code>userId</code>)</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>EXCEPTION</code> (<code>class</code>, <code>message</code>, <code>file</code>, <code>line</code>, <code>trace</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>PHP errors are logged as <code>ERROR</code> (<code>error</code>), <code>PARSE</code> (<code>critical</code>), <code>WARNING</code> (<code>warning</code>), <code>DEPRECATION</code>/<code>NOTICE</code> (<code>notice</code>) or <code>STRICT</code> (<code>debug</code>), depending on their severity (any other severity is logged as <code>ERROR</code> with level <code>warning</code>), with the context <code>message</code>, <code>file</code> and <code>line</code>. Failed password attempts, verification success, logouts of anonymous requests and admin actions (roles, permissions, database browsing) write no event, and <code>sendEmail()</code> failures are echoed instead of logged. <code>@</code>-suppressed errors and fatal errors are not logged.</p>
 <h2 id="writing-log-entries">Writing Log Entries<a class="headerlink" href="#writing-log-entries" title="Permanent link">&para;</a></h2>
 <p>Use the global <code>logger()</code> <a href="../global-helper-functions/">helper function</a> anywhere in your application.</p>
 <div class="highlight"><pre><span></span><code><span class="x">// Log to the app channel</span>
@@ -3014,7 +3039,7 @@
 <span class="x">// Log to a named channel</span>
 <span class="x">logger("payments")-&gt;warning("Payment gateway timeout", ["orderId" =&gt; $id]);</span>
 </code></pre></div>
-<p><code>logger()</code> without arguments defaults to the <code>"app"</code> channel. Any string can be passed to create a named channel — each channel is cached after the first call.</p>
+<p><code>logger()</code> without arguments defaults to the <code>"app"</code> channel (<code>Logger::APP</code>). Any string can be passed to create a named channel — each channel is cached after the first call.</p>
 <h3 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="x">logger()-&gt;debug("message", $context);</span>
 <span class="x">logger()-&gt;info("message", $context);</span>
@@ -3024,12 +3049,15 @@
 <span class="x">logger()-&gt;critical("message", $context);</span>
 <span class="x">logger()-&gt;alert("message", $context);</span>
 <span class="x">logger()-&gt;emergency("message", $context);</span>
+<span class="x">logger()-&gt;log($level, "message", $context);</span>
 </code></pre></div>
-<p>The second parameter <code>$context</code> is an optional associative array with additional data to attach to the log record.</p>
+<p>The second parameter <code>$context</code> is an optional associative array with additional data to attach to the log record. PSR-3 <code>{placeholder}</code> interpolation in the message is not active.</p>
+<p>Keys that should accompany every later record of a channel go into <code>extra</code> instead, via <code>logger()-&gt;contextAdd([...])</code>, <code>contextMergeFrom($name = "app")</code> (the source channel wins on shared keys; an empty name or a channel that was never created throws), <code>contextInspect(fn($context) =&gt; ...)</code> (the return value replaces the context) and <code>contextClear()</code>. All of them return the logger and can be chained, and a key named <code>traceId</code>, <code>file</code> or <code>line</code> overrides the built-in value.</p>
+<p>Every record carries a 32-character hex <code>extra.traceId</code>, generated on first use and shared by the whole request. The framework reads no incoming trace header, so propagate one with <code>Logger::setTraceId($id)</code> (not validated, only later records carry it); <code>Logger::getTraceId()</code> returns it.</p>
 <h2 id="registering-a-custom-logger">Registering a Custom Logger<a class="headerlink" href="#registering-a-custom-logger" title="Permanent link">&para;</a></h2>
-<p>If you need full control over a logger — <a href="https://github.com/Seldaek/monolog/blob/main/doc/02-handlers-formatters-processors.md">custom handlers, formatters, or processors</a> — you can build a Monolog <code>Logger</code> instance manually and <a href="../../api/classes/ZubZet-Framework-Logger-LoggerFactory.html#method_register">register it under a channel name</a> using <code>LoggerFactory::register()</code>. Once registered, it is returned by <code>logger()</code> like any other channel.</p>
-<div class="highlight"><pre><span></span><code><span class="x">use Monolog\Logger;</span>
-<span class="x">use Monolog\Handler\RotatingFileHandler;</span>
+<p>If you need full control over a logger — <a href="https://github.com/Seldaek/monolog/blob/main/doc/02-handlers-formatters-processors.md">custom handlers, formatters, or processors</a> — you can build a <code>ZubZet\Framework\Logger\Logger</code> instance (it extends the Monolog <code>Logger</code>) manually and <a href="../../api/classes/ZubZet-Framework-Logger-LoggerFactory.html#method_register">register it under a channel name</a> using <code>LoggerFactory::register()</code>. Once registered, it is returned by <code>logger()</code> like any other channel, but it gets none of the <code>logger_*</code> handler and processor setup (no <code>traceId</code> or call-site <code>extra</code> unless you add a processor).</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Monolog\Handler\RotatingFileHandler;</span>
+<span class="x">use ZubZet\Framework\Logger\Logger;</span>
 <span class="x">use ZubZet\Framework\Logger\LoggerFactory;</span>
 
 <span class="x">$customLogger = new Logger("audit");</span>
@@ -3040,7 +3068,8 @@
 <div class="highlight"><pre><span></span><code><span class="x">// Anywhere in your application</span>
 <span class="x">logger("audit")-&gt;info("User exported data", ["userId" =&gt; $id]);</span>
 </code></pre></div>
-<p>If a logger with that name was already created by the framework, <code>register()</code> overwrites it in the cache.</p>
+<p>If a logger with that name was already created by the framework, <code>register()</code> overwrites it in the cache. <code>logger()</code> builds channels from the <code>logger_*</code> settings via <code>LoggerFactory::getOrCreateLogger()</code>, while <code>LoggerFactory::getLogger($name)</code> only returns a cached channel or <code>null</code>.</p>
+<p>The parameter is typed <code>Logger|LoggerInterface</code>, but <code>register()</code> and <code>logger()</code> are declared to return the ZubZet <code>Logger</code>. A plain Monolog <code>Logger</code> or any other PSR-3 logger is therefore accepted and cached, yet <code>register()</code> and every later <code>logger()</code> call for that name throw a <code>TypeError</code> on return. Always register a <code>ZubZet\Framework\Logger\Logger</code>.</p>
 <h2 id="logger-types">Logger Types<a class="headerlink" href="#logger-types" title="Permanent link">&para;</a></h2>
 <h3 id="database-logger">Database Logger<a class="headerlink" href="#database-logger" title="Permanent link">&para;</a></h3>
 <p>Stores log records in the <code>z_interaction_log</code> database table. This is the default logger type.</p>
@@ -3088,80 +3117,38 @@
 </tr>
 </tbody>
 </table>
-<p>If the database connection is not available at the time of logging, the entry is silently skipped.</p>
+<p>If the database connection is not available or the insert fails (for example a missing table mid-migration), the entry is silently skipped. Nothing purges <code>z_interaction_log</code>, so delete old rows yourself.</p>
 <h4 id="value-column-structure"><code>value</code> Column Structure<a class="headerlink" href="#value-column-structure" title="Permanent link">&para;</a></h4>
-<p>The <code>value</code> column contains a JSON-encoded object with the full log record and environment context:</p>
+<p>The <code>value</code> column contains the JSON-encoded Monolog record. The processor adds <code>traceId</code>, <code>file</code>, <code>line</code>, <code>class</code> and <code>function</code> to <code>extra</code> (omitted below), and the environment keys <code>userId</code>, <code>execUserId</code> and <code>source</code> (<code>"web"</code> or <code>"cli"</code>) are appended at write time:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User logged in"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INFO"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zubzet"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-08T12:00:00+00:00"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">    </span><span class="nt">"environment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-08 12:00:00.000000"</span><span class="p">,</span><span class="w"> </span><span class="nt">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">"execUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>The <code>environment.source</code> field is either <code>"web"</code> or <code>"cli"</code> depending on how the request was triggered.</p>
-<h4 id="value-normalization">Value Normalization<a class="headerlink" href="#value-normalization" title="Permanent link">&para;</a></h4>
-<p>Before JSON encoding, context values are automatically normalized to ensure safe serialization:</p>
-<table>
-<thead>
-<tr>
-<th>PHP type</th>
-<th>Stored as</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>string</code>, <code>int</code>, <code>float</code>, <code>bool</code>, <code>null</code></td>
-<td>Passed through unchanged</td>
-</tr>
-<tr>
-<td><code>array</code></td>
-<td>Recursively normalized</td>
-</tr>
-<tr>
-<td><code>DateTimeInterface</code></td>
-<td>ISO-8601 string (e.g. <code>2026-04-08T12:00:00+00:00</code>)</td>
-</tr>
-<tr>
-<td><code>JsonSerializable</code></td>
-<td>Result of <code>jsonSerialize()</code>, then normalized</td>
-</tr>
-<tr>
-<td>Object with <code>__toString</code></td>
-<td>String representation</td>
-</tr>
-<tr>
-<td>Other objects</td>
-<td>Fully qualified class name</td>
-</tr>
-<tr>
-<td>Resource</td>
-<td><code>resource(stream)</code> style string</td>
-</tr>
-</tbody>
-</table>
-<p>If JSON encoding fails despite normalization, a fallback record containing only the message and the encoding error is stored instead.</p>
+<p>Context values are not normalized. The record is encoded with <code>JSON_UNESCAPED_UNICODE</code>, <code>JSON_UNESCAPED_SLASHES</code>, <code>JSON_INVALID_UTF8_SUBSTITUTE</code> and <code>JSON_THROW_ON_ERROR</code>; if encoding fails, a fallback record containing only the message and the encoding error is stored instead.</p>
 <hr />
 <h3 id="stream-logger">Stream Logger<a class="headerlink" href="#stream-logger" title="Permanent link">&para;</a></h3>
 <p>Writes log records as JSON to a file or PHP stream, one record per line.</p>
 <div class="highlight"><pre><span></span><code><span class="na">logger_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">stream</span>
 <span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stderr</span>
 </code></pre></div>
-<p><code>logger_stream_url</code> accepts any valid <a href="https://www.php.net/manual/en/wrappers.php">PHP stream URL</a> or file path:</p>
+<p><code>logger_stream_url</code> accepts any valid <a href="https://www.php.net/manual/en/wrappers.php">PHP stream URL</a> or file path (relative paths resolve against the working directory):</p>
 <div class="highlight"><pre><span></span><code><span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stderr</span>
 <span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">php://stdout</span>
 <span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/app.log</span>
 <span class="na">logger_stream_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">z_config/app.log</span>
 </code></pre></div>
-<p>Each log entry is a single JSON object followed by a newline character. The environment context is appended automatically before formatting:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"User logged in"</span><span class="p">,</span><span class="nt">"context"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">},</span><span class="nt">"level"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">"level_name"</span><span class="p">:</span><span class="s2">"INFO"</span><span class="p">,</span><span class="nt">"channel"</span><span class="p">:</span><span class="s2">"zubzet"</span><span class="p">,</span><span class="nt">"datetime"</span><span class="p">:</span><span class="s2">"2026-04-08 12:00:00"</span><span class="p">,</span><span class="nt">"extra"</span><span class="p">:{},</span><span class="nt">"environment"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"execUserId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">}}</span>
+<p>Each log entry is a single JSON object followed by a newline character (an empty <code>context</code> or <code>extra</code> is written as <code>{}</code>). Missing directories are created and there is no rotation; the <code>php://stderr</code> default ends up in the PHP or webserver error log. The environment keys are appended to <code>extra</code> automatically before formatting:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"User logged in"</span><span class="p">,</span><span class="nt">"context"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">},</span><span class="nt">"level"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">"level_name"</span><span class="p">:</span><span class="s2">"INFO"</span><span class="p">,</span><span class="nt">"channel"</span><span class="p">:</span><span class="s2">"zubzet"</span><span class="p">,</span><span class="nt">"datetime"</span><span class="p">:</span><span class="s2">"2026-04-08 12:00:00"</span><span class="p">,</span><span class="nt">"extra"</span><span class="p">:{</span><span class="nt">"userId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"execUserId"</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"web"</span><span class="p">}}</span>
 </code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># z_config/z_settings.ini</span>
@@ -3259,7 +3246,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

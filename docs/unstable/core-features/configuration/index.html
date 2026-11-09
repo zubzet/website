@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2746,6 +2746,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#settings-file-and-order-of-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings file and order of precedence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ini-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INI syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variable-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variable overrides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-do-you-actually-put-in-here" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2808,6 +2841,35 @@
 <p>The booter settings are a way of getting your most basic settings. If you have something like the uploads folder or the database connection, that might be changed by a customer/admin after finishing this project, those values can be stored under your <code>z_config folder</code> as a key of <code>z_settings.ini</code>.</p>
 <h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
 <p>If you want to use another key, simply create a new key in your <code>z_settings.ini</code>. To <a href="../../api/classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html#method_getBooterSettings">recall the value</a> use <code>$res-&gt;getBooterSettings("key")</code>. If you don't pass a key, the whole array of values will be returned.</p>
+<p>The signature is <code>getBooterSettings($key = null, $useDefault = true, $default = null)</code>. The method is public on <code>ZubZet</code>, <code>Request</code> and <code>Response</code> and behaves exactly like the global <a href="../global-helper-functions/#config"><code>config()</code></a> helper, which proxies to it. An empty <code>$key</code> (<code>null</code>, <code>""</code> or <code>"0"</code>) returns the complete settings array, including the database and mail credentials. A missing key returns <code>null</code> by default. <code>$useDefault</code> is the second positional argument, so <code>getBooterSettings("key", 5)</code> does not set a default of <code>5</code>: pass it by name (<code>getBooterSettings("key", default: 5)</code>). With <code>$useDefault = false</code>, a missing key throws an <code>InvalidArgumentException</code> with the message <code>The setting '&lt;key&gt;' does not exist!</code>.</p>
+<h2 id="settings-file-and-order-of-precedence">Settings file and order of precedence<a class="headerlink" href="#settings-file-and-order-of-precedence" title="Permanent link">&para;</a></h2>
+<p>The file is <code>z_config/z_settings.ini</code>, resolved relative to the working directory of the process and held in the built-in key <code>config_file</code>. It is read before anything else, so <code>config_file</code> itself cannot be changed through the constructor or the environment.</p>
+<p>Later layers win:
+1. Built-in defaults (paths, <code>config_file</code>, <code>config_automated_file</code>, framework roots)
+2. <code>z_settings.ini</code>
+3. The <code>$params</code> array passed to the <code>ZubZet</code> constructor (only for keys that already exist)
+4. <code>CONFIG_*</code> environment variables (only with <code>allow_env_config</code>, see below)
+5. The derived <code>rootFolder</code> and <code>root</code>, computed from <code>rootDirectory</code> and <code>host</code>
+6. The automated settings file (<code>z_config/z_automated_setting.ini</code>, key <code>config_automated_file</code>), read with a plain <code>parse_ini_string()</code> without the <code>;</code>/<code>#</code> protection of the main file</p>
+<p><code>rootFolder</code> is the link prefix <code>$opt["root"]</code> in views, the default prefix of <code>rerouteUrl()</code> (used by <code>logout()</code>) and the path of the maintenance bypass cookie.</p>
+<p><code>host</code> is required and has no default. It is the public base URL with scheme and optional port and without a trailing slash, e.g. <code>http://localhost:4000</code>, because <code>root</code> is built as <code>host</code> followed by <code>rootFolder</code>, which starts with a slash. <code>Request::getCurrentURL()</code> returns <code>host</code> plus <code>REQUEST_URI</code> (the incoming Host header is ignored) and <code>getDomain()</code> returns <code>host</code> without scheme, slashes and port. <code>host</code> also feeds the <code>host</code> and <code>absRoot</code> view options, the mail <code>application_root</code> and the password-reset link.</p>
+<p>Settings can be read and written at runtime as <code>zubzet()-&gt;key</code> (<code>zubzet()-&gt;settings</code> is the whole store); a missing key throws, and a write affects only the current request and does not recompute <code>root</code> or <code>rootFolder</code>. Most settings are read when they are used, but the database connection copies its settings once at boot and a logger reads its settings when its channel is first created, so later writes do not reach them.</p>
+<h2 id="ini-syntax">INI syntax<a class="headerlink" href="#ini-syntax" title="Permanent link">&para;</a></h2>
+<p><code>z_settings.ini</code> is parsed with <code>parse_ini_string()</code> without sections (<code>[section]</code> headers are ignored, all keys are flat), but every <code>;</code> and <code>#</code> is protected before parsing and restored afterwards. A <code>;</code> or <code>#</code> inside a value is therefore kept literally, so there are no inline comments: a trailing comment becomes part of the value.</p>
+<div class="highlight"><pre><span></span><code><span class="na">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://example.com</span><span class="w"> </span><span class="c1">; production</span>
+</code></pre></div>
+<p>Here <code>host</code> is <code>https://example.com ; production</code>.</p>
+<p>Values are normalised by <code>parse_ini_string()</code>: unquoted <code>true</code>, <code>on</code> and <code>yes</code> become <code>1</code>; <code>false</code>, <code>off</code>, <code>no</code>, <code>none</code>, <code>null</code> and an empty value become an empty string; numbers stay strings. A double-quoted value is not normalised, so <code>"true"</code> stays the literal text <code>true</code>, which matters for settings compared with the string <code>true</code>.</p>
+<p>A line that starts with <code>;</code> or <code>#</code> is not a real comment either. It only survives as long as it parses as an ini line: with an <code>=</code> in it (<code>; debug = on</code>) it silently creates a bogus key (<code>-----semicolon----- debug</code>), and with characters such as <code>(</code>, <code>?</code>, <code>!</code>, <code>&amp;</code> or <code>|</code> the parse fails. Keep notes out of the file or use plain words without these characters.</p>
+<p>A syntax error is not reported nicely. <code>parse_ini_string()</code> returns <code>false</code>, and booting dies with a PHP <code>TypeError</code> from <code>overwriteAttributes()</code> (it expects an array). This happens while the configuration is loaded, before the exception handling is installed, so the framework's error page and logging do not apply: you get PHP's raw fatal error (or a blank page, depending on <code>display_errors</code>). Check the web server or PHP error log if the app suddenly fails to boot after editing the INI.</p>
+<h2 id="environment-variable-overrides">Environment variable overrides<a class="headerlink" href="#environment-variable-overrides" title="Permanent link">&para;</a></h2>
+<p>With <code>allow_env_config = true</code> in the INI, a setting <code>key</code> is overridden by the environment variable <code>CONFIG_KEY</code> (<code>CONFIG_</code> plus the upper-cased key, so <code>dbpassword</code> becomes <code>CONFIG_DBPASSWORD</code>; further examples are <code>CONFIG_DBHOST</code>, <code>CONFIG_MAIL_SMTP</code>, <code>CONFIG_ASSETVERSION</code> and <code>CONFIG_FORGOTPASSWORDTIMESPAN</code>).</p>
+<p>If <code>allow_env_config</code> is absent, the variables are not read at all. The check is plain truthiness: any non-empty string other than <code>0</code> enables it, including the text <code>false</code> from a quoted INI value (<code>allow_env_config = "false"</code>), while an unquoted <code>false</code> is parsed to an empty string and disables it.</p>
+<p>Only keys that already exist are overridden. The framework walks over the keys known from its built-in defaults and the INI, so a variable for any other key is silently ignored. This includes <code>allow_env_config</code> itself, which has to be set in the INI. Declare a placeholder in <code>z_settings.ini</code> for every setting you want to supply through the environment:</p>
+<div class="highlight"><pre><span></span><code><span class="na">dbpassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">env</span>
+</code></pre></div>
+<p>The value of the placeholder is arbitrary and replaced as soon as <code>CONFIG_DBPASSWORD</code> is set, the project stub uses <code>ENV</code>. Missing the placeholder is the usual reason why an environment variable seems to have no effect.</p>
+<p>The value is taken as a raw string and skips the INI normalisation: in the INI file <code>false</code>, <code>off</code> and <code>no</code> are parsed to an empty string and <code>true</code> and <code>on</code> to <code>1</code>, but an environment variable keeps its text as is. <code>CONFIG_LOGGER_ENABLED=false</code> is therefore the string <code>false</code>, which PHP treats as truthy, and the logger stays enabled. To switch a flag off, set the variable to <code>0</code> or to an empty value (<code>CONFIG_LOGGER_ENABLED=0</code>), to switch it on use <code>1</code>.</p>
 <h2 id="what-do-you-actually-put-in-here">What do you actually put in here?<a class="headerlink" href="#what-do-you-actually-put-in-here" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Database connection details</li>
@@ -2908,7 +2970,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

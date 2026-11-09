@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2743,7 +2743,7 @@
 <h1 id="what-can-it-do">What can it do?<a class="headerlink" href="#what-can-it-do" title="Permanent link">&para;</a></h1>
 <p>The Z-Admin panel is a management panel you can open to edit/create users or roles/permissions.</p>
 <h1 id="using-the-z-admin-panel">Using the Z-Admin panel<a class="headerlink" href="#using-the-z-admin-panel" title="Permanent link">&para;</a></h1>
-<p>The Z-Admin panel is a control panel all projects using the framework have. It is accessible with the z controller. For example, an URL like this: <code>localhost/project/z</code> or <code>abcde.de/z</code> or <code>{yourdomain.tld}/{yourwebsite}/z</code>. Only logged in accounts with the correct <a href="../../core-features/permission-system/">permissions</a> are able to see this section.</p>
+<p>The Z-Admin panel is a control panel all projects using the framework have. It is accessible with the z controller. For example, an URL like this: <code>localhost/project/z</code> or <code>abcde.de/z</code> or <code>{yourdomain.tld}/{yourwebsite}/z</code>. Only logged in accounts with the correct <a href="../../core-features/permission-system/">permissions</a> are able to see this section; an anonymous visitor gets the login page instead.</p>
 <h2 id="categories">Categories<a class="headerlink" href="#categories" title="Permanent link">&para;</a></h2>
 <p>It has following categories:</p>
 <table>
@@ -2755,24 +2755,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Instance</td>
-<td>Simple place to change instance settings</td>
+<td>Database</td>
+<td>Read-only <a href="#database-browser">table browser</a></td>
 </tr>
 <tr>
-<td>Log / Statistics</td>
-<td>View <a href="../../core-features/logging/">logs</a> and statistics</td>
+<td>Maintenance</td>
+<td>Shows the state of the <a href="../../core-features/maintenance/">maintenance mode</a> and sets the bypass cookie</td>
 </tr>
 <tr>
-<td>Framework Update</td>
-<td>Start <a href="../../setup/how-to-update/">updates for the framework</a></td>
+<td>Groups</td>
+<td>List of permission groups</td>
 </tr>
 <tr>
 <td>Edit User</td>
-<td>Form to edit users</td>
+<td>Form to edit a user's email, roles, user permissions and organization; there is no password change</td>
 </tr>
 <tr>
 <td>Add User</td>
-<td>Form to add users</td>
+<td>Form to add users; the email must be unique and valid (empty is stored as NULL), the password is required client-side only. The user is verified at once, gets no role and no mail; a password outside 3 to 1024 bytes is rejected only after the user was inserted, so that email stays taken</td>
 </tr>
 <tr>
 <td>Roles</td>
@@ -2796,24 +2796,28 @@
 </tr>
 </tbody>
 </table>
+<p>The dashboard cards are fixed and there is no widget API; to change the panel, override its views (<code>administration/*</code>, <code>database/*</code>, <code>layout/z_admin_layout</code>) with a <a href="../../core-features/views/">view</a> of the same name in your project (<code>administration/groups</code> gets the option <code>groups</code>, <code>database/tables</code> gets <code>status</code> with <code>tables</code> and <code>approxRows</code>). <code>layout/z_admin_layout</code> is the z controller's default layout and links <code>{root}assets/img/favicon.png</code>, which your app has to supply.</p>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
 <p>To be able to use all functions, the following permissions are needed:</p>
 <ul>
-<li>admin.panel</li>
-<li>admin.user.list</li>
-<li>admin.user.add</li>
-<li>admin.user.edit</li>
-<li>admin.roles.list</li>
-<li>admin.roles.create</li>
-<li>admin.roles.edit</li>
-<li>admin.roles.delete</li>
-<li>admin.organizations.list</li>
+<li>admin.panel (the dashboard at <code>/z</code> only)</li>
+<li>admin.user.list (the user list at <code>/z/edit_user</code>)</li>
+<li>admin.user.add (the Add User form and creating the user)</li>
+<li>admin.user.edit (opening and saving a single user; <code>admin.user.list</code> is checked first on every <code>/z/edit_user</code> request)</li>
+<li>admin.groups.list (the groups list)</li>
+<li>admin.roles.list (the roles list; checked first on every <code>/z/roles</code> request, including create and delete)</li>
+<li>admin.roles.create (the <code>create</code> action of <code>/z/roles</code>; the new role has an empty name and role names are unique, so rename it before creating the next)</li>
+<li>admin.roles.edit (opening and saving a role; also required for delete)</li>
+<li>admin.roles.delete (the <code>delete</code> action on a role)</li>
+<li>admin.organizations.list (checked first on every <code>/z/organizations</code> request)</li>
 <li>admin.organizations.create</li>
-<li>admin.organizations.edit</li>
-<li>admin.organizations.delete</li>
-<li>admin.log</li>
-<li><a href="../login-as-another-user/">admin.su</a></li>
+<li>admin.organizations.edit (opening and renaming an organization; also required for delete)</li>
+<li>admin.organizations.delete (the <code>delete</code> action on an organization)</li>
+<li>admin.maintenance</li>
+<li><a href="#database-browser">admin.database</a></li>
+<li><a href="../login-as-another-user/">admin.su</a> (<code>/z/login_as/{userId}</code>, also used by the <em>Login as</em> button of the edit form)</li>
 </ul>
+<p><code>admin.panel</code> guards the dashboard at <code>/z</code> and nothing else. Every other action checks its own permission from the list above, so a user without <code>admin.panel</code> still reaches <code>/z/roles</code>, <code>/z/edit_user</code> and the rest by their direct URL, as long as they hold the permission of that action. The checks run against the effective user, so while <a href="../login-as-another-user/">logged in as another user</a> that user needs the permission itself. The sidebar and the dashboard cards (icon only, in the sections Application, Users and Roles, and Other) only show the entries the user may open, except that Edit User is shown for <code>admin.user.edit</code> although its list needs <code>admin.user.list</code>.</p>
 <p>Members manage their own organization with:</p>
 <ul>
 <li><a href="../organization-management/">z.organization.manage</a>: the sidebar entry and dashboard card</li>
@@ -2822,18 +2826,22 @@
 <li><a href="../organization-management/">z.organization.rename</a></li>
 </ul>
 <p>Profile is the exception: it only ever shows the requesting account, so every login reaches it without a permission.</p>
+<p>The framework's own migrations create no admin role, user or permission. A project created with the install script ships a seed (<code>app/Database/seed/accounts/0_permissions.sql</code>) that adds the roles <code>Admin</code> (permission <code>*.*</code>) and <code>User</code> (permission <code>dashboard</code>), but no user account. Create a user, assign it the <code>Admin</code> role under Edit Users or in <code>z_user_role</code>, and for projects without that seed insert the grants into <code>z_role_permission</code> or <code>z_user_permission</code> yourself.</p>
 <h2 id="assigning-roles">Assigning roles<a class="headerlink" href="#assigning-roles" title="Permanent link">&para;</a></h2>
 <p>In order to assign any roles, you must go to Edit Users and select the user you want to give a role to. Hit the ‘+’ under the title ‘Roles’ and select the role the user should get.
-The list offers every role, but a group only while the user already holds it. Groups follow the user's <a href="../../core-features/access-control/#organization-object">organization</a>, so they are not handed out here.
+The list offers every active role, but a group only while the user already holds it. Groups follow the user's <a href="../../core-features/access-control/#organization-object">organization</a>, so they are not handed out here.
 Be advised, each role gives special permissions, some give the user special powers, therefore please see the list above of what roles have which permissions.</p>
 <p>After you set a role, you can either add more roles or save the user by clicking ‘submit’ at the bottom of the page. The user should now be able to use their role.</p>
 <h2 id="two-factor">Two factor<a class="headerlink" href="#two-factor" title="Permanent link">&para;</a></h2>
-<p>An account with <a href="../../core-features/two-factor-authentication/">two factor</a> shows <em>Disable two factor</em> on its page under Edit Users. It turns two factor off after a confirmation, so an owner who lost their authenticator can sign in with the password again and set it up anew. It needs <code>admin.user.edit</code>.</p>
+<p>An account with <a href="../../core-features/two-factor-authentication/">two factor</a> shows <em>Disable two factor</em> on its page under Edit Users. It turns two factor off after a confirmation, so an owner who lost their authenticator can sign in with the password again and set it up anew. It needs <code>admin.user.list</code> and <code>admin.user.edit</code>.</p>
 <h2 id="organizations">Organizations<a class="headerlink" href="#organizations" title="Permanent link">&para;</a></h2>
 <p>Add Organization creates an <a href="../../core-features/access-control/">organization</a>. Ticking <strong>Create a permission group</strong> also creates a <a href="../../core-features/permission-system/">group</a> named after the organization (<code>{name}_Group</code>) and links it to the organization. Organization names may repeat, group names may not, so the checkbox reports an error when a group of that name already exists.</p>
 <p>Organizations lists every active organization; opening one shows a form to rename it, the linked group, the users assigned to it, and a button to delete it. Renaming also renames the linked group when it is named <code>{organization name}_Group</code>, as created by the checkbox above, and fails with a uniqueness error when a group of the new name already exists. Deleting is a soft delete, the organization is set to inactive, its members are detached and the linked group is deactivated. The Delete button requires <code>admin.organizations.delete</code>.</p>
 <h2 id="assigning-organizations">Assigning organizations<a class="headerlink" href="#assigning-organizations" title="Permanent link">&para;</a></h2>
 <p>Both Add User and Edit User carry an Organization select. Picking an entry assigns the user to that organization, the empty entry (<code>---</code>) unassigns them. The assignment goes through <code>User::updateOrganization()</code>, so the group of the previous organization is removed from the user and the group of the new one is added. An Edit User request without the <code>organization</code> field leaves the organization unchanged.</p>
+<h2 id="database-browser">Database browser<a class="headerlink" href="#database-browser" title="Permanent link">&para;</a></h2>
+<p><code>/z/database</code> lists every table of the database with approximate row counts, <code>/z/database/{table}</code> shows its rows 20 per page (<code>/page/{n}</code>, five page numbers around the current one, a page beyond the last shows no rows), newest first by the last primary key column (the first column without one), and <code>/z/database/{table}/csv</code> (the Export button) exports up to 10000 rows. The CSV export does not neutralise spreadsheet formulas. It is a read-only viewer and exporter (no insert, edit, delete, filter or search) and needs the permission <code>admin.database</code>.</p>
+<p>Only the columns named exactly <code>password</code>, <code>pw</code>, <code>salt</code> or <code>hash</code> are shown as <code>********</code>, in the table view and in the CSV export. Every other column is shown in clear text, including <code>z_logintoken.token</code>, <code>z_email_verify.token</code> and <code>z_password_reset.refId</code>. Anyone holding <code>admin.database</code> can read these, and with them take over sessions or password resets, so grant it only to accounts you would trust with the database itself.</p>
 
 
 
@@ -2917,7 +2925,7 @@ Be advised, each role gives special permissions, some give the user special powe
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

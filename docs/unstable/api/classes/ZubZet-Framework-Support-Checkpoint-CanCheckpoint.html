@@ -135,7 +135,8 @@
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a>    </span>
 </dt>
-<dd>Snapshot selected properties into a Checkpoint for later restore()</dd>
+<dd>Snapshot selected properties into a Checkpoint for later restore()
+Only public properties can be captured and restored.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/ZubZet-Framework-Support-Checkpoint-CanCheckpoint.html#method_checkpointablePropertyNames">checkpointablePropertyNames()</a>
@@ -168,25 +169,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Support/Checkpoint/CanCheckpoint.php"><a href="files/src-support-checkpoint-cancheckpoint.html"><abbr title="src/Support/Checkpoint/CanCheckpoint.php">CanCheckpoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Snapshot selected properties into a Checkpoint for later restore()</p>
+        <p class="phpdocumentor-summary">Snapshot selected properties into a Checkpoint for later restore()
+Only public properties can be captured and restored.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">checkpointCurrentState</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$properties</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributeClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">checkpointCurrentState</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$properties</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributeClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$properties</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Names to snapshot; null discovers all non-static properties.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -194,7 +197,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>With null $properties, keeps only properties carrying this attribute; the default null applies no IncludeInCheckpoint filtering.</p>
+</section>
 
             </dd>
             </dl>
@@ -220,7 +224,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Support/Checkpoint/CanCheckpoint.php"><a href="files/src-support-checkpoint-cancheckpoint.html"><abbr title="src/Support/Checkpoint/CanCheckpoint.php">CanCheckpoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -237,7 +241,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">IncludeInCheckpoint::class</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Keeps only properties carrying this attribute; defaults to IncludeInCheckpoint, null applies no filtering.</p>
+</section>
 
             </dd>
             </dl>
@@ -247,7 +252,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Filtered by $attributeClass when given, else all non-static instance properties.</p>
+            <section class="phpdocumentor-description"><p>Names of non-static instance properties, including non-public ones.</p>
 </section>
 
     

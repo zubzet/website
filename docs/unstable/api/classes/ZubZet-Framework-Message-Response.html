@@ -194,14 +194,14 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Executes a &quot;Create Edit Delete&quot;</dd>
+<dd>Executes a &quot;Create Edit Delete&quot;. Per posted row (Z): create inserts, edit updates WHERE id = dbId, delete only sets active = 0; the table needs id and active columns and table/column names are not escaped.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_error">error()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Generates a generic error</dd>
+<dd>Generates a generic error: sends `{&quot;result&quot;:&quot;error&quot;,&quot;message&quot;:...}` plus the payload as JSON via generateRest() and exits the script</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_formErrors">formErrors()</a>
@@ -215,14 +215,14 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Generates a Rest object</dd>
+<dd>Echoes the payload as pretty-printed JSON with an added `meta` block (no Content-Type header is sent)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_generateRestError">generateRestError()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Generates a Rest error object</dd>
+<dd>Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON (no HTTP status or Content-Type header is sent) and exits</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html#method_getBooterSettings">getBooterSettings()</a>
@@ -243,7 +243,7 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a>    </span>
 </dt>
-<dd>Returns a model</dd>
+<dd>Returns a model, one shared instance per request; falls back to the framework models when not found</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZRoot">getZRoot()</a>
@@ -257,19 +257,19 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Returns the ZViews directory</dd>
+<dd>Returns the project&#039;s own views directory (config z_views, relative path with trailing slash), not the framework&#039;s IncludedComponents views</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_insertDatabase">insertDatabase()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: int|string|null    </span>
 </dt>
-<dd>Inserts a set into the database with data from a form</dd>
+<dd>Inserts a set into the database with data from a form. File fields are uploaded first and array values are stored as JSON.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_insertOrUpdateDatabase">insertOrUpdateDatabase()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: string|int    </span>
 </dt>
 <dd>Inserts a set into the database with data from a form. Updates if the set already exists</dd>
 
@@ -285,14 +285,14 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Logs the current user in as someone else</dd>
+<dd>Logs the current user in as someone else, sets the z_login_token cookie and logs the event, without any permission check</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_logout">logout()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Logs the user out</dd>
+<dd>Logs the user out: invalidates the DB session and deletes the login cookie (when sudoed, logs in as the exec user instead), then redirects to the root and exits</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_popDefaultLayout">popDefaultLayout()</a>
@@ -327,21 +327,21 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Shows a document to the user</dd>
+<dd>Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_reroute">reroute()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Reroutes to another action</dd>
+<dd>Reroutes to another action by re-dispatching internally, without an HTTP redirect</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_rerouteUrl">rerouteUrl()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Reroutes at the user&#039;s client</dd>
+<dd>Reroutes at the user&#039;s client by sending a Location header and exiting</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_sendEmail">sendEmail()</a>
@@ -353,7 +353,7 @@ setting and a plain-HTTP one is not locked out.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_sendEmailToUser">sendEmailToUser()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: bool    </span>
 </dt>
 <dd>Sends an email to a user</dd>
 
@@ -363,7 +363,7 @@ setting and a plain-HTTP one is not locked out.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Sets a cookie just like the standard PHP function. (Pass-through)
-See: https://www.php.net/manual/en/function.setcookie.php</dd>
+The arguments are read via func_get_args() and forwarded unchanged; the result of setcookie() is discarded.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Rendering-Resolver-DefaultLayout.html#method_setDefaultLayout">setDefaultLayout()</a>
@@ -398,7 +398,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Removes a cookie at the client</dd>
+<dd>Removes a cookie at the client and from the current request&#039;s input</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_updateDatabase">updateDatabase()</a>
@@ -686,11 +686,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">546</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Executes a &quot;Create Edit Delete&quot;</p>
+        <p class="phpdocumentor-summary">Executes a &quot;Create Edit Delete&quot;. Per posted row (Z): create inserts, edit updates WHERE id = dbId, delete only sets active = 0; the table needs id and active columns and table/column names are not escaped.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -749,11 +749,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a generic error</p>
+        <p class="phpdocumentor-summary">Generates a generic error: sends `{&quot;result&quot;:&quot;error&quot;,&quot;message&quot;:...}` plus the payload as JSON via generateRest() and exits the script</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -803,7 +803,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">343</span>
 
     </aside>
 
@@ -811,17 +811,17 @@ setting and a plain-HTTP one is not locked out.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">formErrors</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, object&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">formErrors</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$errors</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, object&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The error array.</p>
+                    <section class="phpdocumentor-description"><p>The error array, a list of [&quot;name&quot; =&gt; ..., &quot;type&quot; =&gt; ...] entries. Further error arrays can be passed as extra arguments and are merged; non-array arguments are ignored.</p>
 </section>
 
             </dd>
@@ -852,7 +852,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a Rest object</p>
+        <p class="phpdocumentor-summary">Echoes the payload as pretty-printed JSON with an added `meta` block (no Content-Type header is sent)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -875,7 +875,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Whether to exit after generating the Rest object</p>
+                    <section class="phpdocumentor-description"><p>Whether to exit after echoing, true by default</p>
 </section>
 
             </dd>
@@ -906,7 +906,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a Rest error object</p>
+        <p class="phpdocumentor-summary">Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON (no HTTP status or Content-Type header is sent) and exits</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -956,7 +956,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveBooterSettings.php"><a href="files/src-core-canretrievebootersettings.html"><abbr title="src/Core/CanRetrieveBooterSettings.php">CanRetrieveBooterSettings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -964,26 +964,27 @@ setting and a plain-HTTP one is not locked out.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getBooterSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getBooterSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Key of the setting</p>
+                    <section class="phpdocumentor-description"><p>Key of the setting, null or empty returns all settings</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$useDefault</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Return $default instead of throwing when the key does not exist</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -991,12 +992,29 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Value returned for a missing key when $useDefault is true</p>
+</section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the key does not exist and $useDefault is false</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -1019,7 +1037,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">320</span>
 
     </aside>
 
@@ -1052,15 +1070,15 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveModel.php"><a href="files/src-core-canretrievemodel.html"><abbr title="src/Core/CanRetrieveModel.php">CanRetrieveModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns a model</p>
+        <p class="phpdocumentor-summary">Returns a model, one shared instance per request; falls back to the framework models when not found</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1070,22 +1088,38 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Name of the model</p>
+                    <section class="phpdocumentor-description"><p>Name of the model, sub-folders dot separated (e.g. &quot;admin.User&quot;)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$dir</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory</p>
+                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory, needs a trailing slash</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>When the model does not exist</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span>
@@ -1145,7 +1179,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the ZViews directory</p>
+        <p class="phpdocumentor-summary">Returns the project&#039;s own views directory (config z_views, relative path with trailing slash), not the framework&#039;s IncludedComponents views</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1174,15 +1208,15 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">484</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Inserts a set into the database with data from a form</p>
+        <p class="phpdocumentor-summary">Inserts a set into the database with data from a form. File fields are uploaded first and array values are stored as JSON.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">insertDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validationResult</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fixed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">insertDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validationResult</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fixed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1219,9 +1253,11 @@ setting and a plain-HTTP one is not locked out.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">int|string|null</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Id of the inserted set</p>
+</section>
+
     
 </article>
                     <article
@@ -1237,7 +1273,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">413</span>
+    <span class="phpdocumentor-element-found-in__line">417</span>
 
     </aside>
 
@@ -1245,7 +1281,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">insertOrUpdateDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkField</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkValue</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validationResult</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fixed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">insertOrUpdateDatabase</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkField</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pkValue</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validationResult</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fixed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|int</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1279,7 +1315,7 @@ setting and a plain-HTTP one is not locked out.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$pkValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Value of the primary key in the row to change</p>
@@ -1309,9 +1345,11 @@ setting and a plain-HTTP one is not locked out.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string|int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The given $pkValue after an update, the new insert id after an insert</p>
+</section>
+
     
 </article>
                     <article
@@ -1337,7 +1375,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">json</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$encodingOptions</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"><p>Sets <code class="prettyprint">Content-Type: application/json</code> and emits <code class="prettyprint">$data</code> JSON-encoded.</p>
+        <section class="phpdocumentor-description"><p>Sets <code class="prettyprint">Content-Type: application/json</code> and emits <code class="prettyprint">$data</code> JSON-encoded without exiting (unlike generateRest()), so any later output is appended to the JSON.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1399,11 +1437,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">294</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Logs the current user in as someone else</p>
+        <p class="phpdocumentor-summary">Logs the current user in as someone else, sets the z_login_token cookie and logs the event, without any permission check</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1426,7 +1464,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>ID of the executing user</p>
+                    <section class="phpdocumentor-description"><p>ID of the executing user, null makes it a normal login as $userId</p>
 </section>
 
             </dd>
@@ -1479,11 +1517,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">361</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Logs the user out</p>
+        <p class="phpdocumentor-summary">Logs the user out: invalidates the DB session and deletes the login cookie (when sudoed, logs in as the exec user instead), then redirects to the root and exits</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1670,7 +1708,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Shows a document to the user</p>
+        <p class="phpdocumentor-summary">Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1693,7 +1731,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Associative array with values to replace in the view</p>
+                    <section class="phpdocumentor-description"><p>Associative array with values to replace in the view; response, request, user, root, host, absRoot and title are added to it as $opt in the view</p>
 </section>
 
             </dd>
@@ -1733,7 +1771,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Reroutes to another action</p>
+        <p class="phpdocumentor-summary">Reroutes to another action by re-dispatching internally, without an HTTP redirect</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1756,7 +1794,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>True if this reroute acts as an alias</p>
+                    <section class="phpdocumentor-description"><p>True if $path is overlaid onto the current URL parts (index by index) before dispatching</p>
 </section>
 
             </dd>
@@ -1796,7 +1834,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Reroutes at the user&#039;s client</p>
+        <p class="phpdocumentor-summary">Reroutes at the user&#039;s client by sending a Location header and exiting</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1810,7 +1848,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The URL to reroute to</p>
+                    <section class="phpdocumentor-description"><p>The URL to reroute to, appended directly to $root</p>
 </section>
 
             </dd>
@@ -1819,7 +1857,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The root URL</p>
+                    <section class="phpdocumentor-description"><p>The root URL, defaults to the app's rootFolder</p>
 </section>
 
             </dd>
@@ -1846,7 +1884,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1854,7 +1892,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">sendEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$to</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lang</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;en&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$layout</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;email&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attachments</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">sendEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$to</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lang</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;en&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$layout</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;email&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attachments</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$senderName</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1909,7 +1947,7 @@ setting and a plain-HTTP one is not locked out.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;email&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Layout</p>
+                    <section class="phpdocumentor-description"><p>Layout name: &quot;.php&quot; is stripped, &quot;_layout&quot; is appended, and &quot;layout/&quot; is prefixed unless that path exists in the app views (&quot;mail&quot; -&gt; layout/mail_layout). The default &quot;email&quot; needs an app layout/email_layout; the framework only ships mail_layout</p>
 </section>
 
             </dd>
@@ -1919,6 +1957,15 @@ setting and a plain-HTTP one is not locked out.</p>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Contents of each attachment, not their path. Array keys can be used to set the filename i.e. $filename =&gt; $content</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$senderName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Display name of the sender, defaults to the pageName</p>
 </section>
 
             </dd>
@@ -1945,7 +1992,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">274</span>
 
     </aside>
 
@@ -1953,7 +2000,7 @@ setting and a plain-HTTP one is not locked out.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">sendEmailToUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$layout</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;mail&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">sendEmailToUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$layout</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;mail&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1969,10 +2016,10 @@ setting and a plain-HTTP one is not locked out.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$subject</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Subject of the mail</p>
+                    <section class="phpdocumentor-description"><p>Subject of the mail, or an array keyed by language code</p>
 </section>
 
             </dd>
@@ -2006,11 +2053,29 @@ setting and a plain-HTTP one is not locked out.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the user is not found or has no email address</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>True if the mail was sent, false if sending failed</p>
+</section>
+
     
 </article>
                     <article
@@ -2031,13 +2096,15 @@ setting and a plain-HTTP one is not locked out.</p>
     </aside>
 
         <p class="phpdocumentor-summary">Sets a cookie just like the standard PHP function. (Pass-through)
-See: https://www.php.net/manual/en/function.setcookie.php</p>
+The arguments are read via func_get_args() and forwarded unchanged; the result of setcookie() is discarded.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">setCookie</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>See: https://www.php.net/manual/en/function.setcookie.php</p>
+</section>
+
     
     
 
@@ -2111,7 +2178,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setFrameworkCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lifetime</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hostOnly</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">setFrameworkCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lifetime</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -2137,14 +2204,6 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
                 <span class="phpdocumentor-signature__argument__name">$lifetime</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$hostOnly</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -2216,7 +2275,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 
     </aside>
 
@@ -2265,7 +2324,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Removes a cookie at the client</p>
+        <p class="phpdocumentor-summary">Removes a cookie at the client and from the current request&#039;s input</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2288,7 +2347,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;/&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Path on the server</p>
+                    <section class="phpdocumentor-description"><p>Path on the server, must match the one used when setting the cookie</p>
 </section>
 
             </dd>
@@ -2297,7 +2356,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The domain scope of the cookie</p>
+                    <section class="phpdocumentor-description"><p>The domain scope of the cookie, must match the one used when setting the cookie</p>
 </section>
 
             </dd>
@@ -2324,7 +2383,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">437</span>
 
     </aside>
 
@@ -2387,7 +2446,8 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Extra column =&gt; value pairs to write, bound as strings. File fields are uploaded first and array values are stored as JSON.</p>
+</section>
 
             </dd>
             </dl>
@@ -2481,7 +2541,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">394</span>
+    <span class="phpdocumentor-element-found-in__line">397</span>
 
     </aside>
 
@@ -2606,7 +2666,7 @@ See: https://www.php.net/manual/en/function.setcookie.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 

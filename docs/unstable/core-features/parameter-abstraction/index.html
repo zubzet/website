@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2819,6 +2819,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#body-and-raw-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Body and raw input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#accept-language" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2834,6 +2845,17 @@
     <span class="md-ellipsis">
       
         Bearer token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON body
       
     </span>
   </a>
@@ -2885,7 +2907,7 @@
 <h2 id="url-parameters">URL Parameters<a class="headerlink" href="#url-parameters" title="Permanent link">&para;</a></h2>
 <p>When using virtual links, parameters as “subfolders” is a great way of transfering values, that are also very readable. See the following link schema as an example of what is meant by parametres within the virtual link: <code>controller/action/param0/param1/param2/...</code></p>
 <h3 id="read-the-parameters-using-code">Read the parameters using code<a class="headerlink" href="#read-the-parameters-using-code" title="Permanent link">&para;</a></h3>
-<p>To <a href="../../api/classes/ZubZet-Framework-Message-Request.html#method_getParameters">read the virtual url parameters</a> use <code>$req-&gt;getParameters</code>. It works using an offset and a length, but can also use a value to compare against if the length is one.</p>
+<p>To <a href="../../api/classes/ZubZet-Framework-Message-Request.html#method_getParameters">read the virtual url parameters</a> use <code>$req-&gt;getParameters</code>. It works using an offset and a length: length 1 returns the single segment (<code>false</code> when absent) or, with a value to compare against, a boolean from a loose <code>==</code>; any other length returns an array slice, <code>null</code> all remaining segments. <code>getReadableParameter()</code> splits an SEO segment such as <code>title-64</code> at the last dash into <code>text</code> and <code>id</code> (without a dash the whole segment is the <code>id</code>, without a segment both are empty strings), and <code>getUrlParts()</code> returns all raw segments below the root directory, not URL-decoded (a double slash gives an empty one). <code>getParameters()</code> always skips the first two segments (controller and action), so for routes of another shape use <a href="../routing/#route-parameters"><code>getRouteParameter()</code></a>. <code>getCurrentURL()</code> returns <code>host</code> plus the raw <code>REQUEST_URI</code> with query string, <code>getRoot()</code> the <code>root</code> setting (host plus root directory, also <code>Z.Request.rootHost</code>) and <code>getRootFolder()</code> the <code>rootFolder</code> path such as <code>/</code>; <code>getDomain()</code> returns <code>host</code> without scheme, port and path, and <code>isCli()</code> is <code>true</code> for console runs.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <p>Example URL:<br>
 <code>www.yourwebsite.com/{controller}/{action}/a/b/c</code></p>
@@ -2922,14 +2944,26 @@ Returns "action"</p>
 <h2 id="get-post-cookies-file-as-a-method">GET, POST, COOKIES, FILE as a method<a class="headerlink" href="#get-post-cookies-file-as-a-method" title="Permanent link">&para;</a></h2>
 <p>The framework includes some extra functionality when it comes to the above mentioned features and you should use the framework instead of the traditional way. This is because the framework employes extra filtering and processing methods as well as <a href="../error-handling/">error handling</a> already for you.</p>
 <h3 id="getting-post-and-get-parameters">Getting POST and GET parameters<a class="headerlink" href="#getting-post-and-get-parameters" title="Permanent link">&para;</a></h3>
-<p><code>$req-&gt;getGet</code> and <code>$req-&gt;getPost</code> are <a href="../../api/classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html">methods to get form parameters</a>. These also enable to set default parameters if some are not set.<br>
-<strong>Note:</strong> Post parameters get decoded automatically if their values have the special prefix <code>&lt;#decURI#&gt;</code>. This decoding allows to transmit special characters.</p>
+<p><code>$req-&gt;getGet</code> and <code>$req-&gt;getPost</code> are <a href="../../api/classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html">methods to get form parameters</a>. These also enable to set default parameters, returned when the key is unset or null; without a key they return the whole array.<br>
+<strong>Note:</strong> Post parameters get decoded automatically if their values have the special prefix <code>&lt;#decURI#&gt;</code>. This decoding is applied recursively to nested values, replaces the value in <code>$_POST</code> itself and allows to transmit special characters (Z.js sends its fields that way).</p>
 <h3 id="cookies">Cookies<a class="headerlink" href="#cookies" title="Permanent link">&para;</a></h3>
-<p><code>$req-&gt;getCookie</code> gets a cookie. It has a second parameter to set a default if the cookie is not set.</p>
+<p><code>$req-&gt;getCookie</code> gets a cookie of the request; <code>$res-&gt;unsetCookie</code> removes it there, <code>$res-&gt;setCookie</code> does not add it before the next request. It has a second parameter to set a default if the cookie is not set.</p>
 <p><code>$res-&gt;setCookie</code> has the <a href="https://www.php.net/manual/en/function.setcookie.php">same parameters</a> as the native <code>setcookie</code> function of php. It should be used, because in the future may more logic build into the framework that deals with cookies.</p>
-<p><code>$res-&gt;unsetCookie</code> is an advanced method to remove cookies from the client.</p>
+<p><strong>Note:</strong> <code>setCookie</code> is a plain pass-through (<code>setcookie(...func_get_args())</code>) and applies <strong>no security defaults</strong>. <code>Secure</code>, <code>HttpOnly</code> and <code>SameSite</code> are only set if you pass them, so a bare <code>$res-&gt;setCookie("name", "value")</code> is sent without any of the three and is readable by JavaScript and sent over plain HTTP. Use the options-array form and set them yourself:</p>
+<div class="highlight"><pre><span></span><code><span class="x">$res-&gt;setCookie("name", "value", [</span>
+<span class="x">    "expires" =&gt; time() + 3600,</span>
+<span class="x">    "path" =&gt; "/",</span>
+<span class="x">    "secure" =&gt; $res-&gt;cookieSecure(),</span>
+<span class="x">    "httponly" =&gt; true,</span>
+<span class="x">    "samesite" =&gt; "Lax",</span>
+<span class="x">]);</span>
+</code></pre></div>
+<p><code>$res-&gt;cookieSecure()</code> is <code>true</code> when the <code>host</code> setting starts with <code>https://</code>. The framework's own cookies pass these attributes explicitly through an internal helper, see <a href="../csrf-protection/">CSRF protection</a>.</p>
+<p><code>$res-&gt;unsetCookie($name, $path = "/", $domainScope = "")</code> removes the cookie from the request input and sends an expired one (empty value, timestamp 1). The path and domain must match those it was set with; <code>$res-&gt;getCookieDomainScope()</code> returns <code>.&lt;domain&gt;</code> when <code>login_scope_allow_subdomains</code> is the string <code>true</code>, otherwise an empty string (host-only).</p>
 <h3 id="file">File<a class="headerlink" href="#file" title="Permanent link">&para;</a></h3>
-<p><code>$req-&gt;getFile</code> uses <code>$_FILE</code> like <code>$req-&gt;getPost</code> uses <code>$_POST</code>.</p>
+<p><code>$req-&gt;getFile</code> uses <code>$_FILE</code> like <code>$req-&gt;getPost</code> uses <code>$_POST</code>. <code>getFiles()</code> and <code>getCookies()</code> are the key-less forms of <code>getFile()</code> and <code>getCookie()</code>, and <code>getFile($key, $default)</code> returns <code>$default</code> for a missing key like the other getters.</p>
+<h3 id="body-and-raw-input">Body and raw input<a class="headerlink" href="#body-and-raw-input" title="Permanent link">&para;</a></h3>
+<p><code>$req-&gt;getBody()</code> returns the raw request body, or <code>null</code> when it is empty or exactly <code>"0"</code>. <code>$req-&gt;getJson()</code> decodes it into associative arrays, see <a href="#json-body">JSON body</a>. <code>$req-&gt;store</code> is a public array that the framework never fills and <code>reroute()</code> replaces the <code>Request</code>, so it is empty afterwards. <code>SERVER</code>, <code>SESSION</code>, <code>REQUEST</code> and <code>body</code> have no getters, read them from <code>$req-&gt;input</code>; there is no <code>getMethod()</code>, <code>getHeader()</code>, <code>isPost()</code> or <code>isAjax()</code>, use <code>$req-&gt;input-&gt;SERVER["REQUEST_METHOD"]</code> or the <code>HTTP_*</code> keys. <code>$req-&gt;ip()</code> returns the first set of <code>HTTP_CLIENT_IP</code>, <code>HTTP_X_FORWARDED_FOR</code> and <code>REMOTE_ADDR</code> (then the <code>getenv()</code> variants), <code>referer()</code> and <code>userAgent()</code> the header or <code>null</code>, and <code>getExecutionTime()</code> the seconds since <code>REQUEST_TIME_FLOAT</code> (<code>null</code> if missing).</p>
 <h3 id="accept-language">Accept-Language<a class="headerlink" href="#accept-language" title="Permanent link">&para;</a></h3>
 <p><code>$req-&gt;acceptLanguage()</code> returns the locales of the request's <code>Accept-Language</code> header, best first. Entries are ordered by their <code>q</code> value, malformed entries and <code>q=0</code> are dropped, and each tag is brought into its canonical case, so <code>en-us</code> and <code>EN-US</code> are one entry. The header is client controlled, so only the first 50 entries are read.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$req-&gt;acceptLanguage(); // "de-CH,de;q=0.9,en;q=0.8" -&gt; ["de-CH", "de", "en"]</span>
@@ -2937,6 +2971,42 @@ Returns "action"</p>
 <p><a href="../translations/#locale">Translations</a> use it to pick the locale of a visitor without one of their own.</p>
 <h3 id="bearer-token">Bearer token<a class="headerlink" href="#bearer-token" title="Permanent link">&para;</a></h3>
 <p><code>$req-&gt;bearerToken()</code> returns the token of an <code>Authorization: Bearer &lt;token&gt;</code> header, or <code>null</code> when the header is missing, uses another scheme or does not carry exactly one token (<code>Bearer</code>, <code>Bearer a b</code>). The framework <a href="../access-control/#bearer-authentication">authenticates by it</a> before the login cookie.</p>
+<h3 id="json-body">JSON body<a class="headerlink" href="#json-body" title="Permanent link">&para;</a></h3>
+<p><code>$req-&gt;getBody()</code> returns the raw request body. <code>$req-&gt;getJson()</code> decodes it as JSON, objects into associative arrays, and throws otherwise. An <code>UnexpectedValueException</code> carries the HTTP status to answer with as its code:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>405</td>
+<td>The method is not POST, PUT, PATCH or DELETE</td>
+</tr>
+<tr>
+<td>415</td>
+<td>The Content-Type is not exactly <code>application/json</code>, or names a charset other than utf-8</td>
+</tr>
+<tr>
+<td>413</td>
+<td>The body is longer than <code>$maxBytes</code> (default 1 MiB)</td>
+</tr>
+</tbody>
+</table>
+<p>A body that is not well formed JSON (a BOM, an empty body, invalid UTF-8 or nesting deeper than <code>$maxDepth</code>, default 32) throws a <code>\JsonException</code> instead; answer it with 400.</p>
+<p>The strict Content-Type is what keeps a cross site form out: a form can send <code>text/plain</code> and form types, but never <code>application/json</code>. Integers beyond <code>PHP_INT_MAX</code> come back as strings instead of lossy floats.</p>
+<div class="highlight"><pre><span></span><code><span class="x">try {</span>
+<span class="x">    $data = $req-&gt;getJson();</span>
+<span class="x">} catch(\UnexpectedValueException $e) {</span>
+<span class="x">    http_response_code($e-&gt;getCode());</span>
+<span class="x">    return $res-&gt;json(["error" =&gt; $e-&gt;getMessage()]);</span>
+<span class="x">} catch(\JsonException $e) {</span>
+<span class="x">    http_response_code(400);</span>
+<span class="x">    return $res-&gt;json(["error" =&gt; $e-&gt;getMessage()]);</span>
+<span class="x">}</span>
+</code></pre></div>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../advanced-features/aliases-and-virtual-links/">Aliases and virtual links</a>: shorter or alternative versions of your virtual links</li>
@@ -3025,7 +3095,7 @@ Returns "action"</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

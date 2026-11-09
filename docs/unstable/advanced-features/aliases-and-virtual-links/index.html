@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2800,7 +2800,7 @@
 
 <h1 id="using-aliases-within-virtual-links">Using aliases within virtual links<a class="headerlink" href="#using-aliases-within-virtual-links" title="Permanent link">&para;</a></h1>
 <h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
-<p>If would like to have short or  other versions of your <a href="../../core-features/parameter-abstraction/">virtual links</a>, you can use aliases. To create a new alias, use the reroute method.  More about the reroute method can be found in the <a href="../../api/classes/ZubZet-Framework-Message-Response.html#method_reroute">API reference</a>. Set the second parameter to true. This turns the reroute into an alias reroute. The current path will then be replaced with the first argument, but will not be truncated.</p>
+<p>If would like to have short or  other versions of your <a href="../../core-features/parameter-abstraction/">virtual links</a>, you can use aliases. To create a new alias, use the reroute method.  More about the reroute method can be found in the <a href="../../api/classes/ZubZet-Framework-Message-Response.html#method_reroute">API reference</a>. Set the second parameter to true. This turns the reroute into an alias reroute. The current path will then be replaced with the first argument, but will not be truncated. Convention routing stops a request after 10 reroutes with <code>Too many reroutes</code>; reroutes onto explicit routes are not counted.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Only the first part of the URL get rerouted. The rest stays untouched.</p>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
@@ -2895,7 +2895,7 @@ After:
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

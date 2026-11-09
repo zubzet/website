@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2827,20 +2827,22 @@ rich developer error page or nothing at all.</p>
 <tr>
 <td><code>0</code></td>
 <td><code>NONE</code></td>
-<td>PHP's built-in error display; nothing is promoted.</td>
+<td><code>display_errors</code> and <code>display_startup_errors</code> are set to <code>0</code> and <code>error_reporting</code> to <code>0</code>; nothing is promoted and PHP errors are neither shown nor logged; an exception thrown by an action is caught and the router runs the <code>error/500</code> route.</td>
 </tr>
 <tr>
 <td><code>1</code></td>
 <td><code>EXCEPTIONS</code></td>
-<td>Uncaught exceptions are handled and displayed.</td>
+<td><code>display_errors</code> and <code>display_startup_errors</code> are set to <code>1</code> and <code>error_reporting</code> to <code>E_ALL</code>; PHP errors are logged and left to PHP's own handler, uncaught exceptions are handled and displayed; an exception thrown by an action is rethrown.</td>
 </tr>
 <tr>
 <td><code>2</code></td>
 <td><code>ALL</code></td>
-<td>All errors and warnings are promoted to exceptions and handled.</td>
+<td>Every reportable error and warning is logged and promoted to an <code>ErrorException</code>, which is rethrown like any action exception; <code>display_errors</code>, <code>display_startup_errors</code> and <code>error_reporting</code> are left untouched.</td>
 </tr>
 </tbody>
 </table>
+<p><code>showErrors</code> is required and has no default; the allowed values are the constants of <code>BehaviorOption</code> (<code>BehaviorOption::isValidOption()</code> checks a value), and <code>setExceptionBehavior()</code> applies the configured one at boot (calling it with an integer overrides the setting for the rest of the request). The configured value may be written as a string (<code>"1"</code>). Anything else, such as an out-of-range integer (<code>3</code>) or a non-numeric value, is treated as <code>0</code> and does not throw. The setting itself has to exist: a missing <code>showErrors</code> key throws an <code>InvalidArgumentException</code> ("The attribute 'showErrors' does not exist in the attribute store (yet)") during startup; errors thrown by the configuration or the <a href="../maintenance/">maintenance gate</a> happen before the handlers are installed, so Whoops and the logger do not see them. Only a direct call to <code>setExceptionBehavior()</code> with an explicit out-of-range integer throws <code>InvalidArgumentException</code> ("Invalid exception behavior option: X").</p>
+<p>The router runs <code>error/404</code> when the controller file does not exist or when neither the action nor <code>action_fallback</code> exists. An exception thrown while including the controller file always runs <code>error/500</code>; exceptions thrown while constructing or running the action follow the table above; PHP <code>Error</code>s are never caught there and reach the global exception handler. The bundled <code>ErrorController</code> answers <code>action_403</code>, <code>action_404</code> and <code>action_500</code> with the matching status code and renders the <code>403</code>, <code>404</code> or <code>500</code> view in <code>layout/min_layout</code>; the three Blade views are identical except for the heading (<code>Oops! Page not for you</code>, <code>Oops! Page not found</code>, <code>Oops! This page seems to be broken</code>), the digits and the message (<code>It seems like you don't have the permissions to visit this page!</code>, <code>The page you requested couldn't be found!</code>, <code>Sorry, we messed up!</code>). To replace them, add an application <code>ErrorController.php</code> (it has to implement all three actions, otherwise a missing action keeps rerouting to the 404 page until the limit of 10 reroutes ends the request with "Error: Too many reroutes.") or application views named <code>403</code>, <code>404</code> and <code>500</code>.</p>
 <h2 id="the-whoops-error-page">The Whoops error page<a class="headerlink" href="#the-whoops-error-page" title="Permanent link">&para;</a></h2>
 <p>In the <strong><code>test</code></strong> environment (<code>execution_type = test</code>), ZubZet registers
 <a href="https://github.com/filp/whoops">Whoops</a> to render unhandled exceptions as an interactive page with
@@ -2849,21 +2851,21 @@ message while developing.</p>
 <div class="admonition warning">
 <p class="admonition-title">Test environment only</p>
 <p>The Whoops page is intentionally limited to <code>execution_type = test</code>. In production
-(<code>execution_type = prod</code>) it is never registered, so stack traces are not exposed to visitors.</p>
+(<code>execution_type = prod</code>) it is never registered, so stack traces are not exposed to visitors: uncaught exceptions are logged and rethrown to PHP's default handler.</p>
 </div>
 <h3 id="clickable-file-links">Clickable file links<a class="headerlink" href="#clickable-file-links" title="Permanent link">&para;</a></h3>
-<p>Whoops can turn each stack frame into a link that opens the file in your editor. Two settings drive
+<p>Whoops can turn each stack frame inside the working directory into a link that opens the file in your editor. Two settings drive
 this:</p>
 <ul>
-<li><strong><code>development_editor</code></strong> — the editor scheme to use (default <code>vscode</code>).</li>
+<li><strong><code>development_editor</code></strong> — the editor URL scheme (default <code>vscode</code>), producing <code>&lt;editor&gt;://file/&lt;host path&gt;&lt;relative file&gt;:&lt;line&gt;</code>.</li>
 <li><strong><code>automated_host_working_directory</code></strong> — your project's path <em>on the host</em>, so links resolve
-  correctly even though the code runs inside a container. The
+  correctly even though the code runs inside a container; without it no links are made. The
   <a href="../console-commands/#infostartup"><code>info:startup</code></a> command sets this when run with
   <code>--pwd "$(pwd)"</code> (the dev stack's <code>npm run info</code> does this automatically).</li>
 </ul>
 <h3 id="sensitive-data-masking">Sensitive data masking<a class="headerlink" href="#sensitive-data-masking" title="Permanent link">&para;</a></h3>
 <p>Whoops automatically <a href="../../api/classes/ZubZet-Framework-ErrorHandling-WhoopsHandler.html">masks request values</a> whose keys look sensitive (containing <code>pass</code>, <code>secret</code>,
-<code>token</code>, <code>session</code>, <code>auth</code>, <code>key</code>, <code>credential</code>, …) across <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code>,
+<code>token</code>, <code>session</code>, <code>auth</code>, <code>access</code>, <code>key</code>, <code>credential</code>, <code>private</code>, <code>bearer</code>) across <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code>,
 <code>$_SESSION</code>, <code>$_SERVER</code>, and <code>$_ENV</code>, so credentials are not printed on the error page.</p>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2953,7 +2955,7 @@ this:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

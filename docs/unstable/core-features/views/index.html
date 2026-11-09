@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2968,7 +2968,7 @@
 <p>A view contains the HTML the user should see, along with the CSS, images and JavaScript that page needs. Views do usually <strong>not</strong> contain a footer, navigation, header or other elements that belong to the overall layout of the page. For this, layouts should be used, as without a layout a view can't be rendered. Read more about layouts <a href="../layouts/">here</a>.</p>
 <p>Database access and heavy logic should not be used in the view, as that belongs into other parts of the application.</p>
 <h2 id="the-render-engine">The render engine<a class="headerlink" href="#the-render-engine" title="Permanent link">&para;</a></h2>
-<p>Since v1.3.0 ZubZet renders views with <a href="https://github.com/katanaphp/blade">Katana</a>, a standalone implementation of the <a href="https://laravel.com/docs/13.x/blade">Blade</a> templating language. A view is a <code>.blade.php</code> file placed in your project's <code>z_views</code> directory, otherwise it will not be found when called from the <a href="../../api/classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render">render method</a>.</p>
+<p>Since v1.3.0 ZubZet renders views with <a href="https://github.com/katanaphp/blade">Katana</a>, a standalone implementation of the <a href="https://laravel.com/docs/13.x/blade">Blade</a> templating language. A view is a <code>.blade.php</code> file placed in your project's <code>z_views</code> directory (default <code>app/Views</code>), otherwise it will not be found when called from the <a href="../../api/classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render">render method</a>.</p>
 <p>Blade gives you a concise syntax for the things you do in every template: escaping output, loops, conditionals, reusable components and page inheritance. This page covers the parts you reach for day to day, which is most of what you need. For the complete directive reference, the <a href="https://laravel.com/docs/13.x/blade">Laravel Blade documentation</a> is the final backstop (Katana implements the common Blade set, see <a href="#not-available-in-katana">Not available in Katana</a>).</p>
 <div class="admonition tip">
 <p class="admonition-title">Blade is a superset of PHP</p>
@@ -2992,17 +2992,17 @@
 <span class="x">    ]);</span>
 <span class="x">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>{<del class="critic"> View: z_views/employee/index.blade.php </del>}
+<div class="highlight"><pre><span></span><code>{<del class="critic"> View: app/Views/employee/index.blade.php </del>}
 @extends($layout)
 
 @section("content")
     &lt;h1&gt;Hello {{ $name }}&lt;/h1&gt;   {<del class="critic"> or $opt["name"] </del>}
 @endsection
 </code></pre></div>
-The framework also injects a set of helpers into <code>$opt</code> for every render: <code>$opt["root"]</code> (the application's root path, always ending with a slash, so paths are appended without one), <code>$opt["host"]</code>, <code>$opt["user"]</code>, <code>$opt["request"]</code>, <code>$opt["response"]</code>, <code>$opt["title"]</code> and <code>$opt["generateResourceLink"]</code>. For a view to communicate back to a controller, asynchronous methods must be used (see <a href="../../frontend-integration/backend-requests/">Backend Requests</a>).</p>
+The framework also injects a set of helpers into <code>$opt</code> for every render, overwriting caller-supplied keys of the same name (except <code>title</code>): <code>$opt["root"]</code> (the application's root path, always ending with a slash, so paths are appended without one), <code>$opt["host"]</code>, <code>$opt["absRoot"]</code> (host plus root path), <code>$opt["user"]</code>, <code>$opt["request"]</code>, <code>$opt["response"]</code>, <code>$opt["title"]</code> (the <code>pageName</code> setting unless the caller passes one), <code>$opt["generateResourceLink"]($url, $root = true)</code> (prints the root, <code>$url</code> and <code>?v=&lt;assetVersion&gt;</code>, <code>dev</code> uses <code>time()</code> and an unset setting leaves <code>?v=</code> empty; <code>$root = false</code> omits the root), <code>$opt["echo"]($val)</code> (prints <code>nl2br(htmlspecialchars($val))</code>). A missing view or layout throws nothing: the bundled <code>500</code> view is rendered in <code>layout/min_layout</code> instead. <code>render()</code> echoes the page once and returns nothing; it sets no status or header and does not exit, so that 500 view is sent with the current status. For a view to communicate back to a controller, asynchronous methods must be used (see <a href="../../frontend-integration/backend-requests/">Backend Requests</a>).</p>
 <div class="admonition note">
 <p class="admonition-title">View names and the file extension</p>
-<p>The view above is addressed as <code>"employee/index"</code> while the file on disk is <code>z_views/employee/index.blade.php</code>. The extension is optional and dot notation works too, so <code>"employee/index"</code>, <code>"employee/index.blade.php"</code> and <code>"employee.index"</code> all resolve to the same file. A view in your project overrides a framework view of the same name.</p>
+<p>The view above is addressed as <code>"employee/index"</code> while the file on disk is <code>app/Views/employee/index.blade.php</code>. The extension is optional and dot notation works too, so <code>"employee/index"</code>, <code>"employee/index.blade.php"</code> and <code>"employee.index"</code> all resolve to the same file. A view in your project overrides a framework view of the same name.</p>
 </div>
 <h2 id="echoing-data">Echoing data<a class="headerlink" href="#echoing-data" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code>{{ $name }}              {<del class="critic"> escaped output, HTML safe </del>}
@@ -3011,6 +3011,10 @@ The framework also injects a set of helpers into <code>$opt</code> for every ren
 {{ $title ?? "Untitled" }}   {<del class="critic"> any PHP expression works inside the braces </del>}
 </code></pre></div>
 <code>{{ }}</code> escapes its output the same way the framework's <a href="../global-helper-functions/#e"><code>e()</code> helper</a> does, so it is safe for user input by default. Use <code>{!! !!}</code> only for HTML you trust.</p>
+<div class="admonition warning">
+<p class="admonition-title">Plain PHP echoes are not escaped</p>
+<p>Only <code>{{ }}</code> escapes. <code>&lt;?= $x ?&gt;</code> and <code>&lt;?php echo $x; ?&gt;</code> print the value as it is, so wrap values you do not control in <code>e()</code> (<code>&lt;?= e($x) ?&gt;</code>) or use <code>{{ }}</code> instead. This also applies to <code>$opt</code> values such as <code>$opt["title"]</code>. Mail views follow the same rule.</p>
+</div>
 <h2 id="conditionals">Conditionals<a class="headerlink" href="#conditionals" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>@if($user-&gt;isLoggedIn)
     &lt;span&gt;Welcome back&lt;/span&gt;
@@ -3105,8 +3109,8 @@ See the <a href="../permission-system/">Permission System</a> for how permission
 &lt;button @disabled($isSaving)&gt;Save&lt;/button&gt;
 </code></pre></div></p>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>
-<p>Components are reusable pieces of UI you drop in with an <code>&lt;x-...&gt;</code> tag. Create one as a <code>.blade.php</code> file under <code>z_views/components</code>, then use it by file name:
-<div class="highlight"><pre><span></span><code>{<del class="critic"> z_views/components/alert.blade.php </del>}
+<p>Components are reusable pieces of UI you drop in with an <code>&lt;x-...&gt;</code> tag. Create one as a <code>.blade.php</code> file under <code>app/Views/components</code>, then use it by file name:
+<div class="highlight"><pre><span></span><code>{<del class="critic"> app/Views/components/alert.blade.php </del>}
 @props(["type" =&gt; "info"])
 &lt;div class="alert alert-{{ $type }}"&gt;
     {{ $slot }}
@@ -3272,7 +3276,7 @@ They read the current user themselves and post to the framework's own <code>_zub
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

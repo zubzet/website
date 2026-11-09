@@ -179,6 +179,8 @@ protecting dormant accounts at rest against a future breach without needing
 the plaintext. Idempotent and reusable: it only touches rows still on the
 `legacy` scheme, so re-running (or running after some users have already
 logged in and been upgraded) is safe and does no redundant work.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-LoginToken.html"><abbr title="\ZubZet\Framework\Authentication\LoginToken">LoginToken</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-Organization.html"><abbr title="\ZubZet\Framework\Authentication\Organization">Organization</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-PasswordHash-Password.html"><abbr title="\ZubZet\Framework\Authentication\PasswordHash\Password">Password</abbr></a></dt>
@@ -196,7 +198,7 @@ lets legacy and onion-wrapped hashes coexist and self-heal to native on login.</
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></dt>
-        <dd>The User class holds information about the user</dd>
+        <dd>The User class holds the user of the current request (user() helper, alias User), identified on construction by bearer token or the z_login_token cookie; not Permission\User</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-ActionDiscovery.html"><abbr title="\ZubZet\Framework\Console\ActionDiscovery">ActionDiscovery</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-Application.html"><abbr title="\ZubZet\Framework\Console\Application">Application</abbr></a></dt>
@@ -243,6 +245,8 @@ connection: `dbhost`, `dbport` and the transport encryption (`db_ssl`).</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Migration-Seed.html"><abbr title="\ZubZet\Framework\Database\Migration\Seed">Seed</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Migration-SqlSplitter.html"><abbr title="\ZubZet\Framework\Database\Migration\SqlSplitter">SqlSplitter</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-Migration-Type-TimeStamp.html"><abbr title="\ZubZet\Framework\Database\Migration\Type\TimeStamp">TimeStamp</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Database-StatementFailure.html"><abbr title="\ZubZet\Framework\Database\StatementFailure">StatementFailure</abbr></a></dt>
@@ -276,7 +280,7 @@ the same shape it expects, without forcing the v3 dependency bump.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ErrorController.html"><abbr title="\ErrorController">ErrorController</abbr></a></dt>
         <dd>The error controller handles all bad requests. Other controllers can redirect to this one.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/IndexController.html"><abbr title="\IndexController">IndexController</abbr></a></dt>
-        <dd>The index controller handles by default all requests without a specified controller</dd>
+        <dd>The index controller handles requests to /index; root requests run the controller from the config defaultIndex (default DashboardController)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LoginController.html"><abbr title="\LoginController">LoginController</abbr></a></dt>
         <dd>The Login controller handles all login/logout stuff</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZController.html"><abbr title="\ZController">ZController</abbr></a></dt>
@@ -306,7 +310,7 @@ the same shape it expects, without forcing the v3 dependency bump.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-Output-State.html"><abbr title="\ZubZet\Framework\Message\Output\State">State</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-Request.html"><abbr title="\ZubZet\Framework\Message\Request">Request</abbr></a></dt>
-        <dd>Base class for Response and Request</dd>
+        <dd>The incoming request: input, URL parts, permission checks and form helpers</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html"><abbr title="\ZubZet\Framework\Message\RequestResponseHandler">RequestResponseHandler</abbr></a></dt>
         <dd>Base class for the response and request objects</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></dt>
@@ -366,11 +370,7 @@ just a string trim.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Routing-Route.html"><abbr title="\ZubZet\Framework\Routing\Route">Route</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Security-CSRF.html"><abbr title="\ZubZet\Framework\Security\CSRF">CSRF</abbr></a></dt>
-        <dd>Stateless double-submit-cookie CSRF defense: the server issues a
-`z_csrf` cookie, Z.js echoes it back as an `X-CSRF-Token` header, and
-non-GET requests must present both matching. A cross-origin attacker
-gets the cookie sent for them but cannot read it, so they cannot fill
-in the header.</dd>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Security-Secrets-Cipher-AesGcmCipher.html"><abbr title="\ZubZet\Framework\Security\Secrets\Cipher\AesGcmCipher">AesGcmCipher</abbr></a></dt>
         <dd>AES-256-GCM through OpenSSL. Payload layout: iv (12) . tag (16) . ciphertext.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Security-Secrets-DecryptionException.html"><abbr title="\ZubZet\Framework\Security\Secrets\DecryptionException">DecryptionException</abbr></a></dt>
@@ -382,7 +382,7 @@ setting of z_settings.ini.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></dt>
         <dd>Handle returned by CanCheckpoint::checkpointCurrentState().</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Checkpoint-IncludeInCheckpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\IncludeInCheckpoint">IncludeInCheckpoint</abbr></a></dt>
-        <dd>Marks a property for inclusion in CanCheckpoint&#039;s default snapshot.</dd>
+        <dd>Marks a property for CanCheckpoint snapshots that filter by this attribute; checkpointCurrentState() only filters when IncludeInCheckpoint::class is passed as $attributeClass.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Commands-Install.html"><abbr title="\ZubZet\Framework\Support\Commands\Install">Install</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Commands-Startup.html"><abbr title="\ZubZet\Framework\Support\Commands\Startup">Startup</abbr></a></dt>

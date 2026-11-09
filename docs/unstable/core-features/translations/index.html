@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2881,7 +2881,7 @@
 </tr>
 </tbody>
 </table>
-<p><code>&lt;x-zubzet::head/&gt;</code> writes them into <code>Z.Lang</code> for the active locale, so an application translates them like its own texts.</p>
+<p><code>&lt;x-zubzet::head/&gt;</code> writes them into <code>Z.Lang</code> for the active locale, so an application translates them like its own texts or overwrites them in the layout after the head component. <code>submit</code>, <code>choose_file</code>, <code>addElement</code> and <code>CEDRemove</code> are read when a form is built, so set them before creating forms. The errors <code>in</code> (also from <code>checked()</code>), <code>integer</code>, <code>date</code> and <code>regex</code> have no <code>form.*</code> key; their English texts stay in <code>Z.Lang</code> and are overwritten there. <code>addElement</code> (a <code>fas fa-plus</code> icon), <code>CEDRemove</code> (<code>✕</code>), <code>saveError</code> (<code>Error while saving</code>), <code>error_password_reset</code> (<code>An error occurred. Did you use the correct email address?</code>) and <code>error_password_mismatch</code> (<code>The password are not the same!</code>) have no catalogue entry and keep these <code>Z.js</code> defaults.</p>
 
 
 
@@ -2965,7 +2965,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

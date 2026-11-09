@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2747,6 +2747,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#file-and-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File and class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#built-in-functionality" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2858,10 +2869,13 @@
 <h2 id="what-does-a-model-do">What does a model do?<a class="headerlink" href="#what-does-a-model-do" title="Permanent link">&para;</a></h2>
 <p>A model depicts all interactions with your data structure. This is usually either the database or a file. The model can be used to retrieve data as well as set it.</p>
 <h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
-<p>If you have already created a model, you can simply use <code>$req-&gt;getModel("Modelname")</code> in a <a href="../controllers-and-actions/">controller action</a> to call the model.<br />
-Otherwise, if you are within a model and need to call another model, you can use <code>$this-&gt;getModel("Modelname")</code>.</p>
+<p>If you have already created a model, you can simply use <code>$req-&gt;getModel("Modelname")</code>, <code>$res-&gt;getModel("Modelname")</code> or <code>model("Modelname")</code> (the controller itself has no <code>getModel()</code>) in a <a href="../controllers-and-actions/">controller action</a> to call the model.<br />
+Otherwise, if you are within a model and need to call another model, you can use <code>$this-&gt;getModel("Modelname")</code>. An optional second argument of <code>getModel()</code> replaces the <code>app/Models/</code> directory and must end with a directory separator.</p>
+<h3 id="file-and-class">File and class<a class="headerlink" href="#file-and-class" title="Permanent link">&para;</a></h3>
+<p>A model lives in <code>app/Models/&lt;Name&gt;Model.php</code> and is a plain global-namespace class <code>&lt;Name&gt;Model</code> (no <code>namespace</code> declaration). <code>getModel("&lt;Name&gt;")</code> and <code>model("&lt;Name&gt;")</code> append <code>Model</code> automatically, so <code>getModel("Employee")</code> loads <code>app/Models/EmployeeModel.php</code>.</p>
+<p>A dotted name such as <code>model("admin.Users")</code> loads <code>app/Models/admin/UsersModel.php</code> (directory parts lower-cased, class <code>UsersModel</code>); an app file shadows a bundled model of the same name (<code>z_adminDashboard</code>, <code>z_file</code>, <code>z_general</code>, <code>z_logger</code>, <code>z_login</code>, <code>z_migration</code>, <code>z_organization</code>, <code>z_permission</code>, <code>z_user</code>), and a missing model throws an <code>Exception</code> (<code>Model: &lt;Name&gt;Model does not exist!</code>). The loader <code>require_once</code>s the file, so class names must be unique even across sub-directories, and creates one instance per model and request with <code>db()</code> and <code>zubzet()</code>, so properties persist; never instantiate a model yourself or pass user input as the name.</p>
 <h3 id="built-in-functionality">Built-In Functionality<a class="headerlink" href="#built-in-functionality" title="Permanent link">&para;</a></h3>
-<p>Every model inherits many useful methods from the <a href="../../api/classes/ZubZet-Framework-Core-Model.html">z_model</a> class. You can simply use the already existing methods and build on them.</p>
+<p>Every model extends <code>z_model</code>, an alias of <a href="../../api/classes/ZubZet-Framework-Core-Model.html"><code>ZubZet\Framework\Core\Model</code></a>, and inherits its many useful methods, including the <a href="../query-builder/">query builder</a> helpers (trait <code>CanBuildQuery</code>) and <code>getModel()</code> (trait <code>CanRetrieveModel</code>), plus the protected <code>$z_db</code> (the <code>Connection</code>) and <code>$booter</code>. You can simply use the already existing methods and build on them.</p>
 <h2 id="example-model">Example Model<a class="headerlink" href="#example-model" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 
@@ -2924,6 +2938,7 @@ Otherwise, if you are within a model and need to call another model, you can use
 <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="k">exec</span><span class="p">(</span><span class="err">$</span><span class="k">sql</span><span class="p">,</span><span class="w"> </span><span class="ss">"si"</span><span class="p">,</span><span class="w"> </span><span class="ss">"Klaus"</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="execute-features">Execute Features<a class="headerlink" href="#execute-features" title="Permanent link">&para;</a></h3>
+<p><code>exec</code> returns the <code>Connection</code>, so these helpers chain directly. The result and insert id are shared per request, so a query from any model replaces the previous one. <code>mergeAsGroup()</code>, <code>checkIfUnique()</code>, <code>checkIfExists()</code>, <code>executeMultiQuery()</code>, <code>execQuery()</code> and <code>switchUser()</code> exist only on <code>db()</code>, not on models. The result helpers only work after a SELECT, as INSERT, UPDATE and DELETE leave no result set.</p>
 <table>
 <thead>
 <tr>
@@ -2934,26 +2949,50 @@ Otherwise, if you are within a model and need to call another model, you can use
 <tbody>
 <tr>
 <td><a href="../../api/classes/ZubZet-Framework-Database-Interaction.html#method_resultToLine">resultToLine()</a></td>
-<td>Converts the first row of the query result into a flat array (one-dimensional), often useful when fetching a single row of data.</td>
+<td>Returns the next row of the last result as an associative array, or <code>null</code> when no row is left.</td>
 </tr>
 <tr>
 <td><a href="../../api/classes/ZubZet-Framework-Database-Interaction.html#method_resultToArray">resultToArray()</a></td>
-<td>Converts the result set of a query into an array where each row is represented as an associative array.</td>
+<td>Returns all remaining rows of the last result, each as an associative array keyed by column name with numeric columns as PHP numbers; an initial array can be passed to append to.</td>
 </tr>
 <tr>
 <td><a href="../../api/classes/ZubZet-Framework-Database-Interaction.html#method_getInsertId">getInsertId()</a></td>
-<td>Get the last insert id.</td>
+<td>Get the last insert id; every <code>exec()</code> overwrites it (SELECTs included), but inserts done by the internal log do not.</td>
+</tr>
+<tr>
+<td><code>mergeAsGroup($groupBy, $subElement = null)</code></td>
+<td><code>db()</code> only: groups the remaining rows by the <code>$groupBy</code> column (numeric-string keys become integers); each group holds the full rows, or just the <code>$subElement</code> values when set.</td>
+</tr>
+<tr>
+<td><code>checkIfUnique($table, $field, $value, $ignoreField = null, $ignoreValue = null)</code>, <code>checkIfExists($table, $field, $value)</code></td>
+<td><code>db()</code> only: <code>true</code> when no row (respectively at least one row) has <code>$field = $value</code>; names are backtick-wrapped but not escaped, values are bound as <code>s</code>. The ignore pair excludes the edited row (<code>AND $ignoreField &lt;&gt; ?</code>), so a <code>null</code> <code>$ignoreValue</code> makes <code>checkIfUnique</code> return <code>true</code>.</td>
 </tr>
 <tr>
 <td><a href="../../api/classes/ZubZet-Framework-Database-Interaction.html#method_countResults">countResults</a></td>
 <td>Returns the number of results in the last query.</td>
+</tr>
+<tr>
+<td><code>countTableEntries($table)</code></td>
+<td>Returns <code>COUNT(*)</code> of the table.</td>
+</tr>
+<tr>
+<td><code>getResult()</code></td>
+<td>The raw <code>mysqli_result\|bool\|null</code> of the last query.</td>
+</tr>
+<tr>
+<td><code>getFullTable($table, $fields = "*")</code></td>
+<td>Returns all rows of <code>SELECT $fields FROM $table</code>; both are inserted unescaped.</td>
+</tr>
+<tr>
+<td><code>getTableWhere($table, $fields, $where)</code></td>
+<td>Like <code>getFullTable</code> with <code>WHERE $where</code>, also inserted unescaped; optional <code>$types</code> and <code>$values</code> bind placeholders in <code>$where</code>.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
 <details class="danger">
 <summary>Why not simply write queries without question marks?</summary>
-<p>When not preparing your variables, it is very likely that your code is vulnerable to SQl injections, one of the most common security mistakes made when dealing with databases.</p>
+<p>Only bound values are escaped, the query text is sent exactly as written. When not preparing your variables, it is very likely that your code is vulnerable to SQl injections, one of the most common security mistakes made when dealing with databases.</p>
 <p>If you always use exec with the question marks in your queries, you save yourself from a lot of headaches.</p>
 <p>Learn more about SQL injections from the <a href="https://www.php.net/manual/en/security.database.sql-injection.php">official PHP documentation</a>. An interesting and even partly entertaining read.</p>
 </details>
@@ -3040,7 +3079,7 @@ Otherwise, if you are within a model and need to call another model, you can use
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

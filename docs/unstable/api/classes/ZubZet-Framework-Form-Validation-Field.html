@@ -185,7 +185,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Form-Validation-Field.html#property_rules">$rules</a>
     <span>
-                &nbsp;: array&lt;string|int, object&gt;            </span>
+                &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -526,12 +526,12 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, object&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$rules</span>
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Array of rules that specify how to validate this form field.</p>
+        <section class="phpdocumentor-description"><p>List of rules that specify how to validate this form field. Each rule is an associative array with <code class="prettyprint">name</code>, <code class="prettyprint">type</code> and rule-specific keys.</p>
 </section>
 
     
@@ -645,7 +645,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 
     </aside>
 
@@ -658,7 +658,8 @@
         <section class="phpdocumentor-description"><p>A <code class="prettyprint">checkbox</code> field always submits &quot;1&quot; (ticked) or &quot;0&quot; (unticked),
 so <code class="prettyprint">required()</code> is a no-op for it. Use this to enforce that the box
 is actually ticked (e.g. accept-terms). Sugar over <code class="prettyprint">in()</code> with the
-common truthy representations.</p>
+common truthy representations. Skipped when the key is missing from
+the request (non-Z.js clients), so chain <code class="prettyprint">required()</code> to enforce it.</p>
 </section>
 
     
@@ -685,7 +686,7 @@ common truthy representations.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
@@ -695,7 +696,7 @@ common truthy representations.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">date</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$format</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;Y-m-d&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>This rule checks if the input value adheres to a given date format.</p>
+        <section class="phpdocumentor-description"><p>This rule checks if the input value is a date that <code class="prettyprint">strtotime()</code> can parse.</p>
 <p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — <code class="prettyprint">strtotime()</code>
 expects a scalar.</p>
 </section>
@@ -707,7 +708,7 @@ expects a scalar.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;Y-m-d&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The tested date format</p>
+                    <section class="phpdocumentor-description"><p>Currently unused, the format is not enforced</p>
 </section>
 
             </dd>
@@ -758,7 +759,7 @@ rule is applied per item, every picked entry must exist.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Table name in the database</p>
+                    <section class="phpdocumentor-description"><p>Table name in the database (inserted unescaped)</p>
 </section>
 
             </dd>
@@ -767,7 +768,7 @@ rule is applied per item, every picked entry must exist.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Field name in the table</p>
+                    <section class="phpdocumentor-description"><p>Field name in the table (inserted unescaped)</p>
 </section>
 
             </dd>
@@ -796,7 +797,7 @@ rule is applied per item, every picked entry must exist.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -806,7 +807,9 @@ rule is applied per item, every picked entry must exist.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">file</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxSize</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$types</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Errors: file (no upload), file_to_big (above $maxSize), file_type (extension not in $types).</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -814,7 +817,7 @@ rule is applied per item, every picked entry must exist.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The maximum allowed file size. Constants for this are available.</p>
+                    <section class="phpdocumentor-description"><p>The maximum allowed file size in bytes. Constants for this are available.</p>
 </section>
 
             </dd>
@@ -823,7 +826,7 @@ rule is applied per item, every picked entry must exist.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Accepted file types</p>
+                    <section class="phpdocumentor-description"><p>Accepted lowercase file extensions without dot, e.g. [&quot;png&quot;, &quot;jpg&quot;]; an empty array allows any type</p>
 </section>
 
             </dd>
@@ -862,7 +865,7 @@ rule is applied per item, every picked entry must exist.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">filter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>Creates an error when a filter fails. All filter_var compatible filters are available.</p>
+        <section class="phpdocumentor-description"><p>Creates an error when <code class="prettyprint">filter_var()</code> returns a falsy value (<code class="prettyprint">false</code>, <code class="prettyprint">0</code>, <code class="prettyprint">&quot;&quot;</code>, <code class="prettyprint">null</code>), so any <code class="prettyprint">FILTER_*</code> constant works but no options or flags can be passed.</p>
 <p>Does not support array values (e.g. <code class="prettyprint">multi-select</code>) — <code class="prettyprint">filter_var()</code>
 expects a scalar; pair <code class="prettyprint">multi-select</code> with <code class="prettyprint">-&gt;in()</code> instead.</p>
 </section>
@@ -957,7 +960,7 @@ every picked entry must be in the allow-list.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -997,7 +1000,7 @@ and <code class="prettyprint">intval()</code> expect a scalar.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -1009,7 +1012,7 @@ and <code class="prettyprint">intval()</code> expect a scalar.</p>
 
         <section class="phpdocumentor-description"><p>This rule will create an error when the input is too long or too short.</p>
 <p>For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) length is measured as
-the item count (<code class="prettyprint">count($value)</code>) instead of the character count, so
+the item count (<code class="prettyprint">count($value)</code>) instead of the byte count (<code class="prettyprint">strlen()</code>), so
 <code class="prettyprint">-&gt;length(1, 3)</code> means &quot;between 1 and 3 selections.&quot;</p>
 </section>
 
@@ -1020,7 +1023,7 @@ the item count (<code class="prettyprint">count($value)</code>) instead of the c
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Minimum number of chars (or items for arrays)</p>
+                    <section class="phpdocumentor-description"><p>Minimum number of bytes (or items for arrays)</p>
 </section>
 
             </dd>
@@ -1029,7 +1032,7 @@ the item count (<code class="prettyprint">count($value)</code>) instead of the c
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Maximum number of chars (or items for arrays)</p>
+                    <section class="phpdocumentor-description"><p>Maximum number of bytes (or items for arrays)</p>
 </section>
 
             </dd>
@@ -1058,7 +1061,7 @@ the item count (<code class="prettyprint">count($value)</code>) instead of the c
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">240</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -1118,7 +1121,7 @@ the item count (<code class="prettyprint">count($value)</code>) instead of the c
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
@@ -1128,7 +1131,8 @@ the item count (<code class="prettyprint">count($value)</code>) instead of the c
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">regex</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$expression</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exceptions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) the regex is applied
+        <section class="phpdocumentor-description"><p>The <code class="prettyprint">$exceptions</code> are stripped from the value first, then every match of <code class="prettyprint">$expression</code> is removed (preg_replace, not preg_match); the value passes only if nothing is left.</p>
+<p>For array-valued fields (e.g. <code class="prettyprint">multi-select</code>) the regex is applied
 per item; the field fails as soon as any single item fails.</p>
 </section>
 
@@ -1177,7 +1181,7 @@ per item; the field fails as soon as any single item fails.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Field.php"><a href="files/src-form-validation-field.html"><abbr title="src/Form/Validation/Field.php">Field.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
@@ -1187,7 +1191,8 @@ per item; the field fails as soon as any single item fails.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">required</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>With this rule an error is created when no input for this field is given.</p>
+        <section class="phpdocumentor-description"><p>With this rule an error is created when no input for this field is given.
+It must be the first rule on a field, otherwise it overwrites the value cast by earlier rules like integer() with the raw input.</p>
 </section>
 
     
@@ -1222,7 +1227,7 @@ per item; the field fails as soon as any single item fails.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">unique</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">unique</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>This rule checks if a dataset with a specific value already exists.
 A set to ignore can also be specified. An error will be created when the set exists.</p>
@@ -1237,7 +1242,7 @@ runs a single uniqueness query against a scalar value.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Table name in the database</p>
+                    <section class="phpdocumentor-description"><p>Table name in the database (inserted unescaped)</p>
 </section>
 
             </dd>
@@ -1246,22 +1251,22 @@ runs a single uniqueness query against a scalar value.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Field name in the table</p>
+                    <section class="phpdocumentor-description"><p>Field name in the table (inserted unescaped)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ignoreField</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>name of the field in which the ignore value is</p>
+                    <section class="phpdocumentor-description"><p>name of the field in which the ignore value is (inserted unescaped)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ignoreValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>value of the dataset that should be ignored</p>

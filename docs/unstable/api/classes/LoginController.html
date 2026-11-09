@@ -119,12 +119,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">The Login controller handles all login/logout stuff</p>
 
+    <section class="phpdocumentor-description"><p>Besides index (login) and logout it serves the actions signup, forgot_password, reset, verify, create_password and change_password.</p>
+</section>
 
 
 
@@ -144,21 +146,21 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Redirects the user to the password reset page</dd>
+<dd>Reroutes internally (no HTTP redirect) to action_reset without a reset code</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_action_create_password">action_create_password()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Redirects the user to the password reset page</dd>
+<dd>Reroutes internally (no HTTP redirect) to action_reset without passing a reset code</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_action_forgot_password">action_forgot_password()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Serves the forgot password page and resets the a users password</dd>
+<dd>Serves the forgot password page, or on submit emails a reset link to an existing user and answers JSON (&quot;success&quot;, or &quot;error&quot; for an unknown address)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_action_index">action_index()</a>
@@ -172,7 +174,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Logs out the requesting user.</dd>
+<dd>Logs out the requesting user by delegating to Response::logout(): invalidates the session, switches back to the exec user when sudoed, then redirects to the root URL and exits.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_action_reset">action_reset()</a>
@@ -186,14 +188,14 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Controls the view for registering as a user</dd>
+<dd>Controls the view for registering as a user: renders the signup form, or for the &quot;signup&quot; action validates email and password, creates the user, assigns the role from the config registerRoleId (registerRoleIdSecondary for the &quot;Secondary&quot; type), mails the verification link and answers success or an error.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_action_verify">action_verify()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Used to verify mails</dd>
+<dd>Used to verify mails: verifies the URL token; with POST &quot;email&quot; it resends the verification mail and renders the wait page, otherwise it renders the result view</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LoginController.html#method_twoFactorLogin">twoFactorLogin()</a>
@@ -242,19 +244,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">336</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Redirects the user to the password reset page</p>
+        <p class="phpdocumentor-summary">Reroutes internally (no HTTP redirect) to action_reset without a reset code</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">action_change_password</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>This action is used for user who wat to change their password but did not forgot it.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -302,13 +302,13 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Redirects the user to the password reset page</p>
+        <p class="phpdocumentor-summary">Reroutes internally (no HTTP redirect) to action_reset without passing a reset code</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">action_create_password</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>This action is used for user who create their password for the first time</p>
+        <section class="phpdocumentor-description"><p>Meant for users who create their password for the first time, but action_reset then dies with &quot;code not valid&quot;</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -358,7 +358,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Serves the forgot password page and resets the a users password</p>
+        <p class="phpdocumentor-summary">Serves the forgot password page, or on submit emails a reset link to an existing user and answers JSON (&quot;success&quot;, or &quot;error&quot; for an unknown address)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -408,7 +408,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -418,7 +418,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">action_index</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>It will be called when no action is specified</p>
+        <section class="phpdocumentor-description"><p>It will be called when no action is specified: renders the login form, or for a post with &quot;name&quot; checks rate limit and password, then answers with an error, a two factor challenge or a started session.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -464,11 +464,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Logs out the requesting user.</p>
+        <p class="phpdocumentor-summary">Logs out the requesting user by delegating to Response::logout(): invalidates the session, switches back to the exec user when sudoed, then redirects to the root URL and exits.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -528,7 +528,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">action_reset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Response">Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>For access the user needs a code he usally gets per mail. This code will also identify the user so he does not need to be logged in to reset his password</p>
+        <section class="phpdocumentor-description"><p>For access the user needs a code he usally gets per mail. This code will also identify the user so he does not need to be logged in to reset his password; an invalid code dies with a plain-text error, a POSTed password is saved, the code disabled and the client redirected to root</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -578,7 +578,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Controls the view for registering as a user</p>
+        <p class="phpdocumentor-summary">Controls the view for registering as a user: renders the signup form, or for the &quot;signup&quot; action validates email and password, creates the user, assigns the role from the config registerRoleId (registerRoleIdSecondary for the &quot;Secondary&quot; type), mails the verification link and answers success or an error.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -632,7 +632,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used to verify mails</p>
+        <p class="phpdocumentor-summary">Used to verify mails: verifies the URL token; with POST &quot;email&quot; it resends the verification mail and renders the wait page, otherwise it renders the result view</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -682,7 +682,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
@@ -738,7 +738,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -782,7 +782,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/IncludedComponents/controllers/LoginController.php"><a href="files/src-includedcomponents-controllers-logincontroller.html"><abbr title="src/IncludedComponents/controllers/LoginController.php">LoginController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 
     </aside>
 

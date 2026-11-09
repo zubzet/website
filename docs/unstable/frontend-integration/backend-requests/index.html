@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2786,7 +2786,7 @@
 <span class="w">    </span><span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
-<code>Z.Request.action</code> takes three parameters. The first one is the identifier of the action as string. The second is a object containing post parameters. The third is a callback which only parameter is the <a href="../../core-features/rest-api/">REST response</a> of the server.</p>
+<code>Z.Request.action</code> takes three parameters. The first one is the identifier of the action as string. The second is a object containing post parameters. The third is a callback which only parameter is the <a href="../../core-features/rest-api/">REST response</a> of the server. The request goes to the current URL and the response text is parsed as JSON before the callback runs; if parsing fails, the response is logged to the console with "Please show this to a developer" and the callback is not called. Failed HTTP requests are not handled. <code>Z.Request.root(action, subaction, data, handler)</code> instead posts to <code>Z.Request.rootPath + action</code> (for example <code>login/logout</code>) with <code>subaction</code> as the <code>action</code> field. Its <code>handler</code> is required, and if a response cannot be parsed the raw response is passed to it. A response sent with <code>$res-&gt;json()</code> carries <code>application/json</code>, which jQuery has already parsed, so <code>Z.Request.action</code> and <code>Z.Forms</code> cannot parse it again; <code>Z.Request.root</code> accepts it.</p>
 <h2 id="back-end">Back-end<a class="headerlink" href="#back-end" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code><span class="x">public function action_list(Request $req, Response $res) {</span>
 <span class="x">    if ($req-&gt;isAction("delete-employee")) {</span>
@@ -2796,11 +2796,11 @@
 <span class="x">        return $res-&gt;success();</span>
 <span class="x">    }</span>
 
-<span class="x">    &lt;!-- Remaining code --&gt;</span>
+<span class="x">    // Remaining code</span>
 <span class="x">    return $res-&gt;render("employee/list");</span>
 <span class="x">}</span>
 </code></pre></div>
-<a href="../../api/classes/ZubZet-Framework-Message-Request.html#method_isAction"><code>$req-&gt;isAction()</code></a> detects if this Request was initiated by an async action call with a specified identifier. Note that these actions are not the same as the ones in the controller. They work a level higher. <a href="../../api/classes/ZubZet-Framework-Message-Response.html#method_generateRest"><code>$res-&gt;generateRest</code></a> will create a parsable answer for the client.</p>
+<a href="../../api/classes/ZubZet-Framework-Message-Request.html#method_isAction"><code>$req-&gt;isAction()</code></a> detects if this Request was initiated by an async action call with a specified identifier. It compares the POST field <code>action</code> (sent by <code>Z.Request.action()</code>) loosely, a GET <code>action</code> is ignored, and without a posted <code>action</code>, <code>isAction("")</code> is true because <code>null == ""</code>. Note that these actions are not the same as the ones in the controller. They work a level higher. <a href="../../api/classes/ZubZet-Framework-Message-Response.html#method_generateRest"><code>$res-&gt;generateRest</code></a> will create a parsable answer for the client.</p>
 
 
 
@@ -2884,7 +2884,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2884,13 +2884,13 @@
 <div class="highlight"><pre><span></span><code><span class="na">execution_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test</span>
 </code></pre></div>
 <p>If <code>execution_type</code> is anything other than <code>test</code> (including unset), the bar is not bootstrapped, no assets are emitted, and no collectors run. There is no way to enable it for production.</p>
-<p>The bar relies on the <a href="../layouts/">layout</a> calling the body essentials. The default layout already does this. If you ship a custom layout and want the bar visible there too, include the body essentials inside your <code>&lt;body&gt;</code>:</p>
+<p>The bar relies on the <a href="../layouts/">layout</a> calling the head and body essentials. The default layout already does this. If you ship a custom layout and want the bar visible there too, include <code>&lt;x-zubzet::head :opt="$opt"/&gt;</code> inside your <code>&lt;head&gt;</code> and the body essentials inside your <code>&lt;body&gt;</code>:</p>
 <div class="highlight"><pre><span></span><code>&lt;x-zubzet::body :opt="$opt"/&gt;
 </code></pre></div>
 <h2 id="what-you-see">What you see<a class="headerlink" href="#what-you-see" title="Permanent link">&para;</a></h2>
 <h3 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h3>
-<p>Every SQL statement that <a href="../../api/classes/ZubZet-Framework-Database-Connection.html#method_exec">runs through</a> <code>Connection::exec()</code> (or <code>Model::exec()</code>) is captured with its placeholders interpolated, the bound values, the duration, and the row count. Click a query to open a parameter table and copy the statement to the clipboard.</p>
-<p>Bound values are rendered as single quoted SQL literals so the displayed query can be pasted into a SQL client and executed as is.</p>
+<p>Every SQL statement that <a href="../../api/classes/ZubZet-Framework-Database-Connection.html#method_exec">runs through</a> <code>Connection::exec()</code> (or <code>Model::exec()</code>) is captured with its placeholders interpolated, the bound values, the duration, and the row count; failed queries are not listed. Click a query to open a parameter table and copy the statement to the clipboard.</p>
+<p>Bound values are shown as single quoted, <code>addslashes()</code>d literals (<code>NULL</code> for null) for display only; the statement itself ran with bound parameters.</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">model_test_insert</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">value</span><span class="o">`</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'TestData'</span><span class="p">)</span>
 </code></pre></div>
@@ -2900,9 +2900,9 @@
 </code></pre></div>
 <p>Click the row to expand the params table. Values are formatted by the framework's data formatter, so arrays and objects are shown in a readable shape.</p>
 <h3 id="monolog">Monolog<a class="headerlink" href="#monolog" title="Permanent link">&para;</a></h3>
-<p>Every log record produced through <code>logger()</code> shows up as a row on the monolog tab, including the channel, level, message, full context, and processor extras (<code>traceId</code>, <code>file</code>, <code>line</code>, <code>class</code>, <code>function</code>).</p>
+<p>Every log record produced through <code>logger()</code> shows up as a row on the monolog tab (also records below <code>logger_level</code>, but none when <code>logger_enabled</code> is false), including the channel, level, message, full context, and processor extras (<code>traceId</code>, <code>file</code>, <code>line</code>, <code>class</code>, <code>function</code>).</p>
 <p>The summary line is the trace id, channel, level, and message. Click the row to expand a key and value table with <code>context.*</code> and <code>extra.*</code> entries.</p>
-<p>The tab uses the standard messages widget and includes a search input. Searching matches against the channel, level, message, and every context and extra value, so you can quickly filter to a specific trace id, view path, or user id.</p>
+<p>The tab uses the standard messages widget and includes a search input. Searching matches against the trace id, channel, level, message, and every <code>context.*</code> and <code>extra.*</code> entry as <code>key=value</code>, so you can quickly filter to a specific trace id, view path, or user id.</p>
 <h3 id="resolutions">Resolutions<a class="headerlink" href="#resolutions" title="Permanent link">&para;</a></h3>
 <p>Every convention lookup the <a href="../../advanced-features/modules/">Registry</a> performed for the page is
 listed with its origin: the controller and every model, plus each loaded route file, labeled
@@ -2940,7 +2940,7 @@ file came from.</p>
 <td><code>debugbar_hide_internal_queries</code></td>
 <td>boolean</td>
 <td><code>true</code></td>
-<td>Hide queries issued by models flagged with <code>IsInternalModel</code> from the bar</td>
+<td>Hide queries issued by models flagged with <code>IsInternalModel</code> (bundled <code>z_*</code> models except <code>z_organizationModel</code>) from the bar</td>
 </tr>
 </tbody>
 </table>
@@ -2956,7 +2956,7 @@ file came from.</p>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div>
-<p>Queries issued through this model are filtered out of the queries tab whenever <code>debugbar_hide_internal_queries = true</code>. Direct <code>db()-&gt;exec(...)</code> calls that bypass the model layer are always shown, regardless of the setting.</p>
+<p>Queries issued through this model are filtered out of the queries tab whenever <code>debugbar_hide_internal_queries = true</code>. Direct <code>db()-&gt;exec(...)</code> calls that bypass the model layer keep the tag of the last model query (also <code>z_logger</code> after a log write), so they are hidden whenever that model was internal.</p>
 <h2 id="adding-your-own-log-context">Adding your own log context<a class="headerlink" href="#adding-your-own-log-context" title="Permanent link">&para;</a></h2>
 <p>The monolog tab automatically renders the context array you pass to <code>logger()</code> and any extras added by processors. Anything you add is searchable.</p>
 <div class="highlight"><pre><span></span><code><span class="x">logger("orders")-&gt;info("Order placed", [</span>
@@ -3069,7 +3069,7 @@ file came from.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

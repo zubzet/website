@@ -125,11 +125,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Base class for Response and Request</p>
+            <p class="phpdocumentor-summary">The incoming request: input, URL parts, permission checks and form helpers</p>
 
 
 
@@ -206,7 +206,7 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Checks if the current user has a permission. If the user is not logged in, they will be redirected to the login page.</dd>
+<dd>Checks if the current user has a permission. If the user is not logged in, the login page is rendered and the script exits.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_checkSuperPermission">checkSuperPermission()</a>
@@ -214,6 +214,14 @@
                         &nbsp;: bool    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-Request.html#method_csrfBlockAdditionalMethod">csrfBlockAdditionalMethod()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Runs the CSRF check, additionally covering methods normally exempt as safe
+(e.g. &quot;GET&quot;), so this request also gets CSRF-checked for them.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getBody">getBody()</a>
@@ -255,7 +263,7 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Returns the app domain as specified in the configuration (`host=`)</dd>
+<dd>Returns the app domain as specified in the configuration (`host=`), with scheme, slashes and port stripped (`https://example.com:8080/` becomes `example.com`)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getExecutionTime">getExecutionTime()</a>
@@ -281,51 +289,51 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getGet">getGet()</a>
     <span>
-                        &nbsp;: string|mixed    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd>Gets a GET parameter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getJson">getJson()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Decode request body as JSON.</dd>
+<dd>Decode the request body as JSON.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel">getModel()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a>    </span>
 </dt>
-<dd>Returns a model</dd>
+<dd>Returns a model, one shared instance per request; falls back to the framework models when not found</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getParameters">getParameters()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|string|bool    </span>
 </dt>
-<dd>Gets the URL parameters (including the leading controller and action) specified by the path.</dd>
+<dd>Gets the URL parameters (excluding the leading controller and action) specified by the path.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Input-CanRetrieveFromInput.html#method_getPost">getPost()</a>
     <span>
-                        &nbsp;: string|mixed    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd>Gets a POST parameter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getReadableParameter">getReadableParameter()</a>
     <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Works like getParameters and decodes an SEO optimized URL. Example: test.com/episodes/this-is-some-text-64 The 64 is an id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getRequestingUser">getRequestingUser()</a>
     <span>
-                        &nbsp;: <abbr title="\User">User</abbr>    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a>    </span>
 </dt>
-<dd>Gets the user who made the request.</dd>
+<dd>Gets the user who made the request, also for guests (check isLoggedIn).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getRoot">getRoot()</a>
@@ -339,7 +347,7 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Gets the path to the root folder of the project.</dd>
+<dd>Gets the URL base path of the app (&quot;/&quot; plus rootDirectory, with trailing slash).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getRouteParameter">getRouteParameter()</a>
@@ -367,14 +375,14 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Returns the ZViews directory</dd>
+<dd>Returns the project&#039;s own views directory (config z_views, relative path with trailing slash), not the framework&#039;s IncludedComponents views</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_hasFormData">hasFormData()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Checks if the request contains form data. When a form action is provided, it must match the submitted action.</dd>
+<dd>Checks if the request contains form data, i.e. the POST flag isFormData that Z.js ZForm sends (plain HTML form posts return false). When a form action is provided, it must match the submitted action.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_ip">ip()</a>
@@ -388,7 +396,7 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Checks if the request is an async AJAX request of a given type</dd>
+<dd>Checks if the POST field action loosely equals $type; it does not verify that the request came via AJAX</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_isCli">isCli()</a>
@@ -432,7 +440,7 @@ account that carries no two factor at all.</dd>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a>    </span>
 </dt>
-<dd>Validates a &quot;Create Edit Delete&quot; input</dd>
+<dd>Validates each row of a &quot;Create Edit Delete&quot; input read from getPost($name); sets doNothing if it is absent, and errors carry the row&#039;s subname and index</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Form-Validation-CanValidateForm.html#method_validateForm">validateForm()</a>
@@ -503,7 +511,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -537,7 +545,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -571,7 +579,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -605,7 +613,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -643,7 +651,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -687,7 +695,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -720,7 +728,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -753,17 +761,17 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Checks if the current user has a permission. If the user is not logged in, they will be redirected to the login page.</p>
+        <p class="phpdocumentor-summary">Checks if the current user has a permission. If the user is not logged in, the login page is rendered and the script exits.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">checkPermission</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$permission</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$boolResult</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includeSuperUser</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"><p>If the user is logged in but does not have the permission, they will be redirected to 403.</p>
+        <section class="phpdocumentor-description"><p>If the user is logged in but does not have the permission, the 403 page is rendered and the script exits. The permission &quot;console&quot; passes only on CLI.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -782,7 +790,7 @@ account that carries no two factor at all.</dd>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If true, the function will return a boolean result instead of redirecting</p>
+                    <section class="phpdocumentor-description"><p>If true, the function will return false instead of rendering the login/403 page and exiting</p>
 </section>
 
             </dd>
@@ -791,7 +799,8 @@ account that carries no two factor at all.</dd>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>If true, the permission may also be held by the executing user (the user acting as another one)</p>
+</section>
 
             </dd>
             </dl>
@@ -801,7 +810,9 @@ account that carries no two factor at all.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>True if the permission is granted (otherwise false with $boolResult, or the script exits)</p>
+</section>
+
     
 </article>
                     <article
@@ -817,7 +828,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 
     </aside>
 
@@ -862,6 +873,55 @@ account that carries no two factor at all.</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_csrfBlockAdditionalMethod">
+        csrfBlockAdditionalMethod()
+        <a href="classes/ZubZet-Framework-Message-Request.html#method_csrfBlockAdditionalMethod" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">453</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Runs the CSRF check, additionally covering methods normally exempt as safe
+(e.g. &quot;GET&quot;), so this request also gets CSRF-checked for them.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">csrfBlockAdditionalMethod</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$additionalMethods</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>A rejected request is redirected to 403 and the script ends.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$additionalMethods</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Methods to remove from the safe-method
+exemption for this call, &quot;GET&quot; when none is given</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getBody">
         getBody()
         <a href="classes/ZubZet-Framework-Message-Request.html#method_getBody" class="headerlink"><i class="fas fa-link"></i></a>
@@ -869,7 +929,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">401</span>
 
     </aside>
 
@@ -888,7 +948,7 @@ account that carries no two factor at all.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The raw body content of the request (Returns an empty string if empty or unavailable).</p>
+            <section class="phpdocumentor-description"><p>The raw body content of the request (Returns null if empty or unavailable, so a body of &quot;0&quot; is null too).</p>
 </section>
 
     
@@ -906,7 +966,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveBooterSettings.php"><a href="files/src-core-canretrievebootersettings.html"><abbr title="src/Core/CanRetrieveBooterSettings.php">CanRetrieveBooterSettings.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -914,26 +974,27 @@ account that carries no two factor at all.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getBooterSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getBooterSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Key of the setting</p>
+                    <section class="phpdocumentor-description"><p>Key of the setting, null or empty returns all settings</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$useDefault</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Return $default instead of throwing when the key does not exist</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -941,12 +1002,29 @@ account that carries no two factor at all.</dd>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Value returned for a missing key when $useDefault is true</p>
+</section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the key does not exist and $useDefault is false</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -977,17 +1055,17 @@ account that carries no two factor at all.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getCookie</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The key of the parameter</p>
+                    <section class="phpdocumentor-description"><p>The key of the parameter, null returns all cookies</p>
 </section>
 
             </dd>
@@ -1007,7 +1085,7 @@ account that carries no two factor at all.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Content of the cookie</p>
+            <section class="phpdocumentor-description"><p>The value, $default if the key is missing, or all cookies when $key is null</p>
 </section>
 
     
@@ -1060,7 +1138,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
@@ -1077,7 +1155,7 @@ account that carries no two factor at all.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Returns the current URL, consisting of the configured host and the actual current path</p>
+            <section class="phpdocumentor-description"><p>Returns the current URL, consisting of the configured host followed by the raw REQUEST_URI (root directory, path and query string)</p>
 </section>
 
     
@@ -1095,11 +1173,11 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the app domain as specified in the configuration (`host=`)</p>
+        <p class="phpdocumentor-summary">Returns the app domain as specified in the configuration (`host=`), with scheme, slashes and port stripped (`https://example.com:8080/` becomes `example.com`)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1130,7 +1208,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1181,7 +1259,7 @@ account that carries no two factor at all.</dd>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The name of the file</p>
+                    <section class="phpdocumentor-description"><p>The name of the file, null returns all files</p>
 </section>
 
             </dd>
@@ -1201,7 +1279,7 @@ account that carries no two factor at all.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The posted file</p>
+            <section class="phpdocumentor-description"><p>The $_FILES entry (name, type, tmp_name, error, size), $default if the key is missing, or all files when $key is null</p>
 </section>
 
     
@@ -1262,17 +1340,17 @@ account that carries no two factor at all.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
+                <span class="phpdocumentor-signature__name">getGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The key of the parameter</p>
+                    <section class="phpdocumentor-description"><p>The key of the parameter, null returns the whole GET array</p>
 </section>
 
             </dd>
@@ -1290,9 +1368,9 @@ account that carries no two factor at all.</dd>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|mixed</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The content of the GET value</p>
+            <section class="phpdocumentor-description"><p>The value, $default if the key is missing, or the whole array when $key is null</p>
 </section>
 
     
@@ -1310,21 +1388,44 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">419</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Decode request body as JSON.</p>
+        <p class="phpdocumentor-summary">Decode the request body as JSON.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getJson</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getJson</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxBytes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1048576</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxDepth</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">32</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"><p>This method decodes the raw request body as JSON and returns the resulting value.
-Objects and arrays are returned as associative arrays.</p>
+        <section class="phpdocumentor-description"><p>Accepts only a POST, PUT, PATCH or DELETE request whose Content-Type is exactly
+<code class="prettyprint">application/json</code> (a <code class="prettyprint">charset</code> parameter must be utf-8), whose body is at most
+$maxBytes long and holds well formed JSON. Large integers come back as strings
+instead of lossy floats.</p>
 </section>
 
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$maxBytes</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1048576</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Longest accepted body in bytes</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$maxDepth</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">32</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Deepest accepted nesting</p>
+</section>
+
+            </dd>
+            </dl>
+
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
@@ -1335,18 +1436,28 @@ Objects and arrays are returned as associative arrays.</p>
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\UnexpectedValueException">UnexpectedValueException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>Carrying the HTTP status to answer with as its code</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\JsonException">JsonException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the body contains invalid JSON.</p>
+                                                 <section class="phpdocumentor-description"><p>If the body is not well formed JSON</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The decoded JSON value, or null if the body is empty.</p>
+            <section class="phpdocumentor-description"><p>The decoded value, objects as associative arrays</p>
 </section>
 
     
@@ -1364,15 +1475,15 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveModel.php"><a href="files/src-core-canretrievemodel.html"><abbr title="src/Core/CanRetrieveModel.php">CanRetrieveModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns a model</p>
+        <p class="phpdocumentor-summary">Returns a model, one shared instance per request; falls back to the framework models when not found</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1382,22 +1493,38 @@ Objects and arrays are returned as associative arrays.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Name of the model</p>
+                    <section class="phpdocumentor-description"><p>Name of the model, sub-folders dot separated (e.g. &quot;admin.User&quot;)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$dir</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory</p>
+                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory, needs a trailing slash</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>When the model does not exist</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span>
@@ -1420,15 +1547,15 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets the URL parameters (including the leading controller and action) specified by the path.</p>
+        <p class="phpdocumentor-summary">Gets the URL parameters (excluding the leading controller and action) specified by the path.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getParameters</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$length</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$val</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span></code>
+                <span class="phpdocumentor-signature__name">getParameters</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$length</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$val</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1456,7 +1583,7 @@ Objects and arrays are returned as associative arrays.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If the length is 1, a Boolean will be returned. $val will be compared to the parameter</p>
+                    <section class="phpdocumentor-description"><p>If the length is 1 and $val is set, a Boolean will be returned. $val will be compared to the parameter</p>
 </section>
 
             </dd>
@@ -1465,9 +1592,11 @@ Objects and arrays are returned as associative arrays.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Array of parameters, the single parameter (or a Boolean comparison with $val) if length is 1, false if length is 1 and the parameter is missing</p>
+</section>
+
     
 </article>
                     <article
@@ -1491,7 +1620,7 @@ Objects and arrays are returned as associative arrays.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getPost</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|mixed</span></code>
+                <span class="phpdocumentor-signature__name">getPost</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1501,7 +1630,7 @@ Objects and arrays are returned as associative arrays.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The key of the parameter</p>
+                    <section class="phpdocumentor-description"><p>The key of the parameter, null returns the whole POST array</p>
 </section>
 
             </dd>
@@ -1519,9 +1648,9 @@ Objects and arrays are returned as associative arrays.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|mixed</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The content of the POST value</p>
+            <section class="phpdocumentor-description"><p>The value, $default if the key is missing, or the whole array when $key is null</p>
 </section>
 
     
@@ -1539,7 +1668,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 
@@ -1547,7 +1676,7 @@ Objects and arrays are returned as associative arrays.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getReadableParameter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getReadableParameter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1566,11 +1695,9 @@ Objects and arrays are returned as associative arrays.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>[id, text] of the URL</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -1586,22 +1713,22 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets the user who made the request.</p>
+        <p class="phpdocumentor-summary">Gets the user who made the request, also for guests (check isLoggedIn).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getRequestingUser</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\User">User</abbr></span></code>
+                <span class="phpdocumentor-signature__name">getRequestingUser</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\User">User</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>Object of the requesting user</p>
 </section>
@@ -1621,7 +1748,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
@@ -1656,11 +1783,11 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">271</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets the path to the root folder of the project.</p>
+        <p class="phpdocumentor-summary">Gets the URL base path of the app (&quot;/&quot; plus rootDirectory, with trailing slash).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1673,7 +1800,7 @@ Objects and arrays are returned as associative arrays.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Path to the root folder</p>
+            <section class="phpdocumentor-description"><p>URL base path used to prefix links and cookie paths</p>
 </section>
 
     
@@ -1691,7 +1818,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -1735,7 +1862,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -1805,7 +1932,7 @@ Objects and arrays are returned as associative arrays.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the ZViews directory</p>
+        <p class="phpdocumentor-summary">Returns the project&#039;s own views directory (config z_views, relative path with trailing slash), not the framework&#039;s IncludedComponents views</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1834,11 +1961,11 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Checks if the request contains form data. When a form action is provided, it must match the submitted action.</p>
+        <p class="phpdocumentor-summary">Checks if the request contains form data, i.e. the POST flag isFormData that Z.js ZForm sends (plain HTML form posts return false). When a form action is provided, it must match the submitted action.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1881,7 +2008,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -1898,7 +2025,7 @@ Objects and arrays are returned as associative arrays.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The IP of the client. False if no IP is detected</p>
+            <section class="phpdocumentor-description"><p>The IP of the client, client-supplied headers (spoofable) are trusted first. Empty string if none is found</p>
 </section>
 
     
@@ -1916,11 +2043,11 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Checks if the request is an async AJAX request of a given type</p>
+        <p class="phpdocumentor-summary">Checks if the POST field action loosely equals $type; it does not verify that the request came via AJAX</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1963,7 +2090,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -1998,7 +2125,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -2031,7 +2158,7 @@ Objects and arrays are returned as associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">351</span>
+    <span class="phpdocumentor-element-found-in__line">355</span>
 
     </aside>
 
@@ -2097,7 +2224,7 @@ answer the client yourself instead:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">319</span>
 
     </aside>
 
@@ -2144,7 +2271,7 @@ answer the client yourself instead:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
@@ -2181,11 +2308,11 @@ answer the client yourself instead:</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Validates a &quot;Create Edit Delete&quot; input</p>
+        <p class="phpdocumentor-summary">Validates each row of a &quot;Create Edit Delete&quot; input read from getPost($name); sets doNothing if it is absent, and errors carry the row&#039;s subname and index</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">validateCED</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">validateCED</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Form-Validation-Result.html"><abbr title="\ZubZet\Framework\Form\Validation\Result">Result</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2201,10 +2328,10 @@ answer the client yourself instead:</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$rules</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ZubZet-Framework-Form-Validation-Field.html"><abbr title="\ZubZet\Framework\Form\Validation\Field">Field</abbr></a>&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Array of rules for validating</p>
+                    <section class="phpdocumentor-description"><p>Fields every row is validated against</p>
 </section>
 
             </dd>
@@ -2233,7 +2360,7 @@ answer the client yourself instead:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/CanValidateForm.php"><a href="files/src-form-validation-canvalidateform.html"><abbr title="src/Form/Validation/CanValidateForm.php">CanValidateForm.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -2260,7 +2387,8 @@ answer the client yourself instead:</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Input for the validation. getGet() or getPost() can be used here as parameters</p>
+                    <section class="phpdocumentor-description"><p>Input for the validation, defaults to getPost() + getFiles() when null or empty. getGet() or getPost() can be used here as parameters
+Rules other than required() are skipped for empty values.</p>
 </section>
 
             </dd>

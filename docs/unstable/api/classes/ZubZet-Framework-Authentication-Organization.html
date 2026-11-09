@@ -119,13 +119,13 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>                    </span>
+                            <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Permission">Permission</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html"><abbr title="\ZubZet\Framework\Authentication\RetrievalTrait">RetrievalTrait</abbr></a>,                             <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html"><abbr title="\ZubZet\Framework\Authentication\HandleTrait">HandleTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
@@ -149,6 +149,20 @@
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbExpression">$dbExpression</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsObjectColumn">$dbPermissionsObjectColumn</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsTable">$dbPermissionsTable</a>
+    <span>
+                &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
@@ -197,16 +211,44 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all">all()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role)</dd>
+<dd>Get a list of all active objects of the calling class (user, role, session, organization, API key)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_buildPermissionVariants">buildPermissionVariants()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Build permission variants for a given permission name</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAll">byAccessToAll()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAnyOf">byAccessToAnyOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byGroup">byGroup()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId">byId()</a>
     <span>
-                        &nbsp;: object|null    </span>
+                        &nbsp;: static|null    </span>
 </dt>
-<dd>Get a permission object (user or role) by its id</dd>
+<dd>Get an object (user, role, session, organization or API key) by its id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier">byIdentifier()</a>
@@ -225,9 +267,10 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds">byIds()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role) by their ids</dd>
+<dd>Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byName">byName()</a>
@@ -235,6 +278,13 @@
                         &nbsp;: array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Organization.html"><abbr title="\ZubZet\Framework\Authentication\Organization">Organization</abbr></a>&gt;    </span>
 </dt>
 <dd>Get all active organizations matching the given name.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byRole">byRole()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byUser">byUser()</a>
@@ -293,11 +343,62 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getGroups">getGroups()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getPermissions">getPermissions()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getRoles">getRoles()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getUsers">getUsers()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_groupsAdd">groupsAdd()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_groupsRemove">groupsRemove()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAll">hasAccessAll()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAnyOf">hasAccessAnyOf()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_hasMember">hasMember()</a>
@@ -335,14 +436,35 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_permissionsAdd">permissionsAdd()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Add permissions to an permission object (user or role)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_permissionsRemove">permissionsRemove()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Remove permissions from the permission object (user or role)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh">refresh()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Refresh the current permission object (user or role) by clearing all its fields and setting them new</dd>
+<dd>Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshGroup">refreshGroup()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshPermissions">refreshPermissions()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -357,6 +479,20 @@
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_remove">remove()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_rolesAdd">rolesAdd()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_rolesRemove">rolesRemove()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -411,7 +547,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -436,6 +572,74 @@
             -public
             -static                                            "
 >
+    <h4 class="phpdocumentor-element__name" id="property_dbPermissionsObjectColumn">
+        $dbPermissionsObjectColumn
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsObjectColumn" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$dbPermissionsObjectColumn</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;organization&quot;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_dbPermissionsTable">
+        $dbPermissionsTable
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsTable" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">17</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$dbPermissionsTable</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;z_organization_permission&quot;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+            -static                                            "
+>
     <h4 class="phpdocumentor-element__name" id="property_dbTable">
         $dbTable
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#property_dbTable" class="headerlink"><i class="fas fa-link"></i></a>
@@ -445,7 +649,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -589,7 +793,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -633,7 +837,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -697,18 +901,201 @@ which authentication object triggered the change.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role)</p>
+        <p class="phpdocumentor-summary">Get a list of all active objects of the calling class (user, role, session, organization, API key)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The list of active objects</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_buildPermissionVariants">
+        buildPermissionVariants()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_buildPermissionVariants" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">112</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Build permission variants for a given permission name</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">buildPermissionVariants</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$permissionName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>e.g. &quot;edit.article&quot; =&gt; [&quot;<em>.</em>&quot;, &quot;edit.<em>&quot;, &quot;edit.article.</em>&quot;, &quot;edit.article&quot;]</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The permission name to build variants for</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>An array of permission variants</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byAccessToAll">
+        byAccessToAll()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAll" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">65</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byAccessToAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byAccessToAnyOf">
+        byAccessToAnyOf()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAnyOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">71</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byAccessToAnyOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_byGroup">
+        byGroup()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byGroup" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$group</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
         
     
@@ -730,11 +1117,11 @@ which authentication object triggered the change.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a permission object (user or role) by its id</p>
+        <p class="phpdocumentor-summary">Get an object (user, role, session, organization or API key) by its id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -753,9 +1140,9 @@ which authentication object triggered the change.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">object|null</span>
+    <span class="phpdocumentor-signature__response_type">static|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>the permission object if found, null otherwise</p>
+            <section class="phpdocumentor-description"><p>the object if found, null if the id is unknown or inactive</p>
 </section>
 
     
@@ -885,15 +1272,16 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role) by their ids</p>
+        <p class="phpdocumentor-summary">Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -912,9 +1300,9 @@ which authentication object triggered the change.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The list of permission objects</p>
+            <section class="phpdocumentor-description"><p>the objects that were found</p>
 </section>
 
     
@@ -932,7 +1320,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -975,6 +1363,50 @@ possibly containing multiple organizations sharing the same name.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_byRole">
+        byRole()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byRole" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byRole</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$role</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$role</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_byUser">
         byUser()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_byUser" class="headerlink"><i class="fas fa-link"></i></a>
@@ -982,7 +1414,7 @@ possibly containing multiple organizations sharing the same name.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -1032,7 +1464,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1079,7 +1511,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -1269,7 +1701,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -1295,6 +1727,105 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getGroups">
+        getGroups()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getGroups" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">158</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getGroups</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPermissions">
+        getPermissions()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getPermissions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">163</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRoles">
+        getRoles()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getRoles" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">154</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getRoles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getUsers">
         getUsers()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_getUsers" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1302,7 +1833,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 
     </aside>
 
@@ -1328,6 +1859,190 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_groupsAdd">
+        groupsAdd()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_groupsAdd" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">141</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">groupsAdd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$groups</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$groups</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_groupsRemove">
+        groupsRemove()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_groupsRemove" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">150</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">groupsRemove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$groups</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$groups</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Group.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Group">Group</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_hasAccessAll">
+        hasAccessAll()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAll" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">hasAccessAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The names of the permissions to check</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>True if the object has all of the permissions, false otherwise</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_hasAccessAnyOf">
+        hasAccessAnyOf()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAnyOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">79</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">hasAccessAnyOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The names of the permissions to check</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>True if the object has at least one of the permissions, false otherwise</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_hasMember">
         hasMember()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_hasMember" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1335,7 +2050,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -1412,7 +2127,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -1456,7 +2171,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -1515,6 +2230,96 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_permissionsAdd">
+        permissionsAdd()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_permissionsAdd" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add permissions to an permission object (user or role)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">permissionsAdd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The names of the permissions to add</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_permissionsRemove">
+        permissionsRemove()
+        <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_permissionsRemove" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove permissions from the permission object (user or role)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">permissionsRemove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$permissionNames</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissionNames</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The names of the permissions to remove</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_refresh">
         refresh()
         <a href="classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1522,11 +2327,11 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/HandleTrait.php"><a href="files/src-authentication-handletrait.html"><abbr title="src/Authentication/HandleTrait.php">HandleTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Refresh the current permission object (user or role) by clearing all its fields and setting them new</p>
+        <p class="phpdocumentor-summary">Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1544,9 +2349,19 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If this instance was already detached</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\RuntimeException">RuntimeException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the object no longer exists</p>
+                                                 <section class="phpdocumentor-description"><p>If the object no longer exists (its fields are already cleared by then)</p>
 </section>
 
                                     </dd>
@@ -1571,7 +2386,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -1597,6 +2412,39 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_refreshPermissions">
+        refreshPermissions()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshPermissions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">169</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">refreshPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_refreshUsers">
         refreshUsers()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_refreshUsers" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1604,7 +2452,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
@@ -1637,7 +2485,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -1663,6 +2511,94 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_rolesAdd">
+        rolesAdd()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_rolesAdd" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">136</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">rolesAdd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$roles</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$roles</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_rolesRemove">
+        rolesRemove()
+        <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_rolesRemove" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">145</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">rolesRemove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$roles</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$roles</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Authentication-Permission-Role.html"><abbr title="\ZubZet\Framework\Authentication\Permission\Role">Role</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_updateName">
         updateName()
         <a href="classes/ZubZet-Framework-Authentication-Organization.html#method_updateName" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1670,7 +2606,7 @@ symmetric <code class="prettyprint">Organization::byUser($user)</code> style alo
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Organization.php"><a href="files/src-authentication-organization.html"><abbr title="src/Authentication/Organization.php">Organization.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 

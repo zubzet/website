@@ -161,7 +161,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/CanValidateForm.php"><a href="files/src-form-validation-canvalidateform.html"><abbr title="src/Form/Validation/CanValidateForm.php">CanValidateForm.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -188,7 +188,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Input for the validation. getGet() or getPost() can be used here as parameters</p>
+                    <section class="phpdocumentor-description"><p>Input for the validation, defaults to getPost() + getFiles() when null or empty. getGet() or getPost() can be used here as parameters
+Rules other than required() are skipped for empty values.</p>
 </section>
 
             </dd>

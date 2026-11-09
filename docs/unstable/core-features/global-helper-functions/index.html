@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2876,6 +2876,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deprecated()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#e" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2914,17 +2925,18 @@
   <h1>Global helper functions</h1>
 
 <h3 id="global-helper-functions">Global Helper Functions<a class="headerlink" href="#global-helper-functions" title="Permanent link">&para;</a></h3>
-<p>To optimize developer experience and eliminate redundant boilerplate, <strong>global helper functions</strong> have finally been integrated. These helpers offer immediate and consistent access to core framework components and services. All previously available methods remain <strong>fully supported</strong> to ensure seamless backward compatibility.</p>
+<p>To optimize developer experience and eliminate redundant boilerplate, <strong>global helper functions</strong> have finally been integrated. These helpers offer immediate and consistent access to core framework components and services. All previously available methods remain <strong>fully supported</strong> to ensure seamless backward compatibility. The functions below throw a <code>RuntimeException</code> at boot when a function of the same name already exists (except <code>__()</code>, which yields to an existing one).</p>
 <hr />
 <h3 id="zubzet"><code>zubzet()</code><a class="headerlink" href="#zubzet" title="Permanent link">&para;</a></h3>
-<p>Returns the <a href="../../api/classes/ZubZet-Framework-ZubZet.html">main instance</a> of the ZubZet framework.</p>
+<p>Returns the <a href="../../api/classes/ZubZet-Framework-ZubZet.html">main instance</a> of the ZubZet framework, or throws a <code>NotInstantiatedException</code> before it exists.</p>
 <p><strong>Syntax:</strong> <code>zubzet()</code></p>
 <hr />
 <h3 id="model"><code>model()</code><a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
 <p>Provides direct access to a specific <a href="../models/">model</a> instance.</p>
-<p><strong>Syntax:</strong> <code>model(string $modelName)</code></p>
+<p><strong>Syntax:</strong> <code>model($modelName, $dir = null)</code></p>
 <ul>
 <li><strong>$modelName</strong>: The name of the model to be instantiated.</li>
+<li><strong>$dir</strong>: Optional directory to load the model from instead of the usual lookup.</li>
 </ul>
 <p><strong>Note:</strong> In controller actions, <code>$reqObj-&gt;getModel($modelName)</code> remains a supported alternative.</p>
 <p><strong>Example:</strong></p>
@@ -2932,14 +2944,14 @@
 </code></pre></div>
 <hr />
 <h3 id="request"><code>request()</code><a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
-<p>Accesses the instance of the <a href="../../api/classes/ZubZet-Framework-Message-Request.html">current request</a>.</p>
+<p>Accesses the instance of the <a href="../../api/classes/ZubZet-Framework-Message-Request.html">current request</a>, or throws a <code>NotInstantiatedException</code> when there is none. It works on a snapshot of the superglobals taken at boot, so later writes to <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code> or <code>$_SESSION</code> are invisible to it.</p>
 <p><strong>Syntax:</strong> <code>request()</code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">request()-&gt;getPost("POST_PARAMETER");</span>
 </code></pre></div>
 <hr />
 <h3 id="response"><code>response()</code><a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
-<p>Accesses the instance of the <a href="../../api/classes/ZubZet-Framework-Message-Response.html">current response</a>.</p>
+<p>Accesses the instance of the <a href="../../api/classes/ZubZet-Framework-Message-Response.html">current response</a>, the same one that controller constructors, middleware and actions receive.</p>
 <p><strong>Syntax:</strong> <code>response()</code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">response()-&gt;sendEMail($to, $subject, $document);</span>
@@ -2947,15 +2959,16 @@
 <hr />
 <h3 id="config"><code>config()</code><a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
 <p>Retrieves a <a href="../configuration/">configuration value</a> by its key.</p>
-<p><strong>Syntax:</strong> <code>config(string $key, bool $useDefault = false, mixed $default = null)</code></p>
+<p><strong>Syntax:</strong> <code>config(?string $key = null, bool $useDefault = true, mixed $default = null)</code></p>
 <ul>
-<li><strong>$key</strong>: The configuration identifier.</li>
-<li><strong>$useDefault</strong>: Whether to return a fallback value if the key is not found.</li>
-<li><strong>$default</strong>: The value to return if <code>$useDefault</code> is true and the key is missing.</li>
+<li><strong>$key</strong>: The configuration identifier. If it is empty, the complete settings array is returned, credentials included.</li>
+<li><strong>$useDefault</strong>: Whether to return a fallback value if the key is not found. Defaults to <code>true</code>; with <code>false</code>, a missing key throws an <code>InvalidArgumentException</code>.</li>
+<li><strong>$default</strong>: The value to return if <code>$useDefault</code> is true and the key is missing. Defaults to <code>null</code>.</li>
 </ul>
+<p><strong>Note:</strong> <code>$useDefault</code> is the second positional argument, so <code>config("key", 5)</code> does not set a default of <code>5</code>. Pass the fallback by name: <code>config("key", default: 5)</code>.</p>
 <p><strong>Note:</strong> Previously accessible via <code>$req-&gt;getBooterSettings(...)</code> inside controller actions; this approach remains fully supported.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="x">config("db_username");</span>
+<div class="highlight"><pre><span></span><code><span class="x">config("dbusername");</span>
 </code></pre></div>
 <hr />
 <h3 id="confignumeric"><code>configNumeric()</code><a class="headerlink" href="#confignumeric" title="Permanent link">&para;</a></h3>
@@ -2971,26 +2984,27 @@
 </code></pre></div>
 <hr />
 <h3 id="user"><code>user()</code><a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
-<p>Returns the instance of the <a href="../../api/classes/ZubZet-Framework-Authentication-User.html">currently authenticated user</a>.</p>
+<p>Returns the <a href="../../api/classes/ZubZet-Framework-Authentication-User.html">request user</a>, built once per request when the framework is constructed, from the bearer token or the <code>z_login_token</code> cookie. It is also available as <code>$req-&gt;getRequestingUser()</code>, <code>$req-&gt;booter-&gt;user</code>, <code>$opt["user"]</code> in views and as the global alias <code>User</code>, which is not the record class <code>Authentication\Permission\User</code> (import that one with <code>use</code>).</p>
 <p><strong>Syntax:</strong> <code>user()</code></p>
-<p><strong>Note:</strong> This streamlines the previous method of calling <code>$req-&gt;getRequestingUser()</code> within controller actions.</p>
+<p><strong>Note:</strong> This streamlines the previous method of calling <code>$req-&gt;getRequestingUser()</code> within controller actions. Check <code>user()-&gt;isLoggedIn</code> (<code>true</code> only when token, session and an active <code>z_user</code> row all resolve) to detect anonymous visitors. <code>userId</code> is the account the session acts as (<code>null</code> when anonymous), <code>orgId</code> the user's organization id (<code>null</code> when anonymous or without one), <code>getSessionToken()</code> the current session token (<code>null</code> when anonymous), <code>execUserId</code> the real user behind a <a href="../../z-admin/login-as-another-user/">login as</a> session (equal to <code>userId</code> for a normal login) and <code>fields</code> the complete <code>z_user</code> row including <code>password</code>, <code>salt</code>, <code>password_scheme</code> and custom columns (empty when anonymous).</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">user()-&gt;userId;</span>
 </code></pre></div>
 <hr />
 <h3 id="db"><code>db()</code><a class="headerlink" href="#db" title="Permanent link">&para;</a></h3>
-<p>Provides the <a href="../../api/classes/ZubZet-Framework-Database-Connection.html">database instance</a> for a specified connection.</p>
-<p><strong>Syntax:</strong> <code>db(string $connection = "default")</code></p>
+<p>Provides the <a href="../../api/classes/ZubZet-Framework-Database-Connection.html">database instance</a> for a specified connection, or throws a <code>NotInstantiatedException</code> before it exists.</p>
+<p><strong>Syntax:</strong> <code>db(string $connection = "default", bool $allowUnsetConnection = false)</code></p>
 <ul>
-<li><strong>$connection</strong>: The name of the database connection (defaults to "default").</li>
+<li><strong>$connection</strong>: The name of the database connection (defaults to "default", any other name throws an <code>InvalidArgumentException</code>).</li>
+<li><strong>$allowUnsetConnection</strong>: Return <code>null</code> instead of throwing while the connection does not exist yet (early in boot).</li>
 </ul>
-<p><strong>Note:</strong> Database access is no longer restricted to using <code>$this-&gt;z_db</code> within models.</p>
+<p><strong>Note:</strong> Database access is no longer restricted to using <code>$this-&gt;z_db</code> within models; <code>db()</code>, <code>zubzet()-&gt;z_db</code> and <code>$this-&gt;z_db</code> are the same shared connection.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">db()-&gt;exec("SELECT * FROM z_user");</span>
 </code></pre></div>
 <hr />
 <h3 id="logger"><code>logger()</code><a class="headerlink" href="#logger" title="Permanent link">&para;</a></h3>
-<p>Returns a Monolog logger instance for the given channel.</p>
+<p>Returns a Monolog logger instance for the given channel, or throws a <code>NotInstantiatedException</code> before the framework instance exists.</p>
 <p><strong>Syntax:</strong> <code>logger(string $name = null)</code></p>
 <ul>
 <li><strong>$name</strong>: The channel name. Defaults to <code>"app"</code> if omitted.</li>
@@ -3003,11 +3017,11 @@
 <hr />
 <h3 id="view"><code>view()</code><a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
 <p>Renders a <a href="../views/">view template</a> directly.</p>
-<p><strong>Syntax:</strong> <code>view(string $document, array $opt = [], array $options = [])</code></p>
+<p><strong>Syntax:</strong> <code>view(string $document, array $opt = [], array|string $options = [])</code></p>
 <ul>
 <li><strong>$document</strong>: The path to the view file.</li>
 <li><strong>$opt</strong>: Data array passed to the view.</li>
-<li><strong>$options</strong>: Additional rendering options.</li>
+<li><strong>$options</strong>: Additional rendering options, or a layout name as a string.</li>
 </ul>
 <p><strong>Note:</strong> This serves as a streamlined alternative to rendering via the response object using <code>$resObj-&gt;render(...)</code>.</p>
 <p><strong>Example:</strong></p>
@@ -3044,13 +3058,28 @@
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">echo __("dashboard.welcome", ["{name}" =&gt; $name]);</span>
 </code></pre></div>
+<h3 id="deprecated"><code>deprecated()</code><a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h3>
+<p>Raises a deprecation notice for a code path that still works but should no longer be used. The notice goes through PHP's error handling like a deprecation of PHP itself: with <code>showErrors = 2</code> it is promoted to an exception, with <code>showErrors = 1</code> it is logged as a <code>DEPRECATION</code> event and displayed, and with <code>showErrors = 0</code> it is silent, like every other PHP notice.</p>
+<p><strong>Syntax:</strong> <code>deprecated(string $version, string $message): void</code></p>
+<ul>
+<li><strong>$version</strong>: The version the deprecation starts with, e.g. <code>"1.3.0"</code>.</li>
+<li><strong>$message</strong>: What is deprecated and what to use instead.</li>
+</ul>
+<p>The framework only declares it when no global <code>deprecated()</code> exists yet, so an application or library that brings its own keeps it.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="x">public function legacyLookup(string $key) {</span>
+<span class="x">    deprecated("1.3.0", "legacyLookup() is replaced by lookup(), which also handles prefixed keys");</span>
+<span class="x">    return $this-&gt;lookup($key);</span>
+<span class="x">}</span>
+</code></pre></div>
 <h3 id="e"><code>e()</code><a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
-<p>Escapes a string for safe HTML output. It strips tags and then escapes the remaining special characters through the render engine, so its output matches what <code>{{ }}</code> produces in a <a href="../views/">view</a>.</p>
+<p>Escapes a string for safe HTML output. It strips tags (everything between <code>&lt;</code> and <code>&gt;</code>, so <code>1&lt;2 and 3&gt;2</code> becomes <code>12</code>) and then escapes the remaining special characters through the render engine, so its output matches what <code>{{ }}</code> produces in a <a href="../views/">view</a>.</p>
 <p><strong>Syntax:</strong> <code>e(?string $value): ?string</code></p>
 <ul>
 <li><strong>$value</strong>: The string to escape. <code>null</code> is passed through unchanged, so optional values can be escaped without an extra check.</li>
 </ul>
 <p>Use it whenever a value ends up in HTML outside of a template echo, for example in attributes built in PHP.</p>
+<p><code>shortenStr($str, $maxlength = 10)</code> cuts at word boundaries and appends <code>...</code>, but returns a string that fits with a trailing space; <code>getCaller($depth = 1)</code> only works for <code>0</code> and <code>1</code>; <code>var_swap(&amp;$x, &amp;$y)</code> swaps two variables. <code>makeSlug()</code> drops every character outside <code>A-Za-z0-9-_</code> and space without transliterating, so <code>Größe</code> becomes <code>gre</code>; <code>emptyToNull(&amp;$value)</code> also nulls <code>0</code>, <code>'0'</code>, <code>false</code>, <code>[]</code> and the string <code>null</code>. The global constants <code>TIMESPAN_DAY_n</code> hold n days in seconds (<code>TIMESPAN_DAY_1</code> is 86400) for n = 1, 2, 3, 7, 10, 14, 20, 21, 30, 60, 90, 180, 182 and 365; the <code>FILE_SIZE_*</code> constants are listed in <a href="../../forms/file-uploads/">File Uploads</a>.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;a title="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">e</span><span class="p">(</span><span class="nv">$opt</span><span class="p">[</span><span class="s2">"title"</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x">"&gt;</span>
 </code></pre></div>
@@ -3137,7 +3166,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

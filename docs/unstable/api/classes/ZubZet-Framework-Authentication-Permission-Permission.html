@@ -142,14 +142,16 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Check if the permission object (user or role) has all of the given permissions</dd>
+<dd>Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAnyOf">hasAccessAnyOf()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Check if the permission object (user or role) has one of the permissions</dd>
+<dd>Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_permissionsAdd">permissionsAdd()</a>
@@ -189,7 +191,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -238,11 +240,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Check if the permission object (user or role) has all of the given permissions</p>
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -285,11 +288,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Check if the permission object (user or role) has one of the permissions</p>
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>

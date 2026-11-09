@@ -119,22 +119,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">5</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Stateless double-submit-cookie CSRF defense: the server issues a
-`z_csrf` cookie, Z.js echoes it back as an `X-CSRF-Token` header, and
-non-GET requests must present both matching. A cross-origin attacker
-gets the cookie sent for them but cannot read it, so they cannot fill
-in the header.</p>
-
-    <section class="phpdocumentor-description"><p>The Router constructs the object to issue the token. Dispatch calls
-<code class="prettyprint">CSRF::verify()</code> before the middlewares and the action of a route run,
-unless the route or one of its groups opted out with <code class="prettyprint">withoutCsrf()</code>.</p>
-<p>The cookie is host-only on purpose, even under
-<code class="prettyprint">login_scope_allow_subdomains</code> - see docs/core-features/csrf-protection.</p>
-</section>
+        
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -149,88 +139,38 @@ unless the route or one of its groups opted out with <code class="prettyprint">w
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_COOKIE">COOKIE</a>
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_ALLOWED_SITES">ALLOWED_SITES</a>
     <span>
-        &nbsp;= &quot;z_csrf&quot;                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_FIELD">FIELD</a>
-    <span>
-        &nbsp;= &quot;_csrf&quot;                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_HEADER">HEADER</a>
-    <span>
-        &nbsp;= &quot;X-CSRF-Token&quot;                    </span>
+        &nbsp;= [
+    // Allow only requests from the same origin or without a browser (curl, Postman, etc.)
+    &quot;same-origin&quot; =&gt; [&quot;same-origin&quot;, &quot;none&quot;],
+    // Allow requests from the same origin, subdomains and without a browser
+    &quot;same-site&quot; =&gt; [&quot;same-origin&quot;, &quot;same-site&quot;, &quot;none&quot;],
+    // Allow every site, only csrf_blocked_origins still rejects
+    &quot;any&quot; =&gt; [&quot;same-origin&quot;, &quot;same-site&quot;, &quot;cross-site&quot;, &quot;none&quot;],
+]                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_BROWSER_AUTH_SCHEMES">BROWSER_AUTH_SCHEMES</a>
-    <span>
-        &nbsp;= [&quot;basic&quot;, &quot;digest&quot;, &quot;negotiate&quot;, &quot;ntlm&quot;]                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_LIFETIME">LIFETIME</a>
-    <span>
-        &nbsp;= 60 * 60 * 24 * 30                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE">SAFE</a>
+    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE_METHODS">SAFE_METHODS</a>
     <span>
         &nbsp;= [&quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;]                    </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SIMPLE_CONTENT_TYPES">SIMPLE_CONTENT_TYPES</a>
-    <span>
-        &nbsp;= [&quot;&quot;, &quot;application/x-www-form-urlencoded&quot;, &quot;multipart/form-data&quot;, &quot;text/plain&quot;]                    </span>
-</dt>
-<dd></dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#property_token">$token</a>
-    <span>
-                &nbsp;: string            </span>
-</dt>
-<dd>The token of this request, issued or reused by ensureToken().</dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#method___construct">__construct()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#method_field">field()</a>
-    <span>
-                        &nbsp;: string    </span>
-</dt>
-<dd>Hidden input for a raw HTML form, which cannot set the header. The
-Router has already issued the token for this request.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+                    <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Security-CSRF.html#method_verify">verify()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Checks the current request against the csrf_* settings.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Security-CSRF.html#method_ensureToken">ensureToken()</a>
+    <a href="classes/ZubZet-Framework-Security-CSRF.html#method_parseConfigList">parseConfigList()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd></dd>
 
@@ -244,83 +184,32 @@ Router has already issued the token for this request.</dd>
             Constants
             <a href="classes/ZubZet-Framework-Security-CSRF.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_COOKIE">
-        COOKIE
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_COOKIE" class="headerlink"><i class="fas fa-link"></i></a>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_ALLOWED_SITES">
+        ALLOWED_SITES
+        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_ALLOWED_SITES" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">COOKIE</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;z_csrf&quot;</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_FIELD">
-        FIELD
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_FIELD" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">23</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">FIELD</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;_csrf&quot;</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_HEADER">
-        HEADER
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_HEADER" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">22</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">HEADER</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;X-CSRF-Token&quot;</span>
+    <span class="phpdocumentor-signature__name">ALLOWED_SITES</span>
+    = <span class="phpdocumentor-signature__default-value">[
+    // Allow only requests from the same origin or without a browser (curl, Postman, etc.)
+    &quot;same-origin&quot; =&gt; [&quot;same-origin&quot;, &quot;none&quot;],
+    // Allow requests from the same origin, subdomains and without a browser
+    &quot;same-site&quot; =&gt; [&quot;same-origin&quot;, &quot;same-site&quot;, &quot;none&quot;],
+    // Allow every site, only csrf_blocked_origins still rejects
+    &quot;any&quot; =&gt; [&quot;same-origin&quot;, &quot;same-site&quot;, &quot;cross-site&quot;, &quot;none&quot;],
+]</span>
 </code>
 
 
@@ -332,15 +221,15 @@ Router has already issued the token for this request.</dd>
 
 </article>
                     <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_BROWSER_AUTH_SCHEMES">
-        BROWSER_AUTH_SCHEMES
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_BROWSER_AUTH_SCHEMES" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_SAFE_METHODS">
+        SAFE_METHODS
+        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE_METHODS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -348,65 +237,7 @@ Router has already issued the token for this request.</dd>
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">BROWSER_AUTH_SCHEMES</span>
-    = <span class="phpdocumentor-signature__default-value">[&quot;basic&quot;, &quot;digest&quot;, &quot;negotiate&quot;, &quot;ntlm&quot;]</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_LIFETIME">
-        LIFETIME
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_LIFETIME" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">LIFETIME</span>
-    = <span class="phpdocumentor-signature__default-value">60 * 60 * 24 * 30</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_SAFE">
-        SAFE
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">SAFE</span>
+    <span class="phpdocumentor-signature__name">SAFE_METHODS</span>
     = <span class="phpdocumentor-signature__default-value">[&quot;GET&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;]</span>
 </code>
 
@@ -418,151 +249,15 @@ Router has already issued the token for this request.</dd>
     
 
 </article>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_SIMPLE_CONTENT_TYPES">
-        SIMPLE_CONTENT_TYPES
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#constant_SIMPLE_CONTENT_TYPES" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">28</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">SIMPLE_CONTENT_TYPES</span>
-    = <span class="phpdocumentor-signature__default-value">[&quot;&quot;, &quot;application/x-www-form-urlencoded&quot;, &quot;multipart/form-data&quot;, &quot;text/plain&quot;]</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
             </section>
 
         
-    <section class="phpdocumentor-properties">
-        <h3 class="phpdocumentor-elements__header" id="properties">
-            Properties
-            <a href="classes/ZubZet-Framework-Security-CSRF.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-            -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_token">
-        $token
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#property_token" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">34</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The token of this request, issued or reused by ensureToken().</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$token</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
-
-    
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ZubZet-Framework-Security-CSRF.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_field">
-        field()
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#method_field" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">79</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Hidden input for a raw HTML form, which cannot set the header. The
-Router has already issued the token for this request.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">field</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -576,57 +271,84 @@ Router has already issued the token for this request.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Checks the current request against the csrf_* settings.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">verify</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">verify</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$additionalMethods</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$additionalMethods</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Methods to remove from the safe-method
+exemption for this call, e.g. &quot;GET&quot;, so they get CSRF-checked too</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Whether the request is verified</p>
+</section>
+
     
 </article>
                     <article
         class="phpdocumentor-element
             -method
             -private
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ensureToken">
-        ensureToken()
-        <a href="classes/ZubZet-Framework-Security-CSRF.html#method_ensureToken" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_parseConfigList">
+        parseConfigList()
+        <a href="classes/ZubZet-Framework-Security-CSRF.html#method_parseConfigList" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/CSRF.php"><a href="files/src-security-csrf.html"><abbr title="src/Security/CSRF.php">CSRF.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">ensureToken</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">parseConfigList</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
     
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The lowercase, trimmed and non-empty entries of a comma separated setting</p>
+</section>
+
     
 </article>
             </section>

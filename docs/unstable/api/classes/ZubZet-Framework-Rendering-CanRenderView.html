@@ -134,7 +134,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Shows a document to the user</dd>
+<dd>Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion">legacyOptExpansion()</a>
@@ -171,7 +171,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Shows a document to the user</p>
+        <p class="phpdocumentor-summary">Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -194,7 +194,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Associative array with values to replace in the view</p>
+                    <section class="phpdocumentor-description"><p>Associative array with values to replace in the view; response, request, user, root, host, absRoot and title are added to it as $opt in the view</p>
 </section>
 
             </dd>

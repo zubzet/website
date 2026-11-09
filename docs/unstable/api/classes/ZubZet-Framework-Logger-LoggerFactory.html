@@ -296,7 +296,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getOrCreateLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Logger-Logger.html"><abbr title="\ZubZet\Framework\Logger\Logger">Logger</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"><p>This uses the configuration settings to determine the type and level of the logger, and caches it for future use.</p>
+        <section class="phpdocumentor-description"><p>The handler comes from the config keys logger_type, logger_level and logger_stream_url; if logger_enabled is false, the logger gets a NullHandler that discards everything. The logger is cached for future use.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -322,9 +322,9 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>if the logger type is invalid</p>
+                                                 <section class="phpdocumentor-description"><p>if logger_type is neither &quot;database&quot; nor &quot;stream&quot;</p>
 </section>
 
                                     </dd>

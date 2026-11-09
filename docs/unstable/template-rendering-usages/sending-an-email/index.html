@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2724,6 +2724,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bundled-mail-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundled mail views
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bundled mail views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#example-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2731,6 +2743,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2772,10 +2789,19 @@
 
 <h1 id="sending-an-email">Sending an email<a class="headerlink" href="#sending-an-email" title="Permanent link">&para;</a></h1>
 <p>To <a href="../../guides/email/">send an email</a> there are two methods in <a href="../../api/classes/ZubZet-Framework-Message-Response.html">response</a> called <code>sendEmail()</code> and <code>sendEmailToUser()</code>.</p>
-<p><code>$subject</code> can be an array to serve subjects for multiple languages.
+<p><code>$subject</code> can be an array keyed by language (keys are lowercased) to serve subjects for multiple languages. The entry of <code>$lang</code> is used, falling back to <code>en</code>, so an <code>en</code> entry is required.
 <code>$document</code> is the path to a <a href="../../core-features/views/">view</a>. Any view can be used as a mail. But it is wise to create extra ones, because script stuff won't work. Be careful not to leak data that only the requested account has access to.
-<code>$opt</code> are parameters to pass into the view. </p>
-<p>This method uses <code>render()</code> internally.</p>
+<code>$opt</code> are parameters to pass into the view. There, <code>$opt["overwrite_lang"]</code> holds the lowercased <code>$lang</code> (<code>null</code> becomes <code>en</code>), <code>$opt["application_root"]</code> the host plus root folder for absolute links, and <code>$opt["user"]</code> the user of the current request, not the recipient.</p>
+<p>This method uses <code>render()</code> internally. <code>render()</code> does not throw for a missing <code>$document</code> or layout: it catches the view-not-found error and renders the framework's <code>500</code> view in <code>layout/min_layout</code> instead, so the mail is still sent with the error page as its body. Check the view name, especially for views you ship yourself.</p>
+<p><code>sendEmail()</code> sends synchronously to a single recipient (no CC, BCC, reply-to, queue or retry) and returns <code>true</code> after sending. The body goes out as UTF-8 HTML with a plain-text alternative made by stripping its tags. If PHPMailer fails (SMTP unreachable, rejected login), it echoes <code>Message could not be sent. Mailer Error: ...</code> into the response output and returns <code>false</code>; nothing is logged. The default <code>$layout</code> is <code>email</code>, which resolves to <code>layout/email_layout</code> (<code>mail</code>, <code>mail_layout</code> and <code>layout/mail_layout.php</code> all name the same layout); the framework only ships <code>layout/mail_layout</code>, so create <code>email_layout</code> yourself or pass another layout.</p>
+<h2 id="bundled-mail-views">Bundled mail views<a class="headerlink" href="#bundled-mail-views" title="Permanent link">&para;</a></h2>
+<p>The framework ships three mail views, each a <code>.blade.php</code> file that a view of the same name in your <code>z_views</code> directory replaces:</p>
+<ul>
+<li><code>email_verify</code> is sent when someone signs up or asks for a new verification link. It expects the option <code>url</code>. The subject is <code>&lt;pageName&gt; - Sign Up</code> and the <code>pageName</code> setting must exist in the <a href="../../core-features/configuration/">booter settings</a>: the framework reads it with <code>getBooterSettings("pageName", "")</code>, whose second argument is <code>$useDefault</code>, and the empty string counts as false, so a missing key throws an <code>InvalidArgumentException</code> instead of falling back to an empty prefix.</li>
+<li><code>email_password_reset</code> is sent by the forgot-password flow. It expects the option <code>reset_link</code>.</li>
+<li><code>email_too_many_logins</code> expects the options <code>date</code> and <code>ip</code>. <code>$req-&gt;ip()</code> can be spoofed with a request header and the view prints it unescaped, validate it first. The framework no longer sends it itself, see <a href="../../setup/upgrade/1.2.0-to-1.3.0/#6-send-the-login-warning-yourself-if-you-relied-on-it">Send the login warning yourself</a>.</li>
+</ul>
+<p>A mail view you add yourself should not reuse these names unless it is meant to replace the bundled one. All three are written in Blade and extend <code>$layout</code>.</p>
 <p>For this feature to work a mail address needs to be configured in the <a href="../../core-features/configuration/">booter settings</a> and a SMTP service needs to be available. PHP need to be setup correctly too.</p>
 <p>Example code for sending a mail:
 <div class="highlight"><pre><span></span><code><span class="x">public function action_register(Request $req, Response $res) {</span>
@@ -2816,7 +2842,7 @@
 &lt;/html&gt;
 </code></pre></div>
 <h2 id="send-to-registered-users">Send to registered users<a class="headerlink" href="#send-to-registered-users" title="Permanent link">&para;</a></h2>
-<p><code>sendEmailToUser()</code> sends a mail to an user identified by its user id. The mail address and language are fetched from the database, so less information is needed.</p>
+<p><code>sendEmailToUser()</code> sends a mail to an user identified by its user id. The mail address and language are fetched from the database, so less information is needed; if the <code>z_language</code> row of <code>z_user.languageId</code> has no value, the <code>anonymous_language</code> setting (no default) is used, and <code>en</code> if that is unset too. It returns the result of <code>sendEmail()</code>, and its default layout is the bundled <code>layout/mail_layout</code>, which only prints the view's content. It throws an <code>Exception</code> if the user does not exist or has no email address.</p>
 <p>Exmaple: 
 <div class="highlight"><pre><span></span><code><span class="x">$res-&gt;sendEmailToUser(</span>
 <span class="x">    1,                                                             // User ID</span>
@@ -2909,7 +2935,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

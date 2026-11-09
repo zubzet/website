@@ -213,9 +213,9 @@ This will insert the user into the database and return the created user object</
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all">all()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role)</dd>
+<dd>Get a list of all active objects of the calling class (user, role, session, organization, API key)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_buildPermissionVariants">buildPermissionVariants()</a>
@@ -255,9 +255,9 @@ This will insert the user into the database and return the created user object</
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId">byId()</a>
     <span>
-                        &nbsp;: object|null    </span>
+                        &nbsp;: static|null    </span>
 </dt>
-<dd>Get a permission object (user or role) by its id</dd>
+<dd>Get an object (user, role, session, organization or API key) by its id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier">byIdentifier()</a>
@@ -276,9 +276,10 @@ This will insert the user into the database and return the created user object</
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds">byIds()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role) by their ids</dd>
+<dd>Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_byNotVerified">byNotVerified()</a>
@@ -299,7 +300,7 @@ This will insert the user into the database and return the created user object</
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>&gt;    </span>
 </dt>
-<dd>Get a list of users by a specific role</dd>
+<dd>Get a list of users by a specific role, including members of organizations holding it</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuid">byUuid()</a>
@@ -389,7 +390,7 @@ proves the secret reached the authenticator and was not lost in the page.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getPermissions">getPermissions()</a>
     <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Get the user&#039;s permissions including those inherited from roles</dd>
 
@@ -403,7 +404,7 @@ proves the secret reached the authenticator and was not lost in the page.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getUserPermissions">getUserPermissions()</a>
     <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Get the user&#039;s permissions</dd>
 
@@ -413,7 +414,7 @@ proves the secret reached the authenticator and was not lost in the page.</dd>
                         &nbsp;: void    </span>
 </dt>
 <dd>Add Groups to the user
-This will add the groups automatically into the database</dd>
+This will add the groups automatically into the database and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsRemove">groupsRemove()</a>
@@ -421,21 +422,23 @@ This will add the groups automatically into the database</dd>
                         &nbsp;: void    </span>
 </dt>
 <dd>Remove groups from the user
-This will remove the groups automatically from the database</dd>
+This will remove the groups automatically from the database and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAll">hasAccessAll()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Check if the permission object (user or role) has all of the given permissions</dd>
+<dd>Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAnyOf">hasAccessAnyOf()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Check if the permission object (user or role) has one of the permissions</dd>
+<dd>Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_hasTwoFactor">hasTwoFactor()</a>
@@ -512,35 +515,36 @@ This will remove the groups automatically from the database</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Refresh the current permission object (user or role) by clearing all its fields and setting them new</dd>
+<dd>Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_refreshAllPermissions">refreshAllPermissions()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Reset the permissions cache</dd>
+<dd>Reload the user&#039;s direct and role-inherited permissions into the cache</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_refreshPermissions">refreshPermissions()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Reset the permissions cache</dd>
+<dd>Reload the user&#039;s directly assigned permissions (not role-inherited ones) into the cache</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_remove">remove()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Deactivate this user</dd>
+<dd>Deactivate this user
+The instance is detached afterwards, so every later call on it throws InvalidArgumentException</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_rolesAdd">rolesAdd()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Add roles to the user
+<dd>Add roles to the user and clear all cached fields, so getters throw until refresh()
 This will add the roles automatically into the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -548,7 +552,7 @@ This will add the roles automatically into the database</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Remove roles from the user
+<dd>Remove roles from the user and clear all cached fields, so getters throw until refresh()
 This will remove the roles automatically from the database</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -571,7 +575,7 @@ This will remove the roles automatically from the database</dd>
                         &nbsp;: void    </span>
 </dt>
 <dd>Update the email address of the user
-This will update the email in the database</dd>
+This will update the email in the database and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_updateOrganization">updateOrganization()</a>
@@ -586,7 +590,8 @@ This will update the email in the database</dd>
                         &nbsp;: void    </span>
 </dt>
 <dd>Update the password of the user
-This will update the password in the database</dd>
+This will update the password in the database, clear all sessions of the user
+and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid">uuid()</a>
@@ -607,7 +612,8 @@ This will update the password in the database</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Verify the User</dd>
+<dd>Verify the User
+This will write the verified timestamp to the database and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_verifyPassword">verifyPassword()</a>
@@ -967,7 +973,7 @@ This will insert the user into the database and return the created user object</
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\DateTime">DateTime</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$verified</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\DateTime">DateTime</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$verified</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Permission-User.html"><abbr title="\ZubZet\Framework\Authentication\Permission\User">User</abbr></a>|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -984,7 +990,7 @@ This will insert the user into the database and return the created user object</
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$password</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Optional the password of the new user (plain text, will be hashed)</p>
 </section>
@@ -1013,7 +1019,7 @@ This will insert the user into the database and return the created user object</
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the email is invalid or already used by another user</p>
+                                                 <section class="phpdocumentor-description"><p>If the email is invalid or already used by another user, or the password is shorter than 3 or longer than 1024 bytes</p>
 </section>
 
                                     </dd>
@@ -1044,20 +1050,22 @@ This will insert the user into the database and return the created user object</
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role)</p>
+        <p class="phpdocumentor-summary">Get a list of all active objects of the calling class (user, role, session, organization, API key)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The list of active objects</p>
+</section>
+
     
 </article>
                     <article
@@ -1073,7 +1081,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -1305,11 +1313,11 @@ This will insert the user into the database and return the created user object</
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a permission object (user or role) by its id</p>
+        <p class="phpdocumentor-summary">Get an object (user, role, session, organization or API key) by its id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1328,9 +1336,9 @@ This will insert the user into the database and return the created user object</
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">object|null</span>
+    <span class="phpdocumentor-signature__response_type">static|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>the permission object if found, null otherwise</p>
+            <section class="phpdocumentor-description"><p>the object if found, null if the id is unknown or inactive</p>
 </section>
 
     
@@ -1460,15 +1468,16 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role) by their ids</p>
+        <p class="phpdocumentor-summary">Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1487,9 +1496,9 @@ This will insert the user into the database and return the created user object</
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The list of permission objects</p>
+            <section class="phpdocumentor-description"><p>the objects that were found</p>
 </section>
 
     
@@ -1602,7 +1611,7 @@ This will insert the user into the database and return the created user object</
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of users by a specific role</p>
+        <p class="phpdocumentor-summary">Get a list of users by a specific role, including members of organizations holding it</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1645,7 +1654,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1692,7 +1701,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -1772,7 +1781,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">231</span>
 
     </aside>
 
@@ -1838,7 +1847,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 
     </aside>
 
@@ -1871,7 +1880,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">559</span>
+    <span class="phpdocumentor-element-found-in__line">567</span>
 
     </aside>
 
@@ -1919,7 +1928,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">582</span>
 
     </aside>
 
@@ -1952,7 +1961,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">376</span>
 
     </aside>
 
@@ -2064,7 +2073,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">436</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 
     </aside>
 
@@ -2099,7 +2108,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">459</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 
     </aside>
 
@@ -2107,18 +2116,16 @@ proves the secret reached the authenticator and was not lost in the page.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Array of permissions</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -2134,7 +2141,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
@@ -2169,7 +2176,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">448</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -2177,18 +2184,16 @@ proves the secret reached the authenticator and was not lost in the page.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getUserPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getUserPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Array of permissions</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -2204,12 +2209,12 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Add Groups to the user
-This will add the groups automatically into the database</p>
+This will add the groups automatically into the database and clear all cached fields, so getters throw until refresh()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2250,12 +2255,12 @@ This will add the groups automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">352</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Remove groups from the user
-This will remove the groups automatically from the database</p>
+This will remove the groups automatically from the database and clear all cached fields, so getters throw until refresh()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2296,11 +2301,12 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Check if the permission object (user or role) has all of the given permissions</p>
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has all of the given permissions,
+wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;) and a user&#039;s permissions include those inherited from its roles</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2343,11 +2349,12 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/Permission.php"><a href="files/src-authentication-permission-permission.html"><abbr title="src/Authentication/Permission/Permission.php">Permission.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Check if the permission object (user or role) has one of the permissions</p>
+        <p class="phpdocumentor-summary">Check if the permission object (user or role) has one of the permissions, wildcards included
+(&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;); a user&#039;s role-inherited permissions count too</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2390,7 +2397,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">490</span>
+    <span class="phpdocumentor-element-found-in__line">498</span>
 
     </aside>
 
@@ -2458,7 +2465,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 
     </aside>
 
@@ -2502,7 +2509,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
@@ -2520,7 +2527,7 @@ This will remove the groups automatically from the database</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;NOW&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>When to check verification status (default: &quot;NOW&quot;)</p>
+                    <section class="phpdocumentor-description"><p>&quot;NOW&quot; or any strtotime()-parseable datetime string (e.g. &quot;2024-05-01 12:00:00&quot;) to check verification status at; unparsable values yield false (default: &quot;NOW&quot;)</p>
 </section>
 
             </dd>
@@ -2627,7 +2634,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -2750,7 +2757,7 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 
@@ -2783,11 +2790,11 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/HandleTrait.php"><a href="files/src-authentication-handletrait.html"><abbr title="src/Authentication/HandleTrait.php">HandleTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Refresh the current permission object (user or role) by clearing all its fields and setting them new</p>
+        <p class="phpdocumentor-summary">Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2805,9 +2812,19 @@ This will remove the groups automatically from the database</p>
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If this instance was already detached</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\RuntimeException">RuntimeException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the object no longer exists</p>
+                                                 <section class="phpdocumentor-description"><p>If the object no longer exists (its fields are already cleared by then)</p>
 </section>
 
                                     </dd>
@@ -2832,11 +2849,11 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">479</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Reset the permissions cache</p>
+        <p class="phpdocumentor-summary">Reload the user&#039;s direct and role-inherited permissions into the cache</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2865,11 +2882,11 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">478</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Reset the permissions cache</p>
+        <p class="phpdocumentor-summary">Reload the user&#039;s directly assigned permissions (not role-inherited ones) into the cache</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2898,11 +2915,12 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Deactivate this user</p>
+        <p class="phpdocumentor-summary">Deactivate this user
+The instance is detached afterwards, so every later call on it throws InvalidArgumentException</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2931,11 +2949,11 @@ This will remove the groups automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add roles to the user
+        <p class="phpdocumentor-summary">Add roles to the user and clear all cached fields, so getters throw until refresh()
 This will add the roles automatically into the database</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -2977,11 +2995,11 @@ This will add the roles automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Remove roles from the user
+        <p class="phpdocumentor-summary">Remove roles from the user and clear all cached fields, so getters throw until refresh()
 This will remove the roles automatically from the database</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -3023,7 +3041,7 @@ This will remove the roles automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">518</span>
 
     </aside>
 
@@ -3061,7 +3079,7 @@ shapes an authenticator takes it in.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 
     </aside>
 
@@ -3101,21 +3119,21 @@ shapes an authenticator takes it in.</p>
     </aside>
 
         <p class="phpdocumentor-summary">Update the email address of the user
-This will update the email in the database</p>
+This will update the email in the database and clear all cached fields, so getters throw until refresh()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">updateEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">updateEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$email</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The new email address</p>
+                    <section class="phpdocumentor-description"><p>The new email address, null clears the email</p>
 </section>
 
             </dd>
@@ -3158,7 +3176,7 @@ This will update the email in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -3202,12 +3220,13 @@ This will update the email in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Update the password of the user
-This will update the password in the database</p>
+This will update the password in the database, clear all sessions of the user
+and clear all cached fields, so getters throw until refresh()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3228,6 +3247,22 @@ This will update the password in the database</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the password is shorter than 3 or longer than 1024 bytes</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
@@ -3281,7 +3316,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">395</span>
+    <span class="phpdocumentor-element-found-in__line">403</span>
 
     </aside>
 
@@ -3316,11 +3351,12 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">284</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Verify the User</p>
+        <p class="phpdocumentor-summary">Verify the User
+This will write the verified timestamp to the database and clear all cached fields, so getters throw until refresh()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3361,7 +3397,7 @@ This will update the password in the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
     </aside>
 
@@ -3373,7 +3409,8 @@ stale (rehash-on-login / onion peel). Self-healing.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">verifyPassword</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"><p>This is the password-check entry point for logging a user in.</p>
+        <section class="phpdocumentor-description"><p>This is the password-check entry point for logging a user in.
+Only the database is upgraded; this instance's cached password, scheme and salt fields stay stale.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -3390,6 +3427,22 @@ stale (rehash-on-login / onion peel). Self-healing.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>when a legacy/onion row has no salt.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -3412,7 +3465,7 @@ stale (rehash-on-login / onion peel). Self-healing.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">537</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 
     </aside>
 

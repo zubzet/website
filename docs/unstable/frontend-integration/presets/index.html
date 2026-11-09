@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2792,7 +2792,8 @@
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 For this to work, three elements are needed. One error output label for reporting to the user if the login failed, and two inputs. The labels are technically not needed here as well as the button.</p>
-<p>To trigger the login action there is the function <code>Z.Presets.Login</code>. It takes the ids of the DOM elements as inputs.</p>
+<p>To trigger the login action there is the function <code>Z.Presets.Login</code>. It takes the ids of the DOM elements as inputs, posts <code>name</code> and <code>password</code> with <code>action=login</code> to <code>login</code>, reloads the page on success (or goes to <code>redirect</code>) and inserts any other server message into the error label as HTML. The bundled <code>login</code> answers an unknown email and a wrong password alike with <code>Username or password is wrong</code> (shown as <code>Z.Lang.error_login</code>; only a wrong password records a try), points an unverified account to <code>login/verify</code> before the password is checked, and rejects a locked account with <code>Too many login tries. Try again later.</code> before checking it, so even a correct password fails while locked; the preset shows <code>Z.Lang.error_too_many_login_tries</code> instead of that message. A success clears no tries and ends no other session. Its pages (<code>login</code>, <code>login_signup</code>, <code>login_forgotpassword</code>, <code>login_reset</code>, <code>login_verify</code>, <code>login_verify_wait</code>) are Blade views in <code>layout/min_layout</code> with fixed English texts (for example <code>Sign in</code>, <code>Send me an email</code>, <code>To the login</code>), replaced by a view of the same name in your project.</p>
+<p><code>Z.Presets.ForgotPassword(unameemailElementId, errorLabel, redirect)</code> posts <code>unameemail</code> to <code>login/forgot_password</code> and on any failure shows <code>Z.Lang.error_password_reset</code>, so the answer reveals whether the account exists. The presets show the element with id <code>loading</code> (hidden by default, styled by <code>_zubzet/asset-proxy/css/loadCircle.css</code>) while their request runs.</p>
 <p>Optionally a fourth argument can be passed into the login function that gives the url to redirect to after a successfull login. This parameter should be absolute. Example:
 <div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"button-login"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Z</span><span class="p">.</span><span class="nx">Presets</span><span class="p">.</span><span class="nx">Login</span><span class="p">(</span><span class="s2">"input-username"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input-password"</span><span class="p">,</span><span class="w"> </span><span class="s2">"login-error-label"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;?php echo $opt["</span><span class="nx">root</span><span class="s2">"]; ?&gt;"</span><span class="p">);</span>
@@ -2819,7 +2820,8 @@ For this to work, three elements are needed. One error output label for reportin
 <span class="w">    </span><span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-Here the important method is <code>Z.Presets.Signup</code>. It works similar to login.</p>
+Here the important method is <code>Z.Presets.Signup</code>. It works similar to login (the message <code>This email is not allowed!</code> is shown as <code>Z.Lang.error_invalid_email</code>) and posts <code>email</code> and <code>password</code>, merged with the optional <code>additionalData</code> object (for example <code>{userRoleType: "Secondary"}</code>), with <code>action=signup</code> to <code>login/signup</code>. With <code>alertErrors</code> errors are also shown in an <code>alert()</code> (a password mismatch only there), and a hidden error label is not made visible.</p>
+<p>The bundled <code>login/signup</code> action is open to anyone who can reach it and cannot be switched off with a setting. It has no CAPTCHA and no rate limit: every post with <code>action=signup</code>, an unused <code>email</code> and a <code>password</code> of 3 to 64 characters creates an account, assigns the role from <code>registerRoleId</code> (or <code>registerRoleIdSecondary</code> for the POST field <code>userRoleType=Secondary</code>; skipped when empty or not numeric) and sends a verification mail. Any validation failure answers <code>This email is not allowed!</code>, the new user is not logged in and the result of sending the mail is ignored. A verification link (<code>login/verify/&lt;token&gt;</code>, <code>v_</code> plus 64 random hex characters, stored in <code>z_email_verify</code> with its <code>end</code>) is valid for one day, opening it again re-stamps <code>verified</code>, and a post with <code>email</code> resends it and renders the same page whether or not the address exists. If the app should not allow public registration, or needs protection against automated signups, override the <code>login</code> controller in your own project or restrict the route yourself.</p>
 
 
 
@@ -2903,7 +2905,7 @@ Here the important method is <code>Z.Presets.Signup</code>. It works similar to 
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

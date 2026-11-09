@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2827,7 +2827,9 @@ package-bundled assets no longer have to be copied into every project.</p>
 first registered source that contains it.</p>
 <h2 id="referencing-assets-in-views">Referencing assets in views<a class="headerlink" href="#referencing-assets-in-views" title="Permanent link">&para;</a></h2>
 <p>Use the <code>generateResourceLink</code> helper available on every <a href="../views/">view's</a> <code>$opt</code> array — it builds a correct,
-root-relative URL for you:</p>
+root-relative URL for you, versioned with <code>?v=&lt;assetVersion&gt;</code>. The proxy lets a link carrying the configured
+<code>assetVersion</code> (not <code>dev</code>) be cached for a year as <code>immutable</code>, any other link only with revalidation through
+its <code>ETag</code>, answered with <code>304</code> while the file is unchanged; change <code>assetVersion</code> with every asset change, a framework or module update included:</p>
 <div class="highlight"><pre><span></span><code>@extends($layout)
 
 @section("head")
@@ -2839,6 +2841,7 @@ root-relative URL for you:</p>
     &lt;script src="&lt;?php $opt["generateResourceLink"]("_zubzet/asset-proxy/js/jquery.min.js"); ?&gt;"&gt;&lt;/script&gt;
 @endsection
 </code></pre></div>
+<p>The link ends in <code>?v=&lt;assetVersion&gt;</code>, the only cache busting there is.</p>
 <h2 id="bundled-assets">Bundled assets<a class="headerlink" href="#bundled-assets" title="Permanent link">&para;</a></h2>
 <p>The framework registers these sources automatically at bootstrap, so they work out of the box:</p>
 <table>
@@ -2876,7 +2879,7 @@ packages — no files are copied into your project.</p>
 </code></pre></div>
 <p>The file <code>dist/app.css</code> is then available at <code>/_zubzet/asset-proxy/ui-kit/app.css</code>. Registration is
 lazy — the directory is only touched when a matching request arrives. Sources are checked in
-registration order, and the first match wins.</p>
+registration order, and the first match wins. For an installed Composer package, <code>(new BundledPackage("acme/ui-kit", "dist", "ui-kit"))-&gt;mount(zubzet()-&gt;assetProxy)</code> resolves the path for you.</p>
 <h2 id="module-assets-and-resolution-order">Module assets and resolution order<a class="headerlink" href="#module-assets-and-resolution-order" title="Permanent link">&para;</a></h2>
 <p>Installed <a href="../../advanced-features/modules/">modules</a> contribute their <code>webroot/</code> directories as
 sources automatically. The full chain is checked in this order, first match wins:</p>
@@ -2896,6 +2899,7 @@ this chain: the web server serves it directly, before PHP runs, so it always win
   result stays within the registered source directory, so <code>../</code> sequences and symlink escapes cannot
   reach files outside the mount.</li>
 <li><strong>Only readable, existing files are served</strong>; anything else returns <code>404</code>.</li>
+<li><strong>There is no allow-list and no access check.</strong> Everything else readable below a mounted source is served to anyone via <code>GET</code>, including dotfiles and the <code>composer.json</code> of mounted packages.</li>
 <li><strong>Source and config extensions are never served.</strong> Requests for <code>.php</code>, <code>.phtml</code>, or <code>.ini</code>
   files return <code>404</code> from every source, including ones you register yourself.</li>
 <li><strong><a href="https://github.com/thephpleague/mime-type-detection">Content types are detected</a></strong> with <code>league/mime-type-detection</code>, falling back to
@@ -2984,7 +2988,7 @@ this chain: the web server serves it directly, before PHP runs, so it always win
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

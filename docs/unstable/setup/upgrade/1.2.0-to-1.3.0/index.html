@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2857,6 +2857,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#requests-from-other-sites-are-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requests from other sites are rejected
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2958,10 +2969,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-check-forms-and-scripts-that-post-to-the-framework" class="md-nav__link">
+  <a href="#7-allow-the-sites-that-send-requests-to-your-application" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Check forms and scripts that post to the framework
+        7. Allow the sites that send requests to your application
       
     </span>
   </a>
@@ -2980,10 +2991,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#9-post-to-zlogin_asid" class="md-nav__link">
+  <a href="#9-set-encryption_key-if-you-use-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Post to z/login_as/{id}
+        9. Set encryption_key if you use secrets
       
     </span>
   </a>
@@ -2991,10 +3002,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#10-set-encryption_key-if-you-use-secrets" class="md-nav__link">
+  <a href="#10-if-requests-fail-with-illegal-mix-of-collations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Set encryption_key if you use secrets
+        10. If requests fail with "Illegal mix of collations"
       
     </span>
   </a>
@@ -3002,10 +3013,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#11-if-requests-fail-with-illegal-mix-of-collations" class="md-nav__link">
+  <a href="#11-protect-other-upload-folders-in-the-webroot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. If requests fail with "Illegal mix of collations"
+        11. Protect other upload folders in the webroot
       
     </span>
   </a>
@@ -3013,10 +3024,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-protect-other-upload-folders-in-the-webroot" class="md-nav__link">
+  <a href="#13-check-code-that-reads-session-tokens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Protect other upload folders in the webroot
+        13. Check code that reads session tokens
       
     </span>
   </a>
@@ -3148,6 +3159,11 @@ applies it for you:</p>
 </code></pre></div>
 <p>Plain PHP still works inside a <code>.blade.php</code> file, so raw <code>&lt;?php ?&gt;</code> blocks in your views keep running
 unchanged. See the <a href="../../../core-features/views/">Views documentation</a> for the full picture.</p>
+<h3 id="requests-from-other-sites-are-rejected">Requests from other sites are rejected<a class="headerlink" href="#requests-from-other-sites-are-rejected" title="Permanent link">&para;</a></h3>
+<p>Every request that can change state (<code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, ...) is checked for CSRF by
+the headers the browser sets. A form or <code>fetch()</code> call from a site that is not allowed is answered
+with <code>403</code> until its origin is listed. <code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> are not checked, so links,
+redirects and callbacks keep working. See <a href="#7-allow-the-sites-that-send-requests-to-your-application">step 7</a>.</p>
 <h2 id="upgrade-steps">Upgrade Steps<a class="headerlink" href="#upgrade-steps" title="Permanent link">&para;</a></h2>
 <p>Follow these steps to upgrade your project to <strong>v1.3.0</strong>.</p>
 <hr />
@@ -3161,18 +3177,17 @@ the container:</p>
 <h3 id="2-automated-migration-recommended">2. Automated migration (recommended)<a class="headerlink" href="#2-automated-migration-recommended" title="Permanent link">&para;</a></h3>
 <p>The <strong>ZubZet Version Migrator</strong> converts every view and layout in your project automatically.</p>
 <ol>
-<li>Clone the tool: <a href="https://github.com/zubzet/version-migration">zubzet/version-migration</a></li>
+<li>Get the tool: it lives in the <code>migrator/</code> folder of the <a href="https://github.com/zubzet/framework">zubzet/framework</a> repository; run <code>composer install</code> there</li>
 <li>Preview the changes with a dry run, then apply them:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.3.0<span class="w"> </span>--dry
 php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.3.0
 </code></pre></div>
-<p>The migrator bumps the framework dependency and rewrites every <code>return [...]</code> view and layout to Blade
+<p>The migrator bumps the framework dependency, adds the new <code>z_settings.ini</code> keys and rewrites every <code>return [...]</code> view and layout to Blade
 (<code>.blade.php</code>), including the section, <code>@extends</code> and essentials-component changes above. It also
-adds the CSRF field to raw post forms (see <a href="#7-check-forms-and-scripts-that-post-to-the-framework">step 7</a>)
-and removes app-local copies of <code>Z.js</code>, which predate the CSRF header, and adds a <code>.htaccess</code> to
-<code>webroot/uploads/</code> (see <a href="#12-protect-other-upload-folders-in-the-webroot">step 12</a>). Review each
-prompted change before accepting it.</p>
+removes app-local copies of <code>Z.js</code>, since the framework serves the current one itself, and adds a
+<code>.htaccess</code> to <code>webroot/uploads/</code> (see <a href="#11-protect-other-upload-folders-in-the-webroot">step 11</a>).
+Review each prompted change before accepting it.</p>
 <hr />
 <h3 id="3-review-your-migrated-views">3. Review your migrated views<a class="headerlink" href="#3-review-your-migrated-views" title="Permanent link">&para;</a></h3>
 <p>The conversion is output preserving, but it is worth skimming the result. Views that already used raw
@@ -3209,7 +3224,7 @@ than guessed at. Once you are comfortable with Blade, you can gradually adopt di
 </tr>
 <tr>
 <td><code>2026-09-08_uuid.sql</code></td>
-<td>Adds the <code>NOT NULL</code>, unique <code>uuid</code> column (native <code>UUID</code> type) to <code>z_user</code>, <code>z_role</code>, <code>z_organization</code>, <code>z_logintoken</code> and <code>z_file</code>.</td>
+<td>Adds the <code>NOT NULL</code>, indexed <code>uuid</code> column (native <code>UUID</code> type) to <code>z_user</code>, <code>z_role</code>, <code>z_organization</code>, <code>z_logintoken</code> and <code>z_file</code>.</td>
 </tr>
 <tr>
 <td><code>2026-09-09_session-expires-at.sql</code></td>
@@ -3238,6 +3253,10 @@ than guessed at. Once you are comfortable with Blade, you can gradually adopt di
 <tr>
 <td><code>2026-10-02_session-token-index.sql</code></td>
 <td>Adds a unique index on <code>z_logintoken.token</code>, so the session lookup no longer scans the table.</td>
+</tr>
+<tr>
+<td><code>2026-11-09_organization-permissions.sql</code></td>
+<td>Creates <code>z_organization_permission</code> and <code>z_organization_role</code>, which every permission check reads.</td>
 </tr>
 </tbody>
 </table>
@@ -3382,37 +3401,57 @@ needed, but the framework no longer calls them. To keep the warning, send it whe
 <span class="x">    ]);</span>
 <span class="x">}</span>
 </code></pre></div>
-<p><code>$req-&gt;ip()</code> prefers the <code>HTTP_CLIENT_IP</code> and <code>X-Forwarded-For</code> headers, which the client controls,
-and the view prints it unescaped. Validate it with <code>filter_var($ip, FILTER_VALIDATE_IP)</code> before it
-goes into the mail, otherwise an attacker can put HTML into a security mail to the account owner.
+<p><code>$req-&gt;ip()</code> returns the first value that is set out of <code>HTTP_CLIENT_IP</code>, <code>HTTP_X_FORWARDED_FOR</code> and
+<code>REMOTE_ADDR</code>, so <code>REMOTE_ADDR</code>, the only address the client cannot choose, is used only when
+neither header is present. The framework does not strip these headers and does not know a list of
+trusted proxies, so any client can send them and the address is spoofable. <code>X-Forwarded-For</code> may
+also hold a comma separated chain. The same value ends up in <code>ip_creation</code> of sessions and two
+factor challenges and in <code>ip_last</code> of sessions. The view prints it unescaped. Validate it with
+<code>filter_var($ip, FILTER_VALIDATE_IP)</code> before it goes into the mail, otherwise an attacker can put
+HTML into a security mail to the account owner, and do not use it as proof of where a login came
+from unless your proxy overwrites both headers.
 <code>checkLoginTries()</code> returns <code>false</code> on every blocked attempt, so the example sends one mail per
 attempt. Throttle it, the removed code sent at most one mail per 10 minutes.</p>
 <hr />
-<h3 id="7-check-forms-and-scripts-that-post-to-the-framework">7. Check forms and scripts that post to the framework<a class="headerlink" href="#7-check-forms-and-scripts-that-post-to-the-framework" title="Permanent link">&para;</a></h3>
-<p>Every request other than <code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> that a browser could send cross-site now has to
-return the <code>z_csrf</code> cookie as an <code>X-CSRF-Token</code> header or a <code>_csrf</code> form field, otherwise it is
-answered with <code>403</code> and <code>csrf token mismatch</code>. <code>Z.Forms</code> and <code>Z.Request</code> attach the header
-themselves. Look for everything else:</p>
+<h3 id="7-allow-the-sites-that-send-requests-to-your-application">7. Allow the sites that send requests to your application<a class="headerlink" href="#7-allow-the-sites-that-send-requests-to-your-application" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Requests from other sites are answered with 403</p>
+<p>Every request but <code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> is now checked against Cross-Site Request
+Forgery. A form post or <code>fetch()</code> call that a page of another site starts is rejected with
+<code>403</code> unless that site is allowed. Check every endpoint that is called from outside before
+you deploy, and every action that changes state on a <code>GET</code>.</p>
+</div>
+<p>The check judges a request by the headers the browser sets (<code>Sec-Fetch-Site</code>, <code>Origin</code>), with no token, cookie or form field, so forms, <code>Z.Forms</code>, <code>Z.Request</code> and your own
+<code>fetch()</code> calls keep working unchanged. A request with neither header (curl, servers, webhooks)
+passes, and one with an <code>Origin</code> but no <code>Sec-Fetch-Site</code> (old browsers, plain <code>http://</code>) only meets
+<code>csrf_blocked_origins</code>. A checked request whose page hides its <code>Origin</code> (<code>no-referrer</code>, a sandboxed
+iframe) passes only from the application's own origin.
+What is rejected now:</p>
 <ul>
-<li>A raw <code>&lt;form method="post"&gt;</code> has to embed the token. The migrator adds it to the forms in your
-  views, check the ones it reports and forms built elsewhere:</li>
+<li>Form posts from other sites, among them OAuth and SAML callbacks by <code>form_post</code> and payment
+  returns that post back.</li>
+<li>Pages of your own on other hosts or subdomains that post to the application.</li>
+<li><code>fetch()</code> calls from other origins that change state; their CORS preflight passes.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>&lt;form method="post"&gt;
-    {!! \ZubZet\Framework\Security\CSRF::field() !!}
+<p>Links, redirects, embedded images and every other <code>GET</code>, <code>HEAD</code> or <code>OPTIONS</code> pass. An action that
+changes state on a <code>GET</code> is therefore unprotected: move it to a <code>POST</code>, or call
+<code>$req-&gt;csrfBlockAdditionalMethod("GET", "HEAD")</code> at its start, as the framework's logout does. See
+<a href="../../../core-features/csrf-protection/#protecting-a-normally-safe-method">Protecting a normally safe method</a>.</p>
+<p>The migrator adds the three settings with their defaults, which accept requests from the
+application's own origin and from no page at all (a typed URL, a bookmark) only:</p>
+<div class="highlight"><pre><span></span><code><span class="na">csrf_allow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">same-origin</span>
+<span class="na">csrf_trusted_origins</span><span class="w"> </span><span class="o">=</span>
+<span class="na">csrf_blocked_origins</span><span class="w"> </span><span class="o">=</span>
 </code></pre></div>
-<ul>
-<li>A custom form-encoded <code>fetch()</code> or <code>$.ajax()</code> post has to send <code>Z.Request.csrfToken()</code> as the
-  <code>X-CSRF-Token</code> header.</li>
-<li>An endpoint that authenticates without the session cookie (form-encoded API keys,
-  <code>navigator.sendBeacon()</code>) needs <code>-&gt;withoutCsrf()</code> on its route or group.</li>
-<li>Requests with a <code>Content-Type</code> other than a form one, like JSON, and requests with an
-  <code>Authorization</code> header other than <code>Basic</code>, <code>Digest</code>, <code>NTLM</code> or <code>Negotiate</code> are not checked.</li>
-<li>The login runs only for a post with <code>action=login</code> now. A custom login form or script that posts
-  just <code>name</code> and <code>password</code> is answered with the login page, so it has to send the field.</li>
-<li>The bundled forgot password page redirects to <code>/login</code> after the request, without the
-  "email sent" alert.</li>
-</ul>
-<p>See <a href="../../../core-features/csrf-protection/">CSRF Protection</a>.</p>
+<p>List the origins that legitimately send users or requests to the application in
+<code>csrf_trusted_origins</code>, for example the identity and the payment provider. Each entry is one
+origin exactly as the browser sends it, <code>scheme://host[:port]</code> without path, trailing slash or default
+port; wildcards are not supported. <code>csrf_allow = any</code> lets every site in, for an API without a
+cookie session. When every
+subdomain of your site is yours, <code>csrf_allow = same-site</code> accepts all of them, and
+<code>csrf_blocked_origins</code> takes single ones out again. See
+<a href="../../../core-features/csrf-protection/">CSRF Protection</a> for the decision, a table of common
+setups and the limits.</p>
 <hr />
 <h3 id="8-check-what-depends-on-the-session-cookie">8. Check what depends on the session cookie<a class="headerlink" href="#8-check-what-depends-on-the-session-cookie" title="Permanent link">&para;</a></h3>
 <p>The <code>z_login_token</code> session cookie and the maintenance bypass cookie now carry <code>SameSite=Lax</code>, and
@@ -3422,25 +3461,17 @@ themselves. Look for everything else:</p>
   <code>host</code> matches the real scheme.</li>
 <li>A cross-site <code>POST</code> that returns to the application (OIDC <code>form_post</code>, SAML, payment returns)
   arrives without the session cookie.</li>
-<li>A request from a cross-site iframe has no session cookie either, and <code>z_csrf</code> is not stored
-  there, so every post from it ends in <code>403</code>.</li>
+<li>A request from a cross-site iframe has no session cookie either.</li>
 </ul>
 <hr />
-<h3 id="9-post-to-zlogin_asid">9. Post to <code>z/login_as/{id}</code><a class="headerlink" href="#9-post-to-zlogin_asid" title="Permanent link">&para;</a></h3>
-<p>The Z-Admin panel's <code>z/login_as/{id}</code> answers only a post with <code>action=login_as</code> and the CSRF token,
-with an optional <code>reason</code>. It returns <code>{"result": "success"}</code> instead of redirecting, and a <code>GET</code> is
-answered with <code>405</code>, because a link on another site could otherwise switch an admin to another user.
-The <em>Login as</em> button on the user page already posts it. A link or script of your own that opens
-<code>z/login_as/{id}</code> has to post instead.</p>
-<hr />
-<h3 id="10-set-encryption_key-if-you-use-secrets">10. Set <code>encryption_key</code> if you use secrets<a class="headerlink" href="#10-set-encryption_key-if-you-use-secrets" title="Permanent link">&para;</a></h3>
+<h3 id="9-set-encryption_key-if-you-use-secrets">9. Set <code>encryption_key</code> if you use secrets<a class="headerlink" href="#9-set-encryption_key-if-you-use-secrets" title="Permanent link">&para;</a></h3>
 <p><code>encryptSecret()</code> and <code>decryptSecret()</code> need the <code>encryption_key</code> setting, at least 32 bytes. Set it
 via <code>CONFIG_ENCRYPTION_KEY</code> and keep an empty <code>encryption_key =</code> line in <code>z_settings.ini</code>, because
 environment variables only override settings that exist there. Values encrypted with a key cannot be
 recovered once it is changed or lost.</p>
 <p>See <a href="../../../core-features/secrets/">Secrets</a>.</p>
 <hr />
-<h3 id="11-if-requests-fail-with-illegal-mix-of-collations">11. If requests fail with "Illegal mix of collations"<a class="headerlink" href="#11-if-requests-fail-with-illegal-mix-of-collations" title="Permanent link">&para;</a></h3>
+<h3 id="10-if-requests-fail-with-illegal-mix-of-collations">10. If requests fail with "Illegal mix of collations"<a class="headerlink" href="#10-if-requests-fail-with-illegal-mix-of-collations" title="Permanent link">&para;</a></h3>
 <p>Framework tables are now created as <code>utf8mb4</code> / <code>utf8mb4_uca1400_ai_ci</code>. Existing installations are
 not converted, because converting rewrites every table. If tables created under different server
 defaults make queries fail with <code>Illegal mix of collations</code>, convert the framework tables once,
@@ -3450,7 +3481,7 @@ ideally in a maintenance window:</p>
 <p>Add <code>--include-app-tables</code> to convert the application tables too and to set the database default.</p>
 <p>See <a href="../../../core-features/console-commands/#repairdatabase-collation">Console Commands</a>.</p>
 <hr />
-<h3 id="12-protect-other-upload-folders-in-the-webroot">12. Protect other upload folders in the webroot<a class="headerlink" href="#12-protect-other-upload-folders-in-the-webroot" title="Permanent link">&para;</a></h3>
+<h3 id="11-protect-other-upload-folders-in-the-webroot">11. Protect other upload folders in the webroot<a class="headerlink" href="#11-protect-other-upload-folders-in-the-webroot" title="Permanent link">&para;</a></h3>
 <p>Files in <code>webroot/uploads/</code> are only served now, never run through PHP: the migrator adds a
 <code>.htaccess</code> there. Without it, an upload field that accepts the <code>php</code> extension lets anyone run code
 by opening the uploaded file. If <code>uploadFolder</code> or an <code>upload()</code> call points to another folder in the
@@ -3459,6 +3490,15 @@ webroot, put the same <code>.htaccess</code> there:</p>
 <span class="w">    </span><span class="nb">SetHandler</span><span class="w"> </span><span class="k">None</span>
 <span class="nt">&lt;/Files&gt;</span>
 </code></pre></div>
+<hr />
+<h3 id="13-check-code-that-reads-session-tokens">13. Check code that reads session tokens<a class="headerlink" href="#13-check-code-that-reads-session-tokens" title="Permanent link">&para;</a></h3>
+<p>Newly issued session and api key tokens are <code>zub-sha256-</code> plus 64 hex characters (75 in total) and
+are stored hashed. For such a token <code>token()</code> returns the plain value only on a session created by
+<code>add()</code> or <code>byToken()</code>; on one loaded by any other retriever it is <code>null</code>, and <code>storedToken()</code> returns
+the stored value. Sessions and api keys issued before the upgrade stay valid and keep returning their
+token from every retriever, with a deprecation notice that <code>showErrors = 2</code> promotes to an exception,
+so development setups see it right away. Widen anything that validates a token by its length, and compare
+<code>z_logintoken.token</code> in your own SQL against <code>storedToken()</code> or <code>LoginToken::hash($token)</code>.</p>
 
 
 
@@ -3542,7 +3582,7 @@ webroot, put the same <code>.htaccess</code> there:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

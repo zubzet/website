@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2856,10 +2856,10 @@
 For a user to have access to the permissions of the role it needs to have the role assigned.
 The assignment can also be done with the Z-Admin panel.</p>
 <h2 id="structure-of-a-permission">Structure of a permission<a class="headerlink" href="#structure-of-a-permission" title="Permanent link">&para;</a></h2>
-<p>Permissions are structured as multiple keywords connected by periods. For example: <code>admin.user.create</code>. This is descriptive as it can be seen that this permission is for admins with access to the user management and creating users. This style of writing permissions allows also the usage of wildcards. To <code>admin.user.create</code> someone with these permissions will have access to it: <code>*.*</code>, <code>admin.*</code>, <code>amdin.user.*</code> and <code>admin.user.create</code>. <code>*.*</code> is a wildcard for all permissions. <strong>Use it on you own risk</strong>.</p>
+<p>Permissions are structured as multiple keywords connected by periods. For example: <code>admin.user.create</code>. This is descriptive as it can be seen that this permission is for admins with access to the user management and creating users. This style of writing permissions allows also the usage of wildcards. To <code>admin.user.create</code> someone with these permissions will have access to it: <code>*.*</code>, <code>admin.*</code>, <code>admin.user.*</code> and <code>admin.user.create</code>. <code>*.*</code> is a wildcard for all permissions, including single-word ones such as <code>support</code>. <strong>Use it on you own risk</strong>. A trailing <code>.*</code> also covers the prefix itself and everything below it (<code>a.b.*</code> satisfies <code>a.b</code> and <code>a.b.c</code>, not <code>a.x</code>). Wildcards only count on the granted side: a <code>*</code> inside a name or a lone <code>*</code> is plain text. The checks in PHP compare names case-sensitively, <code>byAccessToAll</code> and <code>byAccessToAnyOf</code> follow the database collation. Names are free text up to 255 characters.</p>
 <h2 id="blocking-forbidden-pages">Blocking forbidden pages<a class="headerlink" href="#blocking-forbidden-pages" title="Permanent link">&para;</a></h2>
 <p>The Request object has a method called <a href="../../api/classes/ZubZet-Framework-Message-Request.html#method_checkPermission"><code>checkPermission</code></a>.
-By calling it, all users without the permission given as the parameter will be rerouted to the 403 page and the current request will be cancled.
+By calling it, anonymous users are sent to <code>login/index</code> and logged in users without the permission given as the parameter to the 403 page, and the current request is cancled with <code>exit</code>. <code>checkSuperPermission($permission)</code> is the same check but also accepts the permission of the original user of a <code>loginAs</code> session, like <code>checkPermission($permission, false, true)</code>. With <code>true</code> as second parameter both return <code>false</code> instead. The reserved name <code>console</code> passes only on the CLI and otherwise ends in the 403 page, whatever the user holds.
 So it is wise to call this at the very beginning of an action.</p>
 <h3 id="controller-example">Controller example:<a class="headerlink" href="#controller-example" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="x">// Kicks the current request out of the action when it does not have "employee.view"</span>
@@ -2893,7 +2893,7 @@ So it is wise to call this at the very beginning of an action.</p>
 </code></pre></div></p>
 <p>To check for a specific organization, use <a href="../access-control/#organization-data-access"><code>$organization-&gt;hasMember($user)</code></a> or <a href="../access-control/#user-object"><code>$user-&gt;isMemberOf($organization)</code></a>.</p>
 <h2 id="checking-permissions-while-rendering-the-page">Checking permissions while rendering the page<a class="headerlink" href="#checking-permissions-while-rendering-the-page" title="Permanent link">&para;</a></h2>
-<p>To check if the requesting user has a permission, the user object in <code>$opt</code> can be used. It has a method called <a href="../../api/classes/ZubZet-Framework-Authentication-User.html#method_checkPermission"><code>checkPermission</code></a> that returns a boolean. <strong>Note</strong> that this is <strong>another</strong> method than <code>checkPermission</code> from the request object. This one does not redirect the user and can be used for example to determin if specific should be visible to the user on a page it generally has access to.</p>
+<p>To check if the requesting user has a permission, the user object in <code>$opt</code> can be used. It has a method called <a href="../../api/classes/ZubZet-Framework-Authentication-User.html#method_checkPermission"><code>checkPermission</code></a> that returns a boolean. <strong>Note</strong> that this is <strong>another</strong> method than <code>checkPermission</code> from the request object. This one returns <code>false</code> for anonymous users, never redirects the user and can be used for example to determin if specific should be visible to the user on a page it generally has access to. <code>checkSuperPermission($permission)</code> also accepts the original user of a <code>loginAs</code> session, and <code>checkPermissionOf($permission, $userId)</code> checks any user id without a login check. Permissions are loaded once per user id per request and not refreshed when they change.</p>
 <h3 id="view-example">View example:<a class="headerlink" href="#view-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>@extends($layout)
 
@@ -2989,7 +2989,7 @@ So it is wise to call this at the very beginning of an action.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

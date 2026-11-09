@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -3044,6 +3044,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#organization-roles-and-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization Roles and Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organization Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3229,34 +3251,34 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <code>APIKey::byUuid()</code> does not find a login.</p>
 <hr />
 <h2 id="user-object">User Object<a class="headerlink" href="#user-object" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Permission-User.html"><code>User</code></a> object represents an application user and exposes a comprehensive API for retrieval, lifecycle management, and permission handling.</p>
+<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Permission-User.html"><code>User</code></a> object represents an application user and exposes a comprehensive API for retrieval, lifecycle management, and permission handling. Import it with <code>use ZubZet\Framework\Authentication\Permission\User;</code>: the global alias <code>User</code> is the <a href="../global-helper-functions/#user">request user</a> instead, and <code>Role</code>, <code>Group</code> and <code>Organization</code> have no alias either.</p>
 <h3 id="user-retrieval">User Retrieval<a class="headerlink" href="#user-retrieval" title="Permanent link">&para;</a></h3>
-<p>All retrieval methods are <strong>public static</strong> and return fully hydrated <code>User</code> objects.</p>
+<p>All retrieval methods are <strong>public static</strong> and return fully hydrated <code>User</code> objects. They only find active records; <code>all()</code> and <code>byId()</code> of <code>Role</code>, <code>Group</code> and <code>Organization</code> work the same way.</p>
 <ul>
 <li>
-<p>Returns all users assigned to the given role.</p>
+<p>Returns all active users with an active assignment to the given role, directly or through their organization. <code>User::byGroup(Group $group)</code> does the same for a group.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::byRole(Role $role): array</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns a single user by email address or <code>null</code> if no user exists.</p>
+<p>Returns the active user with that email address or <code>null</code>. Users without an email are never matched.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::byEmail(string $email): ?User</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all users that were <strong>not verified up to the given date</strong>.</p>
+<p>Returns all active users that were <strong>not verified up to the given date</strong>: <code>verified</code> is <code>NULL</code> or later than it.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::byNotVerified(DateTime $since): array</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all users that have <strong>all</strong> of the specified permissions.
-  This includes <strong>user-based permissions and role-based permissions</strong>.</p>
+<p>Returns all active users that have <strong>all</strong> of the specified permissions.
+  This includes <strong>user-based, role-based, group-based and organization permissions</strong>, which may come from different sources.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::byAccessToAll(string ...$permissions): array</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all users that have <strong>at least one</strong> of the specified permissions.
-  This includes <strong>user-based permissions and role-based permissions</strong>.</p>
+<p>Returns all active users that have <strong>at least one</strong> of the specified permissions.
+  This includes <strong>user-based, role-based, group-based and organization permissions</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">User::byAccessToAnyOf(string ...$permissions): array</span>
 </code></pre></div>
 </li>
@@ -3296,8 +3318,8 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>If a user instance needs to be created from an existing database row, the object can be hydrated manually.</p>
 <ul>
 <li>
-<p>Loads raw database data into a user object.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$user = (new User())-&gt;loadObject(array $data);</span>
+<p>Creates a user object from a raw <code>z_user</code> row, which must contain the <code>id</code> key.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user = new User(array $data);</span>
 </code></pre></div>
 </li>
 </ul>
@@ -3307,19 +3329,19 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <ul>
 <li>
 <p>Creates a new user.</p>
-<div class="highlight"><pre><span></span><code><span class="x">User::add(?string $email, ?string $password, ?DateTime $verified = null);</span>
+<div class="highlight"><pre><span></span><code><span class="x">User::add(?string $email, ?string $password = null, ?DateTime $verified = null);</span>
 </code></pre></div>
 </li>
 </ul>
 <p>If no verification date is provided, the user is created as <strong>unverified</strong>.</p>
-<p>Throws an <code>InvalidArgumentException</code> if the email is not a valid address or already belongs to another user. Passing <code>null</code> creates a user without an email.</p>
-<p>The <code>$password</code> parameter is optional. When <code>null</code> is passed, the user is created without a password - useful for invite or SSO flows where a credential is set later via <code>updatePassword()</code>.</p>
+<p>Throws an <code>InvalidArgumentException</code> if the email is not a valid address or already belongs to another user. Passing <code>null</code> creates a user without an email. A password outside 3 to 1024 bytes throws <code>InvalidArgumentException</code> only after the user row is inserted, so that user stays without a password.</p>
+<p>The <code>$password</code> parameter is optional. When it is omitted or <code>null</code>, the user is created without a password - useful for invite or SSO flows where a credential is set later via <code>updatePassword()</code>.</p>
 <hr />
 <h3 id="updating-user-data">Updating User Data<a class="headerlink" href="#updating-user-data" title="Permanent link">&para;</a></h3>
 <p>User attributes can be updated directly on the instance.</p>
 <ul>
 <li>
-<p>Updates the user’s email address. Throws an <code>InvalidArgumentException</code> if the address is not a valid email or already belongs to another user. Passing <code>null</code> clears it.</p>
+<p>Updates the user’s email address. Throws an <code>InvalidArgumentException</code> if the address is not a valid email or already belongs to another user. Passing <code>null</code> clears it. It updates only active rows and neither resets <code>verified</code> nor ends sessions.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updateEmail(?string $email);</span>
 </code></pre></div>
 </li>
@@ -3329,8 +3351,8 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Assigns the user to an organization, or unsets it when <code>null</code> is passed.
-  If the previous and/or the new organization has a linked permission group (see <code>Organization::getGroup()</code>), the user's group memberships are kept in sync: the previous organization's group is removed and the new organization's group is added.</p>
+<p>Assigns the user to an organization (<code>z_user.organizationId</code>), or unsets it when <code>null</code> is passed.
+  If the previous and/or the new organization has a linked permission group (see <code>Organization::getGroup()</code>), the user's group memberships are kept in sync: the previous organization's group is removed (even when it was assigned manually, and skipped when that organization is already removed) and the new organization's group is added. The user's fields are cleared.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;updateOrganization(?Organization $organization);</span>
 </code></pre></div>
 </li>
@@ -3346,7 +3368,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>Removing a user performs a <strong>soft delete</strong>.</p>
 <ul>
 <li>
-<p>Soft deletes the user (<code>active = 0</code>).</p>
+<p>Soft deletes the user (<code>active = 0</code>) and nulls the object, so any further call on it, <code>id()</code> included, throws <code>InvalidArgumentException("Instance no longer exists")</code>. Nothing else is touched, and the email stays taken (<code>z_user.email</code> is unique, inactive users included): the user's roles, sessions, api keys and reset codes stay as they are. Existing sessions stop identifying the user as logged in anyway, because the <a href="#bearer-authentication">login check</a> requires <code>active = 1</code>; call <a href="#updating-user-data"><code>$user-&gt;clearSessions()</code></a> as well to end them.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;remove();</span>
 </code></pre></div>
 </li>
@@ -3356,13 +3378,13 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>Verification status is time-aware and can be set or queried at arbitrary points in time.</p>
 <ul>
 <li>
-<p>Marks the user as verified.
+<p>Marks the user as verified, overwriting an earlier date.
   Defaults to <code>NOW</code> if no date is provided.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;verify(?DateTime $date = null);</span>
 </code></pre></div>
 </li>
 <li>
-<p>Checks whether the user was verified at a specific time.</p>
+<p>Checks whether the user was verified at a specific time: <code>true</code> when <code>verified</code> is set and not later than <code>$at</code> (any <code>strtotime</code> string), so a future date counts as unverified now.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;isVerified(string $at = "NOW"): bool</span>
 </code></pre></div>
 </li>
@@ -3403,7 +3425,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>Failed logins are counted per account to rate-limit password guessing.</p>
 <ul>
 <li>
-<p>Returns <code>false</code> when the user has more failed tries than <code>maxLoginTriesPerTimespan</code> within the last <code>maxLoginTriesTimespan</code>. The event is logged as <code>ACCOUNT_LOGIN_RATE_LIMITED</code>.</p>
+<p>Returns <code>false</code> when the user has more failed tries than <code>maxLoginTriesPerTimespan</code> within the last <code>maxLoginTriesTimespan</code>. The event is logged as <code>ACCOUNT_LOGIN_RATE_LIMITED</code>. <code>maxLoginTriesTimespan</code> is a relative time string such as <code>3 minutes</code>. When it is unset, the window start becomes <code>1970-01-01</code>, so every recorded try of the account counts, however old. When <code>maxLoginTriesPerTimespan</code> is unset, it is <code>null</code> and the comparison only passes for zero tries, so the account is blocked as soon as a single try is recorded in the window.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;checkLoginTries(): bool</span>
 </code></pre></div>
 </li>
@@ -3427,14 +3449,17 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>Users can have multiple roles assigned or removed dynamically.</p>
 <ul>
 <li>
-<p>Adds one or more roles to the user.</p>
+<p>Adds one or more roles to the user and clears the user's cached fields. Adding a role the user already has inserts a duplicate row.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;rolesAdd(Role ...$roles);</span>
 </code></pre></div>
 </li>
 <li>
-<p>Removes one or more roles from the user.</p>
+<p>Removes one or more roles from the user (the assignment is set inactive) and clears the user's cached fields.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;rolesRemove(Role ...$roles);</span>
 </code></pre></div>
+</li>
+<li>
+<p><code>groupsAdd(Group ...$groups)</code> and <code>groupsRemove(Group ...$groups)</code> do the same for groups and reject plain <code>Role</code> objects.</p>
 </li>
 </ul>
 <hr />
@@ -3442,7 +3467,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <p>Permissions can be assigned directly to users in addition to role-based permissions.</p>
 <ul>
 <li>
-<p>Adds user-based permissions.</p>
+<p>Adds user-based permissions. Names are not deduplicated: an identical active row is inserted again.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;permissionsAdd(string ...$permissionNames);</span>
 </code></pre></div>
 </li>
@@ -3454,17 +3479,19 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </ul>
 <hr />
 <h3 id="permission-checks">Permission Checks<a class="headerlink" href="#permission-checks" title="Permanent link">&para;</a></h3>
-<p>Permission checks always resolve the <strong>complete permission set</strong>.</p>
+<p>Permission checks always resolve the <strong>complete permission set</strong>. The permission methods (<code>permissionsAdd</code>, <code>permissionsRemove</code>, <code>hasAccessAll</code>, <code>hasAccessAnyOf</code> and the static <code>buildPermissionVariants</code>) come from the <code>Permission</code> trait that <code>User</code>, <code>Role</code>, <code>Group</code> and <code>Organization</code> share.</p>
 <ul>
 <li>
-<p>Checks whether the user has <strong>all</strong> specified permissions.</p>
+<p>Checks whether the user has <strong>all</strong> specified permissions, wildcards included.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;hasAccessAll(string ...$permissionNames): bool</span>
 </code></pre></div>
+<p>Without arguments it returns <code>true</code>, since no permission is missing.</p>
 </li>
 <li>
-<p>Checks whether the user has <strong>at least one</strong> of the specified permissions.</p>
+<p>Checks whether the user has <strong>at least one</strong> of the specified permissions, wildcards included.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;hasAccessAnyOf(string ...$permissionNames): bool</span>
 </code></pre></div>
+<p>Without arguments it returns <code>false</code>, since no permission can match.</p>
 </li>
 </ul>
 <hr />
@@ -3476,7 +3503,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns all effective permissions (user-based + role-based).</p>
+<p>Returns all effective permissions (user-based + role-based + group-based), cached on the instance until a permission, role or group is changed through these objects, after which the getters re-query on every call. The rows look like <code>["name" =&gt; "x.y"]</code>, while <code>Role::getPermissions()</code> returns plain strings. Only active role links, roles and permission rows count; <code>z_user.active</code> is not filtered.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getPermissions(): array</span>
 </code></pre></div>
 </li>
@@ -3486,7 +3513,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Reloads all permissions including roles.</p>
+<p>Reloads all permissions including roles. Changes made outside these objects (admin forms, direct SQL) only show up after this or <code>refresh()</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;refreshAllPermissions();</span>
 </code></pre></div>
 </li>
@@ -3495,7 +3522,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <h3 id="user-data-utility-methods">User Data &amp; Utility Methods<a class="headerlink" href="#user-data-utility-methods" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Reloads the user data from the database.</p>
+<p>Reloads the user data from the database and throws <code>RuntimeException("Object no longer exists")</code> when the row is gone or inactive. Call it after <code>updateEmail()</code>, <code>updatePassword()</code>, <code>verify()</code> and role or group changes, which clear the object's fields; reading a field like <code>email()</code> before throws <code>Field 'email' does not exist</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;refresh();</span>
 </code></pre></div>
 </li>
@@ -3511,7 +3538,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </li>
 <li>
 <p>Returns the user ID.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;id(): int|string|null</span>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;id(): int</span>
 </code></pre></div>
 </li>
 <li>
@@ -3520,8 +3547,13 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns all roles assigned to the user.</p>
+<p>Returns the user's active roles without groups, cached on the instance.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getRoles(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the user's active groups, cached on the instance.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getGroups(): array</span>
 </code></pre></div>
 </li>
 <li>
@@ -3536,33 +3568,43 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Validates that the instance exists and is not null.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;checkInstance(): bool</span>
+<p>Returns the cached data of the user as an array. This is the full <code>z_user</code> row, including the <code>password</code> hash and the <code>salt</code> column (<code>null</code> for natively hashed passwords), plus the internal cache keys <code>permissions</code>, <code>user-permissions</code>, <code>roles</code>, <code>groups</code> and <code>organization</code>. Never output it unfiltered, for example in a response or a log; read single values with <code>getField()</code> instead.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getAll(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Throws an <code>InvalidArgumentException</code> ("Instance no longer exists") once the object was nulled by <code>remove()</code>; every other method on it throws the same.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;checkInstance(): void</span>
 </code></pre></div>
 </li>
 </ul>
 <hr />
 <h2 id="role-object">Role Object<a class="headerlink" href="#role-object" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Permission-Role.html"><code>Role</code></a> object represents a named collection of permissions that can be assigned to users.</p>
+<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Permission-Role.html"><code>Role</code></a> object represents a named collection of permissions that can be assigned to users. A <code>Group</code> is a <code>Role</code> restricted to <code>z_role.is_group = 1</code>: it grants permissions the same way, has all methods below (returning only groups, so <code>Role::byId()</code> never finds a group id), and is accepted wherever a <code>Role</code> is type-hinted. Role and group names share one unique column.</p>
 <h3 id="role-retrieval">Role Retrieval<a class="headerlink" href="#role-retrieval" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Returns all roles assigned to a user.</p>
+<p>Returns all roles assigned to a user, including those of its organization.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Role::byUser(User $user): array</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns a role by its name.</p>
+<p>Returns the active roles an organization holds. <code>Group::byOrganization(Organization $organization)</code> does the same for groups.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::byOrganization(Organization $organization): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the active role with that exact name or <code>null</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Role::byName(string $name): ?Role</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all roles that have <strong>all</strong> specified permissions.</p>
+<p>Returns all roles that have <strong>all</strong> specified permissions, wildcards included. Without arguments it returns all active roles.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Role::byAccessToAll(string ...$permissions): array</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all roles that have <strong>at least one</strong> of the specified permissions.</p>
+<p>Returns all roles that have <strong>at least one</strong> of the specified permissions, wildcards included.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Role::byAccessToAnyOf(string ...$permissions): array</span>
 </code></pre></div>
 </li>
@@ -3596,13 +3638,13 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <h3 id="role-creation-and-loading">Role Creation and Loading<a class="headerlink" href="#role-creation-and-loading" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Creates a new role.</p>
-<div class="highlight"><pre><span></span><code><span class="x">Role::add(string $roleName);</span>
+<p>Creates a new role and returns it.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Role::add(string $roleName): Role;</span>
 </code></pre></div>
 </li>
 <li>
-<p>Loads a role from database data.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$role = (new Role())-&gt;loadObject(array $data);</span>
+<p>Creates a role from a raw <code>z_role</code> row, which must contain the <code>id</code> key.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$role = new Role(array $data);</span>
 </code></pre></div>
 </li>
 </ul>
@@ -3610,12 +3652,12 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <h3 id="updating-and-removing-roles">Updating and Removing Roles<a class="headerlink" href="#updating-and-removing-roles" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Updates the role name.</p>
+<p>Updates the role name. All fields are cleared, so call <code>$role-&gt;refresh()</code> before reading the object again.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;update(string $newName);</span>
 </code></pre></div>
 </li>
 <li>
-<p>Soft deletes the role.</p>
+<p>Soft deletes the role. The instance is nulled, so any further call on it throws <code>InvalidArgumentException("Instance no longer exists")</code>. Its permissions and user assignments stay but stop counting, and its name stays reserved.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;remove();</span>
 </code></pre></div>
 </li>
@@ -3634,13 +3676,8 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns all users assigned to the role.</p>
+<p>Returns all active users assigned to the role, cached until <code>$role-&gt;refresh()</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;getUsers(): array</span>
-</code></pre></div>
-</li>
-<li>
-<p>Reloads the role’s users.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$role-&gt;refreshUsers();</span>
 </code></pre></div>
 </li>
 </ul>
@@ -3663,7 +3700,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Removes permissions from the role.</p>
+<p>Removes permissions from the role (soft delete).</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;permissionsRemove(string ...$permissionNames);</span>
 </code></pre></div>
 </li>
@@ -3677,14 +3714,16 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <h3 id="role-permission-checks">Role Permission Checks<a class="headerlink" href="#role-permission-checks" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Checks whether the role has <strong>all</strong> specified permissions.</p>
+<p>Checks whether the role has <strong>all</strong> specified permissions, wildcards included.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;hasAccessAll(string ...$permissionNames): bool</span>
 </code></pre></div>
+<p>Without arguments it returns <code>true</code>, since no permission is missing.</p>
 </li>
 <li>
-<p>Checks whether the role has <strong>at least one</strong> of the specified permissions.</p>
+<p>Checks whether the role has <strong>at least one</strong> of the specified permissions, wildcards included.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$role-&gt;hasAccessAnyOf(string ...$permissionNames): bool</span>
 </code></pre></div>
+<p>Without arguments it returns <code>false</code>, since no permission can match.</p>
 </li>
 </ul>
 <hr />
@@ -3698,7 +3737,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </ul>
 <hr />
 <h2 id="organization-object">Organization Object<a class="headerlink" href="#organization-object" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Organization.html"><code>Organization</code></a> object represents a group of users. Users can belong to at most one organization. An organization has a name (not unique) and is soft-deletable like the other authentication objects.</p>
+<p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Organization.html"><code>Organization</code></a> object represents a group of users. Users can belong to at most one organization. An organization has a name (not unique, may be <code>null</code>) and is soft-deletable (<code>active</code>) like the other authentication objects. Like a user, it can hold permissions, roles and groups, which all its members inherit.</p>
 <h3 id="organization-retrieval">Organization Retrieval<a class="headerlink" href="#organization-retrieval" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -3737,14 +3776,29 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <div class="highlight"><pre><span></span><code><span class="x">Organization::byUuids(string ...$uuids): array</span>
 </code></pre></div>
 </li>
+<li>
+<p>Returns all active organizations that hold the role. <code>Organization::byGroup(Group $group)</code> does the same for groups.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byRole(Role $role): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all active organizations that have <strong>all</strong> specified permissions, wildcards included, through their own permissions or their roles and groups.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byAccessToAll(string ...$permissions): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns all active organizations that have <strong>at least one</strong> of the specified permissions, wildcards included.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::byAccessToAnyOf(string ...$permissions): array</span>
+</code></pre></div>
+</li>
 </ul>
 <hr />
 <h3 id="creating-an-organization">Creating an Organization<a class="headerlink" href="#creating-an-organization" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Creates a new organization with the given name (which may be <code>null</code>).
-  When <code>$createGroup</code> is <code>true</code>, a permission <code>Group</code> named <code>"{$name}_Group"</code> is created and linked to the organization. The linked group is then available via <code>$organization-&gt;getGroup()</code> and is used by <code>User::updateOrganization()</code> to sync group membership.</p>
-<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name, bool $createGroup = false): Organization</span>
+  When <code>$createGroup</code> is <code>true</code>, a permission <code>Group</code> named <code>$groupName</code>, by default <code>"{$name}_Group"</code>, is created and linked to the organization (<code>z_organization.groupId</code>, <code>NULL</code> without a group). The linked group is then available via <code>$organization-&gt;getGroup()</code> and is used by <code>User::updateOrganization()</code> to sync group membership.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name, bool $createGroup = false, ?string $groupName = null): Organization</span>
 </code></pre></div>
 </li>
 </ul>
@@ -3802,17 +3856,71 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </li>
 </ul>
 <hr />
+<h3 id="organization-roles-and-groups">Organization Roles and Groups<a class="headerlink" href="#organization-roles-and-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Adds one or more roles to the organization. Adding a role it already has inserts a duplicate row.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;rolesAdd(Role ...$roles);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Removes one or more roles from the organization (the assignment is set inactive).</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;rolesRemove(Role ...$roles);</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>groupsAdd(Group ...$groups)</code> and <code>groupsRemove(Group ...$groups)</code> do the same for groups and reject plain <code>Role</code> objects.</p>
+</li>
+<li>
+<p>Returns only the roles, respectively only the groups, the organization holds. Neither is cached.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;getRoles(): array</span>
+<span class="x">$organization-&gt;getGroups(): array</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="organization-permissions">Organization Permissions<a class="headerlink" href="#organization-permissions" title="Permanent link">&para;</a></h3>
+<p>Organization permissions are inherited by all its members.</p>
+<ul>
+<li>
+<p>Adds organization-based permissions. Names are not deduplicated: an identical active row is inserted again.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;permissionsAdd(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Removes organization-based permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;permissionsRemove(string ...$permissionNames);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Checks whether the organization has <strong>all</strong>, respectively <strong>at least one</strong>, of the specified permissions, wildcards included, through its own permissions or its roles and groups.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;hasAccessAll(string ...$permissionNames): bool</span>
+<span class="x">$organization-&gt;hasAccessAnyOf(string ...$permissionNames): bool</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the names of all effective permissions (own + role-based + group-based), each once, as plain strings like <code>Role::getPermissions()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;getPermissions(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Reloads the permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;refreshPermissions();</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
 <h2 id="session-object">Session Object<a class="headerlink" href="#session-object" title="Permanent link">&para;</a></h2>
 <p>The <a href="../../api/classes/ZubZet-Framework-Authentication-Session.html"><code>Session</code></a> object represents a login session (stored in <code>z_logintoken</code>) and provides methods for creation, retrieval, lifetime management, and invalidation. An api key is the same row with <code>is_apikey</code> set, represented by <a href="#api-keys"><code>APIKey</code></a>. The two are siblings, not parent and child: they get their behavior from the <code>CanUseSession</code> trait, so everything documented here applies to both. Type as <code>Session|APIKey</code> where either kind may turn up.</p>
 <h3 id="session-retrieval">Session Retrieval<a class="headerlink" href="#session-retrieval" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Returns a session by its token string, or <code>null</code> if not found. The row decides the class, so a token belonging to an api key returns an <a href="#api-keys"><code>APIKey</code></a>. This is the entry point of the authentication and therefore resolves both kinds, whichever class it is called on.</p>
+<p>Returns a session by its token string, or <code>null</code> for an unknown or invalidated token; an expired session that was not yet invalidated is still returned. The row decides the class, so a token belonging to an api key returns an <a href="#api-keys"><code>APIKey</code></a>. This is the entry point of the authentication and therefore resolves both kinds, whichever class it is called on.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Session::byToken(string $token): Session|APIKey|null</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns all active logins of a user. Api keys are listed by <code>APIKey::byUser()</code> instead.</p>
+<p>Returns all active logins of a user, expired ones not yet invalidated included, or an empty array. Api keys are listed by <code>APIKey::byUser()</code> instead.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Session::byUser(User $user): array</span>
 </code></pre></div>
 </li>
@@ -3822,7 +3930,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns all logins matching the given IDs.</p>
+<p>Returns all active logins matching the given IDs. Like <code>all()</code> and the UUID finders, it skips invalidated rows.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Session::byIds(int ...$ids): array</span>
 </code></pre></div>
 </li>
@@ -3837,7 +3945,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns all logins.</p>
+<p>Returns all active logins.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Session::all(): array</span>
 </code></pre></div>
 </li>
@@ -3846,7 +3954,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <h3 id="creating-a-session">Creating a Session<a class="headerlink" href="#creating-a-session" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Creates a new login session for a user. An optional <code>$userExec</code> can be passed to create an impersonation session where <code>$user</code> is the target user and <code>$userExec</code> is the acting. If omitted, both are set to <code>$user</code>. The optional <code>$name</code> labels the session, which is what a "your active sessions" list shows, and <code>$reason</code> records why it was created.</p>
+<p>Creates a new login session for a user. An optional <code>$userExec</code> can be passed to create an impersonation session where <code>$user</code> is the target user and <code>$userExec</code> is the acting. If omitted, both are set to <code>$user</code>. No cookie is sent; use <code>$res-&gt;loginAs()</code> for that. The optional <code>$name</code> labels the session, which is what a "your active sessions" list shows, and <code>$reason</code> records why it was created.</p>
 <div class="highlight"><pre><span></span><code><span class="x">Session::add(User $user, ?User $userExec = null, ?string $name = null, ?string $reason = null): Session</span>
 </code></pre></div>
 </li>
@@ -3872,7 +3980,7 @@ other: PHP would not allow the narrower signature on a subclass.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$key = APIKey::add($user, name: "Deployment pipeline");</span>
 <span class="x">$key-&gt;setCanExpire(false); // from CanUseSession, like setName() and extend()</span>
 
-<span class="x">$key-&gt;token(); // the value the client sends as its z_login_token</span>
+<span class="x">$key-&gt;token(); // the plain value the client sends as its z_login_token, known after add() or byToken()</span>
 
 <span class="x">APIKey::byUser($user);  // the user's api keys</span>
 <span class="x">Session::byUser($user); // the user's logins</span>
@@ -3917,11 +4025,15 @@ like <code>Basic</code>, an empty <code>Bearer</code>, a value with more than on
 <code>Authorization</code> headers (Apache merges them into one comma separated value) carry no token. The
 request then uses the cookie, if there is one. <code>$req-&gt;bearerToken()</code> returns the token of the
 header, or <code>null</code>.</p>
+<p>A valid session does not log a deactivated user in. Whichever way the token arrived, a session or an
+api key, the request is anonymous (<code>$user-&gt;isLoggedIn</code> is <code>false</code>) as soon as the user's <code>active</code> is
+<code>0</code>, for example after <a href="#removing-a-user"><code>$user-&gt;remove()</code></a>. The check runs on every request, so it
+takes effect immediately without ending the session.</p>
 <hr />
 <h3 id="lifetime-management">Lifetime Management<a class="headerlink" href="#lifetime-management" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Extends the session's lifetime by the given number of seconds on top of the base timeout and any existing extension.</p>
+<p>Extends the session's lifetime by the given number of seconds on top of the base timeout and any existing extension. This only changes server-side validity and needs an active row, so an invalidated session cannot be revived.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;extend(int $seconds): void</span>
 </code></pre></div>
 </li>
@@ -3947,15 +4059,18 @@ header, or <code>null</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">The login cookie has its own lifetime</p>
 <p><code>is_permanent</code> and <code>expires_at</code> are server-side. <code>loginAs()</code> sets the
-<code>z_login_token</code> cookie to expire after <code>loginTimeoutSeconds</code> regardless, so a
-browser drops the cookie at that point even though the session itself lives
-on. Clients that send the token themselves are unaffected.</p>
+<code>z_login_token</code> cookie to expire after <code>loginTimeoutSeconds</code> (defaults to
+7 days when unset) regardless, so a browser drops the cookie at that point
+even though the session itself lives on. The expiry is fixed when the cookie
+is set at login and is not re-issued when the session is extended, so
+<code>extend()</code> and <code>setExtensionTime()</code> keep the session alive on the server but
+not the cookie. Clients that send the token themselves are unaffected.</p>
 </div>
 <hr />
 <h3 id="invalidation">Invalidation<a class="headerlink" href="#invalidation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Immediately invalidates the session, preventing further use.</p>
+<p>Immediately invalidates the session, preventing further use. The object is nulled, so any further call on it throws <code>InvalidArgumentException("Instance no longer exists")</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;invalidate(): void</span>
 </code></pre></div>
 </li>
@@ -3969,12 +4084,12 @@ on. Clients that send the token themselves are unaffected.</p>
 <h3 id="expiry-check">Expiry Check<a class="headerlink" href="#expiry-check" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Returns <code>true</code> if the session has expired. A session exempt from expiring never is; otherwise the expiry is the one <a href="#lifetime-management">fixed on the session</a>, or, when it carries none, <code>created</code> plus the configured <code>loginTimeoutSeconds</code> (defaults to 7 days) plus any <code>extended_seconds</code>.</p>
+<p>Returns <code>true</code> if the session has expired. A session exempt from expiring never is; otherwise the expiry is the one <a href="#lifetime-management">fixed on the session</a>, or, when it carries none, <code>created</code> plus the configured <code>loginTimeoutSeconds</code> (defaults to 7 days) plus any <code>extended_seconds</code>. The maths use PHP's <code>strtotime()</code> and <code>time()</code> on the database <code>created</code> value, so PHP and database timezones must agree.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;isExpired(): bool</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns the point in time the session becomes unusable, or <code>null</code> when the session is exempt from expiring. This is the effective expiry, whether it was fixed through <a href="#lifetime-management"><code>setExpiresAt()</code></a> or computed from the lifetime.</p>
+<p>Returns the point in time the session becomes unusable, or <code>null</code> when the session is exempt from expiring. This is the effective expiry, whether it was fixed through <a href="#lifetime-management"><code>setExpiresAt()</code></a> or computed from the lifetime, which is absolute from creation and not sliding.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;expiresAt(): ?string</span>
 </code></pre></div>
 </li>
@@ -4020,18 +4135,23 @@ on. Clients that send the token themselves are unaffected.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Returns the session token string. Issued tokens are a <code>zub-</code> prefix plus 32 random bytes in hex, 68 characters in total. Tokens issued before this format keep working, so do not validate one by its length.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;token(): string</span>
+<p>Returns the plain session token, the value the client sends. Issued tokens are <code>zub-sha256-</code> plus 64 hex characters, 75 in total, and <code>z_logintoken.token</code> stores only <code>zub-sha256-</code> plus the SHA-256 of the plain value. The plain value of a hashed token exists only on an object created by <code>add()</code> or <code>byToken()</code>; on one loaded by any other retriever it is <code>null</code>. A token issued before hashing is stored as is and is still returned by every retriever, with a deprecation notice: compare against <code>storedToken()</code> instead. Tokens issued before this format stay in plain text and keep working, so do not validate one by its length. Sessions are never deleted, only set to <code>active = 0</code> (logout, expiry, <code>clearSessions()</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;token(): ?string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the value stored in <code>z_logintoken.token</code>: the hash for a session issued in the new format, the plain token for an older one. Use it, or <code>LoginToken::hash($token)</code>, when comparing in your own SQL.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;storedToken(): string</span>
 </code></pre></div>
 </li>
 <li>
 <p>Returns the ID of the user who owns the session.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userId(): int|string</span>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userId(): ?int</span>
 </code></pre></div>
 </li>
 <li>
 <p>Returns the ID of the user being executed as (relevant for impersonation sessions).</p>
-<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userIdExec(): int|string</span>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;userIdExec(): ?int</span>
 </code></pre></div>
 </li>
 <li>
@@ -4071,7 +4191,7 @@ on. Clients that send the token themselves are unaffected.</p>
 </li>
 <li>
 <p>Returns the creation timestamp of the session.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;created(): string</span>
+<div class="highlight"><pre><span></span><code><span class="x">$session-&gt;created(): ?string</span>
 </code></pre></div>
 </li>
 <li>
@@ -4084,7 +4204,7 @@ on. Clients that send the token themselves are unaffected.</p>
 <h3 id="refreshing-session-data">Refreshing Session Data<a class="headerlink" href="#refreshing-session-data" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Reloads the session data from the database.</p>
+<p>Reloads the session data from the database. The getters return the loaded data without reloading, so call it after a setter such as <code>setName()</code> or <code>extend()</code> to see the change.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;refresh(): void</span>
 </code></pre></div>
 </li>
@@ -4172,7 +4292,7 @@ on. Clients that send the token themselves are unaffected.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

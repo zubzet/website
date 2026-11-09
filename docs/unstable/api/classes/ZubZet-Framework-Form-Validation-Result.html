@@ -150,7 +150,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Form-Validation-Result.html#property_errors">$errors</a>
     <span>
-                &nbsp;: array&lt;string|int, object&gt;            </span>
+                &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -187,7 +187,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Adds a custom error to the form result</dd>
+<dd>Adds a custom error to the form result and sets hasErrors to true</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Form-Validation-Result.html#method_getValue">getValue()</a>
@@ -265,12 +265,12 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, object&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$errors</span>
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Holds the errors of the validation</p>
+        <section class="phpdocumentor-description"><p>Holds the errors of the validation, each as an array with name, type and optionally info</p>
 </section>
 
     
@@ -372,7 +372,7 @@
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Holds the name of a form result. Used for CED forms</p>
+        <section class="phpdocumentor-description"><p>Holds the name of a form result. Used for CED forms; uninitialized unless set by validateCED()</p>
 </section>
 
     
@@ -431,11 +431,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Result.php"><a href="files/src-form-validation-result.html"><abbr title="src/Form/Validation/Result.php">Result.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a custom error to the form result</p>
+        <p class="phpdocumentor-summary">Adds a custom error to the form result and sets hasErrors to true</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -458,7 +458,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Type of the error. Influences the error message</p>
+                    <section class="phpdocumentor-description"><p>Type of the error, e.g. filter, unique, required or in. Z.js maps it to the message Z.Lang[&quot;error_&quot; . $type]</p>
 </section>
 
             </dd>
@@ -485,7 +485,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Form/Validation/Result.php"><a href="files/src-form-validation-result.html"><abbr title="src/Form/Validation/Result.php">Result.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -514,7 +514,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The validated value (rule-cast, array for multi-select), or null when the field is unknown or its input was empty</p>
+</section>
+
     
 </article>
             </section>

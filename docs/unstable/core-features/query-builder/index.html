@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2807,6 +2807,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#untrusted-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Untrusted identifiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2859,7 +2870,7 @@ It is based on <a href="https://book.cakephp.org/4.x/orm/query-builder.html">Cak
 <p>The Query Builder allows you to build SQL queries programmatically in a safe and structured way, directly from your models.</p>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<p>Inside a <a href="../models/">model</a>, you can now use <a href="../../api/classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html">helper methods</a> like <code>select</code>, <code>update</code>, <code>delete</code>, and <code>insert</code>.
+<p>Inside a <a href="../models/">model</a> or a PHP seed class (controllers do not have them), you can now use <a href="../../api/classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html">helper methods</a> like <code>dbSelect</code>, <code>dbUpdate</code>, <code>dbDelete</code>, and <code>dbInsert</code>, provided by the trait <code>CanBuildQuery</code>.
 These methods internally delegate to the CakePHP Query Builder.</p>
 <p>Example methods inside a model:</p>
 <div class="highlight"><pre><span></span><code><span class="x">public function dbSelect($fields = [], $table = [], array $types = []) {</span>
@@ -2870,25 +2881,26 @@ These methods internally delegate to the CakePHP Query Builder.</p>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;updateQuery($table, $values, $conditions, $types);</span>
 <span class="x">}</span>
 
-<span class="x">public function dbDelete(string $table, array $conditions = [], array $types = []) {</span>
+<span class="x">public function dbDelete(?string $table = null, array $conditions = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;deleteQuery($table, $conditions, $types);</span>
 <span class="x">}</span>
 
-<span class="x">public function dbInsert(string $table = null, array $values = [], array $types = []) {</span>
+<span class="x">public function dbInsert(?string $table = null, array $values = [], array $types = []) {</span>
 <span class="x">    return $this-&gt;getQueryBuilder()-&gt;insertQuery($table, $values, $types);</span>
 <span class="x">}</span>
 
 <span class="x">public function getQueryBuilder() {</span>
-<span class="x">    return db()-&gt;cakePHPDatabase;</span>
+<span class="x">    return db()-&gt;queryBuilderConnection;</span>
 <span class="x">}</span>
 </code></pre></div>
 <hr />
 <h2 id="executing-queries">Executing Queries<a class="headerlink" href="#executing-queries" title="Permanent link">&para;</a></h2>
-<p>Once you have built a query, you can execute it with the <a href="../../api/classes/ZubZet-Framework-Core-Model.html#method_exec"><code>exec</code></a> method:
+<p>Once you have built a query, you can execute it with the <a href="../../api/classes/ZubZet-Framework-Core-Model.html#method_exec"><code>exec</code></a> method (which ignores <code>$types</code> and <code>$params</code> for a <code>Query</code>) or <code>db()-&gt;execQuery($query)</code>; both return the <code>Connection</code>, so the result helpers can follow directly:
 <div class="highlight"><pre><span></span><code><span class="x">$query = $this-&gt;dbSelect(...);</span>
 
 <span class="x">$this-&gt;exec($query);</span>
 </code></pre></div></p>
+<p>Values bind as strings unless typed: <code>integer</code>, <code>biginteger</code> and <code>smallinteger</code> bind as integers, <code>float</code> and <code>decimal</code> as doubles, and <code>where(fn($exp) =&gt; $exp-&gt;eq($field, $value, "integer"))</code> pins the type. Multi-row inserts use <code>new InsertQuery($this-&gt;getQueryBuilder())</code> with <code>into()</code>, <code>insert()</code> and repeated <code>values()</code>.</p>
 <hr />
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="select-example">Select Example<a class="headerlink" href="#select-example" title="Permanent link">&para;</a></h3>
@@ -2934,9 +2946,12 @@ These methods internally delegate to the CakePHP Query Builder.</p>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 </code></pre></div>
 <hr />
+<h2 id="untrusted-identifiers">Untrusted identifiers<a class="headerlink" href="#untrusted-identifiers" title="Permanent link">&para;</a></h2>
+<p>Values are bound as prepared statement parameters, but table and column names are inserted into the SQL as written. ZubZet does not enable identifier quoting (<code>quoteIdentifiers</code>) on the query builder connection, so an identifier is never escaped or validated. Table and column names must never come from user input.</p>
+<hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
-<li>All query methods (<code>select</code>, <code>insert</code>, <code>update</code>, <code>delete</code>) return a <strong>CakePHP Query object</strong>.</li>
+<li>All query methods (<code>select</code>, <code>insert</code>, <code>update</code>, <code>delete</code>) return a CakePHP <code>SelectQuery</code>, <code>InsertQuery</code>, <code>UpdateQuery</code> or <code>DeleteQuery</code>.</li>
 <li>Queries are executed via <code>$this-&gt;exec($query)</code>.</li>
 </ul>
 <p>For more examples, see the <a href="examples/">Examples</a> page.</p>
@@ -2954,7 +2969,7 @@ You can use all features provided by CakePHP’s query builder.</p>
 </code></pre></div>
 </li>
 <li>
-<p>The CakePHP Query Builder instance can always be accessed with:</p>
+<p>The CakePHP Query Builder instance (one <code>Cake\Database\Connection</code>, shared by all models) can always be accessed with:</p>
 <div class="highlight"><pre><span></span><code><span class="x">$this-&gt;getQueryBuilder();</span>
 </code></pre></div>
 </li>
@@ -3043,7 +3058,7 @@ You can use all features provided by CakePHP’s query builder.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2790,6 +2790,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reset-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset codes
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2955,19 +2966,19 @@ covers creating users, setting passwords, and checking a login.</p>
 <tbody>
 <tr>
 <td><code>password</code></td>
-<td>The stored credential (an Argon2id hash for current accounts).</td>
+<td>The stored credential, <code>VARCHAR(255)</code> (an Argon2id hash for current accounts).</td>
 </tr>
 <tr>
 <td><code>password_scheme</code></td>
-<td>Which format <code>password</code> is in: <code>native</code>, <code>legacy</code>, <code>onion</code>, or <code>wordpress</code>. <code>NULL</code> for accounts without a password.</td>
+<td>Which format <code>password</code> is in: <code>native</code>, <code>legacy</code>, <code>onion</code>, or <code>wordpress</code>. <code>NULL</code> for accounts without a password: <code>User::add()</code> inserts <code>NULL</code> and sets <code>native</code> once a password is set.</td>
 </tr>
 <tr>
 <td><code>salt</code></td>
-<td>Per row salt for <code>legacy</code> and <code>onion</code> rows. <code>NULL</code> for <code>native</code> and <code>wordpress</code>, because those hashes embed their own salt.</td>
+<td><code>VARCHAR(255)</code>, per row salt for <code>legacy</code> and <code>onion</code> rows. <code>NULL</code> for <code>native</code> and <code>wordpress</code>, because those hashes embed their own salt; every upgrade to <code>native</code> resets it to <code>NULL</code>.</td>
 </tr>
 <tr>
 <td><code>last_password_rehash_at</code></td>
-<td>When the stored hash was last produced. Useful for credential age policies.</td>
+<td><code>TIMESTAMP NULL</code>: when the stored hash was last produced (password change or rehash); the migration backfilled it from <code>created</code> for rows with a password. Useful for credential age policies.</td>
 </tr>
 </tbody>
 </table>
@@ -2995,7 +3006,7 @@ the formats can coexist while older accounts upgrade on their own.</p>
 </tr>
 <tr>
 <td><code>legacy</code></td>
-<td>The hash produced by the framework's previous scheme.</td>
+<td>The raw SHA-512 hex produced by the framework's previous scheme.</td>
 <td>set</td>
 <td>Verify only. Upgraded to <code>native</code> on the next login.</td>
 </tr>
@@ -3043,6 +3054,9 @@ credential is set later (for example invite or single sign on flows):</p>
 login it transparently upgrades a stale stored hash to a current <code>native</code> hash
 (see <a href="#self-healing-upgrades">Self healing upgrades</a>). It is the password check
 used by the framework's own login flow.</p>
+<h3 id="reset-codes">Reset codes<a class="headerlink" href="#reset-codes" title="Permanent link">&para;</a></h3>
+<p>The forgot-password flow stores a code per request in <code>z_password_reset</code> (<code>userId</code>, <code>refId</code>, <code>reason</code>, <code>active</code>, <code>created</code>; <code>reason</code> is always <code>forgot</code>). The reset page accepts a code while its row is <code>active = 1</code> and <code>created</code> is newer than the booter setting <code>forgotPasswordTimeSpan</code>. After a successful reset the code is deactivated. A code is <code>ZIT-</code> plus 64 random hex characters, a new request does not deactivate earlier codes, and <code>login/forgot_password</code> has no rate limit and answers <code>{"result":"success"}</code> or <code>{"result":"error"}</code>, so it reveals whether an email is registered. The email is matched exactly, without an <code>active</code> or <code>verified</code> filter. An invalid reset code dies with the bare text <code>ERROR: This code is not or no longer valid!</code>; a successful reset ends all sessions of the user without logging them in, and the server checks no confirmation field (the view compares both in JS only, with a client-side <code>minlength="4"</code>).</p>
+<p><code>forgotPasswordTimeSpan</code> is a relative time string such as <code>60 minutes</code> (the project stub ships exactly that), which is handed to <code>strtotime('-' . $value)</code>. When the setting is unset, that call fails and the cut-off becomes <code>1970-01-01 00:00:00</code>, so an active code never expires. Always set it if codes should have a lifetime.</p>
 <h2 id="the-hash-and-verify-api">The hash and verify API<a class="headerlink" href="#the-hash-and-verify-api" title="Permanent link">&para;</a></h2>
 <p><code>User</code> is built on the lower level <a href="../../api/classes/ZubZet-Framework-Authentication-PasswordHash-Password.html"><code>ZubZet\Framework\Authentication\PasswordHash\Password</code></a>
 class, which you can use directly when you are not working with a <code>User</code> object.</p>
@@ -3051,9 +3065,9 @@ class, which you can use directly when you are not working with a <code>User</co
 
 <span class="x">$stored = Password::hash($plaintext); // Argon2id</span>
 </code></pre></div>
-<p><code>Password::hash()</code> rejects an empty or oversized input
-(<code>MIN_LENGTH_BYTES</code> to <code>MAX_LENGTH_BYTES</code>, the upper bound being a denial of
-service guard) by throwing an <code>InvalidArgumentException</code>.</p>
+<p><code>Password::hash()</code> rejects input outside <code>MIN_LENGTH_BYTES</code> to <code>MAX_LENGTH_BYTES</code>
+(3 to 1024 bytes by <code>strlen</code>, the upper bound being a denial of service guard)
+by throwing <code>InvalidArgumentException("Invalid password length.")</code>.</p>
 <h3 id="verifying">Verifying<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="x">$result = Password::verify($plaintext, $stored);</span>
 
@@ -3087,9 +3101,9 @@ refreshed:</p>
 </tbody>
 </table>
 <p>The hash inside <code>upgradePassword()</code> is computed only when you call it, so a
-plain <code>isCorrect()</code> check never pays for an upgrade it does not use.</p>
-<p>For <code>legacy</code> and <code>onion</code> values, pass the scheme and salt so the verifier knows
-how to read them:</p>
+plain <code>isCorrect()</code> check never pays for an upgrade it does not use. An empty stored value, a password outside the length limits and an unknown scheme (including <code>null</code>) give a wrong result instead of throwing.</p>
+<p>For <code>legacy</code> and <code>onion</code> values, pass the scheme and a non-empty salt (otherwise an
+<code>InvalidArgumentException</code> is thrown) so the verifier knows how to read them:</p>
 <div class="highlight"><pre><span></span><code><span class="x">$result = Password::verify($plaintext, $stored, Password::LEGACY, $salt);</span>
 </code></pre></div>
 <h2 id="importing-wordpress-users">Importing WordPress users<a class="headerlink" href="#importing-wordpress-users" title="Permanent link">&para;</a></h2>
@@ -3266,7 +3280,7 @@ owner logs in, so adopting the modern format needs no password reset.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

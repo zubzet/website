@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2976,9 +2976,9 @@ leave it marked as a pre-release:</p>
 <h2 id="ci-automation-side-effects">CI / automation side effects<a class="headerlink" href="#ci-automation-side-effects" title="Permanent link">&para;</a></h2>
 <p>Know what each push sets off (see <code>.github/workflows/</code>):</p>
 <ul>
-<li><strong><code>tests_e2e.yml</code></strong> runs the PHP 8.0 to 8.6 matrix on a push to <strong>any branch</strong> and on
+<li><strong><code>tests_e2e.yml</code></strong> runs the PHP 8.0 to 8.6 matrix on a push to <strong><code>main</code></strong> or <strong><code>develop</code></strong> and on
   <code>v*.*.*</code> <strong>tags</strong> (path-filtered to <code>src/</code>, <code>web/</code>, <code>tests/e2e/</code>, <code>composer*</code>, and the
-  workflow file).</li>
+  workflow file; PRs and other branches run 8.0 + 8.6 only).</li>
 <li><strong><code>docs.yml</code></strong>:<ul>
 <li>push to <strong><code>main</code></strong> deploys docs to the <strong><code>unstable</code></strong> channel.</li>
 <li>push of any <strong><code>v*.*.*</code> tag</strong> deploys that version's docs and points the
@@ -3082,7 +3082,7 @@ leave it marked as a pre-release:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

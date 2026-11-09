@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2754,6 +2754,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="File Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controller-names-and-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controller Names and Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2783,6 +2800,17 @@
     <span class="md-ellipsis">
       
         Advanced Controller Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirecting
       
     </span>
   </a>
@@ -2829,7 +2857,7 @@
 <h2 id="what-does-a-controller-do">What does a controller do?<a class="headerlink" href="#what-does-a-controller-do" title="Permanent link">&para;</a></h2>
 <p>A controller is one part of the <a href="../mvc/">MVC pattern</a>. It handles all the logic, but what does that mean? Usually the controller takes in data from one or multiple <a href="../models/">models</a> as well as user input and does something with it. This could include sorting, searching, calculating and generally making the data ready to display or ready to put into the database in case of a form input for example. </p>
 <h2 id="how-to-get-a-controller-executed">How to get a controller executed?<a class="headerlink" href="#how-to-get-a-controller-executed" title="Permanent link">&para;</a></h2>
-<p>Since there are no actual paths, controllers are tightly bound to the requested url. The first part of the URL, that is not part of getting to your project's root directory, determines which Controller will be used. If you call your controller IndexController, it will be executed when no name is given by a reuqest. </p>
+<p>Since there are no actual paths, controllers are tightly bound to the requested url. The first part of the URL, that is not part of getting to your project's root directory, determines which Controller will be used. If the request has no path segments, the controller named by the <code>defaultIndex</code> setting in <code>z_config/z_settings.ini</code> is executed with <code>action_index</code>. The value is the full controller class name, used as written, and when the key is unset it falls back to <code>DashboardController</code>, which the framework does not ship (without an application one <code>/</code> ends in a 404). New projects ship with <code>defaultIndex = DashboardController</code>. To serve <code>localhost/</code> from the bundled <code>IndexController</code> (renders <code>index.php</code> in <code>layout/default_layout.php</code>), set <code>defaultIndex = IndexController</code>; without that it is only reachable at <code>/index</code>.</p>
 <h2 id="file-routing">File Routing<a class="headerlink" href="#file-routing" title="Permanent link">&para;</a></h2>
 <p>The url is separated into 4 relevant parts</p>
 <ul>
@@ -2839,7 +2867,38 @@
 <li>Parameters</li>
 </ul>
 <p><code>localhost/example/test/123/321</code></p>
-<p>This would call the <code>action_test</code> in the <code>exampleController.php</code>  with the parameters 123 and 321.</p>
+<p>This would call the <code>action_test</code> in the <code>ExampleController.php</code>  with the parameters 123 and 321.</p>
+<h3 id="controller-names-and-case">Controller Names and Case<a class="headerlink" href="#controller-names-and-case" title="Permanent link">&para;</a></h3>
+<p>The controller name is built from the first URL segment: only its first letter is upper-cased, the rest is kept exactly as sent, and <code>Controller</code> is appended.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Looks for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/example/test</code></td>
+<td><code>ExampleController</code></td>
+</tr>
+<tr>
+<td><code>/Example/test</code></td>
+<td><code>ExampleController</code></td>
+</tr>
+<tr>
+<td><code>/EXAMPLE/test</code></td>
+<td><code>EXAMPLEController</code></td>
+</tr>
+<tr>
+<td><code>/frameworkApi</code></td>
+<td><code>FrameworkApiController</code></td>
+</tr>
+</tbody>
+</table>
+<p>The file is found by this exact spelling, so on case-sensitive file systems (Linux) the file name must match it: <code>ExampleController.php</code> answers <code>/example</code> and <code>/Example</code>, but not <code>/EXAMPLE</code>, which ends in a 404. A controller with capitals inside its name (<code>FrameworkApiController</code>) is only reachable with the same capitals in the URL (<code>/frameworkApi</code>). The class name has to equal the file name without <code>.php</code> and lives in the global namespace (no <code>namespace</code> line). A controller usually extends <code>z_controller</code>, the alias of <code>ZubZet\Framework\Core\Controller</code> (which only adds <code>makeFood()</code> and <code>makeCEDFood()</code>; the bundled <code>ErrorController</code> does not extend it). An optional <code>__construct(Request $req, Response $res)</code> runs on a fresh instance before every action and every <a href="../routing/#middleware-and-aftermiddleware">middleware</a> or afterMiddleware method. <code>Request</code>, <code>Response</code> (<code>Message\*</code>), <code>Rest</code> (<code>Support\Rest</code>), <code>User</code> (the request user) and <code>z_db</code> (<code>Database\Connection</code>) are global class aliases that work like the fully qualified names in action signatures and route-closure type hints, so app code cannot declare global classes with these names.</p>
+<p>Before the lookup, <code>-</code> in the segment becomes <code>_</code>, <code>.</code> becomes <code>§2E</code> and <code>ä</code>, <code>ö</code>, <code>ü</code> become <code>ae</code>, <code>oe</code>, <code>ue</code> (<code>/my-page</code> looks for <code>My_pageController</code>, <code>/data/file.json</code> runs <code>action_file§2Ejson</code>). The action name is the second segment, lower-cased, behind <code>action_</code> (a public method; <code>action_index</code> when there is no second segment); PHP method names are case-insensitive, so <code>action_byId</code> also answers <code>/group/byid</code>. The HTTP method is not checked, any verb reaches any <code>action_*</code> method.</p>
+<p>The segment is URL-decoded once and then looked up as a file name in the controller folders (userspace, modules, framework), with <code>.php</code> appended; it is not checked against a list of allowed names. Because <code>.</code> is replaced as described above, <code>..</code> can never climb out of those folders. An encoded slash (<code>%2F</code>) is kept, though, and addresses a subfolder of a controller folder (<code>/Admin%2FUsers</code> looks for <code>Admin/UsersController.php</code>), but the default Apache setup (<code>AllowEncodedSlashes Off</code>) already answers such requests with a 404 before the framework runs. A name without a slash that is not found directly is searched for by file name in the subfolders of each controller folder, so a controller in a subfolder is reached by its plain name.</p>
 <h2 id="default-actions">Default Actions<a class="headerlink" href="#default-actions" title="Permanent link">&para;</a></h2>
 <p>To handle default behavior there are predefined actions.</p>
 <table>
@@ -2856,7 +2915,7 @@
 </tr>
 <tr>
 <td>action_fallback</td>
-<td>Will be executed when the requested action is not found. Can be used to have infinite actions.  <code>localhost/example/ghdafiehihwe</code></td>
+<td>Will be executed when the requested action is not found (also for an explicit route or middleware method that does not exist), without it the 404 page is shown. Can be used to have infinite actions.  <code>localhost/example/ghdafiehihwe</code></td>
 </tr>
 </tbody>
 </table>
@@ -2921,6 +2980,8 @@
     <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div>
+<h2 id="redirecting">Redirecting<a class="headerlink" href="#redirecting" title="Permanent link">&para;</a></h2>
+<p><code>$res-&gt;rerouteUrl($url = "", $root = null)</code> sends a <code>location:</code> header (implicit 302) and ends the script, as do <code>$res-&gt;logout()</code> and the REST helpers. <code>$root</code> defaults to the <code>rootFolder</code> setting, which is <code>/</code> when <code>rootDirectory</code> is empty and <code>/{rootDirectory}/</code> otherwise. The header is built as <code>$root . $url</code> without any slash normalisation, so <code>$url</code> has to be written relative to the root folder, without a leading slash: <code>rerouteUrl("employee/list")</code>. A leading slash is not removed, so <code>rerouteUrl("/employee")</code> yields <code>//employee</code> with an empty root directory, which browsers read as a protocol-relative URL pointing at the host <code>employee</code>. Calling it without arguments redirects to the root folder; pass <code>$root = ""</code> to redirect to an absolute or external URL. <code>$res-&gt;reroute($path, $alias = false, $final = false)</code> instead dispatches internally to another controller and action without an HTTP redirect, so the browser URL stays (the query string is kept); explicit routes and group middleware apply to the new path, and <code>$final = true</code> ends the script afterwards, otherwise the calling action continues when <code>reroute()</code> returns (as after <code>render()</code> or <code>json()</code>). The new <code>Request</code> keeps GET, POST, cookies and body but has an empty <code>store</code> and <code>urlParameters</code>. For <code>$alias</code> see <a href="../../advanced-features/aliases-and-virtual-links/">aliases</a>. <code>Response</code> has no helpers for HTTP status codes, custom headers or downloads: use PHP's <code>http_response_code()</code> and <code>header()</code>.</p>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../routing/">Routing</a>: registering explicit route definitions instead of name-based routing</li>
@@ -3012,7 +3073,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

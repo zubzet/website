@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2792,16 +2792,21 @@
 <span class="x">$fileId = $upload-&gt;fileId;</span>
 </code></pre></div>
 <p><code>$file</code> is the file in <a href="https://www.php.net/manual/en/reserved.variables.files.php"><code>$_FILES</code></a>.<br />
-<code>$uploadDir</code> is the directory to place the file in. Ending with <code>/</code>.<br />
-<code>$maxSize</code> is the max file size. For some values there are already constants in the framework.<br />
-<code>$typeArray</code> array of accepted file types.</p>
+<code>$uploadDir</code> is the directory to place the file in. It must end with <code>/</code>: the generated file name is appended to the string as it is, so <code>"uploads"</code> would write <code>uploadsREF.ext</code> next to the folder instead of into it. The file is stored as <code>&lt;uniqid&gt;.&lt;lowercased extension&gt;</code>, the original name only in <code>z_file.name</code>. A missing folder is created with mode <code>0755</code>.<br />
+<code>$maxSize</code> is the max file size in bytes, <code>0</code> means unlimited. The constants <code>FILE_SIZE_1MB</code>, <code>2MB</code>, <code>5MB</code>, <code>10MB</code>, <code>20MB</code>, <code>50MB</code>, <code>100MB</code>, <code>200MB</code>, <code>500MB</code>, <code>1GB</code>, <code>2GB</code>, <code>5GB</code>, <code>10GB</code>, <code>20GB</code>, <code>50GB</code> and <code>100GB</code> hold byte counts (the GB ones are n times 1000 MiB, so <code>FILE_SIZE_1GB</code> is 1048576000). <code>image()</code> (<code>jpg</code>, <code>jpeg</code>, <code>png</code>, <code>bmp</code>), <code>video()</code> (<code>mp4</code>, <code>m4a</code>, <code>m4v</code>, <code>mov</code>, <code>3gp</code>, <code>ogg</code>, <code>webm</code>, <code>flv</code>, <code>mkv</code>, <code>avi</code>, <code>wmv</code>) and <code>audio()</code> (<code>mp3</code>, <code>wav</code>, <code>wma</code>, <code>ogg</code>, <code>m4a</code>, <code>aiff</code>, <code>aac</code>) are <code>upload()</code> with that type filter and default to <code>FILE_SIZE_2MB</code>, <code>FILE_SIZE_100MB</code> and <code>FILE_SIZE_10MB</code>; <code>audio()</code> accepts <code>mp3</code>, <code>wav</code>, <code>wma</code>, <code>ogg</code>, <code>m4a</code>, <code>aiff</code> and <code>aac</code>. Raise <code>upload_max_filesize</code> and <code>post_max_size</code> in the <code>php.ini</code> for large files.<br />
+<code>$typeArray</code> lists the accepted file extensions. The extension of the uploaded file name is lowercased and then compared with the entries, so write them in lowercase and without a dot (<code>"jpg"</code>, not <code>"JPG"</code> or <code>".jpg"</code>), which means <code>photo.JPG</code> is accepted by <code>"jpg"</code>. A file whose extension is not listed returns <code>UPLOAD_ERROR_WRONG_TYPE</code>. An empty array accepts every extension, including <code>php</code>.</p>
+<p>On success the file is registered in <code>z_file</code>, the properties <code>ref</code>, <code>mime</code>, <code>srcName</code>, <code>extension</code>, <code>size</code>, <code>filePath</code> and <code>fileId</code> are filled and <code>UPLOAD_SUCCESS</code> (0) is returned. Otherwise the properties stay empty and the code is <code>UPLOAD_ERROR_TOO_BIG</code> (1), <code>UPLOAD_ERROR_WRONG_TYPE</code> (2), <code>UPLOAD_ERROR_NOT_MOVED</code> (3, <code>move_uploaded_file</code> failed) or <code>UPLOAD_ERROR_NO_FILE</code> (4, <code>$file</code> is empty or has no <code>name</code>).</p>
 <h2 id="using-z-forms">Using Z-Forms<a class="headerlink" href="#using-z-forms" title="Permanent link">&para;</a></h2>
-<p>When using <a href="../auto-form-validation/">Z-Forms</a>, files will be stored and error feedback automatically goes back to the user. For file uploads there is the special rule <a href="../../api/classes/ZubZet-Framework-Form-Validation-Field.html#method_file"><code>file()</code></a>.
+<p>When using <a href="../auto-form-validation/">Z-Forms</a>, error feedback automatically goes back to the user, and <code>insertDatabase()</code> and <code>updateDatabase()</code> store the files first: a field without a posted file is skipped (<code>noSave</code>), an upload error ends with <code>error("Upload error: &lt;code&gt;")</code>, otherwise the column gets the stored file id. For file uploads there is the special rule <a href="../../api/classes/ZubZet-Framework-Form-Validation-Field.html#method_file"><code>file()</code></a>.
 <div class="highlight"><pre><span></span><code>(new FormField("file")) -&gt; file(FILE_SIZE_1MB, ["txt", "jpg", "png"])
 </code></pre></div>
-Files uploaded with this method will always be moved into the "uploads/" directory.</p>
+The first argument is the byte limit: a larger file fails with <code>file_to_big</code> (one o), and unlike <code>upload()</code> the value <code>0</code> does not mean unlimited. The second argument lists the accepted file extensions. The extension of the uploaded file name is lowercased and then compared with the entries, so write them in lowercase and without a dot (<code>"jpg"</code>, not <code>"JPG"</code> or <code>".jpg"</code>), which means <code>photo.JPG</code> is accepted by <code>"jpg"</code>. A file whose extension is not listed fails with the error type <code>file_type</code>; the error type <code>file</code> means a value was posted under the field name but no upload exists; like <code>file</code>, it has no default <code>Z.Lang.error_file_type</code> text, so define it in the layout. An empty array (the default) accepts every extension, including <code>php</code>.</p>
+<p>Files uploaded with this method are moved into the <code>uploadFolder</code> setting, which defaults to <code>uploads/</code> (relative to the project root) when the key is missing.</p>
+<p>The <code>uploadFolder</code> setting in <code>z_settings.ini</code> has to end with <code>/</code> as well (<code>uploadFolder = webroot/uploads/</code>). The framework passes it to <code>upload()</code> unchanged and does not add a missing slash, so <code>webroot/uploads</code> would create the folder but store the files as <code>webroot/uploadsREF.ext</code> beside it.</p>
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <p>Uploads land in the folder passed to <code>upload()</code>, with Z-Forms in the <code>uploadFolder</code> setting, which is <code>webroot/uploads/</code> in a new or migrated project. The <code>.htaccess</code> in that folder keeps PHP files from running, but every file in it is served from the application's own domain and the browser displays what it can. A file the browser renders as a page runs its scripts with the session of whoever opens it.</p>
+<p>Everything the check relies on comes from the client. Only the extension of the submitted file name is evaluated; the content is not inspected and the MIME type is not sniffed, so a file named <code>evil.jpg</code> with arbitrary content passes <code>["jpg"]</code>. The <code>mime</code> property of the upload object (and the value stored in <code>z_file</code>) is the type the browser reported, not a detected one. The <code>error</code> code PHP sets in <code>$_FILES</code> is not read either; a failed transfer only shows up indirectly, for example as <code>UPLOAD_ERROR_NOT_MOVED</code> when the temporary file is missing.</p>
+<p>The file name is the <code>uniqid()</code> reference, which is time based and guessable. The framework ships no route that serves stored files; serving them is up to the project.</p>
 <p>Which types are accepted is up to the project.</p>
 
 
@@ -2886,7 +2891,7 @@ Files uploaded with this method will always be moved into the "uploads/" directo
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

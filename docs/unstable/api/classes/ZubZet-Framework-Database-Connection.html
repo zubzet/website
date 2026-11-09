@@ -392,7 +392,8 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a>    </span>
 </dt>
-<dd>Snapshot selected properties into a Checkpoint for later restore()</dd>
+<dd>Snapshot selected properties into a Checkpoint for later restore()
+Only public properties can be captured and restored.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Interaction.html#method_countResults">countResults()</a>
@@ -420,7 +421,7 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a>    </span>
 </dt>
-<dd>Executes a query as prepared statement</dd>
+<dd>Executes a query as prepared statement, retrying transient errors up to db_max_retries and logging slow queries</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_execQuery">execQuery()</a>
@@ -448,7 +449,8 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
     <span>
                         &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
 </dt>
-<dd>Selects a full table or specified fields of it and returns the result as two dimensional array</dd>
+<dd>Selects a full table or specified fields of it and returns the result as two dimensional array
+Table and fields are not escaped, so never put user input in them.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Interaction.html#method_getInsertId">getInsertId()</a>
@@ -462,7 +464,7 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
     <span>
                         &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
 </dt>
-<dd>Selects a full table of specified fields of it filtered with an additional where statement. It returns the result as two dimensional array</dd>
+<dd>Selects a table or specified fields of it, filtered with a where statement, and returns the result as two dimensional array. Only $values are bound, $table, $fields and $where are not escaped</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_heartbeat">heartbeat()</a>
@@ -488,9 +490,9 @@ errors typical of busy single-node and cluster (Galera) setups.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Interaction.html#method_resultToLine">resultToLine()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
 </dt>
-<dd>Returns one line of the last query</dd>
+<dd>Returns the next line of the last query</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Database-Connection.html#method_switchUser">switchUser()</a>
@@ -1452,7 +1454,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">535</span>
+    <span class="phpdocumentor-element-found-in__line">538</span>
 
     </aside>
 
@@ -1518,7 +1520,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
@@ -1585,7 +1587,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -1593,7 +1595,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">checkIfUnique</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                <span class="phpdocumentor-signature__name">checkIfUnique</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignoreValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p>Table and field names are inserted unescaped. Check your input.</p>
 </section>
@@ -1629,19 +1631,19 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ignoreField</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>field of a dataset to ignore</p>
+                    <section class="phpdocumentor-description"><p>Field used to exclude rows; rows where it equals $ignoreValue are not counted, null disables the exclusion (inserted unescaped)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ignoreValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>value of the in the argument before defined field of the dataset to ignore</p>
+                    <section class="phpdocumentor-description"><p>Value of $ignoreField that marks the rows to exclude, e.g. the id of the row being edited</p>
 </section>
 
             </dd>
@@ -1670,25 +1672,27 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Support/Checkpoint/CanCheckpoint.php"><a href="files/src-support-checkpoint-cancheckpoint.html"><abbr title="src/Support/Checkpoint/CanCheckpoint.php">CanCheckpoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Snapshot selected properties into a Checkpoint for later restore()</p>
+        <p class="phpdocumentor-summary">Snapshot selected properties into a Checkpoint for later restore()
+Only public properties can be captured and restored.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">checkpointCurrentState</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$properties</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributeClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">checkpointCurrentState</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$properties</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributeClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$properties</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Names to snapshot; null discovers all non-static properties.</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1696,7 +1700,8 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>With null $properties, keeps only properties carrying this attribute; the default null applies no IncludeInCheckpoint filtering.</p>
+</section>
 
             </dd>
             </dl>
@@ -1722,7 +1727,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
@@ -1757,7 +1762,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -1804,7 +1809,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">523</span>
+    <span class="phpdocumentor-element-found-in__line">526</span>
 
     </aside>
 
@@ -1837,11 +1842,11 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Executes a query as prepared statement</p>
+        <p class="phpdocumentor-summary">Executes a query as prepared statement, retrying transient errors up to db_max_retries and logging slow queries</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1862,6 +1867,22 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If preparing or executing the statement fails and recovery is exhausted</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span>
@@ -1931,7 +1952,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">414</span>
+    <span class="phpdocumentor-element-found-in__line">417</span>
 
     </aside>
 
@@ -1983,7 +2004,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">460</span>
+    <span class="phpdocumentor-element-found-in__line">463</span>
 
     </aside>
 
@@ -2016,11 +2037,12 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Selects a full table or specified fields of it and returns the result as two dimensional array</p>
+        <p class="phpdocumentor-summary">Selects a full table or specified fields of it and returns the result as two dimensional array
+Table and fields are not escaped, so never put user input in them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2089,7 +2111,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|string|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Id of the last inserted element</p>
+            <section class="phpdocumentor-description"><p>Id of the last inserted element; 0 if the last query generated no AUTO_INCREMENT id, null before the first query</p>
 </section>
 
     
@@ -2107,11 +2129,11 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Selects a full table of specified fields of it filtered with an additional where statement. It returns the result as two dimensional array</p>
+        <p class="phpdocumentor-summary">Selects a table or specified fields of it, filtered with a where statement, and returns the result as two dimensional array. Only $values are bound, $table, $fields and $where are not escaped</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2143,7 +2165,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The where statement in the query. Formatted as in a SQL query (a = 4 AND c = 4...);</p>
+                    <section class="phpdocumentor-description"><p>The where statement in the query. Formatted as in a SQL query (a = 4 AND c = 4...). Required in practice: the empty default produces invalid SQL (&quot;WHERE &quot;)</p>
 </section>
 
             </dd>
@@ -2190,7 +2212,7 @@ errors typical of busy single-node and cluster (Galera) setups.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">479</span>
+    <span class="phpdocumentor-element-found-in__line">482</span>
 
     </aside>
 
@@ -2266,7 +2288,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -2274,7 +2296,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">mergeAsGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupBy</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subElement</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
+                <span class="phpdocumentor-signature__name">mergeAsGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupBy</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subElement</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2290,10 +2312,10 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$subElement</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If set, the only a sub element of the grouped element is returned</p>
+                    <section class="phpdocumentor-description"><p>If set, groups hold only this column's plain values instead of full rows</p>
 </section>
 
             </dd>
@@ -2304,7 +2326,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Results of the last query as two dimensional array with the index as thr groupBy value</p>
+            <section class="phpdocumentor-description"><p>Results of the last query as two dimensional array with the index as the groupBy value</p>
 </section>
 
     
@@ -2322,7 +2344,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -2330,22 +2352,39 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">resultToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$out</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
+                <span class="phpdocumentor-signature__name">resultToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$out</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$out</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Existing rows the result rows are appended to</p>
+</section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Error">Error</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the last query returned no result set (non-SELECT)</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
@@ -2368,24 +2407,24 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Interaction.php"><a href="files/src-database-interaction.html"><abbr title="src/Database/Interaction.php">Interaction.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns one line of the last query</p>
+        <p class="phpdocumentor-summary">Returns the next line of the last query</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">resultToLine</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">resultToLine</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Line of the last result</p>
+            <section class="phpdocumentor-description"><p>Next line of the last result, null once the result is exhausted or empty</p>
 </section>
 
     
@@ -2455,7 +2494,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Support/Checkpoint/CanCheckpoint.php"><a href="files/src-support-checkpoint-cancheckpoint.html"><abbr title="src/Support/Checkpoint/CanCheckpoint.php">CanCheckpoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -2472,7 +2511,8 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">IncludeInCheckpoint::class</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Keeps only properties carrying this attribute; defaults to IncludeInCheckpoint, null applies no filtering.</p>
+</section>
 
             </dd>
             </dl>
@@ -2482,7 +2522,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Filtered by $attributeClass when given, else all non-static instance properties.</p>
+            <section class="phpdocumentor-description"><p>Names of non-static instance properties, including non-public ones.</p>
 </section>
 
     
@@ -2500,7 +2540,7 @@ connection has been opened yet (lazy loading) or the ping failed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">369</span>
+    <span class="phpdocumentor-element-found-in__line">372</span>
 
     </aside>
 
@@ -2601,7 +2641,7 @@ prefix, on the return-value path as well as the throwing one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">328</span>
 
     </aside>
 
@@ -2666,7 +2706,7 @@ is a single statement.</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">446</span>
+    <span class="phpdocumentor-element-found-in__line">449</span>
 
     </aside>
 
@@ -2736,7 +2776,7 @@ connection first, so the caller can keep using it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">506</span>
+    <span class="phpdocumentor-element-found-in__line">509</span>
 
     </aside>
 
@@ -2772,7 +2812,7 @@ connection is still responding. Assumes a connection has been opened.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Database/Connection.php"><a href="files/src-database-connection.html"><abbr title="src/Database/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 
     </aside>
 

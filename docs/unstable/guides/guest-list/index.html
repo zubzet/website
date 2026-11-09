@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2896,7 +2896,7 @@
 <span class="w">    </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
 <span class="w">    </span><span class="o">`</span><span class="n">first_name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="o">`</span><span class="n">last_name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">.</span>
+<span class="w">    </span><span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="o">`</span><span class="n">active</span><span class="o">`</span><span class="w"> </span><span class="n">TINYINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">    </span><span class="o">`</span><span class="n">created</span><span class="o">`</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span>
 <span class="p">);</span>
@@ -2922,8 +2922,8 @@
 <p><strong><a href="../../core-features/migrations/">Migration</a></strong> refers to the process of modifying a database's structure, such as adding, removing, or altering tables and columns. Migration files document these changes and allow them to be applied automatically across different environments, ensuring the database structure remains consistent and versioned.</p>
 <p><strong>Seeding</strong> is the process of populating a database with sample or test data. It is commonly used in development and testing environments to provide realistic data for testing or to initialize the database with predefined values for consistency. Seeding is often used alongside migrations to set up the database.</p>
 </details>
-<p>To define the database structure, go to the <code>database/migrations</code> folder. Create a file named <code>[DATE]_guest.sql</code>, replacing <code>[DATE]</code> with the current date in the format <code>YYYY-MM-DD</code>. Then, paste the <code>CREATE TABLE</code> statement from the Resources section into the file. </p>
-<p>To add initial data, go to the <code>database/seeds</code> folder. Create a file named <code>guest.sql</code> and paste the <code>INSERT INTO</code> statement from the Resources section.</p>
+<p>To define the database structure, go to the <code>app/Database/migrations</code> folder. Create a file named <code>[DATE]_guest.sql</code>, replacing <code>[DATE]</code> with the current date in the format <code>YYYY-MM-DD</code>. Then, paste the <code>CREATE TABLE</code> statement from the Resources section into the file. </p>
+<p>To add initial data, go to the <code>app/Database/seed</code> folder. Create a file named <code>guest.sql</code> and paste the <code>INSERT INTO</code> statement from the Resources section.</p>
 <p>This separates the database structure and seed data, keeping your setup organized.<br />
 While the file names are customizable, it is recommended to follow a clear and consistent naming convention, such as including the date and a descriptive name.</p>
 <h2 id="setting-up-the-controller">Setting up the Controller<a class="headerlink" href="#setting-up-the-controller" title="Permanent link">&para;</a></h2>
@@ -2934,7 +2934,7 @@ While the file names are customizable, it is recommended to follow a clear and c
 <p>More information can be found <a href="../../core-features/controllers-and-actions/">here</a></p>
 </details>
 <p>To handle all requests, we need to create a <a href="../../core-features/controllers-and-actions/">Controller</a>.
-For this example, create a file named <code>GuestsController.php</code> in the <code>z_controllers</code> folder.
+For this example, create a file named <code>GuestsController.php</code> in the <code>app/Controllers</code> folder.
 The file name, controller name, and action name are flexible but should be chosen for clear, logical understanding and consistency.</p>
 <p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="k">class</span> <span class="nc">GuestsController</span> <span class="k">extends</span> <span class="nx">z_controller</span> <span class="p">{</span>
@@ -2961,7 +2961,7 @@ Every controller follows this structure. It is important that the class name mat
 <p>More information can be found <a href="../../core-features/models/">here</a></p>
 </details>
 <p>To interact with the database where the guests are stored, we need a <a href="../../core-features/models/">Model</a>.<br />
-For this example, create a file named <code>GuestsModel.php</code> in the <code>z_models</code> folder.<br />
+For this example, create a file named <code>GuestsModel.php</code> in the <code>app/Models</code> folder.<br />
 You have flexibility in the naming of the file and model, but it is best to use a clear and logical structure for better understanding.</p>
 <p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="k">class</span> <span class="nc">GuestsModel</span> <span class="k">extends</span> <span class="nx">z_model</span> <span class="p">{</span>
@@ -2975,7 +2975,7 @@ To fetch data from the database, create a method named <code>getGuests()</code>:
     <span class="k">class</span> <span class="nc">GuestsModel</span> <span class="k">extends</span> <span class="nx">z_model</span> <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">getGuests</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span> <span class="p">{</span>
             <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"SELECT *</span>
-<span class="s2">                    FROM `guests`"</span><span class="p">;</span>
+<span class="s2">                    FROM `guest`"</span><span class="p">;</span>
 
             <span class="nv">$guestList</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">exec</span><span class="p">(</span><span class="nv">$sql</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">resultToArray</span><span class="p">();</span>
 
@@ -3012,7 +3012,7 @@ If you have named your model or function differently, be sure to substitute the 
 <p>A <strong>View</strong> is a key part of the MVC (Model-View-Controller) pattern responsible for presenting data to the user. It defines the structure and layout of the user interface, rendering dynamic content based on data provided by the controller. Views focus solely on presentation, avoiding business logic or direct data handling, to ensure a clean separation of concerns.</p>
 <p>More information can be found <a href="../../core-features/views/">here</a></p>
 </details>
-<p>To create a <a href="../../core-features/views/">view</a>, add a folder named <code>guests</code> in the <code>z_views</code> folder and inside this folder add a file named <code>guests_list.blade.php</code>:
+<p>To create a <a href="../../core-features/views/">view</a>, add a folder named <code>guests</code> in the <code>app/Views</code> folder and inside this folder add a file named <code>guests_list.blade.php</code>:
 <div class="highlight"><pre><span></span><code>@extends($layout)
 
 @section("content")
@@ -3200,7 +3200,7 @@ And to view your result, navigate to <code>http://localhost:8080/Guests/list</co
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

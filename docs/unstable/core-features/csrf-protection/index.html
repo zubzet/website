@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2724,6 +2724,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#when-the-check-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2732,13 +2743,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="When the check runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protecting-a-normally-safe-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protecting a normally safe method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#opting-out" class="md-nav__link">
+  <a href="#how-a-request-is-judged" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Opting out
+        How a request is judged
       
     </span>
   </a>
@@ -2746,10 +2774,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#raw-html-forms" class="md-nav__link">
+  <a href="#settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Raw HTML forms
+        Settings
       
     </span>
   </a>
@@ -2757,10 +2785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interaction-with-login_scope_allow_subdomains" class="md-nav__link">
+  <a href="#configuration-by-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interaction with login_scope_allow_subdomains
+        Configuration by scenario
       
     </span>
   </a>
@@ -2768,21 +2796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#limitations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-ajax" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom AJAX
+        Limitations
       
     </span>
   </a>
@@ -2826,104 +2843,268 @@
 
 
 <h1 id="csrf-protection">CSRF Protection<a class="headerlink" href="#csrf-protection" title="Permanent link">&para;</a></h1>
-<p>Since version <strong>1.3.0</strong>, the framework defends every state-changing request against Cross-Site Request Forgery with a stateless double-submit cookie.</p>
-<p>Every request ensures a <code>z_csrf</code> cookie holding a random 40-character token: a fresh one is issued when the browser sends none, otherwise the existing one is reused. Z.js reads that cookie and echoes it back as an <code>X-CSRF-Token</code> header on every request it sends, so <a href="../../frontend-integration/backend-requests/"><code>Z.Forms</code> and <code>Z.Request</code></a> need no change. The server compares the two and answers a mismatch with <code>403</code> and a JSON error body:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"csrf token mismatch"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The cookie travels automatically on any request the browser makes, so on its own it proves nothing. The header does: setting it requires reading the cookie, and only code from the same origin is allowed to do that. An attacker's page can trigger a request, but cannot fill in the header.</p>
-<h2 id="when-the-check-runs">When the check runs<a class="headerlink" href="#when-the-check-runs" title="Permanent link">&para;</a></h2>
-<p>The Router issues the cookie on every request. Before the middlewares and the action of a route run, the token is compared for every request that</p>
-<ol>
-<li>uses a method other than <code>GET</code>, <code>HEAD</code> or <code>OPTIONS</code>, and</li>
-<li>a cross-site page could send without a CORS preflight.</li>
-</ol>
-<p>The second condition skips requests that only a script on an allowed origin, or a client outside the browser, can send:</p>
+<p>Since version <strong>1.3.0</strong>, the framework defends every request that can change state against Cross-Site Request Forgery.</p>
+<p>A forged request is one the browser of a logged-in user sends because a page of another site told it to: the browser attaches the session cookie by itself. The defense reads only the headers the browser sets. There is no token, no cookie and no hidden form field, so forms, <code>Z.Request</code>, <code>Z.Forms</code> and hand-written <code>fetch()</code> calls need nothing extra.</p>
+<div class="admonition warning">
+<p class="admonition-title"><code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> are not checked</p>
+<p>Links, redirects and embeds from other sites keep working, so do OAuth and payment callbacks and the links of your own mails opened in a webmail. In return, an action that changes state on a <code>GET</code> is unprotected until it opts back in, see <a href="#protecting-a-normally-safe-method">Protecting a normally safe method</a>.</p>
+</div>
+<h2 id="the-headers">The headers<a class="headerlink" href="#the-headers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Skipped when</th>
-<th>Typical sender</th>
+<th>Header</th>
+<th>Set by</th>
+<th>Says</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>The <code>Content-Type</code> is anything but <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code> or <code>text/plain</code></td>
-<td>JSON APIs, webhooks posting JSON</td>
+<td><code>Sec-Fetch-Site</code></td>
+<td>Current browsers, to <code>https://</code> and <code>localhost</code> only</td>
+<td>How the page that started the request relates to its target: <code>same-origin</code>, <code>same-site</code>, <code>cross-site</code>, or <code>none</code> when no page started it (a typed URL, a bookmark, a link from a desktop application)</td>
 </tr>
 <tr>
-<td>An <code>Authorization</code> header carries a scheme other than <code>Basic</code>, <code>Digest</code>, <code>NTLM</code> or <code>Negotiate</code></td>
-<td><code>Bearer</code> tokens of SPAs, mobile apps and services</td>
+<td><code>Origin</code></td>
+<td>Browsers, on <code>fetch()</code>, its CORS preflight and every method but <code>GET</code> and <code>HEAD</code>; never on a link or another page navigation by <code>GET</code></td>
+<td>The origin of that page, or <code>null</code> when the browser hides it</td>
 </tr>
 </tbody>
 </table>
-<p>The four schemes stay checked because the browser attaches cached credentials of these schemes by itself, to cross-site requests too. A request without a body has no <code>Content-Type</code> and is checked as well.</p>
-<p>Safe methods are never checked, so an action must not change state on <code>GET</code>.</p>
-<h2 id="opting-out">Opting out<a class="headerlink" href="#opting-out" title="Permanent link">&para;</a></h2>
-<p>An endpoint that a browser session never calls with its own token, like form-encoded API-key authentication or a <code>navigator.sendBeacon()</code> target, opts out on its route or group:</p>
-<div class="highlight"><pre><span></span><code><span class="x">Route::post('/hook', [HookController::class, 'action_receive'])-&gt;withoutCsrf();</span>
+<p>A page can make its <code>Origin</code> <code>null</code>, but it cannot forge any of these headers.</p>
+<h2 id="when-the-check-runs">When the check runs<a class="headerlink" href="#when-the-check-runs" title="Permanent link">&para;</a></h2>
+<p>The router checks every request before the route files load, so no route, middleware or controller runs for a rejected one. This covers explicit routes, convention paths, the framework's routes under <code>/_zubzet</code>, the 404 page and the login that <code>checkPermission()</code> shows. <code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> pass the router unchecked; there is no other exception per method or route.</p>
+<h3 id="protecting-a-normally-safe-method">Protecting a normally safe method<a class="headerlink" href="#protecting-a-normally-safe-method" title="Permanent link">&para;</a></h3>
+<p><code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> are skipped by <code>CSRF::verify()</code> on the assumption that they never change state. An action that breaks that assumption, like a <code>GET</code> logout, has to opt back in: call <code>$req-&gt;csrfBlockAdditionalMethod()</code> (or <code>CSRF::verify("GET")</code> directly) before doing anything state-changing. Without arguments it covers <code>GET</code>; pass the methods explicitly to cover others, like <code>csrfBlockAdditionalMethod("GET", "HEAD")</code>, since a <code>HEAD</code> request runs the same action and a page can send one with the session cookie. Method names are case insensitive. Passing a method name there removes it from the safe-method exemption for that call only, so the usual checks (<code>Sec-Fetch-Site</code>, <code>Origin</code>, <code>csrf_allow</code> and the trusted/blocked origin lists) run against it too. Like <code>checkPermission()</code>, <code>csrfBlockAdditionalMethod()</code> returns nothing: a rejected request gets the <code>403</code> page and the script ends, while <code>CSRF::verify()</code> only returns the result.</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function action_logout($req, Response $res) {</span>
+<span class="x">    // Logout is a GET action, but still state-changing, so it needs</span>
+<span class="x">    // CSRF protection too despite GET normally being exempt as safe.</span>
+<span class="x">    // HEAD runs the same action and a page can send it with cookies</span>
+<span class="x">    $req-&gt;csrfBlockAdditionalMethod("GET", "HEAD");</span>
 
-<span class="x">Route::group('/api', function() {</span>
-<span class="x">    Route::post('/orders', [ApiController::class, 'action_orders']);</span>
-<span class="x">})-&gt;withoutCsrf();</span>
+<span class="x">    return $res-&gt;logout();</span>
+<span class="x">}</span>
 </code></pre></div>
-<p>The opt-out is inherited exactly like a <a href="../routing/#middleware-on-groups">group middleware</a>: it covers every route declared inside the group and every convention path below its prefix. A group without routes is therefore enough for convention controllers:</p>
-<div class="highlight"><pre><span></span><code><span class="x">Route::group('/click/interaction')-&gt;withoutCsrf();</span>
-</code></pre></div>
-<p>Such a group only reaches convention paths. An explicit route opts out where it is declared, either directly or by being declared inside the group.</p>
-<p>An opted-out endpoint has to authenticate its caller by something other than the session cookie.</p>
-<h2 id="raw-html-forms">Raw HTML forms<a class="headerlink" href="#raw-html-forms" title="Permanent link">&para;</a></h2>
-<p>A raw HTML form cannot set a header, so it carries the token in a hidden <code>_csrf</code> field instead, which the check accepts in place of the header. <code>CSRF::field()</code> renders that input from the cookie the Router has already issued:</p>
-<div class="highlight"><pre><span></span><code>&lt;form method="post"&gt;
-    {!! \ZubZet\Framework\Security\CSRF::field() !!}
-    ...
-&lt;/form&gt;
-</code></pre></div>
-<h2 id="interaction-with-login_scope_allow_subdomains">Interaction with <code>login_scope_allow_subdomains</code><a class="headerlink" href="#interaction-with-login_scope_allow_subdomains" title="Permanent link">&para;</a></h2>
-<p>With <code>login_scope_allow_subdomains = true</code> the <strong>session</strong> cookie is issued with a <code>Domain=.example.com</code> attribute so it is shared across sibling subdomains for single sign-on.</p>
-<p>The <code>z_csrf</code> cookie deliberately does <strong>not</strong> follow that setting. It is always issued host-only, without any <code>Domain</code> attribute, so <code>other.example.com</code> cannot read the token belonging to <code>app.example.com</code>. This is intentional: subdomain sharing neutralises the browser's default <code>SameSite=Lax</code> protection for sibling hosts, which is exactly the case the CSRF token has to cover.</p>
-<p>The practical consequence is that each host maintains its own token. A page served from one subdomain cannot submit a <code>Z.Forms</code> request to another subdomain.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>There is nothing to configure. The framework's cookies (<code>z_csrf</code>, the <code>z_login_token</code> session cookie and the maintenance bypass cookie) carry the <code>Secure</code> attribute whenever the <code>host</code> setting starts with <code>https://</code>, so the browser only ever sends them back over HTTPS. A deployment whose <code>host</code> is <code>http://</code> gets them without the attribute, because a <code>Secure</code> cookie is never stored on a plain <code>http://</code> origin: the token would never return, every mutating request would be answered with <code>403</code>, and no login would stick.</p>
-<p>Keep <code>host</code> on <code>https://</code> in production: without <code>Secure</code>, a single <code>http://</code> request to the same domain leaks the session and the token in cleartext to anyone on the network path.</p>
-<h2 id="custom-ajax">Custom AJAX<a class="headerlink" href="#custom-ajax" title="Permanent link">&para;</a></h2>
-<p>Requests built by hand with <code>fetch()</code> or <code>$.ajax()</code> bypass Z.js and have to attach the header themselves, otherwise they receive a <code>403</code>. Ask Z.js for the token:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"X-CSRF-Token"</span><span class="o">:</span><span class="w"> </span><span class="nx">Z</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">csrfToken</span><span class="p">()</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span>
-<span class="p">});</span>
-</code></pre></div>
-<p><code>Z.Request.csrfToken()</code> returns <code>null</code> when the browser holds no cookie. On a page the framework rendered that only happens when the cookie was rejected, which means the <code>host</code> setting says <code>https://</code> while the page is actually served over plain <code>http://</code>.</p>
-<h2 id="when-a-legitimate-request-is-rejected">When a legitimate request is rejected<a class="headerlink" href="#when-a-legitimate-request-is-rejected" title="Permanent link">&para;</a></h2>
-<p>Z.js reads the cookie at the moment it sends, so header and cookie always agree and a well-configured deployment never sees a <code>403</code> for its own requests. A rejection therefore signals a deployment problem, not a user error, and Z.js deliberately gives it no special treatment: <code>Z.Request</code> handlers are simply never called and <code>Z.Forms</code> only re-enables its button, so look at the network tab. The usual causes:</p>
+<p>A browser sends no <code>Origin</code> on a link, so a <code>GET</code> that opts back in only passes from the application's own origin or from no page at all (a typed URL, a bookmark), whatever <code>csrf_allow</code> and <code>csrf_trusted_origins</code> say. That suits a logout; an action that other sites have to link to cannot be protected this way and should take a <code>POST</code> instead.</p>
+<p>A rejected request is answered by the <code>403</code> page of the error controller (<code>error/403</code>), the same one <code>checkPermission()</code> shows.</p>
+<h2 id="how-a-request-is-judged">How a request is judged<a class="headerlink" href="#how-a-request-is-judged" title="Permanent link">&para;</a></h2>
+<p><strong>The source</strong> is the <code>Origin</code> header, lowercase. Without it, or with <code>Origin: null</code>, the source is unknown. The <code>Referer</code> is not looked at.</p>
+<p><code>csrf_allow</code> sets which <code>Sec-Fetch-Site</code> values pass on their own: <code>same-origin</code> lets <code>same-origin</code> and <code>none</code> through, <code>same-site</code> lets <code>same-site</code> through as well, <code>any</code> lets every value through (a public API for browsers on other sites; only <code>csrf_blocked_origins</code> still rejects). Without a cookie session nothing is there to forge, but with one, <code>any</code> switches the protection off.</p>
+<ol>
+<li><strong><code>GET</code>, <code>HEAD</code> or <code>OPTIONS</code>, not opted back in</strong> (see <a href="#protecting-a-normally-safe-method">Protecting a normally safe method</a>): passes.</li>
+<li><strong>Neither <code>Sec-Fetch-Site</code> nor <code>Origin</code> is sent:</strong> passes. This is curl, a server or a webhook, and nothing else is checked.</li>
+<li><strong>The source is unknown and <code>csrf_allow</code> is not <code>any</code>:</strong> passes only with <code>Sec-Fetch-Site</code> <code>same-origin</code> or <code>none</code>. Neither list can match an unknown source, so a page that hides its <code>Origin</code> (<code>no-referrer</code>, a sandboxed iframe) cannot slip past <code>csrf_blocked_origins</code> this way.</li>
+<li><strong><code>Sec-Fetch-Site</code> is present and not let through by <code>csrf_allow</code>:</strong> passes only when the source is listed in <code>csrf_trusted_origins</code>.</li>
+<li><strong>Anything else:</strong> passes unless the source is listed in <code>csrf_blocked_origins</code>.</li>
+</ol>
+<p>Both headers are compared lowercase and trimmed. A request with an <code>Origin</code> but no <code>Sec-Fetch-Site</code> (an old browser, plain <code>http://</code>) therefore only meets the blocklist. A source listed in both lists passes in step 4 and is rejected in step 5, depending on whether <code>csrf_allow</code> lets its <code>Sec-Fetch-Site</code> through.</p>
+<p>A <code>POST</code> (or any other checked request) to <code>https://app.example.com</code> from:</p>
 <table>
 <thead>
 <tr>
+<th>Source</th>
+<th><code>Sec-Fetch-Site</code></th>
+<th>Default</th>
+<th><code>csrf_allow = same-site</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a page of <code>https://app.example.com</code></td>
+<td><code>same-origin</code></td>
+<td>passes</td>
+<td>passes</td>
+</tr>
+<tr>
+<td>a typed URL, a bookmark</td>
+<td><code>none</code></td>
+<td>passes</td>
+<td>passes</td>
+</tr>
+<tr>
+<td>a page on <code>https://www.example.com</code></td>
+<td><code>same-site</code></td>
+<td>rejected</td>
+<td>passes</td>
+</tr>
+<tr>
+<td>a page on <code>https://www.example.com</code> that hides its <code>Origin</code> (<code>no-referrer</code>)</td>
+<td><code>same-site</code></td>
+<td>rejected</td>
+<td>rejected</td>
+</tr>
+<tr>
+<td>a page on <code>https://partner.com</code>, listed in <code>csrf_trusted_origins</code></td>
+<td><code>cross-site</code></td>
+<td>passes</td>
+<td>passes</td>
+</tr>
+<tr>
+<td>a page on <code>https://partner.com</code> that hides its <code>Origin</code></td>
+<td><code>cross-site</code></td>
+<td>rejected</td>
+<td>rejected</td>
+</tr>
+<tr>
+<td>a page on <code>https://evil.com</code></td>
+<td><code>cross-site</code></td>
+<td>rejected</td>
+<td>rejected</td>
+</tr>
+<tr>
+<td>curl, a server, an old browser sending an <code>Origin</code></td>
+<td>absent</td>
+<td>passes</td>
+<td>passes</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>GET</code>, <code>HEAD</code> or <code>OPTIONS</code> passes in every row, unless the action opts back in.</p>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>csrf_allow</code></td>
+<td><code>same-origin</code></td>
+<td><code>same-origin</code>, <code>same-site</code> or <code>any</code>, case insensitive; any other value throws an error</td>
+</tr>
+<tr>
+<td><code>csrf_trusted_origins</code></td>
+<td>empty</td>
+<td>Comma separated origins that pass although <code>csrf_allow</code> does not let their <code>Sec-Fetch-Site</code> through</td>
+</tr>
+<tr>
+<td><code>csrf_blocked_origins</code></td>
+<td>empty</td>
+<td>Comma separated origins that are rejected although <code>csrf_allow</code> lets their <code>Sec-Fetch-Site</code> through, or it is absent</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="na">csrf_allow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">same-origin</span>
+<span class="na">csrf_trusted_origins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://partner.com, https://docs.example.com</span>
+<span class="na">csrf_blocked_origins</span><span class="w"> </span><span class="o">=</span>
+</code></pre></div>
+<p>An entry is compared as written, only lowercased and trimmed, like the <code>Origin</code> header. Write it exactly as the browser sends the <code>Origin</code>: no path, no trailing slash, and no port unless it is not the default one (<code>80</code> for <code>http</code>, <code>443</code> for <code>https</code>). <code>https://partner.com:443</code> therefore never matches, while <code>http://partner.com</code>, <code>https://partner.com:8443</code> and <code>https://www.partner.com</code> are other origins than <code>https://partner.com</code>. Write internationalized hosts in their <code>xn--</code> form, as the browser sends them.</p>
+<p><code>csrf_trusted_origins</code> only lets the request through. Reading the answer, or sending JSON or custom headers, needs CORS on top. The CORS preflight is an <code>OPTIONS</code> and passes unchecked, the request that follows it is checked, so an origin that calls the application with <code>fetch()</code> has to be listed.</p>
+<p>Only use <code>csrf_allow = same-site</code> when every subdomain of the site is yours, future and forgotten ones included: a subdomain hosting content of others (uploads, a bucket, one per customer), one with an XSS hole, or one whose DNS points to a cancelled service can then act with the sessions of your users. Block the risky ones with <code>csrf_blocked_origins</code>, or stay on <code>same-origin</code> and list the trusted ones.</p>
+<h2 id="configuration-by-scenario">Configuration by scenario<a class="headerlink" href="#configuration-by-scenario" title="Permanent link">&para;</a></h2>
+<p>The application runs on <code>https://app.example.com</code>.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
 <th>Scenario</th>
+<th>Configuration</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The same application runs on several subdomains</td>
+<td>Nothing</td>
+<td>Each subdomain passes its own requests (<code>same-origin</code>); a request from one to another is <code>same-site</code> and rejected unless listed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A bucket on <code>bucket.example.com</code> hosts foreign content, every other subdomain may</td>
+<td><code>csrf_allow = same-site</code><br><code>csrf_blocked_origins = https://bucket.example.com</code></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Subdomain <code>x</code> may, subdomain <code>y</code> may not</td>
+<td><code>csrf_trusted_origins = https://x.example.com</code></td>
+<td>Or <code>csrf_allow = same-site</code> with <code>csrf_blocked_origins = https://y.example.com</code>, which lets every other subdomain in as well and stops <code>y</code> in browsers without <code>Sec-Fetch-Site</code> too</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Only site <code>x.com</code> may</td>
+<td><code>csrf_trusted_origins = https://x.com</code></td>
+<td><code>www.x.com</code> is another origin and has to be listed on its own</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Only site <code>x.com</code> and subdomain <code>y</code> may</td>
+<td><code>csrf_trusted_origins = https://x.com, https://y.example.com</code></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Every subdomain may, plus site <code>x.com</code></td>
+<td><code>csrf_allow = same-site</code><br><code>csrf_trusted_origins = https://x.com</code></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Every subdomain may, except <code>x</code></td>
+<td><code>csrf_allow = same-site</code><br><code>csrf_blocked_origins = https://x.example.com</code></td>
+<td>A page on <code>x</code> that hides its <code>Origin</code> is rejected too, as is every subdomain doing so</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The application runs on a subdomain, the parent host may</td>
+<td><code>csrf_trusted_origins = https://example.com</code></td>
+<td><code>www.example.com</code> is another origin</td>
+</tr>
+<tr>
+<td>9</td>
+<td>The application runs on a subdomain, another subdomain may</td>
+<td><code>csrf_trusted_origins = https://b.example.com</code></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>The nested subdomain <code>x.y</code> may, all others not</td>
+<td><code>csrf_trusted_origins = https://x.y.example.com</code></td>
+<td>Neither <code>y.example.com</code> nor <code>a.x.y.example.com</code> is covered</td>
+</tr>
+<tr>
+<td>11</td>
+<td>The same host may on port 3000, not on port 4000</td>
+<td><code>csrf_trusted_origins = https://app.example.com:3000</code></td>
+<td>Under <code>csrf_allow = same-site</code>, use <code>csrf_blocked_origins = https://app.example.com:4000</code> instead</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No <code>Sec-Fetch-Site</code>.</strong> Old browsers (Safari before 16.4) and every browser over plain <code>http://</code> to a host other than <code>localhost</code> send none, so only <code>csrf_blocked_origins</code> applies to them when they send an <code>Origin</code>. A checked request of theirs with a hidden <code>Origin</code> (<code>null</code>, for example from a page with <code>no-referrer</code>) is rejected, even from the application's own pages. Such browsers are otherwise protected only by the <code>SameSite=Lax</code> session cookie, which does not cover a link: an action that opts a <code>GET</code> back in, like the logout and <code>z/login_as</code>, is reachable from another site in them. Serve the application over <code>https://</code>.</li>
+<li><strong>Ports are not part of a site.</strong> A browser sends <code>same-site</code> from <code>https://app.example.com:4000</code> to <code>https://app.example.com</code>, so under <code>csrf_allow = same-site</code> every port of every subdomain passes unless blocked.</li>
+<li><strong><code>csrf_allow = any</code></strong> switches the protection off for every site; only <code>csrf_blocked_origins</code> still applies. Use it for an API that has no cookie session.</li>
+<li><strong>No whole sites or wildcards.</strong> An entry is one exact origin. <code>https://*.example.com</code> or a bare site cannot be listed; list each origin, or use <code>csrf_allow = same-site</code> for the own site.</li>
+<li><strong><code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> are not checked.</strong> An action that changes state on one of them is open to every site until it calls <code>csrfBlockAdditionalMethod()</code>. Prefer a <code>POST</code> for anything that changes state.</li>
+<li><strong>A hidden <code>Origin</code> is never trusted.</strong> A checked request without a known source passes only as <code>same-origin</code> or <code>none</code>, whatever <code>csrf_allow</code> and the lists say (except under <code>csrf_allow = any</code>). A partner that posts from a page with <code>no-referrer</code> has to stop hiding its <code>Origin</code>.</li>
+<li><strong>Files served by Apache directly</strong> (everything in the webroot that does not go through <code>index.php</code>, such as images, scripts and uploads) are not checked.</li>
+</ul>
+<h2 id="when-a-legitimate-request-is-rejected">When a legitimate request is rejected<a class="headerlink" href="#when-a-legitimate-request-is-rejected" title="Permanent link">&para;</a></h2>
+<p><code>Z.Request</code> and <code>Z.Forms</code> give a <code>403</code> no special treatment, so look at the network tab.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
 <th>Cause</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>host</code> says <code>https://</code> but the app is served over plain <code>http://</code></td>
-<td>The <code>Secure</code> cookie is never stored, no header can be sent; make <code>host</code> match the real scheme</td>
+<td>Another site</td>
+<td>The request comes from another site, or from another subdomain or port under <code>csrf_allow = same-origin</code>. List its origin in <code>csrf_trusted_origins</code>, or use <code>csrf_allow = same-site</code> when every subdomain is yours. A request without <code>Origin</code> (a page with <code>no-referrer</code>, a link to an action that opts back in) passes only from the application's own origin</td>
 </tr>
 <tr>
-<td>Cookie missing at send time</td>
-<td>Cleared by the user, blocked by a browser policy, or a tab left open past the 30-day lifetime; the next response issues a new one, so a page reload recovers</td>
+<td>Invalid <code>csrf_allow</code></td>
+<td>A checked request (step 1 does not apply) with a browser header throws an error (<code>500</code>) until the setting is <code>same-origin</code>, <code>same-site</code> or <code>any</code></td>
 </tr>
 <tr>
-<td>Header stripped in transit</td>
-<td>A proxy or WAF that drops unknown <code>X-</code> headers; allow <code>X-CSRF-Token</code></td>
-</tr>
-<tr>
-<td>Page on one subdomain posting to another</td>
-<td>The token is host-only by design, and a cross-origin custom header also needs CORS; each host has to serve its own pages</td>
+<td>Blocked origin</td>
+<td>The source is listed in <code>csrf_blocked_origins</code></td>
 </tr>
 </tbody>
 </table>
@@ -3010,7 +3191,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

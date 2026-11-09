@@ -191,28 +191,28 @@
     <span>
                         &nbsp;: <abbr title="\Cake\Database\Query\DeleteQuery">DeleteQuery</abbr>    </span>
 </dt>
-<dd>Create a new DeleteQuery instance for the CakePHP\Database Connection.</dd>
+<dd>Create a new DeleteQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbInsert">dbInsert()</a>
     <span>
                         &nbsp;: <abbr title="\Cake\Database\Query\InsertQuery">InsertQuery</abbr>    </span>
 </dt>
-<dd>Create a new InsertQuery instance for the CakePHP\Database Connection.</dd>
+<dd>Create a new InsertQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbSelect">dbSelect()</a>
     <span>
                         &nbsp;: <abbr title="\Cake\Database\Query\SelectQuery">SelectQuery</abbr>    </span>
 </dt>
-<dd>Create a new SelectQuery instance for the CakePHP\Database Connection.</dd>
+<dd>Create a new SelectQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbUpdate">dbUpdate()</a>
     <span>
                         &nbsp;: <abbr title="\Cake\Database\Query\UpdateQuery">UpdateQuery</abbr>    </span>
 </dt>
-<dd>Create a new UpdateQuery instance for the CakePHP\Database Connection.</dd>
+<dd>Create a new UpdateQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-Model.html#method_exec">exec()</a>
@@ -226,21 +226,21 @@
     <span>
                         &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
 </dt>
-<dd>Selects a full table or specified fields of it and returns the result as two-dimensional array.</dd>
+<dd>Selects a full table or specified fields of it and returns the result as two-dimensional array. Table and fields are not escaped, so never put user input in them.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-Model.html#method_getInsertId">getInsertId()</a>
     <span>
-                        &nbsp;: int    </span>
+                        &nbsp;: int|string|null    </span>
 </dt>
-<dd>Returns the last insert id. Ignores inserts done by log.</dd>
+<dd>Returns the last insert id. Only inserts of the slow-query log are ignored, other log writes on the shared connection overwrite it.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel">getModel()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a>    </span>
 </dt>
-<dd>Returns a model</dd>
+<dd>Returns a model, one shared instance per request; falls back to the framework models when not found</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_getQueryBuilder">getQueryBuilder()</a>
@@ -358,7 +358,7 @@
     </code>
 
     
-        <section class="phpdocumentor-description"><p>Holds the last ID returned from an insert query. Does not change during logging.</p>
+        <section class="phpdocumentor-description"><p>Unused, never written. getInsertId() reads the ID from the connection instead.</p>
 </section>
 
     
@@ -474,7 +474,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -509,7 +509,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -560,7 +560,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a new DeleteQuery instance for the CakePHP\Database Connection.</p>
+        <p class="phpdocumentor-summary">Create a new DeleteQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -623,7 +623,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a new InsertQuery instance for the CakePHP\Database Connection.</p>
+        <p class="phpdocumentor-summary">Create a new InsertQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -686,7 +686,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a new SelectQuery instance for the CakePHP\Database Connection.</p>
+        <p class="phpdocumentor-summary">Create a new SelectQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -749,7 +749,7 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a new UpdateQuery instance for the CakePHP\Database Connection.</p>
+        <p class="phpdocumentor-summary">Create a new UpdateQuery instance for the CakePHP\Database Connection. The query is only built, run it via exec()/execQuery() as the wrapped connection has no credentials for -&gt;execute().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -825,17 +825,17 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">exec</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$types</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">exec</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Cake\Database\Query">Query</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$types</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$query</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Cake\Database\Query">Query</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The query written as a prepared statement (with question marks).</p>
+                    <section class="phpdocumentor-description"><p>The query written as a prepared statement (with question marks), or a Query object.</p>
 </section>
 
             </dd>
@@ -844,7 +844,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The types for the individual parameters (i for int, s for string...).</p>
+                    <section class="phpdocumentor-description"><p>The types for the individual parameters (i for int, s for string...). Ignored for Query objects.</p>
 </section>
 
             </dd>
@@ -863,7 +863,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Database-Connection.html"><abbr title="\ZubZet\Framework\Database\Connection">Connection</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Returning this for chaining</p>
+            <section class="phpdocumentor-description"><p>The Connection holding the result, for chaining</p>
 </section>
 
     
@@ -881,11 +881,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Selects a full table or specified fields of it and returns the result as two-dimensional array.</p>
+        <p class="phpdocumentor-summary">Selects a full table or specified fields of it and returns the result as two-dimensional array. Table and fields are not escaped, so never put user input in them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -941,18 +941,18 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the last insert id. Ignores inserts done by log.</p>
+        <p class="phpdocumentor-summary">Returns the last insert id. Only inserts of the slow-query log are ignored, other log writes on the shared connection overwrite it.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getInsertId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                <span class="phpdocumentor-signature__name">getInsertId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
+    <span class="phpdocumentor-signature__response_type">int|string|null</span>
             &mdash;
             <section class="phpdocumentor-description"><p>The ID of the dataset created in the last insert</p>
 </section>
@@ -972,15 +972,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/CanRetrieveModel.php"><a href="files/src-core-canretrievemodel.html"><abbr title="src/Core/CanRetrieveModel.php">CanRetrieveModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns a model</p>
+        <p class="phpdocumentor-summary">Returns a model, one shared instance per request; falls back to the framework models when not found</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getModel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -990,22 +990,38 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Name of the model</p>
+                    <section class="phpdocumentor-description"><p>Name of the model, sub-folders dot separated (e.g. &quot;admin.User&quot;)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$dir</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory</p>
+                    <section class="phpdocumentor-description"><p>Set this when the model is stored in a specific directory, needs a trailing slash</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>When the model does not exist</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Core-Model.html"><abbr title="\ZubZet\Framework\Core\Model">Model</abbr></a></span>
@@ -1061,7 +1077,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 
     </aside>
 
@@ -1096,7 +1112,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -1132,7 +1148,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The where statement in the query. Formatted as in an SQL query (&quot;a = 4 AND c = 4&quot;...);</p>
+                    <section class="phpdocumentor-description"><p>The where statement in the query, with &quot;?&quot; placeholders for values (&quot;a = ? AND c = ?&quot;...). Table, fields and where are not escaped, so never put user input in them.</p>
 </section>
 
             </dd>
@@ -1161,7 +1177,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 
     </aside>
 
@@ -1223,7 +1239,7 @@ necessary. Remove your heartbeat() calls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -1236,6 +1252,22 @@ necessary. Remove your heartbeat() calls.</p>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Error">Error</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the last query returned no result set (non-SELECT)</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
@@ -1258,7 +1290,7 @@ necessary. Remove your heartbeat() calls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Core/Model.php"><a href="files/src-core-model.html"><abbr title="src/Core/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 

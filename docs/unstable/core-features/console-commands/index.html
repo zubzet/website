@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2810,17 +2810,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        install
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#project" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2867,6 +2856,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authmigrate-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth:migrate-hashing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2940,34 +2940,27 @@ Console commands enable automation, debugging, and execution of application logi
 <p>Then navigate to the root directory of your project (where the <code>index.php</code> file is located) and run:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span><span class="o">{</span>command<span class="o">}</span>
 </code></pre></div>
+<p>The package registers no Composer <code>scripts</code> and no <code>bin</code> executable (its only <code>require-dev</code> entry is a test-coverage library), so the CLI is reached through the project: <code>php index.php &lt;command&gt;</code>, or <code>php zubzet &lt;command&gt;</code> and <a href="#project"><code>./project &lt;command&gt;</code></a> in a generated project. A command's return value becomes the process exit status (<code>0</code> on success, <code>1</code> on failure).</p>
 <h3 id="available-commands">Available Commands<a class="headerlink" href="#available-commands" title="Permanent link">&para;</a></h3>
 <h3 id="completion">completion<a class="headerlink" href="#completion" title="Permanent link">&para;</a></h3>
 <p>Dumps the shell completion script for the ZubZet console.
 This improves command-line usability by enabling tab completion.</p>
 <h3 id="help">help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
-<p>Displays help information for a specific command or for the console in general.</p>
+<p>Displays help information for a specific command or for the console in general.
+Symfony's global options (<code>-h</code>, <code>-q</code>, <code>-v|-vv|-vvv</code>, <code>-V</code>, <code>--ansi</code>, <code>--no-ansi</code>, <code>-n</code>) apply to every command.</p>
 <h3 id="list">list<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
-<p>Lists all available console commands.</p>
+<p>Lists all available console commands; <code>php index.php</code> without a command prints the same list.</p>
 <h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
 <p>Executes a <a href="../controllers-and-actions/">controller action</a> directly from the console environment.
 This is useful for <a href="../../advanced-features/commands/">running application logic</a>, maintenance tasks, or background operations without an HTTP request.</p>
 <h3 id="infostartup">info:startup<a class="headerlink" href="#infostartup" title="Permanent link">&para;</a></h3>
-<p>Prints a startup banner with the ZubZet version, application name, environment, PHP version, and asset
-version — a quick health check after deployment.</p>
+<p>Prints a startup banner with the ZubZet version (as Composer reports it, e.g. <code>v1.2.0</code>, or <code>unknown</code>), application name, environment, PHP version, and asset
+version — a quick health check after deployment. A missing <code>pageName</code>, <code>execution_type</code>, <code>assetVersion</code> or <code>host</code> prints <code>Unknown. Set &lt;key&gt; in settings!</code> (<code>host</code> prints <code>Unknown / Check docker-compose-base.yml</code>) instead.</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>info:startup
 </code></pre></div>
 <p>Pass <code>--pwd "$(pwd)"</code> so clickable file links in the <a href="../error-handling/">error page</a> resolve to your
-host paths (the dev stack's <code>npm run info</code> does this for you).</p>
-<h3 id="install">install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
-<p>Builds a new ZubZet project in an existing, writable folder.</p>
-<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>install<span class="w"> </span>/path/to/new-project
-</code></pre></div>
-<p>The command copies the project template into the folder and prints a <code>created:</code> or <code>exists:</code> line
-per entry. Existing files are never overwritten, so it is safe to run on a folder that already
-contains files. It then makes <code>zubzet</code> and <code>project</code> executable and runs <code>composer require</code> for
-the framework inside the new project.</p>
-<p>It fails with a clear message if the folder does not exist, is not writable, or Composer is not
-in your <code>PATH</code>.</p>
+host paths (the dev stack's <code>npm run info</code> does this for you). The value is stored in
+<code>z_config/z_automated_setting.ini</code> as <code>automated_host_working_directory</code>.</p>
 <h3 id="project">project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
 <p>Every generated project ships a <code>project</code> script in its root for the everyday tasks:</p>
 <table>
@@ -3000,7 +2993,7 @@ in your <code>PATH</code>.</p>
 </tr>
 </tbody>
 </table>
-<p>Any other arguments are forwarded to <code>php index.php</code>: inside the application container when it
+<p>Any other arguments are forwarded to <code>php zubzet</code>: inside the application container when it
 is running, otherwise directly with the host's PHP.</p>
 <div class="highlight"><pre><span></span><code>./project<span class="w"> </span>db:status
 </code></pre></div>
@@ -3021,11 +3014,11 @@ automatically; if they are missing, the script prints the <code>npm install</cod
 </tr>
 <tr>
 <td><code>db:seed</code></td>
-<td>Run migrations, then load seed data from <code>app/Database/seed</code>.</td>
+<td><strong>Drop and recreate the database</strong>, run all migrations, then load seed data from <code>app/Database/seed</code>. All existing data is lost unless <code>--skip-migrations</code> is passed.</td>
 </tr>
 <tr>
 <td><code>db:status</code></td>
-<td>Show which migrations have been applied.</td>
+<td>Show whether the migration lock is set; exit code <code>0</code> when unlocked, <code>1</code> when locked.</td>
 </tr>
 <tr>
 <td><code>db:sync</code></td>
@@ -3037,14 +3030,14 @@ automatically; if they are missing, the script prints the <code>npm install</cod
 </tr>
 </tbody>
 </table>
-<p><code>db:seed</code> accepts environment filters to control which seed folders run:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Only seed the "Dev" environment</span>
-php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--environments-included<span class="o">=</span>Dev
+<p><code>db:seed</code> accepts path filters (relative to <code>app/Database/seed</code>) to control which seed folders run. Every file starts selected, so <code>--environments-included</code> alone changes nothing; it only brings back paths removed by <code>--environments-excluded</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Only seed "Environments/Dev": exclude the folder, then re-include the subset</span>
+php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--environments-excluded<span class="o">=</span>Environments<span class="w"> </span>--environments-included<span class="o">=</span>Environments/Dev
 
 <span class="c1"># Seed everything except "Prod" (repeatable)</span>
 php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--environments-excluded<span class="o">=</span>Prod
 
-<span class="c1"># Skip the automatic migration step</span>
+<span class="c1"># Keep the database and only run the seed files (no drop, no migrations)</span>
 php<span class="w"> </span>index.php<span class="w"> </span>db:seed<span class="w"> </span>--skip-migrations
 </code></pre></div>
 <p>See <a href="../migrations/">Migrations</a> for the full migration workflow.</p>
@@ -3075,6 +3068,12 @@ with nothing left to convert changes nothing. Columns that deliberately use anot
 <p>Converting rewrites the whole table and blocks writes to it meanwhile, which can take a
 long time on large tables. Take a backup and run it in a maintenance window.</p>
 </div>
+<h3 id="authmigrate-hashing">auth:migrate-hashing<a class="headerlink" href="#authmigrate-hashing" title="Permanent link">&para;</a></h3>
+<p>Wraps every <code>legacy</code> password hash in an Argon2id layer and marks the row <code>onion</code>; rows without a password are skipped. Idempotent, so
+it is safe to run more than once, but the update does not re-check the scheme, so a password changed during the run can be overwritten. See <a href="../password-handling/#migrating-an-existing-installation">Password Handling</a>.</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>index.php<span class="w"> </span>auth:migrate-hashing
+</code></pre></div>
+<p>With <code>--dry</code> (<code>-d</code>) it only prints how many legacy passwords it found.</p>
 <h3 id="modulesetup">module:setup<a class="headerlink" href="#modulesetup" title="Permanent link">&para;</a></h3>
 <p>Merges missing default settings from installed <a href="../../advanced-features/modules/">modules</a> into
 <code>z_config/z_settings.ini</code>. Append-only and idempotent: existing keys are never touched, and a
@@ -3097,7 +3096,7 @@ Install it before using the coverage commands:</p>
 <span class="c1"># ... exercise the app via tests or manual requests ...</span>
 php<span class="w"> </span>index.php<span class="w"> </span>testing:coverage:stop
 </code></pre></div>
-<p>Add <code>--cli</code> to <code>testing:coverage:stop</code> to print a text summary instead of generating the HTML report.</p>
+<p><code>start</code> writes a session id to <code>.coverage.session</code> in the working directory; while that file exists, every web request and CLI call collects coverage (an Xdebug or PCOV driver is required). <code>testing:coverage:stop</code> writes the HTML report to <code>.coverage/report/</code>; add <code>--cli</code> (<code>-c</code>) to print a text report (PHPUnit summary plus a per-file tree, green from 90 %, yellow from 50 %, red below) to stdout instead. Merging many collected files is memory-hungry; CI runs it as <code>php -d memory_limit=4G index.php testing:coverage:stop</code>.</p>
 
 
 
@@ -3181,7 +3180,7 @@ php<span class="w"> </span>index.php<span class="w"> </span>testing:coverage:sto
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

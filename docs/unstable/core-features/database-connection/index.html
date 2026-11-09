@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2810,7 +2810,9 @@ It is opened lazily on the first query, kept alive across the request, and
 re-opened by itself when the server drops it. This page covers the settings
 that shape it. All of them live in <code>z_config/z_settings.ini</code> (see
 <a href="../configuration/">Booter Settings</a>) and all of them are optional apart from
-the credentials.</p>
+the endpoint and credentials below. For raw access, <code>db()-&gt;getDatabaseConnection()</code>
+returns the <code>mysqli</code> handle (e.g. for <code>affected_rows</code>), and <code>executeMultiQuery()</code>
+runs several statements without binding, bypassing the debug bar and slow-query log. It throws on failure; with <code>$throwOnFailure = false</code> it returns <code>false</code> instead.</p>
 <h2 id="endpoint-and-credentials">Endpoint and credentials<a class="headerlink" href="#endpoint-and-credentials" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="na">dbhost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">database.example.com</span>
 <span class="na">dbport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3306</span>
@@ -2818,29 +2820,45 @@ the credentials.</p>
 <span class="na">dbusername</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">app</span>
 <span class="na">dbpassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secret</span>
 </code></pre></div>
+<p><code>dbhost</code>, <code>dbusername</code>, <code>dbpassword</code> and <code>dbname</code> are required. If any of
+them is missing or empty, the first query throws a <code>RuntimeException</code>
+(<code>Database connection requires valid configuration. Missing or empty config
+key(s): ...</code>) naming the offending keys. None of them has a default, and
+<code>dbpassword</code> in particular must be non-empty: an account without a password
+is rejected, not connected to.</p>
+<p><code>dbport</code> is optional and has no framework default: when it is unset the
+driver's own default (<code>3306</code>) applies. It is honoured by the runtime
+connection and by migrations alike.</p>
 <p><code>dbhost</code> may also carry the port (<code>host:3306</code>), except with <code>db_ssl</code>
 turned on: the server certificate is matched against <code>dbhost</code> as a whole,
 and no certificate names a port, so with TLS the port belongs in <code>dbport</code>
 and a combined value is rejected with an error saying exactly that.</p>
 <p>Migrations connect separately (through Doctrine DBAL) but read the same
 settings, so there is nothing to configure twice.</p>
+<p>Migrations, and the seed, status, sync, unlock, repair-collation and hashing-migration commands, log in with <code>dbusername_elevated</code> and <code>dbpassword_elevated</code> when
+both are set. If either is empty, they use <code>dbusername</code> and <code>dbpassword</code>. The console builds every command, so the elevated login applies to each CLI invocation, <code>run</code> included. The switch happens at CLI startup for every command (including <code>run</code>) and lasts for the whole process, so models use the elevated user too.</p>
 <h2 id="timeouts-and-retries">Timeouts and retries<a class="headerlink" href="#timeouts-and-retries" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="na">db_connection_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">900</span>
 <span class="na">db_max_retries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<span class="na">db_wait_attempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10</span>
+<span class="na">db_wait_delay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
 </code></pre></div>
 <p><code>db_connection_timeout</code> is the number of seconds after which an idle
-connection is checked before being reused.</p>
+connection is checked before being reused (<code>0</code> checks before every query; a non-numeric value throws an
+<code>InvalidArgumentException</code> at boot). Manual <code>heartbeat()</code> calls (also on models) are deprecated since 1.2.0 and can be removed.</p>
 <p><code>db_max_retries</code> is how many extra attempts a statement gets when it fails
 for a reason that is worth retrying: a deadlock, a lock-wait timeout, a
 Galera certification conflict, or a dropped connection (which is recovered
-by reconnecting through the endpoint and re-running the statement). Set it
-to <code>0</code> to disable retries entirely.</p>
+by reconnecting through the endpoint and re-running the statement; each connect attempt times out after 5 seconds). Set it
+to <code>0</code> to disable retries entirely. <code>executeMultiQuery()</code> is never retried.</p>
 <div class="admonition warning">
 <p class="admonition-title">One statement may be applied twice</p>
 <p>If a write reached the server but the acknowledgment was lost with the
 connection, the retry applies it again. Every <code>exec()</code> auto-commits, so
 the exposure is a single statement.</p>
 </div>
+<p><code>db_wait_attempts</code> and <code>db_wait_delay</code> (seconds) bound how long the database
+commands wait for a database that is still starting; <code>--no-wait</code> fails at once.</p>
 <h2 id="encrypted-transport-tls">Encrypted transport (TLS)<a class="headerlink" href="#encrypted-transport-tls" title="Permanent link">&para;</a></h2>
 <p>Clusters that reject unencrypted clients (MariaDB's
 <code>require_secure_transport</code>, or anything reachable over a public network)
@@ -2962,7 +2980,7 @@ server) when you change the transport.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

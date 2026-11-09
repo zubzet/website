@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2868,7 +2868,7 @@ view
 <h2 id="setting-up-our-application">Setting up our Application<a class="headerlink" href="#setting-up-our-application" title="Permanent link">&para;</a></h2>
 <p>To start working with permissions, we first need the basic structure of our application. This guide provides pre-built files in the <a href="#resources">Resources</a> section, including templates for controllers and views. Using these resources ensures an organized setup and allows us to focus on implementing functionality and layouts.</p>
 <h2 id="creating-a-layout">Creating a Layout<a class="headerlink" href="#creating-a-layout" title="Permanent link">&para;</a></h2>
-<p>Layouts in the ZubZet framework are defined as <a href="../../core-features/views/">Blade templates</a> within the <code>z_views</code> folder. A layout is just the page's HTML shell with <code>@yield</code> placeholders where the view's sections are inserted.</p>
+<p>Layouts in the ZubZet framework are defined as <a href="../../core-features/views/">Blade templates</a> within the <code>app/Views</code> folder. A layout is just the page's HTML shell with <code>@yield</code> placeholders where the view's sections are inserted.</p>
 <p>You can add your HTML and framework-related logic within this structure.<br />
 For instance:
 <div class="highlight"><pre><span></span><code>&lt;!doctype html&gt;
@@ -2928,7 +2928,7 @@ For instance:
 </code></pre></div>
 In this example, the same view file is rendered twice, once with a custom layout <code>(view/layout)</code> and once with the <code>default layout</code>.</p>
 <h2 id="editing-the-default-layout">Editing the Default Layout<a class="headerlink" href="#editing-the-default-layout" title="Permanent link">&para;</a></h2>
-<p>The framework's default layout, located at <code>z_views/layout/default_layout.blade.php</code>, is automatically used if no other layout is specified. This layout can be modified to include common components such as navigation bars, footers, or any other elements that should appear across pages without custom layouts.</p>
+<p>The framework's default layout, located at <code>app/Views/layout/default_layout.blade.php</code>, is automatically used if no other layout is specified. This layout can be modified to include common components such as navigation bars, footers, or any other elements that should appear across pages without custom layouts.</p>
 <h2 id="next-guide">Next Guide<a class="headerlink" href="#next-guide" title="Permanent link">&para;</a></h2>
 <p>In the next guide, we will learn how to send emails and configure our SMTP server.</p>
 <p><a href="../email/">Email</a></p>
@@ -3015,7 +3015,7 @@ In this example, the same view file is rendered twice, once with a custom layout
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

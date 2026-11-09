@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2787,6 +2787,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Global helpers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecating-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecating behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2849,6 +2866,17 @@
     <span class="md-ellipsis">
       
         Migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installer
       
     </span>
   </a>
@@ -2960,13 +2988,14 @@
 <li><code>Registry/</code> — Central resolver for convention lookups + module discovery (see below)</li>
 <li><code>Resources/</code> — Asset proxy: ordered <code>Mount</code> chain, bundled Composer packages</li>
 <li><code>Routing/</code> — <code>Router</code> trait, FastRoute integration, <code>Route</code> builder</li>
-<li><code>Security/</code> — <code>Secrets/</code>: <code>Encryption</code> (versioned <code>zenc:&lt;cipher&gt;:</code> values, key from the <code>encryption_key</code> setting), <code>Cipher/</code> (<code>Cipher</code> interface, <code>AesGcmCipher</code>), <code>DecryptionException</code></li>
+<li><code>Security/</code> — <code>CSRF</code> (the header-based check <code>Router::execute()</code> runs first, returning whether the request is verified; the router answers a rejected one with the <code>error/403</code> page; <code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> are skipped unless an action opts back in with <code>Request::csrfBlockAdditionalMethod()</code>); <code>Secrets/</code>: <code>Encryption</code> (versioned <code>zenc:&lt;cipher&gt;:</code> values, key from the <code>encryption_key</code> setting), <code>Cipher/</code> (<code>Cipher</code> interface, <code>AesGcmCipher</code>), <code>DecryptionException</code></li>
 <li><code>Support/</code> — Global helpers, dynamic attributes, function-conflict resolution</li>
 <li><code>Testing/</code> — Coverage commands</li>
 </ul>
 <h2 id="bootstrap-order">Bootstrap order<a class="headerlink" href="#bootstrap-order" title="Permanent link">&para;</a></h2>
 <p><code>src/ZubZet.php __construct</code> is sensitive to ordering. The current sequence:</p>
-<div class="highlight"><pre><span></span><code><span class="x">self::$instance = $this;           // zubzet() resolves to this</span>
+<div class="highlight"><pre><span></span><code><span class="x">Collector::initialize();          // coverage, only when .coverage.session exists</span>
+<span class="x">self::$instance = $this;           // zubzet() resolves to this</span>
 <span class="x">new GlobalReferences;              // defines config(), logger(), isCli(), …</span>
 <span class="x">new Constants;                     // TIMESPAN_DAY_1 etc.</span>
 <span class="x">$this-&gt;loadConfiguration(...);     // populates settings from z_settings.ini</span>
@@ -2978,7 +3007,8 @@
 <span class="x">$this-&gt;assetProxy = new AssetProxy;</span>
 <span class="x">new Helpers;</span>
 <span class="x">$this-&gt;setRequestResponse(...);</span>
-<span class="x">$this-&gt;z_db = new Connection;</span>
+<span class="x">$this-&gt;z_db = new Connection;         // connects lazily on the first query</span>
+<span class="x">DebugBarBridge::bootstrap();</span>
 <span class="x">$this-&gt;user = new User;</span>
 </code></pre></div>
 <p>A few inter-phase dependencies that are not obvious:</p>
@@ -3031,7 +3061,7 @@ internals and rationale: <a href="../../module-system-architecture/">Module Syst
 </ul>
 <p><code>src/Rendering/CanRenderView.php</code> builds the <code>$opt</code> contract, logs the render and feeds the debug bar, then renders through the engine. A missing view or layout is caught (<code>BladeException</code>) and re-rendered as the framework 500 page in the guaranteed <code>layout/min_layout</code>. View names resolve by name (a legacy <code>.php</code> or <code>.blade.php</code> extension is stripped; dot and slash notation both work), and the compiled-view cache directory is keyed on the installed engine reference so an engine upgrade starts from a clean cache. <code>e()</code> (in <code>src/Support/Helpers.php</code>) delegates to <code>\Blade\e()</code>, so it escapes identically to <code>{{ }}</code>.</p>
 <h2 id="global-helpers">Global helpers<a class="headerlink" href="#global-helpers" title="Permanent link">&para;</a></h2>
-<p>Defined in <code>src/Support/GlobalReferences.php</code>, all wrapped with <code>FunctionConflictResolution::requireAndThen</code> so they can't be redeclared:</p>
+<p>Defined in <code>src/Support/GlobalReferences.php</code>, wrapped with <code>FunctionConflictResolution::requireAndThen</code> so they can't be redeclared. Helpers with a generic name that an application may already define (<code>__()</code>, <code>deprecated()</code>) use <code>optionalAndThen</code> instead and yield to the existing declaration:</p>
 <table>
 <thead>
 <tr>
@@ -3088,9 +3118,29 @@ internals and rationale: <a href="../../module-system-architecture/">Module Syst
 <td><code>isCli()</code></td>
 <td><code>php_sapi_name() === "cli"</code></td>
 </tr>
+<tr>
+<td><code>deprecated($version, $message)</code></td>
+<td>Nothing; raises an <code>E_USER_DEPRECATED</code> notice</td>
+</tr>
 </tbody>
 </table>
 <p>See <a href="../../../core-features/global-helper-functions/">Global Helper Functions</a>.</p>
+<h3 id="deprecating-behavior">Deprecating behavior<a class="headerlink" href="#deprecating-behavior" title="Permanent link">&para;</a></h3>
+<p>When a code path has to keep working for existing projects but should no longer be used, keep it working and call <code>deprecated()</code> on that path.</p>
+<ul>
+<li><strong><code>$version</code></strong> is the framework version the deprecation starts in, the one the current <code>Changelog.md</code> section is for.</li>
+<li><strong><code>$message</code></strong> names what is deprecated and what to use instead, in one sentence. The caller sees it in the exception or log entry, so it has to be enough to fix the call site without opening framework code.</li>
+<li>Call it right before the deprecated path does its work, not at the top of the method, so the supported paths stay silent.</li>
+<li>The notice follows the <code>showErrors</code> contract like a PHP deprecation: <code>2</code> promotes it to an exception so development setups fail loudly, <code>1</code> logs it as a <code>DEPRECATION</code> event, <code>0</code> is silent.</li>
+<li>When a whole method is retired, add a <code>@deprecated since &lt;version&gt;</code> docblock tag as well, so IDEs flag the callers. The tag alone cannot target a single branch, which is what the helper is for.</li>
+<li>Mention the deprecation in <code>Changelog.md</code> as a migrator note.</li>
+</ul>
+<p>Because the e2e app runs with <code>showErrors = 2</code>, a probe that exercises a deprecated path on purpose switches the mode off around the call and back on afterwards:</p>
+<div class="highlight"><pre><span></span><code><span class="x">zubzet()-&gt;setExceptionBehavior(0);</span>
+<span class="x">echo(json_encode($this-&gt;getSession($session)));</span>
+<span class="x">zubzet()-&gt;setExceptionBehavior(2);</span>
+</code></pre></div>
+<p>To assert the log entry instead, use mode <code>1</code> inside an output buffer, since that mode also displays the notice; see <code>SessionController::action_legacyTokenDeprecated()</code>.</p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <p>The full e2e suite lives in <code>tests/e2e/</code>. Run it from there:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>tests/e2e
@@ -3145,7 +3195,7 @@ npm<span class="w"> </span>run<span class="w"> </span>stop
 </tr>
 <tr>
 <td><code>cy.dbSeed()</code></td>
-<td><code>npm run seed</code> + clear sessions</td>
+<td><code>db:seed</code> (optional <code>exclude</code> / <code>include</code> selectors) + clear sessions</td>
 </tr>
 <tr>
 <td><code>cy.http(method, endpoint, body, callback)</code></td>
@@ -3208,7 +3258,7 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 </tr>
 </tbody>
 </table>
-<p>Internal-query filtering uses source tagging: models that mark themselves with the <code>IsInternalModel</code> trait set <code>isInternalModel = true</code>, and <code>Connection::exec</code> records the calling model on the connection before the query runs. <code>QueryCollector::addQuery</code> then drops queries from internal models when <code>debugbar_hide_internal_queries = true</code> (default). Direct <code>db()-&gt;exec(...)</code> calls have no calling model and are always shown.</p>
+<p>Internal-query filtering uses source tagging: models that mark themselves with the <code>IsInternalModel</code> trait set <code>isInternalModel = true</code>, and only <code>Model::exec()</code> sets <code>Connection::$callingModel</code> before the query runs; <code>Connection::exec</code> hands it to the collector with every query. <code>QueryCollector::addQuery</code> then drops queries from internal models when <code>debugbar_hide_internal_queries = true</code> (default). The tag is never reset, so a later direct <code>db()-&gt;exec(...)</code>, <code>execQuery()</code> or <code>getFullTable()</code>, <code>getTableWhere()</code> and <code>countTableEntries()</code> call reuses the previous model's tag (<code>null</code> at request start).</p>
 <p>To add a new collector, implement <code>DebugBar\DataCollector\DataCollector</code> (or extend an existing one), register it in <code>DebugBarBridge::bootstrap()</code>, and expose a <code>collectXxx()</code> method on <code>CanCollect</code> that forwards via <code>self::collect("name", "addXxx", func_get_args())</code>.</p>
 <h2 id="console-commands">Console commands<a class="headerlink" href="#console-commands" title="Permanent link">&para;</a></h2>
 <p>Run commands inside the application container:</p>
@@ -3236,7 +3286,7 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 </tr>
 <tr>
 <td><code>db:status</code></td>
-<td>Show migration status</td>
+<td>Show the migration lock state (exit 0 unlocked, 1 locked)</td>
 </tr>
 <tr>
 <td><code>db:unlock-migration</code></td>
@@ -3245,6 +3295,18 @@ cp<span class="w"> </span>/tmp/zsettings.bak<span class="w"> </span>tests/e2e/z_
 <tr>
 <td><code>repair:database-collation</code></td>
 <td>Convert the <code>z_</code> tables to <code>Connection::COLLATION</code>; <code>--include-app-tables</code> adds the app tables and the database default</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>Execute a controller action from the console</td>
+</tr>
+<tr>
+<td><code>install</code></td>
+<td>Build a new project in an existing, writable folder</td>
+</tr>
+<tr>
+<td><code>auth:migrate-hashing</code></td>
+<td>Wrap legacy password hashes in an Argon2id layer (<code>onion</code>)</td>
 </tr>
 <tr>
 <td><code>info:startup</code></td>
@@ -3295,6 +3357,8 @@ command-name collision the userspace copy wins, then modules in order, then the 
 <li><code>INSERT … ON DUPLICATE KEY UPDATE</code> or guarded with <code>WHERE NOT EXISTS</code></li>
 </ul>
 <p>The <code>z_migration</code> table (with <code>z_migration_lock</code>) prevents re-execution under normal flow, but the rule still applies — a migration that fails on second run is a bug.</p>
+<h2 id="installer">Installer<a class="headerlink" href="#installer" title="Permanent link">&para;</a></h2>
+<p><code>docs/setup/install.sh</code> writes the project's <code>composer.json</code>, runs <code>composer require zubzet/framework</code> in the project folder inside the PHP image, then runs <code>bin/install</code> from that vendor. <code>bin/install</code> is a standalone Symfony Console entry for the <code>install</code> command (<code>src/Support/Commands/Install.php</code>) that copies <code>stubs/project</code> around the vendor without booting the framework and never overwrites an existing file. The command is not registered in the framework's own console.</p>
 <h2 id="version-migrator">Version migrator<a class="headerlink" href="#version-migrator" title="Permanent link">&para;</a></h2>
 <p><code>migrator/</code> holds the upgrade tool, one class per framework version (<code>migrator/src/Version/V1_3_0.php</code>); the steps of a postponed release merge into the earlier version class.</p>
 <ul>
@@ -3397,7 +3461,7 @@ command-name collision the userspace copy wins, then modules in order, then the 
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

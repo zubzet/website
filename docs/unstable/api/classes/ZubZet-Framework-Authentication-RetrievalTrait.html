@@ -132,16 +132,16 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all">all()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role)</dd>
+<dd>Get a list of all active objects of the calling class (user, role, session, organization, API key)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId">byId()</a>
     <span>
-                        &nbsp;: object|null    </span>
+                        &nbsp;: static|null    </span>
 </dt>
-<dd>Get a permission object (user or role) by its id</dd>
+<dd>Get an object (user, role, session, organization or API key) by its id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIdentifier">byIdentifier()</a>
@@ -160,9 +160,10 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds">byIds()</a>
     <span>
-                        &nbsp;: array&lt;string|int, object&gt;    </span>
+                        &nbsp;: array&lt;string|int, static&gt;    </span>
 </dt>
-<dd>Get a list of permission objects (user or role) by their ids</dd>
+<dd>Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byUuid">byUuid()</a>
@@ -206,20 +207,22 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role)</p>
+        <p class="phpdocumentor-summary">Get a list of all active objects of the calling class (user, role, session, organization, API key)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The list of active objects</p>
+</section>
+
     
 </article>
                     <article
@@ -239,11 +242,11 @@
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a permission object (user or role) by its id</p>
+        <p class="phpdocumentor-summary">Get an object (user, role, session, organization or API key) by its id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -262,9 +265,9 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">object|null</span>
+    <span class="phpdocumentor-signature__response_type">static|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>the permission object if found, null otherwise</p>
+            <section class="phpdocumentor-description"><p>the object if found, null if the id is unknown or inactive</p>
 </section>
 
     
@@ -394,15 +397,16 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a list of permission objects (user or role) by their ids</p>
+        <p class="phpdocumentor-summary">Get a list of objects (user, role, session, organization or API key) by their ids
+Unknown or inactive ids are skipped, and calling it without ids throws a database exception</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">byIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -421,9 +425,9 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, static&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The list of permission objects</p>
+            <section class="phpdocumentor-description"><p>the objects that were found</p>
 </section>
 
     
@@ -441,7 +445,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -488,7 +492,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/RetrievalTrait.php"><a href="files/src-authentication-retrievaltrait.html"><abbr title="src/Authentication/RetrievalTrait.php">RetrievalTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 

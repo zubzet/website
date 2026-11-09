@@ -996,10 +996,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_isExpired"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003Atoken\u0028\u0029",
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003A\u0024token",
             "name": "token",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_token"
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#property_token"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AstoredToken\u0028\u0029",
+            "name": "storedToken",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_storedToken"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AuserId\u0028\u0029",
             "name": "userId",
@@ -1093,8 +1098,48 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\HandleTrait\u003A\u003Arefresh\u0028\u0029",
             "name": "refresh",
-            "summary": "Refresh\u0020the\u0020current\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020clearing\u0020all\u0020its\u0020fields\u0020and\u0020setting\u0020them\u0020new",
+            "summary": "Refresh\u0020the\u0020current\u0020permission\u0020object\u0020\u0028user,\u0020role,\u0020session,\u0020organization\u0020or\u0020API\u0020key\u0029\u0020by\u0020clearing\u0020all\u0020its\u0020fields\u0020and\u0020setting\u0020them\u0020new",
             "url": "classes/ZubZet-Framework-Authentication-HandleTrait.html#method_refresh"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken",
+            "name": "LoginToken",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003Agenerate\u0028\u0029",
+            "name": "generate",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#method_generate"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003Ahash\u0028\u0029",
+            "name": "hash",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#method_hash"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003AisPlain\u0028\u0029",
+            "name": "isPlain",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#method_isPlain"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003Amethod\u0028\u0029",
+            "name": "method",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#method_method"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003AMETHOD_PLAIN",
+            "name": "METHOD_PLAIN",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#constant_METHOD_PLAIN"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003AMETHOD_SHA256",
+            "name": "METHOD_SHA256",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#constant_METHOD_SHA256"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\LoginToken\u003A\u003AMETHODS",
+            "name": "METHODS",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-LoginToken.html#constant_METHODS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization",
             "name": "Organization",
@@ -1120,6 +1165,26 @@ Search.appendIndex(
             "name": "byUser",
             "summary": "Get\u0020the\u0020organization\u0020a\u0020given\u0020user\u0020belongs\u0020to.",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byUser"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyRole\u0028\u0029",
+            "name": "byRole",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byRole"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyGroup\u0028\u0029",
+            "name": "byGroup",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byGroup"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyAccessToAll\u0028\u0029",
+            "name": "byAccessToAll",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAll"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyAccessToAnyOf\u0028\u0029",
+            "name": "byAccessToAnyOf",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_byAccessToAnyOf"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AbyName\u0028\u0029",
             "name": "byName",
@@ -1161,6 +1226,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_refreshGroup"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003ArolesAdd\u0028\u0029",
+            "name": "rolesAdd",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_rolesAdd"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgroupsAdd\u0028\u0029",
+            "name": "groupsAdd",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_groupsAdd"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003ArolesRemove\u0028\u0029",
+            "name": "rolesRemove",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_rolesRemove"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgroupsRemove\u0028\u0029",
+            "name": "groupsRemove",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_groupsRemove"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetRoles\u0028\u0029",
+            "name": "getRoles",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_getRoles"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetGroups\u0028\u0029",
+            "name": "getGroups",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_getGroups"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AgetPermissions\u0028\u0029",
+            "name": "getPermissions",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_getPermissions"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003ArefreshPermissions\u0028\u0029",
+            "name": "refreshPermissions",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_refreshPermissions"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "",
@@ -1170,6 +1275,16 @@ Search.appendIndex(
             "name": "dbTable",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbTable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A\u0024dbPermissionsTable",
+            "name": "dbPermissionsTable",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsTable"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A\u0024dbPermissionsObjectColumn",
+            "name": "dbPermissionsObjectColumn",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#property_dbPermissionsObjectColumn"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003A\u0024dbExpression",
             "name": "dbExpression",
@@ -1303,12 +1418,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Permission\u003A\u003AhasAccessAll\u0028\u0029",
             "name": "hasAccessAll",
-            "summary": "Check\u0020if\u0020the\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020has\u0020all\u0020of\u0020the\u0020given\u0020permissions",
+            "summary": "Check\u0020if\u0020the\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020has\u0020all\u0020of\u0020the\u0020given\u0020permissions,\nwildcards\u0020count\u0020\u0028\u0022\u002A.\u002A\u0022\u0020or\u0020\u0022edit.\u002A\u0022\u0020cover\u0020\u0022edit.article\u0022\u0029\u0020and\u0020a\u0020user\u0027s\u0020permissions\u0020include\u0020those\u0020inherited\u0020from\u0020its\u0020roles",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAll"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Permission\u003A\u003AhasAccessAnyOf\u0028\u0029",
             "name": "hasAccessAnyOf",
-            "summary": "Check\u0020if\u0020the\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020has\u0020one\u0020of\u0020the\u0020permissions",
+            "summary": "Check\u0020if\u0020the\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020has\u0020one\u0020of\u0020the\u0020permissions,\u0020wildcards\u0020included\n\u0028\u0022\u002A.\u002A\u0022\u0020or\u0020\u0022edit.\u002A\u0022\u0020cover\u0020\u0022edit.article\u0022\u0029\u003B\u0020a\u0020user\u0027s\u0020role\u002Dinherited\u0020permissions\u0020count\u0020too",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Permission.html#method_hasAccessAnyOf"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Permission\u003A\u003AbuildPermissionVariants\u0028\u0029",
@@ -1328,8 +1443,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003AbyUser\u0028\u0029",
             "name": "byUser",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020Roles\u0020by\u0020User",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020Roles\u0020by\u0020User,\u0020including\u0020the\u0020roles\u0020of\u0020its\u0020organization",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_byUser"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003AbyOrganization\u0028\u0029",
+            "name": "byOrganization",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_byOrganization"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003AbyName\u0028\u0029",
             "name": "byName",
@@ -1358,12 +1478,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
-            "summary": "Rename\u0020the\u0020Role",
+            "summary": "Rename\u0020the\u0020Role\nClears\u0020the\u0020cached\u0020fields,\u0020so\u0020name\u0028\u0029\u0020and\u0020other\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029\u0020is\u0020called",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_update"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
-            "summary": "Remove\u0020the\u0020Role\nThis\u0020will\u0020deactivate\u0020the\u0020Role\u0020in\u0020the\u0020Database",
+            "summary": "Remove\u0020the\u0020Role\nThis\u0020will\u0020deactivate\u0020the\u0020Role\u0020in\u0020the\u0020Database\nThe\u0020instance\u0020is\u0020detached\u0020afterwards,\u0020so\u0020every\u0020later\u0020call\u0020on\u0020it\u0020throws\u0020InvalidArgumentException",
             "url": "classes/ZubZet-Framework-Authentication-Permission-Role.html#method_remove"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\Role\u003A\u003Aname\u0028\u0029",
@@ -1428,7 +1548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyRole\u0028\u0029",
             "name": "byRole",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020users\u0020by\u0020a\u0020specific\u0020role",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020users\u0020by\u0020a\u0020specific\u0020role,\u0020including\u0020members\u0020of\u0020organizations\u0020holding\u0020it",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_byRole"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AbyGroup\u0028\u0029",
@@ -1478,12 +1598,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdateEmail\u0028\u0029",
             "name": "updateEmail",
-            "summary": "Update\u0020the\u0020email\u0020address\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020email\u0020in\u0020the\u0020database",
+            "summary": "Update\u0020the\u0020email\u0020address\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020email\u0020in\u0020the\u0020database\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updateEmail"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AupdatePassword\u0028\u0029",
             "name": "updatePassword",
-            "summary": "Update\u0020the\u0020password\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020password\u0020in\u0020the\u0020database",
+            "summary": "Update\u0020the\u0020password\u0020of\u0020the\u0020user\nThis\u0020will\u0020update\u0020the\u0020password\u0020in\u0020the\u0020database,\u0020clear\u0020all\u0020sessions\u0020of\u0020the\u0020user\nand\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_updatePassword"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AverifyPassword\u0028\u0029",
@@ -1513,32 +1633,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
-            "summary": "Deactivate\u0020this\u0020user",
+            "summary": "Deactivate\u0020this\u0020user\nThe\u0020instance\u0020is\u0020detached\u0020afterwards,\u0020so\u0020every\u0020later\u0020call\u0020on\u0020it\u0020throws\u0020InvalidArgumentException",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_remove"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Averify\u0028\u0029",
             "name": "verify",
-            "summary": "Verify\u0020the\u0020User",
+            "summary": "Verify\u0020the\u0020User\nThis\u0020will\u0020write\u0020the\u0020verified\u0020timestamp\u0020to\u0020the\u0020database\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_verify"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArolesAdd\u0028\u0029",
             "name": "rolesAdd",
-            "summary": "Add\u0020roles\u0020to\u0020the\u0020user\nThis\u0020will\u0020add\u0020the\u0020roles\u0020automatically\u0020into\u0020the\u0020database",
+            "summary": "Add\u0020roles\u0020to\u0020the\u0020user\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029\nThis\u0020will\u0020add\u0020the\u0020roles\u0020automatically\u0020into\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_rolesAdd"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgroupsAdd\u0028\u0029",
             "name": "groupsAdd",
-            "summary": "Add\u0020Groups\u0020to\u0020the\u0020user\nThis\u0020will\u0020add\u0020the\u0020groups\u0020automatically\u0020into\u0020the\u0020database",
+            "summary": "Add\u0020Groups\u0020to\u0020the\u0020user\nThis\u0020will\u0020add\u0020the\u0020groups\u0020automatically\u0020into\u0020the\u0020database\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsAdd"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArolesRemove\u0028\u0029",
             "name": "rolesRemove",
-            "summary": "Remove\u0020roles\u0020from\u0020the\u0020user\nThis\u0020will\u0020remove\u0020the\u0020roles\u0020automatically\u0020from\u0020the\u0020database",
+            "summary": "Remove\u0020roles\u0020from\u0020the\u0020user\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029\nThis\u0020will\u0020remove\u0020the\u0020roles\u0020automatically\u0020from\u0020the\u0020database",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_rolesRemove"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgroupsRemove\u0028\u0029",
             "name": "groupsRemove",
-            "summary": "Remove\u0020groups\u0020from\u0020the\u0020user\nThis\u0020will\u0020remove\u0020the\u0020groups\u0020automatically\u0020from\u0020the\u0020database",
+            "summary": "Remove\u0020groups\u0020from\u0020the\u0020user\nThis\u0020will\u0020remove\u0020the\u0020groups\u0020automatically\u0020from\u0020the\u0020database\u0020and\u0020clear\u0020all\u0020cached\u0020fields,\u0020so\u0020getters\u0020throw\u0020until\u0020refresh\u0028\u0029",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_groupsRemove"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003Aemail\u0028\u0029",
@@ -1588,12 +1708,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArefreshPermissions\u0028\u0029",
             "name": "refreshPermissions",
-            "summary": "Reset\u0020the\u0020permissions\u0020cache",
+            "summary": "Reload\u0020the\u0020user\u0027s\u0020directly\u0020assigned\u0020permissions\u0020\u0028not\u0020role\u002Dinherited\u0020ones\u0029\u0020into\u0020the\u0020cache",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_refreshPermissions"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003ArefreshAllPermissions\u0028\u0029",
             "name": "refreshAllPermissions",
-            "summary": "Reset\u0020the\u0020permissions\u0020cache",
+            "summary": "Reload\u0020the\u0020user\u0027s\u0020direct\u0020and\u0020role\u002Dinherited\u0020permissions\u0020into\u0020the\u0020cache",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_refreshAllPermissions"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AhasTwoFactor\u0028\u0029",
@@ -1653,7 +1773,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003Aall\u0028\u0029",
             "name": "all",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020all\u0020active\u0020objects\u0020of\u0020the\u0020calling\u0020class\u0020\u0028user,\u0020role,\u0020session,\u0020organization,\u0020API\u0020key\u0029",
             "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_all"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyIdentifier\u0028\u0029",
@@ -1668,12 +1788,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyId\u0028\u0029",
             "name": "byId",
-            "summary": "Get\u0020a\u0020permission\u0020object\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020its\u0020id",
+            "summary": "Get\u0020an\u0020object\u0020\u0028user,\u0020role,\u0020session,\u0020organization\u0020or\u0020API\u0020key\u0029\u0020by\u0020its\u0020id",
             "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byId"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyIds\u0028\u0029",
             "name": "byIds",
-            "summary": "Get\u0020a\u0020list\u0020of\u0020permission\u0020objects\u0020\u0028user\u0020or\u0020role\u0029\u0020by\u0020their\u0020ids",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020objects\u0020\u0028user,\u0020role,\u0020session,\u0020organization\u0020or\u0020API\u0020key\u0029\u0020by\u0020their\u0020ids\nUnknown\u0020or\u0020inactive\u0020ids\u0020are\u0020skipped,\u0020and\u0020calling\u0020it\u0020without\u0020ids\u0020throws\u0020a\u0020database\u0020exception",
             "url": "classes/ZubZet-Framework-Authentication-RetrievalTrait.html#method_byIds"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\RetrievalTrait\u003A\u003AbyUuid\u0028\u0029",
@@ -1708,7 +1828,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User",
             "name": "User",
-            "summary": "The\u0020User\u0020class\u0020holds\u0020information\u0020about\u0020the\u0020user",
+            "summary": "The\u0020User\u0020class\u0020holds\u0020the\u0020user\u0020of\u0020the\u0020current\u0020request\u0020\u0028user\u0028\u0029\u0020helper,\u0020alias\u0020User\u0029,\u0020identified\u0020on\u0020construction\u0020by\u0020bearer\u0020token\u0020or\u0020the\u0020z_login_token\u0020cookie\u003B\u0020not\u0020Permission\\User",
             "url": "classes/ZubZet-Framework-Authentication-User.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003A__construct\u0028\u0029",
@@ -1728,7 +1848,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003AcheckPermission\u0028\u0029",
             "name": "checkPermission",
-            "summary": "Checks\u0020if\u0020a\u0020user\u0020has\u0020a\u0020given\u0020permission",
+            "summary": "Checks\u0020if\u0020the\u0020effective\u0020user\u0020\u0028not\u0020the\u0020sudo\u0020exec\u0020user\u0029\u0020has\u0020a\u0020given\u0020permission,\u0020wildcards\u0020included\u0020\u0028\u0022\u002A.\u002A\u0022\u0020or\u0020\u0022edit.\u002A\u0022\u0020cover\u0020\u0022edit.article\u0022\u0029.\u0020Always\u0020false\u0020for\u0020anonymous\u0020users.",
             "url": "classes/ZubZet-Framework-Authentication-User.html#method_checkPermission"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\User\u003A\u003AcheckSuperPermission\u0028\u0029",
@@ -1853,7 +1973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\CanRetrieveModel\u003A\u003AgetModel\u0028\u0029",
             "name": "getModel",
-            "summary": "Returns\u0020a\u0020model",
+            "summary": "Returns\u0020a\u0020model,\u0020one\u0020shared\u0020instance\u0020per\u0020request\u003B\u0020falls\u0020back\u0020to\u0020the\u0020framework\u0020models\u0020when\u0020not\u0020found",
             "url": "classes/ZubZet-Framework-Core-CanRetrieveModel.html#method_getModel"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Controller",
@@ -1898,7 +2018,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AgetInsertId\u0028\u0029",
             "name": "getInsertId",
-            "summary": "Returns\u0020the\u0020last\u0020insert\u0020id.\u0020Ignores\u0020inserts\u0020done\u0020by\u0020log.",
+            "summary": "Returns\u0020the\u0020last\u0020insert\u0020id.\u0020Only\u0020inserts\u0020of\u0020the\u0020slow\u002Dquery\u0020log\u0020are\u0020ignored,\u0020other\u0020log\u0020writes\u0020on\u0020the\u0020shared\u0020connection\u0020overwrite\u0020it.",
             "url": "classes/ZubZet-Framework-Core-Model.html#method_getInsertId"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AresultToArray\u0028\u0029",
@@ -1913,7 +2033,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AgetFullTable\u0028\u0029",
             "name": "getFullTable",
-            "summary": "Selects\u0020a\u0020full\u0020table\u0020or\u0020specified\u0020fields\u0020of\u0020it\u0020and\u0020returns\u0020the\u0020result\u0020as\u0020two\u002Ddimensional\u0020array.",
+            "summary": "Selects\u0020a\u0020full\u0020table\u0020or\u0020specified\u0020fields\u0020of\u0020it\u0020and\u0020returns\u0020the\u0020result\u0020as\u0020two\u002Ddimensional\u0020array.\u0020Table\u0020and\u0020fields\u0020are\u0020not\u0020escaped,\u0020so\u0020never\u0020put\u0020user\u0020input\u0020in\u0020them.",
             "url": "classes/ZubZet-Framework-Core-Model.html#method_getFullTable"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Core\\Model\u003A\u003AgetTableWhere\u0028\u0029",
@@ -2003,7 +2123,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003Aexec\u0028\u0029",
             "name": "exec",
-            "summary": "Executes\u0020a\u0020query\u0020as\u0020prepared\u0020statement",
+            "summary": "Executes\u0020a\u0020query\u0020as\u0020prepared\u0020statement,\u0020retrying\u0020transient\u0020errors\u0020up\u0020to\u0020db_max_retries\u0020and\u0020logging\u0020slow\u0020queries",
             "url": "classes/ZubZet-Framework-Database-Connection.html#method_exec"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Connection\u003A\u003AexecWithRecovery\u0028\u0029",
@@ -2233,17 +2353,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction\u003A\u003AresultToLine\u0028\u0029",
             "name": "resultToLine",
-            "summary": "Returns\u0020one\u0020line\u0020of\u0020the\u0020last\u0020query",
+            "summary": "Returns\u0020the\u0020next\u0020line\u0020of\u0020the\u0020last\u0020query",
             "url": "classes/ZubZet-Framework-Database-Interaction.html#method_resultToLine"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction\u003A\u003AgetFullTable\u0028\u0029",
             "name": "getFullTable",
-            "summary": "Selects\u0020a\u0020full\u0020table\u0020or\u0020specified\u0020fields\u0020of\u0020it\u0020and\u0020returns\u0020the\u0020result\u0020as\u0020two\u0020dimensional\u0020array",
+            "summary": "Selects\u0020a\u0020full\u0020table\u0020or\u0020specified\u0020fields\u0020of\u0020it\u0020and\u0020returns\u0020the\u0020result\u0020as\u0020two\u0020dimensional\u0020array\nTable\u0020and\u0020fields\u0020are\u0020not\u0020escaped,\u0020so\u0020never\u0020put\u0020user\u0020input\u0020in\u0020them.",
             "url": "classes/ZubZet-Framework-Database-Interaction.html#method_getFullTable"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction\u003A\u003AgetTableWhere\u0028\u0029",
             "name": "getTableWhere",
-            "summary": "Selects\u0020a\u0020full\u0020table\u0020of\u0020specified\u0020fields\u0020of\u0020it\u0020filtered\u0020with\u0020an\u0020additional\u0020where\u0020statement.\u0020It\u0020returns\u0020the\u0020result\u0020as\u0020two\u0020dimensional\u0020array",
+            "summary": "Selects\u0020a\u0020table\u0020or\u0020specified\u0020fields\u0020of\u0020it,\u0020filtered\u0020with\u0020a\u0020where\u0020statement,\u0020and\u0020returns\u0020the\u0020result\u0020as\u0020two\u0020dimensional\u0020array.\u0020Only\u0020\u0024values\u0020are\u0020bound,\u0020\u0024table,\u0020\u0024fields\u0020and\u0020\u0024where\u0020are\u0020not\u0020escaped",
             "url": "classes/ZubZet-Framework-Database-Interaction.html#method_getTableWhere"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Interaction\u003A\u003AcountTableEntries\u0028\u0029",
@@ -2416,10 +2536,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\DatabaseConnection\u003A\u003AsetDatabaseConnection\u0028\u0029",
-            "name": "setDatabaseConnection",
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\DatabaseConnection\u003A\u003AaddDatabaseWaitOption\u0028\u0029",
+            "name": "addDatabaseWaitOption",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_setDatabaseConnection"
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_addDatabaseWaitOption"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\DatabaseConnection\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-Commands-Traits-DatabaseConnection.html#method_initialize"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Commands\\Traits\\DbalConnection",
             "name": "DbalConnection",
@@ -2695,6 +2820,21 @@ Search.appendIndex(
             "name": "queries",
             "summary": "",
             "url": "classes/ZubZet-Framework-Database-Migration-Seed.html#property_queries"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\SqlSplitter",
+            "name": "SqlSplitter",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-SqlSplitter.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\SqlSplitter\u003A\u003Asplit\u0028\u0029",
+            "name": "split",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-SqlSplitter.html#method_split"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\SqlSplitter\u003A\u003AaddStatement\u0028\u0029",
+            "name": "addStatement",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Database-Migration-SqlSplitter.html#method_addStatement"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Migration\\Type\\TimeStamp",
             "name": "TimeStamp",
@@ -3078,17 +3218,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload\u003A\u003Aimage\u0028\u0029",
             "name": "image",
-            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020an\u0020image",
+            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020an\u0020image\u0020\u0028jpg,\u0020jpeg,\u0020png\u0020or\u0020bmp\u0029",
             "url": "classes/ZubZet-Framework-Form-Upload.html#method_image"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload\u003A\u003Avideo\u0028\u0029",
             "name": "video",
-            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020a\u0020video",
+            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020a\u0020video\u0020\u0028mp4,\u0020m4a,\u0020m4v,\u0020mov,\u00203gp,\u0020ogg,\u0020webm,\u0020flv,\u0020mkv,\u0020avi\u0020or\u0020wmv\u0029",
             "url": "classes/ZubZet-Framework-Form-Upload.html#method_video"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload\u003A\u003Aaudio\u0028\u0029",
             "name": "audio",
-            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020an\u0020audio",
+            "summary": "Uploads\u0020a\u0020file,\u0020which\u0020must\u0020be\u0020an\u0020audio\u0020file\u0020\u0028mp3,\u0020wav,\u0020wma,\u0020ogg,\u0020m4a,\u0020aiff\u0020or\u0020aac\u0029",
             "url": "classes/ZubZet-Framework-Form-Upload.html#method_audio"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Upload\u003A\u003A\u0024ref",
@@ -3148,7 +3288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\CanValidateMultiForm\u003A\u003AvalidateCED\u0028\u0029",
             "name": "validateCED",
-            "summary": "Validates\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022\u0020input",
+            "summary": "Validates\u0020each\u0020row\u0020of\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022\u0020input\u0020read\u0020from\u0020getPost\u0028\u0024name\u0029\u003B\u0020sets\u0020doNothing\u0020if\u0020it\u0020is\u0020absent,\u0020and\u0020errors\u0020carry\u0020the\u0020row\u0027s\u0020subname\u0020and\u0020index",
             "url": "classes/ZubZet-Framework-Form-Validation-CanValidateMultiForm.html#method_validateCED"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Field",
@@ -3278,7 +3418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Result\u003A\u003AaddCustomError\u0028\u0029",
             "name": "addCustomError",
-            "summary": "Adds\u0020a\u0020custom\u0020error\u0020to\u0020the\u0020form\u0020result",
+            "summary": "Adds\u0020a\u0020custom\u0020error\u0020to\u0020the\u0020form\u0020result\u0020and\u0020sets\u0020hasErrors\u0020to\u0020true",
             "url": "classes/ZubZet-Framework-Form-Validation-Result.html#method_addCustomError"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Form\\Validation\\Result\u003A\u003A\u0024doNothing",
@@ -3328,7 +3468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IndexController",
             "name": "IndexController",
-            "summary": "The\u0020index\u0020controller\u0020handles\u0020by\u0020default\u0020all\u0020requests\u0020without\u0020a\u0020specified\u0020controller",
+            "summary": "The\u0020index\u0020controller\u0020handles\u0020requests\u0020to\u0020\/index\u003B\u0020root\u0020requests\u0020run\u0020the\u0020controller\u0020from\u0020the\u0020config\u0020defaultIndex\u0020\u0028default\u0020DashboardController\u0029",
             "url": "classes/IndexController.html"
         },                {
             "fqsen": "\\IndexController\u003A\u003Aaction_index\u0028\u0029",
@@ -3358,17 +3498,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_logout\u0028\u0029",
             "name": "action_logout",
-            "summary": "Logs\u0020out\u0020the\u0020requesting\u0020user.",
+            "summary": "Logs\u0020out\u0020the\u0020requesting\u0020user\u0020by\u0020delegating\u0020to\u0020Response\u003A\u003Alogout\u0028\u0029\u003A\u0020invalidates\u0020the\u0020session,\u0020switches\u0020back\u0020to\u0020the\u0020exec\u0020user\u0020when\u0020sudoed,\u0020then\u0020redirects\u0020to\u0020the\u0020root\u0020URL\u0020and\u0020exits.",
             "url": "classes/LoginController.html#method_action_logout"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_signup\u0028\u0029",
             "name": "action_signup",
-            "summary": "Controls\u0020the\u0020view\u0020for\u0020registering\u0020as\u0020a\u0020user",
+            "summary": "Controls\u0020the\u0020view\u0020for\u0020registering\u0020as\u0020a\u0020user\u003A\u0020renders\u0020the\u0020signup\u0020form,\u0020or\u0020for\u0020the\u0020\u0022signup\u0022\u0020action\u0020validates\u0020email\u0020and\u0020password,\u0020creates\u0020the\u0020user,\u0020assigns\u0020the\u0020role\u0020from\u0020the\u0020config\u0020registerRoleId\u0020\u0028registerRoleIdSecondary\u0020for\u0020the\u0020\u0022Secondary\u0022\u0020type\u0029,\u0020mails\u0020the\u0020verification\u0020link\u0020and\u0020answers\u0020success\u0020or\u0020an\u0020error.",
             "url": "classes/LoginController.html#method_action_signup"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_forgot_password\u0028\u0029",
             "name": "action_forgot_password",
-            "summary": "Serves\u0020the\u0020forgot\u0020password\u0020page\u0020and\u0020resets\u0020the\u0020a\u0020users\u0020password",
+            "summary": "Serves\u0020the\u0020forgot\u0020password\u0020page,\u0020or\u0020on\u0020submit\u0020emails\u0020a\u0020reset\u0020link\u0020to\u0020an\u0020existing\u0020user\u0020and\u0020answers\u0020JSON\u0020\u0028\u0022success\u0022,\u0020or\u0020\u0022error\u0022\u0020for\u0020an\u0020unknown\u0020address\u0029",
             "url": "classes/LoginController.html#method_action_forgot_password"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_reset\u0028\u0029",
@@ -3378,17 +3518,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_verify\u0028\u0029",
             "name": "action_verify",
-            "summary": "Used\u0020to\u0020verify\u0020mails",
+            "summary": "Used\u0020to\u0020verify\u0020mails\u003A\u0020verifies\u0020the\u0020URL\u0020token\u003B\u0020with\u0020POST\u0020\u0022email\u0022\u0020it\u0020resends\u0020the\u0020verification\u0020mail\u0020and\u0020renders\u0020the\u0020wait\u0020page,\u0020otherwise\u0020it\u0020renders\u0020the\u0020result\u0020view",
             "url": "classes/LoginController.html#method_action_verify"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_create_password\u0028\u0029",
             "name": "action_create_password",
-            "summary": "Redirects\u0020the\u0020user\u0020to\u0020the\u0020password\u0020reset\u0020page",
+            "summary": "Reroutes\u0020internally\u0020\u0028no\u0020HTTP\u0020redirect\u0029\u0020to\u0020action_reset\u0020without\u0020passing\u0020a\u0020reset\u0020code",
             "url": "classes/LoginController.html#method_action_create_password"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_change_password\u0028\u0029",
             "name": "action_change_password",
-            "summary": "Redirects\u0020the\u0020user\u0020to\u0020the\u0020password\u0020reset\u0020page",
+            "summary": "Reroutes\u0020internally\u0020\u0028no\u0020HTTP\u0020redirect\u0029\u0020to\u0020action_reset\u0020without\u0020a\u0020reset\u0020code",
             "url": "classes/LoginController.html#method_action_change_password"
         },                {
             "fqsen": "\\LoginController\u003A\u003Asend_verify_mail\u0028\u0029",
@@ -4048,7 +4188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request",
             "name": "Request",
-            "summary": "Base\u0020class\u0020for\u0020Response\u0020and\u0020Request",
+            "summary": "The\u0020incoming\u0020request\u003A\u0020input,\u0020URL\u0020parts,\u0020permission\u0020checks\u0020and\u0020form\u0020helpers",
             "url": "classes/ZubZet-Framework-Message-Request.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A__construct\u0028\u0029",
@@ -4113,12 +4253,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetDomain\u0028\u0029",
             "name": "getDomain",
-            "summary": "Returns\u0020the\u0020app\u0020domain\u0020as\u0020specified\u0020in\u0020the\u0020configuration\u0020\u0028\u0060host\u003D\u0060\u0029",
+            "summary": "Returns\u0020the\u0020app\u0020domain\u0020as\u0020specified\u0020in\u0020the\u0020configuration\u0020\u0028\u0060host\u003D\u0060\u0029,\u0020with\u0020scheme,\u0020slashes\u0020and\u0020port\u0020stripped\u0020\u0028\u0060https\u003A\/\/example.com\u003A8080\/\u0060\u0020becomes\u0020\u0060example.com\u0060\u0029",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getDomain"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetParameters\u0028\u0029",
             "name": "getParameters",
-            "summary": "Gets\u0020the\u0020URL\u0020parameters\u0020\u0028including\u0020the\u0020leading\u0020controller\u0020and\u0020action\u0029\u0020specified\u0020by\u0020the\u0020path.",
+            "summary": "Gets\u0020the\u0020URL\u0020parameters\u0020\u0028excluding\u0020the\u0020leading\u0020controller\u0020and\u0020action\u0029\u0020specified\u0020by\u0020the\u0020path.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getParameters"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetReadableParameter\u0028\u0029",
@@ -4128,12 +4268,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetRequestingUser\u0028\u0029",
             "name": "getRequestingUser",
-            "summary": "Gets\u0020the\u0020user\u0020who\u0020made\u0020the\u0020request.",
+            "summary": "Gets\u0020the\u0020user\u0020who\u0020made\u0020the\u0020request,\u0020also\u0020for\u0020guests\u0020\u0028check\u0020isLoggedIn\u0029.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getRequestingUser"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetRootFolder\u0028\u0029",
             "name": "getRootFolder",
-            "summary": "Gets\u0020the\u0020path\u0020to\u0020the\u0020root\u0020folder\u0020of\u0020the\u0020project.",
+            "summary": "Gets\u0020the\u0020URL\u0020base\u0020path\u0020of\u0020the\u0020app\u0020\u0028\u0022\/\u0022\u0020plus\u0020rootDirectory,\u0020with\u0020trailing\u0020slash\u0029.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getRootFolder"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AcheckSuperPermission\u0028\u0029",
@@ -4143,7 +4283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AcheckPermission\u0028\u0029",
             "name": "checkPermission",
-            "summary": "Checks\u0020if\u0020the\u0020current\u0020user\u0020has\u0020a\u0020permission.\u0020If\u0020the\u0020user\u0020is\u0020not\u0020logged\u0020in,\u0020they\u0020will\u0020be\u0020redirected\u0020to\u0020the\u0020login\u0020page.",
+            "summary": "Checks\u0020if\u0020the\u0020current\u0020user\u0020has\u0020a\u0020permission.\u0020If\u0020the\u0020user\u0020is\u0020not\u0020logged\u0020in,\u0020the\u0020login\u0020page\u0020is\u0020rendered\u0020and\u0020the\u0020script\u0020exits.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_checkPermission"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003ArequireOrganization\u0028\u0029",
@@ -4158,12 +4298,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AhasFormData\u0028\u0029",
             "name": "hasFormData",
-            "summary": "Checks\u0020if\u0020the\u0020request\u0020contains\u0020form\u0020data.\u0020When\u0020a\u0020form\u0020action\u0020is\u0020provided,\u0020it\u0020must\u0020match\u0020the\u0020submitted\u0020action.",
+            "summary": "Checks\u0020if\u0020the\u0020request\u0020contains\u0020form\u0020data,\u0020i.e.\u0020the\u0020POST\u0020flag\u0020isFormData\u0020that\u0020Z.js\u0020ZForm\u0020sends\u0020\u0028plain\u0020HTML\u0020form\u0020posts\u0020return\u0020false\u0029.\u0020When\u0020a\u0020form\u0020action\u0020is\u0020provided,\u0020it\u0020must\u0020match\u0020the\u0020submitted\u0020action.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_hasFormData"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AisAction\u0028\u0029",
             "name": "isAction",
-            "summary": "Checks\u0020if\u0020the\u0020request\u0020is\u0020an\u0020async\u0020AJAX\u0020request\u0020of\u0020a\u0020given\u0020type",
+            "summary": "Checks\u0020if\u0020the\u0020POST\u0020field\u0020action\u0020loosely\u0020equals\u0020\u0024type\u003B\u0020it\u0020does\u0020not\u0020verify\u0020that\u0020the\u0020request\u0020came\u0020via\u0020AJAX",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_isAction"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetBody\u0028\u0029",
@@ -4173,8 +4313,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AgetJson\u0028\u0029",
             "name": "getJson",
-            "summary": "Decode\u0020request\u0020body\u0020as\u0020JSON.",
+            "summary": "Decode\u0020the\u0020request\u0020body\u0020as\u0020JSON.",
             "url": "classes/ZubZet-Framework-Message-Request.html#method_getJson"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003AcsrfBlockAdditionalMethod\u0028\u0029",
+            "name": "csrfBlockAdditionalMethod",
+            "summary": "Runs\u0020the\u0020CSRF\u0020check,\u0020additionally\u0020covering\u0020methods\u0020normally\u0020exempt\u0020as\u0020safe\n\u0028e.g.\u0020\u0022GET\u0022\u0029,\u0020so\u0020this\u0020request\u0020also\u0020gets\u0020CSRF\u002Dchecked\u0020for\u0020them.",
+            "url": "classes/ZubZet-Framework-Message-Request.html#method_csrfBlockAdditionalMethod"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Request\u003A\u003A\u0024input",
             "name": "input",
@@ -4208,7 +4353,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZViews\u0028\u0029",
             "name": "getZViews",
-            "summary": "Returns\u0020the\u0020ZViews\u0020directory",
+            "summary": "Returns\u0020the\u0020project\u0027s\u0020own\u0020views\u0020directory\u0020\u0028config\u0020z_views,\u0020relative\u0020path\u0020with\u0020trailing\u0020slash\u0029,\u0020not\u0020the\u0020framework\u0027s\u0020IncludedComponents\u0020views",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_getZViews"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZRoot\u0028\u0029",
@@ -4233,17 +4378,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Areroute\u0028\u0029",
             "name": "reroute",
-            "summary": "Reroutes\u0020to\u0020another\u0020action",
+            "summary": "Reroutes\u0020to\u0020another\u0020action\u0020by\u0020re\u002Ddispatching\u0020internally,\u0020without\u0020an\u0020HTTP\u0020redirect",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_reroute"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003ArerouteUrl\u0028\u0029",
             "name": "rerouteUrl",
-            "summary": "Reroutes\u0020at\u0020the\u0020user\u0027s\u0020client",
+            "summary": "Reroutes\u0020at\u0020the\u0020user\u0027s\u0020client\u0020by\u0020sending\u0020a\u0020Location\u0020header\u0020and\u0020exiting",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_rerouteUrl"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AsetCookie\u0028\u0029",
             "name": "setCookie",
-            "summary": "Sets\u0020a\u0020cookie\u0020just\u0020like\u0020the\u0020standard\u0020PHP\u0020function.\u0020\u0028Pass\u002Dthrough\u0029\nSee\u003A\u0020https\u003A\/\/www.php.net\/manual\/en\/function.setcookie.php",
+            "summary": "Sets\u0020a\u0020cookie\u0020just\u0020like\u0020the\u0020standard\u0020PHP\u0020function.\u0020\u0028Pass\u002Dthrough\u0029\nThe\u0020arguments\u0020are\u0020read\u0020via\u0020func_get_args\u0028\u0029\u0020and\u0020forwarded\u0020unchanged\u003B\u0020the\u0020result\u0020of\u0020setcookie\u0028\u0029\u0020is\u0020discarded.",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_setCookie"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AcookieSecure\u0028\u0029",
@@ -4258,7 +4403,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AunsetCookie\u0028\u0029",
             "name": "unsetCookie",
-            "summary": "Removes\u0020a\u0020cookie\u0020at\u0020the\u0020client",
+            "summary": "Removes\u0020a\u0020cookie\u0020at\u0020the\u0020client\u0020and\u0020from\u0020the\u0020current\u0020request\u0027s\u0020input",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_unsetCookie"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Aupload\u0028\u0029",
@@ -4273,7 +4418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AgenerateRest\u0028\u0029",
             "name": "generateRest",
-            "summary": "Generates\u0020a\u0020Rest\u0020object",
+            "summary": "Echoes\u0020the\u0020payload\u0020as\u0020pretty\u002Dprinted\u0020JSON\u0020with\u0020an\u0020added\u0020\u0060meta\u0060\u0020block\u0020\u0028no\u0020Content\u002DType\u0020header\u0020is\u0020sent\u0029",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_generateRest"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Ajson\u0028\u0029",
@@ -4283,7 +4428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AgenerateRestError\u0028\u0029",
             "name": "generateRestError",
-            "summary": "Generates\u0020a\u0020Rest\u0020error\u0020object",
+            "summary": "Generates\u0020a\u0020Rest\u0020error\u0020object\u003A\u0020logs\u0020a\u0020REST_ERROR\u0020warning,\u0020echoes\u0020\u0060\u007B\u0022error\u0022\u003A\u007B\u0022code\u0022,\u0022message\u0022\u007D\u007D\u0060\u0020as\u0020pretty\u002Dprinted\u0020JSON\u0020\u0028no\u0020HTTP\u0020status\u0020or\u0020Content\u002DType\u0020header\u0020is\u0020sent\u0029\u0020and\u0020exits",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_generateRestError"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AsendEmail\u0028\u0029",
@@ -4298,7 +4443,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AloginAs\u0028\u0029",
             "name": "loginAs",
-            "summary": "Logs\u0020the\u0020current\u0020user\u0020in\u0020as\u0020someone\u0020else",
+            "summary": "Logs\u0020the\u0020current\u0020user\u0020in\u0020as\u0020someone\u0020else,\u0020sets\u0020the\u0020z_login_token\u0020cookie\u0020and\u0020logs\u0020the\u0020event,\u0020without\u0020any\u0020permission\u0020check",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_loginAs"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AgetCookieDomainScope\u0028\u0029",
@@ -4308,7 +4453,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Aerror\u0028\u0029",
             "name": "error",
-            "summary": "Generates\u0020a\u0020generic\u0020error",
+            "summary": "Generates\u0020a\u0020generic\u0020error\u003A\u0020sends\u0020\u0060\u007B\u0022result\u0022\u003A\u0022error\u0022,\u0022message\u0022\u003A...\u007D\u0060\u0020plus\u0020the\u0020payload\u0020as\u0020JSON\u0020via\u0020generateRest\u0028\u0029\u0020and\u0020exits\u0020the\u0020script",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_error"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AformErrors\u0028\u0029",
@@ -4323,7 +4468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003Alogout\u0028\u0029",
             "name": "logout",
-            "summary": "Logs\u0020the\u0020user\u0020out",
+            "summary": "Logs\u0020the\u0020user\u0020out\u003A\u0020invalidates\u0020the\u0020DB\u0020session\u0020and\u0020deletes\u0020the\u0020login\u0020cookie\u0020\u0028when\u0020sudoed,\u0020logs\u0020in\u0020as\u0020the\u0020exec\u0020user\u0020instead\u0029,\u0020then\u0020redirects\u0020to\u0020the\u0020root\u0020and\u0020exits",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_logout"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AdeleteOldLoginCookieDomainScope\u0028\u0029",
@@ -4343,7 +4488,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AinsertDatabase\u0028\u0029",
             "name": "insertDatabase",
-            "summary": "Inserts\u0020a\u0020set\u0020into\u0020the\u0020database\u0020with\u0020data\u0020from\u0020a\u0020form",
+            "summary": "Inserts\u0020a\u0020set\u0020into\u0020the\u0020database\u0020with\u0020data\u0020from\u0020a\u0020form.\u0020File\u0020fields\u0020are\u0020uploaded\u0020first\u0020and\u0020array\u0020values\u0020are\u0020stored\u0020as\u0020JSON.",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_insertDatabase"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AuploadFromForm\u0028\u0029",
@@ -4353,7 +4498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003AdoCED\u0028\u0029",
             "name": "doCED",
-            "summary": "Executes\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022",
+            "summary": "Executes\u0020a\u0020\u0022Create\u0020Edit\u0020Delete\u0022.\u0020Per\u0020posted\u0020row\u0020\u0028Z\u0029\u003A\u0020create\u0020inserts,\u0020edit\u0020updates\u0020WHERE\u0020id\u0020\u003D\u0020dbId,\u0020delete\u0020only\u0020sets\u0020active\u0020\u003D\u00200\u003B\u0020the\u0020table\u0020needs\u0020id\u0020and\u0020active\u0020columns\u0020and\u0020table\/column\u0020names\u0020are\u0020not\u0020escaped.",
             "url": "classes/ZubZet-Framework-Message-Response.html#method_doCED"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Response\u003A\u003A\u0024output",
@@ -4368,22 +4513,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery\u003A\u003AdbSelect\u0028\u0029",
             "name": "dbSelect",
-            "summary": "Create\u0020a\u0020new\u0020SelectQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "summary": "Create\u0020a\u0020new\u0020SelectQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.\u0020The\u0020query\u0020is\u0020only\u0020built,\u0020run\u0020it\u0020via\u0020exec\u0028\u0029\/execQuery\u0028\u0029\u0020as\u0020the\u0020wrapped\u0020connection\u0020has\u0020no\u0020credentials\u0020for\u0020\u002D\u003Eexecute\u0028\u0029.",
             "url": "classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbSelect"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery\u003A\u003AdbUpdate\u0028\u0029",
             "name": "dbUpdate",
-            "summary": "Create\u0020a\u0020new\u0020UpdateQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "summary": "Create\u0020a\u0020new\u0020UpdateQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.\u0020The\u0020query\u0020is\u0020only\u0020built,\u0020run\u0020it\u0020via\u0020exec\u0028\u0029\/execQuery\u0028\u0029\u0020as\u0020the\u0020wrapped\u0020connection\u0020has\u0020no\u0020credentials\u0020for\u0020\u002D\u003Eexecute\u0028\u0029.",
             "url": "classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbUpdate"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery\u003A\u003AdbDelete\u0028\u0029",
             "name": "dbDelete",
-            "summary": "Create\u0020a\u0020new\u0020DeleteQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "summary": "Create\u0020a\u0020new\u0020DeleteQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.\u0020The\u0020query\u0020is\u0020only\u0020built,\u0020run\u0020it\u0020via\u0020exec\u0028\u0029\/execQuery\u0028\u0029\u0020as\u0020the\u0020wrapped\u0020connection\u0020has\u0020no\u0020credentials\u0020for\u0020\u002D\u003Eexecute\u0028\u0029.",
             "url": "classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbDelete"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery\u003A\u003AdbInsert\u0028\u0029",
             "name": "dbInsert",
-            "summary": "Create\u0020a\u0020new\u0020InsertQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.",
+            "summary": "Create\u0020a\u0020new\u0020InsertQuery\u0020instance\u0020for\u0020the\u0020CakePHP\\Database\u0020Connection.\u0020The\u0020query\u0020is\u0020only\u0020built,\u0020run\u0020it\u0020via\u0020exec\u0028\u0029\/execQuery\u0028\u0029\u0020as\u0020the\u0020wrapped\u0020connection\u0020has\u0020no\u0020credentials\u0020for\u0020\u002D\u003Eexecute\u0028\u0029.",
             "url": "classes/ZubZet-Framework-QueryBuilder-CanBuildQuery.html#method_dbInsert"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder\\CanBuildQuery\u003A\u003AgetQueryBuilder\u0028\u0029",
@@ -4628,7 +4773,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user",
+            "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user\u0020by\u0020echoing\u0020it\u0020\u0028nothing\u0020is\u0020returned\u0029\u003B\u0020a\u0020view\u0020that\u0020fails\u0020to\u0020render\u0020with\u0020a\u0020BladeException,\u0020e.g.\u0020a\u0020missing\u0020one,\u0020renders\u0020the\u0020500\u0020view\u0020instead",
             "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003AlegacyOptExpansion\u0028\u0029",
@@ -4961,11 +5106,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_afterMiddleware"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Routing\\PendingRoutingState\u003A\u003A\u0024withoutCsrf",
-            "name": "withoutCsrf",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Routing-PendingRoutingState.html#property_withoutCsrf"
-        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route",
             "name": "Route",
             "summary": "",
@@ -4988,12 +5128,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformStoredGroupsMatchingPrefix\u0028\u0029",
             "name": "performStoredGroupsMatchingPrefix",
-            "summary": "Performs\u0020middleware\u0020matching\u0020for\u0020stored\u0020groups\u0020based\u0020on\u0020the\u0020current\u0020URL\u0020parts.",
+            "summary": "Runs\u0020the\u0020middlewares\u0020of\u0020all\u0020groups\u0020matching\u0020the\u0020URL\u0020\u0028exits\u0020if\u0020one\u0020returns\u0020non\u002Dtrue\u0029,\u0020then\u0020\u0024callback,\u0020then\u0020the\u0020after\u002Dmiddlewares.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_performStoredGroupsMatchingPrefix"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
             "name": "performGroup",
-            "summary": "Creates\u0020a\u0020route\u0020group.",
+            "summary": "Stores\u0020the\u0020group\u0027s\u0020middlewares\u0020under\u0020its\u0020full\u0020prefix\u0020for\u0020fallback\u0020matching,\u0020then\u0020runs\u0020\u0024callback\u0020with\u0020the\u0020group\u0020state\u0020pushed\u0020and\u0020pops\u0020it\u0020afterwards.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_performGroup"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformRoute\u0028\u0029",
@@ -5013,7 +5153,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformCallableAction\u0028\u0029",
             "name": "performCallableAction",
-            "summary": "Keeps\u0020callback\u0020compatibility\u0020with\u0020route\u0020closures\u0020using\u00200..3\u0020parameters.",
+            "summary": "Keeps\u0020callback\u0020compatibility\u0020with\u0020route\u0020closures\u0020using\u00200..3\u0020parameters,\u0020injected\u0020by\u0020type\u003A\u0020array\u0020gets\u0020the\u0020route\u0020args,\u0020Request\/Response\u0020the\u0020current\u0020instances,\u0020anything\u0020else\u0020its\u0020default\u0020value\u0020or\u0020null.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_performCallableAction"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AgetInheritedMiddlewares\u0028\u0029",
@@ -5078,12 +5218,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003Areroute\u0028\u0029",
             "name": "reroute",
-            "summary": "Tries\u0020to\u0020reroute\u0020the\u0020request\u0020using\u0020FastRoute\u0020first,\u0020if\u0020the\u0020route\u0020does\u0020not\u0020exist,\nit\u0020falls\u0020back\u0020to\u0020the\u0020ZubZet\u0020framework.",
+            "summary": "Tries\u0020to\u0020reroute\u0020the\u0020request\u0020using\u0020FastRoute\u0020first,\u0020if\u0020the\u0020route\u0020does\u0020not\u0020exist,\nit\u0020falls\u0020back\u0020to\u0020the\u0020ZubZet\u0020framework.\u0020It\u0020replaces\u0020the\u0020current\u0020request\u0020state\u0020\u0028path\u0020and\u0020args\u0029\nvia\u0020replaceRequest,\u0020executes\u0020the\u0020new\u0020route\u0020and\u0020then\u0020returns\u0020to\u0020the\u0020caller,\u0020which\u0020keeps\u0020running.",
             "url": "classes/ZubZet-Framework-Routing-Router.html#method_reroute"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003AexecutePath\u0028\u0029",
             "name": "executePath",
-            "summary": "Executes\u0020an\u0020action\u0020for\u0020a\u0020specified\u0020path",
+            "summary": "Executes\u0020an\u0020action\u0020for\u0020a\u0020specified\u0020path\nMaps\u0020\u005B\u003Cname\u003E,\u0020\u003Caction\u003E\u005D\u0020to\u0020\u003CName\u003EController\u003A\u003Aaction_\u003Caction\u003E\u0020\u0028defaultIndex\u0020controller\u0020\/\u0020action_index\u0020when\u0020missing\u0029,\noverwrites\u0020request\u0028\u0029\u002D\u003EurlParts\u0020and\u0020dies\u0020once\u0020more\u0020than\u0020\u0024maxReroutes\u0020calls\u0020were\u0020made.\u0020Returns\u0020nothing.",
             "url": "classes/ZubZet-Framework-Routing-Router.html#method_executePath"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003A\u0024routeDispatcher",
@@ -5103,68 +5243,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Security\\CSRF",
             "name": "CSRF",
-            "summary": "Stateless\u0020double\u002Dsubmit\u002Dcookie\u0020CSRF\u0020defense\u003A\u0020the\u0020server\u0020issues\u0020a\n\u0060z_csrf\u0060\u0020cookie,\u0020Z.js\u0020echoes\u0020it\u0020back\u0020as\u0020an\u0020\u0060X\u002DCSRF\u002DToken\u0060\u0020header,\u0020and\nnon\u002DGET\u0020requests\u0020must\u0020present\u0020both\u0020matching.\u0020A\u0020cross\u002Dorigin\u0020attacker\ngets\u0020the\u0020cookie\u0020sent\u0020for\u0020them\u0020but\u0020cannot\u0020read\u0020it,\u0020so\u0020they\u0020cannot\u0020fill\nin\u0020the\u0020header.",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#method___construct"
+            "url": "classes/ZubZet-Framework-Security-CSRF.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003Averify\u0028\u0029",
             "name": "verify",
-            "summary": "",
+            "summary": "Checks\u0020the\u0020current\u0020request\u0020against\u0020the\u0020csrf_\u002A\u0020settings.",
             "url": "classes/ZubZet-Framework-Security-CSRF.html#method_verify"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003Afield\u0028\u0029",
-            "name": "field",
-            "summary": "Hidden\u0020input\u0020for\u0020a\u0020raw\u0020HTML\u0020form,\u0020which\u0020cannot\u0020set\u0020the\u0020header.\u0020The\nRouter\u0020has\u0020already\u0020issued\u0020the\u0020token\u0020for\u0020this\u0020request.",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_field"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AensureToken\u0028\u0029",
-            "name": "ensureToken",
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AparseConfigList\u0028\u0029",
+            "name": "parseConfigList",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_ensureToken"
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#method_parseConfigList"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ACOOKIE",
-            "name": "COOKIE",
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AALLOWED_SITES",
+            "name": "ALLOWED_SITES",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_COOKIE"
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_ALLOWED_SITES"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AHEADER",
-            "name": "HEADER",
+            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ASAFE_METHODS",
+            "name": "SAFE_METHODS",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_HEADER"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003AFIELD",
-            "name": "FIELD",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_FIELD"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ASAFE",
-            "name": "SAFE",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ALIFETIME",
-            "name": "LIFETIME",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_LIFETIME"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ASIMPLE_CONTENT_TYPES",
-            "name": "SIMPLE_CONTENT_TYPES",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_SIMPLE_CONTENT_TYPES"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003ABROWSER_AUTH_SCHEMES",
-            "name": "BROWSER_AUTH_SCHEMES",
-            "summary": "",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_BROWSER_AUTH_SCHEMES"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Security\\CSRF\u003A\u003A\u0024token",
-            "name": "token",
-            "summary": "The\u0020token\u0020of\u0020this\u0020request,\u0020issued\u0020or\u0020reused\u0020by\u0020ensureToken\u0028\u0029.",
-            "url": "classes/ZubZet-Framework-Security-CSRF.html#property_token"
+            "url": "classes/ZubZet-Framework-Security-CSRF.html#constant_SAFE_METHODS"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Security\\Secrets\\Cipher\\AesGcmCipher",
             "name": "AesGcmCipher",
@@ -5278,7 +5378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint\u003A\u003AcheckpointCurrentState\u0028\u0029",
             "name": "checkpointCurrentState",
-            "summary": "Snapshot\u0020selected\u0020properties\u0020into\u0020a\u0020Checkpoint\u0020for\u0020later\u0020restore\u0028\u0029",
+            "summary": "Snapshot\u0020selected\u0020properties\u0020into\u0020a\u0020Checkpoint\u0020for\u0020later\u0020restore\u0028\u0029\nOnly\u0020public\u0020properties\u0020can\u0020be\u0020captured\u0020and\u0020restored.",
             "url": "classes/ZubZet-Framework-Support-Checkpoint-CanCheckpoint.html#method_checkpointCurrentState"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\CanCheckpoint\u003A\u003AcheckpointablePropertyNames\u0028\u0029",
@@ -5328,7 +5428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Checkpoint\\IncludeInCheckpoint",
             "name": "IncludeInCheckpoint",
-            "summary": "Marks\u0020a\u0020property\u0020for\u0020inclusion\u0020in\u0020CanCheckpoint\u0027s\u0020default\u0020snapshot.",
+            "summary": "Marks\u0020a\u0020property\u0020for\u0020CanCheckpoint\u0020snapshots\u0020that\u0020filter\u0020by\u0020this\u0020attribute\u003B\u0020checkpointCurrentState\u0028\u0029\u0020only\u0020filters\u0020when\u0020IncludeInCheckpoint\u003A\u003Aclass\u0020is\u0020passed\u0020as\u0020\u0024attributeClass.",
             "url": "classes/ZubZet-Framework-Support-Checkpoint-IncludeInCheckpoint.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Commands\\Install",
@@ -5443,12 +5543,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Rest\u003A\u003AShowError\u0028\u0029",
             "name": "ShowError",
-            "summary": "Sends\u0020an\u0020error\u0020to\u0020the\u0020client",
+            "summary": "Replaces\u0020the\u0020payload\u0020with\u0020an\u0020error\u0020object,\u0020sends\u0020it\u0020to\u0020the\u0020client\u0020and\u0020exits\u0020via\u0020execute\u0028\u0029",
             "url": "classes/ZubZet-Framework-Support-Rest.html#method_ShowError"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Rest\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "Sends\u0020the\u0020rest\u0020stuff\u0020to\u0020the\u0020client",
+            "summary": "Echoes\u0020the\u0020payload\u0020as\u0020pretty\u002Dprinted\u0020JSON\u0020\u0028no\u0020Content\u002DType\u0020header\u0020is\u0020sent\u0029",
             "url": "classes/ZubZet-Framework-Support-Rest.html#method_execute"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Support\\Rest\u003A\u003A\u0024data",
@@ -5568,7 +5668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Parses\u0020all\u0020the\u0020options\u0020as\u0020variables,\u0020instantiates\u0020the\u0020z_db,\u0020and\u0020establishes\u0020the\u0020db\u0020connection.",
+            "summary": "Boots\u0020the\u0020framework\u0020and\u0020instantiates\u0020the\u0020z_db\u0020proxy,\u0020which\u0020connects\u0020to\u0020the\u0020database\u0020lazily.",
             "url": "classes/ZubZet-Framework-ZubZet.html#method___construct"
         },                {
             "fqsen": "\\ZubZet\\Framework\\ZubZet\u003A\u003AsetRequestResponse\u0028\u0029",
@@ -6076,6 +6176,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_triggersDeprecation"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_deprecatedHelper\u0028\u0029",
+            "name": "action_deprecatedHelper",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_deprecatedHelper"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_command\u0028\u0029",
             "name": "action_command",
             "summary": "",
@@ -6301,6 +6406,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_sendemail_dynamic"
         },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_sendername_default\u0028\u0029",
+            "name": "action_sendemail_sendername_default",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_sendername_default"
+        },                {
+            "fqsen": "\\CoreController\u003A\u003Aaction_sendemail_sendername_custom\u0028\u0029",
+            "name": "action_sendemail_sendername_custom",
+            "summary": "",
+            "url": "classes/CoreController.html#method_action_sendemail_sendername_custom"
+        },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_sendemailtouser_static\u0028\u0029",
             "name": "action_sendemailtouser_static",
             "summary": "",
@@ -6376,20 +6491,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CsrfProbeController.html#method_action_plain"
         },                {
-            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_exempt\u0028\u0029",
-            "name": "action_exempt",
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_optIn\u0028\u0029",
+            "name": "action_optIn",
             "summary": "",
-            "url": "classes/CsrfProbeController.html#method_action_exempt"
+            "url": "classes/CsrfProbeController.html#method_action_optIn"
+        },                {
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_optInHead\u0028\u0029",
+            "name": "action_optInHead",
+            "summary": "",
+            "url": "classes/CsrfProbeController.html#method_action_optInHead"
         },                {
             "fqsen": "\\CsrfProbeController\u003A\u003Aaction_guarded\u0028\u0029",
             "name": "action_guarded",
             "summary": "",
             "url": "classes/CsrfProbeController.html#method_action_guarded"
         },                {
-            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_field\u0028\u0029",
-            "name": "action_field",
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_reroute\u0028\u0029",
+            "name": "action_reroute",
             "summary": "",
-            "url": "classes/CsrfProbeController.html#method_action_field"
+            "url": "classes/CsrfProbeController.html#method_action_reroute"
+        },                {
+            "fqsen": "\\CsrfProbeController\u003A\u003Aaction_decide\u0028\u0029",
+            "name": "action_decide",
+            "summary": "",
+            "url": "classes/CsrfProbeController.html#method_action_decide"
         },                {
             "fqsen": "\\DatabaseClusterProbeController",
             "name": "DatabaseClusterProbeController",
@@ -7281,6 +7406,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MigrationController.html#method_action_checkSeeding"
         },                {
+            "fqsen": "\\MigrationController\u003A\u003Aaction_checkSemicolons\u0028\u0029",
+            "name": "action_checkSemicolons",
+            "summary": "",
+            "url": "classes/MigrationController.html#method_action_checkSemicolons"
+        },                {
             "fqsen": "\\MigrationController\u003A\u003Aaction_checkTimestampType\u0028\u0029",
             "name": "action_checkTimestampType",
             "summary": "",
@@ -7471,6 +7601,116 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/OrganizationController.html#method_action_require"
         },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_hasAccess\u0028\u0029",
+            "name": "action_hasAccess",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_hasAccess"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_getPermissions\u0028\u0029",
+            "name": "action_getPermissions",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_getPermissions"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_getRoles\u0028\u0029",
+            "name": "action_getRoles",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_getRoles"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byOrganization\u0028\u0029",
+            "name": "action_byOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byRole\u0028\u0029",
+            "name": "action_byRole",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byRole"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byAccessToAll\u0028\u0029",
+            "name": "action_byAccessToAll",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byAccessToAll"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_byAccessToAnyOf\u0028\u0029",
+            "name": "action_byAccessToAnyOf",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_byAccessToAnyOf"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_inheritDirect\u0028\u0029",
+            "name": "action_inheritDirect",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_inheritDirect"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_inheritRoleGroup\u0028\u0029",
+            "name": "action_inheritRoleGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_inheritRoleGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userByRoleGroup\u0028\u0029",
+            "name": "action_userByRoleGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userByRoleGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_usersByRoleGroup\u0028\u0029",
+            "name": "action_usersByRoleGroup",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_usersByRoleGroup"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userByAccessToAll\u0028\u0029",
+            "name": "action_userByAccessToAll",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userByAccessToAll"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userByAccessToAnyOf\u0028\u0029",
+            "name": "action_userByAccessToAnyOf",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userByAccessToAnyOf"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_inactiveOrganization\u0028\u0029",
+            "name": "action_inactiveOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_inactiveOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_noOrganization\u0028\u0029",
+            "name": "action_noOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_noOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_mutatePermissions\u0028\u0029",
+            "name": "action_mutatePermissions",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_mutatePermissions"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_mutateRoles\u0028\u0029",
+            "name": "action_mutateRoles",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_mutateRoles"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_mutateGroups\u0028\u0029",
+            "name": "action_mutateGroups",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_mutateGroups"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_userMoveOrganization\u0028\u0029",
+            "name": "action_userMoveOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_userMoveOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_removeOrganization\u0028\u0029",
+            "name": "action_removeOrganization",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_removeOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_roleRemoved\u0028\u0029",
+            "name": "action_roleRemoved",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_roleRemoved"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003Aaction_legacyCheck\u0028\u0029",
+            "name": "action_legacyCheck",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_action_legacyCheck"
+        },                {
             "fqsen": "\\OrganizationController\u003A\u003Aaction_addWithGroup\u0028\u0029",
             "name": "action_addWithGroup",
             "summary": "",
@@ -7520,6 +7760,11 @@ Search.appendIndex(
             "name": "getOrganization",
             "summary": "",
             "url": "classes/OrganizationController.html#method_getOrganization"
+        },                {
+            "fqsen": "\\OrganizationController\u003A\u003AgetNames\u0028\u0029",
+            "name": "getNames",
+            "summary": "",
+            "url": "classes/OrganizationController.html#method_getNames"
         },                {
             "fqsen": "\\OrganizationController\u003A\u003AgetGroupsOfUser\u0028\u0029",
             "name": "getGroupsOfUser",
@@ -8096,6 +8341,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/SessionController.html#method_action_getters"
         },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_legacyTokenDeprecated\u0028\u0029",
+            "name": "action_legacyTokenDeprecated",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_legacyTokenDeprecated"
+        },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_invalidate\u0028\u0029",
             "name": "action_invalidate",
             "summary": "",
@@ -8165,6 +8415,21 @@ Search.appendIndex(
             "name": "action_addWithName",
             "summary": "",
             "url": "classes/SessionController.html#method_action_addWithName"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_tokenAtRest\u0028\u0029",
+            "name": "action_tokenAtRest",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_tokenAtRest"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_tokenKnown\u0028\u0029",
+            "name": "action_tokenKnown",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_tokenKnown"
+        },                {
+            "fqsen": "\\SessionController\u003A\u003Aaction_extendHashed\u0028\u0029",
+            "name": "action_extendHashed",
+            "summary": "",
+            "url": "classes/SessionController.html#method_action_extendHashed"
         },                {
             "fqsen": "\\SessionController\u003A\u003Aaction_addWithoutTimeoutSetting\u0028\u0029",
             "name": "action_addWithoutTimeoutSetting",
@@ -8980,6 +9245,11 @@ Search.appendIndex(
             "name": "checkSeeding",
             "summary": "",
             "url": "classes/MigrationModel.html#method_checkSeeding"
+        },                {
+            "fqsen": "\\MigrationModel\u003A\u003AcheckSemicolons\u0028\u0029",
+            "name": "checkSemicolons",
+            "summary": "",
+            "url": "classes/MigrationModel.html#method_checkSemicolons"
         },                {
             "fqsen": "\\QueryBuilderModel",
             "name": "QueryBuilderModel",

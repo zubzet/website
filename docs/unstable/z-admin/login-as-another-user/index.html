@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2735,6 +2735,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-session-cookie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The session cookie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-the-admin-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2772,16 +2783,55 @@
 
 <h1 id="login-login-as-another-user">Login: Login as another user<a class="headerlink" href="#login-login-as-another-user" title="Permanent link">&para;</a></h1>
 <p>When logging in, the client exchanges it's identifier and password for a authentication token and logs in using this token from that point on. <a href="../../api/classes/ZubZet-Framework-Message-Response.html#method_loginAs"><code>$res-&gt;loginAs</code></a> allows you to login a current client as another user by their <code>z_user.`id`</code>. </p>
-<p>The authentication token will track the exec user though. using this data, you'll always know who was logged in as who. You can also set an exec_user yourself, using the second argument of loginAs. If you don't want to build the tracking yourself, just use <code>Log / Statistics</code> within the <a href="../usage/">z_admin panel</a>. You are also able to login as another user using the very same panel.</p>
+<p>The authentication token will track the exec user though. using this data, you'll always know who was logged in as who. You can also set an exec_user yourself, using the second argument of loginAs (default: the logged in user itself). You are also able to login as another user using the very same panel.</p>
 <p>Example:
 <div class="highlight"><pre><span></span><code><span class="x">$res-&gt;loginAs(1, 2); //Logs the requesting session in as user 1 and marks the real user as 2.</span>
 </code></pre></div></p>
+<p><code>loginAs</code> is a plain session issuer and has no guards: it performs no permission check (the caller decides who may use it), does not invalidate the user's other sessions (concurrent sessions are allowed) and does not change <code>user()</code> of the current request. The new login applies from the next request on, when the client sends the cookie. <code>$userId</code> is typed <code>int</code>, so a non-numeric string (for example from a URL) throws a <code>TypeError</code>. It logs <code>USER_LOGGED_IN</code>, or <code>USER_LOGGED_IN_ANOTHER</code> when <code>$user_exec</code> differs from <code>$userId</code>.</p>
+<p><code>$res-&gt;logout()</code> invalidates only the current session and logs <code>USER_LOGGED_OUT</code>. During a login as another user it then calls <code>loginAs()</code> for the exec user, which issues a fresh token, otherwise it deletes the cookie, and it always ends with a redirect to the root, also for a client that is not logged in.</p>
 <h2 id="naming-a-session-and-recording-why-it-exists">Naming a session and recording why it exists<a class="headerlink" href="#naming-a-session-and-recording-why-it-exists" title="Permanent link">&para;</a></h2>
 <p>Every session records the request that created it on its own: <code>device</code> holds the user agent and <code>ip_creation</code> the address. The two optional arguments are what you choose yourself - a <code>$name</code> for the label a "your active sessions" list shows, and a <code>$reason</code> for why the session exists, which is what makes an impersonation traceable afterwards:</p>
 <div class="highlight"><pre><span></span><code><span class="x">$res-&gt;loginAs(1, 2, "Support session", "Ticket #4711"); //Names the session and records why it was opened</span>
 </code></pre></div>
 <p>Both values are read back through <a href="../../core-features/access-control/#session-object"><code>Session::byUser()</code></a>.</p>
+<h2 id="the-session-cookie">The session cookie<a class="headerlink" href="#the-session-cookie" title="Permanent link">&para;</a></h2>
+<p><code>loginAs</code> sends the token to the client as the <code>z_login_token</code> cookie, set through <code>setFrameworkCookie</code> (a wrapper around <code>setCookie</code>) with these attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Expires</code></td>
+<td><code>time() + loginTimeoutSeconds</code> (7 days when the setting is unset)</td>
+</tr>
+<tr>
+<td><code>Path</code></td>
+<td><code>/</code></td>
+</tr>
+<tr>
+<td><code>Domain</code></td>
+<td><code>.&lt;domain&gt;</code> when <code>login_scope_allow_subdomains</code> is the string <code>true</code>, otherwise none (host-only). A second <code>z_login_token</code> delete header (on login and logout) is then sent for the domain in <code>login_scope_allow_subdomains_delete_domainscope_name</code> (to clean up cookies from before the switch) whenever that key exists, even empty, and an empty value deletes the host-only cookie just set</td>
+</tr>
+<tr>
+<td><code>Secure</code></td>
+<td>set when the <code>host</code> setting starts with <code>https://</code></td>
+</tr>
+<tr>
+<td><code>HttpOnly</code></td>
+<td>never set, because Z.js and the session watcher read the cookie in JavaScript</td>
+</tr>
+<tr>
+<td><code>SameSite</code></td>
+<td><code>Lax</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="in-the-admin-panel">In the admin panel<a class="headerlink" href="#in-the-admin-panel" title="Permanent link">&para;</a></h2>
+<p>The panel passes the current exec user on, so nested impersonation keeps the real identity, which <code>checkSuperPermission()</code> checks.</p>
 <p>The "Login as" button on the user edit page asks for a reason before it sends you
 on. Leaving it empty or cancelling still logs you in - the session then records
 <code>z-admin impersonation</code> instead. Whatever is typed is cut to the 255 characters
@@ -2869,7 +2919,7 @@ the column takes, so a long explanation shortens rather than failing.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

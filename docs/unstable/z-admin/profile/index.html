@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2824,7 +2824,7 @@
 <h2 id="password">Password<a class="headerlink" href="#password" title="Permanent link">&para;</a></h2>
 <p>A new password ends every login of the account, the current browser included, so it has to sign in again. Api keys keep working, they are credentials of their own.</p>
 <h2 id="two-factor">Two Factor<a class="headerlink" href="#two-factor" title="Permanent link">&para;</a></h2>
-<p><em>Set up</em> shows a QR code for the authenticator and the key to type in by hand. Two factor stays off until a code from the authenticator confirms that the secret arrived. Turning it off again asks for a current code. After 5 wrong codes the session is signed out.</p>
+<p><em>Set up</em> shows a QR code for the authenticator and the key to type in by hand. Two factor stays off until a code from the authenticator confirms that the secret arrived. Turning it off again asks for a current code. After <code>two_factor_tries</code> (defaults to 5) wrong codes the session is signed out. Clearing sessions, revoking a session or key and creating a key ask for a <a href="../../core-features/two-factor-authentication/#guarding-an-action">recent check</a> first.</p>
 <p>An owner who lost their authenticator cannot turn it off themselves. An admin with <code>admin.user.edit</code> can, with <em>Disable two factor</em> on the account's page under <em>Edit User</em>.</p>
 <h2 id="sessions">Sessions<a class="headerlink" href="#sessions" title="Permanent link">&para;</a></h2>
 <p>Every login is listed with its name, the device, where it started and was last seen, and when it expires. The current one is marked <em>This browser</em>. A session can be renamed and revoked one by one, or all at once with <em>Clear all sessions</em>, which ends the current login as well. The last use is refreshed at most once per <code>session_last_used_throttle_seconds</code> (defaults to 60), so it reads as "around then".</p>
@@ -2915,7 +2915,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

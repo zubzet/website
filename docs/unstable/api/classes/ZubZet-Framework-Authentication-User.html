@@ -123,7 +123,7 @@
 
     </aside>
 
-            <p class="phpdocumentor-summary">The User class holds information about the user</p>
+            <p class="phpdocumentor-summary">The User class holds the user of the current request (user() helper, alias User), identified on construction by bearer token or the z_login_token cookie; not Permission\User</p>
 
 
 
@@ -207,7 +207,7 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Checks if a user has a given permission</dd>
+<dd>Checks if the effective user (not the sudo exec user) has a given permission, wildcards included (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;). Always false for anonymous users.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-User.html#method_checkPermissionOf">checkPermissionOf()</a>
@@ -591,7 +591,7 @@ tidy. The corresponding DB column is still <code class="prettyprint">organizatio
 
     </aside>
 
-        <p class="phpdocumentor-summary">Checks if a user has a given permission</p>
+        <p class="phpdocumentor-summary">Checks if the effective user (not the sudo exec user) has a given permission, wildcards included (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&quot;). Always false for anonymous users.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -773,7 +773,7 @@ tidy. The corresponding DB column is still <code class="prettyprint">organizatio
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">identify</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>The properties $isLoggedIn, $userId, and $execUserId will be set after calling this function.</p>
+        <section class="phpdocumentor-description"><p>Sets $isLoggedIn, $userId, $execUserId, $orgId, $fields, $uuid and the session token (nothing is returned). An expired session is invalidated in the database, a valid one gets its last use recorded.</p>
 </section>
 
     

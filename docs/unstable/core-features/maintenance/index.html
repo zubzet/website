@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2804,7 +2804,7 @@
 
 
 <h1 id="maintenance-mode">Maintenance Mode<a class="headerlink" href="#maintenance-mode" title="Permanent link">&para;</a></h1>
-<p>A standalone gate that runs immediately after configuration loads, before the logger, exception handler, and database. When active it sends <code>503 Service Unavailable</code> with <code>Retry-After: 300</code> and exits without any shutdown handlers, DB queries or log writes. Safe to enable while running a live migration.</p>
+<p>A standalone gate that runs immediately after configuration loads, before the logger, exception handler, asset proxy, routing, and database. When active it sends <code>503 Service Unavailable</code> (<code>Content-Type: text/html; charset=UTF-8</code>, <code>Retry-After: 300</code>, always the HTML page, even for JSON, REST and asset-proxy requests) and exits without any shutdown handlers, DB queries or log writes. Safe to enable while running a live migration.</p>
 <h2 id="modes">Modes<a class="headerlink" href="#modes" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2837,12 +2837,12 @@
 </tr>
 </tbody>
 </table>
-<p>Set this mode in the <a href="../configuration/">settings file</a> or as usual using an ENV variable.</p>
+<p>Set this mode in the <a href="../configuration/">settings file</a> or, with <code>allow_env_config</code>, using an ENV variable (<code>CONFIG_MAINTENANCE_MODE</code>). It is read on every request, so editing it takes effect immediately. There is no CLI command or admin toggle for it.</p>
 <div class="highlight"><pre><span></span><code><span class="na">maintenance_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">enabled</span>
 </code></pre></div>
-<p>Case-insensitive. Unknown values fall back to <code>disabled</code>.</p>
+<p>Defaults to <code>disabled</code>. Case-insensitive. Unknown values fall back to <code>disabled</code>, including the INI word <code>off</code>, which normalises to an empty string.</p>
 <h2 id="bypass-cookie">Bypass cookie<a class="headerlink" href="#bypass-cookie" title="Permanent link">&para;</a></h2>
-<p>In <code>soft</code> mode, requests with a <code>maintenance</code> cookie pass through. <strong>The value is not validated</strong>, so any value bypasses. Admins can set it via the <a href="../../z-admin/usage/">admin panel</a>. It expires after 24 hours.</p>
+<p>In <code>soft</code> mode, requests with a <code>maintenance</code> cookie pass through. <strong>Only the presence of the cookie key is checked</strong> (<code>MaintenanceHandler::checkBypassCookie()</code>), so any value bypasses, even an empty one. Admins can set it via the <a href="../../z-admin/usage/">admin panel</a>, which sends the value <code>true</code> for the <code>rootFolder</code> path with <code>SameSite=Lax</code> (plus <code>Secure</code> when <code>host</code> starts with <code>https://</code>, never <code>HttpOnly</code>). It expires after 24 hours. The page is unreachable while the gate blocks, so set the cookie before switching to <code>soft</code>.</p>
 <h2 id="cli-behavior">CLI behavior<a class="headerlink" href="#cli-behavior" title="Permanent link">&para;</a></h2>
 <p>In <code>full</code> mode, CLI commands write <code>Service Unavailable</code> to stderr and exit with code <code>1</code>. Use this to pause cron jobs alongside HTTP traffic.</p>
 <h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h2>
@@ -2851,7 +2851,7 @@
 <li><code>app/Views/maintenance.html</code> Project override</li>
 <li>(framework) <code>src/Maintenance/maintenance.html</code> Framework default</li>
 </ol>
-<p>A template is skipped if empty or if it contains <code>&lt;?php</code> (the gate uses <code>file_get_contents</code>, never <code>include</code>).</p>
+<p>The bundled page (title <code>Maintenance</code>, heading <code>We'll be back soon</code>) says the website is undergoing maintenance, asks to check back later, hints to contact the web administrator and reloads itself every 5 minutes. A template is skipped if empty or if it contains <code>&lt;?php</code> (the gate uses <code>file_get_contents</code>, never <code>include</code>).</p>
 <p>The template is only used for HTTP responses. CLI hits always receive the bare <code>Service Unavailable</code> string regardless of mode.</p>
 <h2 id="admin-panel">Admin panel<a class="headerlink" href="#admin-panel" title="Permanent link">&para;</a></h2>
 <p><code>/z/maintenance</code> shows the current status and exposes a button to set the bypass cookie. Requires the <code>admin.maintenance</code> <a href="../permission-system/">permission</a>. Only reachable in <code>disabled</code> or <code>soft</code>-with-cookie; in <code>enabled</code> or <code>full</code> you must edit the INI directly to toggle off.</p>
@@ -2938,7 +2938,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

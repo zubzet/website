@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -2878,7 +2878,7 @@ email
 </ul>
 <p>To verify if your emails are being sent correctly, you can navigate to <code>localhost:3300</code>. This is a default interface for email testing, which are commonly used in development environments to capture and inspect outgoing emails without actually sending them.</p>
 </details>
-<p>Before sending emails, configure your SMTP server. The <a href="../../core-features/configuration/">configuration</a> is located in the <code>z_config/z_settings.ini</code> file, where parameters like <code>mail_smtp</code> need to be set up.</p>
+<p>Before sending emails, configure your SMTP server. The <a href="../../core-features/configuration/">configuration</a> is located in the <code>z_config/z_settings.ini</code> file, where <code>mail_smtp</code> (host), <code>mail_user</code> and <code>mail_password</code> need to be set up. The framework always sends through SMTP with authentication. <code>mail_from</code> is the sender address (shown with <code>pageName</code> as name) and falls back to <code>mail_user</code> only if the key is absent; a sender that is not a valid address throws an <code>Exception</code>. <code>mail_security</code> defaults to <code>tls</code>, an empty value (INI <code>false</code>) sets no explicit encryption, and <code>mail_port</code> has no default (PHPMailer uses port 25 if it is empty).</p>
 <h2 id="sending-emails">Sending Emails<a class="headerlink" href="#sending-emails" title="Permanent link">&para;</a></h2>
 <p>Emails are sent from <a href="../../core-features/controllers-and-actions/">controllers</a>, and the ZubZet framework provides <a href="../../template-rendering-usages/sending-an-email/">two methods</a> for this purpose:</p>
 <ol>
@@ -2891,7 +2891,8 @@ email
 <li><code>lang</code>: The language of the email.</li>
 <li><code>options</code>: An array of values to pass to the view file.</li>
 <li><code>layout</code>: The layout file to use for the email.</li>
-<li><code>attachments</code>: Any files to attach to the email.</li>
+<li><code>attachments</code>: File contents (not paths) to attach, keyed by file name.</li>
+<li><code>senderName</code>: The display name of the sender, defaults to the <code>pageName</code>.</li>
 </ol>
 </li>
 <li>
@@ -3020,7 +3021,7 @@ email
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

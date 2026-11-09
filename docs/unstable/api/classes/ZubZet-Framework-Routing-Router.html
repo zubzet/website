@@ -169,7 +169,9 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Executes an action for a specified path</dd>
+<dd>Executes an action for a specified path
+Maps [&lt;name&gt;, &lt;action&gt;] to &lt;Name&gt;Controller::action_&lt;action&gt; (defaultIndex controller / action_index when missing),
+overwrites request()-&gt;urlParts and dies once more than $maxReroutes calls were made. Returns nothing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Routing-Router.html#method_reroute">reroute()</a>
@@ -177,7 +179,8 @@
                         &nbsp;: void    </span>
 </dt>
 <dd>Tries to reroute the request using FastRoute first, if the route does not exist,
-it falls back to the ZubZet framework.</dd>
+it falls back to the ZubZet framework. It replaces the current request state (path and args)
+via replaceRequest, executes the new route and then returns to the caller, which keeps running.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Routing-Router.html#method_getRouteDispatcher">getRouteDispatcher()</a>
@@ -212,7 +215,7 @@ it falls back to the ZubZet framework.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -246,7 +249,7 @@ it falls back to the ZubZet framework.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
@@ -362,7 +365,7 @@ it falls back to the ZubZet framework.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 
     </aside>
 
@@ -430,11 +433,13 @@ it falls back to the ZubZet framework.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Executes an action for a specified path</p>
+        <p class="phpdocumentor-summary">Executes an action for a specified path
+Maps [&lt;name&gt;, &lt;action&gt;] to &lt;Name&gt;Controller::action_&lt;action&gt; (defaultIndex controller / action_index when missing),
+overwrites request()-&gt;urlParts and dies once more than $maxReroutes calls were made. Returns nothing.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -475,12 +480,13 @@ it falls back to the ZubZet framework.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Tries to reroute the request using FastRoute first, if the route does not exist,
-it falls back to the ZubZet framework.</p>
+it falls back to the ZubZet framework. It replaces the current request state (path and args)
+via replaceRequest, executes the new route and then returns to the caller, which keeps running.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -521,7 +527,7 @@ it falls back to the ZubZet framework.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Routing/Router.php"><a href="files/src-routing-router.html"><abbr title="src/Routing/Router.php">Router.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 

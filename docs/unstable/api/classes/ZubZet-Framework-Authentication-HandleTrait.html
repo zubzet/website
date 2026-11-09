@@ -134,7 +134,7 @@
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Refresh the current permission object (user or role) by clearing all its fields and setting them new</dd>
+<dd>Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</dd>
 
         </dl>
 
@@ -160,11 +160,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/HandleTrait.php"><a href="files/src-authentication-handletrait.html"><abbr title="src/Authentication/HandleTrait.php">HandleTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Refresh the current permission object (user or role) by clearing all its fields and setting them new</p>
+        <p class="phpdocumentor-summary">Refresh the current permission object (user, role, session, organization or API key) by clearing all its fields and setting them new</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -182,9 +182,19 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If this instance was already detached</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\RuntimeException">RuntimeException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>If the object no longer exists</p>
+                                                 <section class="phpdocumentor-description"><p>If the object no longer exists (its fields are already cleared by then)</p>
 </section>
 
                                     </dd>
