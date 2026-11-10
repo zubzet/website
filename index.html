@@ -588,7 +588,7 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                                     <div>
                                         <span class="font-weight-bold d-block">A real feedback loop</span>
                                         <span class="feature-description">
-                                            760+ end-to-end tests against a real database cluster
+                                            <span data-zz-qa="size" data-zz-key="e2e_per_php_version">1,200+</span> end-to-end tests against a real database cluster
                                             let agents verify their own changes before a human ever
                                             reviews them.
                                         </span>
@@ -674,7 +674,7 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                                 ZubZet is stable at 1.x. Every version step ships with a documented
                                 <a href="https://zubzet.com/docs/latest/setup/how-to-update/">upgrade guide</a>,
                                 all the way back to 0.9, and the
-                                <a href="https://github.com/zubzet/version-migration">ZubZet Version Migrator</a>
+                                <a href="https://github.com/zubzet/framework/tree/main/migrator">ZubZet Version Migrator</a>
                                 automates the mechanical steps for you, so updating is routine,
                                 not a rewrite.
                             </p>
@@ -761,20 +761,21 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                             <span class="eyebrow">Quality Assurance</span>
                             <h2 class="section-title mt-2 mb-3">Tested like production</h2>
                             <p class="text-muted-soft text-justify mb-3">
-                                Every change runs through an end-to-end suite that drives a real
-                                browser against a real database cluster, and the suite contains
-                                more code than the framework itself. One failover test terminates
+                                Every change runs through unit tests and an end-to-end suite that
+                                drives a real browser against a real database cluster, and that
+                                suite contains more code than the framework itself. One failover test terminates
                                 the active database node mid-request and requires the request to
                                 complete successfully. Stable versions ship only after a green run
                                 across every supported PHP version, hardened through release
                                 candidates and validated in commercial projects.
                             </p>
-                            <a class="example-link" href="https://github.com/zubzet/framework/tree/main/tests/e2e">Browse the test suite</a>
+                            <a class="example-link" href="https://github.com/zubzet/framework/tree/main/tests">Browse the test suite</a>
                         </div>
                     </div>
                     <div class="pipeline">
-                        <div class="pipe-stage">
-                            <span class="mp-node mp-node-2l"><i class="fab fa-chrome mp-icon" aria-hidden="true"></i><span>Test suite runs<br>in a real browser</span></span>
+                        <div class="pipe-stage pipe-col pipe-even">
+                            <span class="mp-node mp-node-2l"><i class="fab fa-chrome mp-icon" aria-hidden="true"></i><span><span data-zz-qa="size" data-zz-key="e2e_per_php_version">1,200+</span> end-to-end tests<br>in a real browser</span></span>
+                            <span class="mp-node mp-node-2l"><i class="fas fa-vial mp-icon" aria-hidden="true"></i><span><span data-zz-qa="size" data-zz-key="unit_php_per_php_version">90+</span> unit tests<br>in isolation</span></span>
                         </div>
                         <div class="pipe-link"><span>on every PHP version</span></div>
                         <div class="pipe-stage pipe-grid">
@@ -786,7 +787,7 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                             <span class="mp-node mp-php">PHP 8.5</span>
                             <span class="mp-node mp-php">PHP 8.6</span>
                         </div>
-                        <div class="pipe-link"><span>using a real DB cluster</span></div>
+                        <div class="pipe-link"><span>end-to-end on a real DB cluster</span></div>
                         <div class="pipe-stage pipe-col">
                             <span class="mp-node"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>DB node 1</span>
                             <span class="mp-node"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>DB node 2</span>
@@ -795,8 +796,10 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                         <div class="pipe-link"><span>adding up to</span></div>
                         <div class="pipe-stage">
                             <div class="pipe-result">
-                                <span class="pipe-result-number">9,000+</span>
-                                <span class="pipe-result-label">test assertions across versions</span>
+                                <span class="pipe-result-number" data-zz-qa="size" data-zz-key="total">9,000+</span>
+                                <span class="pipe-result-label">tests executed across versions</span>
+                                <span class="pipe-result-label mt-2" hidden><span data-zz-qa="coverage" data-zz-key="lines_percent" data-zz-format="percent"></span> line coverage</span>
+                                <span class="pipe-result-label" hidden>Last run: <span data-zz-qa="size" data-zz-key="updated_at" data-zz-format="date"></span></span>
                             </div>
                         </div>
                     </div>
@@ -1021,6 +1024,44 @@ class Migration_2026_03_03_1_CreateOrders extends Migration {
                         });
                     })
                     .catch(function() {});
+
+                // Published by the framework CI into gh-pages; the static text stays as the fallback.
+                const QA_FILES = {
+                    size: '/docs/transparency/qa-test-suite-size.json',
+                    coverage: '/docs/transparency/qa-test-suite-coverage.json',
+                };
+                const isNumber = function(v) { return typeof v === 'number' && isFinite(v); };
+                // Each returns the display text, or null to keep the static fallback.
+                const QA_FORMATS = {
+                    number: function(v) {
+                        if (!isNumber(v)) return null;
+                        return v.toLocaleString('en-US');
+                    },
+                    percent: function(v) {
+                        if (!isNumber(v)) return null;
+                        return Math.floor(v) + '%';
+                    },
+                    date: function(v) {
+                        const date = new Date(v);
+                        if (typeof v !== 'string' || isNaN(date)) return null;
+                        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+                    },
+                };
+                Object.keys(QA_FILES).forEach(function(name) {
+                    const $targets = $('[data-zz-qa="' + name + '"]');
+                    if (!$targets.length) return;
+                    fetch(QA_FILES[name])
+                        .then(function(res) { return res.ok ? res.json() : {}; })
+                        .then(function(data) {
+                            $targets.each(function() {
+                                const format = QA_FORMATS[$(this).data('zz-format') || 'number'];
+                                const text = format(data[$(this).data('zz-key')]);
+                                if (text === null) return;
+                                $(this).text(text).closest('[hidden]').removeAttr('hidden');
+                            });
+                        })
+                        .catch(function() {});
+                });
 
                 let copyResetTimer = null;
                 $('.copy-click').on('click', function() {

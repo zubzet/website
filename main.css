@@ -599,6 +599,12 @@ a.feature-card > .d-flex > div:last-child {
     max-width: 220px;
 }
 
+/* Stacked nodes that share the width of the widest one */
+.pipe-stage.pipe-even {
+    display: grid;
+    grid-auto-columns: 1fr;
+}
+
 .pipe-link {
     flex: 1;
     min-width: 80px;
