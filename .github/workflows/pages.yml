@@ -28,6 +28,9 @@ jobs:
           # Merge gh-pages
           mv gh-pages/{.git,CNAME,docs} merged/
 
+          # Published by the framework CI, missing until its first run
+          if [ -d gh-pages/transparency ]; then mv gh-pages/transparency merged/; fi
+
           # Merge main
           rm -rf main/{.git,.github,LICENSE,README.md} || 0
           shopt -s dotglob
