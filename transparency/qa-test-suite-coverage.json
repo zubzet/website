@@ -1,8 +1,8 @@
 {
-  "lines_percent": 74.16,
-  "lines_covered": 9049,
-  "lines_total": 12202,
+  "lines_percent": 72.90,
+  "lines_covered": 8251,
+  "lines_total": 11319,
   "php_version": "8.5",
-  "commit": "7fc9345e38ffdb7cd63040c67aebc872fe1b811a",
-  "updated_at": "2026-11-10T21:34:02Z"
+  "commit": "fb26572c1a90ae0bf672e425523d15f8ff2105a9",
+  "updated_at": "2026-11-11T09:48:41Z"
 }
