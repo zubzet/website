@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -140,6 +212,13 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#constant_OVERWRITABLE">OVERWRITABLE</a>
+    <span>
+        &nbsp;= [&quot;SERVER&quot;, &quot;GET&quot;, &quot;POST&quot;, &quot;FILES&quot;, &quot;REQUEST&quot;, &quot;SESSION&quot;, &quot;COOKIE&quot;]                    </span>
+</dt>
+<dd></dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/ZubZet-Framework-Message-Input-State.html#property_body">$body</a>
     <span>
@@ -264,7 +343,9 @@
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Replaces the path and nothing else: the query stays. This is what an
+internal reroute uses, the action it reaches still sees the query of
+the request. withUrl() drops the query like a link would.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Input-State.html#method_withPost">withPost()</a>
@@ -299,6 +380,31 @@
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>    </span>
 </dt>
+<dd>Points the state to a url, resolved against the current one like a
+browser resolves a link (RFC 3986, section 5.2):</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#method_requestOrder">requestOrder()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Which of GET, POST and COOKIE make up REQUEST, as letters in the order
+they are applied, so a later one wins. PHP fills $_REQUEST by its
+request_order setting; php.ini-production ships &quot;GP&quot;, which keeps the
+cookies out.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#method_removeDotSegments">removeDotSegments()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#method_splitUrl">splitUrl()</a>
+    <span>
+                        &nbsp;: array&lt;string, string|int&gt;    </span>
+</dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
@@ -308,11 +414,60 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#method_writeQuery">writeQuery()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Input-State.html#method_writeQueryString">writeQueryString()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
         </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/ZubZet-Framework-Message-Input-State.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_OVERWRITABLE">
+        OVERWRITABLE
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#constant_OVERWRITABLE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">OVERWRITABLE</span>
+    = <span class="phpdocumentor-signature__default-value">[&quot;SERVER&quot;, &quot;GET&quot;, &quot;POST&quot;, &quot;FILES&quot;, &quot;REQUEST&quot;, &quot;SESSION&quot;, &quot;COOKIE&quot;]</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -646,7 +801,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -698,7 +853,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -731,7 +886,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
@@ -775,7 +930,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">231</span>
 
     </aside>
 
@@ -819,7 +974,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -863,7 +1018,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -907,7 +1062,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 
     </aside>
 
@@ -951,7 +1106,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 
     </aside>
 
@@ -995,17 +1150,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Replaces the path and nothing else: the query stays. This is what an
+internal reroute uses, the action it reaches still sees the query of
+the request. withUrl() drops the query like a link would.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">withPath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1039,7 +1196,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 
     </aside>
 
@@ -1083,7 +1240,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
@@ -1116,7 +1273,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 
     </aside>
 
@@ -1160,7 +1317,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 
     </aside>
 
@@ -1204,17 +1361,165 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Points the state to a url, resolved against the current one like a
+browser resolves a link (RFC 3986, section 5.2):</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"><ul>
+<li>a url with a scheme or a host replaces path and query, without a path it points to the start page</li>
+<li>a path replaces the path and drops the query, unless the url brings a new one</li>
+<li>a path without a leading slash is relative to the current one, <code class="prettyprint">.</code> and <code class="prettyprint">..</code> are resolved</li>
+<li>a query alone replaces the query and keeps the path</li>
+</ul>
+<p>To change the path and keep the query, use withPath().</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>For a url that cannot be read</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_requestOrder">
+        requestOrder()
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#method_requestOrder" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">317</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Which of GET, POST and COOKIE make up REQUEST, as letters in the order
+they are applied, so a later one wins. PHP fills $_REQUEST by its
+request_order setting; php.ini-production ships &quot;GP&quot;, which keeps the
+cookies out.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">requestOrder</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_removeDotSegments">
+        removeDotSegments()
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#method_removeDotSegments" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">withUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span></code>
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">removeDotSegments</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_splitUrl">
+        splitUrl()
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#method_splitUrl" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">181</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">splitUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, string|int&gt;</span></code>
+
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1230,9 +1535,11 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, string|int&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>The parts of the url as parse_url() names them</p>
+</section>
+
     
 </article>
                     <article
@@ -1248,7 +1555,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -1264,6 +1571,94 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_writeQuery">
+        writeQuery()
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#method_writeQuery" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">171</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">writeQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_writeQueryString">
+        writeQueryString()
+        <a href="classes/ZubZet-Framework-Message-Input-State.html#method_writeQueryString" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Input/State.php"><a href="files/src-message-input-state.html"><abbr title="src/Message/Input/State.php">State.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">writeQueryString</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     

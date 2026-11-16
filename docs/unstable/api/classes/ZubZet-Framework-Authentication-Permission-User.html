@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -107,7 +179,7 @@
     User
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html"><abbr title="\ZubZet\Framework\Authentication\AuthenticationObject">AuthenticationObject</abbr></a>
+        extends <abbr title="\ZubZet\Framework\Authentication\AuthenticationEntity">AuthenticationEntity</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -126,7 +198,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -171,27 +243,6 @@
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#property_dbTable">$dbTable</a>
     <span>
                 &nbsp;: string            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data">$data</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged">$permissionChanged</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd>Process-wide flag indicating that permission-related data has changed.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id">$id</a>
-    <span>
-                &nbsp;: int|null            </span>
 </dt>
 <dd></dd>
 
@@ -317,23 +368,9 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
 <dd>Get a list of permission objects (user or role) by their uuids</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance">checkInstance()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_checkLoginTries">checkLoginTries()</a>
     <span>
                         &nbsp;: bool    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_clearFields">clearFields()</a>
-    <span>
-                        &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
@@ -365,20 +402,6 @@ proves the secret reached the authenticator and was not lost in the page.</dd>
                         &nbsp;: string|null    </span>
 </dt>
 <dd>Get the user&#039;s email from the cache</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getAll">getAll()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getField">getField()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups">getGroups()</a>
@@ -448,13 +471,6 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
 <dd>Whether two factor is active, which only a confirmed enrollment makes it.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_id">id()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_isMemberOf">isMemberOf()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -474,13 +490,6 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
                         &nbsp;: void    </span>
 </dt>
 <dd>Re-/Loads the user object</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId">nullId()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_organization">organization()</a>
@@ -558,7 +567,7 @@ This will remove the roles automatically from the database</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_startTwoFactor">startTwoFactor()</a>
     <span>
-                        &nbsp;: <abbr title="\OTPHP\TOTP">TOTP</abbr>    </span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-Totp.html"><abbr title="\ZubZet\Framework\Authentication\Totp">Totp</abbr></a>    </span>
 </dt>
 <dd>Begin an enrollment by storing a fresh secret that does not count yet.</dd>
 
@@ -594,13 +603,6 @@ This will update the password in the database, clear all sessions of the user
 and clear all cached fields, so getters throw until refresh()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid">uuid()</a>
-    <span>
-                        &nbsp;: string    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_verified">verified()</a>
     <span>
                         &nbsp;: null|string    </span>
@@ -631,13 +633,6 @@ stale (rehash-on-login / onion peel). Self-healing.</dd>
 </dt>
 <dd>Check a code against the stored secret. Answers false while the account
 carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField">setField()</a>
-    <span>
-                        &nbsp;: void    </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_assertValidEmail">assertValidEmail()</a>
@@ -674,7 +669,7 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -708,7 +703,7 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -742,7 +737,7 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -776,7 +771,7 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -790,112 +785,6 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</dd>
         <section class="phpdocumentor-description"></section>
 
         <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_data">
-        $data
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_data" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
-    <span class="phpdocumentor-signature__name">$data</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-    
-        <section class="phpdocumentor-description"><p>The data of the authentication object</p>
-</section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-            -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_permissionChanged">
-        $permissionChanged
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_permissionChanged" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Process-wide flag indicating that permission-related data has changed.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$permissionChanged</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-        <section class="phpdocumentor-description"><p>Declared once on the base class (and never redeclared in the trait or
-subclasses) so that User, Role and Group all share a single storage slot.
-When true, cached permissions are reloaded on each access, regardless of
-which authentication object triggered the change.</p>
-</section>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_id">
-        $id
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">21</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">int|null</span>
-    <span class="phpdocumentor-signature__name">$id</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-    
-        <section class="phpdocumentor-description"><p>The ID of the authentication object</p>
-</section>
 
     
 
@@ -920,7 +809,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -964,7 +853,7 @@ which authentication object triggered the change.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -1130,7 +1019,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -1174,7 +1063,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -1218,7 +1107,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -1265,7 +1154,7 @@ This will insert the user into the database and return the created user object</
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -1516,7 +1405,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -1563,7 +1452,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -1607,7 +1496,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -1741,39 +1630,6 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_checkInstance">
-        checkInstance()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_checkInstance" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">33</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">checkInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_checkLoginTries">
         checkLoginTries()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_checkLoginTries" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1781,7 +1637,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -1807,39 +1663,6 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_clearFields">
-        clearFields()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_clearFields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">50</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">clearFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_clearSessions">
         clearSessions()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_clearSessions" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1847,7 +1670,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -1880,7 +1703,7 @@ Unknown or inactive ids are skipped, and calling it without ids throws a databas
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">567</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 
     </aside>
 
@@ -1928,7 +1751,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">582</span>
+    <span class="phpdocumentor-element-found-in__line">573</span>
 
     </aside>
 
@@ -1961,7 +1784,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">376</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 
     </aside>
 
@@ -1989,83 +1812,6 @@ proves the secret reached the authenticator and was not lost in the page.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getAll">
-        getAll()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getAll" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">57</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getAll</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getField">
-        getField()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_getField" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">39</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getField</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$field</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getGroups">
         getGroups()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2073,7 +1819,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">444</span>
+    <span class="phpdocumentor-element-found-in__line">448</span>
 
     </aside>
 
@@ -2108,7 +1854,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">467</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 
     </aside>
 
@@ -2141,7 +1887,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">436</span>
 
     </aside>
 
@@ -2176,7 +1922,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">460</span>
 
     </aside>
 
@@ -2209,7 +1955,7 @@ proves the secret reached the authenticator and was not lost in the page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">324</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
@@ -2255,7 +2001,7 @@ This will add the groups automatically into the database and clear all cached fi
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 
     </aside>
 
@@ -2397,7 +2143,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">498</span>
+    <span class="phpdocumentor-element-found-in__line">502</span>
 
     </aside>
 
@@ -2425,39 +2171,6 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_id">
-        id()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_id" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">72</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">id</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_isMemberOf">
         isMemberOf()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_isMemberOf" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2465,7 +2178,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">394</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 
     </aside>
 
@@ -2509,7 +2222,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">413</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 
     </aside>
 
@@ -2519,7 +2232,9 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">isVerified</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$at</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;NOW&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>A stored verification date that strtotime() cannot read counts as not verified.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2556,7 +2271,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -2594,39 +2309,6 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_nullId">
-        nullId()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_nullId" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">82</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">nullId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_organization">
         organization()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_organization" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2634,7 +2316,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">380</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 
     </aside>
 
@@ -2757,7 +2439,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -2849,7 +2531,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">487</span>
+    <span class="phpdocumentor-element-found-in__line">491</span>
 
     </aside>
 
@@ -2882,7 +2564,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">482</span>
 
     </aside>
 
@@ -2915,7 +2597,7 @@ wildcards count (&quot;*.*&quot; or &quot;edit.*&quot; cover &quot;edit.article&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">276</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 
     </aside>
 
@@ -2949,7 +2631,7 @@ The instance is detached afterwards, so every later call on it throws InvalidArg
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
@@ -2995,7 +2677,7 @@ This will add the roles automatically into the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">341</span>
 
     </aside>
 
@@ -3041,7 +2723,7 @@ This will remove the roles automatically from the database</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 
     </aside>
 
@@ -3049,7 +2731,7 @@ This will remove the roles automatically from the database</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">startTwoFactor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\OTPHP\TOTP">TOTP</abbr></span></code>
+                <span class="phpdocumentor-signature__name">startTwoFactor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Totp.html"><abbr title="\ZubZet\Framework\Authentication\Totp">Totp</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>The returned object carries the secret and the provisioning uri, the two
 shapes an authenticator takes it in.</p>
@@ -3059,7 +2741,7 @@ shapes an authenticator takes it in.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\OTPHP\TOTP">TOTP</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-Totp.html"><abbr title="\ZubZet\Framework\Authentication\Totp">Totp</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>The enrollment, to be shown once and never again</p>
 </section>
@@ -3079,7 +2761,7 @@ shapes an authenticator takes it in.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">507</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 
     </aside>
 
@@ -3114,7 +2796,7 @@ shapes an authenticator takes it in.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -3176,7 +2858,7 @@ This will update the email in the database and clear all cached fields, so gette
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -3220,7 +2902,7 @@ This will update the email in the database and clear all cached fields, so gette
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -3276,39 +2958,6 @@ and clear all cached fields, so getters throw until refresh()</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_uuid">
-        uuid()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_uuid" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">78</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">uuid</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_verified">
         verified()
         <a href="classes/ZubZet-Framework-Authentication-Permission-User.html#method_verified" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3316,7 +2965,7 @@ and clear all cached fields, so getters throw until refresh()</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">403</span>
+    <span class="phpdocumentor-element-found-in__line">402</span>
 
     </aside>
 
@@ -3351,7 +3000,7 @@ and clear all cached fields, so getters throw until refresh()</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 
     </aside>
 
@@ -3397,7 +3046,7 @@ This will write the verified timestamp to the database and clear all cached fiel
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 
     </aside>
 
@@ -3465,7 +3114,7 @@ Only the database is upgraded; this instance's cached password, scheme and salt 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">542</span>
 
     </aside>
 
@@ -3503,58 +3152,6 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</p>
                     <article
         class="phpdocumentor-element
             -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setField">
-        setField()
-        <a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html#method_setField" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/AuthenticationObject.php"><a href="files/src-authentication-authenticationobject.html"><abbr title="src/Authentication/AuthenticationObject.php">AuthenticationObject.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">64</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">setField</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$field</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
             -private
                                     -static                    "
 >
@@ -3565,7 +3162,7 @@ carries no secret, so a caller cannot tell enrollment states apart by it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Authentication/Permission/User.php"><a href="files/src-authentication-permission-user.html"><abbr title="src/Authentication/Permission/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 

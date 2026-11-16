@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -215,14 +287,14 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Echoes the payload as pretty-printed JSON with an added `meta` block (no Content-Type header is sent)</dd>
+<dd>Echoes the payload as pretty-printed JSON with an added `meta` block. The Content-Type is `application/json` for a client that asks for JSON and `text/plain` for any other, see restContentType()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_generateRestError">generateRestError()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON (no HTTP status or Content-Type header is sent) and exits</dd>
+<dd>Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON with the Content-Type of generateRest() (no HTTP status is sent) and exits</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Core-CanRetrieveBooterSettings.html#method_getBooterSettings">getBooterSettings()</a>
@@ -440,6 +512,22 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion">legacyOptExpansion()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Response.html#method_restContentType">restContentType()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>The Content-Type of a REST reply. PHP&#039;s default text/html would let
+markup inside a value run in a browser that opens the endpoint, so
+it is never that.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Message-Response.html#method_sendRestContentType">sendRestContentType()</a>
+    <span>
+                        &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
@@ -686,7 +774,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">552</span>
+    <span class="phpdocumentor-element-found-in__line">587</span>
 
     </aside>
 
@@ -749,7 +837,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 
     </aside>
 
@@ -803,7 +891,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">378</span>
 
     </aside>
 
@@ -848,11 +936,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Echoes the payload as pretty-printed JSON with an added `meta` block (no Content-Type header is sent)</p>
+        <p class="phpdocumentor-summary">Echoes the payload as pretty-printed JSON with an added `meta` block. The Content-Type is `application/json` for a client that asks for JSON and `text/plain` for any other, see restContentType()</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -902,11 +990,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON (no HTTP status or Content-Type header is sent) and exits</p>
+        <p class="phpdocumentor-summary">Generates a Rest error object: logs a REST_ERROR warning, echoes `{&quot;error&quot;:{&quot;code&quot;,&quot;message&quot;}}` as pretty-printed JSON with the Content-Type of generateRest() (no HTTP status is sent) and exits</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1037,7 +1125,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">355</span>
 
     </aside>
 
@@ -1208,7 +1296,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">519</span>
 
     </aside>
 
@@ -1273,7 +1361,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">417</span>
+    <span class="phpdocumentor-element-found-in__line">452</span>
 
     </aside>
 
@@ -1365,7 +1453,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -1437,7 +1525,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">297</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 
     </aside>
 
@@ -1517,7 +1605,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">361</span>
+    <span class="phpdocumentor-element-found-in__line">396</span>
 
     </aside>
 
@@ -1884,7 +1972,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -1992,7 +2080,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">309</span>
 
     </aside>
 
@@ -2171,7 +2259,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -2275,7 +2363,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">352</span>
+    <span class="phpdocumentor-element-found-in__line">387</span>
 
     </aside>
 
@@ -2320,7 +2408,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -2383,7 +2471,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 
     </aside>
 
@@ -2473,7 +2561,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
@@ -2541,7 +2629,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
@@ -2577,7 +2665,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -2659,6 +2747,79 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_restContentType">
+        restContentType()
+        <a href="classes/ZubZet-Framework-Message-Response.html#method_restContentType" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">155</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The Content-Type of a REST reply. PHP&#039;s default text/html would let
+markup inside a value run in a browser that opens the endpoint, so
+it is never that.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">restContentType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>A client that names application/json in its Accept header gets it.
+Any other client gets text/plain: jQuery parses a reply sent as
+application/json itself, and code that calls JSON.parse() on the
+answer of a plain $.post() would then be handed an object.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_sendRestContentType">
+        sendRestContentType()
+        <a href="classes/ZubZet-Framework-Message-Response.html#method_sendRestContentType" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">162</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">sendRestContentType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_uploadFromForm">
         uploadFromForm()
         <a href="classes/ZubZet-Framework-Message-Response.html#method_uploadFromForm" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2666,7 +2827,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">523</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 
     </aside>
 

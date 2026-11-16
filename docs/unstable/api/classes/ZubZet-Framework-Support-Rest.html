@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -165,7 +237,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Echoes the payload as pretty-printed JSON (no Content-Type header is sent)</dd>
+<dd>Echoes the payload as pretty-printed JSON. The Content-Type is the business of the caller, see Response::generateRest().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Support-Rest.html#method_ShowError">ShowError()</a>
@@ -328,11 +400,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Support/Rest.php"><a href="files/src-support-rest.html"><abbr title="src/Support/Rest.php">Rest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Echoes the payload as pretty-printed JSON (no Content-Type header is sent)</p>
+        <p class="phpdocumentor-summary">Echoes the payload as pretty-printed JSON. The Content-Type is the business of the caller, see Response::generateRest().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -346,13 +418,30 @@
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Whether to call exit after echoing</p>
+                    <section class="phpdocumentor-description"><p>Whether to call exit after echoing
+Text that is no UTF-8 goes out with the broken bytes replaced by U+FFFD.</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\JsonException">JsonException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the payload cannot be encoded otherwise (NAN, INF), nothing is echoed then</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>

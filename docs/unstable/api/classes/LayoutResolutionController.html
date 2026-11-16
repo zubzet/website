@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -119,15 +191,17 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">Exercises the layout resolution chain from Resolver\DefaultLayout:
   explicit arg &gt; instance default &gt; global default &gt; framework default</p>
 
-    <section class="phpdocumentor-description"><p>Each action drives one branch of the resolution and renders directly;
-cypress inspects the response body for the matching layout marker.</p>
+    <section class="phpdocumentor-description"><p>The branches below the explicit argument are unit tested; this
+controller keeps the one that needs a rendered page: the explicit
+render() argument beats both defaults. Cypress inspects the response
+body for the matching layout marker.</p>
 </section>
 
 
@@ -145,69 +219,6 @@ cypress inspects the response body for the matching layout marker.</p>
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/LayoutResolutionController.html#method_action_explicitwins">action_explicitwins()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_globalonly">action_globalonly()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_instanceonly">action_instanceonly()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_instanceoverglobal">action_instanceoverglobal()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_neither">action_neither()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_pushpopglobal">action_pushpopglobal()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_pushpopinstance">action_pushpopinstance()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_pushpopnested">action_pushpopnested()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_underflowglobal">action_underflowglobal()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/LayoutResolutionController.html#method_action_underflowinstance">action_underflowinstance()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -239,7 +250,7 @@ cypress inspects the response body for the matching layout marker.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -247,474 +258,6 @@ cypress inspects the response body for the matching layout marker.</p>
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">action_explicitwins</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_globalonly">
-        action_globalonly()
-        <a href="classes/LayoutResolutionController.html#method_action_globalonly" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">18</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_globalonly</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_instanceonly">
-        action_instanceonly()
-        <a href="classes/LayoutResolutionController.html#method_action_instanceonly" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">23</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_instanceonly</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_instanceoverglobal">
-        action_instanceoverglobal()
-        <a href="classes/LayoutResolutionController.html#method_action_instanceoverglobal" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">28</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_instanceoverglobal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_neither">
-        action_neither()
-        <a href="classes/LayoutResolutionController.html#method_action_neither" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_neither</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_pushpopglobal">
-        action_pushpopglobal()
-        <a href="classes/LayoutResolutionController.html#method_action_pushpopglobal" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">47</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_pushpopglobal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_pushpopinstance">
-        action_pushpopinstance()
-        <a href="classes/LayoutResolutionController.html#method_action_pushpopinstance" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">40</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_pushpopinstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_pushpopnested">
-        action_pushpopnested()
-        <a href="classes/LayoutResolutionController.html#method_action_pushpopnested" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">70</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_pushpopnested</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_underflowglobal">
-        action_underflowglobal()
-        <a href="classes/LayoutResolutionController.html#method_action_underflowglobal" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">62</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_underflowglobal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$req</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$res</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_action_underflowinstance">
-        action_underflowinstance()
-        <a href="classes/LayoutResolutionController.html#method_action_underflowinstance" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/app/Controllers/LayoutResolutionController.php"><a href="files/tests-e2e-app-controllers-layoutresolutioncontroller.html"><abbr title="tests/e2e/app/Controllers/LayoutResolutionController.php">LayoutResolutionController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">54</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">action_underflowinstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$req</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ZubZet-Framework-Message-Response.html"><abbr title="\ZubZet\Framework\Message\Response">Response</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$res</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 

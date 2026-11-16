@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -171,8 +243,6 @@ documents. Introduced for the 1.3.0 render-engine change.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-APIKey.html"><abbr title="\ZubZet\Framework\Authentication\APIKey">APIKey</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-AuthenticationObject.html"><abbr title="\ZubZet\Framework\Authentication\AuthenticationObject">AuthenticationObject</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-Commands-HashingAlgorithmMigration.html"><abbr title="\ZubZet\Framework\Authentication\Commands\HashingAlgorithmMigration">HashingAlgorithmMigration</abbr></a></dt>
         <dd>Wraps every `legacy` password hash in a fresh native hash (the &quot;onion&quot;),
 protecting dormant accounts at rest against a future breach without needing
@@ -197,6 +267,9 @@ lets legacy and onion-wrapped hashes coexist and self-heal to native on login.</
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-Session.html"><abbr title="\ZubZet\Framework\Authentication\Session">Session</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-Totp.html"><abbr title="\ZubZet\Framework\Authentication\Totp">Totp</abbr></a></dt>
+        <dd>Time based one time passwords as authenticator apps expect them (RFC 6238):
+HMAC-SHA1, six digits, a new code every 30 seconds.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></dt>
         <dd>The User class holds the user of the current request (user() helper, alias User), identified on construction by bearer token or the z_login_token cookie; not Permission\User</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Console-ActionDiscovery.html"><abbr title="\ZubZet\Framework\Console\ActionDiscovery">ActionDiscovery</abbr></a></dt>
@@ -355,6 +428,8 @@ historically exposed.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-BundledPackage.html"><abbr title="\ZubZet\Framework\Resources\BundledPackage">BundledPackage</abbr></a></dt>
         <dd>One Composer-installed frontend library that should be exposed via the
 AssetProxy. Resolves its on-disk path through Composer at mount time.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-MimeType.html"><abbr title="\ZubZet\Framework\Resources\MimeType">MimeType</abbr></a></dt>
+        <dd>The content type of an asset, read off its file extension.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Resources-Mount.html"><abbr title="\ZubZet\Framework\Resources\Mount">Mount</abbr></a></dt>
         <dd>Maps an asset URL onto a directory on disk, optionally scoped to a URL
 prefix. All filesystem work is deferred to resolve(); construction is
@@ -379,18 +454,22 @@ just a string trim.</dd>
         <dd>Symmetric encryption for secrets that have to be stored and read back, like
 third-party credentials in the database. The key is the `encryption_key`
 setting of z_settings.ini.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Storage-File.html"><abbr title="\ZubZet\Framework\Storage\File">File</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Checkpoint-Checkpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\Checkpoint">Checkpoint</abbr></a></dt>
         <dd>Handle returned by CanCheckpoint::checkpointCurrentState().</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Checkpoint-IncludeInCheckpoint.html"><abbr title="\ZubZet\Framework\Support\Checkpoint\IncludeInCheckpoint">IncludeInCheckpoint</abbr></a></dt>
-        <dd>Marks a property for CanCheckpoint snapshots that filter by this attribute; checkpointCurrentState() only filters when IncludeInCheckpoint::class is passed as $attributeClass.</dd>
+        <dd>Marks a property for CanCheckpoint snapshots; checkpointCurrentState() takes the properties carrying it unless told otherwise.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Commands-Install.html"><abbr title="\ZubZet\Framework\Support\Commands\Install">Install</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Commands-Startup.html"><abbr title="\ZubZet\Framework\Support\Commands\Startup">Startup</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Filesystem.html"><abbr title="\ZubZet\Framework\Support\Filesystem">Filesystem</abbr></a></dt>
+        <dd>The part of symfony/filesystem the framework needs, with the signatures and the behavior of
+its Filesystem class for local files. The methods are static, PHP also accepts them on an
+instance: (new Filesystem())-&gt;remove($path) works like Filesystem::remove($path).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-Rest.html"><abbr title="\ZubZet\Framework\Support\Rest">Rest</abbr></a></dt>
         <dd>The rest class is used to provide raw JSON API data to the client</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Support-StaticCache.html"><abbr title="\ZubZet\Framework\Support\StaticCache">StaticCache</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Testing-Coverage-Commands-CoverageCommand.html"><abbr title="\ZubZet\Framework\Testing\Coverage\Commands\CoverageCommand">CoverageCommand</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Testing-Coverage-Commands-Start.html"><abbr title="\ZubZet\Framework\Testing\Coverage\Commands\Start">Start</abbr></a></dt>
@@ -415,13 +494,6 @@ setting of z_settings.ini.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdvancedController.html"><abbr title="\AdvancedController">AdvancedController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AliasController.html"><abbr title="\AliasController">AliasController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ApiCompatProbeController.html"><abbr title="\ApiCompatProbeController">ApiCompatProbeController</abbr></a></dt>
-        <dd>Guards the framework&#039;s password API against breaking changes for consuming
-apps. They call model(&quot;z_login&quot;)-&gt;checkPassword($pw, $hash, $salt) with the
-3-argument shape (no scheme) on their own user tables, and rely on legacy
-hashes still verifying. See jouri&#039;s Authentication/UserController.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AssetProxyController.html"><abbr title="\AssetProxyController">AssetProxyController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AuthProbeController.html"><abbr title="\AuthProbeController">AuthProbeController</abbr></a></dt>
@@ -452,9 +524,9 @@ two never shadow each other (katanaphp/blade#66).</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseRetryProbeController.html"><abbr title="\DatabaseRetryProbeController">DatabaseRetryProbeController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/EncryptionProbeController.html"><abbr title="\EncryptionProbeController">EncryptionProbeController</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExceptionController.html"><abbr title="\ExceptionController">ExceptionController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FileController.html"><abbr title="\FileController">FileController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FormController.html"><abbr title="\FormController">FormController</abbr></a></dt>
         <dd></dd>
@@ -467,8 +539,8 @@ two never shadow each other (katanaphp/blade#66).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GroupController.html"><abbr title="\GroupController">GroupController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/HelperController.html"><abbr title="\HelperController">HelperController</abbr></a></dt>
-        <dd>Probes for global references and pure helper functions used by
-tests/cypress/e2e/support/.</dd>
+        <dd>Probes for global references used by
+tests/cypress/e2e/support/global-references.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutConstructorController.html"><abbr title="\LayoutConstructorController">LayoutConstructorController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutMiddlewareController.html"><abbr title="\LayoutMiddlewareController">LayoutMiddlewareController</abbr></a></dt>
@@ -488,8 +560,6 @@ shadowing a framework view.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/OrganizationController.html"><abbr title="\OrganizationController">OrganizationController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/PasswordHashProbeController.html"><abbr title="\PasswordHashProbeController">PasswordHashProbeController</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RenderDirectiveController.html"><abbr title="\RenderDirectiveController">RenderDirectiveController</abbr></a></dt>
         <dd>Renders renderprobe/directives, which exercises the @auth / @guest Blade
 directives bound by Rendering\Katana\Hooks. The view is layout-free
@@ -506,10 +576,6 @@ real render path (Rendering\CanRenderView -&gt; Rendering\Katana\Engine).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RoutingController.html"><abbr title="\RoutingController">RoutingController</abbr></a></dt>
         <dd>Test fixtures for tests/cypress/e2e/core/routing.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SessionController.html"><abbr title="\SessionController">SessionController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/StateProbeController.html"><abbr title="\StateProbeController">StateProbeController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SupportProbeController.html"><abbr title="\SupportProbeController">SupportProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TranslationController.html"><abbr title="\TranslationController">TranslationController</abbr></a></dt>
         <dd></dd>
@@ -570,6 +636,129 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TestSeeding.html"><abbr title="\TestSeeding">TestSeeding</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Migration-2005-01-10-3-Syn-File.html"><abbr title="\Migration_2005_01_10_3_Syn_File">Migration_2005_01_10_3_Syn_File</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-AliasesTest.html"><abbr title="\Tests\AliasesTest">AliasesTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-AuthenticationEntityTest.html"><abbr title="\Tests\Authentication\AuthenticationEntityTest">AuthenticationEntityTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-CanUseSessionTest.html"><abbr title="\Tests\Authentication\CanUseSessionTest">CanUseSessionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-PasswordHash-PasswordTest.html"><abbr title="\Tests\Authentication\PasswordHash\PasswordTest">PasswordTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-PasswordHash-VerificationTest.html"><abbr title="\Tests\Authentication\PasswordHash\VerificationTest">VerificationTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-PasswordHash-WordPressBcryptHashTest.html"><abbr title="\Tests\Authentication\PasswordHash\WordPressBcryptHashTest">WordPressBcryptHashTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-PasswordHash-WordPressPortableHashTest.html"><abbr title="\Tests\Authentication\PasswordHash\WordPressPortableHashTest">WordPressPortableHashTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-Permission-UserTest.html"><abbr title="\Tests\Authentication\Permission\UserTest">UserTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-TotpTest.html"><abbr title="\Tests\Authentication\TotpTest">TotpTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Bootstrap-ConfigurationTest.html"><abbr title="\Tests\Bootstrap\ConfigurationTest">ConfigurationTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ComposerRequirementsTest.html"><abbr title="\Tests\ComposerRequirementsTest">ComposerRequirementsTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Core-CanRetrieveBooterSettingsTest.html"><abbr title="\Tests\Core\CanRetrieveBooterSettingsTest">CanRetrieveBooterSettingsTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Core-FunctionConflictResolutionTest.html"><abbr title="\Tests\Core\FunctionConflictResolutionTest">FunctionConflictResolutionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Database-ConnectionTest.html"><abbr title="\Tests\Database\ConnectionTest">ConnectionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Database-DatabaseEntityTest.html"><abbr title="\Tests\Database\DatabaseEntityTest">DatabaseEntityTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Database-EndpointTest.html"><abbr title="\Tests\Database\EndpointTest">EndpointTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Database-InteractionTest.html"><abbr title="\Tests\Database\InteractionTest">InteractionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Database-Migration-SqlSplitterTest.html"><abbr title="\Tests\Database\Migration\SqlSplitterTest">SqlSplitterTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ErrorHandling-DebugBar-Collectors-MonologCollectorTest.html"><abbr title="\Tests\ErrorHandling\DebugBar\Collectors\MonologCollectorTest">MonologCollectorTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ErrorHandling-DebugBar-Collectors-QueryCollectorTest.html"><abbr title="\Tests\ErrorHandling\DebugBar\Collectors\QueryCollectorTest">QueryCollectorTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ErrorHandling-DebugBar-Collectors-TemplateCollectorTest.html"><abbr title="\Tests\ErrorHandling\DebugBar\Collectors\TemplateCollectorTest">TemplateCollectorTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ErrorHandling-DebugBar-DebugBarBridgeTest.html"><abbr title="\Tests\ErrorHandling\DebugBar\DebugBarBridgeTest">DebugBarBridgeTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Form-Validation-CanValidateFormTest.html"><abbr title="\Tests\Form\Validation\CanValidateFormTest">CanValidateFormTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Form-Validation-CanValidateMultiFormTest.html"><abbr title="\Tests\Form\Validation\CanValidateMultiFormTest">CanValidateMultiFormTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-IncludedComponents-models-z-loginModelTest.html"><abbr title="\Tests\IncludedComponents\models\z_loginModelTest">z_loginModelTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-IncludedComponents-models-z-migrationModelTest.html"><abbr title="\Tests\IncludedComponents\models\z_migrationModelTest">z_migrationModelTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Logger-LoggerTest.html"><abbr title="\Tests\Logger\LoggerTest">LoggerTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-CanRetrieveFromInputTest.html"><abbr title="\Tests\Message\Input\CanRetrieveFromInputTest">CanRetrieveFromInputTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-StateHttpTest.html"><abbr title="\Tests\Message\Input\StateHttpTest">StateHttpTest</abbr></a></dt>
+        <dd>State::fromRequest() against real HTTP requests. PHP&#039;s built-in web server
+runs fixtures/state-server.php, which answers with PHP&#039;s own view of the
+request next to the state, so the two can be compared for whatever a
+client sends.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-StateTest.html"><abbr title="\Tests\Message\Input\StateTest">StateTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-RequestTest.html"><abbr title="\Tests\Message\RequestTest">RequestTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-ResponseOutputTest.html"><abbr title="\Tests\Message\ResponseOutputTest">ResponseOutputTest</abbr></a></dt>
+        <dd>What the response prints. json() and the cookie functions send headers,
+which PHP refuses once the test runner has printed anything, so every
+test runs in a process of its own. The headers themselves are not
+visible on the command line, the e2e suite asserts them.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-ResponseTest.html"><abbr title="\Tests\Message\ResponseTest">ResponseTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-QueryBuilder-ZubZetValueBinderTest.html"><abbr title="\Tests\QueryBuilder\ZubZetValueBinderTest">ZubZetValueBinderTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-CanRenderViewTest.html"><abbr title="\Tests\Rendering\CanRenderViewTest">CanRenderViewTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-Katana-HooksTest.html"><abbr title="\Tests\Rendering\Katana\HooksTest">HooksTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-Resolver-DefaultLayoutTest.html"><abbr title="\Tests\Rendering\Resolver\DefaultLayoutTest">DefaultLayoutTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-Resolver-ViewPathTest.html"><abbr title="\Tests\Rendering\Resolver\ViewPathTest">ViewPathTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Resources-AssetProxyTest.html"><abbr title="\Tests\Resources\AssetProxyTest">AssetProxyTest</abbr></a></dt>
+        <dd>serve() sets the response code, which PHP refuses once the test runner has
+printed anything. In a process of its own nothing was printed before the test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Resources-MimeTypeTest.html"><abbr title="\Tests\Resources\MimeTypeTest">MimeTypeTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Resources-MountTest.html"><abbr title="\Tests\Resources\MountTest">MountTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RerouteTest.html"><abbr title="\Tests\Routing\RerouteTest">RerouteTest</abbr></a></dt>
+        <dd>A reroute forks the input of the current request, points it to the new
+path and dispatches it. The dispatch needs routes and controllers, so
+the framework of these tests only records the request it would dispatch.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RecordingFramework.html"><abbr title="\Tests\Routing\RecordingFramework">RecordingFramework</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Security-CSRFTest.html"><abbr title="\Tests\Security\CSRFTest">CSRFTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Security-Secrets-EncryptionTest.html"><abbr title="\Tests\Security\Secrets\EncryptionTest">EncryptionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Storage-FileTest.html"><abbr title="\Tests\Storage\FileTest">FileTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-Checkpoint-CheckpointTest.html"><abbr title="\Tests\Support\Checkpoint\CheckpointTest">CheckpointTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-Commands-InstallTest.html"><abbr title="\Tests\Support\Commands\InstallTest">InstallTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-Commands-StartupTest.html"><abbr title="\Tests\Support\Commands\StartupTest">StartupTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-FilesystemTest.html"><abbr title="\Tests\Support\FilesystemTest">FilesystemTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-GlobalReferencesTest.html"><abbr title="\Tests\Support\GlobalReferencesTest">GlobalReferencesTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-HasDynamicAttributesTest.html"><abbr title="\Tests\Support\HasDynamicAttributesTest">HasDynamicAttributesTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-HelpersTest.html"><abbr title="\Tests\Support\HelpersTest">HelpersTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-RestTest.html"><abbr title="\Tests\Support\RestTest">RestTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Support-RuntimeCache-RuntimeCacheTest.html"><abbr title="\Tests\Support\RuntimeCache\RuntimeCacheTest">RuntimeCacheTest</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-TestCase.html"><abbr title="\Tests\TestCase">TestCase</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Testing-Coverage-CollectorCleanupTest.html"><abbr title="\Tests\Testing\Coverage\CollectorCleanupTest">CollectorCleanupTest</abbr></a></dt>
         <dd></dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/ZubZet-Tooling-Interactions-CommandInteraction.html"><abbr title="\ZubZet\Tooling\Interactions\CommandInteraction">CommandInteraction</abbr></a></dt>
@@ -637,6 +826,14 @@ of them. Commands assembling multi-root migration sets refuse to run.</dd>
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="namespaces/default.html#constant_FRAMEWORK_ROOT">FRAMEWORK_ROOT</a>
+    <span>
+        &nbsp;= dirname(__DIR__, 3)                    </span>
+</dt>
+<dd>The folder of the framework, without a trailing slash. For a test that
+has to name a file of the framework:</dd>
+
                         <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_db">db()</a>
     <span>
@@ -672,16 +869,47 @@ of them. Commands assembling multi-root migration sets refuse to run.</dd>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_model">model()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
     </dl>
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="packages/Application.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_FRAMEWORK_ROOT">
+        FRAMEWORK_ROOT
+        <a href="namespaces/default.html#constant_FRAMEWORK_ROOT" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/bootstrap.php"><a href="files/tests-unit-php-bootstrap.html"><abbr title="tests/unit/php/bootstrap.php">bootstrap.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">11</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The folder of the framework, without a trailing slash. For a test that
+has to name a file of the framework:</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">FRAMEWORK_ROOT</span>
+    = <span class="phpdocumentor-signature__default-value">dirname(__DIR__, 3)</span>
+</code>
+
+
+        <section class="phpdocumentor-description"><p>require_once FRAMEWORK_ROOT . &quot;/src/IncludedComponents/models/z_migrationModel.php&quot;;</p>
+</section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-functions">
         <h3 class="phpdocumentor-elements__header" id="functions">
@@ -853,34 +1081,6 @@ of them. Commands assembling multi-root migration sets refuse to run.</dd>
             </dd>
             </dl>
 
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_model">
-        model()
-        <a href="namespaces/default.html#function_model" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/webroot/collision.php"><a href="files/tests-e2e-webroot-collision.html"><abbr title="tests/e2e/webroot/collision.php">collision.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">model</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>

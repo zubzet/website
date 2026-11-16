@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -263,7 +335,7 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Returns the app domain as specified in the configuration (`host=`), with scheme, slashes and port stripped (`https://example.com:8080/` becomes `example.com`)</dd>
+<dd>Returns the app domain as specified in the configuration (`host=`), with scheme, port and path stripped (`https://example.com:8080/app` becomes `example.com`). An IPv6 literal keeps its brackets (`[::1]`).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getExecutionTime">getExecutionTime()</a>
@@ -296,7 +368,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_getJson">getJson()</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd>Decode the request body as JSON.</dd>
 
@@ -396,7 +468,7 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Checks if the POST field action loosely equals $type; it does not verify that the request came via AJAX</dd>
+<dd>Checks if the POST field action equals $type, compared as text; it does not verify that the request came via AJAX</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Request.html#method_isCli">isCli()</a>
@@ -695,7 +767,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
@@ -728,7 +800,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 
     </aside>
 
@@ -761,7 +833,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 
     </aside>
 
@@ -828,7 +900,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -880,7 +952,7 @@ account that carries no two factor at all.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">453</span>
+    <span class="phpdocumentor-element-found-in__line">448</span>
 
     </aside>
 
@@ -929,7 +1001,7 @@ exemption for this call, &quot;GET&quot; when none is given</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">407</span>
 
     </aside>
 
@@ -948,7 +1020,7 @@ exemption for this call, &quot;GET&quot; when none is given</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The raw body content of the request (Returns null if empty or unavailable, so a body of &quot;0&quot; is null too).</p>
+            <section class="phpdocumentor-description"><p>The raw body content of the request (Returns null if empty or unavailable).</p>
 </section>
 
     
@@ -1138,7 +1210,7 @@ exemption for this call, &quot;GET&quot; when none is given</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -1173,11 +1245,11 @@ exemption for this call, &quot;GET&quot; when none is given</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">211</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the app domain as specified in the configuration (`host=`), with scheme, slashes and port stripped (`https://example.com:8080/` becomes `example.com`)</p>
+        <p class="phpdocumentor-summary">Returns the app domain as specified in the configuration (`host=`), with scheme, port and path stripped (`https://example.com:8080/app` becomes `example.com`). An IPv6 literal keeps its brackets (`[::1]`).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1208,7 +1280,7 @@ exemption for this call, &quot;GET&quot; when none is given</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -1388,7 +1460,7 @@ exemption for this call, &quot;GET&quot; when none is given</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">419</span>
+    <span class="phpdocumentor-element-found-in__line">427</span>
 
     </aside>
 
@@ -1396,31 +1468,33 @@ exemption for this call, &quot;GET&quot; when none is given</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getJson</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxBytes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1048576</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxDepth</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">32</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getJson</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxBytes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxDepth</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">512</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>Accepts only a POST, PUT, PATCH or DELETE request whose Content-Type is exactly
-<code class="prettyprint">application/json</code> (a <code class="prettyprint">charset</code> parameter must be utf-8), whose body is at most
-$maxBytes long and holds well formed JSON. Large integers come back as strings
-instead of lossy floats.</p>
+        <section class="phpdocumentor-description"><p>Every well formed JSON value is accepted, whatever the method and the
+Content-Type of the request are: an object or a list comes back as an
+array, and a number, a string, a boolean or <code class="prettyprint">null</code> as that value. A
+request without a body gives <code class="prettyprint">null</code>, so an optional body reads as
+<code class="prettyprint">$req-&gt;getJson() ?? []</code>. Large integers come back as strings instead
+of lossy floats.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$maxBytes</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">1048576</span>            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Longest accepted body in bytes</p>
+                    <section class="phpdocumentor-description"><p>Longest accepted body in bytes, no limit when null</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$maxDepth</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">32</span>            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">512</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Deepest accepted nesting</p>
+                    <section class="phpdocumentor-description"><p>Deepest accepted nesting, 512 is the limit PHP itself applies</p>
 </section>
 
             </dd>
@@ -1438,7 +1512,7 @@ instead of lossy floats.</p>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\UnexpectedValueException">UnexpectedValueException</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>Carrying the HTTP status to answer with as its code</p>
+                                                 <section class="phpdocumentor-description"><p>With the code 413 for a body longer than $maxBytes</p>
 </section>
 
                                     </dd>
@@ -1455,9 +1529,9 @@ instead of lossy floats.</p>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The decoded value, objects as associative arrays</p>
+            <section class="phpdocumentor-description"><p>The decoded value with objects as associative arrays, null without a body</p>
 </section>
 
     
@@ -1547,7 +1621,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">225</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -1583,7 +1657,7 @@ instead of lossy floats.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If the length is 1 and $val is set, a Boolean will be returned. $val will be compared to the parameter</p>
+                    <section class="phpdocumentor-description"><p>If the length is 1 and $val is set, a Boolean will be returned. $val will be compared to the parameter as text, so &quot;05&quot; is not &quot;5&quot;</p>
 </section>
 
             </dd>
@@ -1668,7 +1742,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -1713,7 +1787,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 
     </aside>
 
@@ -1748,7 +1822,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 
     </aside>
 
@@ -1783,7 +1857,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 
     </aside>
 
@@ -1961,7 +2035,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">379</span>
+    <span class="phpdocumentor-element-found-in__line">383</span>
 
     </aside>
 
@@ -2008,7 +2082,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -2043,11 +2117,11 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">390</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Checks if the POST field action loosely equals $type; it does not verify that the request came via AJAX</p>
+        <p class="phpdocumentor-summary">Checks if the POST field action equals $type, compared as text; it does not verify that the request came via AJAX</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -2090,7 +2164,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -2125,7 +2199,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
@@ -2158,7 +2232,7 @@ instead of lossy floats.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 
     </aside>
 
@@ -2224,7 +2298,7 @@ answer the client yourself instead:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
@@ -2271,7 +2345,7 @@ answer the client yourself instead:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Request.php"><a href="files/src-message-request.html"><abbr title="src/Message/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
@@ -2387,7 +2461,7 @@ answer the client yourself instead:</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Input for the validation, defaults to getPost() + getFiles() when null or empty. getGet() or getPost() can be used here as parameters
+                    <section class="phpdocumentor-description"><p>Input for the validation, defaults to getPost() + getFiles() when null. getGet() or getPost() can be used here as parameters, an empty array is validated as it is
 Rules other than required() are skipped for empty values.</p>
 </section>
 

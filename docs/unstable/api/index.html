@@ -74,6 +74,78 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tests.html">Tests</a></h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tests-authentication.html">Authentication</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-bootstrap.html">Bootstrap</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-core.html">Core</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-database.html">Database</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-errorhandling.html">ErrorHandling</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-form.html">Form</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-includedcomponents.html">IncludedComponents</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-logger.html">Logger</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-message.html">Message</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-querybuilder.html">QueryBuilder</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-rendering.html">Rendering</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-resources.html">Resources</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-routing.html">Routing</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-security.html">Security</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-storage.html">Storage</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-support.html">Support</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/tests-testing.html">Testing</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -115,6 +187,7 @@
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -namespace"><a href="namespaces/zubzet.html"><abbr title="\ZubZet">ZubZet</abbr></a></dt>
             <dt class="phpdocumentor-table-of-contents__entry -namespace"><a href="namespaces/module.html"><abbr title="\Module">Module</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -namespace"><a href="namespaces/tests.html"><abbr title="\Tests">Tests</abbr></a></dt>
     </dl>
 
 <h3 id="interfaces_class_traits">
@@ -152,13 +225,6 @@
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AdvancedController.html"><abbr title="\AdvancedController">AdvancedController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AliasController.html"><abbr title="\AliasController">AliasController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ApiCompatProbeController.html"><abbr title="\ApiCompatProbeController">ApiCompatProbeController</abbr></a></dt>
-        <dd>Guards the framework&#039;s password API against breaking changes for consuming
-apps. They call model(&quot;z_login&quot;)-&gt;checkPassword($pw, $hash, $salt) with the
-3-argument shape (no scheme) on their own user tables, and rely on legacy
-hashes still verifying. See jouri&#039;s Authentication/UserController.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AssetProxyController.html"><abbr title="\AssetProxyController">AssetProxyController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AuthProbeController.html"><abbr title="\AuthProbeController">AuthProbeController</abbr></a></dt>
@@ -189,9 +255,9 @@ two never shadow each other (katanaphp/blade#66).</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseRetryProbeController.html"><abbr title="\DatabaseRetryProbeController">DatabaseRetryProbeController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/EncryptionProbeController.html"><abbr title="\EncryptionProbeController">EncryptionProbeController</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExceptionController.html"><abbr title="\ExceptionController">ExceptionController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FileController.html"><abbr title="\FileController">FileController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FormController.html"><abbr title="\FormController">FormController</abbr></a></dt>
         <dd></dd>
@@ -204,8 +270,8 @@ two never shadow each other (katanaphp/blade#66).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GroupController.html"><abbr title="\GroupController">GroupController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/HelperController.html"><abbr title="\HelperController">HelperController</abbr></a></dt>
-        <dd>Probes for global references and pure helper functions used by
-tests/cypress/e2e/support/.</dd>
+        <dd>Probes for global references used by
+tests/cypress/e2e/support/global-references.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutConstructorController.html"><abbr title="\LayoutConstructorController">LayoutConstructorController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LayoutMiddlewareController.html"><abbr title="\LayoutMiddlewareController">LayoutMiddlewareController</abbr></a></dt>
@@ -225,8 +291,6 @@ shadowing a framework view.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/OrganizationController.html"><abbr title="\OrganizationController">OrganizationController</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/PasswordHashProbeController.html"><abbr title="\PasswordHashProbeController">PasswordHashProbeController</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RenderDirectiveController.html"><abbr title="\RenderDirectiveController">RenderDirectiveController</abbr></a></dt>
         <dd>Renders renderprobe/directives, which exercises the @auth / @guest Blade
 directives bound by Rendering\Katana\Hooks. The view is layout-free
@@ -243,10 +307,6 @@ real render path (Rendering\CanRenderView -&gt; Rendering\Katana\Engine).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/RoutingController.html"><abbr title="\RoutingController">RoutingController</abbr></a></dt>
         <dd>Test fixtures for tests/cypress/e2e/core/routing.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SessionController.html"><abbr title="\SessionController">SessionController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/StateProbeController.html"><abbr title="\StateProbeController">StateProbeController</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/SupportProbeController.html"><abbr title="\SupportProbeController">SupportProbeController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/TranslationController.html"><abbr title="\TranslationController">TranslationController</abbr></a></dt>
         <dd></dd>
@@ -316,6 +376,14 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="namespaces/default.html#constant_FRAMEWORK_ROOT">FRAMEWORK_ROOT</a>
+    <span>
+        &nbsp;= dirname(__DIR__, 3)                    </span>
+</dt>
+<dd>The folder of the framework, without a trailing slash. For a test that
+has to name a file of the framework:</dd>
+
                         <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/default.html#function_db">db()</a>
     <span>
@@ -351,16 +419,47 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_model">model()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
     </dl>
 
     
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="namespaces/default.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_FRAMEWORK_ROOT">
+        FRAMEWORK_ROOT
+        <a href="namespaces/default.html#constant_FRAMEWORK_ROOT" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/bootstrap.php"><a href="files/tests-unit-php-bootstrap.html"><abbr title="tests/unit/php/bootstrap.php">bootstrap.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">11</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The folder of the framework, without a trailing slash. For a test that
+has to name a file of the framework:</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">FRAMEWORK_ROOT</span>
+    = <span class="phpdocumentor-signature__default-value">dirname(__DIR__, 3)</span>
+</code>
+
+
+        <section class="phpdocumentor-description"><p>require_once FRAMEWORK_ROOT . &quot;/src/IncludedComponents/models/z_migrationModel.php&quot;;</p>
+</section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         <section class="phpdocumentor-functions">
         <h3 class="phpdocumentor-elements__header" id="functions">
@@ -532,34 +631,6 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
             </dd>
             </dl>
 
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_model">
-        model()
-        <a href="namespaces/default.html#function_model" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="tests/e2e/webroot/collision.php"><a href="files/tests-e2e-webroot-collision.html"><abbr title="tests/e2e/webroot/collision.php">collision.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">model</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
