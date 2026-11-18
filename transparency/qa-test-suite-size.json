@@ -1,11 +1,11 @@
 {
-  "total": 16475,
-  "e2e": 6923,
+  "total": 16678,
+  "e2e": 7126,
   "unit_php": 9541,
   "unit_js": 11,
-  "e2e_per_php_version": 989,
+  "e2e_per_php_version": 1018,
   "unit_php_per_php_version": 1363,
   "php_versions": 7,
-  "commit": "2c5d10da50fe10de2b4a9a9c6f9e88d1b2965ffe",
-  "updated_at": "2026-11-16T10:09:43Z"
+  "commit": "f544b1cc47f2d8230ee581e943905b10349cbe8a",
+  "updated_at": "2026-11-18T09:51:17Z"
 }
