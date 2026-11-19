@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -3318,8 +3318,8 @@ nowhere else. Use the UUID to address a session in a "your active sessions" list
 <p>See <a href="../../../core-features/access-control/#uuids">Access Control</a> for the full API.</p>
 <h3 id="organization-self-management">Organization self-management<a class="headerlink" href="#organization-self-management" title="Permanent link">&para;</a></h3>
 <p>Members can manage their own organization in the Z-Admin panel at <code>/z/organization</code>: rename it
-(<code>z.organization.rename</code>), invite existing accounts by link (<code>z.organization.invite</code>) and hand out
-roles that are released to organizations (<code>z.organization.roles</code>). The sidebar entry and the
+(<code>z.organization.rename</code>), invite people by link (<code>z.organization.invite</code>) or email (<code>z.organization.invite.email</code>) and hand out
+roles that are released to organizations (<code>z.organization.roles</code>), remove members from the organization (<code>z.organization.remove</code>) and delete them (<code>z.organization.delete</code>). An organization can be capped to a maximum number of users in the Z-Admin panel, which is unlimited after the upgrade. The sidebar entry and the
 dashboard card show up with <code>z.organization.manage</code>. A role is released with the new
 <em>Organizations may assign this role to their members</em> checkbox on its page under <em>Roles</em>. Nothing is
 released after the upgrade, so organizations can only hand out roles once you tick it.</p>
@@ -3480,6 +3480,10 @@ than guessed at. Once you are comfortable with Blade, you can gradually adopt di
 <tr>
 <td><code>2026-11-09_organization-permissions.sql</code></td>
 <td>Creates <code>z_organization_permission</code> and <code>z_organization_role</code>, which every permission check reads.</td>
+</tr>
+<tr>
+<td><code>2026-11-16_organization-invite-role-and-capacity.sql</code></td>
+<td>Adds the nullable <code>z_organization_invite.roleId</code>, the role an invitation hands to the new account, and the nullable <code>z_organization.max_capacity</code>, the maximum number of users of an organization, <code>NULL</code> for no limit.</td>
 </tr>
 </tbody>
 </table>

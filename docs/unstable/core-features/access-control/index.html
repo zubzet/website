@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -3991,8 +3991,8 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <ul>
 <li>
 <p>Creates a new organization with the given name (which may be <code>null</code>).
-  When <code>$createGroup</code> is <code>true</code>, a permission <code>Group</code> named <code>$groupName</code>, by default <code>"{$name}_Group"</code>, is created and linked to the organization (<code>z_organization.groupId</code>, <code>NULL</code> without a group). The linked group is then available via <code>$organization-&gt;getGroup()</code> and is used by <code>User::updateOrganization()</code> to sync group membership.</p>
-<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name, bool $createGroup = false, ?string $groupName = null): Organization</span>
+  When <code>$createGroup</code> is <code>true</code>, a permission <code>Group</code> named <code>$groupName</code>, by default <code>"{$name}_Group"</code>, is created and linked to the organization (<code>z_organization.groupId</code>, <code>NULL</code> without a group). The linked group is then available via <code>$organization-&gt;getGroup()</code> and is used by <code>User::updateOrganization()</code> to sync group membership. <code>$maxCapacity</code> sets the maximum number of users, <code>null</code> for no limit.</p>
+<div class="highlight"><pre><span></span><code><span class="x">Organization::add(?string $name, bool $createGroup = false, ?string $groupName = null, ?int $maxCapacity = null): Organization</span>
 </code></pre></div>
 </li>
 </ul>
@@ -4002,6 +4002,11 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <li>
 <p>Updates the organization's name.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;updateName(string $name);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Sets the maximum number of users (<code>z_organization.max_capacity</code>), or <code>null</code> for no limit. The framework counts active members plus open invitations of the <a href="../../z-admin/organization-management/#invitations">self-management</a> against it, assigning a user with <code>updateOrganization()</code> is not limited.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;updateMaxCapacity(?int $maxCapacity);</span>
 </code></pre></div>
 </li>
 <li>
@@ -4021,6 +4026,11 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <li>
 <p>Returns the organization's name.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;name(): string</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns the maximum number of users, or <code>null</code> for no limit.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;maxCapacity(): ?int</span>
 </code></pre></div>
 </li>
 <li>

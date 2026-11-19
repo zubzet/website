@@ -1136,10 +1136,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_updateName"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AupdateMaxCapacity\u0028\u0029",
+            "name": "updateMaxCapacity",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_updateMaxCapacity"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003Aname\u0028\u0029",
             "name": "name",
             "summary": "",
             "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_name"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AmaxCapacity\u0028\u0029",
+            "name": "maxCapacity",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Organization.html#method_maxCapacity"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Organization\u003A\u003AhasMember\u0028\u0029",
             "name": "hasMember",
@@ -3656,6 +3666,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZOrganizationController.html#method_roles"
         },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_delete"
+        },                {
+            "fqsen": "\\ZOrganizationController\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/ZOrganizationController.html#method_remove"
+        },                {
             "fqsen": "\\ZOrganizationController\u003A\u003Ainvite\u0028\u0029",
             "name": "invite",
             "summary": "",
@@ -3746,6 +3766,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/z-organizationModel.html#method_updateName"
         },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AupdateMaxCapacity\u0028\u0029",
+            "name": "updateMaxCapacity",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_updateMaxCapacity"
+        },                {
             "fqsen": "\\z_organizationModel\u003A\u003AbyName\u0028\u0029",
             "name": "byName",
             "summary": "",
@@ -3785,6 +3810,16 @@ Search.appendIndex(
             "name": "hasOpenInvite",
             "summary": "",
             "url": "classes/z-organizationModel.html#method_hasOpenInvite"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AisFull\u0028\u0029",
+            "name": "isFull",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_isFull"
+        },                {
+            "fqsen": "\\z_organizationModel\u003A\u003AremoveDeletedMember\u0028\u0029",
+            "name": "removeDeletedMember",
+            "summary": "",
+            "url": "classes/z-organizationModel.html#method_removeDeletedMember"
         },                {
             "fqsen": "\\z_organizationModel\u003A\u003AdeactivateInvite\u0028\u0029",
             "name": "deactivateInvite",

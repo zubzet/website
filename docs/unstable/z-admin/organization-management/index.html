@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -2994,12 +2994,12 @@
 <tr>
 <td>Invite a member</td>
 <td><code>z.organization.invite</code></td>
-<td>Create an invitation link</td>
+<td>Invite a person by link, with <code>z.organization.invite.email</code> also by email</td>
 </tr>
 <tr>
 <td>Members</td>
 <td><code>z.organization.roles</code></td>
-<td>Give members roles and take them away again</td>
+<td>Give members roles and take them away again, with <code>z.organization.remove</code> and <code>z.organization.delete</code> also remove or delete them</td>
 </tr>
 <tr>
 <td>Open invitations</td>
@@ -3011,19 +3011,23 @@
 <p>A user who belongs to no organization sees a notice instead. The sidebar entry <em>Organization</em> (under <em>Other</em>) and the dashboard card show up with <code>z.organization.manage</code>. Without it the page is still reached through its direct link.</p>
 <hr />
 <h2 id="invitations">Invitations<a class="headerlink" href="#invitations" title="Permanent link">&para;</a></h2>
-<p>An invitation brings an existing account into the organization. No mail is sent: the page hands the inviting user a link to pass on.</p>
+<p>An invitation brings a person without an account into the organization. The account is created when the invitation is accepted.</p>
 <ul>
-<li>Only an active account that belongs to no organization can be invited. Every other address gets the same message, so the form does not reveal which case applies.</li>
+<li>The address must not belong to any account, a deactivated one included. The form answers that the user cannot be invited right now, without revealing the account.</li>
+<li>The inviter can pick one of the roles released to organizations. The new account gets it when the invitation is accepted, unless the role is no longer released by then.</li>
+<li><em>Send email</em> is only offered with <code>z.organization.invite.email</code>, without it the inviter always gets the link. With it ticked, the invitation is mailed to the address in the language of the inviter and the inviter gets no link, so the mail alone proves the address. Without it, the page hands the inviter a link to pass on.</li>
 <li>An address holds one open invitation per organization at a time.</li>
+<li>An organization may have a maximum number of users (<code>z_organization.max_capacity</code>), set in Z-Admin when creating or editing the organization, empty means unlimited. Active members plus open invitations count against it. Once it is reached, inviting and accepting are refused with <code>organization_full</code>, deleted members do not count. Assigning a user to an organization on the Z-Admin user page is not limited.</li>
 <li>An invitation is valid for <strong>7 days</strong>. Expired invitations are no longer listed and no longer block a new one.</li>
 <li>Revoking an invitation makes its link stop working right away.</li>
 </ul>
-<p>The link leads to <code>/z/organization/invitation/{token}</code>. The invited person has to be logged in with the invited address. The page shows the organization, the address and when the invitation was created, and accepting it makes the account a member. The account also joins the organization's <a href="../../core-features/access-control/#organization-data-access">linked group</a>, like on any <code>$user-&gt;updateOrganization()</code>.</p>
-<p>Unknown, expired and revoked links answer with a 404, and so does a link opened by another account or by a user who already belongs to an organization.</p>
+<p>The link leads to <code>/z/organization/invitation/{token}</code> and needs no login. The page shows the organization, the address and when the invitation was created, and asks for a password. Accepting creates the account with that address and makes it a member. Like on a signup, the account stays unverified and gets a verification mail, it can log in once the address is confirmed. The account also joins the organization's <a href="../../core-features/access-control/#organization-data-access">linked group</a>, like on any <code>$user-&gt;updateOrganization()</code>. The new member is not logged in but sent to the login page.</p>
+<p>Unknown, expired and revoked links answer with a 404, and so does a link whose address got an account in the meantime.</p>
 <hr />
 <h2 id="releasing-roles-to-organizations">Releasing Roles to Organizations<a class="headerlink" href="#releasing-roles-to-organizations" title="Permanent link">&para;</a></h2>
 <p>An organization can only hand out roles that are released to organizations. A role is released with the checkbox <em>Organizations may assign this role to their members</em> on its page under <em>Roles</em>, stored in <code>z_role.is_org_assignable</code>. The flag works for groups as well. The groups page cannot edit them yet, so a group is released in the database.</p>
 <p>In the <em>Members</em> section every member gets a multi select of the released roles. Saving replaces the released roles the member holds with the selection. Roles that are not released stay untouched.</p>
+<p>With <code>z.organization.remove</code> a member can be removed from the organization: the account stays, its organization is unset together with the membership in the linked group, and the released roles it holds are revoked. In Z-Admin, emptying the Organization field on the user page unsets the organization and the linked group the same way, but leaves the roles alone. With <code>z.organization.delete</code> a member can be deleted: the account is deactivated like <code>$user-&gt;remove()</code> does, so it can no longer log in. Both buttons ask for confirmation and only reach members of the own organization. Deleted members stay in the list marked <em>Deleted</em> until they are removed.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>A released role hands its permissions to whoever an organization chooses. Only release roles meant for that, and keep the organization's own management permissions out of them unless its members may pass them on.</p>
@@ -3058,12 +3062,12 @@
 <tr>
 <td><code>&lt;x-zubzet::organization.members/&gt;</code></td>
 <td>-</td>
-<td><code>z.organization.roles</code></td>
+<td><code>z.organization.roles</code>, plus <code>z.organization.remove</code> and <code>z.organization.delete</code> for their buttons</td>
 </tr>
 <tr>
 <td><code>&lt;x-zubzet::organization.accept :token="$token"/&gt;</code></td>
 <td><code>token</code>: the invitation token</td>
-<td>logged in</td>
+<td>none</td>
 </tr>
 </tbody>
 </table>
@@ -3085,12 +3089,12 @@
 <td>This address already has an open invitation.</td>
 </tr>
 <tr>
-<td><code>error_invalid_token</code></td>
-<td>This invitation is invalid or has expired.</td>
+<td><code>error_organization_full</code></td>
+<td>This organization has reached its maximum number of users.</td>
 </tr>
 <tr>
-<td><code>error_already_in_organization</code></td>
-<td>You are already a member of an organization.</td>
+<td><code>error_invalid_token</code></td>
+<td>This invitation is invalid or has expired.</td>
 </tr>
 </tbody>
 </table>
