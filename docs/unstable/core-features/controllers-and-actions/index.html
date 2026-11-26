@@ -3012,6 +3012,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ending-a-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ending a request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ending a request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-an-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing an action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3175,7 +3203,92 @@
 <span class="cp">?&gt;</span>
 </code></pre></div>
 <h2 id="redirecting">Redirecting<a class="headerlink" href="#redirecting" title="Permanent link">&para;</a></h2>
-<p><code>$res-&gt;rerouteUrl($url = "", $root = null)</code> sends a <code>location:</code> header (implicit 302) and ends the script, as do <code>$res-&gt;logout()</code> and the REST helpers. <code>$root</code> defaults to the <code>rootFolder</code> setting, which is <code>/</code> when <code>rootDirectory</code> is empty and <code>/{rootDirectory}/</code> otherwise. The header is built as <code>$root . $url</code> without any slash normalisation, so <code>$url</code> has to be written relative to the root folder, without a leading slash: <code>rerouteUrl("employee/list")</code>. A leading slash is not removed, so <code>rerouteUrl("/employee")</code> yields <code>//employee</code> with an empty root directory, which browsers read as a protocol-relative URL pointing at the host <code>employee</code>. Calling it without arguments redirects to the root folder; pass <code>$root = ""</code> to redirect to an absolute or external URL. <code>$res-&gt;reroute($path, $alias = false, $final = false)</code> instead dispatches internally to another controller and action without an HTTP redirect, so the browser URL stays (the query string is kept); explicit routes and group middleware apply to the new path, and <code>$final = true</code> ends the script afterwards, otherwise the calling action continues when <code>reroute()</code> returns (as after <code>render()</code> or <code>json()</code>). The new <code>Request</code> keeps GET, POST, cookies and body but has an empty <code>store</code> and <code>urlParameters</code>. For <code>$alias</code> see <a href="../../advanced-features/aliases-and-virtual-links/">aliases</a>. <code>Response</code> has no helpers for HTTP status codes, custom headers or downloads: use PHP's <code>http_response_code()</code> and <code>header()</code>.</p>
+<p><code>$res-&gt;rerouteUrl($url = "", $root = null)</code> sends a <code>location:</code> header (implicit 302) and ends the script, as do <code>$res-&gt;logout()</code> and the REST helpers. <code>$root</code> defaults to the <code>rootFolder</code> setting, which is <code>/</code> when <code>rootDirectory</code> is empty and <code>/{rootDirectory}/</code> otherwise. The header is built as <code>$root . $url</code> without any slash normalisation, so <code>$url</code> has to be written relative to the root folder, without a leading slash: <code>rerouteUrl("employee/list")</code>. A leading slash is not removed, so <code>rerouteUrl("/employee")</code> yields <code>//employee</code> with an empty root directory, which browsers read as a protocol-relative URL pointing at the host <code>employee</code>. Calling it without arguments redirects to the root folder; pass <code>$root = ""</code> to redirect to an absolute or external URL. <code>$res-&gt;reroute($path, $alias = false, $final = false)</code> instead dispatches internally to another controller and action without an HTTP redirect, so the browser URL stays (the query string is kept); explicit routes and group middleware apply to the new path, and <code>$final = true</code> ends the script afterwards, otherwise the calling action continues when <code>reroute()</code> returns (as after <code>render()</code> or <code>json()</code>). The new <code>Request</code> keeps GET, POST, cookies, body and <code>store</code> but has empty <code>urlParameters</code>. For <code>$alias</code> see <a href="../../advanced-features/aliases-and-virtual-links/">aliases</a>. <code>Response</code> has no helpers for HTTP status codes, custom headers or downloads: use PHP's <code>http_response_code()</code> and <code>header()</code>.</p>
+<h2 id="ending-a-request">Ending a request<a class="headerlink" href="#ending-a-request" title="Permanent link">&para;</a></h2>
+<p>A view, a REST reply, a redirect and a failed check each finish the response. Nothing of the action runs after one of these calls:</p>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Ends the request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$res-&gt;render()</code>, <code>view()</code></td>
+<td>always</td>
+</tr>
+<tr>
+<td><code>$res-&gt;success()</code>, <code>error()</code>, <code>formErrors()</code>, <code>generateRest()</code>, <code>generateRestError()</code></td>
+<td>always (<code>generateRest($payload, false)</code> does not)</td>
+</tr>
+<tr>
+<td><code>$res-&gt;rerouteUrl()</code>, <code>$res-&gt;logout()</code></td>
+<td>always</td>
+</tr>
+<tr>
+<td><code>$res-&gt;reroute($path, $alias, true)</code></td>
+<td>with <code>$final</code> set; without it only when the rerouted action ends the request</td>
+</tr>
+<tr>
+<td><code>$req-&gt;checkPermission()</code>, <code>requireOrganization()</code>, <code>requireFreshTwoFactor()</code>, <code>csrfBlockAdditionalMethod()</code></td>
+<td>when the check fails (not when it is asked to return a boolean)</td>
+</tr>
+<tr>
+<td><code>$res-&gt;stop()</code>, <code>$req-&gt;stop()</code>, <code>stop()</code></td>
+<td>always</td>
+</tr>
+</tbody>
+</table>
+<p><code>$res-&gt;json()</code> and <code>$res-&gt;sendEmail()</code> do not end the request.</p>
+<p>To end a request yourself, call <code>stop()</code> instead of <code>exit</code> or <code>die</code>. It is available as <code>$res-&gt;stop()</code>, <code>$req-&gt;stop()</code> and as the global helper <code>stop()</code>, all three do the same. What the action printed and the headers it set are the response:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function action_export(Request $req, Response $res) {</span>
+<span class="x">    $req-&gt;checkPermission("reports.export");</span>
+
+<span class="x">    header("Content-Type: text/csv");</span>
+<span class="x">    echo $this-&gt;csv();</span>
+
+<span class="x">    $res-&gt;stop();</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>A real <code>exit</code> still works, but it skips the <code>finally</code> blocks and afterMiddlewares, and it ends a unit test that calls the action.</p>
+<p>An action can hold several of these calls, for example one view per permission, as long as only one of them runs:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function action_index(Request $req, Response $res) {</span>
+<span class="x">    if($req-&gt;checkPermission("reports.all", true)) {</span>
+<span class="x">        return $res-&gt;render("reports/all");</span>
+<span class="x">    }</span>
+
+<span class="x">    return $res-&gt;render("reports/own");</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>The framework does not call <code>exit</code> for this. The call throws the internal <code>ZubZet\Framework\Message\EndOfRequest</code>, which the framework catches where it dispatched the request. Three things follow:</p>
+<ul>
+<li><code>finally</code> blocks around the call run, and so do the <a href="../routing/#middleware-and-aftermiddleware">afterMiddlewares</a> of the route.</li>
+<li><code>EndOfRequest</code> extends <code>\Error</code>, so a <code>catch(\Exception)</code> around the call does not see it.</li>
+<li>A <code>catch(\Throwable)</code> or <code>catch(\Error)</code> does see it, and the action would keep running. Catch <code>\Exception</code> in a controller, or pass the end on first:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="x">try {</span>
+<span class="x">    $res-&gt;success(["id" =&gt; $this-&gt;import($file)]);</span>
+<span class="x">} catch(\ZubZet\Framework\Message\EndOfRequest $end) {</span>
+<span class="x">    throw $end;</span>
+<span class="x">} catch(\Throwable $e) {</span>
+<span class="x">    $res-&gt;error($e-&gt;getMessage());</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="testing-an-action">Testing an action<a class="headerlink" href="#testing-an-action" title="Permanent link">&para;</a></h3>
+<p>Because the request ends with an exception, a unit test can call an action and read what it answered:</p>
+<div class="highlight"><pre><span></span><code><span class="x">ob_start();</span>
+<span class="x">try {</span>
+<span class="x">    $controller-&gt;action_save($req, $res);</span>
+<span class="x">    $this-&gt;fail("The action did not answer.");</span>
+<span class="x">} catch(\ZubZet\Framework\Message\EndOfRequest) {</span>
+<span class="x">    $answer = json_decode(ob_get_contents(), true);</span>
+<span class="x">} finally {</span>
+<span class="x">    ob_end_clean();</span>
+<span class="x">}</span>
+
+<span class="x">$this-&gt;assertSame("success", $answer["result"]);</span>
+</code></pre></div>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../routing/">Routing</a>: registering explicit route definitions instead of name-based routing</li>

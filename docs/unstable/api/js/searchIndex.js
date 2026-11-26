@@ -41,6 +41,141 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-1-0-MigrationNamingConventionChange.html#method_renameAutomateChange"
         },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender",
+            "name": "CodeAfterRender",
+            "summary": "Finds\u0020the\u0020render\u0028\u0029\u0020calls\u0020that\u0020are\u0020not\u0020the\u0020last\u0020thing\u0020their\u0020function\u0020does.",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003Alines\u0028\u0029",
+            "name": "lines",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_lines"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AisRender\u0028\u0029",
+            "name": "isRender",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_isRender"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AisReturned\u0028\u0029",
+            "name": "isReturned",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_isReturned"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AbuffersOutput\u0028\u0029",
+            "name": "buffersOutput",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_buffersOutput"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AcodeFollows\u0028\u0029",
+            "name": "codeFollows",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_codeFollows"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AswitchEnd\u0028\u0029",
+            "name": "switchEnd",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_switchEnd"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_next"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003Aprevious\u0028\u0029",
+            "name": "previous",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_previous"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AblockEnd\u0028\u0029",
+            "name": "blockEnd",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#method_blockEnd"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003ARECEIVERS",
+            "name": "RECEIVERS",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#constant_RECEIVERS"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AINSIGNIFICANT",
+            "name": "INSIGNIFICANT",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#constant_INSIGNIFICANT"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003ALOOPS",
+            "name": "LOOPS",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#constant_LOOPS"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\CodeAfterRender\u003A\u003AALTERNATIVE_BRANCHES",
+            "name": "ALTERNATIVE_BRANCHES",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html#constant_ALTERNATIVE_BRANCHES"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch",
+            "name": "EndOfRequestCatch",
+            "summary": "Finds\u0020the\u0020catches\u0020of\u0020\\Throwable\u0020or\u0020\\Error\u0020that\u0020also\u0020catch\u0020the\u0020end\u0020of\u0020a\nrequest.\u0020Since\u00201.3.0\u0020a\u0020call\u0020that\u0020ends\u0020the\u0020request\u0020throws\u0020EndOfRequest\u0020\u0028an\n\\Error\u0029\u0020instead\u0020of\u0020calling\u0020exit,\u0020so\u0020such\u0020a\u0020catch\u0020keeps\u0020the\u0020action\u0020running.",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003Alines\u0028\u0029",
+            "name": "lines",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_lines"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003AwithException\u0028\u0029",
+            "name": "withException",
+            "summary": "Narrows\u0020the\u0020reported\u0020catches\u0020to\u0020\\Exception,\u0020which\u0020does\u0020not\u0020see\u0020the\u0020end\u0020of\u0020a\u0020request\u003A\na\u0020list\u0020with\u0020Throwable\u0020becomes\u0020\\Exception,\u0020Error\u0020is\u0020taken\u0020out\u0020of\u0020any\u0020other\u0020list.",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_withException"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003Atokens\u0028\u0029",
+            "name": "tokens",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_tokens"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_find"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003AendsRequest\u0028\u0029",
+            "name": "endsRequest",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_endsRequest"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_next"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003AblockEnd\u0028\u0029",
+            "name": "blockEnd",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#method_blockEnd"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003AENDING_CALLS",
+            "name": "ENDING_CALLS",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#constant_ENDING_CALLS"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003ARECEIVERS",
+            "name": "RECEIVERS",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#constant_RECEIVERS"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003ARECEIVER_HELPERS",
+            "name": "RECEIVER_HELPERS",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#constant_RECEIVER_HELPERS"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003ATOO_BROAD",
+            "name": "TOO_BROAD",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#constant_TOO_BROAD"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0\\EndOfRequestCatch\u003A\u003AINSIGNIFICANT",
+            "name": "INSIGNIFICANT",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html#constant_INSIGNIFICANT"
+        },                {
             "fqsen": "\\ZubZet\\Tooling\\Blade\\LegacyViewConverter",
             "name": "LegacyViewConverter",
             "summary": "Converts\u0020a\u0020legacy\u0020ZubZet\u0020view\/layout\u0020\u0028the\u0020\u0022return\u0020type\u0022\u0020syntax\u0029\u0020into\u0020a\nKatana\u0020.blade.php\u0020document,\u0020as\u0020part\u0020of\u0020the\u00201.3.0\u0020upgrade.",
@@ -306,6 +441,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_filePath"
         },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024isFound",
+            "name": "isFound",
+            "summary": "",
+            "url": "classes/ZubZet-Tooling-Modifiers-FileContent.html#property_isFound"
+        },                {
             "fqsen": "\\ZubZet\\Tooling\\Modifiers\\FileContent\u003A\u003A\u0024isOptional",
             "name": "isOptional",
             "summary": "",
@@ -470,6 +610,11 @@ Search.appendIndex(
             "name": "matchLineByLine",
             "summary": "",
             "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_matchLineByLine"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003AmatchFileByFile\u0028\u0029",
+            "name": "matchFileByFile",
+            "summary": "Checks\u0020whole\u0020files,\u0020for\u0020issues\u0020a\u0020single\u0020line\u0020does\u0020not\u0020show",
+            "url": "classes/ZubZet-Tooling-Modifiers-MatchingModifier.html#method_matchFileByFile"
         },                {
             "fqsen": "\\ZubZet\\Tooling\\Modifiers\\MatchingModifier\u003A\u003Awarn\u0028\u0029",
             "name": "warn",
@@ -973,7 +1118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AipCreation\u0028\u0029",
             "name": "ipCreation",
-            "summary": "The\u0020address\u0020the\u0020session\u0020was\u0020created\u0020from,\u0020or\u0020null\u0020when\u0020it\u0020was\u0020not\u0020known",
+            "summary": "The\u0020address\u0020the\u0020session\u0020was\u0020created\u0020from,\u0020empty\u0020\u0028\u0022\u0022\u0020or\u0020null\u0029\u0020when\u0020it\u0020was\u0020not\u0020known",
             "url": "classes/ZubZet-Framework-Authentication-CanUseSession.html#method_ipCreation"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\CanUseSession\u003A\u003AipLast\u0028\u0029",
@@ -1645,6 +1790,16 @@ Search.appendIndex(
             "name": "getGroups",
             "summary": "Get\u0020the\u0020user\u0027s\u0020groups",
             "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_getGroups"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AhasRole\u0028\u0029",
+            "name": "hasRole",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_hasRole"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AhasGroup\u0028\u0029",
+            "name": "hasGroup",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Authentication-Permission-User.html#method_hasGroup"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Authentication\\Permission\\User\u003A\u003AgetUserPermissions\u0028\u0029",
             "name": "getUserPermissions",
@@ -2328,7 +2483,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "The\u0020endpoint\u0020is\u0020read\u0020from\u0020the\u0020configuration\u0020once\u0020per\u0020request.",
+            "summary": "The\u0020endpoint\u0020is\u0020read\u0020from\u0020the\u0020configuration\u0020once\u0020per\u0020process,\u0020a\u0020changed\u0020setting\u0020needs\u0020a\u0020worker\u0020reload.",
             "url": "classes/ZubZet-Framework-Database-Endpoint.html#method_get"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Database\\Endpoint\u003A\u003A__construct\u0028\u0029",
@@ -3513,23 +3668,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\LoginController",
             "name": "LoginController",
-            "summary": "The\u0020Login\u0020controller\u0020handles\u0020all\u0020login\/logout\u0020stuff",
-            "url": "classes/LoginController.html"
-        },                {
-            "fqsen": "\\LoginController\u003A\u003AblockedByLoginLimit\u0028\u0029",
-            "name": "blockedByLoginLimit",
             "summary": "",
-            "url": "classes/LoginController.html#method_blockedByLoginLimit"
+            "url": "classes/LoginController.html"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_index\u0028\u0029",
             "name": "action_index",
-            "summary": "The\u0020index\u0020action",
+            "summary": "",
             "url": "classes/LoginController.html#method_action_index"
-        },                {
-            "fqsen": "\\LoginController\u003A\u003AtwoFactorLogin\u0028\u0029",
-            "name": "twoFactorLogin",
-            "summary": "Redeems\u0020a\u0020two\u0020factor\u0020challenge\u0020and\u0020starts\u0020the\u0020session\u0020behind\u0020it.",
-            "url": "classes/LoginController.html#method_twoFactorLogin"
         },                {
             "fqsen": "\\LoginController\u003A\u003Aaction_logout\u0028\u0029",
             "name": "action_logout",
@@ -3745,6 +3890,11 @@ Search.appendIndex(
             "name": "spendTwoFactorTry",
             "summary": "",
             "url": "classes/ZubZetController.html#method_spendTwoFactorTry"
+        },                {
+            "fqsen": "\\ZubZetController\u003A\u003AtwoFactorLogin\u0028\u0029",
+            "name": "twoFactorLogin",
+            "summary": "",
+            "url": "classes/ZubZetController.html#method_twoFactorLogin"
         },                {
             "fqsen": "\\ZubZetController\u003A\u003ArefreshTwoFactor\u0028\u0029",
             "name": "refreshTwoFactor",
@@ -4080,6 +4230,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/ZubZet-Framework-Logger-Method-StreamLogger.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\EndOfRequest",
+            "name": "EndOfRequest",
+            "summary": "Thrown\u0020where\u0020the\u0020framework\u0020used\u0020to\u0020call\u0020exit\u003A\u0020the\u0020response\u0020is\u0020complete\nand\u0020nothing\u0020of\u0020the\u0020action\u0020may\u0020run\u0020anymore.\u0020Router\u003A\u003Aexecute\u0028\u0029\u0020catches\u0020it\nat\u0020the\u0020outermost\u0020dispatch,\u0020so\u0020the\u0020request\u0020ends\u0020by\u0020returning.",
+            "url": "classes/ZubZet-Framework-Message-EndOfRequest.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Input\\CanRetrieveFromInput",
             "name": "CanRetrieveFromInput",
@@ -4440,6 +4595,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003Astop\u0028\u0029",
+            "name": "stop",
+            "summary": "Ends\u0020the\u0020request\u0020here\u003A\u0020nothing\u0020of\u0020the\u0020action\u0020runs\u0020after\u0020this\u0020call.\u0020What\u0020was\u0020printed\u0020and\nevery\u0020header\u0020that\u0020was\u0020set\u0020stay\u0020as\u0020they\u0020are,\u0020and\u0020the\u0020afterMiddlewares\u0020of\u0020the\u0020route\u0020still\u0020run.",
+            "url": "classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_stop"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\RequestResponseHandler\u003A\u003AgetZViews\u0028\u0029",
             "name": "getZViews",
@@ -4873,13 +5033,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user\u0020by\u0020echoing\u0020it\u0020\u0028nothing\u0020is\u0020returned\u0029\u003B\u0020a\u0020view\u0020that\u0020fails\u0020to\u0020render\u0020with\u0020a\u0020BladeException,\u0020e.g.\u0020a\u0020missing\u0020one,\u0020renders\u0020the\u0020500\u0020view\u0020instead",
+            "summary": "Shows\u0020a\u0020document\u0020to\u0020the\u0020user\u0020by\u0020echoing\u0020it\u0020\u0028nothing\u0020is\u0020returned\u0029\u003B\u0020a\u0020view\u0020that\u0020fails\u0020to\u0020render\u0020with\u0020a\u0020BladeException,\u0020e.g.\u0020a\u0020missing\u0020one,\u0020is\u0020rethrown\u0020unless\u0020showErrors\u0020is\u00200,\u0020which\u0020logs\u0020it\u0020and\u0020renders\u0020the\u0020500\u0020view\u0020with\u0020status\u0020500\u0020instead",
             "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_render"
         },                {
-            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003AlegacyOptExpansion\u0028\u0029",
-            "name": "legacyOptExpansion",
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003AechoView\u0028\u0029",
+            "name": "echoView",
+            "summary": "Echoes\u0020a\u0020view\u0020like\u0020render\u0028\u0029\u0020without\u0020ending\u0020the\u0020request,\u0020for\u0020output\u0020that\u0020is\u0020captured\u0020\u0028mails\u0029",
+            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_echoView"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\CanRenderView\u003A\u003AstandardOpt\u0028\u0029",
+            "name": "standardOpt",
             "summary": "",
-            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion"
+            "url": "classes/ZubZet-Framework-Rendering-CanRenderView.html#method_standardOpt"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\ComponentRenderer",
+            "name": "ComponentRenderer",
+            "summary": "Gives\u0020every\u0020component\u0020the\u0020framework\u0027s\u0020standard\u0020\u0024opt\u0020\u0028root,\u0020host,\u0020etc.\u0029,\u0020so\u0020it\u0020never\u0020has\u0020to\u0020be\npassed\u0020manually.\u0020What\u0020the\u0020caller\u0020passed\u0020to\u0020render\u0028\u0029\u0020is\u0020not\u0020part\u0020of\u0020it.",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\ComponentRenderer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html#method___construct"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\ComponentRenderer\u003A\u003Aprepare\u0028\u0029",
+            "name": "prepare",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html#method_prepare"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\ComponentRenderer\u003A\u003AgetViewData\u0028\u0029",
+            "name": "getViewData",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html#method_getViewData"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\ComponentRenderer\u003A\u003A\u0024standardOpt",
+            "name": "standardOpt",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html#property_standardOpt"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Rendering\\Katana\\Engine",
             "name": "Engine",
@@ -5251,6 +5441,11 @@ Search.appendIndex(
             "summary": "Runs\u0020the\u0020middlewares\u0020of\u0020all\u0020groups\u0020matching\u0020the\u0020URL\u0020\u0028exits\u0020if\u0020one\u0020returns\u0020non\u002Dtrue\u0029,\u0020then\u0020\u0024callback,\u0020then\u0020the\u0020after\u002Dmiddlewares.",
             "url": "classes/ZubZet-Framework-Routing-Route.html#method_performStoredGroupsMatchingPrefix"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003ArunWithAfterMiddlewares\u0028\u0029",
+            "name": "runWithAfterMiddlewares",
+            "summary": "Runs\u0020the\u0020action\u0020and\u0020then\u0020its\u0020after\u0020middlewares.\u0020An\u0020action\u0020that\u0020ended\u0020the\u0020request\u0020\u0028render,\u0020success,\u0020a\u0020failed\u0020permission\u0020check\u0029\u0020still\u0020gets\u0020them,\u0020the\u0020end\u0020is\u0020passed\u0020on\u0020afterwards.",
+            "url": "classes/ZubZet-Framework-Routing-Route.html#method_runWithAfterMiddlewares"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Route\u003A\u003AperformGroup\u0028\u0029",
             "name": "performGroup",
             "summary": "Stores\u0020the\u0020group\u0027s\u0020middlewares\u0020under\u0020its\u0020full\u0020prefix\u0020for\u0020fallback\u0020matching,\u0020then\u0020runs\u0020\u0024callback\u0020with\u0020the\u0020group\u0020state\u0020pushed\u0020and\u0020pops\u0020it\u0020afterwards.",
@@ -5325,6 +5520,11 @@ Search.appendIndex(
             "name": "execute",
             "summary": "",
             "url": "classes/ZubZet-Framework-Routing-Router.html#method_execute"
+        },                {
+            "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003Adispatch\u0028\u0029",
+            "name": "dispatch",
+            "summary": "",
+            "url": "classes/ZubZet-Framework-Routing-Router.html#method_dispatch"
         },                {
             "fqsen": "\\ZubZet\\Framework\\Routing\\Router\u003A\u003AgetRouteDispatcher\u0028\u0029",
             "name": "getRouteDispatcher",
@@ -6131,6 +6331,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ComponentNamespaceController.html#method_action_isolation"
         },                {
+            "fqsen": "\\ComponentNamespaceController\u003A\u003Aaction_standardOpt\u0028\u0029",
+            "name": "action_standardOpt",
+            "summary": "",
+            "url": "classes/ComponentNamespaceController.html#method_action_standardOpt"
+        },                {
+            "fqsen": "\\ComponentNamespaceController\u003A\u003Aaction_reservedOpt\u0028\u0029",
+            "name": "action_reservedOpt",
+            "summary": "",
+            "url": "classes/ComponentNamespaceController.html#method_action_reservedOpt"
+        },                {
             "fqsen": "\\ConnectionProbeController",
             "name": "ConnectionProbeController",
             "summary": "",
@@ -6335,21 +6545,6 @@ Search.appendIndex(
             "name": "action_command",
             "summary": "",
             "url": "classes/CoreController.html#method_action_command"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003Aaction_parameters\u0028\u0029",
-            "name": "action_parameters",
-            "summary": "",
-            "url": "classes/CoreController.html#method_action_parameters"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003Aaction_parameters1\u0028\u0029",
-            "name": "action_parameters1",
-            "summary": "",
-            "url": "classes/CoreController.html#method_action_parameters1"
-        },                {
-            "fqsen": "\\CoreController\u003A\u003Aaction_parameters2\u0028\u0029",
-            "name": "action_parameters2",
-            "summary": "",
-            "url": "classes/CoreController.html#method_action_parameters2"
         },                {
             "fqsen": "\\CoreController\u003A\u003Aaction_model\u0028\u0029",
             "name": "action_model",
@@ -6556,11 +6751,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CoreController.html#method_action_sendemailtouser_dynamic"
         },                {
-            "fqsen": "\\CoreController\u003A\u003Aaction_permissionCheck\u0028\u0029",
-            "name": "action_permissionCheck",
-            "summary": "",
-            "url": "classes/CoreController.html#method_action_permissionCheck"
-        },                {
             "fqsen": "\\CsrfProbeController",
             "name": "CsrfProbeController",
             "summary": "",
@@ -6660,6 +6850,31 @@ Search.appendIndex(
             "name": "NODES",
             "summary": "",
             "url": "classes/DatabaseRetryProbeController.html#constant_NODES"
+        },                {
+            "fqsen": "\\EndprobeController",
+            "name": "EndprobeController",
+            "summary": "Test\u0020fixtures\u0020for\u0020tests\/cypress\/e2e\/core\/end\u002Dof\u002Drequest.cy.js.",
+            "url": "classes/EndprobeController.html"
+        },                {
+            "fqsen": "\\EndprobeController\u003A\u003Aaction_render\u0028\u0029",
+            "name": "action_render",
+            "summary": "",
+            "url": "classes/EndprobeController.html#method_action_render"
+        },                {
+            "fqsen": "\\EndprobeController\u003A\u003Aaction_rest\u0028\u0029",
+            "name": "action_rest",
+            "summary": "",
+            "url": "classes/EndprobeController.html#method_action_rest"
+        },                {
+            "fqsen": "\\EndprobeController\u003A\u003Aaction_stop\u0028\u0029",
+            "name": "action_stop",
+            "summary": "",
+            "url": "classes/EndprobeController.html#method_action_stop"
+        },                {
+            "fqsen": "\\EndprobeController\u003A\u003Aafterware\u0028\u0029",
+            "name": "afterware",
+            "summary": "",
+            "url": "classes/EndprobeController.html#method_afterware"
         },                {
             "fqsen": "\\ExceptionController",
             "name": "ExceptionController",
@@ -7791,11 +8006,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ResponseController.html#method_action_rerouteNonAlias"
         },                {
-            "fqsen": "\\ResponseController\u003A\u003Aaction_rerouteFinal\u0028\u0029",
-            "name": "action_rerouteFinal",
-            "summary": "",
-            "url": "classes/ResponseController.html#method_action_rerouteFinal"
-        },                {
             "fqsen": "\\ResponseController\u003A\u003Aaction_cedForm\u0028\u0029",
             "name": "action_cedForm",
             "summary": "",
@@ -8451,6 +8661,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/UserController.html#method_action_getRoles"
         },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_hasRole\u0028\u0029",
+            "name": "action_hasRole",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_hasRole"
+        },                {
+            "fqsen": "\\UserController\u003A\u003Aaction_hasGroup\u0028\u0029",
+            "name": "action_hasGroup",
+            "summary": "",
+            "url": "classes/UserController.html#method_action_hasGroup"
+        },                {
             "fqsen": "\\UserController\u003A\u003Aaction_addRejected\u0028\u0029",
             "name": "action_addRejected",
             "summary": "",
@@ -8946,6 +9166,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-AliasesTest.html#method_testEveryAliasOfTheSourceIsListed"
         },                {
+            "fqsen": "\\Tests\\ApplicationTestCase",
+            "name": "ApplicationTestCase",
+            "summary": "The\u0020base\u0020of\u0020a\u0020test\u0020that\u0020sends\u0020a\u0020whole\u0020request\u0020through\u0020the\u0020framework\nwithout\u0020a\u0020web\u0020server\u003A\u0020the\u0020routes,\u0020controllers\u0020and\u0020views\u0020of\u0020a\u0020small\napplication\u0020on\u0020disk\u0020are\u0020dispatched\u0020by\u0020the\u0020real\u0020router.",
+            "url": "classes/Tests-ApplicationTestCase.html"
+        },                {
+            "fqsen": "\\Tests\\ApplicationTestCase\u003A\u003AbootApplication\u0028\u0029",
+            "name": "bootApplication",
+            "summary": "Boots\u0020the\u0020application\u0020in\u0020the\u0020given\u0020directory,\u0020which\u0020holds\nControllers\/,\u0020Routes\/\u0020and\u0020Views\/\u0020like\u0020the\u0020app\/\u0020folder\u0020of\u0020a\u0020project.",
+            "url": "classes/Tests-ApplicationTestCase.html#method_bootApplication"
+        },                {
+            "fqsen": "\\Tests\\ApplicationTestCase\u003A\u003Avisit\u0028\u0029",
+            "name": "visit",
+            "summary": "Sends\u0020a\u0020request\u0020through\u0020the\u0020router\u0020and\u0020returns\u0020what\u0020was\u0020printed,\nwhether\u0020the\u0020action\u0020returned\u0020or\u0020ended\u0020the\u0020request.",
+            "url": "classes/Tests-ApplicationTestCase.html#method_visit"
+        },                {
+            "fqsen": "\\Tests\\ApplicationTestCase\u003A\u003AanswerTo\u0028\u0029",
+            "name": "answerTo",
+            "summary": "The\u0020decoded\u0020REST\u0020reply\u0020of\u0020a\u0020request.",
+            "url": "classes/Tests-ApplicationTestCase.html#method_answerTo"
+        },                {
+            "fqsen": "\\Tests\\ApplicationTestCase\u003A\u003A\u0024application",
+            "name": "application",
+            "summary": "",
+            "url": "classes/Tests-ApplicationTestCase.html#property_application"
+        },                {
+            "fqsen": "\\Tests\\ApplicationTestCase\u003A\u003A\u0024printed",
+            "name": "printed",
+            "summary": "What\u0020the\u0020last\u0020request\u0020printed,\u0020also\u0020when\u0020it\u0020threw",
+            "url": "classes/Tests-ApplicationTestCase.html#property_printed"
+        },                {
+            "fqsen": "\\Tests\\InProcessFramework",
+            "name": "InProcessFramework",
+            "summary": "",
+            "url": "classes/Tests-InProcessFramework.html"
+        },                {
+            "fqsen": "\\Tests\\InProcessFramework\u003A\u003AreplaceRequest\u0028\u0029",
+            "name": "replaceRequest",
+            "summary": "",
+            "url": "classes/Tests-InProcessFramework.html#method_replaceRequest"
+        },                {
             "fqsen": "\\Tests\\Authentication\\AuthenticationEntityTest",
             "name": "AuthenticationEntityTest",
             "summary": "The\u0020base\u0020of\u0020every\u0020unit\u0020test\u0020that\u0020needs\u0020more\u0020than\u0020the\u0020class\u0020under\u0020test.",
@@ -9045,6 +9305,26 @@ Search.appendIndex(
             "name": "DECADES",
             "summary": "",
             "url": "classes/Tests-Authentication-CanUseSessionTest.html#constant_DECADES"
+        },                {
+            "fqsen": "\\Tests\\Authentication\\LoginTokenTest",
+            "name": "LoginTokenTest",
+            "summary": "The\u0020base\u0020of\u0020every\u0020unit\u0020test\u0020that\u0020needs\u0020more\u0020than\u0020the\u0020class\u0020under\u0020test.",
+            "url": "classes/Tests-Authentication-LoginTokenTest.html"
+        },                {
+            "fqsen": "\\Tests\\Authentication\\LoginTokenTest\u003A\u003AtestAGeneratedTokenIsStoredHashed\u0028\u0029",
+            "name": "testAGeneratedTokenIsStoredHashed",
+            "summary": "",
+            "url": "classes/Tests-Authentication-LoginTokenTest.html#method_testAGeneratedTokenIsStoredHashed"
+        },                {
+            "fqsen": "\\Tests\\Authentication\\LoginTokenTest\u003A\u003AtestALegacyTokenIsStoredAsIs\u0028\u0029",
+            "name": "testALegacyTokenIsStoredAsIs",
+            "summary": "",
+            "url": "classes/Tests-Authentication-LoginTokenTest.html#method_testALegacyTokenIsStoredAsIs"
+        },                {
+            "fqsen": "\\Tests\\Authentication\\LoginTokenTest\u003A\u003AtestAStoredHashInAnotherCasingIsNotAPlainToken\u0028\u0029",
+            "name": "testAStoredHashInAnotherCasingIsNotAPlainToken",
+            "summary": "",
+            "url": "classes/Tests-Authentication-LoginTokenTest.html#method_testAStoredHashInAnotherCasingIsNotAPlainToken"
         },                {
             "fqsen": "\\Tests\\Authentication\\PasswordHash\\PasswordTest",
             "name": "PasswordTest",
@@ -10751,6 +11031,91 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Logger-LoggerTest.html#constant_ERROR_UNKNOWN_LOGGER"
         },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest",
+            "name": "EndOfRequestTest",
+            "summary": "A\u0020call\u0020that\u0020ends\u0020the\u0020request\u0020throws\u0020EndOfRequest\u0020instead\u0020of\u0020calling\u0020exit.",
+            "url": "classes/Tests-Message-EndOfRequestTest.html"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_setUp"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003Aaction\u0028\u0029",
+            "name": "action",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_action"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestAnActionCanBeCalledAndItsAnswerRead\u0028\u0029",
+            "name": "testAnActionCanBeCalledAndItsAnswerRead",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testAnActionCanBeCalledAndItsAnswerRead"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestAnErrorStopsTheActionBeforeItsSuccess\u0028\u0029",
+            "name": "testAnErrorStopsTheActionBeforeItsSuccess",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testAnErrorStopsTheActionBeforeItsSuccess"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestNothingRunsAfterTheEnd\u0028\u0029",
+            "name": "testNothingRunsAfterTheEnd",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testNothingRunsAfterTheEnd"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestACatchOfExceptionDoesNotSeeTheEnd\u0028\u0029",
+            "name": "testACatchOfExceptionDoesNotSeeTheEnd",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testACatchOfExceptionDoesNotSeeTheEnd"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestFinallyBlocksRunOnTheWayOut\u0028\u0029",
+            "name": "testFinallyBlocksRunOnTheWayOut",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testFinallyBlocksRunOnTheWayOut"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestEveryRestReplyEndsTheRequest\u0028\u0029",
+            "name": "testEveryRestReplyEndsTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testEveryRestReplyEndsTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AendingReplies\u0028\u0029",
+            "name": "endingReplies",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_endingReplies"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestStopOfTheResponseEndsTheRequestAndKeepsWhatWasPrinted\u0028\u0029",
+            "name": "testStopOfTheResponseEndsTheRequestAndKeepsWhatWasPrinted",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testStopOfTheResponseEndsTheRequestAndKeepsWhatWasPrinted"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestStopOfTheRequestEndsTheRequestToo\u0028\u0029",
+            "name": "testStopOfTheRequestEndsTheRequestToo",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testStopOfTheRequestEndsTheRequestToo"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestTheGlobalStopEndsTheRequestToo\u0028\u0029",
+            "name": "testTheGlobalStopEndsTheRequestToo",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testTheGlobalStopEndsTheRequestToo"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestStopThrowsTheEndOfRequestTheRouterCatches\u0028\u0029",
+            "name": "testStopThrowsTheEndOfRequestTheRouterCatches",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testStopThrowsTheEndOfRequestTheRouterCatches"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestACatchOfExceptionDoesNotSeeAStop\u0028\u0029",
+            "name": "testACatchOfExceptionDoesNotSeeAStop",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testACatchOfExceptionDoesNotSeeAStop"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestARedirectEndsTheRequestWithoutPrintingAnything\u0028\u0029",
+            "name": "testARedirectEndsTheRequestWithoutPrintingAnything",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testARedirectEndsTheRequestWithoutPrintingAnything"
+        },                {
+            "fqsen": "\\Tests\\Message\\EndOfRequestTest\u003A\u003AtestAReplyThatIsToldNotToEndDoesNotThrow\u0028\u0029",
+            "name": "testAReplyThatIsToldNotToEndDoesNotThrow",
+            "summary": "",
+            "url": "classes/Tests-Message-EndOfRequestTest.html#method_testAReplyThatIsToldNotToEndDoesNotThrow"
+        },                {
             "fqsen": "\\Tests\\Message\\Input\\CanRetrieveFromInputTest",
             "name": "CanRetrieveFromInputTest",
             "summary": "The\u0020base\u0020of\u0020every\u0020unit\u0020test\u0020that\u0020needs\u0020more\u0020than\u0020the\u0020class\u0020under\u0020test.",
@@ -11546,6 +11911,141 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Message-Input-StateTest.html#constant_DECODE_PREFIX"
         },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest",
+            "name": "RequestGuardTest",
+            "summary": "The\u0020guards\u0020of\u0020a\u0020request\u003A\u0020checkPermission\u0028\u0029,\u0020requireOrganization\u0028\u0029,\nrequireFreshTwoFactor\u0028\u0029\u0020and\u0020csrfBlockAdditionalMethod\u0028\u0029.\u0020A\u0020failed\u0020guard\nshows\u0020a\u0020page\u0020and\u0020ends\u0020the\u0020request,\u0020which\u0020a\u0020test\u0020could\u0020not\u0020survive\u0020while\nthat\u0020was\u0020an\u0020exit.\u0020The\u0020framework\u0020of\u0020these\u0020tests\u0020records\u0020the\u0020page\u0020a\u0020guard\nshows\u0020instead\u0020of\u0020running\u0020its\u0020controller.",
+            "url": "classes/Tests-Message-RequestGuardTest.html"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_setUp"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGuestIsShownTheLoginAndTheRequestEnds\u0028\u0029",
+            "name": "testAGuestIsShownTheLoginAndTheRequestEnds",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGuestIsShownTheLoginAndTheRequestEnds"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAUserWithoutThePermissionIsShownThe403PageAndTheRequestEnds\u0028\u0029",
+            "name": "testAUserWithoutThePermissionIsShownThe403PageAndTheRequestEnds",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAUserWithoutThePermissionIsShownThe403PageAndTheRequestEnds"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAUserWithThePermissionPassesAndNothingIsShown\u0028\u0029",
+            "name": "testAUserWithThePermissionPassesAndNothingIsShown",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAUserWithThePermissionPassesAndNothingIsShown"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAWildcardCoversThePermission\u0028\u0029",
+            "name": "testAWildcardCoversThePermission",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAWildcardCoversThePermission"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003Awildcards\u0028\u0029",
+            "name": "wildcards",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_wildcards"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestNothingBehindAFailedGuardRuns\u0028\u0029",
+            "name": "testNothingBehindAFailedGuardRuns",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testNothingBehindAFailedGuardRuns"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAskedForABooleanAFailedCheckReturnsFalseAndShowsNothing\u0028\u0029",
+            "name": "testAskedForABooleanAFailedCheckReturnsFalseAndShowsNothing",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAskedForABooleanAFailedCheckReturnsFalseAndShowsNothing"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestTheConsolePermissionEndsARequestThatIsNotFromTheConsole\u0028\u0029",
+            "name": "testTheConsolePermissionEndsARequestThatIsNotFromTheConsole",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testTheConsolePermissionEndsARequestThatIsNotFromTheConsole"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestThePermissionOfTheExecutingUserCountsForTheSuperCheckOnly\u0028\u0029",
+            "name": "testThePermissionOfTheExecutingUserCountsForTheSuperCheckOnly",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testThePermissionOfTheExecutingUserCountsForTheSuperCheckOnly"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAFailedSuperCheckEndsTheRequestWithThe403Page\u0028\u0029",
+            "name": "testAFailedSuperCheckEndsTheRequestWithThe403Page",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAFailedSuperCheckEndsTheRequestWithThe403Page"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGuestWithoutOrganizationIsShownTheLogin\u0028\u0029",
+            "name": "testAGuestWithoutOrganizationIsShownTheLogin",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGuestWithoutOrganizationIsShownTheLogin"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAUserWithoutOrganizationIsShownThe403Page\u0028\u0029",
+            "name": "testAUserWithoutOrganizationIsShownThe403Page",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAUserWithoutOrganizationIsShownThe403Page"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAskedForABooleanAMissingOrganizationReturnsFalse\u0028\u0029",
+            "name": "testAskedForABooleanAMissingOrganizationReturnsFalse",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAskedForABooleanAMissingOrganizationReturnsFalse"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGuestIsShownTheLoginInsteadOfTheTwoFactorCheck\u0028\u0029",
+            "name": "testAGuestIsShownTheLoginInsteadOfTheTwoFactorCheck",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGuestIsShownTheLoginInsteadOfTheTwoFactorCheck"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAskedForABooleanAGuestIsNotFresh\u0028\u0029",
+            "name": "testAskedForABooleanAGuestIsNotFresh",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAskedForABooleanAGuestIsNotFresh"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGetFromAnotherSiteIsShownThe403PageOnceGetIsChecked\u0028\u0029",
+            "name": "testAGetFromAnotherSiteIsShownThe403PageOnceGetIsChecked",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGetFromAnotherSiteIsShownThe403PageOnceGetIsChecked"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGetFromTheSameOriginPassesTheAdditionalCheck\u0028\u0029",
+            "name": "testAGetFromTheSameOriginPassesTheAdditionalCheck",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGetFromTheSameOriginPassesTheAdditionalCheck"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AtestAGetFromAnotherSitePassesWhenOnlyAnotherMethodIsAdded\u0028\u0029",
+            "name": "testAGetFromAnotherSitePassesWhenOnlyAnotherMethodIsAdded",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_testAGetFromAnotherSitePassesWhenOnlyAnotherMethodIsAdded"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003ArequestFrom\u0028\u0029",
+            "name": "requestFrom",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_requestFrom"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003AhttpRequest\u0028\u0029",
+            "name": "httpRequest",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_httpRequest"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003Agrant\u0028\u0029",
+            "name": "grant",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#method_grant"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestGuardTest\u003A\u003A\u0024framework",
+            "name": "framework",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestGuardTest.html#property_framework"
+        },                {
+            "fqsen": "\\Tests\\Message\\PageRecordingFramework",
+            "name": "PageRecordingFramework",
+            "summary": "",
+            "url": "classes/Tests-Message-PageRecordingFramework.html"
+        },                {
+            "fqsen": "\\Tests\\Message\\PageRecordingFramework\u003A\u003AexecutePath\u0028\u0029",
+            "name": "executePath",
+            "summary": "",
+            "url": "classes/Tests-Message-PageRecordingFramework.html#method_executePath"
+        },                {
+            "fqsen": "\\Tests\\Message\\PageRecordingFramework\u003A\u003A\u0024shown",
+            "name": "shown",
+            "summary": "",
+            "url": "classes/Tests-Message-PageRecordingFramework.html#property_shown"
+        },                {
             "fqsen": "\\Tests\\Message\\RequestTest",
             "name": "RequestTest",
             "summary": "The\u0020base\u0020of\u0020every\u0020unit\u0020test\u0020that\u0020needs\u0020more\u0020than\u0020the\u0020class\u0020under\u0020test.",
@@ -11576,10 +12076,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Message-RequestTest.html#method_ipHeaders"
         },                {
-            "fqsen": "\\Tests\\Message\\RequestTest\u003A\u003AtestIpReturnsAForwardedChainUnsplit\u0028\u0029",
-            "name": "testIpReturnsAForwardedChainUnsplit",
+            "fqsen": "\\Tests\\Message\\RequestTest\u003A\u003AtestIpReturnsTheClientOfAForwardedChain\u0028\u0029",
+            "name": "testIpReturnsTheClientOfAForwardedChain",
             "summary": "",
-            "url": "classes/Tests-Message-RequestTest.html#method_testIpReturnsAForwardedChainUnsplit"
+            "url": "classes/Tests-Message-RequestTest.html#method_testIpReturnsTheClientOfAForwardedChain"
+        },                {
+            "fqsen": "\\Tests\\Message\\RequestTest\u003A\u003AtestIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress\u0028\u0029",
+            "name": "testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress",
+            "summary": "",
+            "url": "classes/Tests-Message-RequestTest.html#method_testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress"
         },                {
             "fqsen": "\\Tests\\Message\\RequestTest\u003A\u003AtestIpIsAnEmptyStringWithoutAnyAddress\u0028\u0029",
             "name": "testIpIsAnEmptyStringWithoutAnyAddress",
@@ -12276,25 +12781,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_setUp"
         },                {
-            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestInjectsTheFrameworkExpansionsIntoOpt\u0028\u0029",
-            "name": "testInjectsTheFrameworkExpansionsIntoOpt",
+            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestProvidesTheFrameworkValues\u0028\u0029",
+            "name": "testProvidesTheFrameworkValues",
             "summary": "",
-            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testInjectsTheFrameworkExpansionsIntoOpt"
+            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testProvidesTheFrameworkValues"
         },                {
-            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestKeepsTheCallerDataInOpt\u0028\u0029",
-            "name": "testKeepsTheCallerDataInOpt",
+            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestHoldsOnlyTheFrameworkKeysWhateverTheCallerPasses\u0028\u0029",
+            "name": "testHoldsOnlyTheFrameworkKeysWhateverTheCallerPasses",
             "summary": "",
-            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testKeepsTheCallerDataInOpt"
+            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testHoldsOnlyTheFrameworkKeysWhateverTheCallerPasses"
         },                {
             "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestLeavesTheUserOutWhenThereIsNone\u0028\u0029",
             "name": "testLeavesTheUserOutWhenThereIsNone",
             "summary": "",
             "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testLeavesTheUserOutWhenThereIsNone"
         },                {
-            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestTheFrameworkExpansionsOverwriteCallerKeysOfTheSameName\u0028\u0029",
-            "name": "testTheFrameworkExpansionsOverwriteCallerKeysOfTheSameName",
+            "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestCallerKeysOfTheSameNameDoNotReplaceTheFrameworkValues\u0028\u0029",
+            "name": "testCallerKeysOfTheSameNameDoNotReplaceTheFrameworkValues",
             "summary": "",
-            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testTheFrameworkExpansionsOverwriteCallerKeysOfTheSameName"
+            "url": "classes/Tests-Rendering-CanRenderViewTest.html#method_testCallerKeysOfTheSameNameDoNotReplaceTheFrameworkValues"
         },                {
             "fqsen": "\\Tests\\Rendering\\CanRenderViewTest\u003A\u003AtestAbsRootAppendsTheRootFolderToTheHost\u0028\u0029",
             "name": "testAbsRootAppendsTheRootFolderToTheHost",
@@ -12360,6 +12865,106 @@ Search.appendIndex(
             "name": "HOST",
             "summary": "",
             "url": "classes/Tests-Rendering-CanRenderViewTest.html#constant_HOST"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest",
+            "name": "ComponentRendererTest",
+            "summary": "The\u0020base\u0020of\u0020every\u0020unit\u0020test\u0020that\u0020needs\u0020more\u0020than\u0020the\u0020class\u0020under\u0020test.",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_setUp"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestAComponentHasTheStandardOptWithoutAnAttribute\u0028\u0029",
+            "name": "testAComponentHasTheStandardOptWithoutAnAttribute",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testAComponentHasTheStandardOptWithoutAnAttribute"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestANestedComponentHasTheStandardOptToo\u0028\u0029",
+            "name": "testANestedComponentHasTheStandardOptToo",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testANestedComponentHasTheStandardOptToo"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestAComponentWithPropsKeepsTheStandardOpt\u0028\u0029",
+            "name": "testAComponentWithPropsKeepsTheStandardOpt",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testAComponentWithPropsKeepsTheStandardOpt"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestTheRenderDataOfTheViewIsNotPartOfIt\u0028\u0029",
+            "name": "testTheRenderDataOfTheViewIsNotPartOfIt",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testTheRenderDataOfTheViewIsNotPartOfIt"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestTheComponentKeepsItsOwnAttributesAndSlot\u0028\u0029",
+            "name": "testTheComponentKeepsItsOwnAttributesAndSlot",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testTheComponentKeepsItsOwnAttributesAndSlot"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestRefusesAnAppComponentThatIsHandedOpt\u0028\u0029",
+            "name": "testRefusesAnAppComponentThatIsHandedOpt",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testRefusesAnAppComponentThatIsHandedOpt"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AreservedOptValues\u0028\u0029",
+            "name": "reservedOptValues",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_reservedOptValues"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestRefusesItInComponentDirectiveModeToo\u0028\u0029",
+            "name": "testRefusesItInComponentDirectiveModeToo",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testRefusesItInComponentDirectiveModeToo"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestRefusesItForAnotherNamespaceThanTheFrameworkOne\u0028\u0029",
+            "name": "testRefusesItForAnotherNamespaceThanTheFrameworkOne",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testRefusesItForAnotherNamespaceThanTheFrameworkOne"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestAFrameworkComponentTakesTheOptItIsHanded\u0028\u0029",
+            "name": "testAFrameworkComponentTakesTheOptItIsHanded",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testAFrameworkComponentTakesTheOptItIsHanded"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003AtestAFrameworkComponentWithoutTheAttributeHasTheStandardOpt\u0028\u0029",
+            "name": "testAFrameworkComponentWithoutTheAttributeHasTheStandardOpt",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_testAFrameworkComponentWithoutTheAttributeHasTheStandardOpt"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003Aview\u0028\u0029",
+            "name": "view",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_view"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003Acomponent\u0028\u0029",
+            "name": "component",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_component"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#method_render"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003ASTANDARD_OPT",
+            "name": "STANDARD_OPT",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#constant_STANDARD_OPT"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003ARESERVED",
+            "name": "RESERVED",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#constant_RESERVED"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003A\u0024views",
+            "name": "views",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#property_views"
+        },                {
+            "fqsen": "\\Tests\\Rendering\\Katana\\ComponentRendererTest\u003A\u003A\u0024blade",
+            "name": "blade",
+            "summary": "",
+            "url": "classes/Tests-Rendering-Katana-ComponentRendererTest.html#property_blade"
         },                {
             "fqsen": "\\Tests\\Rendering\\Katana\\HooksTest",
             "name": "HooksTest",
@@ -12681,6 +13286,601 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Resources-MountTest.html#constant_SENTINEL"
         },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest",
+            "name": "EndOfRequestRoutingTest",
+            "summary": "Where\u0020the\u0020end\u0020of\u0020a\u0020request\u0020passes\u0020through\u0020the\u0020routing\u003A\u0020middlewares\u0020and\nafter\u0020middlewares,\u0020reroutes\u0020and\u0020the\u0020one\u0020place\u0020that\u0020catches\u0020it.\u0020The\nframework\u0020of\u0020these\u0020tests\u0020runs\u0020closures\u0020in\u0020place\u0020of\u0020controller\u0020actions\nand\u0020records\u0020the\u0020order\u0020they\u0020ran\u0020in.",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_setUp"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtearDown\u0028\u0029",
+            "name": "tearDown",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_tearDown"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestExecuteReturnsWhenTheDispatchEndedTheRequest\u0028\u0029",
+            "name": "testExecuteReturnsWhenTheDispatchEndedTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testExecuteReturnsWhenTheDispatchEndedTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestExecuteReturnsWhatADispatchThatDidNotEndReturns\u0028\u0029",
+            "name": "testExecuteReturnsWhatADispatchThatDidNotEndReturns",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testExecuteReturnsWhatADispatchThatDidNotEndReturns"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestExecutePassesEveryOtherThrowableOn\u0028\u0029",
+            "name": "testExecutePassesEveryOtherThrowableOn",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testExecutePassesEveryOtherThrowableOn"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestARerouteLetsTheEndOfTheReroutedActionPass\u0028\u0029",
+            "name": "testARerouteLetsTheEndOfTheReroutedActionPass",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testARerouteLetsTheEndOfTheReroutedActionPass"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestARerouteReturnsToItsCallerWhenTheReroutedActionReturned\u0028\u0029",
+            "name": "testARerouteReturnsToItsCallerWhenTheReroutedActionReturned",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testARerouteReturnsToItsCallerWhenTheReroutedActionReturned"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAFinalRerouteOfTheResponseEndsTheRequestAfterTheDispatch\u0028\u0029",
+            "name": "testAFinalRerouteOfTheResponseEndsTheRequestAfterTheDispatch",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAFinalRerouteOfTheResponseEndsTheRequestAfterTheDispatch"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAPathIsMappedToItsControllerAndAction\u0028\u0029",
+            "name": "testAPathIsMappedToItsControllerAndAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAPathIsMappedToItsControllerAndAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestOneRerouteMoreThanAllowedEndsTheRequestWithoutRunningAnAction\u0028\u0029",
+            "name": "testOneRerouteMoreThanAllowedEndsTheRequestWithoutRunningAnAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testOneRerouteMoreThanAllowedEndsTheRequestWithoutRunningAnAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheLastAllowedRerouteStillRuns\u0028\u0029",
+            "name": "testTheLastAllowedRerouteStillRuns",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheLastAllowedRerouteStillRuns"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheAfterMiddlewareOfAGroupRunsAfterAnActionThatReturned\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatReturned",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatReturned"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheAfterMiddlewareOfAGroupRunsAfterAnActionThatEndedTheRequest\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatEndedTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatEndedTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAGroupMiddlewareThatDoesNotReturnTrueEndsTheRequestBeforeTheAction\u0028\u0029",
+            "name": "testAGroupMiddlewareThatDoesNotReturnTrueEndsTheRequestBeforeTheAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAGroupMiddlewareThatDoesNotReturnTrueEndsTheRequestBeforeTheAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AblockingResults\u0028\u0029",
+            "name": "blockingResults",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_blockingResults"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAGroupMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware\u0028\u0029",
+            "name": "testAGroupMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAGroupMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAnActionThatFailsDoesNotGetTheAfterMiddleware\u0028\u0029",
+            "name": "testAnActionThatFailsDoesNotGetTheAfterMiddleware",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAnActionThatFailsDoesNotGetTheAfterMiddleware"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAGroupOfAnotherPrefixDoesNotRun\u0028\u0029",
+            "name": "testAGroupOfAnotherPrefixDoesNotRun",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAGroupOfAnotherPrefixDoesNotRun"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheAfterMiddlewareOfARouteRunsAfterAnActionThatReturned\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfARouteRunsAfterAnActionThatReturned",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheAfterMiddlewareOfARouteRunsAfterAnActionThatReturned"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheAfterMiddlewareOfARouteRunsAfterAnActionThatEndedTheRequest\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfARouteRunsAfterAnActionThatEndedTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheAfterMiddlewareOfARouteRunsAfterAnActionThatEndedTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestTheAfterMiddlewareOfARouteRunsAfterAControllerActionThatEndedTheRequest\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfARouteRunsAfterAControllerActionThatEndedTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testTheAfterMiddlewareOfARouteRunsAfterAControllerActionThatEndedTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestARouteMiddlewareThatDoesNotReturnTrueSkipsActionAndAfterMiddleware\u0028\u0029",
+            "name": "testARouteMiddlewareThatDoesNotReturnTrueSkipsActionAndAfterMiddleware",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testARouteMiddlewareThatDoesNotReturnTrueSkipsActionAndAfterMiddleware"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestARouteMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware\u0028\u0029",
+            "name": "testARouteMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testARouteMiddlewareThatEndsTheRequestItselfSkipsActionAndAfterMiddleware"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AtestAnAfterMiddlewareMayEndTheRequestOfAnActionThatEndedIt\u0028\u0029",
+            "name": "testAnAfterMiddlewareMayEndTheRequestOfAnActionThatEndedIt",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_testAnAfterMiddlewareMayEndTheRequestOfAnActionThatEndedIt"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003Aaction\u0028\u0029",
+            "name": "action",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_action"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003AendingAction\u0028\u0029",
+            "name": "endingAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_endingAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003Agroup\u0028\u0029",
+            "name": "group",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_group"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003Aroute\u0028\u0029",
+            "name": "route",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_route"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003Aguard\u0028\u0029",
+            "name": "guard",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#method_guard"
+        },                {
+            "fqsen": "\\Tests\\Routing\\EndOfRequestRoutingTest\u003A\u003A\u0024framework",
+            "name": "framework",
+            "summary": "",
+            "url": "classes/Tests-Routing-EndOfRequestRoutingTest.html#property_framework"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework",
+            "name": "ScriptedFramework",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework\u003A\u003Adispatch\u0028\u0029",
+            "name": "dispatch",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html#method_dispatch"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework\u003A\u003AexecuteControllerAction\u0028\u0029",
+            "name": "executeControllerAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html#method_executeControllerAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework\u003A\u003A\u0024onDispatch",
+            "name": "onDispatch",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html#property_onDispatch"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework\u003A\u003A\u0024actions",
+            "name": "actions",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html#property_actions"
+        },                {
+            "fqsen": "\\Tests\\Routing\\ScriptedFramework\u003A\u003A\u0024ran",
+            "name": "ran",
+            "summary": "",
+            "url": "classes/Tests-Routing-ScriptedFramework.html#property_ran"
+        },                {
+            "fqsen": "\\GuardedController",
+            "name": "GuardedController",
+            "summary": "",
+            "url": "classes/GuardedController.html"
+        },                {
+            "fqsen": "\\GuardedController\u003A\u003Aaction_returned\u0028\u0029",
+            "name": "action_returned",
+            "summary": "",
+            "url": "classes/GuardedController.html#method_action_returned"
+        },                {
+            "fqsen": "\\GuardedController\u003A\u003Aaction_rest\u0028\u0029",
+            "name": "action_rest",
+            "summary": "",
+            "url": "classes/GuardedController.html#method_action_rest"
+        },                {
+            "fqsen": "\\GuardedController\u003A\u003Aaction_blocked\u0028\u0029",
+            "name": "action_blocked",
+            "summary": "",
+            "url": "classes/GuardedController.html#method_action_blocked"
+        },                {
+            "fqsen": "\\ProbeController",
+            "name": "ProbeController",
+            "summary": "The\u0020controller\u0020of\u0020the\u0020application\u0020that\u0020tests\/unit\/php\/Routing\/RequestLifecycleTest.php\nsends\u0020its\u0020requests\u0020to.\u0020Every\u0020action\u0020prints\u0020a\u0020marker\u0020where\u0020the\u0020code\u0020must\nor\u0020must\u0020not\u0020continue.",
+            "url": "classes/ProbeController.html"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_index\u0028\u0029",
+            "name": "action_index",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_index"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_action\u0028\u0029",
+            "name": "action_action",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_action"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_fallback\u0028\u0029",
+            "name": "action_fallback",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_fallback"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_parameters\u0028\u0029",
+            "name": "action_parameters",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_parameters"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_first\u0028\u0029",
+            "name": "action_first",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_first"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_route\u0028\u0029",
+            "name": "action_route",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_route"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_rest\u0028\u0029",
+            "name": "action_rest",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_rest"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_render\u0028\u0029",
+            "name": "action_render",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_render"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_redirect\u0028\u0029",
+            "name": "action_redirect",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_redirect"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_stop\u0028\u0029",
+            "name": "action_stop",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_stop"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_catch\u0028\u0029",
+            "name": "action_catch",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_catch"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_finally\u0028\u0029",
+            "name": "action_finally",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_finally"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_throws\u0028\u0029",
+            "name": "action_throws",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_throws"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_guard\u0028\u0029",
+            "name": "action_guard",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_guard"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_ask\u0028\u0029",
+            "name": "action_ask",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_ask"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_views\u0028\u0029",
+            "name": "action_views",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_views"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_console\u0028\u0029",
+            "name": "action_console",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_console"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_reroute\u0028\u0029",
+            "name": "action_reroute",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_reroute"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_reroutefinal\u0028\u0029",
+            "name": "action_reroutefinal",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_reroutefinal"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_rerouteanswered\u0028\u0029",
+            "name": "action_rerouteanswered",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_rerouteanswered"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_alias\u0028\u0029",
+            "name": "action_alias",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_alias"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_loop\u0028\u0029",
+            "name": "action_loop",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_loop"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_store\u0028\u0029",
+            "name": "action_store",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_store"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aaction_stored\u0028\u0029",
+            "name": "action_stored",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_action_stored"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Apassing\u0028\u0029",
+            "name": "passing",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_passing"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Ablocking\u0028\u0029",
+            "name": "blocking",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_blocking"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Arefusing\u0028\u0029",
+            "name": "refusing",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_refusing"
+        },                {
+            "fqsen": "\\ProbeController\u003A\u003Aafterware\u0028\u0029",
+            "name": "afterware",
+            "summary": "",
+            "url": "classes/ProbeController.html#method_afterware"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest",
+            "name": "RequestLifecycleTest",
+            "summary": "Whole\u0020requests\u0020through\u0020the\u0020real\u0020router\u003A\u0020how\u0020an\u0020action\u0020is\u0020found,\u0020what\u0020a\nguard\u0020does\u0020to\u0020it,\u0020where\u0020it\u0020ends\u0020and\u0020what\u0020runs\u0020around\u0020it.\u0020The\u0020application\nlives\u0020in\u0020fixtures\/application.",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AsetUp\u0028\u0029",
+            "name": "setUp",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_setUp"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAPathIsAnsweredByTheActionOfItsName\u0028\u0029",
+            "name": "testAPathIsAnsweredByTheActionOfItsName",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAPathIsAnsweredByTheActionOfItsName"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAControllerWithoutAnActionInThePathRunsItsIndex\u0028\u0029",
+            "name": "testAControllerWithoutAnActionInThePathRunsItsIndex",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAControllerWithoutAnActionInThePathRunsItsIndex"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnUnknownActionRunsTheFallbackOfTheController\u0028\u0029",
+            "name": "testAnUnknownActionRunsTheFallbackOfTheController",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnUnknownActionRunsTheFallbackOfTheController"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestControllerAndActionAreFoundInAnySpelling\u0028\u0029",
+            "name": "testControllerAndActionAreFoundInAnySpelling",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testControllerAndActionAreFoundInAnySpelling"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003Aspellings\u0028\u0029",
+            "name": "spellings",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_spellings"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestThePartsBehindTheActionAreItsParameters\u0028\u0029",
+            "name": "testThePartsBehindTheActionAreItsParameters",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testThePartsBehindTheActionAreItsParameters"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAParameterIsComparedWithAnExpectedValue\u0028\u0029",
+            "name": "testAParameterIsComparedWithAnExpectedValue",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAParameterIsComparedWithAnExpectedValue"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnUnknownControllerIsAnsweredWithThe404Page\u0028\u0029",
+            "name": "testAnUnknownControllerIsAnsweredWithThe404Page",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnUnknownControllerIsAnsweredWithThe404Page"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnExplicitRouteRunsItsAction\u0028\u0029",
+            "name": "testAnExplicitRouteRunsItsAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnExplicitRouteRunsItsAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARouteOnlyAnswersItsMethod\u0028\u0029",
+            "name": "testARouteOnlyAnswersItsMethod",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARouteOnlyAnswersItsMethod"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARouteForAnyMethodAnswersEveryMethod\u0028\u0029",
+            "name": "testARouteForAnyMethodAnswersEveryMethod",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARouteForAnyMethodAnswersEveryMethod"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003Amethods\u0028\u0029",
+            "name": "methods",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_methods"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARouteHandsItsPlaceholdersAndArgumentsToTheAction\u0028\u0029",
+            "name": "testARouteHandsItsPlaceholdersAndArgumentsToTheAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARouteHandsItsPlaceholdersAndArgumentsToTheAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAPlaceholderArrivesInTheSpellingOfTheRequest\u0028\u0029",
+            "name": "testAPlaceholderArrivesInTheSpellingOfTheRequest",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAPlaceholderArrivesInTheSpellingOfTheRequest"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARouteMayBeAnsweredByAClosure\u0028\u0029",
+            "name": "testARouteMayBeAnsweredByAClosure",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARouteMayBeAnsweredByAClosure"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestNothingOfTheActionRunsAfterARestReply\u0028\u0029",
+            "name": "testNothingOfTheActionRunsAfterARestReply",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testNothingOfTheActionRunsAfterARestReply"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestNothingOfTheActionRunsAfterAView\u0028\u0029",
+            "name": "testNothingOfTheActionRunsAfterAView",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testNothingOfTheActionRunsAfterAView"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestNothingOfTheActionRunsAfterARedirect\u0028\u0029",
+            "name": "testNothingOfTheActionRunsAfterARedirect",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testNothingOfTheActionRunsAfterARedirect"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestStopEndsTheRequestAndKeepsWhatWasPrinted\u0028\u0029",
+            "name": "testStopEndsTheRequestAndKeepsWhatWasPrinted",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testStopEndsTheRequestAndKeepsWhatWasPrinted"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003Astops\u0028\u0029",
+            "name": "stops",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_stops"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnActionThatDoesNotStopRunsToItsEnd\u0028\u0029",
+            "name": "testAnActionThatDoesNotStopRunsToItsEnd",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnActionThatDoesNotStopRunsToItsEnd"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestACatchOfExceptionDoesNotKeepTheActionRunning\u0028\u0029",
+            "name": "testACatchOfExceptionDoesNotKeepTheActionRunning",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testACatchOfExceptionDoesNotKeepTheActionRunning"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAFinallyBlockOfTheActionRuns\u0028\u0029",
+            "name": "testAFinallyBlockOfTheActionRuns",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAFinallyBlockOfTheActionRuns"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnExceptionOfAnActionReachesTheCallerWhenErrorsAreShown\u0028\u0029",
+            "name": "testAnExceptionOfAnActionReachesTheCallerWhenErrorsAreShown",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnExceptionOfAnActionReachesTheCallerWhenErrorsAreShown"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnExceptionOfAnActionIsAnsweredWithThe500PageWhenErrorsAreHidden\u0028\u0029",
+            "name": "testAnExceptionOfAnActionIsAnsweredWithThe500PageWhenErrorsAreHidden",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnExceptionOfAnActionIsAnsweredWithThe500PageWhenErrorsAreHidden"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAGuestIsShownTheLoginInPlaceOfAGuardedAction\u0028\u0029",
+            "name": "testAGuestIsShownTheLoginInPlaceOfAGuardedAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAGuestIsShownTheLoginInPlaceOfAGuardedAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAUserWithoutThePermissionIsShownThe403PageInPlaceOfTheAction\u0028\u0029",
+            "name": "testAUserWithoutThePermissionIsShownThe403PageInPlaceOfTheAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAUserWithoutThePermissionIsShownThe403PageInPlaceOfTheAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAUserWithThePermissionReachesTheAction\u0028\u0029",
+            "name": "testAUserWithThePermissionReachesTheAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAUserWithThePermissionReachesTheAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestBothShapesOfThePermissionCheck\u0028\u0029",
+            "name": "testBothShapesOfThePermissionCheck",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testBothShapesOfThePermissionCheck"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnActionAnswersByThePermissionsOfItsUser\u0028\u0029",
+            "name": "testAnActionAnswersByThePermissionsOfItsUser",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnActionAnswersByThePermissionsOfItsUser"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestTheConsolePermissionKeepsAnActionFromTheWeb\u0028\u0029",
+            "name": "testTheConsolePermissionKeepsAnActionFromTheWeb",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testTheConsolePermissionKeepsAnActionFromTheWeb"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARerouteRunsTheOtherActionAndReturnsToTheCaller\u0028\u0029",
+            "name": "testARerouteRunsTheOtherActionAndReturnsToTheCaller",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARerouteRunsTheOtherActionAndReturnsToTheCaller"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAFinalRerouteDoesNotReturnToTheCaller\u0028\u0029",
+            "name": "testAFinalRerouteDoesNotReturnToTheCaller",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAFinalRerouteDoesNotReturnToTheCaller"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestARerouteToAnActionThatAnswersEndsTheCallerToo\u0028\u0029",
+            "name": "testARerouteToAnActionThatAnswersEndsTheCallerToo",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testARerouteToAnActionThatAnswersEndsTheCallerToo"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnAliasKeepsThePartsItDoesNotReplace\u0028\u0029",
+            "name": "testAnAliasKeepsThePartsItDoesNotReplace",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnAliasKeepsThePartsItDoesNotReplace"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestTheStoreOfTheRequestReachesTheReroutedAction\u0028\u0029",
+            "name": "testTheStoreOfTheRequestReachesTheReroutedAction",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testTheStoreOfTheRequestReachesTheReroutedAction"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAnActionThatReroutesToItselfIsStopped\u0028\u0029",
+            "name": "testAnActionThatReroutesToItselfIsStopped",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAnActionThatReroutesToItselfIsStopped"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestTheAfterMiddlewareRunsHoweverTheActionEnded\u0028\u0029",
+            "name": "testTheAfterMiddlewareRunsHoweverTheActionEnded",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testTheAfterMiddlewareRunsHoweverTheActionEnded"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003Aendings\u0028\u0029",
+            "name": "endings",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_endings"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestTheAfterMiddlewareDoesNotRunAfterAnActionThatFailed\u0028\u0029",
+            "name": "testTheAfterMiddlewareDoesNotRunAfterAnActionThatFailed",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testTheAfterMiddlewareDoesNotRunAfterAnActionThatFailed"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAMiddlewareThatReturnsTrueLetsTheActionRun\u0028\u0029",
+            "name": "testAMiddlewareThatReturnsTrueLetsTheActionRun",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAMiddlewareThatReturnsTrueLetsTheActionRun"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAMiddlewareThatReturnsNothingKeepsActionAndAfterMiddlewareFromRunning\u0028\u0029",
+            "name": "testAMiddlewareThatReturnsNothingKeepsActionAndAfterMiddlewareFromRunning",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAMiddlewareThatReturnsNothingKeepsActionAndAfterMiddlewareFromRunning"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAMiddlewareMayAnswerItself\u0028\u0029",
+            "name": "testAMiddlewareMayAnswerItself",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAMiddlewareMayAnswerItself"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAGroupGuardsTheActionsBelowItsPrefix\u0028\u0029",
+            "name": "testAGroupGuardsTheActionsBelowItsPrefix",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAGroupGuardsTheActionsBelowItsPrefix"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestTheAfterMiddlewareOfAGroupRunsAfterAnActionThatAnswered\u0028\u0029",
+            "name": "testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatAnswered",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testTheAfterMiddlewareOfAGroupRunsAfterAnActionThatAnswered"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestABlockingMiddlewareOfAnInnerGroupKeepsTheActionFromRunning\u0028\u0029",
+            "name": "testABlockingMiddlewareOfAnInnerGroupKeepsTheActionFromRunning",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testABlockingMiddlewareOfAnInnerGroupKeepsTheActionFromRunning"
+        },                {
+            "fqsen": "\\Tests\\Routing\\RequestLifecycleTest\u003A\u003AtestAGroupDoesNotGuardAPathThatOnlyStartsWithItsPrefix\u0028\u0029",
+            "name": "testAGroupDoesNotGuardAPathThatOnlyStartsWithItsPrefix",
+            "summary": "",
+            "url": "classes/Tests-Routing-RequestLifecycleTest.html#method_testAGroupDoesNotGuardAPathThatOnlyStartsWithItsPrefix"
+        },                {
             "fqsen": "\\Tests\\Routing\\RerouteTest",
             "name": "RerouteTest",
             "summary": "A\u0020reroute\u0020forks\u0020the\u0020input\u0020of\u0020the\u0020current\u0020request,\u0020points\u0020it\u0020to\u0020the\u0020new\npath\u0020and\u0020dispatches\u0020it.\u0020The\u0020dispatch\u0020needs\u0020routes\u0020and\u0020controllers,\u0020so\nthe\u0020framework\u0020of\u0020these\u0020tests\u0020only\u0020records\u0020the\u0020request\u0020it\u0020would\u0020dispatch.",
@@ -12801,10 +14001,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Tests-Routing-RecordingFramework.html"
         },                {
-            "fqsen": "\\Tests\\Routing\\RecordingFramework\u003A\u003Aexecute\u0028\u0029",
-            "name": "execute",
+            "fqsen": "\\Tests\\Routing\\RecordingFramework\u003A\u003Adispatch\u0028\u0029",
+            "name": "dispatch",
             "summary": "",
-            "url": "classes/Tests-Routing-RecordingFramework.html#method_execute"
+            "url": "classes/Tests-Routing-RecordingFramework.html#method_dispatch"
         },                {
             "fqsen": "\\Tests\\Routing\\RecordingFramework\u003A\u003A\u0024dispatched",
             "name": "dispatched",
@@ -14416,6 +15616,21 @@ Search.appendIndex(
             "summary": "Makes\u0020a\u0020user\u0020without\u0020database\u0020access\u0020the\u0020current\u0020one,\u0020the\u0020one\u0020user\u0028\u0029\nreturns.\u0020Its\u0020constructor\u0020would\u0020identify\u0020it\u0020through\u0020the\u0020database,\u0020so\nit\u0020is\u0020left\u0020out\u003A\u0020the\u0020user\u0020is\u0020anonymous\u0020unless\u0020the\u0020test\u0020says\u0020otherwise.",
             "url": "classes/Tests-TestCase.html#method_currentUser"
         },                {
+            "fqsen": "\\Tests\\TestCase\u003A\u003AloggedInUser\u0028\u0029",
+            "name": "loggedInUser",
+            "summary": "Makes\u0020a\u0020logged\u0020in\u0020user\u0020with\u0020exactly\u0020the\u0020given\u0020permissions\u0020the\u0020current\none.\u0020The\u0020permissions\u0020are\u0020placed\u0020where\u0020the\u0020user\u0020keeps\u0020what\u0020it\u0020has\u0020read\nfrom\u0020the\u0020database,\u0020so\u0020checking\u0020one\u0020needs\u0020no\u0020database.\u0020Wildcards\u0020work\nas\u0020they\u0020do\u0020there\u0020\u0028\u0022edit.\u002A\u0022\u0020covers\u0020\u0022edit.article\u0022\u0029.",
+            "url": "classes/Tests-TestCase.html#method_loggedInUser"
+        },                {
+            "fqsen": "\\Tests\\TestCase\u003A\u003AendedRequest\u0028\u0029",
+            "name": "endedRequest",
+            "summary": "Runs\u0020an\u0020action\u0020that\u0020has\u0020to\u0020end\u0020the\u0020request\u0020\u0028a\u0020view,\u0020a\u0020REST\u0020reply,\u0020a\nredirect,\u0020a\u0020failed\u0020check\u0029\u0020and\u0020returns\u0020what\u0020it\u0020printed.\u0020Fails\u0020when\u0020the\naction\u0020returns\u0020instead.",
+            "url": "classes/Tests-TestCase.html#method_endedRequest"
+        },                {
+            "fqsen": "\\Tests\\TestCase\u003A\u003AanswerOf\u0028\u0029",
+            "name": "answerOf",
+            "summary": "The\u0020decoded\u0020REST\u0020reply\u0020of\u0020an\u0020action\u0020that\u0020ends\u0020the\u0020request\u0020with\u0020one.",
+            "url": "classes/Tests-TestCase.html#method_answerOf"
+        },                {
             "fqsen": "\\Tests\\TestCase\u003A\u003ArequireArgon2id\u0028\u0029",
             "name": "requireArgon2id",
             "summary": "Skips\u0020the\u0020test\u0020on\u0020a\u0020PHP\u0020built\u0020without\u0020Argon2.\u0020The\u0020framework\u0020hashes\u0020with\nPASSWORD_ARGON2ID\u0020unconditionally\u0020and\u0020composer.json\u0020does\u0020not\u0020require\nthe\u0020support,\u0020so\u0020the\u0020tests\u0020that\u0020reach\u0020it\u0020have\u0020to\u0020tolerate\u0020its\u0020absence.",
@@ -14540,6 +15755,11 @@ Search.appendIndex(
             "name": "AutomatedChanges",
             "summary": "",
             "url": "namespaces/zubzet-tooling-automatedchanges.html"
+        },                {
+            "fqsen": "\\ZubZet\\Tooling\\AutomatedChanges\\V1_3_0",
+            "name": "V1_3_0",
+            "summary": "",
+            "url": "namespaces/zubzet-tooling-automatedchanges-v1-3-0.html"
         },                {
             "fqsen": "\\ZubZet\\Tooling\\Blade",
             "name": "Blade",
@@ -14696,6 +15916,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/zubzet-framework-maintenance.html"
         },                {
+            "fqsen": "\\ZubZet\\Framework\\Message",
+            "name": "Message",
+            "summary": "",
+            "url": "namespaces/zubzet-framework-message.html"
+        },                {
             "fqsen": "\\ZubZet\\Framework\\Message\\Input",
             "name": "Input",
             "summary": "",
@@ -14705,11 +15930,6 @@ Search.appendIndex(
             "name": "Output",
             "summary": "",
             "url": "namespaces/zubzet-framework-message-output.html"
-        },                {
-            "fqsen": "\\ZubZet\\Framework\\Message",
-            "name": "Message",
-            "summary": "",
-            "url": "namespaces/zubzet-framework-message.html"
         },                {
             "fqsen": "\\ZubZet\\Framework\\QueryBuilder",
             "name": "QueryBuilder",
@@ -14906,15 +16126,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/tests-logger.html"
         },                {
-            "fqsen": "\\Tests\\Message\\Input",
-            "name": "Input",
-            "summary": "",
-            "url": "namespaces/tests-message-input.html"
-        },                {
             "fqsen": "\\Tests\\Message",
             "name": "Message",
             "summary": "",
             "url": "namespaces/tests-message.html"
+        },                {
+            "fqsen": "\\Tests\\Message\\Input",
+            "name": "Input",
+            "summary": "",
+            "url": "namespaces/tests-message-input.html"
         },                {
             "fqsen": "\\Tests\\QueryBuilder",
             "name": "QueryBuilder",

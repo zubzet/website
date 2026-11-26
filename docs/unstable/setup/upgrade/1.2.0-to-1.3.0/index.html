@@ -3196,10 +3196,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#9-set-encryption_key-if-you-use-secrets" class="md-nav__link">
+  <a href="#9-set-encryption_key-if-you-use-secrets-or-two-factor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Set encryption_key if you use secrets
+        9. Set encryption_key if you use secrets or two factor
       
     </span>
   </a>
@@ -3229,6 +3229,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#12-ask-for-the-two-factor-code-in-a-custom-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Ask for the two factor code in a custom login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#13-check-code-that-reads-session-tokens" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3244,6 +3255,17 @@
     <span class="md-ellipsis">
       
         14. Check code that relied on corrected behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-check-code-that-runs-after-the-end-of-a-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Check code that runs after the end of a request
       
     </span>
   </a>
@@ -3328,7 +3350,7 @@ released after the upgrade, so organizations can only hand out roles once you ti
 <p>Accounts can protect their logins with a time based one time password from an authenticator app.
 Users set it up on their profile page. A login of an account with two factor then asks for the code
 in a modal before the session starts, and <code>$req-&gt;requireFreshTwoFactor()</code> guards a single action
-behind a check within <code>two_factor_freshness_seconds</code> (defaults to 900).</p>
+behind a check within <code>two_factor_freshness_seconds</code> (defaults to 90).</p>
 <p>The modal ships with <code>&lt;x-zubzet::body/&gt;</code>. A layout that leaves out the body essentials cannot finish
 a two factor login until it renders <code>&lt;x-zubzet::authentication.two-factor/&gt;</code> itself.</p>
 <p>See <a href="../../../core-features/two-factor-authentication/">Two Factor Authentication</a>.</p>
@@ -3351,15 +3373,17 @@ e2e suite run <strong>MariaDB 11.8</strong>.</p>
 <h3 id="the-intl-php-extension">The <code>intl</code> PHP extension<a class="headerlink" href="#the-intl-php-extension" title="Permanent link">&para;</a></h3>
 <p>The framework now requires the PHP extension <code>intl</code> in its <code>composer.json</code>, because
 <a href="../../../core-features/translations/">translations</a> pick the locale of a visitor with it.
-<code>composer install</code> stops on a PHP without the extension. The <code>ghcr.io/zubzet/php</code> images include it.</p>
+<code>composer install</code> stops on a PHP without the extension, and <code>--ignore-platform-reqs</code>, which the migrator
+uses for <code>composer require</code>, hides that check. The <code>ghcr.io/zubzet/php</code> images include it.</p>
 <p>Check what your PHP has:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>-m<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>intl
 </code></pre></div>
 <h2 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">&para;</a></h2>
 <h3 id="views-are-now-blade-templates">Views are now Blade templates<a class="headerlink" href="#views-are-now-blade-templates" title="Permanent link">&para;</a></h3>
 <p>The old view format, a PHP file returning <code>head</code> and <code>body</code> closures, has been replaced by Blade
-<code>.blade.php</code> templates. The change is mechanical and the <a href="#2-automated-migration-recommended">migrator</a>
-applies it for you:</p>
+<code>.blade.php</code> templates; an old <code>.php</code> view left without its <code>.blade.php</code> is replaced by the
+framework view of the same name and logged as a warning. The change is mechanical and the
+<a href="#2-automated-migration-recommended">migrator</a> applies it for you:</p>
 <ul>
 <li>A view's <code>body</code> closure becomes <code>@section("content")</code>.</li>
 <li>A view's <code>head</code> closure becomes <code>@section("head")</code>.</li>
@@ -3391,7 +3415,8 @@ redirects and callbacks keep working. See <a href="#7-allow-the-sites-that-send-
 <p>Follow these steps to upgrade your project to <strong>v1.3.0</strong>.</p>
 <hr />
 <h3 id="1-upgrade-the-database-server-first">1. Upgrade the database server first<a class="headerlink" href="#1-upgrade-the-database-server-first" title="Permanent link">&para;</a></h3>
-<p>Bring the server to 11.7 or newer <strong>before</strong> applying the migrations of this release. With the
+<p>Bring the server to 11.7 or newer <strong>before</strong> applying the migrations of this release, after a clean
+shutdown of the old server (MariaDB refuses a major upgrade after a crash). With the
 Docker stack, bump the <code>mariadb</code> image in <code>packaging/docker/docker-compose-base.yml</code> and recreate
 the container:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:11.8</span>
@@ -3406,9 +3431,10 @@ the container:</p>
 <div class="highlight"><pre><span></span><code>php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.3.0<span class="w"> </span>--dry
 php<span class="w"> </span>application.php<span class="w"> </span>upgrade<span class="w"> </span><span class="o">{</span>PATH_TO_YOUR_PROJECT<span class="o">}</span><span class="w"> </span><span class="m">1</span>.2.0<span class="w"> </span><span class="m">1</span>.3.0
 </code></pre></div>
+<p>The migrator knows 1.2.0 as the starting version only: from 1.2.1 or 1.2.2, pass <code>1.2.0</code>.</p>
 <p>The migrator bumps the framework dependency, adds the new <code>z_settings.ini</code> keys and rewrites every <code>return [...]</code> view and layout to Blade
 (<code>.blade.php</code>), including the section, <code>@extends</code> and essentials-component changes above. It also
-removes app-local copies of <code>Z.js</code>, since the framework serves the current one itself, and adds a
+removes app-local copies of <code>Z.js</code> without asking, since the framework serves the current one itself, and adds a
 <code>.htaccess</code> to <code>webroot/uploads/</code> (see <a href="#11-protect-other-upload-folders-in-the-webroot">step 11</a>).
 Review each prompted change before accepting it.</p>
 <hr />
@@ -3447,7 +3473,7 @@ than guessed at. Once you are comfortable with Blade, you can gradually adopt di
 </tr>
 <tr>
 <td><code>2026-09-08_uuid.sql</code></td>
-<td>Adds the <code>NOT NULL</code>, indexed <code>uuid</code> column (native <code>UUID</code> type) to <code>z_user</code>, <code>z_role</code>, <code>z_organization</code>, <code>z_logintoken</code> and <code>z_file</code>.</td>
+<td>Adds the <code>NOT NULL</code>, indexed <code>uuid</code> column (native <code>UUID</code> type) to <code>z_user</code>, <code>z_role</code>, <code>z_organization</code>, <code>z_logintoken</code> and <code>z_file</code>. A write between its backfill and the <code>NOT NULL</code> step fails it with <code>ERROR 1265</code>: run <code>db:migrate</code> again.</td>
 </tr>
 <tr>
 <td><code>2026-09-09_session-expires-at.sql</code></td>
@@ -3631,12 +3657,11 @@ needed, but the framework no longer calls them. To keep the warning, send it whe
 <p><code>$req-&gt;ip()</code> returns the first value that is set out of <code>HTTP_CLIENT_IP</code>, <code>HTTP_X_FORWARDED_FOR</code> and
 <code>REMOTE_ADDR</code>, so <code>REMOTE_ADDR</code>, the only address the client cannot choose, is used only when
 neither header is present. The framework does not strip these headers and does not know a list of
-trusted proxies, so any client can send them and the address is spoofable. <code>X-Forwarded-For</code> may
-also hold a comma separated chain. The same value ends up in <code>ip_creation</code> of sessions and two
-factor challenges and in <code>ip_last</code> of sessions. The view prints it unescaped. Validate it with
-<code>filter_var($ip, FILTER_VALIDATE_IP)</code> before it goes into the mail, otherwise an attacker can put
-HTML into a security mail to the account owner, and do not use it as proof of where a login came
-from unless your proxy overwrites both headers.
+trusted proxies, so any client can send them and the address is spoofable. Of a comma separated
+<code>X-Forwarded-For</code> chain only the first entry is returned, and a value that is no IP address falls
+back to <code>REMOTE_ADDR</code>, so the result is always an IP address or an empty string. The same value
+ends up in <code>ip_creation</code> of sessions and two factor challenges and in <code>ip_last</code> of sessions. Do
+not use it as proof of where a login came from unless your proxy overwrites both headers.
 <code>checkLoginTries()</code> returns <code>false</code> on every blocked attempt, so the example sends one mail per
 attempt. Throttle it, the removed code sent at most one mail per 10 minutes.</p>
 <hr />
@@ -3691,8 +3716,8 @@ setups and the limits.</p>
 <li>A request from a cross-site iframe has no session cookie either.</li>
 </ul>
 <hr />
-<h3 id="9-set-encryption_key-if-you-use-secrets">9. Set <code>encryption_key</code> if you use secrets<a class="headerlink" href="#9-set-encryption_key-if-you-use-secrets" title="Permanent link">&para;</a></h3>
-<p><code>encryptSecret()</code> and <code>decryptSecret()</code> need the <code>encryption_key</code> setting, at least 32 bytes. Set it
+<h3 id="9-set-encryption_key-if-you-use-secrets-or-two-factor">9. Set <code>encryption_key</code> if you use secrets or two factor<a class="headerlink" href="#9-set-encryption_key-if-you-use-secrets-or-two-factor" title="Permanent link">&para;</a></h3>
+<p><code>encryptSecret()</code> and <code>decryptSecret()</code>, and with them the secret of two factor authentication, need the <code>encryption_key</code> setting, at least 32 bytes. Set it
 via <code>CONFIG_ENCRYPTION_KEY</code> and keep an empty <code>encryption_key =</code> line in <code>z_settings.ini</code>, because
 environment variables only override settings that exist there. Values encrypted with a key cannot be
 recovered once it is changed or lost.</p>
@@ -3716,6 +3741,19 @@ webroot, put the same <code>.htaccess</code> there:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Files</span><span class="w"> </span><span class="s">"*"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nb">SetHandler</span><span class="w"> </span><span class="k">None</span>
 <span class="nt">&lt;/Files&gt;</span>
+</code></pre></div>
+<hr />
+<h3 id="12-ask-for-the-two-factor-code-in-a-custom-login">12. Ask for the two factor code in a custom login<a class="headerlink" href="#12-ask-for-the-two-factor-code-in-a-custom-login" title="Permanent link">&para;</a></h3>
+<p>A login of your own, an overridden <code>LoginController</code> or any code that calls <code>$res-&gt;loginAs()</code> after a
+password check, starts the session on the password alone, also for an account with two factor;
+<code>loginAs()</code> does not check it. Answer such an account with a challenge instead, <code>Z.Presets.Login</code>
+then asks for the code and redeems it at <code>_zubzet/two-factor/login</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="x">if($user-&gt;hasTwoFactor()) {</span>
+<span class="x">    return $res-&gt;success([</span>
+<span class="x">        "twoFactor" =&gt; true,</span>
+<span class="x">        "challenge" =&gt; model("z_login")-&gt;createTwoFactorChallenge($user-&gt;id()),</span>
+<span class="x">    ]);</span>
+<span class="x">}</span>
 </code></pre></div>
 <hr />
 <h3 id="13-check-code-that-reads-session-tokens">13. Check code that reads session tokens<a class="headerlink" href="#13-check-code-that-reads-session-tokens" title="Permanent link">&para;</a></h3>
@@ -3792,7 +3830,7 @@ depended on the old result has to be adapted. Most projects are not affected by 
 <tr>
 <td><code>$req-&gt;getUrlParts()</code></td>
 <td>The path <code>/0</code> had no parts, and the root directory was cut off any path</td>
-<td><code>/0</code> gives <code>["0"]</code>, and the root directory is only cut off a path that starts with it</td>
+<td><code>/0</code> gives <code>["0"]</code>, and the root directory is only cut off a path that starts with it, compared case-sensitively: with the root <code>sub</code>, <code>/SUB/users</code> is no longer <code>users</code></td>
 </tr>
 <tr>
 <td><code>$req-&gt;store</code></td>
@@ -3803,6 +3841,46 @@ depended on the old result has to be adapted. Most projects are not affected by 
 <td><code>$req-&gt;getBody()</code></td>
 <td><code>null</code> for a body of <code>0</code></td>
 <td><code>"0"</code></td>
+</tr>
+<tr>
+<td><code>User::add()</code>, <code>$user-&gt;updateEmail()</code></td>
+<td>Any text was stored as the email</td>
+<td>Throws an <code>InvalidArgumentException</code> unless PHP's <code>FILTER_VALIDATE_EMAIL</code> accepts the address: <code>a@localhost</code> and a non-ASCII address are refused</td>
+</tr>
+<tr>
+<td>View names with a dot</td>
+<td><code>email.welcome</code> addressed the file <code>email.welcome.php</code></td>
+<td>A dot is a folder separator, <code>email.welcome</code> is <code>email/welcome.blade.php</code>: rename the file or use the folder</td>
+</tr>
+<tr>
+<td><code>symfony/filesystem</code>, <code>league/mime-type-detection</code></td>
+<td>Required by the framework</td>
+<td>No longer required: require them in your own <code>composer.json</code> if your code uses them. An asset with an uncommon extension, which has to keep its content type, is served by the web server from <code>webroot/</code></td>
+</tr>
+<tr>
+<td><code>phpunit/php-code-coverage</code></td>
+<td>Required by the framework</td>
+<td>A dev requirement: for the <code>testing:coverage:*</code> commands run <code>composer require --dev "phpunit/php-code-coverage:9.*"</code></td>
+</tr>
+<tr>
+<td><code>db:migrate</code>, <code>db:sync</code></td>
+<td>One of two migration files with the same basename was silently skipped</td>
+<td>Both abort and list the files: rename or delete one of them</td>
+</tr>
+<tr>
+<td>Asset proxy</td>
+<td>Served <code>.php</code>, <code>.phtml</code> and <code>.ini</code> files</td>
+<td>Does not serve them, on every mount</td>
+</tr>
+<tr>
+<td>Controller and model names</td>
+<td>Files in subfolders of <code>app/Controllers</code> and <code>app/Models</code> could not be reached by their bare name</td>
+<td>Found recursively after a flat miss, the shallowest first: delete stale copies you do not want served</td>
+</tr>
+<tr>
+<td><code>e($text)</code></td>
+<td>An entity such as <code>&amp;amp;</code> was escaped again to <code>&amp;amp;amp;</code>, text that is not valid UTF-8 got its bad bytes replaced on PHP 8.1 and later</td>
+<td>An entity stays as it is, text that is not valid UTF-8 gives an empty string</td>
 </tr>
 </tbody>
 </table>
@@ -3832,6 +3910,26 @@ calls <code>JSON.parse(data)</code> on the answer keeps working. Three things ca
   <code>cy.request()</code>.</li>
 </ul>
 <p>An action that sets its own <code>Content-Type</code> before the helper keeps it.</p>
+<hr />
+<h3 id="15-check-code-that-runs-after-the-end-of-a-request">15. Check code that runs after the end of a request<a class="headerlink" href="#15-check-code-that-runs-after-the-end-of-a-request" title="Permanent link">&para;</a></h3>
+<p>The framework no longer calls <code>exit</code> when a response is finished. The calls that end a request throw
+the internal <code>EndOfRequest</code> instead, and <code>$res-&gt;render()</code> and <code>view()</code> now end the request as well.
+See <a href="../../../core-features/controllers-and-actions/#ending-a-request">Ending a request</a> for the list
+of calls. Most projects need no change. What can need one:</p>
+<ul>
+<li><strong>A <code>catch(\Throwable)</code> or <code>catch(\Error)</code> around such a call</strong> also catches the end of the
+  request, and the action keeps running. The migrator offers to narrow these catches to <code>\Exception</code>:
+  every one in a controller, and elsewhere those whose <code>try</code> block makes one of the calls itself.
+  Narrowed, the catch no longer handles PHP errors such as a <code>TypeError</code>. To keep that, decline the
+  change and add <code>catch(\ZubZet\Framework\Message\EndOfRequest $end) { throw $end; }</code> in front.</li>
+<li><strong>Code after <code>render()</code></strong> no longer runs: a second view, a log entry, an <code>ob_get_clean()</code> that
+  captured the view, or a loop that rendered once per item. The migrator lists these calls.
+  An action may still hold several <code>render()</code> calls as long as only one of them runs.</li>
+<li><strong>AfterMiddlewares</strong> now also run after an action that ended the request, which includes every
+  REST reply, redirect and failed permission check. A middleware that blocks still skips them.</li>
+<li><strong><code>finally</code> blocks</strong> around such a call run, and so does code after <code>$z_framework-&gt;execute()</code> in
+  <code>index.php</code>.</li>
+</ul>
 
 
 

@@ -249,6 +249,13 @@ settings, the request or the cached values of another one.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_answerOf">answerOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>The decoded REST reply of an action that ends the request with one.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_assertThrows">assertThrows()</a>
     <span>
                         &nbsp;: <abbr title="\Throwable">Throwable</abbr>    </span>
@@ -285,6 +292,15 @@ returns. Its constructor would identify it through the database, so
 it is left out: the user is anonymous unless the test says otherwise.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_endedRequest">endedRequest()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Runs an action that has to end the request (a view, a REST reply, a
+redirect, a failed check) and returns what it printed. Fails when the
+action returns instead.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_inDirectory">inDirectory()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -299,6 +315,16 @@ afterwards, also when the action throws.</dd>
                         &nbsp;: <a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>    </span>
 </dt>
 <dd>An input without any data. The with...() methods of the state fill it:</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_loggedInUser">loggedInUser()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a>    </span>
+</dt>
+<dd>Makes a logged in user with exactly the given permissions the current
+one. The permissions are placed where the user keeps what it has read
+from the database, so checking one needs no database. Wildcards work
+as they do there (&quot;edit.*&quot; covers &quot;edit.article&quot;).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_removeSetting">removeSetting()</a>
@@ -401,7 +427,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -562,6 +588,50 @@ keeps for the whole process and offers no way to reset.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_answerOf">
+        answerOf()
+        <a href="classes/Tests-TestCase.html#method_answerOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">200</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The decoded REST reply of an action that ends the request with one.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">answerOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$action</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_assertThrows">
         assertThrows()
         <a href="classes/Tests-TestCase.html#method_assertThrows" class="headerlink"><i class="fas fa-link"></i></a>
@@ -569,7 +639,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 
     </aside>
 
@@ -630,7 +700,7 @@ a message that only contains the expected one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -678,7 +748,7 @@ response, database or user until the test sets one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -740,7 +810,7 @@ way in; a test goes through the public method wherever there is one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -779,6 +849,52 @@ it is left out: the user is anonymous unless the test says otherwise.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_endedRequest">
+        endedRequest()
+        <a href="classes/Tests-TestCase.html#method_endedRequest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">184</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Runs an action that has to end the request (a view, a REST reply, a
+redirect, a failed check) and returns what it printed. Fails when the
+action returns instead.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">endedRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$action</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_inDirectory">
         inDirectory()
         <a href="classes/Tests-TestCase.html#method_inDirectory" class="headerlink"><i class="fas fa-link"></i></a>
@@ -786,7 +902,7 @@ it is left out: the user is anonymous unless the test says otherwise.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -840,7 +956,7 @@ afterwards, also when the action throws.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
@@ -882,6 +998,60 @@ REQUEST everywhere.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_loggedInUser">
+        loggedInUser()
+        <a href="classes/Tests-TestCase.html#method_loggedInUser" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">166</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Makes a logged in user with exactly the given permissions the current
+one. The permissions are placed where the user keeps what it has read
+from the database, so checking one needs no database. Wildcards work
+as they do there (&quot;edit.*&quot; covers &quot;edit.article&quot;).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">loggedInUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$permissions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$userId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_removeSetting">
         removeSetting()
         <a href="classes/Tests-TestCase.html#method_removeSetting" class="headerlink"><i class="fas fa-link"></i></a>
@@ -889,7 +1059,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -933,7 +1103,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -979,7 +1149,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -1014,7 +1184,7 @@ the support, so the tests that reach it have to tolerate its absence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -1049,7 +1219,7 @@ the support, so the tests that reach it have to tolerate its absence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -1109,7 +1279,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -1152,7 +1322,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -1185,7 +1355,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 
     </aside>
 
@@ -1218,7 +1388,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">289</span>
 
     </aside>
 
@@ -1251,7 +1421,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">284</span>
 
     </aside>
 

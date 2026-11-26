@@ -183,6 +183,17 @@
 
 <dl class="phpdocumentor-table-of-contents">
     
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-EndOfRequestRoutingTest.html"><abbr title="\Tests\Routing\EndOfRequestRoutingTest">EndOfRequestRoutingTest</abbr></a></dt>
+        <dd>Where the end of a request passes through the routing: middlewares and
+after middlewares, reroutes and the one place that catches it. The
+framework of these tests runs closures in place of controller actions
+and records the order they ran in.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-ScriptedFramework.html"><abbr title="\Tests\Routing\ScriptedFramework">ScriptedFramework</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RequestLifecycleTest.html"><abbr title="\Tests\Routing\RequestLifecycleTest">RequestLifecycleTest</abbr></a></dt>
+        <dd>Whole requests through the real router: how an action is found, what a
+guard does to it, where it ends and what runs around it. The application
+lives in fixtures/application.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RerouteTest.html"><abbr title="\Tests\Routing\RerouteTest">RerouteTest</abbr></a></dt>
         <dd>A reroute forks the input of the current request, points it to the new
 path and dispatches it. The dispatch needs routes and controllers, so

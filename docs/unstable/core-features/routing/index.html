@@ -3235,7 +3235,7 @@ Instead of repeating the prefix in every route, you can define a <strong>group</
 <ul>
 <li><strong>Middleware</strong> → Executed <strong>before</strong> the route runs.<br />
   Example use cases: <code>authentication</code>, <code>user validation</code>, <code>request logging</code>.</li>
-<li><strong>AfterMiddleware</strong> → Executed <strong>after</strong> the route has been processed; its return value is ignored, and it does not run if the action ends the script (<code>exit</code>, for example <code>generateRest()</code> or <code>rerouteUrl()</code>).<br />
+<li><strong>AfterMiddleware</strong> → Executed <strong>after</strong> the route has been processed; its return value is ignored. It also runs when the action ended the request itself, for example with <code>render()</code>, <code>generateRest()</code>, <code>rerouteUrl()</code> or a failed <code>checkPermission()</code>; only a blocking middleware or a real <code>exit</code> keeps it from running.<br />
   Example use cases: <code>response formatting</code>, <code>cleanup</code>, <code>analytics logging</code>.</li>
 </ul>
 <h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>

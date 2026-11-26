@@ -256,6 +256,14 @@
 </dt>
 <dd>Returns the project&#039;s own views directory (config z_views, relative path with trailing slash), not the framework&#039;s IncludedComponents views</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_stop">stop()</a>
+    <span>
+                        &nbsp;: <abbr title="\ZubZet\Framework\Message\never">never</abbr>    </span>
+</dt>
+<dd>Ends the request here: nothing of the action runs after this call. What was printed and
+every header that was set stay as they are, and the afterMiddlewares of the route still run.</dd>
+
         </dl>
 
 
@@ -508,7 +516,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -541,7 +549,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -557,6 +565,42 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_stop">
+        stop()
+        <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_stop" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Ends the request here: nothing of the action runs after this call. What was printed and
+every header that was set stay as they are, and the afterMiddlewares of the route still run.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">stop</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\ZubZet\Framework\Message\never">never</abbr></span></code>
+
+        <section class="phpdocumentor-description"><p>Takes the place of <code class="prettyprint">exit</code> and <code class="prettyprint">die</code>, see EndOfRequest for how the request ends.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\ZubZet\Framework\Message\never">never</abbr></span>
             &mdash;
         
     

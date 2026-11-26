@@ -191,6 +191,12 @@ wrong key or a modified payload, so only AEAD algorithms qualify.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Tooling-AutomatedChanges-V1-1-0-MigrationNamingConventionChange.html"><abbr title="\ZubZet\Tooling\AutomatedChanges\V1_1_0\MigrationNamingConventionChange">MigrationNamingConventionChange</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-CodeAfterRender.html"><abbr title="\ZubZet\Tooling\AutomatedChanges\V1_3_0\CodeAfterRender">CodeAfterRender</abbr></a></dt>
+        <dd>Finds the render() calls that are not the last thing their function does.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Tooling-AutomatedChanges-V1-3-0-EndOfRequestCatch.html"><abbr title="\ZubZet\Tooling\AutomatedChanges\V1_3_0\EndOfRequestCatch">EndOfRequestCatch</abbr></a></dt>
+        <dd>Finds the catches of \Throwable or \Error that also catch the end of a
+request. Since 1.3.0 a call that ends the request throws EndOfRequest (an
+\Error) instead of calling exit, so such a catch keeps the action running.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Tooling-Blade-LegacyViewConverter.html"><abbr title="\ZubZet\Tooling\Blade\LegacyViewConverter">LegacyViewConverter</abbr></a></dt>
         <dd>Converts a legacy ZubZet view/layout (the &quot;return type&quot; syntax) into a
 Katana .blade.php document, as part of the 1.3.0 upgrade.</dd>
@@ -378,6 +384,10 @@ the same shape it expects, without forcing the v3 dependency bump.</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Logger-Method-StreamLogger.html"><abbr title="\ZubZet\Framework\Logger\Method\StreamLogger">StreamLogger</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-EndOfRequest.html"><abbr title="\ZubZet\Framework\Message\EndOfRequest">EndOfRequest</abbr></a></dt>
+        <dd>Thrown where the framework used to call exit: the response is complete
+and nothing of the action may run anymore. Router::execute() catches it
+at the outermost dispatch, so the request ends by returning.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Message-Output-State.html"><abbr title="\ZubZet\Framework\Message\Output\State">State</abbr></a></dt>
@@ -411,6 +421,9 @@ userspace -&gt; modules -&gt; framework resolution without new plumbing.</dd>
         <dd>Lazy recursive filename index of one root directory. This is the slow
 path behind Registry::find(): it is only built after every direct probe
 missed, and is memoized per (root, extensions) for the request.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Katana-ComponentRenderer.html"><abbr title="\ZubZet\Framework\Rendering\Katana\ComponentRenderer">ComponentRenderer</abbr></a></dt>
+        <dd>Gives every component the framework&#039;s standard $opt (root, host, etc.), so it never has to be
+passed manually. What the caller passed to render() is not part of it.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Katana-Engine.html"><abbr title="\ZubZet\Framework\Rendering\Katana\Engine">Engine</abbr></a></dt>
         <dd>Thin adapter around the Katana Blade engine.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ZubZet-Framework-Rendering-Katana-Hooks.html"><abbr title="\ZubZet\Framework\Rendering\Katana\Hooks">Hooks</abbr></a></dt>
@@ -524,6 +537,8 @@ two never shadow each other (katanaphp/blade#66).</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DatabaseRetryProbeController.html"><abbr title="\DatabaseRetryProbeController">DatabaseRetryProbeController</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/EndprobeController.html"><abbr title="\EndprobeController">EndprobeController</abbr></a></dt>
+        <dd>Test fixtures for tests/cypress/e2e/core/end-of-request.cy.js.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ExceptionController.html"><abbr title="\ExceptionController">ExceptionController</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/FileController.html"><abbr title="\FileController">FileController</abbr></a></dt>
@@ -639,9 +654,17 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-AliasesTest.html"><abbr title="\Tests\AliasesTest">AliasesTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-ApplicationTestCase.html"><abbr title="\Tests\ApplicationTestCase">ApplicationTestCase</abbr></a></dt>
+        <dd>The base of a test that sends a whole request through the framework
+without a web server: the routes, controllers and views of a small
+application on disk are dispatched by the real router.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-InProcessFramework.html"><abbr title="\Tests\InProcessFramework">InProcessFramework</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-AuthenticationEntityTest.html"><abbr title="\Tests\Authentication\AuthenticationEntityTest">AuthenticationEntityTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-CanUseSessionTest.html"><abbr title="\Tests\Authentication\CanUseSessionTest">CanUseSessionTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-LoginTokenTest.html"><abbr title="\Tests\Authentication\LoginTokenTest">LoginTokenTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Authentication-PasswordHash-PasswordTest.html"><abbr title="\Tests\Authentication\PasswordHash\PasswordTest">PasswordTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
@@ -691,6 +714,8 @@ migration&#039;s apply path runs both `getSQLDeclaration()` and `getName()`.</dd
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Logger-LoggerTest.html"><abbr title="\Tests\Logger\LoggerTest">LoggerTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-EndOfRequestTest.html"><abbr title="\Tests\Message\EndOfRequestTest">EndOfRequestTest</abbr></a></dt>
+        <dd>A call that ends the request throws EndOfRequest instead of calling exit.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-CanRetrieveFromInputTest.html"><abbr title="\Tests\Message\Input\CanRetrieveFromInputTest">CanRetrieveFromInputTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-StateHttpTest.html"><abbr title="\Tests\Message\Input\StateHttpTest">StateHttpTest</abbr></a></dt>
@@ -700,6 +725,14 @@ request next to the state, so the two can be compared for whatever a
 client sends.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-Input-StateTest.html"><abbr title="\Tests\Message\Input\StateTest">StateTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-RequestGuardTest.html"><abbr title="\Tests\Message\RequestGuardTest">RequestGuardTest</abbr></a></dt>
+        <dd>The guards of a request: checkPermission(), requireOrganization(),
+requireFreshTwoFactor() and csrfBlockAdditionalMethod(). A failed guard
+shows a page and ends the request, which a test could not survive while
+that was an exit. The framework of these tests records the page a guard
+shows instead of running its controller.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-PageRecordingFramework.html"><abbr title="\Tests\Message\PageRecordingFramework">PageRecordingFramework</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-RequestTest.html"><abbr title="\Tests\Message\RequestTest">RequestTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-ResponseOutputTest.html"><abbr title="\Tests\Message\ResponseOutputTest">ResponseOutputTest</abbr></a></dt>
@@ -712,6 +745,8 @@ visible on the command line, the e2e suite asserts them.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-QueryBuilder-ZubZetValueBinderTest.html"><abbr title="\Tests\QueryBuilder\ZubZetValueBinderTest">ZubZetValueBinderTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-CanRenderViewTest.html"><abbr title="\Tests\Rendering\CanRenderViewTest">CanRenderViewTest</abbr></a></dt>
+        <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-Katana-ComponentRendererTest.html"><abbr title="\Tests\Rendering\Katana\ComponentRendererTest">ComponentRendererTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Rendering-Katana-HooksTest.html"><abbr title="\Tests\Rendering\Katana\HooksTest">HooksTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
@@ -726,6 +761,25 @@ printed anything. In a process of its own nothing was printed before the test.</
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Resources-MountTest.html"><abbr title="\Tests\Resources\MountTest">MountTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-EndOfRequestRoutingTest.html"><abbr title="\Tests\Routing\EndOfRequestRoutingTest">EndOfRequestRoutingTest</abbr></a></dt>
+        <dd>Where the end of a request passes through the routing: middlewares and
+after middlewares, reroutes and the one place that catches it. The
+framework of these tests runs closures in place of controller actions
+and records the order they ran in.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-ScriptedFramework.html"><abbr title="\Tests\Routing\ScriptedFramework">ScriptedFramework</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/GuardedController.html"><abbr title="\GuardedController">GuardedController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/LoginController.html"><abbr title="\LoginController">LoginController</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ProbeController.html"><abbr title="\ProbeController">ProbeController</abbr></a></dt>
+        <dd>The controller of the application that tests/unit/php/Routing/RequestLifecycleTest.php
+sends its requests to. Every action prints a marker where the code must
+or must not continue.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RequestLifecycleTest.html"><abbr title="\Tests\Routing\RequestLifecycleTest">RequestLifecycleTest</abbr></a></dt>
+        <dd>Whole requests through the real router: how an action is found, what a
+guard does to it, where it ends and what runs around it. The application
+lives in fixtures/application.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Routing-RerouteTest.html"><abbr title="\Tests\Routing\RerouteTest">RerouteTest</abbr></a></dt>
         <dd>A reroute forks the input of the current request, points it to the new
 path and dispatches it. The dispatch needs routes and controllers, so

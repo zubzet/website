@@ -3585,7 +3585,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </ul>
 <hr />
 <h3 id="two-factor">Two Factor<a class="headerlink" href="#two-factor" title="Permanent link">&para;</a></h3>
-<p>The account side of <a href="../two-factor-authentication/">two factor authentication</a>. The secret lives in <code>z_user.two_factor_secret</code>, and only a confirmed enrollment (<code>two_factor_confirmed_at</code>) turns two factor on.</p>
+<p>The account side of <a href="../two-factor-authentication/">two factor authentication</a>. The secret lives in <code>z_user.two_factor_secret</code>, encrypted with <a href="../secrets/"><code>encryptSecret()</code></a>, so enrolling needs the <code>encryption_key</code> setting, and only a confirmed enrollment (<code>two_factor_confirmed_at</code>) turns two factor on.</p>
 <ul>
 <li>
 <p>Starts an enrollment: stores a fresh secret that does not count yet and returns it as a <code>ZubZet\Framework\Authentication\Totp</code>. <code>getSecret()</code> and <code>getProvisioningUri()</code> are the two shapes an authenticator takes it in. The label is the user's email and the issuer the <code>pageName</code>. Starting again replaces the secret and turns an active two factor off until the new one is confirmed, which is why the profile page refuses to start while two factor is on.</p>
@@ -3616,7 +3616,7 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </ul>
 <hr />
 <h3 id="login-tries">Login Tries<a class="headerlink" href="#login-tries" title="Permanent link">&para;</a></h3>
-<p>Failed logins are counted per account to rate-limit password guessing.</p>
+<p>Failed logins and wrong current passwords on a password change are counted per account to rate-limit password guessing.</p>
 <ul>
 <li>
 <p>Returns <code>false</code> when the user has more failed tries than <code>maxLoginTriesPerTimespan</code> within the last <code>maxLoginTriesTimespan</code>. The event is logged as <code>ACCOUNT_LOGIN_RATE_LIMITED</code>. <code>maxLoginTriesTimespan</code> is a relative time string such as <code>3 minutes</code>. When it is unset, the window start becomes <code>1970-01-01</code>, so every recorded try of the account counts, however old. When <code>maxLoginTriesPerTimespan</code> is unset, it is <code>null</code> and the comparison only passes for zero tries, so the account is blocked as soon as a single try is recorded in the window.</p>
@@ -3748,6 +3748,12 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 <li>
 <p>Returns the user's active groups, cached on the instance.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$user-&gt;getGroups(): array</span>
+</code></pre></div>
+</li>
+<li>
+<p>Returns whether the user holds the given role or group, including those inherited from the organization, read from the cached <code>getRoles()</code> and <code>getGroups()</code>, so a group passed to <code>hasRole()</code> is never found.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$user-&gt;hasRole(Role $role): bool</span>
+<span class="x">$user-&gt;hasGroup(Group $group): bool</span>
 </code></pre></div>
 </li>
 <li>
@@ -4024,8 +4030,8 @@ scoped to the class it is called on - <code>Session::byUuid()</code> does not fi
 </code></pre></div>
 </li>
 <li>
-<p>Returns the organization's name.</p>
-<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;name(): string</span>
+<p>Returns the organization's name, <code>null</code> for an organization that was created without one.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$organization-&gt;name(): ?string</span>
 </code></pre></div>
 </li>
 <li>
@@ -4230,9 +4236,9 @@ like <code>Basic</code>, an empty <code>Bearer</code>, a value with more than on
 request then uses the cookie, if there is one. <code>$req-&gt;bearerToken()</code> returns the token of the
 header, or <code>null</code>.</p>
 <p>A valid session does not log a deactivated user in. Whichever way the token arrived, a session or an
-api key, the request is anonymous (<code>$user-&gt;isLoggedIn</code> is <code>false</code>) as soon as the user's <code>active</code> is
-<code>0</code>, for example after <a href="#removing-a-user"><code>$user-&gt;remove()</code></a>. The check runs on every request, so it
-takes effect immediately without ending the session.</p>
+api key, the request is anonymous (<code>$user-&gt;isLoggedIn</code> is <code>false</code>) as soon as the user's <code>active</code>, or
+that of the admin impersonating them, is <code>0</code>, for example after <a href="#removing-a-user"><code>$user-&gt;remove()</code></a>.
+The check runs on every request, so it takes effect immediately without ending the session.</p>
 <hr />
 <h3 id="lifetime-management">Lifetime Management<a class="headerlink" href="#lifetime-management" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4303,12 +4309,12 @@ not the cookie. Clients that send the token themselves are unaffected.</p>
 <p>A session remembers when it last passed a <a href="../two-factor-authentication/">two factor</a> check, in <code>z_logintoken.last_two_factor</code>, and how many wrong codes it may still send, in <code>remaining_two_factor_tries</code>.</p>
 <ul>
 <li>
-<p>Returns whether the session has to pass two factor again. <code>false</code> for an account without two factor, <code>true</code> while the session never passed a check or once the last one is older than <code>$freshnessSeconds</code> (defaults to <code>two_factor_freshness_seconds</code>, 900). A session whose user is gone always has to. This is what <a href="../two-factor-authentication/#guarding-an-action"><code>$req-&gt;requireFreshTwoFactor()</code></a> asks.</p>
+<p>Returns whether the session has to pass two factor again. <code>false</code> for an account without two factor, <code>true</code> while the session never passed a check or once the last one is older than <code>$freshnessSeconds</code> (defaults to <code>two_factor_freshness_seconds</code>, 90). A session whose user is gone always has to. This is what <a href="../two-factor-authentication/#guarding-an-action"><code>$req-&gt;requireFreshTwoFactor()</code></a> asks.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;requireRenew(?int $freshnessSeconds = null): bool</span>
 </code></pre></div>
 </li>
 <li>
-<p>Returns when the session last passed a check, or <code>null</code> while it never did, and how many wrong codes it may still send (<code>two_factor_tries</code> to begin with, 5 by default).</p>
+<p>Returns when the session last passed a check, or <code>null</code> while it never did, and how many wrong codes it may still send (<code>two_factor_tries</code> to begin with, 3 by default).</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;lastTwoFactor(): ?string</span>
 <span class="x">$session-&gt;remainingTwoFactorTries(): int</span>
 </code></pre></div>
@@ -4374,7 +4380,7 @@ not the cookie. Clients that send the token themselves are unaffected.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Returns the address the session was created from, or <code>null</code> if none could be determined.</p>
+<p>Returns the address the session was created from, empty (<code>""</code> or <code>null</code>) if none could be determined.</p>
 <div class="highlight"><pre><span></span><code><span class="x">$session-&gt;ipCreation(): ?string</span>
 </code></pre></div>
 </li>

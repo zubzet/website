@@ -191,6 +191,16 @@
 
 <dl class="phpdocumentor-table-of-contents">
     
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-EndOfRequestTest.html"><abbr title="\Tests\Message\EndOfRequestTest">EndOfRequestTest</abbr></a></dt>
+        <dd>A call that ends the request throws EndOfRequest instead of calling exit.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-RequestGuardTest.html"><abbr title="\Tests\Message\RequestGuardTest">RequestGuardTest</abbr></a></dt>
+        <dd>The guards of a request: checkPermission(), requireOrganization(),
+requireFreshTwoFactor() and csrfBlockAdditionalMethod(). A failed guard
+shows a page and ends the request, which a test could not survive while
+that was an exit. The framework of these tests records the page a guard
+shows instead of running its controller.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-PageRecordingFramework.html"><abbr title="\Tests\Message\PageRecordingFramework">PageRecordingFramework</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-RequestTest.html"><abbr title="\Tests\Message\RequestTest">RequestTest</abbr></a></dt>
         <dd>The base of every unit test that needs more than the class under test.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Tests-Message-ResponseOutputTest.html"><abbr title="\Tests\Message\ResponseOutputTest">ResponseOutputTest</abbr></a></dt>

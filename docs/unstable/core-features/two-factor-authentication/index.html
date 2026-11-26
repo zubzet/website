@@ -2993,7 +2993,7 @@
 <h2 id="enrollment">Enrollment<a class="headerlink" href="#enrollment" title="Permanent link">&para;</a></h2>
 <p>Turning two factor on takes two steps, so a secret that never reached the authenticator cannot lock anyone out:</p>
 <ol>
-<li><code>$user-&gt;startTwoFactor()</code> stores a fresh secret and returns it together with a provisioning URI, the two shapes an authenticator takes it in. The profile page shows the URI as a QR code. The account does not count as protected yet.</li>
+<li><code>$user-&gt;startTwoFactor()</code> stores a fresh secret, encrypted with the <code>encryption_key</code> setting (<a href="../secrets/">Secrets</a>), and returns it together with a provisioning URI, the two shapes an authenticator takes it in. The profile page asks for the current password first, when the account has one, and shows the URI as a QR code. The account does not count as protected yet.</li>
 <li><code>$user-&gt;confirmTwoFactor($code)</code> turns two factor on once a code from the authenticator matches the stored secret.</li>
 </ol>
 <p>Turning it off again takes a current code as well. An admin with <code>admin.user.edit</code> can turn it off for an account on the user page of the <a href="../../z-admin/usage/">Z-Admin panel</a>, which is the way back in for an owner who lost their authenticator.</p>
@@ -3003,7 +3003,7 @@
 <p>When the password of an account with two factor is correct, the login creates no session yet. It answers with a challenge instead:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> </span><span class="nt">"twoFactor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"challenge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zub-..."</span><span class="p">}</span>
 </code></pre></div>
-<p>The challenge is redeemed at <code>POST _zubzet/two-factor/login</code> with the fields <code>challenge</code> and <code>code</code>. A correct code creates the session, already stamped with a passed check. A challenge is valid for <code>two_factor_challenge_seconds</code> (defaults to 600) and can be redeemed once. Wrong codes count against the same limit as wrong passwords (<code>maxLoginTriesPerTimespan</code> within <code>maxLoginTriesTimespan</code>).</p>
+<p>The challenge is redeemed at <code>POST _zubzet/two-factor/login</code> with the fields <code>challenge</code> and <code>code</code>. A correct code creates the session, already stamped with a passed check. A challenge is valid for <code>two_factor_challenge_seconds</code> (defaults to 60) and can be redeemed once. Wrong codes count against the same limit as wrong passwords (<code>maxLoginTriesPerTimespan</code> within <code>maxLoginTriesTimespan</code>).</p>
 <p><code>Z.Presets.Login</code> does all of this on its own: it opens the two factor modal, sends the code and continues like a normal login once it is accepted. The modal markup ships with <code>&lt;x-zubzet::body/&gt;</code>, so every layout that uses the login has to render it (see <a href="../layouts/">Layouts</a>).</p>
 <hr />
 <h2 id="guarding-an-action">Guarding an Action<a class="headerlink" href="#guarding-an-action" title="Permanent link">&para;</a></h2>
@@ -3014,14 +3014,14 @@
 <span class="x">    // Only reached with a recent check, or for an account without two factor</span>
 <span class="x">}</span>
 </code></pre></div>
-<p>The check counts as recent within <code>two_factor_freshness_seconds</code> (defaults to 900). A different window can be passed as the first argument. Accounts without two factor always pass, there is nothing to renew. An <a href="../access-control/#api-keys">api key</a> starts without a stamp, so for an account with two factor it does not pass until it renews the check at <code>POST _zubzet/two-factor/refresh</code>.</p>
+<p>The check counts as recent within <code>two_factor_freshness_seconds</code> (defaults to 90). A different window can be passed as the first argument. Accounts without two factor always pass, there is nothing to renew. An <a href="../access-control/#api-keys">api key</a> starts without a stamp, so for an account with two factor it does not pass until it renews the check at <code>POST _zubzet/two-factor/refresh</code>.</p>
 <p>Without further arguments a stale session is answered with a JSON error carrying <code>twoFactorRenew</code> and the request ends. To answer the client yourself, pass <code>boolResult: true</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="x">if(!$req-&gt;requireFreshTwoFactor(boolResult: true)) {</span>
 <span class="x">    return $res-&gt;error("Two factor required", ["twoFactorRenew" =&gt; true]);</span>
 <span class="x">}</span>
 </code></pre></div>
 <p><code>Z.Request.action()</code>, <code>Z.Request.root()</code> and <code>Z.Forms</code> react to <code>twoFactorRenew</code> on their own: they open the modal, send the code to <code>POST _zubzet/two-factor/refresh</code>, which stamps the current session, and tell the user to try again. <code>Z.Presets.RefreshTwoFactor(onDone)</code> opens the same modal on demand.</p>
-<p>Every session may send <code>two_factor_tries</code> (defaults to 5) wrong codes on a renewal or when turning two factor off. After the last one it is signed out. A passed check gives the session all its tries back.</p>
+<p>Every session may send <code>two_factor_tries</code> (defaults to 3) wrong codes on a renewal or when turning two factor off. After the last one it is signed out. A passed check gives the session all its tries back.</p>
 <hr />
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <table>
@@ -3035,17 +3035,17 @@
 <tbody>
 <tr>
 <td><code>two_factor_freshness_seconds</code></td>
-<td><code>900</code></td>
+<td><code>90</code></td>
 <td>How long a passed check counts as recent for <code>requireFreshTwoFactor()</code></td>
 </tr>
 <tr>
 <td><code>two_factor_challenge_seconds</code></td>
-<td><code>600</code></td>
+<td><code>60</code></td>
 <td>How long the challenge of a login's two factor step can be redeemed</td>
 </tr>
 <tr>
 <td><code>two_factor_tries</code></td>
-<td><code>5</code></td>
+<td><code>3</code></td>
 <td>How many wrong codes a session may send on a renewal or when turning two factor off</td>
 </tr>
 </tbody>

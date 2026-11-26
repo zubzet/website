@@ -712,6 +712,13 @@ settings, the request or the cached values of another one.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Tests-Message-RequestTest.html#method_testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress">testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Tests-Message-RequestTest.html#method_testIpIsAnEmptyStringWithoutAnyAddress">testIpIsAnEmptyStringWithoutAnyAddress()</a>
     <span>
                         &nbsp;: void    </span>
@@ -726,7 +733,7 @@ settings, the request or the cached values of another one.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Tests-Message-RequestTest.html#method_testIpReturnsAForwardedChainUnsplit">testIpReturnsAForwardedChainUnsplit()</a>
+    <a href="classes/Tests-Message-RequestTest.html#method_testIpReturnsTheClientOfAForwardedChain">testIpReturnsTheClientOfAForwardedChain()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -908,6 +915,13 @@ settings, the request or the cached values of another one.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_answerOf">answerOf()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>The decoded REST reply of an action that ends the request with one.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_assertThrows">assertThrows()</a>
     <span>
                         &nbsp;: <abbr title="\Throwable">Throwable</abbr>    </span>
@@ -944,6 +958,15 @@ returns. Its constructor would identify it through the database, so
 it is left out: the user is anonymous unless the test says otherwise.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_endedRequest">endedRequest()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Runs an action that has to end the request (a view, a REST reply, a
+redirect, a failed check) and returns what it printed. Fails when the
+action returns instead.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_inDirectory">inDirectory()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -958,6 +981,16 @@ afterwards, also when the action throws.</dd>
                         &nbsp;: <a href="classes/ZubZet-Framework-Message-Input-State.html"><abbr title="\ZubZet\Framework\Message\Input\State">State</abbr></a>    </span>
 </dt>
 <dd>An input without any data. The with...() methods of the state fill it:</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Tests-TestCase.html#method_loggedInUser">loggedInUser()</a>
+    <span>
+                        &nbsp;: <a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a>    </span>
+</dt>
+<dd>Makes a logged in user with exactly the given permissions the current
+one. The permissions are placed where the user keeps what it has read
+from the database, so checking one needs no database. Wildcards work
+as they do there (&quot;edit.*&quot; covers &quot;edit.article&quot;).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Tests-TestCase.html#method_removeSetting">removeSetting()</a>
@@ -1238,7 +1271,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -1274,7 +1307,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 
     </aside>
 
@@ -1307,7 +1340,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">352</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 
     </aside>
 
@@ -1340,7 +1373,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">720</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -1373,7 +1406,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">734</span>
+    <span class="phpdocumentor-element-found-in__line">742</span>
 
     </aside>
 
@@ -1406,7 +1439,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
@@ -1472,7 +1505,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 
     </aside>
 
@@ -1505,7 +1538,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">257</span>
 
     </aside>
 
@@ -1538,7 +1571,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">596</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 
     </aside>
 
@@ -1571,7 +1604,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">578</span>
+    <span class="phpdocumentor-element-found-in__line">586</span>
 
     </aside>
 
@@ -1604,7 +1637,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">471</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -1637,7 +1670,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">441</span>
+    <span class="phpdocumentor-element-found-in__line">449</span>
 
     </aside>
 
@@ -1670,7 +1703,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">446</span>
+    <span class="phpdocumentor-element-found-in__line">454</span>
 
     </aside>
 
@@ -1703,7 +1736,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">383</span>
 
     </aside>
 
@@ -1736,7 +1769,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 
     </aside>
 
@@ -1769,7 +1802,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">453</span>
+    <span class="phpdocumentor-element-found-in__line">461</span>
 
     </aside>
 
@@ -1802,7 +1835,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">503</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 
     </aside>
 
@@ -1835,7 +1868,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">495</span>
+    <span class="phpdocumentor-element-found-in__line">503</span>
 
     </aside>
 
@@ -1901,7 +1934,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">664</span>
+    <span class="phpdocumentor-element-found-in__line">672</span>
 
     </aside>
 
@@ -1934,7 +1967,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">657</span>
+    <span class="phpdocumentor-element-found-in__line">665</span>
 
     </aside>
 
@@ -1967,7 +2000,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">714</span>
+    <span class="phpdocumentor-element-found-in__line">722</span>
 
     </aside>
 
@@ -2033,7 +2066,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">395</span>
 
     </aside>
 
@@ -2066,7 +2099,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">324</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 
     </aside>
 
@@ -2124,7 +2157,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 
     </aside>
 
@@ -2182,7 +2215,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">748</span>
+    <span class="phpdocumentor-element-found-in__line">756</span>
 
     </aside>
 
@@ -2215,7 +2248,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">699</span>
+    <span class="phpdocumentor-element-found-in__line">707</span>
 
     </aside>
 
@@ -2248,7 +2281,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">741</span>
+    <span class="phpdocumentor-element-found-in__line">749</span>
 
     </aside>
 
@@ -2281,7 +2314,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">509</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 
     </aside>
 
@@ -2314,7 +2347,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -2347,7 +2380,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
@@ -2380,7 +2413,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 
     </aside>
 
@@ -2413,7 +2446,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -2446,7 +2479,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 
     </aside>
 
@@ -2479,7 +2512,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 
     </aside>
 
@@ -2545,7 +2578,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -2578,7 +2611,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -2611,7 +2644,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 
     </aside>
 
@@ -2685,7 +2718,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 
     </aside>
 
@@ -2718,7 +2751,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -2751,7 +2784,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
@@ -2784,7 +2817,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -2817,7 +2850,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 
     </aside>
 
@@ -2850,7 +2883,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">213</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -2883,7 +2916,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
@@ -2916,7 +2949,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
@@ -2949,7 +2982,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -2982,7 +3015,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 
     </aside>
 
@@ -3015,7 +3048,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -3048,7 +3081,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">633</span>
+    <span class="phpdocumentor-element-found-in__line">641</span>
 
     </aside>
 
@@ -3081,7 +3114,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">638</span>
+    <span class="phpdocumentor-element-found-in__line">646</span>
 
     </aside>
 
@@ -3114,7 +3147,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">541</span>
+    <span class="phpdocumentor-element-found-in__line">549</span>
 
     </aside>
 
@@ -3147,7 +3180,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">629</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 
     </aside>
 
@@ -3180,7 +3213,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">625</span>
+    <span class="phpdocumentor-element-found-in__line">633</span>
 
     </aside>
 
@@ -3213,7 +3246,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">572</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 
     </aside>
 
@@ -3287,7 +3320,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">611</span>
+    <span class="phpdocumentor-element-found-in__line">619</span>
 
     </aside>
 
@@ -3353,7 +3386,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">642</span>
+    <span class="phpdocumentor-element-found-in__line">650</span>
 
     </aside>
 
@@ -3386,7 +3419,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">558</span>
+    <span class="phpdocumentor-element-found-in__line">566</span>
 
     </aside>
 
@@ -3444,7 +3477,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 
@@ -3477,7 +3510,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">559</span>
 
     </aside>
 
@@ -3510,7 +3543,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">522</span>
+    <span class="phpdocumentor-element-found-in__line">530</span>
 
     </aside>
 
@@ -3543,7 +3576,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">590</span>
+    <span class="phpdocumentor-element-found-in__line">598</span>
 
     </aside>
 
@@ -3617,7 +3650,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">533</span>
+    <span class="phpdocumentor-element-found-in__line">541</span>
 
     </aside>
 
@@ -3650,7 +3683,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">687</span>
 
     </aside>
 
@@ -3683,7 +3716,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">672</span>
+    <span class="phpdocumentor-element-found-in__line">680</span>
 
     </aside>
 
@@ -3709,6 +3742,39 @@ keeps for the whole process and offers no way to reset.</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress">
+        testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress()
+        <a href="classes/Tests-Message-RequestTest.html#method_testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">66</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">testIpFallsBackToRemoteAddrWhenTheHeaderIsNoAddress</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_testIpIsAnEmptyStringWithoutAnyAddress">
         testIpIsAnEmptyStringWithoutAnyAddress()
         <a href="classes/Tests-Message-RequestTest.html#method_testIpIsAnEmptyStringWithoutAnyAddress" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3716,7 +3782,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -3808,9 +3874,9 @@ keeps for the whole process and offers no way to reset.</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_testIpReturnsAForwardedChainUnsplit">
-        testIpReturnsAForwardedChainUnsplit()
-        <a href="classes/Tests-Message-RequestTest.html#method_testIpReturnsAForwardedChainUnsplit" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_testIpReturnsTheClientOfAForwardedChain">
+        testIpReturnsTheClientOfAForwardedChain()
+        <a href="classes/Tests-Message-RequestTest.html#method_testIpReturnsTheClientOfAForwardedChain" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
@@ -3822,7 +3888,7 @@ keeps for the whole process and offers no way to reset.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">testIpReturnsAForwardedChainUnsplit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">testIpReturnsTheClientOfAForwardedChain</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -3848,7 +3914,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
@@ -3922,7 +3988,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">706</span>
+    <span class="phpdocumentor-element-found-in__line">714</span>
 
     </aside>
 
@@ -3955,7 +4021,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">363</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 
     </aside>
 
@@ -3988,7 +4054,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">728</span>
+    <span class="phpdocumentor-element-found-in__line">736</span>
 
     </aside>
 
@@ -4046,7 +4112,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">692</span>
+    <span class="phpdocumentor-element-found-in__line">700</span>
 
     </aside>
 
@@ -4079,7 +4145,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">688</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 
     </aside>
 
@@ -4112,7 +4178,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -4145,7 +4211,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">369</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 
     </aside>
 
@@ -4178,7 +4244,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">381</span>
+    <span class="phpdocumentor-element-found-in__line">389</span>
 
     </aside>
 
@@ -4211,7 +4277,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">395</span>
+    <span class="phpdocumentor-element-found-in__line">403</span>
 
     </aside>
 
@@ -4244,7 +4310,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">418</span>
+    <span class="phpdocumentor-element-found-in__line">426</span>
 
     </aside>
 
@@ -4277,7 +4343,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">412</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 
     </aside>
 
@@ -4310,7 +4376,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
@@ -4343,7 +4409,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">489</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 
     </aside>
 
@@ -4376,7 +4442,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">459</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 
     </aside>
 
@@ -4409,7 +4475,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">409</span>
 
     </aside>
 
@@ -4442,7 +4508,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">467</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
@@ -4508,7 +4574,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">431</span>
+    <span class="phpdocumentor-element-found-in__line">439</span>
 
     </aside>
 
@@ -4541,7 +4607,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">425</span>
+    <span class="phpdocumentor-element-found-in__line">433</span>
 
     </aside>
 
@@ -4574,7 +4640,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
@@ -4640,7 +4706,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
@@ -4673,7 +4739,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -4706,7 +4772,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">615</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 
     </aside>
 
@@ -4739,7 +4805,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">562</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
@@ -4765,6 +4831,50 @@ keeps for the whole process and offers no way to reset.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_answerOf">
+        answerOf()
+        <a href="classes/Tests-TestCase.html#method_answerOf" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">200</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The decoded REST reply of an action that ends the request with one.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">answerOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$action</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_assertThrows">
         assertThrows()
         <a href="classes/Tests-TestCase.html#method_assertThrows" class="headerlink"><i class="fas fa-link"></i></a>
@@ -4772,7 +4882,7 @@ keeps for the whole process and offers no way to reset.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 
     </aside>
 
@@ -4833,7 +4943,7 @@ a message that only contains the expected one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -4881,7 +4991,7 @@ response, database or user until the test sets one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -4943,7 +5053,7 @@ way in; a test goes through the public method wherever there is one.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -4982,6 +5092,52 @@ it is left out: the user is anonymous unless the test says otherwise.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_endedRequest">
+        endedRequest()
+        <a href="classes/Tests-TestCase.html#method_endedRequest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">184</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Runs an action that has to end the request (a view, a REST reply, a
+redirect, a failed check) and returns what it printed. Fails when the
+action returns instead.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">endedRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$action</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_inDirectory">
         inDirectory()
         <a href="classes/Tests-TestCase.html#method_inDirectory" class="headerlink"><i class="fas fa-link"></i></a>
@@ -4989,7 +5145,7 @@ it is left out: the user is anonymous unless the test says otherwise.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -5043,7 +5199,7 @@ afterwards, also when the action throws.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
@@ -5085,6 +5241,60 @@ REQUEST everywhere.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_loggedInUser">
+        loggedInUser()
+        <a href="classes/Tests-TestCase.html#method_loggedInUser" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">166</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Makes a logged in user with exactly the given permissions the current
+one. The permissions are placed where the user keeps what it has read
+from the database, so checking one needs no database. Wildcards work
+as they do there (&quot;edit.*&quot; covers &quot;edit.article&quot;).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">loggedInUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$permissions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$permissions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$userId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/ZubZet-Framework-Authentication-User.html"><abbr title="\ZubZet\Framework\Authentication\User">User</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_removeSetting">
         removeSetting()
         <a href="classes/Tests-TestCase.html#method_removeSetting" class="headerlink"><i class="fas fa-link"></i></a>
@@ -5092,7 +5302,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -5136,7 +5346,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -5182,7 +5392,7 @@ REQUEST everywhere.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -5217,7 +5427,7 @@ the support, so the tests that reach it have to tolerate its absence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -5252,7 +5462,7 @@ the support, so the tests that reach it have to tolerate its absence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -5312,7 +5522,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -5388,7 +5598,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -5421,7 +5631,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 
     </aside>
 
@@ -5454,7 +5664,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">797</span>
+    <span class="phpdocumentor-element-found-in__line">805</span>
 
     </aside>
 
@@ -5514,7 +5724,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">790</span>
+    <span class="phpdocumentor-element-found-in__line">798</span>
 
     </aside>
 
@@ -5582,7 +5792,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">289</span>
 
     </aside>
 
@@ -5615,7 +5825,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/TestCase.php"><a href="files/tests-unit-php-testcase.html"><abbr title="tests/unit/php/TestCase.php">TestCase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">284</span>
 
     </aside>
 
@@ -5648,7 +5858,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">809</span>
+    <span class="phpdocumentor-element-found-in__line">817</span>
 
     </aside>
 
@@ -5690,7 +5900,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">782</span>
+    <span class="phpdocumentor-element-found-in__line">790</span>
 
     </aside>
 
@@ -5723,7 +5933,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">771</span>
+    <span class="phpdocumentor-element-found-in__line">779</span>
 
     </aside>
 
@@ -5783,7 +5993,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">757</span>
+    <span class="phpdocumentor-element-found-in__line">765</span>
 
     </aside>
 
@@ -5827,7 +6037,7 @@ keeps for the whole process and offers no way to reset.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="tests/unit/php/Message/RequestTest.php"><a href="files/tests-unit-php-message-requesttest.html"><abbr title="tests/unit/php/Message/RequestTest.php">RequestTest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">764</span>
+    <span class="phpdocumentor-element-found-in__line">772</span>
 
     </aside>
 

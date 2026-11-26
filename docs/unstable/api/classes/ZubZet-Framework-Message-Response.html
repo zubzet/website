@@ -399,7 +399,7 @@ setting and a plain-HTTP one is not locked out.</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</dd>
+<dd>Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, is rethrown unless showErrors is 0, which logs it and renders the 500 view with status 500 instead</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_reroute">reroute()</a>
@@ -459,6 +459,14 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_stop">stop()</a>
+    <span>
+                        &nbsp;: <abbr title="\ZubZet\Framework\Message\never">never</abbr>    </span>
+</dt>
+<dd>Ends the request here: nothing of the action runs after this call. What was printed and
+every header that was set stay as they are, and the afterMiddlewares of the route still run.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_success">success()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -502,18 +510,18 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
 `login_scope_allow_subdomains_delete_domainscope_name`.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_echoView">echoView()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Echoes a view like render() without ending the request, for output that is captured (mails)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_getNewRest">getNewRest()</a>
     <span>
                         &nbsp;: <a href="classes/ZubZet-Framework-Support-Rest.html"><abbr title="\ZubZet\Framework\Support\Rest">Rest</abbr></a>    </span>
 </dt>
 <dd>Gets a new Rest object</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion">legacyOptExpansion()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ZubZet-Framework-Message-Response.html#method_restContentType">restContentType()</a>
@@ -528,6 +536,13 @@ it is never that.</dd>
     <a href="classes/ZubZet-Framework-Message-Response.html#method_sendRestContentType">sendRestContentType()</a>
     <span>
                         &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_standardOpt">standardOpt()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd></dd>
 
@@ -774,7 +789,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">587</span>
+    <span class="phpdocumentor-element-found-in__line">586</span>
 
     </aside>
 
@@ -837,7 +852,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -891,7 +906,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">378</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 
     </aside>
 
@@ -990,7 +1005,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -1125,7 +1140,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 
     </aside>
 
@@ -1230,7 +1245,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -1263,7 +1278,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1296,7 +1311,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">519</span>
+    <span class="phpdocumentor-element-found-in__line">518</span>
 
     </aside>
 
@@ -1361,7 +1376,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">451</span>
 
     </aside>
 
@@ -1453,7 +1468,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 
     </aside>
 
@@ -1525,7 +1540,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 
     </aside>
 
@@ -1605,7 +1620,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">395</span>
 
     </aside>
 
@@ -1792,11 +1807,11 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, renders the 500 view instead</p>
+        <p class="phpdocumentor-summary">Shows a document to the user by echoing it (nothing is returned); a view that fails to render with a BladeException, e.g. a missing one, is rethrown unless showErrors is 0, which logs it and renders the 500 view with status 500 instead</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1972,7 +1987,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 
     </aside>
 
@@ -2080,7 +2095,7 @@ setting and a plain-HTTP one is not locked out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
@@ -2356,6 +2371,42 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_stop">
+        stop()
+        <a href="classes/ZubZet-Framework-Message-RequestResponseHandler.html#method_stop" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Message/RequestResponseHandler.php"><a href="files/src-message-requestresponsehandler.html"><abbr title="src/Message/RequestResponseHandler.php">RequestResponseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Ends the request here: nothing of the action runs after this call. What was printed and
+every header that was set stay as they are, and the afterMiddlewares of the route still run.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">stop</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\ZubZet\Framework\Message\never">never</abbr></span></code>
+
+        <section class="phpdocumentor-description"><p>Takes the place of <code class="prettyprint">exit</code> and <code class="prettyprint">die</code>, see EndOfRequest for how the request ends.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\ZubZet\Framework\Message\never">never</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_success">
         success()
         <a href="classes/ZubZet-Framework-Message-Response.html#method_success" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2363,7 +2414,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">386</span>
 
     </aside>
 
@@ -2471,7 +2522,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">472</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 
     </aside>
 
@@ -2629,7 +2680,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 
     </aside>
 
@@ -2644,6 +2695,66 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
 </section>
 
     
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_echoView">
+        echoView()
+        <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_echoView" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Echoes a view like render() without ending the request, for output that is captured (mails)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">echoView</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$document</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$opt</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$options</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -2701,50 +2812,6 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
         class="phpdocumentor-element
             -method
             -private
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_legacyOptExpansion">
-        legacyOptExpansion()
-        <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_legacyOptExpansion" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">65</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">legacyOptExpansion</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$opt</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_restContentType">
@@ -2754,7 +2821,7 @@ The arguments are read via func_get_args() and forwarded unchanged; the result o
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -2794,7 +2861,7 @@ answer of a plain $.post() would then be handed an object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 
     </aside>
 
@@ -2818,6 +2885,50 @@ answer of a plain $.post() would then be handed an object.</p>
         class="phpdocumentor-element
             -method
             -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_standardOpt">
+        standardOpt()
+        <a href="classes/ZubZet-Framework-Rendering-CanRenderView.html#method_standardOpt" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Rendering/CanRenderView.php"><a href="files/src-rendering-canrenderview.html"><abbr title="src/Rendering/CanRenderView.php">CanRenderView.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">94</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">standardOpt</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$opt</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$opt</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_uploadFromForm">
@@ -2827,7 +2938,7 @@ answer of a plain $.post() would then be handed an object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Message/Response.php"><a href="files/src-message-response.html"><abbr title="src/Message/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">558</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 
     </aside>
 

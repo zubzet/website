@@ -3048,6 +3048,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stop()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#encryptsecret" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3247,6 +3258,16 @@
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="x">view("adminpanel/dashboard");</span>
 </code></pre></div>
+<h3 id="stop"><code>stop()</code><a class="headerlink" href="#stop" title="Permanent link">&para;</a></h3>
+<p>Ends the request at this point, in place of <code>exit</code> or <code>die</code>. Nothing of the action runs after the call, what was printed so far is the response.</p>
+<p><strong>Syntax:</strong> <code>stop()</code></p>
+<p><strong>Note:</strong> The same as <code>$res-&gt;stop()</code> and <code>$req-&gt;stop()</code>. Unlike <code>exit</code>, <code>finally</code> blocks and the afterMiddlewares of the route still run, and a unit test that calls the action survives it. See <a href="../controllers-and-actions/#ending-a-request">Ending a request</a>. An application that already defines a function named <code>stop()</code> keeps its own, the methods are always available.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="x">header("Content-Type: text/csv");</span>
+<span class="x">echo $csv;</span>
+<span class="x">stop();</span>
+</code></pre></div>
+<hr />
 <h3 id="encryptsecret"><code>encryptSecret()</code><a class="headerlink" href="#encryptsecret" title="Permanent link">&para;</a></h3>
 <p>Encrypts a secret with the <code>encryption_key</code> setting, for example before storing it in the database. See <a href="../secrets/">Secrets</a>.</p>
 <p><strong>Syntax:</strong> <code>encryptSecret(string $plaintext): string</code></p>
