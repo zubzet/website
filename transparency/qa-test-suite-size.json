@@ -6,6 +6,6 @@
   "e2e_per_php_version": 1024,
   "unit_php_per_php_version": 1495,
   "php_versions": 7,
-  "commit": "ce4afe6cac26be729094ce4fbe70cf48cda4be61",
-  "updated_at": "2026-11-26T09:03:34Z"
+  "commit": "32a2b4857067a1e4ea2238b7be38cd36b1ac692c",
+  "updated_at": "2026-11-26T09:56:27Z"
 }
